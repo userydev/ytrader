@@ -1,6 +1,6 @@
 # ytrader
 
-个股与产业链分析产品；核心 AI 与雷达能力由 ycore 提供。
+ytrader 产品项目；核心 AI 与雷达能力由 ycore 提供。
 
 ## 分支
 
