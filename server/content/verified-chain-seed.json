@@ -1,0 +1,4966 @@
+{
+  "schema_version": 2,
+  "observed_at": "2026-10-16T10:00:27.005Z",
+  "nodes": [
+    {
+      "id": "ifind:11294",
+      "name": "碳酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 碳酸锂",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32721",
+      "name": "铌酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 铌酸锂",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11297",
+      "name": "电池级碳酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电池级碳酸锂",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11296",
+      "name": "医用碳酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 医用碳酸锂",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11295",
+      "name": "工业级碳酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 工业级碳酸锂",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1879",
+      "name": "锂离子电池",
+      "aliases": [
+        "锂电池",
+        "锂电"
+      ],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂离子电池",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:15778",
+      "name": "电池热管理系统(EMS)",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电池热管理系统(EMS)",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1899",
+      "name": "锂电池电芯模组",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池电芯模组",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26624",
+      "name": "锂电池结构件",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池结构件",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:31771",
+      "name": "电池管理系统(BMS)",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电池管理系统(BMS)",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32872",
+      "name": "锂电池pack生产线",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池pack生产线",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:34773",
+      "name": "电池检测设备",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电池检测设备",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:3082",
+      "name": "锂电池第三方PACK服务",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池第三方PACK服务",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32081",
+      "name": "电动汽车",
+      "aliases": [],
+      "root_ids": [
+        "ifind:15239"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电动汽车",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:3294",
+      "name": "消费电子产品",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 消费电子产品",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:33405",
+      "name": "储能系统集成",
+      "aliases": [
+        "储能"
+      ],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能系统集成",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:6913",
+      "name": "工程机械",
+      "aliases": [],
+      "root_ids": [
+        "ifind:6911"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 工程机械",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:35159",
+      "name": "钛酸锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钛酸锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:34710",
+      "name": "镍酸锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 镍酸锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32275",
+      "name": "锰酸锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锰酸锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:30745",
+      "name": "储能锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:30743",
+      "name": "消费数码类锂电池",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 消费数码类锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1896",
+      "name": "方形锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 方形锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1895",
+      "name": "软包锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 软包锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1894",
+      "name": "动力锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 动力锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1887",
+      "name": "锂-亚硫酰氯电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂-亚硫酰氯电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1886",
+      "name": "锂-二硫化亚铁电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂-二硫化亚铁电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1885",
+      "name": "锂-二氧化锰电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂-二氧化锰电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1882",
+      "name": "三元锂电池",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 三元锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1881",
+      "name": "钴酸锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钴酸锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1880",
+      "name": "磷酸铁锂电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 磷酸铁锂电池",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2972",
+      "name": "锂电池正极材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池正极材料",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:25722",
+      "name": "锂电池前驱体",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池前驱体",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:29054",
+      "name": "锂电池电芯",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂电池电芯",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2979",
+      "name": "三元电池正极材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 三元电池正极材料",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2978",
+      "name": "锰酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锰酸锂",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2977",
+      "name": "钴酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钴酸锂",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2976",
+      "name": "镍酸锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 镍酸锂",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2973",
+      "name": "磷酸铁锂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 磷酸铁锂",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2036",
+      "name": "半导体",
+      "aliases": [
+        "半导体"
+      ],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:33989",
+      "name": "半导体相关服务",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体相关服务",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2707",
+      "name": "半导体设备",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体设备",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2549",
+      "name": "半导体材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体材料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2534",
+      "name": "传感器",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 传感器",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2225",
+      "name": "分立器件",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 分立器件",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2037",
+      "name": "集成电路",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 集成电路",
+          "observed_at": "2026-10-16T09:47:58.191547+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2ed338d9fb21b74ada1d8a1b5a48576f824f69f65cecefb10df6b48e44f2b466"
+        }
+      ]
+    },
+    {
+      "id": "ifind:10893",
+      "name": "铝",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 铝",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:10954",
+      "name": "铜",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 铜",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11379",
+      "name": "钛",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钛",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11561",
+      "name": "钽",
+      "aliases": [],
+      "root_ids": [
+        "ifind:10891"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钽",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:11769",
+      "name": "石英坩埚",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 石英坩埚",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19459",
+      "name": "多晶硅料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 多晶硅料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26116",
+      "name": "遮光膜",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 遮光膜",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:29362",
+      "name": "金刚石切割线",
+      "aliases": [],
+      "root_ids": [
+        "ifind:6911"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 金刚石切割线",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2710",
+      "name": "半导体硅片切割机",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体硅片切割机",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2711",
+      "name": "半导体硅片研磨机",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体硅片研磨机",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2714",
+      "name": "半导体硅片倒角机",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体硅片倒角机",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2720",
+      "name": "光刻机",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光刻机",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2732",
+      "name": "半导体单晶硅生长炉",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体单晶硅生长炉",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2038",
+      "name": "芯片",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 芯片",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2188",
+      "name": "芯片代工",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 芯片代工",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2191",
+      "name": "芯片封装测试",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 芯片封装测试",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2305",
+      "name": "显示屏",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 显示屏",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2899",
+      "name": "印制电路板",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 印制电路板",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2695",
+      "name": "半导体封装材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体封装材料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:25604",
+      "name": "半导体测试材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 半导体测试材料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2550",
+      "name": "晶圆制造材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 晶圆制造材料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:20375",
+      "name": "电子化学材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电子化学材料",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:23992",
+      "name": "光模块",
+      "aliases": [
+        "光模块",
+        "光通信"
+      ],
+      "root_ids": [
+        "ifind:23867"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光模块",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:23976",
+      "name": "光组件",
+      "aliases": [],
+      "root_ids": [
+        "ifind:23867"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光组件",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:23979",
+      "name": "光通信器件",
+      "aliases": [],
+      "root_ids": [
+        "ifind:23867"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光通信器件",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:33176",
+      "name": "光通信设备",
+      "aliases": [],
+      "root_ids": [
+        "ifind:23867"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光通信设备",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:33866",
+      "name": "光接收模块",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光接收模块",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:33865",
+      "name": "光发射模块",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光发射模块",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1940",
+      "name": "光伏设备",
+      "aliases": [
+        "光伏"
+      ],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏设备",
+          "observed_at": "2026-10-16T09:48:33.560655+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "54fb55f8d5ed786c9fcefc14e9e1bdc209edfa6858891f63b72be53bb4b74e6f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32264",
+      "name": "光伏组件及其零配件",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏组件及其零配件",
+          "observed_at": "2026-10-16T09:48:33.560655+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "54fb55f8d5ed786c9fcefc14e9e1bdc209edfa6858891f63b72be53bb4b74e6f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:29274",
+      "name": "光伏用硅材料",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏用硅材料",
+          "observed_at": "2026-10-16T09:48:33.560655+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "54fb55f8d5ed786c9fcefc14e9e1bdc209edfa6858891f63b72be53bb4b74e6f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1973",
+      "name": "光伏发电系统",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏发电系统",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1945",
+      "name": "光伏应用产品",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏应用产品",
+          "observed_at": "2026-10-16T09:48:33.560655+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "54fb55f8d5ed786c9fcefc14e9e1bdc209edfa6858891f63b72be53bb4b74e6f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:1961",
+      "name": "光伏逆变器",
+      "aliases": [],
+      "root_ids": [
+        "ifind:1530"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 光伏逆变器",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2115",
+      "name": "电源管理芯片",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电源管理芯片",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2867",
+      "name": "射频器件",
+      "aliases": [],
+      "root_ids": [
+        "ifind:2035"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 射频器件",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:35442",
+      "name": "IGBT模块",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 IGBT模块",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:36306",
+      "name": "并网逆变器",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 并网逆变器",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:36305",
+      "name": "储能逆变器",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能逆变器",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:29323",
+      "name": "储能电池",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能电池",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:34096",
+      "name": "储能变流器(PCS)",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能变流器(PCS)",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:34725",
+      "name": "储能系统安装服务",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 储能系统安装服务",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:16175",
+      "name": "电力贸易",
+      "aliases": [],
+      "root_ids": [
+        "ifind:16062"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电力贸易",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:24026",
+      "name": "宏基站",
+      "aliases": [],
+      "root_ids": [
+        "ifind:23867"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 宏基站",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19046",
+      "name": "石油炼制产品",
+      "aliases": [
+        "炼油"
+      ],
+      "root_ids": [
+        "ifind:35694"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 石油炼制产品",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:718",
+      "name": "原油",
+      "aliases": [],
+      "root_ids": [
+        "ifind:35694"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 原油",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:9344",
+      "name": "石油化工加工装置",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 石油化工加工装置",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:18830",
+      "name": "炼油工程",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 炼油工程",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19077",
+      "name": "石油炼制产品贸易",
+      "aliases": [],
+      "root_ids": [
+        "ifind:35694"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 石油炼制产品贸易",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:15239",
+      "name": "汽车",
+      "aliases": [],
+      "root_ids": [
+        "ifind:15239"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 汽车",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:16484",
+      "name": "航空运输",
+      "aliases": [],
+      "root_ids": [
+        "ifind:16458"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 航空运输",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:16635",
+      "name": "公路客运服务",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 公路客运服务",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:16636",
+      "name": "公路货运服务",
+      "aliases": [],
+      "root_ids": [
+        "ifind:16458"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 公路货运服务",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:16692",
+      "name": "航运服务",
+      "aliases": [],
+      "root_ids": [
+        "ifind:16458"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 航运服务",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19045",
+      "name": "基础化工",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 基础化工",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:35903",
+      "name": "燃气发电",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 燃气发电",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:32269",
+      "name": "其他石油炼制产品",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 其他石油炼制产品",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19053",
+      "name": "炼油副产品",
+      "aliases": [],
+      "root_ids": [
+        "ifind:35694"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 炼油副产品",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:19047",
+      "name": "成品油",
+      "aliases": [],
+      "root_ids": [
+        "ifind:35694"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 成品油",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:668",
+      "name": "煤炭",
+      "aliases": [],
+      "root_ids": [
+        "ifind:668"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 煤炭",
+          "observed_at": "2026-10-16T09:49:18.841076+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "e682fbad5cb6375020af8282a56b606a2534a19efb0341f20be3553a253ff507"
+        }
+      ]
+    },
+    {
+      "id": "ifind:984",
+      "name": "煤炭开采服务",
+      "aliases": [],
+      "root_ids": [
+        "ifind:668"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 煤炭开采服务",
+          "observed_at": "2026-10-16T09:49:18.841076+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "e682fbad5cb6375020af8282a56b606a2534a19efb0341f20be3553a253ff507"
+        }
+      ]
+    },
+    {
+      "id": "ifind:669",
+      "name": "煤炭开采产品",
+      "aliases": [],
+      "root_ids": [
+        "ifind:668"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 煤炭开采产品",
+          "observed_at": "2026-10-16T09:49:18.841076+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "e682fbad5cb6375020af8282a56b606a2534a19efb0341f20be3553a253ff507"
+        }
+      ]
+    },
+    {
+      "id": "ifind:35011",
+      "name": "煤炭加工产品",
+      "aliases": [],
+      "root_ids": [
+        "ifind:668"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 煤炭加工产品",
+          "observed_at": "2026-10-16T09:49:18.841076+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "e682fbad5cb6375020af8282a56b606a2534a19efb0341f20be3553a253ff507"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2992",
+      "name": "锂离子电解液",
+      "aliases": [
+        "电解液"
+      ],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锂离子电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:20287",
+      "name": "电解液添加剂",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电解液添加剂",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26921",
+      "name": "电解液溶质",
+      "aliases": [],
+      "root_ids": [
+        "ifind:19045"
+      ],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 电解液溶质",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:9362",
+      "name": "高压反应釜",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 高压反应釜",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:28841",
+      "name": "其他化工产品贸易",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 其他化工产品贸易",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:2996",
+      "name": "特殊锂离子电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 特殊锂离子电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26864",
+      "name": "石墨负极用电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 石墨负极用电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26821",
+      "name": "硅基负极用电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 硅基负极用电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26820",
+      "name": "锰酸锂电池电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 锰酸锂电池电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26819",
+      "name": "钛酸锂电池电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钛酸锂电池电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26817",
+      "name": "磷酸铁锂电池电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 磷酸铁锂电池电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26816",
+      "name": "三元电池电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 三元电池电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:26815",
+      "name": "钴酸锂电池电解液",
+      "aliases": [],
+      "root_ids": [],
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "生产链节点 钴酸锂电池电解液",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "ifind:edge:cc7589c64d732a28cdf9032c60e7b01c76268c4abeec2a2cebe9748a410ee738",
+      "from_id": "ifind:11294",
+      "to_id": "ifind:32721",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:21.749271+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "686676d26aae34f3ced20dbfd5d6e80788832bb87d0a8212db4275a9e4c78e45"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:8e8ec34e66b2d3bb29d8c62af43c6f38a6c60c6306d77710abfe7abf1fa5c8ae",
+      "from_id": "ifind:15778",
+      "to_id": "ifind:1879",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:8d48ce56ccf409526e835043211d599b7d475e8f9c4c66e6f48d76b42c15830e",
+      "from_id": "ifind:1899",
+      "to_id": "ifind:1879",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ad64951a9193b23105a4109d012d0b62ada98943f5b9d32e340840cbbf9272a9",
+      "from_id": "ifind:26624",
+      "to_id": "ifind:1879",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:990f621661dd08154b8c2a76799292f8c5521ab4701addc353033f8833f76699",
+      "from_id": "ifind:31771",
+      "to_id": "ifind:1879",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ae06fd0dc8a8fc782971e888ba736f19cc08d5b04cbb70743f1956082fb13b56",
+      "from_id": "ifind:32872",
+      "to_id": "ifind:1879",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3e16b183cdf9693697735c348f7f8ebefc8125b80ab59823d98b8d222f7d4cfe",
+      "from_id": "ifind:34773",
+      "to_id": "ifind:1879",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:064b771e740187f111fc6998621cfaf736e51a79757f0c4e4579c6c8de5ada6f",
+      "from_id": "ifind:3082",
+      "to_id": "ifind:1879",
+      "kind": "service",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 技术服务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:0c65c44a66c7fa738cf2f4c88096bf4542d91bfc7ba89f452d4d00fd83ee5711",
+      "from_id": "ifind:1879",
+      "to_id": "ifind:32081",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:09b1ff8ff1c756afffbd7b5bb78742deef2928624599d76be3446c43a43bf689",
+      "from_id": "ifind:1879",
+      "to_id": "ifind:3294",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ad731ea33e6ae520115e0d927f628a589a56cd39cef3f2ad3eb68327da4cd820",
+      "from_id": "ifind:1879",
+      "to_id": "ifind:33405",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:210387c00b0883878af7239e96b6c4aadf6f78af5dcd17912b01ace06f51170e",
+      "from_id": "ifind:1879",
+      "to_id": "ifind:6913",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:42:22.077218+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "a45a38773559d3dd9794e1e1413997991a5644288082a2a6540891f56f21cc59"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:4c2d8e6a43fd36c42e17061aa28a9abb7c6b3baf64a22b2b53145e37fbc89b73",
+      "from_id": "ifind:25722",
+      "to_id": "ifind:2972",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:2fb87f83cdee7d62d2373563f937062a284ee6c5d13c414cbe92b365576f5baa",
+      "from_id": "ifind:2972",
+      "to_id": "ifind:29054",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:47:46.857031+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b55fc8de10fea30566d015d3a5048b846c61a21f69cc69978786a45236b57275"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3f5090fca9f882d5695915441082d9a5fe8ecaf7d6137df516d173da18ae5e0a",
+      "from_id": "ifind:10893",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:f031ee3c6e5e1c027bdec1146b71ea5df43db4d6132d8fcbdeab59ccea15f005",
+      "from_id": "ifind:10954",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:e9f237b5e3e4df3c90a256be027ea8768345612b2e4d99d9f9d81aa1392f31e9",
+      "from_id": "ifind:11379",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:301ddea06b9970198bfe2a2799729403d4a7d70f5b53c95e0a1be1e0e838c9bb",
+      "from_id": "ifind:11561",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:47702fda9fcd8eb1d7c9fb9730f20aad3f1d11563ef561e3936db17af94ddb46",
+      "from_id": "ifind:11769",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:e0fc0cd7855b61965efac8a2df527231070c7668cbf93cfaf21ad1fb265278c8",
+      "from_id": "ifind:19459",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:9d5a77b830d5ee3db556e919c725f8db17c9c1a696970b9f683cb235b9595664",
+      "from_id": "ifind:26116",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:e078ec22920921aa571b12221176892c0ba025b8aa5c677bfd6e13e16e048342",
+      "from_id": "ifind:29362",
+      "to_id": "ifind:2549",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:1d2344033d14a174b67b2fa5417a37a3368efb46243eac482d5ffb1ef18bc326",
+      "from_id": "ifind:2710",
+      "to_id": "ifind:2549",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:b2690ed20329f2e8ea394de1c6ab43f3dc77b7ca13de82b0eace41075cdac995",
+      "from_id": "ifind:2711",
+      "to_id": "ifind:2549",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3017abbffacc360b9e0f14cc2082db54b9c6fb7889e5cea7a514fef792b66238",
+      "from_id": "ifind:2714",
+      "to_id": "ifind:2549",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:1f507470acc78ce2c8d09545fdfb066770b4ea59af8be1f3d0de6dc7d64b2037",
+      "from_id": "ifind:2720",
+      "to_id": "ifind:2549",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:50dcb898b027e088b811b13d16412c4c726767d86d111c4bb2c0b1cf3686b1d6",
+      "from_id": "ifind:2732",
+      "to_id": "ifind:2549",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3a83a334a0cbccce376f1b87291a3a4902f6b6042e37ae2f3e3b307b9edd9038",
+      "from_id": "ifind:2549",
+      "to_id": "ifind:2038",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:8316abe1826f78b601f4f8902e4ce510a163070841e8580157cfe13a2f7ef2c2",
+      "from_id": "ifind:2549",
+      "to_id": "ifind:2188",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:1ea64441e78fee25342404fbf4a89ecf061deca6e0dd6bc43517590f7b86201f",
+      "from_id": "ifind:2549",
+      "to_id": "ifind:2191",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:da98267198fc9d8306f189f5146221b7eb1c425432c88e2b57c930cdac66e15d",
+      "from_id": "ifind:2549",
+      "to_id": "ifind:2305",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:0bedeb391f2d5a27280b192ab0e6d591466fb88f5ed2ba5d3dad7e82643a32ba",
+      "from_id": "ifind:2549",
+      "to_id": "ifind:2899",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:09.928575+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ff2d8175782ca393523981b3caef461941cfa683a084481554c4f7b3c1777963"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:4304f278acd20dfbcd665589c20cb7a8c52815e318d28eaffcc69c14651eeacb",
+      "from_id": "ifind:23976",
+      "to_id": "ifind:23992",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:c0875e36ed5a389d7a925203834aa66e8a2451ea3d9ab723ed2f284a2ba3e3a9",
+      "from_id": "ifind:23979",
+      "to_id": "ifind:23992",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ec0fd39e9a93d9cdd86e442abd11e2c93b73ea16c1a545af735486267d6473a6",
+      "from_id": "ifind:23992",
+      "to_id": "ifind:33176",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:22.240275+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "2dd89b1a1574f06ec883b1743dd08b62c2334fdf5c2de248a8e7604d5ee88255"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:864933512e212e2098092b750db9cd0749501dca564c6bfffcc12207222032f7",
+      "from_id": "ifind:2115",
+      "to_id": "ifind:1961",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3feca9aad84226d85f0735de02987ddf9907ad868b82f90b4cd9c6eea06011ca",
+      "from_id": "ifind:2867",
+      "to_id": "ifind:1961",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:9ff5acec7daa9c234810d0171bfc90b5b0cf7a5698264824c73da5008ed6634e",
+      "from_id": "ifind:2899",
+      "to_id": "ifind:1961",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:7120a07afbba8d424d902fcc68ffa9a2d5bac98652e95afab3d83e6f48cc12e8",
+      "from_id": "ifind:35442",
+      "to_id": "ifind:1961",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:5d2b2032dc5f284f4ac39d1d3baf5b816bb327bd53252dccb51a6095f8d80f36",
+      "from_id": "ifind:1961",
+      "to_id": "ifind:1973",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:44.894137+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "4094db42ab4a40ab26a3934bf4e85e56128e4df365431b093dbd442f86b27a9f"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:467988b954871356695d343229fcbe1356859278bc1d56df80496ffd30932079",
+      "from_id": "ifind:15778",
+      "to_id": "ifind:33405",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:151c57cacacd2c5d5a518fbdf06ebd3251d78e7e9292975454b3d9947b552966",
+      "from_id": "ifind:29323",
+      "to_id": "ifind:33405",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:4b0959b4bb0ae6ebfd88adcb65a5ab4f0d31b12ee9c6d9fed2fdb50657fcb8f9",
+      "from_id": "ifind:31771",
+      "to_id": "ifind:33405",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:d69b9d1c0cc101ef386fe0c4af0ed3d1148e1e40682017fd79fceb5808110c53",
+      "from_id": "ifind:34096",
+      "to_id": "ifind:33405",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:91cbf0599b5c5f3931891a476bb370ede68c781b7b7fbb44e694489bad6ea20e",
+      "from_id": "ifind:34725",
+      "to_id": "ifind:33405",
+      "kind": "service",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 技术服务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:29fa1851f4f1ba04775e33c935bfd41648a597488a88261cd2c82dcb12e347d6",
+      "from_id": "ifind:33405",
+      "to_id": "ifind:16175",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:bcc27d9c757e5bc6e7bc53bfff782ee651c556ebab0ac36470feadf77035805c",
+      "from_id": "ifind:33405",
+      "to_id": "ifind:24026",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:48:56.267296+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "deb1597b47ecba234b6d297ab35a31ef00f9894aecdff33b64fb982260d300f9"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:3427fa3a94e2817070d02900a2178b23e5317a749cc907d9d56b0913437ad220",
+      "from_id": "ifind:718",
+      "to_id": "ifind:19046",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ac66fb7f7afa7b3d16ffc9ec1676522de79b766577101a9d67bc441ba0f837e5",
+      "from_id": "ifind:9344",
+      "to_id": "ifind:19046",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:6928d1069d2ea25558c789aff5ba8278c6ab12808f495e2252dc05931b49242e",
+      "from_id": "ifind:18830",
+      "to_id": "ifind:19046",
+      "kind": "service",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 技术服务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:8770c5dfaad6e9c50b38107d61a5245c57cb8c6a1582eebd6f41a092e7d55c3b",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:19077",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 销售渠道；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:e235a95ffbee6e092bf2c65fca8d4b739b83102375fe9be01799fd09e2853c2f",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:15239",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:54bd3c79b491b9bd61f8ba2e080965e7da618b247223a86445f9b0229a92c9b2",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:16484",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:729a8f43cfe6a0bc8e29f9c749934ed2b2fe9b36e4cc4bd88b3a3a1d040a6100",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:16635",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:241cf10f2b1af5fae3a151e0e1130656b8aed0319d733e59b57dc6c58940d4c5",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:16636",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:425a024c2fc9d9f830b8e92e3385f661649e9221b627d8b4ab7d53069704e016",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:16692",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:7123d06096af63cbd41031ead203fa1c3c8f34526ed383570ff6e6e5d72759c8",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:19045",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:88412965f8dd02dc4113348282b2fb4997df0d8aefe6ec56ff3e46cc335f43fd",
+      "from_id": "ifind:19046",
+      "to_id": "ifind:35903",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:07.552284+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ca2f422705e9d74ec9680e8883d9e57870e9394f203c9e79ebf8366199e09e26"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:ecd157cde7fd7fa478bfad1019acc3ebfbda6d018f61966d7d633637a54542d0",
+      "from_id": "ifind:20287",
+      "to_id": "ifind:2992",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:b6f470f98d70a2e10b5567a2f71df4bde4929138251e803cfa5b963b2e27e6a8",
+      "from_id": "ifind:26921",
+      "to_id": "ifind:2992",
+      "kind": "input",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 原材料；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:593799ccf8d111f4e62df4a8e44008fa051e75965f839d59caa404227a883175",
+      "from_id": "ifind:9362",
+      "to_id": "ifind:2992",
+      "kind": "equipment",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 up_stream / 生产设备；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:1ae8e85ab3bd3aa016ab5aa5bc42deaaadf6ba537ffbf8e2ed52ec7282ede769",
+      "from_id": "ifind:2992",
+      "to_id": "ifind:28841",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 销售渠道；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    },
+    {
+      "id": "ifind:edge:6b17745c46d5a11fe126aab7336b0dee0dbaf8eaf9a0f9dd943619075633c2b5",
+      "from_id": "ifind:2992",
+      "to_id": "ifind:1879",
+      "kind": "output",
+      "evidence": [
+        {
+          "provider": "kuaicha-enterprise-mcp",
+          "url": null,
+          "title": "快查生产链 down_stream / 产品/业务；供应商产业结构，不代表公司供货合同",
+          "observed_at": "2026-10-16T09:49:30.258013+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "c7946574c3784d40d3a7c42144c7792d317ccbd6b5b427c6cfebb776d23b4e2c"
+        }
+      ]
+    }
+  ],
+  "exposures": [
+    {
+      "id": "business:002466.SZ:11294",
+      "company_code": "002466.SZ",
+      "node_id": "ifind:11294",
+      "role": "生产销售碳酸锂",
+      "basis": "主营产品列明碳酸锂",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.328023+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "df012572763b8d7fdf3c3d17614ac25fc7524f264de3706723e1196379c679c8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:002594.SZ:32081",
+      "company_code": "002594.SZ",
+      "node_id": "ifind:32081",
+      "role": "整车制造",
+      "basis": "主营业务列明新能源汽车及汽车相关产品",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.328023+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "df012572763b8d7fdf3c3d17614ac25fc7524f264de3706723e1196379c679c8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:300750.SZ:1879",
+      "company_code": "300750.SZ",
+      "node_id": "ifind:1879",
+      "role": "动力及储能电池系统",
+      "basis": "主营业务列明新能源汽车动力电池系统、储能系统",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.328023+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "df012572763b8d7fdf3c3d17614ac25fc7524f264de3706723e1196379c679c8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:300750.SZ:33405",
+      "company_code": "300750.SZ",
+      "node_id": "ifind:33405",
+      "role": "储能系统",
+      "basis": "主营产品列明储能系统",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.328023+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "df012572763b8d7fdf3c3d17614ac25fc7524f264de3706723e1196379c679c8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:601012.SH:32782",
+      "company_code": "601012.SH",
+      "node_id": "ifind:32782",
+      "role": "光伏硅片生产",
+      "basis": "主营业务列明单晶硅棒、硅片、电池和组件",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:601012.SH:1943",
+      "company_code": "601012.SH",
+      "node_id": "ifind:1943",
+      "role": "太阳能电池生产",
+      "basis": "主营业务列明硅片、电池和组件",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:600438.SH:29274",
+      "company_code": "600438.SH",
+      "node_id": "ifind:29274",
+      "role": "多晶硅生产",
+      "basis": "主营业务列明多晶硅、太阳能电池研发、生产、销售",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:600438.SH:1943",
+      "company_code": "600438.SH",
+      "node_id": "ifind:1943",
+      "role": "太阳能电池生产",
+      "basis": "主营业务列明太阳能电池",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:603806.SH:32434",
+      "company_code": "603806.SH",
+      "node_id": "ifind:32434",
+      "role": "太阳能电池背板",
+      "basis": "主营业务和产品均列明背板",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:300274.SZ:1961",
+      "company_code": "300274.SZ",
+      "node_id": "ifind:1961",
+      "role": "光伏逆变器",
+      "basis": "主营产品列明光伏逆变器等电力电子转换设备",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:300274.SZ:33405",
+      "company_code": "300274.SZ",
+      "node_id": "ifind:33405",
+      "role": "储能系统",
+      "basis": "主营产品列明储能系统",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:12.884505+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "b7201486707c742a704e1c88223d723b3a2e6ea02b6dbe95e39a9e834b0d2136"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:002371.SZ:2707",
+      "company_code": "002371.SZ",
+      "node_id": "ifind:2707",
+      "role": "半导体设备",
+      "basis": "主营产品列明半导体装备",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:17.108716+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "19b7b04b27e8d6e67f8a4b059ddd41fef6a73a6c9dde6e33111d36ed6163d007"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:300308.SZ:23992",
+      "company_code": "300308.SZ",
+      "node_id": "ifind:23992",
+      "role": "光通信收发模块",
+      "basis": "主营业务与产品列明光通信收发模块",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:17.108716+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "19b7b04b27e8d6e67f8a4b059ddd41fef6a73a6c9dde6e33111d36ed6163d007"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:688012.SH:2707",
+      "company_code": "688012.SH",
+      "node_id": "ifind:2707",
+      "role": "半导体设备",
+      "basis": "主营业务与产品列明刻蚀设备、薄膜设备、MOCVD设备",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:17.108716+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "19b7b04b27e8d6e67f8a4b059ddd41fef6a73a6c9dde6e33111d36ed6163d007"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:688981.SH:2037",
+      "company_code": "688981.SH",
+      "node_id": "ifind:2037",
+      "role": "集成电路晶圆代工",
+      "basis": "主营业务与产品列明集成电路晶圆代工",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:17.108716+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "19b7b04b27e8d6e67f8a4b059ddd41fef6a73a6c9dde6e33111d36ed6163d007"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:600309.SH:20060",
+      "company_code": "600309.SH",
+      "node_id": "ifind:20060",
+      "role": "聚氨酯产品",
+      "basis": "主营业务列明聚氨酯及助剂、MDI及衍生产品",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:20.143401+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ce86a529c3813b07dfb8b94c1d471c9df961938c2b8d0d7e9b6d9cb2d7d882b8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:600028.SH:19046",
+      "company_code": "600028.SH",
+      "node_id": "ifind:19046",
+      "role": "炼油产品",
+      "basis": "主营业务列明炼油及石油产品生产销售",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:20.143401+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ce86a529c3813b07dfb8b94c1d471c9df961938c2b8d0d7e9b6d9cb2d7d882b8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:600028.SH:717",
+      "company_code": "600028.SH",
+      "node_id": "ifind:717",
+      "role": "原油开采",
+      "basis": "主营业务列明勘探、开发及生产原油",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:20.143401+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ce86a529c3813b07dfb8b94c1d471c9df961938c2b8d0d7e9b6d9cb2d7d882b8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:601857.SH:19046",
+      "company_code": "601857.SH",
+      "node_id": "ifind:19046",
+      "role": "炼油产品",
+      "basis": "主营业务列明原油及石油产品炼制、销售",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:20.143401+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ce86a529c3813b07dfb8b94c1d471c9df961938c2b8d0d7e9b6d9cb2d7d882b8"
+        }
+      ],
+      "status": "business"
+    },
+    {
+      "id": "business:601857.SH:717",
+      "company_code": "601857.SH",
+      "node_id": "ifind:717",
+      "role": "原油开采",
+      "basis": "主营业务列明原油勘探、开发、生产和销售",
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": null,
+          "title": "get_security_indicators",
+          "observed_at": "2026-10-16T09:42:20.143401+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "ce86a529c3813b07dfb8b94c1d471c9df961938c2b8d0d7e9b6d9cb2d7d882b8"
+        }
+      ],
+      "status": "business"
+    }
+  ],
+  "observations": [
+    {
+      "id": "miit:battery-export-count:202608",
+      "date": "2026-08-31",
+      "unit": "亿个",
+      "label": "2026年1—8月锂离子蓄电池累计出口量",
+      "value": "36.9",
+      "source": "工业和信息化部（据海关统计）",
+      "node_id": "ifind:1879",
+      "evidence": [
+        {
+          "url": "https://www.miit.gov.cn/jgsj/yxj/xxfb/art/2026/art_a6c6b6fe6e4d4b408c44c54c1b25c4ed.html",
+          "as_of": "2026-09-30T08:39:00+08:00",
+          "quote": "原文第1部分列示集成电路产量及同比；第2部分列示锂离子蓄电池出口数量及同比。",
+          "title": "工信部2026年1—8月份电子信息制造业运行情况",
+          "provider": "工业和信息化部",
+          "observed_at": "2026-10-16T09:52:24.192969+00:00",
+          "verification": "primary",
+          "source_item_id": "miit:electronics:20260930"
+        }
+      ]
+    }
+  ],
+  "news": [
+    {
+      "id": "ifind:news:21487dc3011b0ea08623f467b28045cf64c8d7e1bb5ab41f11064e1a34e5f981",
+      "title": "三部门联合调查尊界刹车踏板支架断裂问题",
+      "summary": "工信部等三部门联合调查有关车辆刹车踏板支架断裂问题 针对网络反映的“尊界V800汽车刹车踏板支架断裂问题”，工业和信息化部、中央网信办、市场监管总局高度重视，在前期调查工作基础上，成立联合调查组开展核查，并依法依规处理。有关情况将及时公布。",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MDIwNDEyMg==&chksm=bc550f6c8a9a47a983a8db420fb32f2e94a316fb5fda922920cf92fc0e51ef316284b5c0641d&idx=1&mid=2651272419&sn=eb37dd6762672f85563ba275f63a7fcd",
+      "source": "上海证券报·中国证券网",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5MDIwNDEyMg==&chksm=bc550f6c8a9a47a983a8db420fb32f2e94a316fb5fda922920cf92fc0e51ef316284b5c0641d&idx=1&mid=2651272419&sn=eb37dd6762672f85563ba275f63a7fcd",
+          "title": "三部门联合调查尊界刹车踏板支架断裂问题",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:285b4b3beb8473d943c0b91cbc7970b61adba3b4713b1e9c5f26563a1c54ea4e",
+      "title": "尊界就“三部门联合调查”发布声明：积极响应、完全服从并将全力配合",
+      "summary": "10月15日深夜，尊界汽车发布声明称，当天，工信部等三部门发布了联合调查有关车辆刹车踏板支架断裂问题的通报。公司积极响应、完全服从并将全力配合联合调查组的工作，坚决维护消费者合法权益，坚决维护新能源汽车产业发展大局。 来源丨尊界汽车微博",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTE1MzkyOA==&chksm=8ce01e7d2c75ee946ef0eb3b8ea0a4804badc8c1c6693916319e9c9d679cd1132c7b7562c892&idx=1&mid=2651465839&sn=d16fda37f13e4e5570ff83165939c24d",
+      "source": "看看新闻Knews",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzIwMTE1MzkyOA==&chksm=8ce01e7d2c75ee946ef0eb3b8ea0a4804badc8c1c6693916319e9c9d679cd1132c7b7562c892&idx=1&mid=2651465839&sn=d16fda37f13e4e5570ff83165939c24d",
+          "title": "尊界就“三部门联合调查”发布声明：积极响应、完全服从并将全力配合",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:bb39913a9e1d58496fa632e5ba58b99e9eaed1dfb0d120af091bbd5f339ea94a",
+      "title": "新易盛：控股股东提议回购8亿元-10亿元公司股份",
+      "summary": "新易盛10月15日公告，公司控股股东、实际控制人、董事长高光荣提议公司使用自有或自筹资金通过深圳证券交易所交易系统以集中竞价交易方式回购公司已发行的部分人民币普通股(A股)股票，用于后续的股权激励计划或员工持股计划，回购资金总额不低于8亿元…",
+      "url": "https://www.jiemian.com/article/15195233.html",
+      "source": "界面",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.jiemian.com/article/15195233.html",
+          "title": "新易盛：控股股东提议回购8亿元-10亿元公司股份",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:e89639601a335bc7da3da423e6b642ec75fe675ed102ec49def1a36bcb511e7e",
+      "title": "江淮汽车，2分钟涨停",
+      "summary": "16日早间，江淮汽车高开后仅用2分钟迅速拉升涨停，截至发稿报22.37元/股，最新总市值504亿元，最高封单量95万手。 据“工信微报”微信公众号10月15日消息，针对网络反映的“尊界V800汽车刹车踏板支架断裂问题”，工业和信息化部、中央…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MDIwNDEyMg==&chksm=bce974d9bd5ee966fcb179586847d93479aceb727bd2b432a7c9f59852981b966cb385a2fb83&idx=1&mid=2651272459&sn=4a12e78ac31a8f929910367c63309a11",
+      "source": "上海证券报·中国证券网",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5MDIwNDEyMg==&chksm=bce974d9bd5ee966fcb179586847d93479aceb727bd2b432a7c9f59852981b966cb385a2fb83&idx=1&mid=2651272459&sn=4a12e78ac31a8f929910367c63309a11",
+          "title": "江淮汽车，2分钟涨停",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:1c6154b5ec9d1b60615c1d27c82c19ce95700a120356411ffcb1184d79cf00c4",
+      "title": "超4800只个股飘红！长鑫科技，重回3万亿元上方！",
+      "summary": "早盘超过4800只个股上涨。 周五A股市场回暖，早盘主要指数悉数反弹，全市场合计超过4800股上涨。国防军工板块掀起涨停潮，成为上午市场中最大亮点之一。个股方面，长鑫科技股价大涨，总市值重回3万亿元上方。 A股市场逾4800股上涨 截至上午…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5NDEzMTAwMA==&chksm=bcc304651f6876f0e0be9e3ebb62be7faf842020100d0339602f9056b4cf42ee46257c7d93d9&idx=1&mid=2652699395&sn=b188129b5a5f53ca0178be968688c8b0",
+      "source": "证券时报",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5NDEzMTAwMA==&chksm=bcc304651f6876f0e0be9e3ebb62be7faf842020100d0339602f9056b4cf42ee46257c7d93d9&idx=1&mid=2652699395&sn=b188129b5a5f53ca0178be968688c8b0",
+          "title": "超4800只个股飘红！长鑫科技，重回3万亿元上方！",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:5556836c85d8bfd9ded258f0c5af27759f59b87c5e99c66807215c2915458e1a",
+      "title": "*ST萃华：收到终止上市决定，预计最后交易日期为11月12日",
+      "summary": "*ST萃华10月15日公告，公司收到终止上市决定，股票于2026年10月23日复牌并进入退市整理期，退市整理期为十五个交易日，预计最后交易日期为2026年11月12日。退市整理期届满的次一交易日，深圳证券交易所将对公司股票予以摘牌，公司股票…",
+      "url": "https://www.jiemian.com/article/15195530.html",
+      "source": "界面",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.jiemian.com/article/15195530.html",
+          "title": "*ST萃华：收到终止上市决定，预计最后交易日期为11月12日",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:5d11d7171d56471ca91ded0807df1152f31a7411e405de09a86217ed124b7e7c",
+      "title": "“10连板”牛股明起复牌！",
+      "summary": "新华传媒(600825)10月15日晚间公告称，公司股票交易风险相关事项核查工作已完成，公司股票将于2026年10月16日开市起复牌。 公告表示，公司股票自2026年9月21日至10月12日连续10个交易日涨停，累计上涨159.51%，连续…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzU1NjAwNzUzNA==&chksm=fa59576a16de5b5207a612771adea0ab35b240688cd784b39988fecae2b9e8769150f18334a7&idx=1&mid=2247668301&sn=fceacef95ea248c190647c0bcb3b455b",
+      "source": "中国财富",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzU1NjAwNzUzNA==&chksm=fa59576a16de5b5207a612771adea0ab35b240688cd784b39988fecae2b9e8769150f18334a7&idx=1&mid=2247668301&sn=fceacef95ea248c190647c0bcb3b455b",
+          "title": "“10连板”牛股明起复牌！",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:d75c48e0c7212fcb23b265a76981a4d64df29a32af4ae391ff21fab4126cf0c4",
+      "title": "富祥股份实控人、董事长包建华被监察留置，股价盘中跌超18%",
+      "summary": "凤凰网财经讯10月14日，医药原料药企业富祥股份发布公告，公司控股股东、实际控制人、董事长包建华被有关监察机关留置，消息引发市场震动，10月15日公司股价大幅低开，盘中一度大跌超18%。根据公告披露，公司于2026年10月14日收到监察机关…",
+      "url": "https://original.ifeng.com/c/8xFbUH2Fcmh",
+      "source": "凤凰网",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://original.ifeng.com/c/8xFbUH2Fcmh",
+          "title": "富祥股份实控人、董事长包建华被监察留置，股价盘中跌超18%",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:61b90c6fca4d8260c740efc8213bf28b8226335fa12c948b4a40bd6fe309bec9",
+      "title": "三安光电：控股股东及间接控股股东被申请破产重整",
+      "summary": "10月15日，三安光电(600703.SH)公告称，公司收到控股股东三安电子及间接控股股东三安集团通知，债权人向厦门中院申请对两家公司进行破产重整。截至公告日，两家股东合计持有公司股份26.30%，累计质押股份占其持股60.52%，所持股份…",
+      "url": "https://www.caiwennews.com/article/1653691.shtml",
+      "source": "财闻",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.caiwennews.com/article/1653691.shtml",
+          "title": "三安光电：控股股东及间接控股股东被申请破产重整",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:971966454bf27dae06234d124d765c202c252f9b8cfae949f46fb9e3b0ed6b5e",
+      "title": "因产品策略调整，阿里云虚拟数字人启动退市",
+      "summary": "10月16日，阿里云宣布，由于产品策略调整，虚拟数字人产品即将退市。根据退市安排，2026年11月30日，停止新购服务，已购买的客户仍可继续使用至服务到期；2027年5月31日，停止现有客户的续订及版本更新；2027年11月30日，全面停止…",
+      "url": "https://www.jiemian.com/article/15199109.html",
+      "source": "界面",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.jiemian.com/article/15199109.html",
+          "title": "因产品策略调整，阿里云虚拟数字人启动退市",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:9cb95af562b7239da82d0fced4c9492c9946451affb6464fe21f2ef1dbac8ac0",
+      "title": "百亿私募出手自购",
+      "summary": "2026年10月15日，百亿私募凯丰投资发布自购公告，公司决定以自有资金合计2500万元认购公司旗下宏观策略及量化系列产品。这已经不是凯丰投资今年以来第一次发布自购公告，早在2026年6月17日，凯丰投资就发布过一次自购公告，自购旗下产品3…",
+      "url": "https://www.caiwennews.com/article/1655003.shtml",
+      "source": "财闻",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.caiwennews.com/article/1655003.shtml",
+          "title": "百亿私募出手自购",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:0e5a38bb97c5c82c367de8310faff4f3eaf65630c0ca42a1a0bce1a783babf6d",
+      "title": "中际旭创、新易盛，开盘上涨",
+      "summary": "今天A股早盘，科技股反弹，半导体、算力等板块上涨，中际旭创、新易盛、长鑫科技等龙头股开盘上涨。 10月15日晚，中际旭创在港交所发布公告称，董事会会议将于10月29日(星期四)举行，其中包括考虑及批准公司及其附属公司截至2026年9月30日…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MjM5MzMwNjM0MA==&chksm=bc40a4d9c79ca3619ce403a7560605fb7991954a4a1bc7d4a42eeddacc842dd4e250ace3b868&idx=1&mid=2651369498&sn=bdd884af106dfc8255da98673a88c836",
+      "source": "中国证券报",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MjM5MzMwNjM0MA==&chksm=bc40a4d9c79ca3619ce403a7560605fb7991954a4a1bc7d4a42eeddacc842dd4e250ace3b868&idx=1&mid=2651369498&sn=bdd884af106dfc8255da98673a88c836",
+          "title": "中际旭创、新易盛，开盘上涨",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:320628e58ee14e09b6894ca88702538c401501f8c31688c67481a268444af5a0",
+      "title": "中金公司换股吸收合并东兴证券及信达证券事项正式进入实施阶段",
+      "summary": "10月15日，中金公司(601995.SH)发布公告称，公司换股吸收合并东兴证券(601198.SH)、信达证券(601059.SH)事项已获证监会批复，东兴证券、信达证券股票将于10月19日终止上市。本次换股实施股权登记日为10月16日，…",
+      "url": "https://finance.cnr.cn/ycbd/20261015/t20261015_527843011.shtml",
+      "source": "央广财经",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://finance.cnr.cn/ycbd/20261015/t20261015_527843011.shtml",
+          "title": "中金公司换股吸收合并东兴证券及信达证券事项正式进入实施阶段",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:9126ea04705376d40f66119bcc7efb12311162f7ac4364c9d13e71c77912a6c2",
+      "title": "关于“天普股份”、“新华传媒”交易风险提示公告",
+      "summary": "关于“天普股份”(605255)、“新华传媒”(600825)交易风险提示公告尊敬的投资者：“天普股份”(605255)发布风险提示公告称，因股票交易异常波动公告涉嫌重大遗漏等，中国证监会决定对公司进行立案；公司主营业务未发生重大变化；股东…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA3MjEwOTAwNw==&chksm=86e2d4dc87b8f02680899fe8ca68ad7d5d6bb66145c57377dfe379c16cef0c6b5866f056b905&idx=6&mid=2650452146&sn=bf587bddd9164f5f32883c9f4c470e6e",
+      "source": "国融证券资讯",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MjEwOTAwNw==&chksm=86e2d4dc87b8f02680899fe8ca68ad7d5d6bb66145c57377dfe379c16cef0c6b5866f056b905&idx=6&mid=2650452146&sn=bf587bddd9164f5f32883c9f4c470e6e",
+          "title": "关于“天普股份”、“新华传媒”交易风险提示公告",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:fbf338659258368f49f783b6aefc4676efb8e1877b17a5d352007adadafbb421",
+      "title": "沐曦股份：预计2026年前三季度净利润5.87亿元至7.17亿元，同比扭亏为盈",
+      "summary": "10月15日，沐曦股份-U(688802.SH)公告，预计2026年前三季度营业收入25.41亿元至31.06亿元，同比增长105.60%至151.29%；归母净利润5.87亿元至7.17亿元，2025年前三季度亏损3.46亿元，同比扭亏为…",
+      "url": "https://www.caiwennews.com/article/1654029.shtml",
+      "source": "财闻",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.caiwennews.com/article/1654029.shtml",
+          "title": "沐曦股份：预计2026年前三季度净利润5.87亿元至7.17亿元，同比扭亏为盈",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:cd6c2bf62a9ec92aa3351f299d35018b5ae66fe586e89a9c03ed011e6e9210b7",
+      "title": "海康威视：第三季度归母净利润50.16亿元，同比增长36.97%",
+      "summary": "海康威视10月16日公告，2026年第三季度实现营业收入272.22亿元，同比增长13.71%；归母净利润50.16亿元，同比增长36.97%；基本每股收益0.547元。前三季度实现营业收入740.44亿元，同比增长12.6%；归母净利润1…",
+      "url": "https://www.jiemian.com/article/15200130.html",
+      "source": "界面",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.jiemian.com/article/15200130.html",
+          "title": "海康威视：第三季度归母净利润50.16亿元，同比增长36.97%",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:6d65505a7eafa55753df09afe6d64f3042fa87a29bf8f2d30da5b4a99b4d2c3e",
+      "title": "卓胜微：董事长提议回购5000万元~1亿元股份",
+      "summary": "10月16日，卓胜微(300782.SZ)公告称，公司收到实际控制人之一、董事长、总经理许志翰提议，使用自有资金或自筹资金以集中竞价方式回购公司A股股份，回购资金总额不低于5000万元且不超过1亿元，回购股份可用于员工持股计划或股权激励、维…",
+      "url": "https://www.caiwennews.com/article/1655398.shtml",
+      "source": "财闻",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.caiwennews.com/article/1655398.shtml",
+          "title": "卓胜微：董事长提议回购5000万元~1亿元股份",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:24618b8bc2c6268a073819494a9073287605d36f896ba5b19f7bc16bdff80724",
+      "title": "南方乳业上市首日高开104.08%",
+      "summary": "北京商报讯(记者马换换李佳雪)10月16日，南方乳业(920196)登陆北交所上市，上市首日公司股价高开104.08%，开于29元/股，总市值53.7亿元。据了解，南方乳业主要从事乳制品及含乳饮料的制造与销售业务，主要产品包括低温乳制品、常…",
+      "url": "https://www.bbtnews.com.cn/2026/1016/608130.shtml",
+      "source": "北京商报",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.bbtnews.com.cn/2026/1016/608130.shtml",
+          "title": "南方乳业上市首日高开104.08%",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:995870e871ee732e4a55c0ded2a0ea3bf1fa7f77ff2d52fac06bccf1ca76682d",
+      "title": "300308公告，或将注销近50亿元回购股份！智能眼镜新品密集发布，12股前三季度业绩预喜",
+      "summary": "多款智能眼镜新品即将发布，12只概念股前三季度业绩预喜。 中际旭创将召开董事会 或变更回购股份用途为注销 10月15日晚间，中际旭创（300308）发布公告，董事会会议将于10月29日举行，借以（其中包括）考虑及批准公司三季度业绩及刊发，变…",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA4MDU0MzQ4Mg==&chksm=85b641736f65174686ef863159459acd5f4300a29777e0fa5ca8dbdbecbdcb599b99041071a4&idx=1&mid=2653430186&sn=f5b687c1120421c89bae80fedcdf8b30",
+      "source": "证券时报数据宝",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA4MDU0MzQ4Mg==&chksm=85b641736f65174686ef863159459acd5f4300a29777e0fa5ca8dbdbecbdcb599b99041071a4&idx=1&mid=2653430186&sn=f5b687c1120421c89bae80fedcdf8b30",
+          "title": "300308公告，或将注销近50亿元回购股份！智能眼镜新品密集发布，12股前三季度业绩预喜",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:0c6cf7afefa2f58d5e30a26ee0124c0de00af9f5957471943f64130d2a6b65b9",
+      "title": "300308，拟将回购股份全部注销！“易中天”，同日公告",
+      "summary": "光通信巨头“易中天”同日公告。中际旭创(300308)10月15日晚间公告，董事会会议将于10月29日(星期四)举行，借以(其中包括)考虑及批准公司三季度业绩及刊发，变更2026年9月回购A股股份用途并全部注销以及处理其他事项。此前，9月1…",
+      "url": "https://www.stcn.com/article/detail/4221319.html",
+      "source": "证券时报网",
+      "published_at": null,
+      "observed_at": "2026-10-16T09:42:11.601227+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.stcn.com/article/detail/4221319.html",
+          "title": "300308，拟将回购股份全部注销！“易中天”，同日公告",
+          "observed_at": "2026-10-16T09:42:11.601227+00:00",
+          "as_of": null,
+          "verification": "provider",
+          "source_item_id": "81f1989c05630320013b36833219ffa574688b20c8fc537271d240f8b0f6b759"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:47509f655a11efe9fcf29ae29f542ba0d8125913bc313ed7fed524f344a26f3f",
+      "title": "深市公司频发业绩利好，化工、锂电与AI算力产业链多点开花",
+      "summary": "1、10月15日晚间，深市多家上市公司集中披露2026年前三季度业绩预告与三季报，化工、锂电与AI算力产业链多点开花，多家公司净利润实现数倍乃至数十倍增长，折射出产业景气度结构性抬升。 2、恒逸石化、华峰化学、赣锋锂业、亿纬锂能、江波龙、光…",
+      "url": "http://stock.10jqka.com.cn/20261015/c680749396.shtml",
+      "source": "iFinD（原发布者未返回）",
+      "published_at": "2026-10-15",
+      "observed_at": "2026-10-16T09:42:11.601618+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "http://stock.10jqka.com.cn/20261015/c680749396.shtml",
+          "title": "深市公司频发业绩利好，化工、锂电与AI算力产业链多点开花",
+          "observed_at": "2026-10-16T09:42:11.601618+00:00",
+          "as_of": "2026-10-15",
+          "verification": "provider",
+          "source_item_id": "cceac43ba4f4c51ca995cad71a173c6bf5c904fc89cc47020d4984824726dbbe"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:c7f3723d0089c1d5ce2d94f5db8b88ca616d3f9af327c454d7338e67d0b91711",
+      "title": "亿纬锂能前三季度狂赚53.5亿！扣非净利翻倍，储能+动力电池双王炸引爆2026锂电行情",
+      "summary": "2026年，亿纬锂能在匈牙利德布勒森的动力电池基地全线达产，墨西哥蒙特雷储能Pack工厂实现‘当年建设、当年爬坡、当年出口’； 国内肇庆、荆门、成都三大超级工厂齐开弓，极寒电池、4695大圆柱、钠离子储能电芯批量下线——这不是PPT造车，这…",
+      "url": "https://www.sohu.com/a/1088278004_122066679",
+      "source": "iFinD（原发布者未返回）",
+      "published_at": "2026-10-15",
+      "observed_at": "2026-10-16T09:42:11.601618+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "https://www.sohu.com/a/1088278004_122066679",
+          "title": "亿纬锂能前三季度狂赚53.5亿！扣非净利翻倍，储能+动力电池双王炸引爆2026锂电行情",
+          "observed_at": "2026-10-16T09:42:11.601618+00:00",
+          "as_of": "2026-10-15",
+          "verification": "provider",
+          "source_item_id": "cceac43ba4f4c51ca995cad71a173c6bf5c904fc89cc47020d4984824726dbbe"
+        }
+      ]
+    },
+    {
+      "id": "ifind:news:485dabcf58bdd75561548c0ca73fe3ddc2209b2f113fbae7572f6cdb1654e910",
+      "title": "中科电气：2026年度向特定对象发行A股股票并在创业板上市募集说明书(申报稿)",
+      "summary": "7、项目实施的可行性（1）国家产业政策大力支持，为项目实施提供良好政策基础新能源汽车、新型储能及其关键材料产业是我国推进能源结构转型、实现“双碳”战略目标和培育新质生产力的重要领域。 近年来，国家持续完善新能源汽车、新型储能及锂电池产业支持…",
+      "url": "http://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=80133710&gather=1&id=12644683",
+      "source": "iFinD（原发布者未返回）",
+      "published_at": "2026-10-15",
+      "observed_at": "2026-10-16T09:42:11.601618+00:00",
+      "verification": "provider",
+      "node_ids": [],
+      "company_codes": [],
+      "evidence": [
+        {
+          "provider": "hexin-ifind-ds-mcp",
+          "url": "http://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?CompanyCode=80133710&gather=1&id=12644683",
+          "title": "中科电气：2026年度向特定对象发行A股股票并在创业板上市募集说明书(申报稿)",
+          "observed_at": "2026-10-16T09:42:11.601618+00:00",
+          "as_of": "2026-10-15",
+          "verification": "provider",
+          "source_item_id": "cceac43ba4f4c51ca995cad71a173c6bf5c904fc89cc47020d4984824726dbbe"
+        }
+      ]
+    }
+  ],
+  "eastmoney_mainbz": {
+    "002466.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ002466",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "化学原料及化学制品制造业",
+          "mainop_type": "industry",
+          "revenue_yuan": 7101121610.26,
+          "revenue_share": 0.580051,
+          "gross_margin": 0.573455,
+          "report_date": "2026-06-30",
+          "source_item_id": "c3cdb9b8e9485b76d4f7eb52427bf44cca07114cdeb43511d1a9daf877bd2a1f"
+        },
+        {
+          "item_name": "采选冶炼行业",
+          "mainop_type": "industry",
+          "revenue_yuan": 5121665829.05,
+          "revenue_share": 0.41836,
+          "gross_margin": 0.741932,
+          "report_date": "2026-06-30",
+          "source_item_id": "610809d279a133d056c4b674650345dd7c99a4a0da791183ca74a264ed928d6e"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "industry",
+          "revenue_yuan": 19455764.68,
+          "revenue_share": 0.001589,
+          "gross_margin": 0.537903,
+          "report_date": "2026-06-30",
+          "source_item_id": "e86f25ac0833b2dfa02b7f267f41fc57bf05498b9223a7bee00872dae37a3f73"
+        },
+        {
+          "item_name": "锂化合物及衍生品",
+          "mainop_type": "product",
+          "revenue_yuan": 7101121610.26,
+          "revenue_share": 0.580051,
+          "gross_margin": 0.573455,
+          "report_date": "2026-06-30",
+          "source_item_id": "0d62ebd37ccae8cf4117b88f32eeb6f62c4d3e8babf7ab1cda7f3bc2dbc69c93"
+        },
+        {
+          "item_name": "锂矿",
+          "mainop_type": "product",
+          "revenue_yuan": 5121665829.05,
+          "revenue_share": 0.41836,
+          "gross_margin": 0.741932,
+          "report_date": "2026-06-30",
+          "source_item_id": "e79cd081cea563e522a1ccfea3243b8a97ce73954f36919d0116f1696549ec90"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "product",
+          "revenue_yuan": 19455764.68,
+          "revenue_share": 0.001589,
+          "gross_margin": 0.537903,
+          "report_date": "2026-06-30",
+          "source_item_id": "d098b42b92836dbe9396cafdb990fc0f7102ece084e30c5c4e5682932bb121f0"
+        },
+        {
+          "item_name": "中国大陆",
+          "mainop_type": "region",
+          "revenue_yuan": 11736638617.07,
+          "revenue_share": 0.9587,
+          "gross_margin": 0.671863,
+          "report_date": "2026-06-30",
+          "source_item_id": "dab7793960cb61741cb93bafdaefb38305b315a572e98995efbf9d2c4dbe7588"
+        },
+        {
+          "item_name": "海外",
+          "mainop_type": "region",
+          "revenue_yuan": 505604586.92,
+          "revenue_share": 0.0413,
+          "gross_margin": -0.005615,
+          "report_date": "2026-06-30",
+          "source_item_id": "940dedd072f3d9b7c4ac7f7895a5ffc927cba95b12f4b52b060f00608469372c"
+        }
+      ]
+    },
+    "300750.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300750",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "电气机械及器材制造业",
+          "mainop_type": "industry",
+          "revenue_yuan": 276916580000,
+          "revenue_share": 1,
+          "gross_margin": 0.239284,
+          "report_date": "2026-06-30",
+          "source_item_id": "2d210efed4ebd994c1d6dd7dd6f5e0e22e503c5173496643a75f2b2bded40006"
+        },
+        {
+          "item_name": "动力电池系统",
+          "mainop_type": "product",
+          "revenue_yuan": 192124890000,
+          "revenue_share": 0.693801,
+          "gross_margin": 0.206287,
+          "report_date": "2026-06-30",
+          "source_item_id": "6ecf1ddbbc2ecb01d97bd532b51be24a4a0fdbf0b501a4196f8839cd9296c649"
+        },
+        {
+          "item_name": "储能电池系统",
+          "mainop_type": "product",
+          "revenue_yuan": 53260967000,
+          "revenue_share": 0.192336,
+          "gross_margin": 0.239577,
+          "report_date": "2026-06-30",
+          "source_item_id": "780970589db3134c83c5ccfbfccda1f873223103bdc1601f45d49e1012ebfa30"
+        },
+        {
+          "item_name": "电池材料及回收、矿产资源",
+          "mainop_type": "product",
+          "revenue_yuan": 18811078000,
+          "revenue_share": 0.06793,
+          "gross_margin": 0.270436,
+          "report_date": "2026-06-30",
+          "source_item_id": "fffdd8039681110f15984758882ffe51d66f6d9362b87bb6bc9ffef924194072"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "product",
+          "revenue_yuan": 12719645000,
+          "revenue_share": 0.045933,
+          "gross_margin": 0.690397,
+          "report_date": "2026-06-30",
+          "source_item_id": "44395e3bd356c7aa4617abab2ca5939d8522db08a901f99bc57f89d172d85589"
+        },
+        {
+          "item_name": "境内",
+          "mainop_type": "region",
+          "revenue_yuan": 189787392000,
+          "revenue_share": 0.685359,
+          "gross_margin": 0.211557,
+          "report_date": "2026-06-30",
+          "source_item_id": "00abe5f5493796e8ded41e2d44ae77362434bbebd633abb4a87d2277dc8d6a64"
+        },
+        {
+          "item_name": "境外",
+          "mainop_type": "region",
+          "revenue_yuan": 87129188000,
+          "revenue_share": 0.314641,
+          "gross_margin": 0.299679,
+          "report_date": "2026-06-30",
+          "source_item_id": "11683caecf67142d6d42c8c258cf591da9e81feb911930202103dc5701c0bb21"
+        }
+      ]
+    },
+    "300274.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300274",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "储能行业",
+          "mainop_type": "industry",
+          "revenue_yuan": 15455765101.22,
+          "revenue_share": 0.499988,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "0beb62c69e0de3ecf756278b9b7dbdc7aad665283ffe1552feba9c63626a1e32"
+        },
+        {
+          "item_name": "光伏行业",
+          "mainop_type": "industry",
+          "revenue_yuan": 12418666204.49,
+          "revenue_share": 0.401739,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "10915d9459fff3859a50bd096de00fb6ee22dcf9f3588a41881230db0f442924"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "industry",
+          "revenue_yuan": 3037834299.41,
+          "revenue_share": 0.098273,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "e5bc0aa1c18a3429711cfcc40ab00b75a9e346acdcec6814f19c11a223aac30c"
+        },
+        {
+          "item_name": "储能系统",
+          "mainop_type": "product",
+          "revenue_yuan": 15455765101.22,
+          "revenue_share": 0.499988,
+          "gross_margin": 0.324306,
+          "report_date": "2026-06-30",
+          "source_item_id": "4524c302dc3571b2a6a46918e9695a00336467f185aca52a233303275c461dad"
+        },
+        {
+          "item_name": "光伏逆变器等电力电子转换设备",
+          "mainop_type": "product",
+          "revenue_yuan": 12388453592.48,
+          "revenue_share": 0.400762,
+          "gross_margin": 0.427221,
+          "report_date": "2026-06-30",
+          "source_item_id": "041d0950a17eed8656346c08427997ed4df6818984f723c44cfa463d6adabc74"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "product",
+          "revenue_yuan": 1513947364.45,
+          "revenue_share": 0.048976,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "1cbcab1b5a4dc3e83e309aef3dae5233520604580754624873aeab0f9b3752d3"
+        },
+        {
+          "item_name": "新能源投资开发",
+          "mainop_type": "product",
+          "revenue_yuan": 1257637111.98,
+          "revenue_share": 0.040684,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "2b0041aa12e2017adce2e217221c97038ada71932bb543e3e904dfd10a8859ab"
+        },
+        {
+          "item_name": "光伏电站发电",
+          "mainop_type": "product",
+          "revenue_yuan": 296462434.99,
+          "revenue_share": 0.00959,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "751afe74cf3416b66242ed385df96ec687b04d2b18aa35f8d808bb6deeea8af5"
+        },
+        {
+          "item_name": "海外地区(包括中国港澳台)",
+          "mainop_type": "region",
+          "revenue_yuan": 22689807803.6,
+          "revenue_share": 0.734007,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "68c61ec73e08b22d8d8838cc62e2f42f6dd107a743994a6a70b89f2ee50edd45"
+        },
+        {
+          "item_name": "中国大陆(不包括中国港澳台)",
+          "mainop_type": "region",
+          "revenue_yuan": 8222457801.52,
+          "revenue_share": 0.265993,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "f7caff5b62e4f4be7d1be83ba6161f801bdc7dab14929023fe76e8e5ed2368b5"
+        }
+      ]
+    },
+    "002594.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ002594",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "交通运输设备及电气制造业",
+          "mainop_type": "industry",
+          "revenue_yuan": 275341358000,
+          "revenue_share": 0.798518,
+          "gross_margin": 0.223279,
+          "report_date": "2026-06-30",
+          "source_item_id": "4a0878dc4f6adc9073b8b8a58517250fc64c26468432587883d8643b1477b437"
+        },
+        {
+          "item_name": "日用电子器件制造业",
+          "mainop_type": "industry",
+          "revenue_yuan": 69404994000,
+          "revenue_share": 0.201282,
+          "gross_margin": 0.050386,
+          "report_date": "2026-06-30",
+          "source_item_id": "112bf88a217f0c3017914fad943312947aeb537e1afd465cce03b679d4515a79"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "industry",
+          "revenue_yuan": 69069000,
+          "revenue_share": 0.0002,
+          "gross_margin": 0.194559,
+          "report_date": "2026-06-30",
+          "source_item_id": "b91cbd76ddca2482863588dda6af59ac68c777916ca9178ec18fe753c289205a"
+        },
+        {
+          "item_name": "汽车、汽车相关产品及其他产品",
+          "mainop_type": "product",
+          "revenue_yuan": 275341358000,
+          "revenue_share": 0.798518,
+          "gross_margin": 0.223279,
+          "report_date": "2026-06-30",
+          "source_item_id": "6c87c402701a5efa7224ad56b7c2abdb8cb8e8d5f4cf5afcaba7025e7fbcfa0e"
+        },
+        {
+          "item_name": "电子及其他产品",
+          "mainop_type": "product",
+          "revenue_yuan": 69404994000,
+          "revenue_share": 0.201282,
+          "gross_margin": 0.050386,
+          "report_date": "2026-06-30",
+          "source_item_id": "a3a6f7dc7aa58bf61a65d0df464deb0fc839984a347f77b26578164c4640a39c"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "product",
+          "revenue_yuan": 69069000,
+          "revenue_share": 0.0002,
+          "gross_margin": 0.194559,
+          "report_date": "2026-06-30",
+          "source_item_id": "303175c6268b6a084a74645e8c45cc90dcfa2bd47b4dc073bd660cd1a14702f7"
+        },
+        {
+          "item_name": "境外",
+          "mainop_type": "region",
+          "revenue_yuan": 181268174000,
+          "revenue_share": 0.525696,
+          "gross_margin": 0.21713,
+          "report_date": "2026-06-30",
+          "source_item_id": "a1cc71e67fd1bb6cfe1443254ab7d5cca11162204420ae429c6609465bb6541f"
+        },
+        {
+          "item_name": "中国(包括港澳台地区)",
+          "mainop_type": "region",
+          "revenue_yuan": 163547247000,
+          "revenue_share": 0.474304,
+          "gross_margin": 0.156712,
+          "report_date": "2026-06-30",
+          "source_item_id": "ed21821d7b1763aa3553503ef0660d3b61daeda7fb792382b4e5ec5605d5fd11"
+        }
+      ]
+    },
+    "300308.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300308",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "光通信收发模块及器件",
+          "mainop_type": "product",
+          "revenue_yuan": 41331047920.54,
+          "revenue_share": 0.989305,
+          "gross_margin": 0.465831,
+          "report_date": "2026-06-30",
+          "source_item_id": "fbaeb8bc2b86f013e9c2bd575d199f7f3c17d94975a9fb83788d6b053dce8890"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "product",
+          "revenue_yuan": 579611700.79,
+          "revenue_share": 0.013874,
+          "gross_margin": 0.120183,
+          "report_date": "2026-06-30",
+          "source_item_id": "5ab2157bb11081f6960506067b115dc64ab859a632f2bb14a39d25a53f3065b4"
+        },
+        {
+          "item_name": "分部间抵销",
+          "mainop_type": "product",
+          "revenue_yuan": -132797826.3,
+          "revenue_share": -0.003179,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "645ab74c2e4d4b0dfe71056f89eeb1e97db9796b4be083b4e72ed86097fd2298"
+        },
+        {
+          "item_name": "境外",
+          "mainop_type": "region",
+          "revenue_yuan": 39614660881.74,
+          "revenue_share": 0.948221,
+          "gross_margin": 0.479296,
+          "report_date": "2026-06-30",
+          "source_item_id": "25044ea9d4d86fefc0b175b031aca34cbc4be682edc51a36959b4deb4c522e4e"
+        },
+        {
+          "item_name": "境内",
+          "mainop_type": "region",
+          "revenue_yuan": 2163200913.29,
+          "revenue_share": 0.051779,
+          "gross_margin": 0.155335,
+          "report_date": "2026-06-30",
+          "source_item_id": "d9810d766a2f64e96537e6ae4bb4b557e0261fa370bc973cd570a6031f4a99dc"
+        }
+      ]
+    },
+    "300394.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300394",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "光通信元器件",
+          "mainop_type": "industry",
+          "revenue_yuan": 2790287559.11,
+          "revenue_share": 0.986686,
+          "gross_margin": 0.606673,
+          "report_date": "2026-06-30",
+          "source_item_id": "664e52c02fd979067525215f2165e300cf04d6b7e7cbc7a878376ef0cd405371"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "industry",
+          "revenue_yuan": 37651189.26,
+          "revenue_share": 0.013314,
+          "gross_margin": 0.758643,
+          "report_date": "2026-06-30",
+          "source_item_id": "73b88f029d7eb96e482406b148e466a01d52b162d7c863fc13cc5e1ee8b9005f"
+        },
+        {
+          "item_name": "无源光器件",
+          "mainop_type": "product",
+          "revenue_yuan": 1530364516.33,
+          "revenue_share": 0.541159,
+          "gross_margin": 0.718959,
+          "report_date": "2026-06-30",
+          "source_item_id": "a11a3a54936a299e83a2637d8ece9207ed37add251c28033db325d7cbfe8a541"
+        },
+        {
+          "item_name": "有源光器件",
+          "mainop_type": "product",
+          "revenue_yuan": 1259923042.78,
+          "revenue_share": 0.445527,
+          "gross_margin": 0.470284,
+          "report_date": "2026-06-30",
+          "source_item_id": "a40b82c7fba26d56486e7e8f93858823a31412a33f875b0ff203d58d1d5cede6"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "product",
+          "revenue_yuan": 37651189.26,
+          "revenue_share": 0.013314,
+          "gross_margin": 0.758643,
+          "report_date": "2026-06-30",
+          "source_item_id": "cc34c58e96e5d98261bbaa93cf89fdc274ad3dc887e15ab654616085dba2cc23"
+        },
+        {
+          "item_name": "外销",
+          "mainop_type": "region",
+          "revenue_yuan": 1654826572.03,
+          "revenue_share": 0.585171,
+          "gross_margin": 0.536437,
+          "report_date": "2026-06-30",
+          "source_item_id": "2bb24f953c46c0196b2a23567d3d3b554155e9ea2b0666a166e498b617d830d8"
+        },
+        {
+          "item_name": "内销",
+          "mainop_type": "region",
+          "revenue_yuan": 1173112176.34,
+          "revenue_share": 0.414829,
+          "gross_margin": 0.710626,
+          "report_date": "2026-06-30",
+          "source_item_id": "f4fc01534a3ae27c3e70fe30682a06599f9ea6455cfcf42e1599e37d65700811"
+        }
+      ]
+    },
+    "300502.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ300502",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "光互联产品",
+          "mainop_type": "product",
+          "revenue_yuan": 20882640848.88,
+          "revenue_share": 0.998704,
+          "gross_margin": 0.484568,
+          "report_date": "2026-06-30",
+          "source_item_id": "fac773e9bea7f0a9ee914a820253011e7a2adb50ff62e4648b9e83741575c80f"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "product",
+          "revenue_yuan": 27106113.32,
+          "revenue_share": 0.001296,
+          "gross_margin": 0.3531,
+          "report_date": "2026-06-30",
+          "source_item_id": "0b2f2aff0fc3294b7d3b9e6552f7e6bf6f37f8a1230e34cb319a95798404c120"
+        },
+        {
+          "item_name": "境外",
+          "mainop_type": "region",
+          "revenue_yuan": 20474923217.01,
+          "revenue_share": 0.979205,
+          "gross_margin": 0.485513,
+          "report_date": "2026-06-30",
+          "source_item_id": "cd1822920cac42de71d4f540f6060c3bf8317220f2c22129b7dc2c81af8e1958"
+        },
+        {
+          "item_name": "境内",
+          "mainop_type": "region",
+          "revenue_yuan": 434823745.19,
+          "revenue_share": 0.020795,
+          "gross_margin": 0.43188,
+          "report_date": "2026-06-30",
+          "source_item_id": "98867e62643d1b56d1ed1f5d969373ba1b133d0fdb25c27024ba98668f5f0972"
+        }
+      ]
+    },
+    "002371.SZ": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SZ002371",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "电子工艺装备",
+          "mainop_type": "industry",
+          "revenue_yuan": 19204687329.8,
+          "revenue_share": 0.952547,
+          "gross_margin": 0.397498,
+          "report_date": "2026-06-30",
+          "source_item_id": "405af1ef26b04de60bbc0829284cddb7907800953fc03f9f880756486e0f8147"
+        },
+        {
+          "item_name": "电子元器件",
+          "mainop_type": "industry",
+          "revenue_yuan": 915157613.19,
+          "revenue_share": 0.045392,
+          "gross_margin": 0.462431,
+          "report_date": "2026-06-30",
+          "source_item_id": "04e441de1d612b6922134ac0595d13e7f38df0032223fc5bf727ee600bf88c4e"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "industry",
+          "revenue_yuan": 41571947.57,
+          "revenue_share": 0.002062,
+          "gross_margin": 0.512581,
+          "report_date": "2026-06-30",
+          "source_item_id": "f1f9b19211eb71b959df109b62a866fe5f7a48cc808e8f576581a878a377c746"
+        },
+        {
+          "item_name": "电子工艺装备",
+          "mainop_type": "product",
+          "revenue_yuan": 19204687329.8,
+          "revenue_share": 0.952547,
+          "gross_margin": 0.397498,
+          "report_date": "2026-06-30",
+          "source_item_id": "25e97578d86085bbdfa550d54cdff313c451988e7f18f98192e1e886305f152b"
+        },
+        {
+          "item_name": "电子元器件",
+          "mainop_type": "product",
+          "revenue_yuan": 915157613.19,
+          "revenue_share": 0.045392,
+          "gross_margin": 0.462431,
+          "report_date": "2026-06-30",
+          "source_item_id": "2eac05fc200e9cc6f8bc4848572ee2816c059fee74770bada90afd5cc6dbf45b"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "product",
+          "revenue_yuan": 41571947.57,
+          "revenue_share": 0.002062,
+          "gross_margin": 0.512581,
+          "report_date": "2026-06-30",
+          "source_item_id": "ee6ef409f295fd610b0002302f394726451c1da9fbd09559b78de16a61e76646"
+        },
+        {
+          "item_name": "中部及东南部",
+          "mainop_type": "region",
+          "revenue_yuan": 14102195560.71,
+          "revenue_share": 0.699465,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "f4f97679e2f9c96f78aa8b027bb8cdcb902ecff257f9ef9703da4d811a4b0e40"
+        },
+        {
+          "item_name": "东北及华北",
+          "mainop_type": "region",
+          "revenue_yuan": 4407908555.71,
+          "revenue_share": 0.218631,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "ffd7f0fb6ecd187a44e2fc2affeb82fc90aa681d03e2d06879d14b9d988f20df"
+        },
+        {
+          "item_name": "西北及西南",
+          "mainop_type": "region",
+          "revenue_yuan": 1326473557.52,
+          "revenue_share": 0.065793,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "2099b1f281554594d8094b6119d8b514fa6a2f900c3ba00aea022db684f60657"
+        },
+        {
+          "item_name": "其他地区",
+          "mainop_type": "region",
+          "revenue_yuan": 324839216.62,
+          "revenue_share": 0.016112,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "8bc560b74aabab3eb1cffd51c76f8d87b4e972f4acedd4d4a50436c0a4952b59"
+        }
+      ]
+    },
+    "688012.SH": {
+      "report_period": "2025-12-31",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SH688012",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "半导体设备收入",
+          "mainop_type": "industry",
+          "revenue_yuan": 12384638268.11,
+          "revenue_share": 1,
+          "gross_margin": 0.391654,
+          "report_date": "2025-12-31",
+          "source_item_id": "d37f8721d3b8675eb74730687e1a25f8e5dd6d55a111fb84f2b2703d61ba517f"
+        },
+        {
+          "item_name": "半导体设备相关产品",
+          "mainop_type": "product",
+          "revenue_yuan": 12384638268.11,
+          "revenue_share": 1,
+          "gross_margin": 0.391654,
+          "report_date": "2025-12-31",
+          "source_item_id": "25bda800b4e6cc7e0e64b546df3c66c73f4e606bcb3f18c86d5dd6c14b5645ff"
+        },
+        {
+          "item_name": "大陆地区",
+          "mainop_type": "region",
+          "revenue_yuan": 12058314866.56,
+          "revenue_share": 0.973651,
+          "gross_margin": 0.39159,
+          "report_date": "2025-12-31",
+          "source_item_id": "d0b424bb14129de9230db2e8450b4cf49c719222609cd623abbfd955eb424d98"
+        },
+        {
+          "item_name": "台湾地区",
+          "mainop_type": "region",
+          "revenue_yuan": 215350813.57,
+          "revenue_share": 0.017389,
+          "gross_margin": 0.455354,
+          "report_date": "2025-12-31",
+          "source_item_id": "6fe691f4b77249789bc36d0d5ef0000cefbf53d9c2d71c0a4e1fa5abd033901b"
+        },
+        {
+          "item_name": "其他国家和地区",
+          "mainop_type": "region",
+          "revenue_yuan": 110972587.98,
+          "revenue_share": 0.008961,
+          "gross_margin": 0.275019,
+          "report_date": "2025-12-31",
+          "source_item_id": "36b562081682c333e21343283cb9aae2afaf0149596fd6a0c0e67ff951f93867"
+        }
+      ]
+    },
+    "688981.SH": {
+      "report_period": "2026-06-30",
+      "source_url": "https://emweb.securities.eastmoney.com/PC_HSF10/BusinessAnalysis/PageAjax?code=SH688981",
+      "observed_at": "2026-10-16T16:27:06.455Z",
+      "items": [
+        {
+          "item_name": "集成电路行业",
+          "mainop_type": "industry",
+          "revenue_yuan": 38635115000,
+          "revenue_share": 1,
+          "gross_margin": 0.231558,
+          "report_date": "2026-06-30",
+          "source_item_id": "7fdfaf8b372a90a131bac2ccc423848890e2a251f0a49c7f5552e00460309333"
+        },
+        {
+          "item_name": "集成电路晶圆代工",
+          "mainop_type": "product",
+          "revenue_yuan": 35858340000,
+          "revenue_share": 0.928128,
+          "gross_margin": 0.228009,
+          "report_date": "2026-06-30",
+          "source_item_id": "9556e0a3f594fb2d63d87ace52902517e64a2e30224af0c673f1772512c80381"
+        },
+        {
+          "item_name": "其他",
+          "mainop_type": "product",
+          "revenue_yuan": 2776775000,
+          "revenue_share": 0.071872,
+          "gross_margin": 0.277395,
+          "report_date": "2026-06-30",
+          "source_item_id": "aea8a9476561c26e17046b88d874c21348e8570f0d46c6d227986ed00d96137b"
+        },
+        {
+          "item_name": "中国区",
+          "mainop_type": "region",
+          "revenue_yuan": 34074778000,
+          "revenue_share": 0.881964,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "6ddaedd8bc5884ed3b6fe47b71d4c7cd0f40f6b1f6a6d0077bb73bd7708b1703"
+        },
+        {
+          "item_name": "美国区",
+          "mainop_type": "region",
+          "revenue_yuan": 3311113000,
+          "revenue_share": 0.085702,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "57884acc08f0588dd49ccd91a86ec4ceb6b0d9aff2ff77d030cb752851723993"
+        },
+        {
+          "item_name": "欧亚区",
+          "mainop_type": "region",
+          "revenue_yuan": 640652000,
+          "revenue_share": 0.016582,
+          "gross_margin": null,
+          "report_date": "2026-06-30",
+          "source_item_id": "37730eaf98a896e4493b802551a2fdccec5eef4501ac428e0d89f9edad46a937"
+        },
+        {
+          "item_name": "其他(补充)",
+          "mainop_type": "region",
+          "revenue_yuan": 608572000,
+          "revenue_share": 0.015752,
+          "gross_margin": 0.080252,
+          "report_date": "2026-06-30",
+          "source_item_id": "78c8feaf37c624bcfddcd00aabf594d3faac93e0acff87d2e8ab78f00dd900ea"
+        }
+      ]
+    }
+  }
+}

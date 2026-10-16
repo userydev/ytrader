@@ -7,7 +7,7 @@
 - 生命周期：`incubating`
 - 目标目录：`/Users/Admin/Code/y/ytrader`
 - 项目入口：`/Users/Admin/Code/y/ytrader/ytrader-dev/README.md`
-- 产品正文：`未配置`
+- 产品正文：`/Users/Admin/Code/y/ytrader/ytrader-dev/docs/PRODUCT.md`
 - 用户职责：决定产品目标、开发文档、重大取舍、外部授权和最终体验验收。
 - Codex 职责：负责目标判断、调度、集成、代码审查、体验验收和项目状态维护。
 - 第三方 AI：仅提供建议；用途为按项目需要提供方案咨询；写回位置为 `未配置`。
