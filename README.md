@@ -1,35 +1,36 @@
 # ytrader
 
-以产业链为核心的中文投资研究工具：从重要新闻理解变量变化，沿产业关系找到公司，再核对业务与基本面。核心代码采用 MIT；第三方内容权利见 [THIRD_PARTY.md](THIRD_PARTY.md)。
+以产业链为核心的中文投资研究工具：阅读重要新闻，理解产业影响，查看参与公司及真实基本面。代码采用 MIT；第三方内容权利见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
-## 当前阶段：核心功能可体验版
+当前保留的版本统一使用原产业链 UI，主导航为新闻、产业链、个股。产业页右栏切换当前详情、关联新闻和产业解释；公司详情包含总览、财务、业务、新闻与公告。开放产业目录不限于初始跟踪主题，来源记录与 AI 整理分开标示。
 
-2026-10-20。按用户最新范围统一产业链视觉样式，侧栏汉堡菜单仅新闻、产业链、个股。新闻推荐、产业关联与传导、公司资料/财务详情已接通；四项算法独立并记录版本。Gemini 3.8 Flash已通过实际新闻与公司分析调用。用户最终体验尚待认可。
+## 本地运行
 
-1. 新会话先读 [交接](docs/HANDOFF.md)、[当前检查点](docs/CHECKPOINT.md) 与 [文档目录](docs/INDEX.md)。
-2. 当前实施依据为 [核心开发约定](docs/CORE-DEVELOPMENT.md) 与 [核心接口约定](docs/CORE-INTERFACES.md)。
-3. 启动、验证与限制见 [核心交付记录](docs/CORE-VALIDATION.md)。ycore契约已准备，尚未实连；公共来源不承诺SLA。
+需要 Python 3.12+、Node.js 22+。在仓库根目录安装：
 
-Claude 恢复文档起草角色；Codex负责判断、审查、集成和体验验收。用户决定产品目标、开发文档和重大取舍。
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -e '.[test]'
+npm --prefix frontend ci
+bash scripts/run-phase1.sh
+```
 
-## 保留的体验入口
+打开 [本地应用](http://127.0.0.1:58730/events)。脚本固定使用 `.local/phase1-20261020/data` 保存数据、`web-dist` 保存构建输出；端口已占用时会退出，不会停止现有实例。其他启动方式与备份见 [运行维护](docs/DEPLOYMENT.md)。
 
-| 入口 | 用途与状态 |
-| --- | --- |
-| [核心功能统一应用](http://127.0.0.1:58730/events) | 当前可体验版；新闻、产业链、个股同一端口；设置不进入主流程 |
-| [新闻推荐](http://127.0.0.1:58720/events) | 算法推荐、持续事件、媒体报道与产业传导；待用户体验认可 |
-| [产业桥接](http://127.0.0.1:58721/) | 携新闻进入多产业，含黄金结构；与新闻服务配合 |
-| [产业与个股稿](http://127.0.0.1:58700/?industry=ai-compute&company=ieit) | 保留的桌面基本面样稿，数据有来源与报告期 |
-| [原业务服务](http://127.0.0.1:8000) | 已有 React/FastAPI 业务与设置；不代表最新设计已全部整合 |
+本机 AI 使用 Gemini 3.8 Flash，启动和接入见 [Gemini 桥](docs/AI-LOCAL-GEMINI.md)。ycore 接口已准备，尚未完成真实服务接入；公共来源可用性不作保证。
 
-58730是本轮统一可体验版本；其余入口保留作历史对照，均不代表生产发布。产业方向被用户认为基本可用；个股稿和最新新闻稿尚待体验认可。运行清单见 [运行资源](docs/RUNTIME-INVENTORY.md)。
+## 开发与文档
 
-## 工程与证据
+技术栈为 React/TypeScript、原生产业页面、FastAPI、SQLite。`dev` 是开发分支，`main` 是稳定发布分支。
 
-当前代码为 React/TypeScript、FastAPI、SQLite。开发分支 `dev`，稳定分支 `main`。工作区包含大量重建删除和未跟踪文件，不能执行 `git clean`、重置或按“无用文件”删除。
+- [文档目录](docs/INDEX.md)：当前产品、架构、接口、算法与数据说明。
+- [当前检查点](docs/CHECKPOINT.md)：目标、授权、任务状态和下一步。
+- [运行资源](docs/RUNTIME-INVENTORY.md)：现用实例与数据边界。
+- [界面规范](DESIGN.md)、[前端开发](frontend/README.md)、[后端开发](backend/README.md)。
 
-[新闻算法](docs/NEWS-SELECTION.md) · [最新验证范围](docs/EDITORIAL-VALIDATION.md) · [新闻页面契约](docs/surfaces/news-radar.md) · [产业内容定义](docs/CHAIN-CORE-LOGIC.md)
+```sh
+.venv/bin/python -m pytest -q
+npm --prefix frontend run build
+```
 
-[启动参考](docs/STARTUP.md)、[架构](docs/ARCHITECTURE.md)、[接口](docs/CONTRACTS.md)、[部署](docs/DEPLOYMENT.md)描述已有实现，后续须按确认后的产品文档校准。不要为了阅读文档重建 `frontend/dist`、改动现用数据库或重启8000服务。
-
-本轮不提交、推送、部署、采购或开发交易执行。旧入口说明保存在 [整理前快照](docs/archive/2026-10-20-pre-handoff/README.md)。
+不提交凭据、运行数据库和缓存。旧阶段文档与不可达页面已从当前目录清理，历史可从 Git 查阅。产品范围以重建后确认的约束和最新明确指令为准。

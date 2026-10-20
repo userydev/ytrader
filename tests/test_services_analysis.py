@@ -117,13 +117,20 @@ def test_new_evidence_during_analysis_marks_result_stale(tmp_path):
 
     def handler(request):
         research, eid, aid = box['research'], box['eid'], box['aid']
-        research.ingest(article(title='更正：宁德时代净利润增长10%', content='原数字有误，更正为10%。', published_at='2026-09-01T03:00:00Z'))
+        # A source GUID identifies this as a revision, not an unrelated reused URL.
+        revised_eid = research.ingest(article(external_id='analysis-race-story',
+            title='更正：宁德时代净利润增长10%', content='原数字有误，更正为10%。', published_at='2026-09-01T03:00:00Z'))
+        assert revised_eid == eid
+        assert research.detail(eid)['articles'][0]['supersedes_id'] == aid
+        assert research.evidence_context(eid)[1] != box['version']
         return httpx.Response(200, json={'choices': [{'message': {'content': json.dumps({'sections': sections(aid), 'warnings': []})}}]})
 
     app = create_app(tmp_path, start_worker=False, network=Network(httpx.MockTransport(handler)))
-    eid = app.state.research.ingest(article())
-    box.update(research=app.state.research, eid=eid, aid=app.state.research.detail(eid)['articles'][0]['id'])
+    eid = app.state.research.ingest(article(external_id='analysis-race-story'))
+    box.update(research=app.state.research, eid=eid, aid=app.state.research.detail(eid)['articles'][0]['id'],
+               version=app.state.research.evidence_context(eid)[1])
     app.state.settings.update(ConfigUpdate(model_name='configured-model', model_api_key='configured-key'))
-    app.state.jobs.enqueue('analyze', {'event_id': eid})
-    app.state.jobs.run_one()
+    job = app.state.jobs.enqueue('analyze', {'event_id': eid})
+    assert app.state.jobs.run_one()
+    assert app.state.db.job(job['id'])['status'] == 'succeeded'
     assert app.state.research.detail(eid)['analysis']['status'] == 'stale'

@@ -1,10 +1,8 @@
 # ytrader 核心接口约定（v1）
 
-> 2026-10-20 最新纠正：研究范围为所有产业；五项仅持续跟踪。新闻通过多产业名称进入产业页看影响。开放目录、Atlas/七证据包/可选CKG实际适配及动态关联/影响见 [OPEN-INDUSTRY-IMPLEMENTATION](OPEN-INDUSTRY-IMPLEMENTATION.md)，当前状态与限制见 [CHECKPOINT](CHECKPOINT.md)。下文历史验证不代表全部服务已集成。
+开放目录、任意产业研究、多产业关联与条件影响见 [开放产业契约](contracts/open-industry.md)；以下保留基础v1字段约定。
 
-> 2026-10-20。按当前源码核对并由Codex修订。已有为保留契约，本轮补为本次实施范围；完成状态以交付记录为准。所有新增向后兼容v1。当前集成与实测见 [CORE-VALIDATION](CORE-VALIDATION.md)。
-
-## 1. 通用约定（已有）
+## 1. 通用约定
 
 **前缀与响应**
 - 前缀统一为 `/api/v1`。
@@ -62,10 +60,10 @@
 **边界**
 - 一次固定最多返回 36 条，扫描最近 2000 条候选。
 - 更早的事件仍可通过事件详情或议题接口访问。
-- 本轮不做 feed 分页。
+- feed当前不提供分页。
 - `score` 只解释排序，没有归一化，不是概率。
 
-**本轮补**
+**扩展字段**
 - 可选字段 `algorithm_versions:{recommendation, event_grouping, industry_transmission, security_matching}`。
 - 保留 `algorithm_version` 字段，旧客户端不受影响。
 
@@ -96,11 +94,11 @@
 - `GET /events`、`GET /events/{id}`、`GET /chain` 沿用 CONTRACTS.md 的 v1 定义。
 - `Path.kind` 取值：`classification | disclosed | inferred`。
 
-**本轮补**
+**扩展字段**
 - 详情里同样加 `algorithm_versions`。
 - 跳转复用现有`industry_id`和`node_ids`，不建立重复映射字段；未知产业/节点明确提示，不猜测。
 
-## 4. 产业全景（本轮补）
+## 4. 产业全景（扩展）
 
 **接口**
 - `GET /panorama/catalog` → `{items:[{id, name}], schema_version:"1"}`。
@@ -130,7 +128,7 @@
 
 Security 字段：`{symbol, code, name, exchange, industry:string|null, status:"listed"|"delisted"|"unknown", as_of, source}`。
 
-**本轮补**
+**扩展字段**
 - 可选参数 `offset≥0`，用于分页查看全部 A 股。
 - 不传时行为不变。
 
@@ -148,7 +146,7 @@ Security 字段：`{symbol, code, name, exchange, industry:string|null, status:"
 
 **分析**
 
-`POST /events/{id}/analyze`、`/securities/{symbol}/analyze` 返回 Job（202）。无调用通道时返回409；本轮在58730配置本地Gemini 3.8 Flash通道，调用失败不回退其他模型。
+`POST /events/{id}/analyze`、`/securities/{symbol}/analyze` 返回 Job（202）。无调用通道时返回409；当前58730配置本地Gemini 3.8 Flash通道，调用失败不回退其他模型。
 
 ## 6. 财务（已有）
 
@@ -189,7 +187,7 @@ Security 字段：`{symbol, code, name, exchange, industry:string|null, status:"
 - 不同报告期不混用；趋势图只用 FY。
 - 某张分表超过 TTL 时，该表标为 `stale`，并保留缓存。
 
-## 7. 缓存与失败（已有，本轮补齐展示）
+## 7. 缓存与失败
 
 **新闻**
 - 按来源隔离 Retry-After 状态和缓存。
@@ -201,14 +199,14 @@ Security 字段：`{symbol, code, name, exchange, industry:string|null, status:"
 - 远端结果校验不过时返回 `unavailable`，并附警告“未回退本地”。
 
 **状态统一**
-- 本轮界面统一显示三种状态：数据时间和来源、`stale`、不可用。
+- 界面统一显示三种状态：数据时间和来源、`stale`、不可用。
 - 不得因为某个来源短时间可用，就把它展示成稳定来源。
 
 ## 8. 兼容与演进
 
 - v1 只做加法：新增可选字段或参数；不删字段，不改语义或单位。破坏性改动需要另开 `/api/v2`。
 - 客户端忽略不认识的字段。
-- 本轮新增的 `algorithm_versions`、`offset`、`/panorama/*` 都是可选或新路径。
+- 扩展字段 `algorithm_versions`、`offset`、`/panorama/*` 都是可选或新路径。
 - 机器可读 schema 放在 `docs/contracts/*.json`。远端契约样例 fixture 和 schema 一起维护。ycore 或其他数据源只要通过这些样例和 stub 四种组合的验证即可接入。通过验证不代表已经部署。
 
 ## 9. 契约和算法发现（已实现）

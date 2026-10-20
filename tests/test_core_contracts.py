@@ -121,7 +121,8 @@ def test_same_read_contract_all_data_ai_combinations(tmp_path, monkeypatch, data
     with TestClient(baseline) as client:
         paths = ['/panorama/catalog', '/panorama/context', '/news/editorial', '/securities']
         responses = {path: client.get('/api/v1' + path).json() for path in paths}
-    responses.update({'/panorama/' + iid: envelope(graph, 'stub') for iid, graph in graphs_data().items()})
+    responses.update({'/panorama/' + iid: envelope({**graph, 'source_kind': 'panorama'}, 'stub')
+                      for iid, graph in graphs_data().items()})
     network = StubNetwork(responses)
     app = create_app(tmp_path / 'app', start_worker=False, network=network)
     app.state.settings.update(ConfigUpdate(data_mode=data_mode, ai_mode=ai_mode, ycore_url='https://core.example.test'))

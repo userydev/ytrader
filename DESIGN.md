@@ -1,6 +1,6 @@
 # 产业观察 · 统一产品规范
 
-> 2026-10-20 实现候选。此文替代旧绿色研究工作台规范。视觉 authority 是原 `frontend/public/industry/styles.css`、原产业全景及原公司四 Tab，不额外引入新审美。
+视觉依据为 `frontend/public/industry/styles.css`、原产业全景及公司四Tab。
 
 ## 颜色与排版
 
@@ -42,6 +42,6 @@
 - 共享壳 / 内嵌研究：`frontend/public/shared/core.js`、`core.css`
 - React 入口 / 新闻 / 目录：`App.tsx`、`Editorial.tsx`、`Securities.tsx`
 - 原图与原四 Tab：`public/industry/app.js`；独立公司请求边界：`company.js`；财务适配：`fundamentals.js`
-- 详细路径与检查边界：`docs/UI-CORE.md`
+- 产品范围：`docs/PRODUCT.md`
 
-本候选未由 worker 执行构建、测试或浏览器检查，集成验证由 Codex 负责。
+产业页主区保留概况、关系图和公司位置；右侧以“当前详情、关联新闻、产业解释”切换内容。展开解释或新闻时同步对应右侧Tab。

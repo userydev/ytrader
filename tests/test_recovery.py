@@ -7,7 +7,7 @@ import httpx
 import pytest
 from fastapi.testclient import TestClient
 
-from backend.adapters import Network, PublicData
+from backend.adapters import Network, PublicData, UpstreamError
 from backend.app import create_app, envelope
 from backend.models import ConfigUpdate
 from conftest import article, security
@@ -133,7 +133,8 @@ def test_user_rss_keeps_dns_safety_even_on_a_builtin_host():
             return super().request(method, url, **kwargs)
 
     network = CheckedNetwork(httpx.MockTransport(lambda r: httpx.Response(200, content=b'<rss><channel/></rss>')))
-    assert PublicData(network).news({'id': 'rss:user', 'url': 'https://qt.gtimg.cn/user-feed', 'name': 'user'}) == []
+    with pytest.raises(UpstreamError, match='来源返回空列表'):
+        PublicData(network).news({'id': 'rss:user', 'url': 'https://qt.gtimg.cn/user-feed', 'name': 'user'})
 
 
 def test_both_quote_sources_fail_honestly_and_failure_cache_expires(monkeypatch):

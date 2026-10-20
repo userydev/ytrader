@@ -32,6 +32,15 @@ def candidate(snapshot):
                 relations=[dict(id='r1', from_id='aircraft', to_id='operations', kind='used_for', explanation='装备服务作业任务', sources=[]),
                            dict(id='r2', from_id='infrastructure', to_id='operations', kind='supports', explanation='配套提供运行条件', sources=[])],
                 companies=[], participations=[], sources=[],
+                structure=dict(version=1, organization='mixed',
+                               thesis='飞行器支撑飞行运营，起降与运行配套提供作业条件。',
+                               groups=[dict(id='equipment', title='飞行装备', role='core',
+                                            purpose='提供执行低空运输与作业任务的飞行器。', node_ids=['aircraft']),
+                                       dict(id='service', title='组织运营', role='core',
+                                            purpose='组织飞行器执行具体运输与作业任务。', node_ids=['operations']),
+                                       dict(id='facilities', title='运行配套', role='support',
+                                            purpose='提供飞行运营所需的起降与运行条件。', node_ids=['infrastructure'])],
+                               primary_relation_ids=['r1'], reading_order=['equipment', 'service', 'facilities']),
                 explanation=dict(overview='低空作业需要装备、运营与配套协作，而不是公司之间依次传递物料。',
                                  steps=[dict(title='组织作业', text='飞行器与设施共同支撑运营。', node_ids=['aircraft', 'operations', 'infrastructure'], sources=[])],
                                  distinctions=[dict(title='装备不等于运营', text='生产产品与组织作业是不同角色。', sources=[])],
@@ -43,7 +52,7 @@ def model_handler(state, calls):
         calls.append(request)
         assert request.url.host == 'model.example'
         payload = json.loads(request.content)
-        assert payload['max_tokens'] >= 10000
+        assert payload['max_tokens'] == 6000
         assert '一般知识' in payload['messages'][0]['content']
         snapshot = json.loads(payload['messages'][1]['content'])
         graph = candidate(snapshot)

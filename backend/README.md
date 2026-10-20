@@ -1,6 +1,6 @@
-# ytrader 后端首版
+# ytrader 后端
 
-唯一需求基线是 `docs/IMPLEMENTATION-BRIEF.md`。Python 3.12，SQLite/FTS5；不读取历史项目或收费数据。
+产品范围见 `docs/PRODUCT.md`，当前接口见 `docs/CORE-INTERFACES.md`。Python 3.12，SQLite/FTS5；不读取历史项目或收费数据。
 
 ## 安装与运行
 
@@ -30,13 +30,13 @@ uv run ytrader serve
 | `YTRADER_HOSTED` | 设置为 `1` 时强制模型经 Cloudflare AI Gateway routing |
 | `YTRADER_CF_AIG_TOKEN` | 可选托管端 Gateway 服务端凭据，仅发送到精确 Gateway 主机 |
 
-环境示例由宿主创建 `answer.txt`，本 worker 不创建该文件。供应商模型 key 仅送模型地址；ycore token 仅送 ycore。同一请求客户端不会跨服务复用或向重定向目标转发凭据。公开内置数据源可用系统 HTTP 代理；模型/ycore 客户端不继承系统代理。TLS 验证不关闭。
+供应商模型 key 仅送模型地址；ycore token 仅送 ycore。同一请求客户端不会跨服务复用或向重定向目标转发凭据。公开内置数据源可用系统 HTTP 代理；模型/ycore 客户端不继承系统代理。TLS 验证不关闭。
 
 托管模式要求 `model_base_url` 指向 Cloudflare AI Gateway 的 OpenAI-compatible 路由前缀。API 不返回 Gateway/供应商凭据。此交付只实现可替换适配器，**不代表任何 ycore 托管服务已经部署**。
 
 ## 独立服务组合与快照扩展
 
-`data_mode` 与 `ai_mode` 独立，四组合均有 contract stub 测试。ycore 数据使用相同 v1 envelope。用户 config、watchlist、客户端任务留在本地。跨数据/AI 模式采用宿主批准的扩展：
+`data_mode` 与 `ai_mode` 独立，四组合均有 contract stub 测试。ycore 数据使用相同 v1 envelope。用户 config、watchlist、客户端任务留在本地。跨数据/AI模式使用以下扩展：
 
 `POST /api/v1/analysis/snapshot`
 
@@ -65,6 +65,6 @@ uv run pytest
 uv run ytrader evaluate --provider rules --split test
 ```
 
-本 worker **没有执行命令、pytest 或真实网络验证**；执行与最终集成由宿主负责。测试覆盖聚合/纠错/错合并、来源隔离、不完整覆盖不退市、关系事务/证据、四服务组合快照、模型故障/虚构引用、陈旧状态、任务恢复、配置/关注持久化、官方解析与静态 fallback。
+测试覆盖聚合/纠错/错合并、来源隔离、不完整覆盖不退市、关系事务/证据、四服务组合快照、模型故障/虚构引用、陈旧状态、任务恢复、配置/关注持久化、官方解析与静态 fallback。
 
 评测样本为原创中文合成示例，按时间划分 train/validation/test；不是市场效果或真实模型测评。报告 accuracy、Brier、latency、cost 和未测字段。`confidence` 明确定义为 `P(same_event=true)`，不是对已选标签的确信程度。规则 monetary cost 为 0；模型计费成本未知时为 null。真实模型评测必须显式 `--provider openai-compatible --allow-network` 且已配置；Jev 仅未实现/未验证的能力入口，不默认启用、不虚称通过。

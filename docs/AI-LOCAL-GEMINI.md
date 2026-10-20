@@ -2,8 +2,6 @@
 
 当前只接 **`gemini-3.8-flash-medium`**，不做多模型平台，也没有模型 fallback。链路：已有 ytrader Chat Completions 客户端 → `127.0.0.1:58732/v1` → `/Users/Admin/.local/bin/agy` → 现有登录订阅。
 
-Codex已验证最终脚本58项离线保护检查、固定模型原生调用与HTTP调用，以及候选页面真实新闻/公司分析。正式58730新闻任务已成功，保存模型 `gemini-3.8-flash-medium`、六段结果与有效证据ID。最终候选取消清理检查已完成；完整范围见 [CORE-VALIDATION](CORE-VALIDATION.md)。
-
 ## 启动、停止、登录
 
 在项目根目录，使用已有安装了项目依赖的 Python 3.12+ 环境：
@@ -30,7 +28,7 @@ curl --noproxy '*' http://127.0.0.1:58732/v1/models
 由宿主操作，桥本身不改应用配置：
 
 1. 进入**当前运行在 `127.0.0.1:58730` 的实例**已有的 AI 配置入口，先读取/备份当前配置；继续使用它原有的配置读写 API 或界面，不新建配置平台、不搜索其他实例/配置文件。
-2. 仅把该实例已有的 **Chat Completions/local backend** 对应值更新为下表。保存时保留原有无关字段；如果原有 API 是整体替换，先读后只改这些值，不能用最小 JSON 覆盖整份配置。本轮实际仅改 `ai_mode=local`、`model_base_url=http://127.0.0.1:58732/v1`、`model_name=gemini-3.8-flash-medium`；其他配置读前后相同。
+2. 仅把该实例已有的 **Chat Completions/local backend** 对应值更新为下表。保存时保留原有无关字段；如果原有 API 是整体替换，先读后只改这些值，不能用最小 JSON 覆盖整份配置。当前接入仅需配置 `ai_mode=local`、`model_base_url=http://127.0.0.1:58732/v1`、`model_name=gemini-3.8-flash-medium`；其他配置读前后相同。
 3. 在该实例发起一次已有公司/新闻分析，确认请求到本桥及实际模型、six-sections 和证据 ID。长上下文若收到 413，必须在应用原有公共研究上下文裁剪层缩短，不能删除安全上限或悄悄截断 JSON。
 
 | 已有配置的含义 | 目标值 |
@@ -42,7 +40,7 @@ curl --noproxy '*' http://127.0.0.1:58732/v1/models
 | stream / tools | 不发送这些字段，包括 `stream: false` |
 | 应用本机推理超时 | 180 秒，由应用侧独立实现 |
 
-桥不需要 API key；若原有客户端 schema 必填，使用不含秘密的本机占位值即可，桥不据此宣称认证。不要把 Gemini 凭据填进应用配置。**8000、58700、58720、58721 不动；不自动发现或修改其他配置。**
+桥不需要 API key；若原有客户端 schema 必填，使用不含秘密的本机占位值即可，桥不据此宣称认证。不要把 Gemini 凭据填进应用配置。不自动发现或修改其他实例配置。
 
 ## 请求/响应与限制
 
@@ -106,7 +104,7 @@ curl --noproxy '*' http://127.0.0.1:58732/v1/models
 
 ## 离线测试与宿主验收
 
-仅由 Codex/宿主执行，本轮实现方未执行：
+离线检查命令：
 
 ```sh
 python -m pytest scripts/test_gemini_flash_gateway.py

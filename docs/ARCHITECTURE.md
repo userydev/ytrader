@@ -1,6 +1,6 @@
 # 系统架构
 
-本轮重新定义。React/TypeScript Web 只调用 FastAPI 的 `/api/v1`。Python 实现数据适配、证据关系、排序、分析与后台任务。SQLite 保存主数据、FTS 全文索引、配置及任务状态。首版无需独立图数据库。
+React/TypeScript入口与原生产业页面 只调用 FastAPI 的 `/api/v1`。Python 实现数据适配、证据关系、排序、分析与后台任务。SQLite 保存主数据、FTS 全文索引、配置及任务状态。首版无需独立图数据库。
 
 ```mermaid
 flowchart LR
@@ -12,7 +12,7 @@ flowchart LR
   Local --> DB[(SQLite 与 FTS)]
   AI --> Own[用户自有模型]
   AI --> YA[ycore 分析契约]
-  YA --> Gateway[Cloudflare AI Gateway]
+  YA --> Gateway[可配置模型 Gateway]
 ```
 
 ycore 及 Gateway 节点是远程契约边界，不代表本仓库已经部署该服务。
@@ -37,4 +37,8 @@ ycore 及 Gateway 节点是远程契约边界，不代表本仓库已经部署�
 本地单用户是默认部署边界。对外服务部署须另加认证、TLS、访问控制和运营限额。托管 ycore 负责用户鉴权、权益、用量及任务，托管供应商和 Gateway 密钥仅留服务端。
 
 ## 扩展
-付费源通过能力声明、限额、更新策略接入。Jev 等决策模型接入同一受限判断接口，经过中文样本评测再替换规则环节。未来原生客户端复用服务契约，不复用 Web 组件实现。
+付费源通过能力声明、限额、更新策略接入。新决策模型接入同一受限判断接口，经过评测再替换规则环节。未来原生客户端复用服务契约，不复用 Web 组件实现。
+
+## 当前产业来源与模型
+
+开放目录适配内置公共参考结构、Atlas来源记录、七个证据包及可选外部CKG路径。来源记录不自动成为已核实关系；AI初稿独立标示。核心算法位于 `backend/algorithms/`，接口保持v1兼容。当前本机模型通过 `scripts/gemini_flash_gateway.py` 调用固定Gemini 3.8 Flash；ycore统一Gateway仍属后续接入边界。
