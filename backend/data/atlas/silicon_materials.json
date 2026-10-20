@@ -1,0 +1,513 @@
+{
+  "industry": "硅基材料（半导体上游）",
+  "icon": "🏗",
+  "segments": [
+    {
+      "id": "sm_metallurgical_si",
+      "name": "工业硅",
+      "position": "upstream",
+      "tier": 1,
+      "description": "冶金级工业硅(Si 99%+)是多晶硅生产的最上游原料。中国工业硅产能占全球82.6%绝对主导，但\"大而不强\"——大规模低附加值出口，高端半导体级多晶硅长期依赖进口。下游分流：多晶硅(55%)、有机硅(27%)、铝合金(17%)。",
+      "key_companies": [
+        {
+          "code": "603260",
+          "name": "合盛硅业",
+          "role": "全球最大工业硅生产商，产能122万吨/年，同时向下延伸SiC衬底"
+        },
+        {
+          "code": "600596",
+          "name": "新安股份",
+          "role": "工业硅30万吨/年，\"工业硅→有机硅\"一体化闭环，有机硅单体49万吨国内第二"
+        },
+        {
+          "code": "600141",
+          "name": "兴发集团",
+          "role": "磷化工+硅化工双主业，内蒙古乌海规划工业硅20万吨/年"
+        },
+        {
+          "code": "688303",
+          "name": "大全能源",
+          "role": "工业硅30万吨/年自供下游多晶硅，工业硅→多晶硅一体化代表"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国工业硅产能_万吨_年",
+          "unit": "万吨/年",
+          "type": "capacity",
+          "current_value": 728,
+          "source_name": "观研天下/百川盈孚 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国工业硅产量_万吨",
+          "unit": "万吨",
+          "type": "output",
+          "current_value": 480,
+          "source_name": "百川盈孚/SMM 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球产能占比_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 82.6,
+          "source_name": "行业协会 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "raw_material",
+      "layer": 0
+    },
+    {
+      "id": "sm_elec_polysilicon",
+      "name": "电子级多晶硅",
+      "position": "upstream",
+      "tier": 1,
+      "description": "电子级多晶硅(11N-13N纯度)是半导体CZ/FZ单晶生长的直接原料。全球仅德国Wacker、日本Tokuyama、美国Hemlock三家垄断12英寸晶圆用市场。中国光伏级多晶硅产能>200万吨全球主导，但12英寸用半导体级国产化率不足10%，是半导体材料\"卡脖子\"最核心环节。鑫华半导体(IPO中)是国内电子级专业龙头。",
+      "key_companies": [
+        {
+          "code": "600438",
+          "name": "通威股份",
+          "role": "乐山1000吨/年电子级多晶硅产线，通过海外客户验证并出口供货"
+        },
+        {
+          "code": "688303",
+          "name": "大全能源",
+          "role": "一期1000吨/年11N级已投产，远期规划2.1万吨半导体级总产能"
+        },
+        {
+          "code": "600089",
+          "name": "特变电工",
+          "role": "控股新特能源(港股01799)布局半导体级多晶硅，30万吨光伏级向半导体延伸"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "12英寸晶圆用多晶硅国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "行业研报 <10% 卡脖子核心环节",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国12英寸晶圆用多晶硅年需求量_万吨",
+          "unit": "万吨",
+          "type": "market",
+          "current_value": 1,
+          "source_name": "行业研报估算",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球电子级多晶硅市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 12,
+          "source_name": "QYResearch/SEMI 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_material",
+      "layer": 1
+    },
+    {
+      "id": "sm_quartz",
+      "name": "石英坩埚与石英制品",
+      "position": "upstream",
+      "tier": 1,
+      "description": "石英坩埚是CZ单晶拉制核心消耗品(每炉一只/寿命~650h)，内层高纯合成石英砂(涂层)长期被日本三菱化学垄断。石英舟/管/环用于晶圆热处理和刻蚀腔体。半导体级32英寸+坩埚由日本信越石英主导，国产化率<30%。凯盛科技合成石英砂是国产替代关键变量。",
+      "key_companies": [
+        {
+          "code": "603688",
+          "name": "石英股份",
+          "role": "国内石英材料绝对龙头，全球少数掌握高纯石英砂量产，国内唯一通过TEL高温扩散认证"
+        },
+        {
+          "code": "001269",
+          "name": "欧晶科技",
+          "role": "32英寸半导体级石英坩埚已实现进口替代，36英寸量产供货，坩埚寿命突破650h"
+        },
+        {
+          "code": "300316",
+          "name": "晶盛机电",
+          "role": "子公司美晶新材坩埚产能1.8万只/月，半导体坩埚占比约2.4%提升中"
+        },
+        {
+          "code": "600552",
+          "name": "凯盛科技",
+          "role": "合成石英砂2024年12月带料试生产，目标替代三菱化学进口砂"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "半导体石英坩埚国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 30,
+          "source_name": "沙利文 32英寸+仍由信越/Momentive主导",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国半导体石英坩埚市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 5.1,
+          "source_name": "沙利文/观研天下 2024 CAGR 38%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "consumable",
+      "layer": 1
+    },
+    {
+      "id": "sm_wafer_consumables",
+      "name": "硅片加工辅材(切割/研磨)",
+      "position": "upstream",
+      "tier": 1,
+      "description": "金刚线(电镀金刚石线锯)是硅片切割核心工具，线径从120μm微缩至<50μm。半导体级金刚线要求极高一致性（线径波动<±1μm）、低断线率、高切割速度。每片12英寸硅片消耗金刚线~2.5m。光伏金刚线国产化率>95%，但半导体级（线径<60μm、低损伤层）仍被日本则武/旭金刚石主导。切割冷却液、研磨液与金刚线配套使用，是硅片加工三大消耗品之一。",
+      "key_companies": [
+        {
+          "code": "300554",
+          "name": "三超新材",
+          "role": "金刚线（硅片切割用）龙头，半导体硅片切割线国内领先，金刚线线径<50μm"
+        },
+        {
+          "code": "300700",
+          "name": "岱勒新材",
+          "role": "金刚石线（光伏→半导体延伸），半导体硅片切割线开发送样中"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国半导体硅片切割用金刚线市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 8,
+          "source_name": "券商估算 半导体硅片切割线",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体级金刚线国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 30,
+          "source_name": "日本则武/旭金刚石仍主导高端",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "consumable",
+      "layer": 1
+    },
+    {
+      "id": "sm_sic_powder",
+      "name": "碳化硅粉体",
+      "position": "upstream",
+      "tier": 1,
+      "description": "高纯碳化硅粉体(6N-8N)是SiC衬底PVT长晶核心原料，直接决定衬底缺陷密度和良率。国内最大专业粉料商河南中宜创芯(8N8/500吨年/平煤神马系)未上市，天科合达(非上市)自产5N5粉料并对外销售。A股中三安光电/合盛硅业为垂直整合自供模式。高端半导体级粉料仍存差距。",
+      "key_companies": [
+        {
+          "code": "600703",
+          "name": "三安光电",
+          "role": "国内唯一SiC全产业链IDM(粉料→长晶→衬底→外延→芯片)，粉料全自供"
+        },
+        {
+          "code": "603260",
+          "name": "合盛硅业",
+          "role": "从工业硅向下延伸，内蒙古800吨SiC颗粒项目已点火"
+        },
+        {
+          "code": "600330",
+          "name": "天通股份",
+          "role": "SiC晶体生长设备+晶体生长工艺，涉足SiC粉料制备"
+        },
+        {
+          "code": "600509",
+          "name": "天富能源",
+          "role": "持有天科合达11.62%股权(第二大股东)，天科合达自产5N5 SiC粉料"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球高纯SiC粉体市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 12.2,
+          "source_name": "YH Research/QYResearch 2024 晶圆用~1.2亿美元",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "高纯SiC粉体CAGR_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 17,
+          "source_name": "QYResearch 半导体级驱动",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "raw_material",
+      "layer": 0
+    },
+    {
+      "id": "sm_compound_substrate",
+      "name": "化合物半导体衬底",
+      "position": "upstream",
+      "tier": 1,
+      "description": "砷化镓(GaAs)、磷化铟(InP)、氮化镓(GaN)衬底是第二代/第三代化合物半导体的\"硅片\"。GaAs衬底用于手机PA/射频开关（5G手机PA用量4-8颗）、光通信激光器；InP衬底用于光模块EML/DFB激光器、太赫兹器件；GaN-on-SiC衬底用于5G基站功放和卫星通信。全球GaAs衬底~$6亿市场被Freiberger(德国)、住友电工(日本)、AXT(美国/中国)三家垄断85%+。InP衬底90%+被住友电工垄断。国产GaAs/InP衬底在LED低端市场有量，通信级严重依赖进口。",
+      "key_companies": [
+        {
+          "code": "002428",
+          "name": "云南锗业",
+          "role": "GaAs晶片80万片/年+InP晶片15万片/年，国内唯一2-6英寸InP衬底量产，子公司鑫耀半导体"
+        },
+        {
+          "code": "600703",
+          "name": "三安光电",
+          "role": "GaAs/GaN/SiC全系列衬底+外延IDM，GaAs衬底产能国内最大，化合物半导体平台"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球半绝缘GaAs衬底市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 6,
+          "source_name": "Yole 2025 射频/光通信驱动",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "InP衬底国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "日本住友电工/AXT垄断90%+",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "raw_material",
+      "layer": 0
+    },
+    {
+      "id": "sm_epitaxial_wafer",
+      "name": "外延片",
+      "position": "upstream",
+      "tier": 1,
+      "description": "外延片(Epitaxial Wafer)是在抛光硅片上生长一层高纯度单晶薄膜，是芯片制造的直接衬底材料。硅外延片用于功率器件(IGBT/MOSFET)、CIS图像传感器——外延层电阻率/厚度决定器件击穿电压。SiC外延片是SiC MOSFET/SBD的关键——外延层质量直接决定器件导通电阻和可靠性，SiC外延全球CR3(Wolfspeed/II-VI/Showa Denko)占80%+。GaN-on-SiC外延用于5G基站射频功放。外延是\"硅片→芯片\"之间最后一道材料工序。",
+      "key_companies": [
+        {
+          "code": "688584",
+          "name": "上海合晶",
+          "role": "6/8/12英寸外延片专精，国内最大半导体外延片专业厂商"
+        },
+        {
+          "code": "605358",
+          "name": "立昂微",
+          "role": "8/12英寸重掺/轻掺硅外延片，外延+抛光片双平台"
+        },
+        {
+          "code": "600703",
+          "name": "三安光电",
+          "role": "SiC/GaN外延全产业链IDM，6/8英寸SiC外延片产能国内最大"
+        },
+        {
+          "code": "688469",
+          "name": "芯联集成",
+          "role": "8英寸SiC外延+器件制造一体化，SiC MOSFET外延平台"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国半导体硅外延片市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 55,
+          "source_name": "券商研报 2025 功率+CIS驱动",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "SiC外延片国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 40,
+          "source_name": "三安光电/芯联集成/天域半导体(非上市)合计",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_material",
+      "layer": 2
+    },
+    {
+      "id": "sm_soi_specialty",
+      "name": "SOI与特种硅片",
+      "position": "upstream",
+      "tier": 1,
+      "description": "SOI(Silicon-On-Insulator，绝缘体上硅)由顶层硅(器件层)+埋氧层(BOX SiO₂)+衬底硅构成。RF-SOI用于5G手机射频前端开关/LNA（每部5G手机用6-10片RF-SOI），FD-SOI(全耗尽SOI)用于汽车MCU和IoT低功耗芯片（28nm FD-SOI可替代16nm FinFET能效）。全球SOI硅片市场99%被法国Soitec垄断（Smart Cut技术专利），沪硅产业旗下新傲科技是Soitec中国合作伙伴和唯一国产SOI硅片供应商。区熔(FZ)硅片是另一特种硅片，用于高压IGBT和晶闸管。",
+      "key_companies": [
+        {
+          "code": "688126",
+          "name": "沪硅产业",
+          "role": "子公司新傲科技(SOI硅片)，Soitec中国合作伙伴，8英寸RF-SOI量产"
+        },
+        {
+          "code": "002129",
+          "name": "TCL中环",
+          "role": "8/12英寸区熔硅片(FZ)国内绝对龙头，SOI布局中"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "role": "4-12英寸全尺寸硅片，SOI硅片产品线+区熔硅片"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球SOI硅片市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 18,
+          "source_name": "Soitec/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国SOI硅片自给率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 8,
+          "source_name": "券商研报 Soitec垄断99%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_material",
+      "layer": 2
+    }
+  ],
+  "supply_relationships": [
+    {
+      "supplier_code": "603260",
+      "buyer_code": "600438",
+      "product": "工业硅(多晶硅原料)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "合盛硅业工业硅供通威股份多晶硅产线(部分外购/光伏级通道)"
+    },
+    {
+      "supplier_code": "603260",
+      "buyer_code": "688303",
+      "product": "工业硅(多晶硅原料)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "合盛硅业工业硅供大全能源多晶硅产线(部分外购)"
+    },
+    {
+      "supplier_code": "688303",
+      "buyer_code": "600438",
+      "product": "多晶硅(交叉供应)",
+      "relationship_type": "secondary",
+      "confidence": 2,
+      "notes": "大全能源与通威股份多晶硅交叉供应(行业互采)"
+    },
+    {
+      "supplier_code": "600438",
+      "product": "电子级多晶硅(11N+半导体用)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "通威乐山1000吨电子级多晶硅出口供海外，国内供沪硅产业/立昂微等硅片厂"
+    },
+    {
+      "supplier_code": "688303",
+      "product": "电子级多晶硅(11N+半导体用)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "大全能源1000吨电子级多晶硅供国内硅片厂验证"
+    },
+    {
+      "supplier_code": "001269",
+      "product": "半导体级石英坩埚(32/36英寸)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "欧晶科技半导体坩埚供沪硅产业/TCL中环/立昂微等单晶硅棒拉制"
+    },
+    {
+      "supplier_code": "603688",
+      "product": "高纯石英砂/石英管/石英舟",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "石英股份高纯石英制品供北方华创/中微公司等半导体设备及晶圆厂"
+    },
+    {
+      "supplier_code": "600703",
+      "buyer_code": "603260",
+      "product": "SiC粉料(内部自供/工艺对标)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "三安光电SiC粉料自供(全产业链IDM)，合盛硅业对标追赶"
+    },
+    {
+      "supplier_code": "600703",
+      "buyer_code": "688469",
+      "product": "SiC外延片(6/8英寸)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "三安光电(湖南三安)SiC外延片供芯联集成SiC MOSFET器件制造"
+    },
+    {
+      "supplier_code": "688584",
+      "product": "8/12英寸硅外延片",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "上海合晶硅外延片供华虹/中芯国际/台积电等晶圆厂功率IC产线"
+    },
+    {
+      "supplier_code": "300554",
+      "product": "半导体级金刚线(硅片切割)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "三超新材金刚线供沪硅产业/TCL中环/立昂微等硅片厂切割工序"
+    },
+    {
+      "supplier_code": "002428",
+      "buyer_code": "600703",
+      "product": "InP/GaAs衬底",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "云南锗业InP/GaAs衬底供三安光电光通信/射频芯片外延"
+    }
+  ],
+  "group_labels": {
+    "raw_material": [
+      "⛏ 基础原料",
+      "#6d4c41"
+    ],
+    "refined_material": [
+      "⚗️ 精炼与加工",
+      "#8d6e63"
+    ],
+    "consumable": [
+      "🔧 耗材与制品",
+      "#a1887f"
+    ]
+  },
+  "group_order": [
+    "raw_material",
+    "refined_material",
+    "consumable"
+  ]
+}

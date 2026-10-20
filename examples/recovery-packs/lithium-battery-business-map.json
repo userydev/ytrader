@@ -1,0 +1,194 @@
+{
+  "id": "lithium-battery-business-map",
+  "version": "2026-10-18.1",
+  "license": "MIT",
+  "source_url": "https://www.ganfenglithium.com/product.html",
+  "as_of": "2026-10-18T09:50:00Z",
+  "nodes": [
+    {
+      "id": "lithium:resources",
+      "label": "锂资源",
+      "kind": "segment"
+    },
+    {
+      "id": "lithium:carbonate",
+      "label": "碳酸锂",
+      "kind": "product"
+    },
+    {
+      "id": "lithium:hydroxide",
+      "label": "氢氧化锂",
+      "kind": "product"
+    },
+    {
+      "id": "lithium:battery",
+      "label": "动力电池",
+      "kind": "product"
+    },
+    {
+      "id": "lithium:storage",
+      "label": "储能电池",
+      "kind": "product"
+    },
+    {
+      "id": "company:SZ:002460",
+      "label": "赣锋锂业",
+      "kind": "company",
+      "symbol": "SZ:002460"
+    },
+    {
+      "id": "company:SZ:300750",
+      "label": "宁德时代",
+      "kind": "company",
+      "symbol": "SZ:300750"
+    }
+  ],
+  "edges": [
+    {
+      "id": "lithium:resources-carbonate",
+      "from_id": "lithium:resources",
+      "to_id": "lithium:carbonate",
+      "relation": "upstream",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:carbonate-battery",
+      "from_id": "lithium:carbonate",
+      "to_id": "lithium:battery",
+      "relation": "upstream",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:resources-hydroxide",
+      "from_id": "lithium:resources",
+      "to_id": "lithium:hydroxide",
+      "relation": "upstream",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:hydroxide-battery",
+      "from_id": "lithium:hydroxide",
+      "to_id": "lithium:battery",
+      "relation": "upstream",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:ganfeng-carbonate",
+      "from_id": "company:SZ:002460",
+      "to_id": "lithium:carbonate",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:ganfeng-hydroxide",
+      "from_id": "company:SZ:002460",
+      "to_id": "lithium:hydroxide",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:ganfeng-battery",
+      "from_id": "company:SZ:002460",
+      "to_id": "lithium:battery",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:ganfeng-storage",
+      "from_id": "company:SZ:002460",
+      "to_id": "lithium:storage",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:ganfeng-business"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.ganfenglithium.com/product.html"
+    },
+    {
+      "id": "lithium:catl-battery",
+      "from_id": "company:SZ:300750",
+      "to_id": "lithium:battery",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:catl-passenger"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.catl.com/solution/passengerEV/"
+    },
+    {
+      "id": "lithium:catl-storage",
+      "from_id": "company:SZ:300750",
+      "to_id": "lithium:storage",
+      "relation": "classification",
+      "evidence_ids": [
+        "lithium:catl-profile"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T09:50:00Z",
+      "source_url": "https://www.catl.com/about/profile/"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "lithium:ganfeng-business",
+      "title": "赣锋锂业官网：业务概述",
+      "url": "https://www.ganfenglithium.com/product.html",
+      "excerpt": "原创事实摘要：公司将锂矿资源列为上游、锂化合物列为中游、电池列为下游，列示碳酸锂、氢氧化锂及动力和储能电池。该结构不证明其向其他特定公司供货。页面未标统一发布日期，2026-10-18核读。",
+      "published_at": null,
+      "source": "赣锋锂业官网"
+    },
+    {
+      "id": "lithium:catl-passenger",
+      "title": "宁德时代官网：乘用车解决方案",
+      "url": "https://www.catl.com/solution/passengerEV/",
+      "excerpt": "原创事实摘要：宁德时代提供乘用车动力电池与电池管理系统方案；这支持公司与动力电池业务的关联，不支持特定原材料采购关系或未来收益。页面未标发布日期，2026-10-18核读。",
+      "published_at": null,
+      "source": "宁德时代官网"
+    },
+    {
+      "id": "lithium:catl-profile",
+      "title": "宁德时代官网：企业简介及发展历程",
+      "url": "https://www.catl.com/about/profile/",
+      "excerpt": "原创事实摘要：公司发展历程列明深交所股票代码300750，以及动力电池、储能系统和电池回收业务。仅记录业务类别与证券标识。页面未标统一发布日期，2026-10-18核读。",
+      "published_at": null,
+      "source": "宁德时代官网"
+    }
+  ]
+}

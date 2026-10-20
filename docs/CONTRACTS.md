@@ -1,82 +1,80 @@
-# 数据与服务契约 v1
+# ytrader 开源首版实施基线
 
-本文件是架构师方案经CEO整合的设计契约，尚未实现。产品行为见 [PRODUCT.md](PRODUCT.md)，任务/预算/故障规则见 [ARCHITECTURE.md](ARCHITECTURE.md)。公共schema首次实现时迁入ycore作为权威源，本项目固定兼容版本；破坏性修改升级v2，过渡窗口由发布计划确定，不能直接破坏运行中的客户端。
+> 状态更新（2026-10-18）：本文保留旧轮次的接口、流程或实施记录。产品核心已重定为产业链，当前方向以 [PRODUCT.md](PRODUCT.md) 与 [CHAIN-CORE-LOGIC.md](CHAIN-CORE-LOGIC.md) 为准；旧工程验收不代表产品价值通过，本轮不沿旧计划继续 UI 开发。
+2026-10-18。唯一需求来源为本轮用户确认的计划。不得读取或沿用旧项目文件、Git 历史或旧架构。
 
-## 1. 通用类型与规则
+## 目标
+独立运行的中文投资研究 Web：新闻事件 → 产业路径 → 公司 → 证据分析。覆盖沪深北全 A 股主表。React/TypeScript + FastAPI/Python 3.12 + SQLite/FTS5。Web first；不做交易、支付、订阅管理、iOS/macOS。
 
-- ID为string；对象版本为正整数；时间为ISO-8601 UTC，业务周期按Asia/Shanghai；缺失字段显式null。公司ID为`SSE.600519`等市场+代码。
-- 列表返回`{data:array,next_cursor:string|null,has_more:boolean,snapshot_id:string}`；limit默认20、最大100。游标不透明、绑定查询和快照；失效返回410，客户端重新获取首页，不拼接两版排序。
-- 错误为`{error:{code:string,message:string,retryable:boolean,retry_after_s:int|null,request_id:string,details:object}}`。错误不能用200空数组掩盖。
-- 错误码：401 UNAUTHENTICATED；403 FORBIDDEN；404 NOT_FOUND；409 CONFLICT/IDEMPOTENCY_CONFLICT/BUDGET_EXHAUSTED/PENDING_VERIFICATION；410 CURSOR_INVALID/CURSOR_EXPIRED/CONTENT_REMOVED；422 VALIDATION_FAILED；429 RATE_LIMITED；503 MODEL_NOT_CONFIGURED/SOURCE_UNAVAILABLE；504 UPSTREAM_TIMEOUT；500 INTERNAL。是否可重试以受理状态为准，不能仅看HTTP码。
-- 数据状态：`ok/partial/stale/empty/unavailable/not_configured`。empty仅表示来源取得成功且没有合格新增；历史内容仍可随其他状态返回。
-- 产品任务状态：`queued/running/succeeded/failed/blocked/outcome_unknown/cancelled`；模型调用状态：`queued/dispatched/succeeded/failed/unknown/rejected`。
-- 触发分析、受控计量调用和创建任务的POST要求Idempotency-Key。键绑定身份/动作/请求体指纹；重复返回同一任务，不多扣次数；不同内容复用键409。模型调用与未决记录持久去重，不能因短期HTTP缓存过期再计费。
+## 固定 API 契约 v1
+统一 /api/v1；响应 {data:T,meta:{source:string,as_of:string|null,version:"1",completeness:"complete"|"partial"|"unavailable",warnings:string[]}}。错误 HTTP 合理状态码和 {detail:string}。ISO8601 UTC；无原始时间必须 null，不得拿抓取时间冒充。
 
-## 2. 客户端 ↔ ytrader（/api/v1）
+- GET /health → {status:"ok",database:"ok"}
+- GET /config、PUT /config → Config。Config: {data_mode:"local"|"ycore",ai_mode:"local"|"ycore",ycore_url:string,model_base_url:string,model_name:string,model_key_set:boolean,ycore_key_set:boolean,auto_analyze:boolean,sync_interval_minutes:number}。PUT 可额外 model_api_key、ycore_api_key；GET 不返回密钥，空密钥不覆盖，显式 clear_model_key/clear_ycore_key 清除。密钥服务端保存且权限 0600；配置校验、防错误远程 URL。
+- GET /sources → Source[]: {id,name,url,coverage,content_level:"full"|"summary"|"title",enabled,status,last_success:string|null,last_error:string|null,capabilities:string[],paid:boolean}。提供 wallstreetcn 与自定义 RSS；iFinD 仅 disabled 能力声明。
+- POST /sources → {name,url} 自定义 RSS；PATCH /sources/{id} → {enabled:boolean}。
+- POST /sync → {kind:"news"|"securities"|"all"} 返回 Job，202；GET /jobs → Job[]: {id,kind,status:"queued"|"running"|"succeeded"|"failed",progress,message,created_at,updated_at}。
+- GET /events?q=&limit=50 → Event[]: {id,title,summary,published_at:string|null,updated_at,importance:number,relevance:number,score:number,article_count:number,source_names:string[],symbols:string[],tags:string[],analysis_status:string}。
+- GET /events/{id} → {event:Event,articles:Article[],analysis:Analysis|null,paths:Path[]}。Article:{id,title,content,url,source,published_at:string|null,fetched_at,content_level,revision_kind:"initial"|"update"|"correction"}。
+- POST /events/{id}/analyze → Job，202；未配模型返回明确 409 配置提示而非假分析。
+- GET /securities?q=&exchange=&limit=100 → Security[]；GET /securities/{symbol} → {security:Security,events:Event[],paths:Path[]}。Security:{symbol:"SH:600000"等,code,name,exchange:"SH"|"SZ"|"BJ",industry:string|null,status:"listed"|"delisted"|"unknown",as_of,source}。
+- GET /coverage → {as_of,counts:{SH:number,SZ:number,BJ:number},status,source,missing_exchanges:string[],warnings:string[]}。同步不完整时不可把未获取的公司判成退市。
+- GET /quotes/{symbol} → {symbol,price:number|null,change_percent:number|null,as_of:string|null,source,status}；失败返回 unavailable，不伪造行情。
+- GET /watchlist → string[]；PUT /watchlist → {symbols:string[]} 返回 string[]。
+- GET /chain?q=&symbol=&event_id= → {nodes:Node[],edges:Edge[],paths:Path[],gaps:string[]}。Node:{id,label,kind:"industry"|"product"|"segment"|"company",symbol?:string}。Edge:{id,from_id,to_id,relation:"upstream"|"classification"|"disclosed_supply"|"inferred",evidence_ids:string[],confidence:number|null,as_of,source_url}。
+- POST /chain/import → ChainPackage:{id,version,license,source_url,as_of,nodes:Node[],edges:Edge[],evidence:Evidence[]}；必须验证许可字段/来源/时间/引用完整性/关系类别，事务导入；未知许可或缺事实证据拒绝。GET /evidence/{id} → Evidence:{id,title,url,excerpt,published_at:string|null,source}。
+- Path:{id,node_ids:string[],edge_ids:string[],condition:string,evidence_ids:string[],kind:"classification"|"disclosed"|"inferred"}。
+- Analysis:{id,event_id,status:"complete"|"stale",model,created_at,evidence_version:string,sections:{facts:Claim[],links:Claim[],companies:Claim[],conditions:Claim[],counter_evidence:Claim[],unknowns:Claim[]},warnings:string[]}。Claim:{text,evidence_ids:string[]}。模型输出仅引用当前给定 article/evidence ids；拒绝虚构 id，关键项无证据不得装成事实；提示注入隔离。不输出收益概率。
 
-Web使用Secure/HttpOnly会话Cookie，写请求要求CSRF并校验Origin；iOS用Keychain中的不透明会话token作为Bearer。所有接口除登录外需认证，不向客户端返回数据供应方或ycore密钥。
+## 服务边界
+data_mode 与 ai_mode 独立。ycore 是同契约远程 HTTP 服务；纯本地时无 ycore 依赖，用户自有模型直连 OpenAI compatible chat/completions。服务替换用 contract stub 验证四组合，不能宣称未部署 ycore 已上线。托管端必须声明 Cloudflare AI Gateway routing，不把 Gateway 密钥或供应商密钥交浏览器；用户鉴权/权益属于未来 ycore。不得向自有模型转发 ycore token。
 
-| 方法 | 路径 | 输入 → 返回 |
-| --- | --- | --- |
-| POST | /auth/login | `{password:string,client:web/ios}` → Web设置Cookie并返回csrf_token/expires_at；iOS返回session_token/expires_at；应用层限速 |
-| GET | /auth/session | → 认证状态、expires_at；Web所需csrf_token。无效会话401 |
-| POST | /auth/logout | 撤销当前服务端会话 → 204；本机清理缓存认证信息 |
-| GET | /digest | → `DigestResponse`，滚动24小时最新已提交快照 |
-| GET | /digest/more?cursor= | 同一快照的剩余主列表事件，默认10条；不能改变前10条快照 |
-| GET | /digests?before=&cursor= | 历史快照列表，用于回看 |
-| GET | /events?q=&cursor= | 已发布历史事件检索；按最近实质更新及稳定ID分页；可解析合并后的canonical ID |
-| GET | /events/{id}?version= | → `EventResponse`，默认当前；历史版本必须同时给当前撤回/更正提示 |
-| GET | /events/{id}/versions | → 版本、change_kind、change_note、generated_at分页 |
-| GET | /updates?cursor= | 已读事件之后的实质更新及未读更正，附canonical ID与版本 |
-| PUT | /read-state/{id} | `{version:int}` → 204；只允许存在且已发布的版本，存MAX(已有,提交)，不能降版本或将未发布未来版本标读 |
-| GET | /companies?q=&cursor= | → `{company_id,name,market,code}`列表 |
-| GET | /companies/{company_id} | → 名称、主营、mappings及证据/有效时间、两种分析摘要 |
-| GET | /companies/{id}/analyses/{method} | method=fundamental/event_impact → `AnalysisResponse`，纯读取，不创建任务 |
-| POST | /companies/{id}/analyses/{method}/refresh | 幂等请求 → 202 `{job_id,status}`；已有相同活动任务返回200同任务，不重复扣额；超限429附下次时间；预算409；未配置模型503 |
-| GET | /jobs/{id} | → job_id/kind/status/step/error_code/created_at/finished_at/result_ref，均限当前用户可访问对象 |
-| GET | /system/status | → 来源状态和最后成功时间、业务水位、模型开关/预算状态、积压与最后错误类别；不暴露密钥或原始错误中的敏感内容 |
+## 质量实现
+新闻 URL 规范化 + 正文指纹去重 + 保守中文同事件聚合；保留转载来源、更新、纠错，不混合无时间旧闻。重要性与关注相关性分别计算；时效/来源多样性排序。规则基线可用，无模型亦可阅读证据与关系。可配置决策模型作为插件接口和离线评测 CLI（Jev 不默认启用，不虚称评测过）。重点事件自动预分析可选，证据新增将原结果 stale。
+来源故障隔离，限时网络请求，SQLite jobs 可恢复与有限重试，幂等同步；FTS 搜索。全 A 股接口优先实际公开来源，覆盖按交易所报告，未覆盖诚实标记。AKShare 可 optional，不依赖收费源。
+产业数据不捆绑无授权 ChainKnowledgeGraph；提供原创、明确标注演示的 fixture 仅测试，不注入正式用户数据库。用户可通过 JSON 导入有来源许可的数据。关系分类不能显示成供应关系。
 
-**DigestResponse**：`{snapshot_id:string,version:int,window_start:time,window_end:time,generated_at:time,data_cutoff_at:time|null,status:DataStatus,coverage:array,items:EventCard[],watch_items:EventCard[],more_cursor:string|null}`。
+## 界面方向
+中文浅色研究工作台，纸白背景、深墨字、青绿色强调、细线分隔。无营销 hero、无装饰大数字/卡片墙。桌面左导航 + 事件列表 + 宽证据详情；移动端可切换阅读。主导航：资讯、产业、公司；设置为辅助入口，数据更新位于设置下。真实空态引导同步/导入/配置；失败和陈旧状态可见。关系有图与文字替代，点击证据打开详情；不依赖外部字体。完整 loading/error/empty/keyboard/focus 状态。自有 AI 密钥仅密码输入与服务端保存。
 
-EventCard含`event_id,event_version,summary,importance:major/notable,importance_reason,evidence_state,change_kind:new/substantive/correction,change_note,occurred_at:time|null,last_verified_at:time|null,impact_coverage:explained/facts_only,unread:boolean,correction_for_reader:boolean`。items≤10、watch_items≤3，无最低数量。更正优先呈现但不能复制成无关新事件。
+## 交付与验证
+可安装运行、后端行为测试、前端类型检查构建、真实公共来源烟测、浏览器桌面/移动操作验证。文档以实际代码为准。必要部署、备份、更新与密钥说明。开源许可由独立 LICENSE 说明；不混入第三方未经核实数据。所有测试由 Codex 执行，worker 不运行代码或递归委派。
 
-**EventResponse**：`{event_id,canonical_id,version,current_version,core_claim_ref:{claim_id:string,version:int},lifecycle:ongoing/ended/disproved,publication:published/merged,occurred_at?,first_seen_at,summary,claims:Claim[],paths:ImpactPath[],explanation_status:ready/pending/withdrawn/model_unavailable/failed,change_note,correction_notice?}`。core_claim_ref必须属于当前事件版本的claims，卡片证据状态取该断言；未核实内容不得通过其他断言的原始证据进入主列表。
+## 托管 AI 快照边界
+本地数据配 ycore AI 时，远程服务不拥有本地事件 ID。适配器必须通过 `POST /api/v1/analysis/snapshot` 发送 `{context:{event,articles,evidence,paths},evidence_version}`，并按 v1 envelope 返回结构化分析。上下文来自当前证据快照，浏览器不接触服务端模型密钥。接收方仍须验证六段结构和证据引用。此扩展用于服务能力替换，不能仅把本地 ID 发给远程事件接口。
 
-Claim含`claim_id,version,content_type:fact/source_opinion/conditional_inference,evidence_state:primary/corroborated/unverified/conflicting/refuted,review_state:none/needs_review/reviewed,text,evidence:EvidenceRef[]`。EvidenceRef含`item_id,item_version,source,title,url?,published_at?,fetched_at,content_kind:full/snippet/none,availability:available/removed/unavailable,support_locator?,excerpt?`；摘录仅在许可允许时返回，locator标明对应支持位置，缺少可核对内容不能伪造支持。
+## 数据时间说明
+证券公开列表未声明全表更新时间时，证券 `as_of` 可为 null；`coverage.as_of` 记录该次核对/抓取完成时间，不代替源发布时间。来源观测细节应区分上游报告数、取得数、交叉来源数及对账状态。业务分类边是核读/观测时点的分类记录，证据发布日期仍可未知。
 
-ImpactPath含环节ID/名称、机制、成立条件、反向因素、conclusions及companies；每条Conclusion含ID、状态active/withdrawn/superseded、文本与具体claim版本依赖；每个公司落点含`company_id,mapping_id,exposure_id,mechanism_conclusion_ref,business_claim_refs[],event_link_conclusion_ref,valid_from?,valid_until?`。必须有本事件机制与公司业务暴露之间的有依据条件推断，静态成员或概念标签不能自动填成确定关系。
+## 阅读、产业与公司接口扩展（2026-10-18）
 
-**AnalysisResponse**：`{status:ready/stale/refreshing/withdrawn/none/unavailable,reason?,report?:{report_id,version,method,generated_at,data_cutoff_at,sections,evidence,input_fingerprint},active_job_id?,next_refresh_at?}`。withdrawn不返回错误结论作为正常正文；历史查看可返回明确标记的撤回内容，且遵守内容使用条件。依赖仍有效的旧报告才可stale返回。
+已实现的请求和字段详见 [PRODUCT-FLOW-BRIEF.md](PRODUCT-FLOW-BRIEF.md)：主题关联查询 `/chain/topics`、精确主题图 `/chain?topic_id=`、公司 `/profile`、独立公司 `/analysis` 和 `/analyze`。主题只来自已安装数据包；空关联正常，不因共享制造业分类扩散。公司档案的源日期与抓取时间分开，缓存失效后上游故障返回旧数据并标 stale。
 
-打开事件成功后客户端提交已读版本；失败不标读。实质版本高于已读版本提示更新，文字小修不强制重读。离线缓存显示最后核验时间及离线提示，不承诺获知期间的新更正。
+公司分析使用独立存储，不向新闻 events 表写入伪事件；同一证券任务去重，不同证券结果隔离。数据与 AI 的本地/ycore 四组合仍独立路由。Job 的 subject_label、target_url 是基线可选项，本轮未添加；数据更新页不提供该类任务的直达结果链接。
 
-合并后的旧事件ID仍可读取别名与canonical_id，首页只返回canonical一次；已读提交必须明确自己实际读到的事件和版本。不同事件的版本号不能直接比较或用MAX搬到合并目标；拆分/合并历史保留，新的实质内容由新版本触发更新。
+## 产业解释库与AI结构（2026-10-18）
 
-## 3. ytrader ↔ ycore（/ycore/v1，仅服务间）
+此接口承载新轻量产业模型；旧 `/chain` 主题接口保留兼容。
 
-每产品服务凭据鉴权，按product隔离来源权限/预算；只在服务端保存并可轮换。读超时默认10秒，受控来源调用默认30秒；模型异步返回任务，不以同步HTTP等待完成。
+| 方法/路径（前缀 `/api/v1`） | 用途 |
+| --- | --- |
+| `GET /industries?q=&symbol=` | 公共参考与个人AI初稿目录；可按证券查已收录角色 |
+| `GET /industries/{id}` | `base`、AI `results` 历史及最近 `job` |
+| `POST /industries/generate` | `{name}` 创建未收录产业的结构化初稿，返回202任务 |
+| `POST /industries/{id}/supplement` | `{question}` 补充现有产业，返回202任务 |
+| `GET /securities/{symbol}/industries` | 公司在已收录公共结构及有效AI补充中的参与位置 |
+| `POST /industries/explain` | ycore所需快照能力；服务端须配置独立local模型，禁止递归转发 |
 
-| 方法 | 路径 | 契约 |
-| --- | --- | --- |
-| GET | /items/changes?cursor=&limit= | `{data:[{item_id,version,change:created/updated/retracted/removed,changed_at}],next_cursor,has_more}`，至少一次投递；业务事务成功后提交游标，按ID+版本去重；过期410 |
-| GET | /items/{id}/versions/{v} | `{item_id,version,source,url?,title,published_at?,first_seen_at,fetched_at,content?,content_kind,item_type,language,license_scope,availability}`。不可变版本；被要求删除内容时返回墓碑，不伪称未曾存在 |
-| PUT | /subscriptions/{key} | `{sources[],schedule,tz,filters:null}`，来源轮询受许可/限额约束；综合发现不依赖股票词过滤 |
-| POST | /search | `{query,sources[],since?,limit}` → `{status,items[],provider_errors[]}`；只限授权补证来源 |
-| POST | /provider-calls | `{provider,method,params}`+幂等键 → `{status,data?,error_code?,provider_raw_code?}`；白名单参数，不接受任意URL/代码；金融数据仍由ytrader解释 |
-| GET | /sources/status | → 来源能力stream/bounded_search、当前状态、最后成功、覆盖起止和延迟 |
-| POST | /model-invocations | 幂等键+`{purpose,model_policy,prompt_version,input_item_refs[],messages[],max_input_tokens,max_output_tokens,pool:auto/manual}` → 202 `{invocation_id,status}`；计费/权限未配置或预算不足直接拒绝，不发外部请求 |
-| GET | /model-invocations/{id} | → `{status,output?,usage?:{provider,model,tokens_in,tokens_out,cost_settled},cost_reserved,error_class?,provider_request_id?}`；unknown不自动重发，费用未知不填0 |
-| GET | /products/ytrader/budget | → `{enabled,currency,day:{limit,spent,reserved},month:{limit,spent,reserved},unknown_reserved,pool_policy}`；unknown_reserved是reserved子集，不能再次相加 |
-| POST | /items/snapshots | → `{snapshot_id,as_of_cursor,expires_at,coverage}`，固定恢复水位H；不代表上游全网历史完整 |
-| GET | /items/snapshots/{id}?cursor= | 固定H下的最新条目及删除墓碑分页；快照失效410必须重建 |
-| POST | /items/versions:status | `{snapshot_id,refs:[{item_id,version}]}` → 在同一H下批量检查已引用版本是否更新/撤回/删除/不可核验 |
+公共参考由 `backend/data/industries` 随软件读取，不向证券或新闻表注入样例。AI结果另存SQLite `industry_results`，不覆盖公共包。结构包括产业范围、节点、六类有向关系、公司、参与映射、来源和分步解释。AI可引用输入中的已有来源ID，不能创造URL或改写来源；无来源的一般知识保持AI身份。此校验只保证引用存在，不能证明语义蕴含。
 
-**游标过期恢复**：取得固定水位H；分页重建本产品有权访问的当前快照，同时核对所有已引用版本；恢复中的来源状态标stale。全部产品事务提交后，从H继续消费变化，不能用最后一页即时游标跳过扫描期间变化。权限/保留期使旧引用无法核实时保留缺口并使相关结论待复核，不声称完整恢复。周期性核对采用同一流程，不能用全量扫描代替实时更正消费。
+证券代码不接受模型指定。AI建议公司在证券主表名称唯一精确匹配后获得代码；local模式另允许公共参考已核对的精确同名映射，但须确认该代码存在于当前主表。歧义和未匹配名称保持原名，避免误链。任务固定data/AI模式与目标模型地址，同一产业/问题/输入版本合并活跃任务，失败保留已有结果。结果保存实际模型、生成时间、问题和输入版本；公共基础更新后旧补充显示失效提示。任务公开信息含 `subject_label`、`target_url`，不含密钥或模型请求。
 
-## 4. 发布、删除与幂等边界
+公共参考和个人AI结果保存在本地，不随新闻data_mode迁移。选择ycore AI时调用其`/industries/explain`能力，缺失即报错，无本地回退。真实ycore服务尚未验收。
 
-一个ytrader本地事务发布事件版本、依赖撤回、更正记录和首页指针。历史Digest读取叠加当前安全状态，不能返回已撤回推断为有效。跨服务以消费水位和可重放变更恢复，不使用跨库事务。
+### 统一解释结构 v1
 
-客户端操作的幂等缓存、业务任务唯一键、模型派发记录是不同层。模型已发出但结果未知时占用预算并阻止同输入重发；不能把请求重试解释成新业务意图。新的输入也受未决额和同对象运行限制约束。
+`IndustryGraph.structure` 为可选字段，用于兼容历史；新local/ycore AI结果必须提供。字段：`version:1`、`organization:production|composition|development|mixed`、`thesis`、`groups[{id,title,role:core|support,purpose,node_ids}]`、`primary_relation_ids`、`reading_order`。全部节点恰属一组，组/主关系/阅读顺序引用完整且唯一，主关系两端为core，support须经真实关系连到core；不满足则不保存。归组不新增事实关系，阅读顺序不生成上下游。
 
-本文只定义接口和状态，未验证任何provider。契约fixture不得用于宣称真实来源、真实分析或稳定产品已经完成。
+读取旧图时返回只读归组及`structure_origin:compatibility`、`structure_notice`，原数据库记录和输入版本不重写。新完整结构返回`structure_origin:provided`。向模型传递快照时不把兼容归组伪装为已提供结构。当前远端服务也须支持新输出契约，否则明确失败，不降级保存旧格式。
+
+前端通用布局按真实关系生成主干层次，组内节点/公司按需查看；同层分支、跨行/循环和支撑保持实际方向。不同产业通过JSON表达机制，不靠行业名称或专用坐标分支。已有API、来源边界、证券身份匹配、配置与数据库schema保持。

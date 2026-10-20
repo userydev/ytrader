@@ -1,0 +1,793 @@
+{
+  "period": "2025年报",
+  "as_of": "2025-12-31",
+  "checked_at": "2026-10-19",
+  "market": {
+    "status": "not_connected",
+    "note": "行情未接入，暂无股价、市值、PE/PB与股息率。"
+  },
+  "companies": {
+    "shanghai-petrochemical": {
+      "sector": "石油炼化",
+      "focus": "由盈转亏，经营现金流仍为正",
+      "observation": "2025年归母净利润由盈转亏；判断炼化盈利需结合产品价差与加工负荷。",
+      "caveat": "报表毛利包含消费税影响。炼油产品含消费税毛利率21.98%，扣除消费税后为2.49%，不能直接与一般制造业毛利率横比。",
+      "metrics": [
+        {
+          "key": "revenue",
+          "label": "营业收入",
+          "value": 755.63186,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "公司整体营业收入",
+          "change": "同比 -13.28%"
+        },
+        {
+          "key": "net_profit",
+          "label": "归母净利润",
+          "value": -14.32595,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "归属于母公司股东的净利润",
+          "change": "由盈转亏"
+        },
+        {
+          "key": "core_profit",
+          "label": "扣非归母净利润",
+          "value": -14.2224,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "扣除非经常性损益的归母净利润",
+          "change": null
+        },
+        {
+          "key": "gross_margin",
+          "label": "报表毛利率",
+          "value": 15.852153,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "（营业收入－营业成本）/营业收入；受消费税列报影响",
+          "change": null
+        },
+        {
+          "key": "attributable_margin",
+          "label": "归母利润率",
+          "value": -1.89589,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "归母净利润/营业收入，不等同合并净利率",
+          "change": null
+        },
+        {
+          "key": "roe",
+          "label": "加权ROE",
+          "value": -5.953,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "报告披露的加权平均净资产收益率",
+          "change": null
+        },
+        {
+          "key": "eps",
+          "label": "基本每股收益",
+          "value": -0.136,
+          "unit": "元/股",
+          "group": "profitability",
+          "definition": "2025全年基本EPS，不是TTM",
+          "change": null
+        },
+        {
+          "key": "operating_cashflow",
+          "label": "经营现金流",
+          "value": 19.9333,
+          "unit": "亿元",
+          "group": "cash",
+          "definition": "经营活动产生的现金流量净额",
+          "change": null
+        },
+        {
+          "key": "cash_profit",
+          "label": "经营现金流/归母净利",
+          "value": null,
+          "unit": "倍",
+          "group": "cash",
+          "definition": "两者口径存在少数股东差异；归母亏损时不计算，不据此单独判断盈利质量",
+          "change": null
+        },
+        {
+          "key": "cash_margin",
+          "label": "经营现金流/营收",
+          "value": 2.637964,
+          "unit": "%",
+          "group": "cash",
+          "definition": "经营活动现金流量净额/营业收入",
+          "change": null
+        },
+        {
+          "key": "cash",
+          "label": "货币资金",
+          "value": 75.15562,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末货币资金，可能含受限资金，不等同可用现金",
+          "change": null
+        },
+        {
+          "key": "assets",
+          "label": "总资产",
+          "value": 398.81813,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "合并资产负债表期末资产总额",
+          "change": null
+        },
+        {
+          "key": "debt_ratio",
+          "label": "资产负债率",
+          "value": 41.742,
+          "unit": "%",
+          "group": "balance",
+          "definition": "总负债/总资产，不等于有息负债比例",
+          "change": null
+        },
+        {
+          "key": "receivables",
+          "label": "应收账款",
+          "value": 7.84937,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并应收账款账面价值",
+          "change": null
+        },
+        {
+          "key": "inventory",
+          "label": "存货",
+          "value": 57.4249,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并存货账面价值",
+          "change": null
+        }
+      ],
+      "source": {
+        "title": "上海石化2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-19/1225017109.PDF",
+        "locator": "PDF第8、20、22、88页（报表采用中国企业会计准则）"
+      },
+      "segments": {
+        "basis": "主营业务收入，按中国企业会计准则；炼油产品毛利含消费税",
+        "total": 749.66822,
+        "items": [
+          {
+            "name": "炼油产品",
+            "revenue": 514.389,
+            "share": 68.6155536912049,
+            "gross_margin": 21.98
+          },
+          {
+            "name": "化工产品",
+            "revenue": 170.32609,
+            "share": 22.72019614223476,
+            "gross_margin": 2.81
+          },
+          {
+            "name": "石化产品贸易",
+            "revenue": 63.72046,
+            "share": 8.499821427671032,
+            "gross_margin": 1.08
+          },
+          {
+            "name": "其他主营业务",
+            "revenue": 1.23267,
+            "share": 0.16442873888931825,
+            "gross_margin": 0.09
+          }
+        ]
+      },
+      "quote": null
+    },
+    "ieit": {
+      "sector": "服务器与算力设备",
+      "focus": "营收增长快于利润，毛利率值得跟踪",
+      "observation": "2025年营收同比增长43.25%，归母净利润增长5.20%；服务器产品毛利率4.52%，比上年下降2.18个百分点。",
+      "caveat": "2023、2024年为2025年报追溯调整后数据。服务器收入不等于AI服务器收入；经营现金流/归母净利润仅作对照，含少数股东口径差异。",
+      "metrics": [
+        {
+          "key": "revenue",
+          "label": "营业收入",
+          "value": 1647.819977,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "公司整体营业收入",
+          "change": "同比 +43.25%"
+        },
+        {
+          "key": "net_profit",
+          "label": "归母净利润",
+          "value": 24.128663,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "归属于母公司股东的净利润",
+          "change": "同比 +5.20%"
+        },
+        {
+          "key": "core_profit",
+          "label": "扣非归母净利润",
+          "value": 20.809308,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "扣除非经常性损益的归母净利润",
+          "change": "同比 +11.10%"
+        },
+        {
+          "key": "gross_margin",
+          "label": "报表毛利率",
+          "value": 4.88342,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "（营业收入－营业成本）/营业收入",
+          "change": null
+        },
+        {
+          "key": "attributable_margin",
+          "label": "归母利润率",
+          "value": 1.464278,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "归母净利润/营业收入，不等同合并净利率",
+          "change": null
+        },
+        {
+          "key": "roe",
+          "label": "加权ROE",
+          "value": 11.55,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "报告披露的加权平均净资产收益率",
+          "change": null
+        },
+        {
+          "key": "eps",
+          "label": "基本每股收益",
+          "value": 1.639,
+          "unit": "元/股",
+          "group": "profitability",
+          "definition": "2025全年基本EPS，不是TTM",
+          "change": null
+        },
+        {
+          "key": "operating_cashflow",
+          "label": "经营现金流",
+          "value": 54.530521,
+          "unit": "亿元",
+          "group": "cash",
+          "definition": "经营活动产生的现金流量净额",
+          "change": null
+        },
+        {
+          "key": "cash_profit",
+          "label": "经营现金流/归母净利",
+          "value": 2.259989,
+          "unit": "倍",
+          "group": "cash",
+          "definition": "两者口径存在少数股东差异；归母亏损时不计算，不据此单独判断盈利质量",
+          "change": null
+        },
+        {
+          "key": "cash_margin",
+          "label": "经营现金流/营收",
+          "value": 3.309252,
+          "unit": "%",
+          "group": "cash",
+          "definition": "经营活动现金流量净额/营业收入",
+          "change": null
+        },
+        {
+          "key": "cash",
+          "label": "货币资金",
+          "value": 103.245287,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末货币资金，可能含受限资金，不等同可用现金",
+          "change": null
+        },
+        {
+          "key": "assets",
+          "label": "总资产",
+          "value": 837.938479,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "合并资产负债表期末资产总额",
+          "change": null
+        },
+        {
+          "key": "debt_ratio",
+          "label": "资产负债率",
+          "value": 73.64,
+          "unit": "%",
+          "group": "balance",
+          "definition": "总负债/总资产，不等于有息负债比例",
+          "change": null
+        },
+        {
+          "key": "receivables",
+          "label": "应收账款",
+          "value": 130.505635,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并应收账款账面价值",
+          "change": null
+        },
+        {
+          "key": "inventory",
+          "label": "存货",
+          "value": 465.078497,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并存货账面价值",
+          "change": null
+        },
+        {
+          "key": "rd",
+          "label": "研发投入",
+          "value": 38.774573,
+          "unit": "亿元",
+          "group": "investment",
+          "definition": "费用化与资本化研发投入之和，不等同研发费用",
+          "change": null
+        },
+        {
+          "key": "rd_ratio",
+          "label": "研发投入/营收",
+          "value": 2.35,
+          "unit": "%",
+          "group": "investment",
+          "definition": "报告披露的研发投入总额占营业收入比例",
+          "change": null
+        }
+      ],
+      "source": {
+        "title": "浪潮信息2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225096638.PDF",
+        "locator": "PDF第7、12—16、52页；营业成本采用管理层分析披露值（亿元）"
+      },
+      "segments": {
+        "basis": "营业收入按产品分类",
+        "total": 1647.819977,
+        "items": [
+          {
+            "name": "服务器产品",
+            "revenue": 1546.052529,
+            "share": 93.82411614008488,
+            "gross_margin": 4.52
+          },
+          {
+            "name": "存储、交换等",
+            "revenue": 97.712895,
+            "share": 5.92982828002212,
+            "gross_margin": 8.74
+          },
+          {
+            "name": "其他",
+            "revenue": 4.054553,
+            "share": 0.246055579892997,
+            "gross_margin": null
+          }
+        ]
+      },
+      "quote": null
+    },
+    "hengrui": {
+      "sector": "创新药与医药制造",
+      "focus": "创新药销售与对外许可共同影响业绩",
+      "observation": "2025年归母净利润增长21.69%；创新药销售收入163.42亿元。对外许可收入按合同履约进度确认，不能等同持续药品销售。",
+      "caveat": "研发投入含费用化和资本化，研发投入资本化比例20.21%。下方业务占比以医药制造主营收入为分母，不包含全部许可等收入。",
+      "metrics": [
+        {
+          "key": "revenue",
+          "label": "营业收入",
+          "value": 316.294162,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "公司整体营业收入",
+          "change": "同比 +13.02%"
+        },
+        {
+          "key": "net_profit",
+          "label": "归母净利润",
+          "value": 77.110548,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "归属于母公司股东的净利润",
+          "change": "同比 +21.69%"
+        },
+        {
+          "key": "core_profit",
+          "label": "扣非归母净利润",
+          "value": 74.134056,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "扣除非经常性损益的归母净利润",
+          "change": "同比 +20.00%"
+        },
+        {
+          "key": "gross_margin",
+          "label": "报表毛利率",
+          "value": 86.206967,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "（营业收入－营业成本）/营业收入",
+          "change": null
+        },
+        {
+          "key": "attributable_margin",
+          "label": "归母利润率",
+          "value": 24.379378,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "归母净利润/营业收入，不等同合并净利率",
+          "change": null
+        },
+        {
+          "key": "roe",
+          "label": "加权ROE",
+          "value": 14.26,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "报告披露的加权平均净资产收益率",
+          "change": null
+        },
+        {
+          "key": "eps",
+          "label": "基本每股收益",
+          "value": 1.19,
+          "unit": "元/股",
+          "group": "profitability",
+          "definition": "2025全年基本EPS，不是TTM",
+          "change": null
+        },
+        {
+          "key": "operating_cashflow",
+          "label": "经营现金流",
+          "value": 112.353781,
+          "unit": "亿元",
+          "group": "cash",
+          "definition": "经营活动产生的现金流量净额",
+          "change": null
+        },
+        {
+          "key": "cash_profit",
+          "label": "经营现金流/归母净利",
+          "value": 1.457048,
+          "unit": "倍",
+          "group": "cash",
+          "definition": "两者口径存在少数股东差异；归母亏损时不计算，不据此单独判断盈利质量",
+          "change": null
+        },
+        {
+          "key": "cash_margin",
+          "label": "经营现金流/营收",
+          "value": 35.521927,
+          "unit": "%",
+          "group": "cash",
+          "definition": "经营活动现金流量净额/营业收入",
+          "change": null
+        },
+        {
+          "key": "cash",
+          "label": "货币资金",
+          "value": 409.554825,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末货币资金，可能含受限资金，不等同可用现金",
+          "change": null
+        },
+        {
+          "key": "assets",
+          "label": "总资产",
+          "value": 698.673158,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "合并资产负债表期末资产总额",
+          "change": null
+        },
+        {
+          "key": "debt_ratio",
+          "label": "资产负债率",
+          "value": 11.55117,
+          "unit": "%",
+          "group": "balance",
+          "definition": "总负债/总资产，不等于有息负债比例",
+          "change": null
+        },
+        {
+          "key": "receivables",
+          "label": "应收账款",
+          "value": 51.465621,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并应收账款账面价值",
+          "change": null
+        },
+        {
+          "key": "inventory",
+          "label": "存货",
+          "value": 28.784125,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并存货账面价值",
+          "change": null
+        },
+        {
+          "key": "rd",
+          "label": "研发投入",
+          "value": 87.238524,
+          "unit": "亿元",
+          "group": "investment",
+          "definition": "费用化与资本化研发投入之和，不等同研发费用",
+          "change": null
+        },
+        {
+          "key": "rd_ratio",
+          "label": "研发投入/营收",
+          "value": 27.58,
+          "unit": "%",
+          "group": "investment",
+          "definition": "报告披露的研发投入总额占营业收入比例",
+          "change": null
+        }
+      ],
+      "source": {
+        "title": "恒瑞医药2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225032585.PDF",
+        "locator": "PDF第6、57—58、61、132—134页"
+      },
+      "segments": {
+        "basis": "医药制造主营收入；不含全部许可等收入",
+        "total": 280.1344834768,
+        "items": [
+          {
+            "name": "肿瘤",
+            "revenue": 166.7109383494,
+            "share": 59.51103779881728,
+            "gross_margin": 93.48
+          },
+          {
+            "name": "神经科学",
+            "revenue": 42.9183752976,
+            "share": 15.320632706453072,
+            "gross_margin": 82.73
+          },
+          {
+            "name": "造影剂",
+            "revenue": 29.9317299299,
+            "share": 10.684771670524762,
+            "gross_margin": 58.75
+          },
+          {
+            "name": "代谢和心血管",
+            "revenue": 24.3639221539,
+            "share": 8.697223509049985,
+            "gross_margin": 73.69
+          },
+          {
+            "name": "免疫和呼吸",
+            "revenue": 8.6172259587,
+            "share": 3.076103252891269,
+            "gross_margin": 84.62
+          },
+          {
+            "name": "其他",
+            "revenue": 7.5922917873,
+            "share": 2.710231062263626,
+            "gross_margin": 54.15
+          }
+        ]
+      },
+      "quote": null
+    },
+    "nari": {
+      "sector": "电网自动化与电力设备",
+      "focus": "收入增长，关注毛利和项目回款",
+      "observation": "2025年营收增长14.53%，归母净利润增长8.79%；能源低碳业务收入增长37.30%，毛利率下降2.77个百分点。",
+      "caveat": "2023、2024年为2025年报追溯调整后数据。项目交付与回款不同步，需结合应收账款、存货和现金流观察。",
+      "metrics": [
+        {
+          "key": "revenue",
+          "label": "营业收入",
+          "value": 662.289632,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "公司整体营业收入",
+          "change": "同比 +14.53%"
+        },
+        {
+          "key": "net_profit",
+          "label": "归母净利润",
+          "value": 82.789717,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "归属于母公司股东的净利润",
+          "change": "同比 +8.79%"
+        },
+        {
+          "key": "core_profit",
+          "label": "扣非归母净利润",
+          "value": 79.829556,
+          "unit": "亿元",
+          "group": "growth",
+          "definition": "扣除非经常性损益的归母净利润",
+          "change": "同比 +8.04%"
+        },
+        {
+          "key": "gross_margin",
+          "label": "报表毛利率",
+          "value": 25.837094,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "（营业收入－营业成本）/营业收入",
+          "change": null
+        },
+        {
+          "key": "attributable_margin",
+          "label": "归母利润率",
+          "value": 12.50053,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "归母净利润/营业收入，不等同合并净利率",
+          "change": null
+        },
+        {
+          "key": "roe",
+          "label": "加权ROE",
+          "value": 16.26,
+          "unit": "%",
+          "group": "profitability",
+          "definition": "报告披露的加权平均净资产收益率",
+          "change": null
+        },
+        {
+          "key": "eps",
+          "label": "基本每股收益",
+          "value": 1.04,
+          "unit": "元/股",
+          "group": "profitability",
+          "definition": "2025全年基本EPS，不是TTM",
+          "change": null
+        },
+        {
+          "key": "operating_cashflow",
+          "label": "经营现金流",
+          "value": 127.687021,
+          "unit": "亿元",
+          "group": "cash",
+          "definition": "经营活动产生的现金流量净额",
+          "change": null
+        },
+        {
+          "key": "cash_profit",
+          "label": "经营现金流/归母净利",
+          "value": 1.542305,
+          "unit": "倍",
+          "group": "cash",
+          "definition": "两者口径存在少数股东差异；归母亏损时不计算，不据此单独判断盈利质量",
+          "change": null
+        },
+        {
+          "key": "cash_margin",
+          "label": "经营现金流/营收",
+          "value": 19.279635,
+          "unit": "%",
+          "group": "cash",
+          "definition": "经营活动现金流量净额/营业收入",
+          "change": null
+        },
+        {
+          "key": "cash",
+          "label": "货币资金",
+          "value": 73.232593,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末货币资金，可能含受限资金，不等同可用现金",
+          "change": null
+        },
+        {
+          "key": "assets",
+          "label": "总资产",
+          "value": 985.856577,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "合并资产负债表期末资产总额",
+          "change": null
+        },
+        {
+          "key": "debt_ratio",
+          "label": "资产负债率",
+          "value": 42.73057,
+          "unit": "%",
+          "group": "balance",
+          "definition": "总负债/总资产，不等于有息负债比例",
+          "change": null
+        },
+        {
+          "key": "receivables",
+          "label": "应收账款",
+          "value": 312.498643,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并应收账款账面价值",
+          "change": null
+        },
+        {
+          "key": "inventory",
+          "label": "存货",
+          "value": 130.582189,
+          "unit": "亿元",
+          "group": "balance",
+          "definition": "期末合并存货账面价值",
+          "change": null
+        },
+        {
+          "key": "rd",
+          "label": "研发投入",
+          "value": 47.389864,
+          "unit": "亿元",
+          "group": "investment",
+          "definition": "费用化与资本化研发投入之和，不等同研发费用",
+          "change": null
+        },
+        {
+          "key": "rd_ratio",
+          "label": "研发投入/营收",
+          "value": 7.16,
+          "unit": "%",
+          "group": "investment",
+          "definition": "报告披露的研发投入总额占营业收入比例",
+          "change": null
+        }
+      ],
+      "source": {
+        "title": "国电南瑞2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257886.PDF",
+        "locator": "PDF第13—14、26—28、31、121—123页"
+      },
+      "segments": {
+        "basis": "主营业务收入按产品分类",
+        "total": 661.5625030369,
+        "items": [
+          {
+            "name": "电网智能",
+            "revenue": 334.2215536842,
+            "share": 50.520026777508896,
+            "gross_margin": 30.12
+          },
+          {
+            "name": "能源低碳",
+            "revenue": 167.2980702941,
+            "share": 25.288324160773755,
+            "gross_margin": 20.21
+          },
+          {
+            "name": "数能融合",
+            "revenue": 123.0333593273,
+            "share": 18.597390082194178,
+            "gross_margin": 22.62
+          },
+          {
+            "name": "工业互联",
+            "revenue": 30.1387712123,
+            "share": 4.555695202486249,
+            "gross_margin": 21.56
+          },
+          {
+            "name": "集成及其他",
+            "revenue": 6.870748519,
+            "share": 1.0385637770369174,
+            "gross_margin": 26.64
+          }
+        ]
+      },
+      "quote": null
+    }
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "format": 1,
+  "status": "draft",
+  "industry": {
+    "id": "grid",
+    "name": "电网设备",
+    "demand": "将电能稳定送到用电端",
+    "summary": "建设项目形成设备需求，一次设备、保护控制和线路连接共同组成电网；交付验收后投入输配电运行。",
+    "boundary": "展示设备分工及项目兑现，不列发电全产业或具体公司中标事实。"
+  },
+  "nodes": [
+    {
+      "id": "project",
+      "name": "建设项目",
+      "description": "项目计划、设备需求与建设预算。",
+      "sources": []
+    },
+    {
+      "id": "primary",
+      "name": "一次设备",
+      "description": "变压器和开关等设备承担电能变换与开断。",
+      "sources": []
+    },
+    {
+      "id": "secondary",
+      "name": "保护与自动化",
+      "description": "测量、控制和保护电网运行。",
+      "sources": []
+    },
+    {
+      "id": "cable",
+      "name": "电缆与连接",
+      "description": "连接电网设备并传输电能。",
+      "sources": []
+    },
+    {
+      "id": "acceptance",
+      "name": "交付验收",
+      "description": "设备履约、工程验收与收入确认需分别核实。",
+      "sources": []
+    },
+    {
+      "id": "operate",
+      "name": "电网投运",
+      "description": "设备共同组成可运行的输配电系统。",
+      "sources": []
+    },
+    {
+      "id": "users",
+      "name": "用电需求",
+      "description": "为工业、商业与居民提供电力。",
+      "sources": []
+    }
+  ],
+  "relations": [
+    {
+      "id": "grid:r1",
+      "from_id": "project",
+      "to_id": "primary",
+      "kind": "precedes",
+      "explanation": "设备需求",
+      "sources": []
+    },
+    {
+      "id": "grid:r2",
+      "from_id": "project",
+      "to_id": "secondary",
+      "kind": "precedes",
+      "explanation": "控制保护需求",
+      "sources": []
+    },
+    {
+      "id": "grid:r3",
+      "from_id": "project",
+      "to_id": "cable",
+      "kind": "precedes",
+      "explanation": "线路需求",
+      "sources": []
+    },
+    {
+      "id": "grid:r4",
+      "from_id": "primary",
+      "to_id": "acceptance",
+      "kind": "precedes",
+      "explanation": "设备交付",
+      "sources": []
+    },
+    {
+      "id": "grid:r5",
+      "from_id": "secondary",
+      "to_id": "acceptance",
+      "kind": "supports",
+      "explanation": "系统交付",
+      "sources": []
+    },
+    {
+      "id": "grid:r6",
+      "from_id": "cable",
+      "to_id": "acceptance",
+      "kind": "supports",
+      "explanation": "连接交付",
+      "sources": []
+    },
+    {
+      "id": "grid:r7",
+      "from_id": "acceptance",
+      "to_id": "operate",
+      "kind": "precedes",
+      "explanation": "投运条件",
+      "sources": []
+    },
+    {
+      "id": "grid:r8",
+      "from_id": "operate",
+      "to_id": "users",
+      "kind": "precedes",
+      "explanation": "输配电服务",
+      "sources": []
+    }
+  ],
+  "companies": [
+    {
+      "id": "tbea",
+      "name": "特变电工",
+      "symbol": "SH:600089",
+      "profile": {
+        "products": "变压器等输变电设备；仅展示本产业相关角色。",
+        "buyers": "电网、工程建设与工业用电相关客户。",
+        "purpose": "改变电压等级，支持电能输送和使用。",
+        "watch": "变压器招标、中标及交付成本。",
+        "condition": "建设预算需落到相关设备规格和公司中标；公司其他业务不能按本图一并推断。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "pinggao",
+      "name": "平高电气",
+      "symbol": "SH:600312",
+      "profile": {
+        "products": "高压开关等电气设备。",
+        "buyers": "电网及电力工程设备采购方。",
+        "purpose": "执行电路开断与隔离，支持电网安全运行。",
+        "watch": "开关设备招标、中标和交付验收。",
+        "condition": "投资的电压等级和设备结构需匹配公司产品，再经过中标与履约。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "xd",
+      "name": "中国西电",
+      "symbol": "SH:601179",
+      "profile": {
+        "products": "输配电设备及相关系统。",
+        "buyers": "电网建设、工程及工业电力客户。",
+        "purpose": "提供电能输送与变换所需的设备。",
+        "watch": "分类设备订单、交付和项目验收。",
+        "condition": "项目清单与设备采购结构需明确，不能仅据总投资确认公司订单。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "nari",
+      "name": "国电南瑞",
+      "symbol": "SH:600406",
+      "profile": {
+        "products": "电网自动化、保护控制等业务角色，本轮未逐产品核验。",
+        "buyers": "电网建设运营、工程集成等客户类别。",
+        "purpose": "为电网提供测量、控制、保护等能力，与一次设备作用于同一电网。",
+        "watch": "分领域招标、公司中标、订单交付与验收。",
+        "condition": "项目投资需转成对应设备招标、中标和验收；不能将电网总投资增速直接当成公司收入增速。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "xj",
+      "name": "许继电气",
+      "symbol": "SZ:000400",
+      "profile": {
+        "products": "保护控制与电力电子等电力装备。",
+        "buyers": "电网、电力工程及相关行业客户。",
+        "purpose": "支持电力系统的保护、控制与电能变换相关任务。",
+        "watch": "分产品招标、中标与交付验收。",
+        "condition": "各类工程采用的技术与产品不同，需具体到设备类别和公司履约。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "dongfang",
+      "name": "东方电子",
+      "symbol": "SZ:000682",
+      "profile": {
+        "products": "配电自动化等电力控制相关产品与系统。",
+        "buyers": "电网配电建设运营及工程客户。",
+        "purpose": "支持配电网络监测、控制与运行管理。",
+        "watch": "配电项目采购、系统交付与验收。",
+        "condition": "电网投资需落实到配电自动化项目，且公司取得对应订单。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "hengtong",
+      "name": "亨通光电",
+      "symbol": "SH:600487",
+      "profile": {
+        "products": "电缆及相关系统；本图限电力连接角色。",
+        "buyers": "电网、工程建设及相关电力连接采购方。",
+        "purpose": "在电网设备和用电端之间提供电力连接。",
+        "watch": "电缆订单、原料成本与工程交付。",
+        "condition": "线路建设须形成匹配规格的采购与交付；材料成本和项目节奏会改变经营表现。"
+      },
+      "profile_verified": false
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "tbea",
+      "node_id": "primary",
+      "role": "变压器等输变电设备",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "pinggao",
+      "node_id": "primary",
+      "role": "高压开关",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "xd",
+      "node_id": "primary",
+      "role": "输配电设备",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "nari",
+      "node_id": "secondary",
+      "role": "电网自动化与保护控制",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "xj",
+      "node_id": "secondary",
+      "role": "保护控制与电力电子",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "dongfang",
+      "node_id": "secondary",
+      "role": "配电自动化系统",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "hengtong",
+      "node_id": "cable",
+      "role": "电力电缆与连接系统",
+      "sources": [],
+      "basis": "editorial"
+    }
+  ],
+  "sources": [],
+  "structure": {
+    "version": 1,
+    "organization": "project-delivery",
+    "thesis": "设备并行分工，订单逐步兑现。",
+    "groups": [
+      {
+        "id": "project",
+        "title": "项目与需求",
+        "role": "core",
+        "node_ids": [
+          "project"
+        ]
+      },
+      {
+        "id": "supply",
+        "title": "设备分工",
+        "role": "core",
+        "node_ids": [
+          "primary",
+          "secondary",
+          "cable"
+        ]
+      },
+      {
+        "id": "delivery",
+        "title": "交付与运行",
+        "role": "core",
+        "node_ids": [
+          "acceptance",
+          "operate",
+          "users"
+        ]
+      }
+    ]
+  },
+  "layout": {
+    "project": [
+      14,
+      78
+    ],
+    "primary": [
+      196,
+      78
+    ],
+    "acceptance": [
+      378,
+      78
+    ],
+    "operate": [
+      560,
+      78
+    ],
+    "users": [
+      742,
+      78
+    ],
+    "secondary": [
+      196,
+      380
+    ],
+    "cable": [
+      378,
+      380
+    ]
+  },
+  "default_company": "nari",
+  "version": "2026-10-18.matrix-review",
+  "scenarios": [
+    {
+      "id": "investment",
+      "title": "电网建设投资增加",
+      "label": "情景示例",
+      "category": "资金与投资",
+      "indicator": "项目投资与设备招标",
+      "entry_node": "project",
+      "affected_nodes": [
+        "project",
+        "primary",
+        "secondary",
+        "cable",
+        "acceptance"
+      ],
+      "relation_ids": [
+        "grid:r1",
+        "grid:r2",
+        "grid:r3",
+        "grid:r4",
+        "grid:r5",
+        "grid:r6"
+      ],
+      "steps": [
+        "投资进入具体工程",
+        "形成各类设备招标与中标",
+        "履约验收后再核对收入"
+      ],
+      "condition": "总投资需拆分设备类别；中标、交付、验收和收入确认并非同一时间。",
+      "watch": "观察分类招标、中标与交付验收。"
+    },
+    {
+      "id": "delay",
+      "title": "项目验收延期",
+      "label": "情景示例",
+      "category": "供给",
+      "indicator": "项目交付与验收进度",
+      "entry_node": "acceptance",
+      "affected_nodes": [
+        "primary",
+        "secondary",
+        "cable",
+        "acceptance",
+        "operate"
+      ],
+      "relation_ids": [
+        "grid:r4",
+        "grid:r5",
+        "grid:r6",
+        "grid:r7"
+      ],
+      "steps": [
+        "交付或验收节点延后",
+        "订单兑现时间可能变化",
+        "投运与回款需继续核实"
+      ],
+      "condition": "需先区分供货问题与业主工程节奏；延期不等于取消订单。",
+      "watch": "观察合同执行、验收与回款。"
+    }
+  ],
+  "categories": [
+    "需求",
+    "供给",
+    "价格与成本",
+    "技术与效率",
+    "规则与准入",
+    "资金与投资"
+  ],
+  "ai": {
+    "label": "AI辅助 · 示例解读",
+    "overview": "电网设备商向同一张电网提供不同能力：变压器与开关处理电能，保护和自动化负责控制，电缆完成连接。建设投资须经过分类招标、中标和交付验收，才能判断各公司业务如何变化。",
+    "gap": "空白表示当前资料未收录。AI可以解释该环节通常需要什么产品或服务，以及应该核对哪些资料；它不能仅凭产业位置确认某家公司有业务、供货或订单。",
+    "questions": [
+      "这个产业如何运转",
+      "解释当前选择",
+      "理解资料空白"
+    ],
+    "disclosure": "本页展示预写的AI解读示例，未连接实时问答；补充推断不写回已收录业务。"
+  }
+}

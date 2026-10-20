@@ -1,0 +1,150 @@
+{
+  "id": "semiconductor-computing",
+  "version": "2026-10-18.1",
+  "license": "MIT",
+  "source_url": "https://www.montage-tech.com/tc/Memory_Interface",
+  "as_of": "2026-10-18T13:30:00Z",
+  "nodes": [
+    {
+      "id": "semiconductor-computing:theme",
+      "label": "半导体与算力",
+      "kind": "segment"
+    },
+    {
+      "id": "company:SH:688008",
+      "label": "澜起科技",
+      "kind": "company",
+      "symbol": "SH:688008"
+    },
+    {
+      "id": "company:SH:688041",
+      "label": "海光信息",
+      "kind": "company",
+      "symbol": "SH:688041"
+    },
+    {
+      "id": "semiconductor-computing:interface",
+      "label": "内存接口芯片",
+      "kind": "product"
+    },
+    {
+      "id": "semiconductor-computing:ddr5",
+      "label": "DDR5内存模组",
+      "kind": "product"
+    },
+    {
+      "id": "semiconductor-computing:cpu",
+      "label": "服务器CPU",
+      "kind": "product"
+    },
+    {
+      "id": "semiconductor-computing:server",
+      "label": "服务器",
+      "kind": "product"
+    }
+  ],
+  "edges": [
+    {
+      "id": "semiconductor-computing:edge:0",
+      "from_id": "company:SH:688008",
+      "to_id": "semiconductor-computing:interface",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.montage-tech.com/tc/Memory_Interface"
+    },
+    {
+      "id": "semiconductor-computing:edge:1",
+      "from_id": "semiconductor-computing:interface",
+      "to_id": "semiconductor-computing:ddr5",
+      "relation": "upstream",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.montage-tech.com/tc/Memory_Interface"
+    },
+    {
+      "id": "semiconductor-computing:edge:2",
+      "from_id": "semiconductor-computing:ddr5",
+      "to_id": "semiconductor-computing:server",
+      "relation": "upstream",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.montage-tech.com/tc/Memory_Interface"
+    },
+    {
+      "id": "semiconductor-computing:edge:3",
+      "from_id": "company:SH:688041",
+      "to_id": "semiconductor-computing:cpu",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:1"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.hygon.cn/product/cpu"
+    },
+    {
+      "id": "semiconductor-computing:edge:4",
+      "from_id": "semiconductor-computing:cpu",
+      "to_id": "semiconductor-computing:server",
+      "relation": "upstream",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:1"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.hygon.cn/product/cpu"
+    },
+    {
+      "id": "semiconductor-computing:company:SH:688008",
+      "from_id": "company:SH:688008",
+      "to_id": "semiconductor-computing:theme",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.montage-tech.com/tc/Memory_Interface"
+    },
+    {
+      "id": "semiconductor-computing:company:SH:688041",
+      "from_id": "company:SH:688041",
+      "to_id": "semiconductor-computing:theme",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-computing:evidence:1"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.hygon.cn/product/cpu"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "semiconductor-computing:evidence:0",
+      "title": "澜起科技官网：内存接口芯片",
+      "url": "https://www.montage-tech.com/tc/Memory_Interface",
+      "excerpt": "原创事实摘要：公司开发RCD、DB、MRCD、MDB内存接口芯片及DDR5配套芯片；其应用于内存模组，支持高性能服务器内存系统。 本包只记录业务类别或工艺关系，不表示特定公司间供货，也不表示投资收益。2026-10-18核读；网页未标统一发布日期。",
+      "published_at": null,
+      "source": "澜起科技官网"
+    },
+    {
+      "id": "semiconductor-computing:evidence:1",
+      "title": "海光官网：CPU产品",
+      "url": "https://www.hygon.cn/product/cpu",
+      "excerpt": "原创事实摘要：海光7000系列处理器面向数据中心，应用于云计算、大数据、数据库、分布式存储及人工智能；5000系列面向行业运算需求。 本包只记录业务类别或工艺关系，不表示特定公司间供货，也不表示投资收益。2026-10-18核读；网页未标统一发布日期。",
+      "published_at": null,
+      "source": "海光官网"
+    }
+  ]
+}

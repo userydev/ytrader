@@ -1,487 +1,356 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-16T08:24:37.978386+00:00",
-  "title": "Design System: ytrader",
+  "generatedAt": "2026-10-18T10:05:25.828387+00:00",
+  "title": "Design System: ytrader 研究工作台",
   "extensions": {
     "colorMeta": {
-      "link": {
+      "green": {
         "role": "primary",
-        "displayName": "依据青",
+        "displayName": "研究青绿",
         "tonalRamp": [
-          "oklch(15.0% 0.08327 210.54)",
-          "oklch(26.43% 0.08327 210.54)",
-          "oklch(37.86% 0.08327 210.54)",
-          "oklch(49.29% 0.08327 210.54)",
-          "oklch(60.71% 0.08327 210.54)",
-          "oklch(72.14% 0.08327 210.54)",
-          "oklch(83.57% 0.08327 210.54)",
-          "oklch(95.0% 0.08327 210.54)"
+          "oklch(15.00% 0.07416 178.78)",
+          "oklch(26.43% 0.07416 178.78)",
+          "oklch(37.86% 0.07416 178.78)",
+          "oklch(49.29% 0.07416 178.78)",
+          "oklch(60.71% 0.07416 178.78)",
+          "oklch(72.14% 0.07416 178.78)",
+          "oklch(83.57% 0.07416 178.78)",
+          "oklch(95.00% 0.07416 178.78)"
         ]
       },
-      "link-hover": {
+      "green-hover": {
         "role": "primary",
-        "displayName": "深青",
+        "displayName": "深研究青绿",
         "tonalRamp": [
-          "oklch(15.0% 0.05836 216.22)",
-          "oklch(26.43% 0.05836 216.22)",
-          "oklch(37.86% 0.05836 216.22)",
-          "oklch(49.29% 0.05836 216.22)",
-          "oklch(60.71% 0.05836 216.22)",
-          "oklch(72.14% 0.05836 216.22)",
-          "oklch(83.57% 0.05836 216.22)",
-          "oklch(95.0% 0.05836 216.22)"
-        ]
-      },
-      "action": {
-        "role": "primary",
-        "displayName": "按钮墨青",
-        "tonalRamp": [
-          "oklch(15.0% 0.05586 234.26)",
-          "oklch(26.43% 0.05586 234.26)",
-          "oklch(37.86% 0.05586 234.26)",
-          "oklch(49.29% 0.05586 234.26)",
-          "oklch(60.71% 0.05586 234.26)",
-          "oklch(72.14% 0.05586 234.26)",
-          "oklch(83.57% 0.05586 234.26)",
-          "oklch(95.0% 0.05586 234.26)"
-        ]
-      },
-      "focus": {
-        "role": "primary",
-        "displayName": "焦点青",
-        "tonalRamp": [
-          "oklch(15.0% 0.09285 216.59)",
-          "oklch(26.43% 0.09285 216.59)",
-          "oklch(37.86% 0.09285 216.59)",
-          "oklch(49.29% 0.09285 216.59)",
-          "oklch(60.71% 0.09285 216.59)",
-          "oklch(72.14% 0.09285 216.59)",
-          "oklch(83.57% 0.09285 216.59)",
-          "oklch(95.0% 0.09285 216.59)"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "正文墨蓝",
-        "tonalRamp": [
-          "oklch(15.0% 0.05039 251.93)",
-          "oklch(26.43% 0.05039 251.93)",
-          "oklch(37.86% 0.05039 251.93)",
-          "oklch(49.29% 0.05039 251.93)",
-          "oklch(60.71% 0.05039 251.93)",
-          "oklch(72.14% 0.05039 251.93)",
-          "oklch(83.57% 0.05039 251.93)",
-          "oklch(95.0% 0.05039 251.93)"
-        ]
-      },
-      "muted": {
-        "role": "neutral",
-        "displayName": "辅助蓝灰",
-        "tonalRamp": [
-          "oklch(15.0% 0.03524 245.54)",
-          "oklch(26.43% 0.03524 245.54)",
-          "oklch(37.86% 0.03524 245.54)",
-          "oklch(49.29% 0.03524 245.54)",
-          "oklch(60.71% 0.03524 245.54)",
-          "oklch(72.14% 0.03524 245.54)",
-          "oklch(83.57% 0.03524 245.54)",
-          "oklch(95.0% 0.03524 245.54)"
-        ]
-      },
-      "metadata": {
-        "role": "neutral",
-        "displayName": "状态蓝灰",
-        "tonalRamp": [
-          "oklch(15.0% 0.03970 242.10)",
-          "oklch(26.43% 0.03970 242.10)",
-          "oklch(37.86% 0.03970 242.10)",
-          "oklch(49.29% 0.03970 242.10)",
-          "oklch(60.71% 0.03970 242.10)",
-          "oklch(72.14% 0.03970 242.10)",
-          "oklch(83.57% 0.03970 242.10)",
-          "oklch(95.0% 0.03970 242.10)"
-        ]
-      },
-      "caption": {
-        "role": "neutral",
-        "displayName": "注释蓝灰",
-        "tonalRamp": [
-          "oklch(15.0% 0.03165 240.14)",
-          "oklch(26.43% 0.03165 240.14)",
-          "oklch(37.86% 0.03165 240.14)",
-          "oklch(49.29% 0.03165 240.14)",
-          "oklch(60.71% 0.03165 240.14)",
-          "oklch(72.14% 0.03165 240.14)",
-          "oklch(83.57% 0.03165 240.14)",
-          "oklch(95.0% 0.03165 240.14)"
-        ]
-      },
-      "canvas": {
-        "role": "neutral",
-        "displayName": "页面冷灰",
-        "tonalRamp": [
-          "oklch(15.0% 0.00343 247.86)",
-          "oklch(26.43% 0.00343 247.86)",
-          "oklch(37.86% 0.00343 247.86)",
-          "oklch(49.29% 0.00343 247.86)",
-          "oklch(60.71% 0.00343 247.86)",
-          "oklch(72.14% 0.00343 247.86)",
-          "oklch(83.57% 0.00343 247.86)",
-          "oklch(95.0% 0.00343 247.86)"
+          "oklch(15.00% 0.06473 175.55)",
+          "oklch(26.43% 0.06473 175.55)",
+          "oklch(37.86% 0.06473 175.55)",
+          "oklch(49.29% 0.06473 175.55)",
+          "oklch(60.71% 0.06473 175.55)",
+          "oklch(72.14% 0.06473 175.55)",
+          "oklch(83.57% 0.06473 175.55)",
+          "oklch(95.00% 0.06473 175.55)"
         ]
       },
       "paper": {
         "role": "neutral",
-        "displayName": "阅读白",
+        "displayName": "纸白工作面",
         "tonalRamp": [
-          "oklch(15.0% 0.00000 0.00)",
-          "oklch(26.43% 0.00000 0.00)",
-          "oklch(37.86% 0.00000 0.00)",
-          "oklch(49.29% 0.00000 0.00)",
-          "oklch(60.71% 0.00000 0.00)",
-          "oklch(72.14% 0.00000 0.00)",
-          "oklch(83.57% 0.00000 0.00)",
-          "oklch(95.0% 0.00000 0.00)"
+          "oklch(15.00% 0.00409 121.56)",
+          "oklch(26.43% 0.00409 121.56)",
+          "oklch(37.86% 0.00409 121.56)",
+          "oklch(49.29% 0.00409 121.56)",
+          "oklch(60.71% 0.00409 121.56)",
+          "oklch(72.14% 0.00409 121.56)",
+          "oklch(83.57% 0.00409 121.56)",
+          "oklch(95.00% 0.00409 121.56)"
         ]
       },
-      "divider": {
+      "white": {
         "role": "neutral",
-        "displayName": "分隔灰",
+        "displayName": "近白阅读面",
         "tonalRamp": [
-          "oklch(15.0% 0.01630 239.13)",
-          "oklch(26.43% 0.01630 239.13)",
-          "oklch(37.86% 0.01630 239.13)",
-          "oklch(49.29% 0.01630 239.13)",
-          "oklch(60.71% 0.01630 239.13)",
-          "oklch(72.14% 0.01630 239.13)",
-          "oklch(83.57% 0.01630 239.13)",
-          "oklch(95.0% 0.01630 239.13)"
+          "oklch(15.00% 0.00283 128.49)",
+          "oklch(26.43% 0.00283 128.49)",
+          "oklch(37.86% 0.00283 128.49)",
+          "oklch(49.29% 0.00283 128.49)",
+          "oklch(60.71% 0.00283 128.49)",
+          "oklch(72.14% 0.00283 128.49)",
+          "oklch(83.57% 0.00283 128.49)",
+          "oklch(95.00% 0.00283 128.49)"
         ]
       },
-      "fact-surface": {
+      "ink": {
         "role": "neutral",
-        "displayName": "事实浅灰",
+        "displayName": "深墨正文",
         "tonalRamp": [
-          "oklch(15.0% 0.00347 219.53)",
-          "oklch(26.43% 0.00347 219.53)",
-          "oklch(37.86% 0.00347 219.53)",
-          "oklch(49.29% 0.00347 219.53)",
-          "oklch(60.71% 0.00347 219.53)",
-          "oklch(72.14% 0.00347 219.53)",
-          "oklch(83.57% 0.00347 219.53)",
-          "oklch(95.0% 0.00347 219.53)"
+          "oklch(15.00% 0.02518 187.39)",
+          "oklch(26.43% 0.02518 187.39)",
+          "oklch(37.86% 0.02518 187.39)",
+          "oklch(49.29% 0.02518 187.39)",
+          "oklch(60.71% 0.02518 187.39)",
+          "oklch(72.14% 0.02518 187.39)",
+          "oklch(83.57% 0.02518 187.39)",
+          "oklch(95.00% 0.02518 187.39)"
         ]
       },
-      "fact-rule": {
-        "role": "primary",
-        "displayName": "事实青线",
-        "tonalRamp": [
-          "oklch(15.0% 0.09061 212.02)",
-          "oklch(26.43% 0.09061 212.02)",
-          "oklch(37.86% 0.09061 212.02)",
-          "oklch(49.29% 0.09061 212.02)",
-          "oklch(60.71% 0.09061 212.02)",
-          "oklch(72.14% 0.09061 212.02)",
-          "oklch(83.57% 0.09061 212.02)",
-          "oklch(95.0% 0.09061 212.02)"
-        ]
-      },
-      "opinion-surface": {
+      "muted": {
         "role": "neutral",
-        "displayName": "表述浅灰",
+        "displayName": "灰绿辅助文字",
         "tonalRamp": [
-          "oklch(15.0% 0.00342 247.86)",
-          "oklch(26.43% 0.00342 247.86)",
-          "oklch(37.86% 0.00342 247.86)",
-          "oklch(49.29% 0.00342 247.86)",
-          "oklch(60.71% 0.00342 247.86)",
-          "oklch(72.14% 0.00342 247.86)",
-          "oklch(83.57% 0.00342 247.86)",
-          "oklch(95.0% 0.00342 247.86)"
+          "oklch(15.00% 0.02236 172.12)",
+          "oklch(26.43% 0.02236 172.12)",
+          "oklch(37.86% 0.02236 172.12)",
+          "oklch(49.29% 0.02236 172.12)",
+          "oklch(60.71% 0.02236 172.12)",
+          "oklch(72.14% 0.02236 172.12)",
+          "oklch(83.57% 0.02236 172.12)",
+          "oklch(95.00% 0.02236 172.12)"
         ]
       },
-      "opinion-rule": {
+      "line": {
         "role": "neutral",
-        "displayName": "表述灰线",
+        "displayName": "浅灰绿分割线",
         "tonalRamp": [
-          "oklch(15.0% 0.02666 242.54)",
-          "oklch(26.43% 0.02666 242.54)",
-          "oklch(37.86% 0.02666 242.54)",
-          "oklch(49.29% 0.02666 242.54)",
-          "oklch(60.71% 0.02666 242.54)",
-          "oklch(72.14% 0.02666 242.54)",
-          "oklch(83.57% 0.02666 242.54)",
-          "oklch(95.0% 0.02666 242.54)"
+          "oklch(15.00% 0.01104 149.85)",
+          "oklch(26.43% 0.01104 149.85)",
+          "oklch(37.86% 0.01104 149.85)",
+          "oklch(49.29% 0.01104 149.85)",
+          "oklch(60.71% 0.01104 149.85)",
+          "oklch(72.14% 0.01104 149.85)",
+          "oklch(83.57% 0.01104 149.85)",
+          "oklch(95.00% 0.01104 149.85)"
         ]
       },
-      "conditional-surface": {
-        "role": "secondary",
-        "displayName": "条件浅琥珀",
+      "amber": {
+        "role": "neutral",
+        "displayName": "棕琥珀警告",
         "tonalRamp": [
-          "oklch(15.0% 0.01790 89.35)",
-          "oklch(26.43% 0.01790 89.35)",
-          "oklch(37.86% 0.01790 89.35)",
-          "oklch(49.29% 0.01790 89.35)",
-          "oklch(60.71% 0.01790 89.35)",
-          "oklch(72.14% 0.01790 89.35)",
-          "oklch(83.57% 0.01790 89.35)",
-          "oklch(95.0% 0.01790 89.35)"
+          "oklch(15.00% 0.08779 61.04)",
+          "oklch(26.43% 0.08779 61.04)",
+          "oklch(37.86% 0.08779 61.04)",
+          "oklch(49.29% 0.08779 61.04)",
+          "oklch(60.71% 0.08779 61.04)",
+          "oklch(72.14% 0.08779 61.04)",
+          "oklch(83.57% 0.08779 61.04)",
+          "oklch(95.00% 0.08779 61.04)"
         ]
       },
-      "conditional-rule": {
-        "role": "secondary",
-        "displayName": "条件琥珀线",
+      "control-line": {
+        "role": "neutral",
+        "displayName": "控件边线",
         "tonalRamp": [
-          "oklch(15.0% 0.11518 77.92)",
-          "oklch(26.43% 0.11518 77.92)",
-          "oklch(37.86% 0.11518 77.92)",
-          "oklch(49.29% 0.11518 77.92)",
-          "oklch(60.71% 0.11518 77.92)",
-          "oklch(72.14% 0.11518 77.92)",
-          "oklch(83.57% 0.11518 77.92)",
-          "oklch(95.0% 0.11518 77.92)"
+          "oklch(15.00% 0.01890 161.01)",
+          "oklch(26.43% 0.01890 161.01)",
+          "oklch(37.86% 0.01890 161.01)",
+          "oklch(49.29% 0.01890 161.01)",
+          "oklch(60.71% 0.01890 161.01)",
+          "oklch(72.14% 0.01890 161.01)",
+          "oklch(83.57% 0.01890 161.01)",
+          "oklch(95.00% 0.01890 161.01)"
         ]
       },
-      "warning": {
-        "role": "secondary",
-        "displayName": "待证实琥珀",
+      "control-hover": {
+        "role": "neutral",
+        "displayName": "控件悬停底",
         "tonalRamp": [
-          "oklch(15.0% 0.10836 70.54)",
-          "oklch(26.43% 0.10836 70.54)",
-          "oklch(37.86% 0.10836 70.54)",
-          "oklch(49.29% 0.10836 70.54)",
-          "oklch(60.71% 0.10836 70.54)",
-          "oklch(72.14% 0.10836 70.54)",
-          "oklch(83.57% 0.10836 70.54)",
-          "oklch(95.0% 0.10836 70.54)"
+          "oklch(15.00% 0.00954 140.52)",
+          "oklch(26.43% 0.00954 140.52)",
+          "oklch(37.86% 0.00954 140.52)",
+          "oklch(49.29% 0.00954 140.52)",
+          "oklch(60.71% 0.00954 140.52)",
+          "oklch(72.14% 0.00954 140.52)",
+          "oklch(83.57% 0.00954 140.52)",
+          "oklch(95.00% 0.00954 140.52)"
         ]
       },
-      "notice-surface": {
-        "role": "secondary",
-        "displayName": "提醒浅琥珀",
+      "selection": {
+        "role": "neutral",
+        "displayName": "目录选中底",
         "tonalRamp": [
-          "oklch(15.0% 0.02232 87.15)",
-          "oklch(26.43% 0.02232 87.15)",
-          "oklch(37.86% 0.02232 87.15)",
-          "oklch(49.29% 0.02232 87.15)",
-          "oklch(60.71% 0.02232 87.15)",
-          "oklch(72.14% 0.02232 87.15)",
-          "oklch(83.57% 0.02232 87.15)",
-          "oklch(95.0% 0.02232 87.15)"
+          "oklch(15.00% 0.01408 138.71)",
+          "oklch(26.43% 0.01408 138.71)",
+          "oklch(37.86% 0.01408 138.71)",
+          "oklch(49.29% 0.01408 138.71)",
+          "oklch(60.71% 0.01408 138.71)",
+          "oklch(72.14% 0.01408 138.71)",
+          "oklch(83.57% 0.01408 138.71)",
+          "oklch(95.00% 0.01408 138.71)"
         ]
       },
-      "notice-ink": {
-        "role": "secondary",
-        "displayName": "提醒棕",
+      "nav-selection": {
+        "role": "neutral",
+        "displayName": "导航选中底",
         "tonalRamp": [
-          "oklch(15.0% 0.07315 80.06)",
-          "oklch(26.43% 0.07315 80.06)",
-          "oklch(37.86% 0.07315 80.06)",
-          "oklch(49.29% 0.07315 80.06)",
-          "oklch(60.71% 0.07315 80.06)",
-          "oklch(72.14% 0.07315 80.06)",
-          "oklch(83.57% 0.07315 80.06)",
-          "oklch(95.0% 0.07315 80.06)"
+          "oklch(15.00% 0.01851 150.54)",
+          "oklch(26.43% 0.01851 150.54)",
+          "oklch(37.86% 0.01851 150.54)",
+          "oklch(49.29% 0.01851 150.54)",
+          "oklch(60.71% 0.01851 150.54)",
+          "oklch(72.14% 0.01851 150.54)",
+          "oklch(83.57% 0.01851 150.54)",
+          "oklch(95.00% 0.01851 150.54)"
         ]
       },
-      "danger": {
-        "role": "secondary",
-        "displayName": "更正红",
+      "on-green": {
+        "role": "neutral",
+        "displayName": "青绿底白字",
         "tonalRamp": [
-          "oklch(15.0% 0.16167 21.02)",
-          "oklch(26.43% 0.16167 21.02)",
-          "oklch(37.86% 0.16167 21.02)",
-          "oklch(49.29% 0.16167 21.02)",
-          "oklch(60.71% 0.16167 21.02)",
-          "oklch(72.14% 0.16167 21.02)",
-          "oklch(83.57% 0.16167 21.02)",
-          "oklch(95.0% 0.16167 21.02)"
-        ]
-      },
-      "danger-surface": {
-        "role": "secondary",
-        "displayName": "错误浅红",
-        "tonalRamp": [
-          "oklch(15.0% 0.01514 17.42)",
-          "oklch(26.43% 0.01514 17.42)",
-          "oklch(37.86% 0.01514 17.42)",
-          "oklch(49.29% 0.01514 17.42)",
-          "oklch(60.71% 0.01514 17.42)",
-          "oklch(72.14% 0.01514 17.42)",
-          "oklch(83.57% 0.01514 17.42)",
-          "oklch(95.0% 0.01514 17.42)"
-        ]
-      },
-      "danger-ink": {
-        "role": "secondary",
-        "displayName": "错误深红",
-        "tonalRamp": [
-          "oklch(15.0% 0.13969 19.59)",
-          "oklch(26.43% 0.13969 19.59)",
-          "oklch(37.86% 0.13969 19.59)",
-          "oklch(49.29% 0.13969 19.59)",
-          "oklch(60.71% 0.13969 19.59)",
-          "oklch(72.14% 0.13969 19.59)",
-          "oklch(83.57% 0.13969 19.59)",
-          "oklch(95.0% 0.13969 19.59)"
+          "oklch(15.00% 0.00000 89.88)",
+          "oklch(26.43% 0.00000 89.88)",
+          "oklch(37.86% 0.00000 89.88)",
+          "oklch(49.29% 0.00000 89.88)",
+          "oklch(60.71% 0.00000 89.88)",
+          "oklch(72.14% 0.00000 89.88)",
+          "oklch(83.57% 0.00000 89.88)",
+          "oklch(95.00% 0.00000 89.88)"
         ]
       }
     },
     "typographyMeta": {
       "headline": {
-        "displayName": "页面标题",
-        "purpose": "页面与事件标题；800px及以下降为27px。"
+        "displayName": "headline",
+        "purpose": "全局一级标题基线；研究标题和窄屏标题在正文记录变体。"
       },
       "title": {
-        "displayName": "分节标题",
-        "purpose": "文章二级标题。"
-      },
-      "list-title": {
-        "displayName": "事件标题",
-        "purpose": "事件列表入口；800px及以下降为22px。"
+        "displayName": "title",
+        "purpose": "段落和模块标题。"
       },
       "body": {
-        "displayName": "正文",
-        "purpose": "连续中文阅读。"
+        "displayName": "body",
+        "purpose": "常规界面正文。"
+      },
+      "reading": {
+        "displayName": "reading",
+        "purpose": "研究摘要和判断正文。"
       },
       "label": {
-        "displayName": "状态标签",
-        "purpose": "内容类别、证据状态和版本信息。"
+        "displayName": "label",
+        "purpose": "辅助说明。"
       },
-      "caption": {
-        "displayName": "时间注释",
-        "purpose": "来源时间、位置与辅助说明。"
+      "control": {
+        "displayName": "control",
+        "purpose": "按钮文字。"
+      },
+      "identifier": {
+        "displayName": "identifier",
+        "purpose": "证券、任务与证据标识符。"
       }
     },
     "shadows": [],
-    "motion": [],
+    "motion": [
+      {
+        "name": "control-feedback",
+        "value": "background-color .12s ease, border-color .12s ease",
+        "purpose": "仅在 prefers-reduced-motion:no-preference 时用于按钮和链接。"
+      }
+    ],
     "breakpoints": [
       {
-        "name": "single-column",
-        "value": "800px"
+        "name": "mobile-max",
+        "value": "760px"
       },
       {
-        "name": "compact-phone",
-        "value": "380px"
+        "name": "compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1600px"
       }
     ]
   },
   "components": [
     {
-      "name": "默认按钮",
+      "name": "主要按钮",
       "kind": "button",
-      "description": "重新读取、重试与版本记录等普通操作。",
-      "html": "<div class=\"ds-preview\"><button>重新读取</button></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}",
-      "refersTo": "button-default"
+      "refersTo": "button-primary",
+      "description": "请求分析等主要操作。",
+      "html": "<button type=\"button\" class=\"ds-button-primary\">请求模型分析</button>",
+      "css": ".ds-button-primary{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b8c6be;border-radius:4px;min-height:36px;padding:5px 12px;cursor:pointer;font-weight:550;line-height:1.5;background:var(--green,#216A5D);color:#fff;border-color:var(--green,#216A5D);}.ds-button-primary:hover:not(:disabled){background:#185447;}.ds-button-primary:disabled{opacity:.55;cursor:not-allowed}.ds-button-primary:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(prefers-reduced-motion:no-preference){.ds-button-primary{transition:background-color .12s ease,border-color .12s ease}}"
     },
     {
-      "name": "实心主按钮",
+      "name": "普通按钮",
       "kind": "button",
-      "description": "登录表单的主要动作；当前变体没有独立 hover 色。",
-      "html": "<div class=\"ds-preview\"><button class=\"ds-primary\">登录阅读</button></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}",
-      "refersTo": "button-primary"
+      "refersTo": "button-default",
+      "description": "同步、刷新及表单次要操作。",
+      "html": "<button type=\"button\" class=\"ds-button-default\">同步新闻</button>",
+      "css": ".ds-button-default{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b8c6be;border-radius:4px;min-height:36px;padding:5px 12px;cursor:pointer;font-weight:550;line-height:1.5;background:var(--white,#fcfdfb);color:var(--ink,#182B29);}.ds-button-default:hover:not(:disabled){background:#eef3ed;border-color:var(--green,#216A5D);}.ds-button-default:disabled{opacity:.55;cursor:not-allowed}.ds-button-default:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(prefers-reduced-motion:no-preference){.ds-button-default{transition:background-color .12s ease,border-color .12s ease}}"
     },
     {
       "name": "文字按钮",
       "kind": "button",
-      "description": "退出或重新检查会话。",
-      "html": "<div class=\"ds-preview\"><button class=\"ds-text-button\">重新检查已有会话</button></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-text-button{border:0;background:transparent;padding:7px;font-size:15px;color:#536575}",
-      "refersTo": "button-text"
+      "refersTo": "button-text",
+      "description": "正文中的轻量操作与来源标题。",
+      "html": "<button type=\"button\" class=\"ds-button-text\">返回事件目录</button>",
+      "css": ".ds-button-text{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid #b8c6be;border-radius:4px;min-height:36px;padding:5px 12px;cursor:pointer;font-weight:550;line-height:1.5;background:none;border:0;padding:0;min-height:30px;color:var(--green,#216A5D);justify-content:flex-start;}.ds-button-text:hover:not(:disabled){background:#eef3ed;}.ds-button-text:disabled{opacity:.55;cursor:not-allowed}.ds-button-text:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(prefers-reduced-motion:no-preference){.ds-button-text{transition:background-color .12s ease,border-color .12s ease}}"
     },
     {
-      "name": "输入框",
+      "name": "搜索输入",
       "kind": "input",
-      "description": "带可见标签的搜索或访问密码输入。",
-      "html": "<div class=\"ds-preview\"><form class=\"ds-search\"><label for=\"ds-search\">查找已收录事件</label><input id=\"ds-search\" type=\"search\" /></form></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-search{margin:24px 0}.ds-preview .ds-search label{font-size:15px}",
-      "refersTo": "input"
+      "refersTo": "input",
+      "description": "独立可访问名称；占位文案用于提示输入范围。",
+      "html": "<input class=\"ds-input\" type=\"search\" aria-label=\"搜索事件\" placeholder=\"搜索标题、主题或公司\">",
+      "css": ".ds-input{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;color:var(--ink,#182B29);line-height:1.65;width:100%;min-height:39px;padding:7px 10px;border:1px solid #b8c6be;border-radius:3px;background:var(--white,#fcfdfb)}.ds-input::placeholder{color:var(--muted,#60716b)}.ds-input:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(max-width:760px){.ds-input{font-size:16px;min-height:42px}}"
     },
     {
-      "name": "主导航",
+      "name": "当前导航",
       "kind": "nav",
-      "description": "当前页以青色与下边线标记。",
-      "html": "<div class=\"ds-preview\"><nav class=\"ds-nav\" aria-label=\"主导航\"><a href=\"#today\" aria-current=\"page\">今日</a><a href=\"#history\">历史</a><a href=\"#sources\">来源</a></nav></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview nav a{font-size:16px;text-decoration:none;padding:8px 0;color:#536575}.ds-preview nav a[aria-current=page]{border-bottom:2px solid #006a78;color:#006a78}.ds-nav{display:flex;gap:25px;}@media(max-width:800px){.ds-nav{gap:18px;}}@media(max-width:380px){.ds-nav{gap:12px;}}"
+      "refersTo": "nav-active",
+      "description": "活动项保留图标和文字。",
+      "html": "<nav aria-label=\"主导航\"><a href=\"#events\" class=\"ds-nav\" aria-current=\"page\"><svg width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01\"/></svg><span>事件</span></a></nav>",
+      "css": ".ds-nav{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;display:flex;align-items:center;gap:12px;min-height:43px;padding:8px 13px;border-radius:3px;text-decoration:none;background:#dce8de;color:var(--green,#216A5D);font-weight:650}.ds-nav:hover{background:#dce8de}.ds-nav:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(max-width:760px){.ds-nav{flex-direction:column;gap:2px;padding:6px 2px;min-height:52px;font-size:10px;background:#e2ebdd}}"
     },
     {
-      "name": "证据状态标签",
+      "name": "中性状态",
       "kind": "chip",
-      "description": "非交互状态；颜色始终与文字同时出现。",
-      "html": "<div class=\"ds-preview\"><div class=\"ds-meta\"><span class=\"ds-tag ds-verified\">原始依据支持</span><span class=\"ds-tag ds-warning\">未核实</span><span class=\"ds-tag ds-danger-text\">已被否定</span></div></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;font-size:13px;line-height:1.5;color:#52697b;margin-bottom:12px}.ds-preview .ds-tag{padding:2px 8px;border:1px solid #c1d6da;border-radius:2px}.ds-preview .ds-verified{color:#006a78}.ds-preview .ds-warning{color:#8a5700}.ds-preview .ds-danger-text{color:#a92b36}",
-      "refersTo": "evidence-tag"
+      "refersTo": "status-neutral",
+      "description": "只读状态，不伪装成操作入口。",
+      "html": "<span class=\"ds-status\">未分析</span>",
+      "css": ".ds-status{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;display:inline-block;padding:1px 6px;border:1px solid #cdd6ce;border-radius:2px;font-size:10px;font-weight:500;white-space:nowrap;line-height:1.6;color:var(--muted,#60716b);background:#f4f5ef}"
     },
     {
-      "name": "事件条目",
-      "kind": "custom",
-      "description": "状态、标题、理由、影响说明与时间顺序阅读；示例不代表已核验事件。",
-      "html": "<div class=\"ds-preview\"><ol class=\"ds-event-list\"><li><div class=\"ds-meta\"><span class=\"ds-tag ds-verified\">原始依据支持</span><span class=\"ds-new\">未读</span></div><h2><a href=\"#event\">事件标题示例</a></h2><p>入选理由放在标题之后。</p><p class=\"ds-impact-preview\">事实已核验 · 影响解释停步</p><p class=\"ds-caption\">发生未知 · 核验未知（北京）</p></li></ol></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;font-size:13px;line-height:1.5;color:#52697b;margin-bottom:12px}.ds-preview .ds-tag{padding:2px 8px;border:1px solid #c1d6da;border-radius:2px}.ds-preview .ds-verified{color:#006a78}.ds-preview .ds-new{color:#006a78;font-weight:650}.ds-preview .ds-caption{font-size:13px;color:#5c6f7d;line-height:1.7}.ds-preview .ds-event-list{list-style:none;padding:0;margin:0}.ds-preview .ds-event-list>li{padding:25px 0;border-bottom:1px solid #d1dce4;margin:0}.ds-preview .ds-event-list h2 a{color:#172c43;text-decoration:none}.ds-preview .ds-event-list h2 a:hover{text-decoration:underline;text-decoration-color:#006a78}.ds-preview .ds-event-list p{margin-bottom:10px}.ds-preview .ds-event-list p:last-child{margin-bottom:0}.ds-preview .ds-event-list h2{font-size:23px}.ds-preview .ds-impact-preview{font-size:16px;color:#66532e;padding-left:13px;border-left:1px solid #b58a40}@media(max-width:800px){.ds-preview .ds-event-list h2{font-size:22px;}.ds-preview .ds-event-list>li{padding:23px 0;}}"
+      "name": "选中目录行",
+      "kind": "card",
+      "refersTo": "event-selected",
+      "description": "连续目录中的选中条目，不使用浮起卡片。",
+      "html": "<a href=\"#event\" class=\"ds-entry\"><span class=\"ds-source\">来源名称 · 摘要</span><h2 class=\"ds-entry-title\">事件标题与新增事实</h2><p class=\"ds-entry-summary\">目录摘要说明事实，证据详情保留完整内容。</p></a>",
+      "css": ".ds-entry{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;font-size:14px;line-height:1.65;display:block;text-decoration:none;color:var(--ink,#182B29);padding:19px 22px 17px;background:#e7eee5;border-bottom:1px solid var(--line,#d8dfd9);border-left:1px solid var(--green,#216A5D)}.ds-entry:hover{background:#e7eee5}.ds-entry:focus-visible{outline:3px solid #367e6d;outline-offset:3px}.ds-source{font-size:11px;color:var(--muted,#60716b)}.ds-entry-title{font-size:15px;line-height:1.65;font-weight:620;margin:9px 0 7px}.ds-entry-summary{font-size:12px;line-height:1.75;color:var(--muted,#60716b);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0}"
     },
     {
-      "name": "内容类型注释",
-      "kind": "custom",
-      "description": "事实、来源表述与条件推断各有左线和底色，文字类别保留。",
-      "html": "<div class=\"ds-preview\"><div class=\"ds-claim\"><p class=\"ds-meta\"><strong>事实</strong> · 原始依据支持</p><p>事实正文示例；实际内容须有原始依据。</p></div><div class=\"ds-claim ds-source_opinion\"><p class=\"ds-meta\"><strong>来源表述</strong></p><p>来源观点须明确归属。</p></div><div class=\"ds-conditional\"><h3>条件推断示例</h3><p>证据不足时不生成机制。</p><h4>成立条件</h4><p>保留具体成立条件。</p><h4>反向因素</h4><p>保留相反影响的因素。</p></div></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px 14px;font-size:13px;line-height:1.5;color:#52697b;margin-bottom:12px}.ds-preview .ds-claim{margin:20px 0;padding:16px 18px;background:#f6f9fa;border-left:1px solid #08798a}.ds-preview .ds-claim.ds-source_opinion{border-color:#8696a3;background:#f4f6f8}.ds-preview .ds-claim.ds-conditional_inference,.ds-preview .ds-conditional{border-left:1px solid #b3832e;background:#fffaed;padding:18px 20px;margin:20px 0}.ds-preview .ds-conditional h4{color:#77551a;margin-top:20px}@media(max-width:800px){.ds-preview .ds-claim,.ds-preview .ds-conditional{padding:15px;}}",
-      "refersTo": "fact-annotation"
+      "name": "证据引用",
+      "kind": "button",
+      "refersTo": "evidence-ref",
+      "description": "打开证据详情的紧凑按钮。",
+      "html": "<button type=\"button\" class=\"ds-evidence\">证据 1</button>",
+      "css": ".ds-evidence{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:1px solid #b8cec0;border-radius:2px;background:#f0f5ed;color:var(--green,#216A5D);font-size:11px;line-height:1.5;padding:2px 7px;min-height:28px;font-weight:500}.ds-evidence:hover{border-color:var(--green,#216A5D);background:#eef3ed}.ds-evidence:focus-visible{outline:3px solid #367e6d;outline-offset:3px}@media(max-width:760px){.ds-evidence{min-height:34px}}"
     },
     {
-      "name": "状态与错误提示",
+      "name": "推断路径",
       "kind": "custom",
-      "description": "常规提醒与错误分色，文字明确说明状态。",
-      "html": "<div class=\"ds-preview\"><p class=\"ds-notice\">影响解释暂不可用。不以缺失解释代表没有影响。</p><div class=\"ds-notice ds-danger\" role=\"alert\"><p>内容读取失败，请重试。</p><button>重试读取</button></div></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-notice{background:#fff8e8;border-left:1px solid #ae7c24;padding:15px 18px;margin:18px 0;color:#684e1e;font-size:15px}.ds-preview .ds-notice p:last-child{margin-bottom:0}.ds-preview .ds-danger{background:#fff1f1;color:#8e2530;border-color:#b93847}",
-      "refersTo": "notice"
-    },
-    {
-      "name": "展开核验依据",
-      "kind": "custom",
-      "description": "原生折叠段落承载来源日期、摘录和核验链接。",
-      "html": "<div class=\"ds-preview\"><details><summary>核验依据（1）</summary><div class=\"ds-evidence\"><p class=\"ds-verified\">来源名称 · 来源标题</p><p class=\"ds-caption\">发布时间未知 · 获取时间未知 · 来源第 1 版</p><blockquote>原文摘录示例，不构成事实依据。</blockquote><a href=\"#source\">核验原文</a></div></details></div>",
-      "css": ".ds-preview{font-family:-apple-system,BlinkMacSystemFont,\"PingFang SC\",\"Hiragino Sans GB\",\"Microsoft YaHei\",system-ui,sans-serif;color:#172c43;background:#f3f5f7;font-synthesis:none;line-height:1.75;font-size:17px}.ds-preview a{color:#006a78;text-underline-offset:4px;text-decoration-thickness:1px;overflow-wrap:anywhere}.ds-preview a:hover{color:#003c48}.ds-preview button,.ds-preview input{font:inherit}.ds-preview button{min-height:44px;padding:7px 17px;border:1px solid #a9b6c1;border-radius:4px;color:#183249;background:white;cursor:pointer}.ds-preview button:hover{background:#edf4f5}.ds-preview button:disabled{cursor:wait;opacity:.6}.ds-preview button.ds-primary{background:#153c50;color:white;border-color:#153c50}.ds-preview input{width:100%;min-height:48px;border:1px solid #9aaebc;border-radius:3px;padding:8px 12px;background:white;color:inherit}.ds-preview label{display:block;font-weight:600;margin-bottom:8px}.ds-preview h1,.ds-preview h2,.ds-preview h3,.ds-preview h4,.ds-preview p{margin-top:0}.ds-preview h2{font-size:21px;line-height:1.55;font-weight:620;margin-bottom:12px}.ds-preview h3{font-size:18px;font-weight:620;margin-bottom:9px}.ds-preview h4{font-size:16px;margin-bottom:6px}.ds-preview p{margin-bottom:16px}.ds-preview ul{padding-left:24px}.ds-preview li{margin-bottom:5px}.ds-preview :focus-visible{outline:3px solid #177f95;outline-offset:4px}.ds-preview .ds-verified{color:#006a78}.ds-preview .ds-caption{font-size:13px;color:#5c6f7d;line-height:1.7}.ds-preview details{font-size:15px;margin-top:18px}.ds-preview summary{cursor:pointer;color:#006a78;padding:8px 0;min-height:44px}.ds-preview .ds-evidence{padding:20px 0 8px;border-top:1px solid #c6d9df;overflow-wrap:anywhere}.ds-preview .ds-evidence p{margin-bottom:8px}.ds-preview blockquote{font-size:15px;margin:14px 0;padding-left:14px;border-left:1px solid #83afb7;color:#405c6b;white-space:pre-wrap}"
+      "refersTo": "path-node",
+      "description": "通过文字和虚线同时表达分析推断。",
+      "html": "<div class=\"ds-path\"><span class=\"ds-node\">产业环节</span><span class=\"ds-connector\">分析推断<span class=\"ds-line\"></span></span><span class=\"ds-node\">相关公司</span></div>",
+      "css": ".ds-path{font-family:-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif;color:var(--ink,#182B29);display:flex;align-items:center;flex-wrap:wrap;gap:10px 0}.ds-node{padding:6px 9px;border:1px solid #c7d2c8;background:#f3f6ef;font-size:12px;overflow-wrap:anywhere}.ds-connector{display:inline-flex;flex-direction:column;font-size:9px;align-items:center;min-width:65px;margin:0 7px;color:var(--muted,#60716b)}.ds-line{display:block;border-top:1px dashed #829b8c;position:relative;width:100%;margin-top:4px}.ds-line:after{content:\"\";width:5px;height:5px;border-top:1px solid #829b8c;border-right:1px solid #829b8c;transform:rotate(45deg);position:absolute;right:0;top:-3px}"
     }
   ],
   "narrative": {
-    "northStar": "中文公共信息公报的注释系统",
-    "overview": "以正文、来源和注释建立可信阅读。墨蓝文字落在浅冷灰或白色阅读面上；细线和留白承担层级，颜色帮助辨认依据、条件与更正。中文系统字体保持日常阅读的熟悉感，不另设装饰性展示字体。\n\n本文记录 `src/App.tsx` 与 `src/style.css` 的当前实现，沿用 `docs/surfaces/reading.md` 的既定方向。适用于已实现的登录、今日、历史、来源与事件详情；不代表完整 P0 已验收。Web 与 iOS 模拟器检查由主任务记录，实体 iPhone 验收仍待完成。界面允许仅展示已核验事实并明确停止解释；样式的存在不证明机制或公司分析已经成立。",
+    "northStar": "证据阅读台",
+    "overview": "ytrader 是面向长时间中文阅读的投资研究工作台。纸白工作面承载正文，青绿标记操作与选中状态，细线区分目录、来源和判断。以文字密度和稳定位置建立层级，不以大幅营销标题建立层级。\n\n本轮为 Operate、code-led 实现，无 approved comp。视觉方向来自本轮工作台约定；具体 token 以当前实现为据。中文系统字体是阅读与部署选择，界面不依赖远程字体或装饰图像。",
     "keyCharacteristics": [
-      "文章列表与注释段落承载信息，不依靠仪表盘或嵌套卡片。",
-      "事实、来源表述、条件推断保留文字类别和不同注释样式。",
-      "阅读列有明确宽度，辅助状态在窄屏转到正文之后。",
-      "无栅格图片、渐变、纹理、阴影或装饰动画。"
+      "纸白底面、青绿操作、深色正文。",
+      "桌面导航与阅读分栏；手机单列与五项底部导航。",
+      "正文、来源、时间、关系类型分别表达。",
+      "实线与虚线配合文字标签区分关系。"
     ],
     "rules": [
       {
-        "name": "The 文字与颜色同在 Rule",
-        "body": "状态必须有文字标签；颜色辅助识别，不独自承担可信度或方向含义。",
+        "name": "The State With Words Rule",
+        "body": "颜色辅助表达状态；保留“未分析”“分析已陈旧”“数据不完整”等文字，不能仅靠色相表达含义。",
         "section": "colors"
       },
       {
-        "name": "The 正文优先 Rule",
-        "body": "标题负责定位内容，辅助信息保持次级；不把眉题或全大写字距作为新层级。",
+        "name": "The Reading Rhythm Rule",
+        "body": "研究摘要和判断正文使用宽松行距；标识符使用等宽字体，正文保留中文系统字体。",
         "section": "typography"
       },
       {
-        "name": "The 平面注释 Rule",
-        "body": "用留白、文字层级和单条边线组织证据，不用悬浮阴影或多层卡片包装段落。",
+        "name": "The Flat Surface Rule",
+        "body": "常规内容依靠底色、细线和留白分区；不为列表项添加浮起阴影。",
         "section": "elevation"
       }
     ],
     "dos": [
-      "**Do** 用明确文字并列呈现内容类别、证据状态、版本和时间。",
-      "**Do** 将事实与条件注释分开，保留成立条件、反向因素和缺证据时的停步说明。",
-      "**Do** 沿用阅读列宽、小圆角控件、细分隔线和安全区域内边距。",
-      "**Do** 保留交互控件的可见焦点，并让长链接与来源位置自然换行。"
+      "Do 沿用语义明确的按钮、输入、链接、表格和原生证据对话框。",
+      "Do 保留关系文字标签与推断虚线，并提供证据入口。",
+      "Do 在手机端显示目录或详情中的一个，保留返回目录和底部导航。",
+      "Do 在空数据、错误、部分覆盖和陈旧分析状态中说明现状与可用操作。"
     ],
     "donts": [
-      "**Don't** 将青、琥珀、红状态色改作确定涨跌或交易指令。",
-      "**Don't** 添加巨大装饰标题、眉题、渐变、纸张纹理或嵌套悬浮卡片。",
-      "**Don't** 为凑满页面制造事件、机制、公司关联或图谱占位。",
-      "**Don't** 把本视觉规范、模拟器结果或组件样例当作完整产品和实体 iPhone 验收证明。"
+      "Don't 用颜色替代关系类型、数据缺口或来源文字。",
+      "Don't 将折叠的来源说明删成无从核查的信息。",
+      "Don't 将事件目录中的两行摘要截断扩展到证据正文。",
+      "Don't 把仅有源码记录的页面标为已通过全体验验收。"
     ]
   }
 }

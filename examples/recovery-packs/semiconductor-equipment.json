@@ -1,0 +1,78 @@
+{
+  "id": "semiconductor-equipment",
+  "version": "2026-10-18.1",
+  "license": "MIT",
+  "source_url": "https://www-a.naura.com/product/details_15_2436.html",
+  "as_of": "2026-10-18T13:30:00Z",
+  "nodes": [
+    {
+      "id": "semiconductor-equipment:theme",
+      "label": "半导体设备",
+      "kind": "segment"
+    },
+    {
+      "id": "company:SZ:002371",
+      "label": "北方华创",
+      "kind": "company",
+      "symbol": "SZ:002371"
+    },
+    {
+      "id": "semiconductor-equipment:pecvd",
+      "label": "等离子化学气相沉积设备",
+      "kind": "product"
+    },
+    {
+      "id": "semiconductor-equipment:film",
+      "label": "半导体薄膜工艺",
+      "kind": "product"
+    }
+  ],
+  "edges": [
+    {
+      "id": "semiconductor-equipment:edge:0",
+      "from_id": "company:SZ:002371",
+      "to_id": "semiconductor-equipment:pecvd",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-equipment:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www-a.naura.com/product/details_15_2436.html"
+    },
+    {
+      "id": "semiconductor-equipment:edge:1",
+      "from_id": "semiconductor-equipment:pecvd",
+      "to_id": "semiconductor-equipment:film",
+      "relation": "upstream",
+      "evidence_ids": [
+        "semiconductor-equipment:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www-a.naura.com/product/details_15_2436.html"
+    },
+    {
+      "id": "semiconductor-equipment:company:SZ:002371",
+      "from_id": "company:SZ:002371",
+      "to_id": "semiconductor-equipment:theme",
+      "relation": "classification",
+      "evidence_ids": [
+        "semiconductor-equipment:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www-a.naura.com/product/details_15_2436.html"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "semiconductor-equipment:evidence:0",
+      "title": "北方华创官网：EPEE系列PECVD系统",
+      "url": "https://www-a.naura.com/product/details_15_2436.html",
+      "excerpt": "原创事实摘要：EPEE系列等离子化学气相沉积系统用于集成电路和化合物半导体等领域，可沉积氧化硅、氮化硅等材料，应用于绝缘层、钝化层和掩膜层。 本包只记录业务类别或工艺关系，不表示特定公司间供货，也不表示投资收益。2026-10-18核读；网页未标统一发布日期。",
+      "published_at": null,
+      "source": "北方华创官网"
+    }
+  ]
+}

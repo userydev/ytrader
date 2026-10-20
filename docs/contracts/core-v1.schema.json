@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ytrader:core:v1",
+  "title": "ytrader core v1 successful read envelopes",
+  "description": "Additive v1. Identity and cross-document references additionally require backend.core_contracts validation. Null is unknown, never zero. Original IDs and panorama documents are retained.",
+  "type": "object",
+  "required": ["data", "meta"],
+  "properties": {
+    "meta": {"$ref": "#/$defs/meta"},
+    "data": {"anyOf": [
+      {"$ref": "#/$defs/editorialFeed"}, {"$ref": "#/$defs/editorialDetail"},
+      {"$ref": "#/$defs/story"}, {"$ref": "#/$defs/panoramaCatalog"},
+      {"$ref": "#/$defs/industryDirectory"}, {"$ref": "#/$defs/industryImpact"},
+      {"$ref": "#/$defs/panorama"}, {"$ref": "#/$defs/panoramaContext"},
+      {"type": "array", "items": {"$ref": "#/$defs/security"}},
+      {"$ref": "#/$defs/securityDetail"}, {"$ref": "#/$defs/profile"}, {"$ref": "#/$defs/fundamentals"}
+    ]}
+  },
+  "x-endpoints": {
+    "GET /news/editorial": "#/$defs/editorialFeed",
+    "GET /news/editorial/events/{eid}": "#/$defs/editorialDetail",
+    "GET /news/editorial/stories/{sid}": "#/$defs/story",
+    "GET /panorama/catalog": "#/$defs/panoramaCatalog",
+    "GET /industry-research/catalog": "#/$defs/industryDirectory; q, offset, limit<=100",
+    "GET /industry-research/tracking": "array<{id,name}>; personal state, default five",
+    "PUT /industry-research/tracking": "{items:[{id?,name}]}; no catalog mutation",
+    "POST /industry-research/generate": "{name,source_id?}; validated existing industry job",
+    "POST /news/editorial/events/{eid}/associate": "progress?,automatic?; deduplicated background job or cache status",
+    "GET /industry-research/{industry_id}/impact": "#/$defs/industryImpact; news,progress?,offset?; cache only",
+    "POST /industry-research/{industry_id}/impact": "news,progress?,offset?,automatic?; version-bound background job or cache status",
+    "GET /panorama/context": "#/$defs/panoramaContext",
+    "GET /panorama/{industry_id}": "#/$defs/panorama",
+    "GET /securities": "array<#/$defs/security>; q,exchange,limit,optional offset>=0",
+    "GET /securities/{symbol}": "#/$defs/securityDetail",
+    "GET /securities/{symbol}/profile": "#/$defs/profile",
+    "GET /securities/{symbol}/fundamentals": "#/$defs/fundamentals"
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "strings": {"type": "array", "items": {"$ref": "#/$defs/text"}},
+    "nullableNumber": {"type": ["number", "null"]},
+    "timestamp": {"type": ["string", "null"], "format": "date-time"},
+    "symbol": {"type": "string", "pattern": "^(SH|SZ|BJ):[0-9]{6}$"},
+    "industryId": {"type": "string", "minLength": 1, "description": "Open stable directory ID; initial five are tracking defaults, never a whitelist."},
+    "meta": {
+      "type": "object", "required": ["source", "as_of", "version", "completeness", "warnings"],
+      "properties": {
+        "source": {"type": "string"}, "as_of": {"anyOf": [{"$ref": "#/$defs/timestamp"}, {"type": "string", "format": "date"}], "description": "Fundamentals uses report period_end date; other core metadata uses UTC timestamps or null."},
+        "version": {"const": "1"}, "completeness": {"enum": ["complete", "partial", "unavailable"]},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "algorithmVersions": {
+      "type": "object", "additionalProperties": {"$ref": "#/$defs/text"},
+      "properties": {
+        "recommendation": {"$ref": "#/$defs/text"}, "event_grouping": {"$ref": "#/$defs/text"},
+        "industry_transmission": {"$ref": "#/$defs/text"}, "security_matching": {"$ref": "#/$defs/text"}
+      }
+    },
+    "article": {
+      "type": "object", "required": ["id", "title", "content", "url", "source", "published_at"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "event_id": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"},
+        "content": {"type": "string"}, "url": {"type": "string", "format": "uri"}, "source": {"$ref": "#/$defs/text"},
+        "source_id": {"$ref": "#/$defs/text"}, "external_id": {"type": ["string", "null"]},
+        "identity_key": {"$ref": "#/$defs/text"}, "published_at": {"$ref": "#/$defs/timestamp"},
+        "source_published_at": {"$ref": "#/$defs/timestamp"}, "fetched_at": {"$ref": "#/$defs/timestamp"},
+        "content_level": {"enum": ["title", "summary", "full"]}, "quality_flags": {"$ref": "#/$defs/strings"},
+        "supersedes_id": {"type": ["string", "null"]}, "merge_reason": {"type": ["string", "null"]},
+        "attribution": {"type": "object", "required": ["publisher"], "properties": {
+          "publisher": {"$ref": "#/$defs/text"}, "origin_keys": {"$ref": "#/$defs/strings"},
+          "exclusive": {"type": "boolean"}, "identity": {"type": "string"}, "original_url": {"type": ["string", "null"]}
+        }}
+      }
+    },
+    "industryDirectory": {
+      "type": "object", "required": ["items", "total", "offset", "limit", "ckg_configured"],
+      "properties": {"items": {"type": "array", "items": {"type": "object", "required": ["id", "name"], "properties": {"id": {"$ref": "#/$defs/industryId"}, "name": {"$ref": "#/$defs/text"}}}}, "total": {"type": "integer", "minimum": 0}, "offset": {"type": "integer", "minimum": 0}, "limit": {"type": "integer", "minimum": 1}, "ckg_configured": {"type": "boolean"}}
+    },
+    "industryImpact": {
+      "type": "object", "required": ["input_version", "links"],
+      "properties": {"input_version": {"$ref": "#/$defs/text"}, "links": {"type": "array", "items": {"$ref": "#/$defs/industryLink"}}, "model": {"$ref": "#/$defs/text"}, "source_version": {"$ref": "#/$defs/text"}, "created_at": {"$ref": "#/$defs/timestamp"}},
+      "description": "Conditional, unverified inference on actual graph IDs. No synthetic causal edges. Empty/missing result is not a claim of no real impact."
+    },
+    "industryLink": {
+      "type": "object", "required": ["industry_id", "name", "industry_name", "variable", "mechanism", "condition", "node_ids", "relation", "evidence", "basis", "rule_version"],
+      "properties": {
+        "industry_id": {"$ref": "#/$defs/industryId"}, "name": {"$ref": "#/$defs/text"}, "industry_name": {"$ref": "#/$defs/text"},
+        "variable": {"$ref": "#/$defs/text"}, "mechanism": {"$ref": "#/$defs/text"}, "condition": {"$ref": "#/$defs/text"},
+        "node_ids": {"$ref": "#/$defs/strings"}, "relation": {"enum": ["direct", "conditional", "association"]},
+        "basis": {"enum": ["rule_inference", "source_match", "ai_association", "ai_impact"]}, "rule_version": {"$ref": "#/$defs/text"},
+        "evidence": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["article_id", "trigger", "quote"], "properties": {
+          "article_id": {"$ref": "#/$defs/text"}, "trigger": {"$ref": "#/$defs/text"}, "quote": {"$ref": "#/$defs/text"}
+        }}}
+      }
+    },
+    "ranking": {
+      "type": "object", "required": ["score", "importance_tier", "suppression", "excluded"],
+      "properties": {
+        "version": {"$ref": "#/$defs/text"}, "score": {"type": "number", "description": "Unnormalised ordering heuristic, not probability."},
+        "importance_tier": {"type": "integer", "minimum": 0}, "rerank_score": {"type": "number"},
+        "parts": {"type": "object", "additionalProperties": {"type": "number"}},
+        "suppression": {"$ref": "#/$defs/strings"}, "excluded": {"$ref": "#/$defs/strings"}
+      }
+    },
+    "editorialItem": {
+      "type": "object", "required": ["id", "event_id", "story", "articles", "reasons", "exclusive_claims", "algorithm", "industry_links"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "event_id": {"$ref": "#/$defs/text"}, "event_ids": {"$ref": "#/$defs/strings"},
+        "title": {"$ref": "#/$defs/text"}, "summary": {"type": "string"}, "published_at": {"$ref": "#/$defs/timestamp"},
+        "first_observed_at": {"$ref": "#/$defs/timestamp"}, "time_basis": {"enum": ["source_publication", "homepage_observation", "unknown"]},
+        "story": {"type": "object", "required": ["id"], "properties": {"id": {"$ref": "#/$defs/text"}}},
+        "articles": {"type": "array", "minItems": 1, "items": {"allOf": [{"$ref": "#/$defs/article"}, {"required": ["attribution"]}]}},
+        "reasons": {"type": "array", "items": {"type": "object"}}, "exclusive_claims": {"type": "array", "items": {"type": "object"}},
+        "algorithm": {"$ref": "#/$defs/ranking"}, "industry_links": {"type": "array", "items": {"$ref": "#/$defs/industryLink"}}
+      }
+    },
+    "editorialFeed": {
+      "type": "object", "required": ["generated_at", "algorithm_version", "state", "items", "default_event_id", "exclusive_available", "coverage_note", "collection", "run_id"],
+      "properties": {
+        "generated_at": {"$ref": "#/$defs/timestamp"}, "algorithm_version": {"$ref": "#/$defs/text"}, "algorithm_versions": {"$ref": "#/$defs/algorithmVersions"},
+        "state": {"enum": ["collecting", "empty", "ready", "no_current_selection", "sources_unavailable"]},
+        "items": {"type": "array", "maxItems": 36, "items": {"allOf": [{"$ref": "#/$defs/editorialItem"}, {"properties": {"algorithm": {"required": ["rerank_score"]}}}]}},
+        "default_event_id": {"type": ["string", "null"]}, "exclusive_available": {"type": "boolean"}, "coverage_note": {"type": "string"},
+        "run_id": {"$ref": "#/$defs/text"}, "collection": {"type": "object", "required": ["active_job_id", "last_checked", "warnings"], "properties": {
+          "active_job_id": {"type": ["string", "null"]}, "last_checked": {"$ref": "#/$defs/timestamp"}, "warnings": {"$ref": "#/$defs/strings"}
+        }}
+      }
+    },
+    "story": {
+      "type": "object", "required": ["id", "progresses", "basis"],
+      "properties": {
+        "id": {"$ref": "#/$defs/text"}, "basis": {"$ref": "#/$defs/text"}, "name": {"type": "string"},
+        "latest_fact_at": {"$ref": "#/$defs/timestamp"}, "first_observed_at": {"$ref": "#/$defs/timestamp"},
+        "phase": {"enum": ["recently_updated", "background"]}, "stage": {"type": ["object", "null"]},
+        "progresses": {"type": "array", "items": {"type": "object", "required": ["id", "event_id", "title"], "properties": {
+          "id": {"$ref": "#/$defs/text"}, "event_id": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"}
+        }}}
+      }
+    },
+    "editorialDetail": {
+      "type": "object", "required": ["event", "title", "summary", "articles", "industry_links", "current", "progresses", "story", "generated_at", "algorithm_version"],
+      "properties": {
+        "event": {"type": "object", "required": ["id", "title"], "properties": {"id": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"}}},
+        "title": {"type": "string"}, "summary": {"type": "string"}, "articles": {"type": "array", "items": {"$ref": "#/$defs/article"}},
+        "industry_links": {"type": "array", "items": {"$ref": "#/$defs/industryLink"}}, "current": {"$ref": "#/$defs/editorialItem"},
+        "progresses": {"type": "array", "items": {"$ref": "#/$defs/editorialItem"}}, "story": {"$ref": "#/$defs/story"},
+        "generated_at": {"$ref": "#/$defs/timestamp"}, "algorithm_version": {"$ref": "#/$defs/text"}, "algorithm_versions": {"$ref": "#/$defs/algorithmVersions"}
+      }
+    },
+    "panoramaCatalog": {
+      "type": "object", "required": ["items", "schema_version"], "properties": {
+        "schema_version": {"const": "1"}, "items": {"type": "array", "items": {"type": "object", "required": ["id", "name"], "properties": {
+          "id": {"$ref": "#/$defs/industryId"}, "name": {"$ref": "#/$defs/text"}
+        }}}
+      }
+    },
+    "panorama": {
+      "type": "object", "required": ["format", "status", "version", "industry", "nodes", "relations", "companies", "participations", "sources", "structure", "scenarios"],
+      "properties": {
+        "format": {"enum": [1, "industry-reference-v1"]}, "status": {"type": "string"}, "version": {"$ref": "#/$defs/text"},
+        "industry": {"type": "object", "required": ["id", "name", "summary", "boundary", "demand"], "properties": {
+          "id": {"$ref": "#/$defs/industryId"}, "name": {"$ref": "#/$defs/text"}, "summary": {"$ref": "#/$defs/text"}, "boundary": {"$ref": "#/$defs/text"}, "demand": {"$ref": "#/$defs/text"}
+        }},
+        "nodes": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id", "name", "description", "sources"], "properties": {
+          "id": {"$ref": "#/$defs/text"}, "name": {"$ref": "#/$defs/text"}, "description": {"$ref": "#/$defs/text"}, "sources": {"$ref": "#/$defs/strings"}
+        }}},
+        "relations": {"type": "array", "items": {"type": "object", "required": ["id", "from_id", "to_id", "kind", "explanation", "sources"], "properties": {
+          "id": {"$ref": "#/$defs/text"}, "from_id": {"$ref": "#/$defs/text"}, "to_id": {"$ref": "#/$defs/text"}, "kind": {"$ref": "#/$defs/text"}, "explanation": {"$ref": "#/$defs/text"}, "sources": {"$ref": "#/$defs/strings"}
+        }}},
+        "companies": {"type": "array", "items": {"type": "object", "required": ["id", "name", "profile"], "properties": {"id": {"$ref": "#/$defs/text"}, "name": {"$ref": "#/$defs/text"}, "symbol": {"anyOf": [{"$ref": "#/$defs/symbol"}, {"type": "null"}]}, "profile": {"type": "object"}}}},
+        "participations": {"type": "array", "items": {"type": "object", "required": ["company_id", "node_id", "role", "sources"], "properties": {"company_id": {"$ref": "#/$defs/text"}, "node_id": {"$ref": "#/$defs/text"}, "role": {"$ref": "#/$defs/text"}, "sources": {"$ref": "#/$defs/strings"}}}},
+        "sources": {"type": "array", "items": {"type": "object", "required": ["id", "title", "url"], "properties": {"id": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"}, "url": {"type": "string", "format": "uri"}}}},
+        "structure": {"type": "object", "required": ["groups"], "properties": {"groups": {"type": "array", "items": {"type": "object", "required": ["id", "title", "node_ids"], "properties": {"id": {"$ref": "#/$defs/text"}, "title": {"$ref": "#/$defs/text"}, "node_ids": {"$ref": "#/$defs/strings"}}}}, "primary_relation_ids": {"$ref": "#/$defs/strings"}, "reading_order": {"$ref": "#/$defs/strings"}}},
+        "scenarios": {"type": "array", "items": {"type": "object", "required": ["id", "entry_node", "affected_nodes", "relation_ids"], "properties": {"id": {"$ref": "#/$defs/text"}, "entry_node": {"$ref": "#/$defs/text"}, "affected_nodes": {"$ref": "#/$defs/strings"}, "relation_ids": {"$ref": "#/$defs/strings"}}}},
+        "default_company": {"type": ["string", "null"]}, "layout": {"type": "object", "additionalProperties": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}}
+      }
+    },
+    "panoramaContext": {
+      "type": "object", "required": ["securities", "context", "observatory", "profiles"], "properties": {
+        "securities": {"type": "object", "minProperties": 1, "propertyNames": {"$ref": "#/$defs/symbol"}, "additionalProperties": {"type": "object", "required": ["name"], "properties": {"name": {"$ref": "#/$defs/text"}, "symbol": {"$ref": "#/$defs/symbol"}, "code": {"type": "string"}, "exchange": {"enum": ["SH", "SZ", "BJ"]}}}},
+        "context": {"type": "object", "required": ["version", "industries", "news"], "properties": {"version": {"const": 1}, "industries": {"type": "object", "minProperties": 5, "propertyNames": {"$ref": "#/$defs/industryId"}, "additionalProperties": {"type": "object", "required": ["summary", "scenarios"], "properties": {"summary": {"type": "object", "required": ["text"], "properties": {"text": {"$ref": "#/$defs/text"}}}, "scenarios": {"type": "object"}}}}, "news": {"type": "object"}}},
+        "observatory": {"type": "object", "required": ["version", "as_of", "industries"], "properties": {"version": {"const": 1}, "as_of": {"type": "string", "format": "date"}, "industries": {"type": "object", "minProperties": 5, "propertyNames": {"$ref": "#/$defs/industryId"}, "additionalProperties": {"type": "object", "required": ["nodes", "news"], "properties": {"nodes": {"type": "object"}, "news": {"type": "array"}}}}}},
+        "profiles": {"type": "object", "required": ["period", "as_of", "market", "companies"], "properties": {"period": {"type": "string"}, "as_of": {"type": "string", "format": "date"}, "market": {"type": "object", "required": ["status"]}, "companies": {"type": "object", "additionalProperties": {"type": "object", "required": ["metrics"], "properties": {"metrics": {"type": "array", "items": {"type": "object", "required": ["key", "label", "value", "unit"], "properties": {"key": {"type": "string"}, "label": {"type": "string"}, "value": {"$ref": "#/$defs/nullableNumber"}, "unit": {"type": "string"}}}}}}}}}
+      }
+    },
+    "security": {
+      "type": "object", "required": ["symbol", "code", "name", "exchange", "industry", "status", "as_of", "source"],
+      "properties": {"symbol": {"$ref": "#/$defs/symbol"}, "code": {"type": "string", "pattern": "^[0-9]{6}$"}, "name": {"$ref": "#/$defs/text"}, "exchange": {"enum": ["SH", "SZ", "BJ"]}, "industry": {"type": ["string", "null"]}, "status": {"enum": ["listed", "delisted", "unknown"]}, "as_of": {"$ref": "#/$defs/timestamp"}, "source": {"$ref": "#/$defs/text"}}
+    },
+    "securityDetail": {"type": "object", "required": ["security", "events", "paths"], "properties": {"security": {"$ref": "#/$defs/security"}, "events": {"type": "array", "items": {"type": "object"}}, "paths": {"type": "array", "items": {"type": "object"}}}},
+    "profile": {
+      "type": "object", "required": ["symbol", "name", "full_name", "introduction", "business_scope", "website", "province", "industry", "listing_date", "established_date", "source", "source_url", "as_of", "fetched_at", "status", "evidence_ids", "businesses", "topics"],
+      "properties": {
+        "symbol": {"$ref": "#/$defs/symbol"}, "name": {"type": "string"}, "full_name": {"type": ["string", "null"]}, "introduction": {"type": ["string", "null"]},
+        "business_scope": {"type": ["string", "null"]}, "website": {"type": ["string", "null"]}, "province": {"type": ["string", "null"]}, "industry": {"type": ["string", "null"]},
+        "listing_date": {"type": ["string", "null"]}, "established_date": {"type": ["string", "null"]}, "source": {"type": "string"}, "source_url": {"type": ["string", "null"]},
+        "as_of": {"$ref": "#/$defs/timestamp"}, "fetched_at": {"$ref": "#/$defs/timestamp"}, "status": {"enum": ["ok", "stale", "unavailable"]},
+        "evidence_ids": {"$ref": "#/$defs/strings"}, "businesses": {"type": "array", "items": {"type": "object"}}, "topics": {"type": "array", "items": {"type": "object", "required": ["id", "name"]}}
+      }
+    },
+    "fundamentals": {
+      "type": "object", "required": ["symbol", "status", "source", "source_url", "fetched_at", "periods", "tables", "composition", "warnings", "evidence_ids"],
+      "properties": {
+        "symbol": {"$ref": "#/$defs/symbol"}, "status": {"enum": ["ok", "stale", "unavailable"]}, "source": {"type": "string"}, "source_url": {"type": "string", "format": "uri"},
+        "fetched_at": {"$ref": "#/$defs/timestamp"}, "warnings": {"$ref": "#/$defs/strings"}, "evidence_ids": {"$ref": "#/$defs/strings"},
+        "periods": {"type": "array", "items": {"$ref": "#/$defs/period"}},
+        "tables": {"type": "object", "required": ["indicators", "balance", "cashflow", "composition"], "additionalProperties": {"$ref": "#/$defs/financialTable"}},
+        "composition": {"anyOf": [{"type": "null"}, {"type": "object", "required": ["period_end", "basis", "items"], "properties": {
+          "period_end": {"type": "string", "format": "date"}, "currency": {"$ref": "#/$defs/currency"}, "basis": {"enum": ["product", "region"]},
+          "items": {"type": "array", "items": {"type": "object", "required": ["name", "revenue", "share_ratio", "gross_margin_ratio"], "properties": {
+            "name": {"type": "string"}, "revenue": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, not 100 million units."},
+            "share_ratio": {"$ref": "#/$defs/nullableNumber", "description": "Fraction; source protection currently accepts only 0..1."},
+            "gross_margin_ratio": {"$ref": "#/$defs/nullableNumber", "description": "Fraction, not pct; negative and >1 retained."}
+          }}}
+        }}]}
+      }
+    },
+    "currency": {"enum": ["CNY", "HKD", "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "SGD"]},
+    "financialTable": {"type": "object", "required": ["status", "fetched_at", "source_urls"], "properties": {"status": {"enum": ["ok", "stale", "unavailable"]}, "fetched_at": {"$ref": "#/$defs/timestamp"}, "source_urls": {"type": "array", "items": {"type": "string", "format": "uri"}}}},
+    "period": {
+      "type": "object", "required": ["period_end", "period_type", "currency", "revenue", "net_profit_parent", "operating_cash_flow", "total_liabilities", "total_assets", "revenue_yoy_pct", "net_profit_parent_yoy_pct", "gross_margin_pct", "debt_to_asset_pct", "debt_to_asset_basis"],
+      "properties": {
+        "period_end": {"type": "string", "pattern": "^[0-9]{4}-(03-31|06-30|09-30|12-31)$"}, "period_type": {"enum": ["Q1", "H1", "Q3", "FY"]}, "currency": {"$ref": "#/$defs/currency"},
+        "revenue": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, cumulative YTD."},
+        "net_profit_parent": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, cumulative YTD."},
+        "operating_cash_flow": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, cumulative YTD."},
+        "total_liabilities": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, period end."},
+        "total_assets": {"$ref": "#/$defs/nullableNumber", "description": "Original currency units, period end."},
+        "revenue_yoy_pct": {"$ref": "#/$defs/nullableNumber", "description": "Percentage value, DO NOT multiply by 100."},
+        "net_profit_parent_yoy_pct": {"$ref": "#/$defs/nullableNumber", "description": "Percentage value."},
+        "gross_margin_pct": {"$ref": "#/$defs/nullableNumber", "description": "Percentage value."},
+        "debt_to_asset_pct": {"$ref": "#/$defs/nullableNumber", "description": "Percentage value."},
+        "debt_to_asset_basis": {"enum": ["source", "computed", null]},
+        "net_profit_excluding_nonrecurring": {"$ref": "#/$defs/nullableNumber", "description": "Optional KCFJCXSYJLR, original currency units, cumulative YTD."},
+        "net_profit_excluding_nonrecurring_yoy_pct": {"$ref": "#/$defs/nullableNumber", "description": "Optional KCFJCXSYJLRTZ, percentage value."},
+        "roe_weighted_pct": {"$ref": "#/$defs/nullableNumber", "description": "Optional ROEJQ, percentage value."},
+        "basic_eps": {"$ref": "#/$defs/nullableNumber", "description": "Optional EPSJB, original currency per share. Never divide by 1e8."},
+        "monetary_funds": {"$ref": "#/$defs/nullableNumber", "description": "Optional MONETARYFUNDS, period-end original currency units; 货币资金, NOT cash equivalents or unrestricted cash."},
+        "accounts_receivable": {"$ref": "#/$defs/nullableNumber", "description": "Optional ACCOUNTS_RECE, period-end original currency units."},
+        "inventories": {"$ref": "#/$defs/nullableNumber", "description": "Optional INVENTORY, period-end original currency units."}
+      }
+    }
+  }
+}

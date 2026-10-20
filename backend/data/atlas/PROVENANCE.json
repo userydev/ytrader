@@ -1,0 +1,32 @@
+{
+  "repository": "https://github.com/JiMoxiao/industry-chain-atlas",
+  "commit": "06661655379f918564a78ac905c045b3e824a76e",
+  "preparation": "Lossless YAML to JSON; not new data collection. Ignore heat/capacity/market-share/rank estimates in product. Retain source-record status.",
+  "files": [
+    {
+      "id": "semiconductor",
+      "source_file": "data/semiconductor.yaml",
+      "sha256": "3d99b07f29444d63340da10e58b9f5b44613810ffdb7bbb8e8fd0ec635e12052"
+    },
+    {
+      "id": "electronic_chemicals",
+      "source_file": "data/electronic_chemicals.yaml",
+      "sha256": "1ed2ff1f0d214bd84e5fe6d093bb4f8466862235f0db0c5b8870bd1228c9ff01"
+    },
+    {
+      "id": "nonferrous_metals",
+      "source_file": "data/nonferrous_metals.yaml",
+      "sha256": "dc6006e30295572c6b25e6582b10e69a736bc8706fa5e0bf01407d6a106a3455"
+    },
+    {
+      "id": "silicon_materials",
+      "source_file": "data/silicon_materials.yaml",
+      "sha256": "c4cee0c2f91750a9bc3e057e0e4930ea17e31bd2e61f82af4f9ab4e70bcb1717"
+    },
+    {
+      "id": "pcb_materials",
+      "source_file": "data/pcb_materials.yaml",
+      "sha256": "4cf9133bf21bfaadbb001b124cced0424590f28cf61692b90b37d414c3dd042c"
+    }
+  ]
+}

@@ -1,0 +1,665 @@
+{
+  "industry": "电子化工材料（半导体上游）",
+  "icon": "⚗️",
+  "segments": [
+    {
+      "id": "ec_fluorine_base",
+      "name": "氟化工基础材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "萤石→无水氢氟酸(AHF)→高纯氟气(F₂)是半导体含氟材料的根基。F₂用于合成NF₃(清洗)、WF₆(钨沉积)、C₄F₆(刻蚀)等电子特气，AHF提纯为G5级氢氟酸用于晶圆清洗/蚀刻。萤石是国家级战略资源，中国储量全球第二。",
+      "key_companies": [
+        {
+          "code": "600160",
+          "name": "巨化股份",
+          "role": "国内唯一萤石→AHF→高纯F₂→电子特气全产业链，G5 HF 2.1万吨/年进台积电/三星/中芯国际"
+        },
+        {
+          "code": "002407",
+          "name": "多氟多",
+          "role": "电子级HF 6万吨/年(G5半导体级2万吨)，唯一同时进台积电+三星+中芯国际"
+        },
+        {
+          "code": "603505",
+          "name": "金石资源",
+          "role": "中国萤石矿龙头，储量>2700万吨占国内20%，供中船特气等含氟特气企业"
+        },
+        {
+          "code": "603379",
+          "name": "三美股份",
+          "role": "AHF产能22.1万吨/年，合资日本森田化学产电子级HF(2万吨/年)"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国电子级氢氟酸市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 103,
+          "source_name": "华经产业研究院 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体级G5氢氟酸国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 28,
+          "source_name": "CEMIA 2023 G5级~25-30%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "base_chemical",
+      "layer": 0
+    },
+    {
+      "id": "ec_pb_sources",
+      "name": "电子级磷/硼源化学品",
+      "position": "upstream",
+      "tier": 1,
+      "description": "电子级磷酸(H₃PO₄)、三氯氧磷(POCl₃)、三溴化硼(BBr₃)是半导体掺杂/扩散工艺核心化学品。黄磷→热法磷酸→电子级磷酸提纯，电子级磷酸金属杂质<10ppb。硼源用于p型掺杂，磷源用于n型掺杂和PSG/BPSG钝化层。全球电子级磷酸市场被日本Rasa工业/美国CMC Materials主导，国产电子级磷酸在存储芯片领域已大规模导入。",
+      "key_companies": [
+        {
+          "code": "600096",
+          "name": "云天化",
+          "role": "磷矿→黄磷→电子级磷酸全链条，国内磷化工综合龙头，半导体级磷酸扩产"
+        },
+        {
+          "code": "600141",
+          "name": "兴发集团",
+          "role": "磷化工+硅化工双主业，电子级磷酸/黄磷通过中芯国际验证"
+        },
+        {
+          "code": "600078",
+          "name": "澄星股份",
+          "role": "黄磷→磷酸龙头，电子级磷酸产品开发送样中，半导体级延伸"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国电子级磷酸市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 18,
+          "source_name": "华经产业研究院 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体级磷酸国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 35,
+          "source_name": "券商研报 存储芯片已规模化导入",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "base_chemical",
+      "layer": 0
+    },
+    {
+      "id": "ec_g5_acids",
+      "name": "G5电子级酸",
+      "position": "upstream",
+      "tier": 1,
+      "description": "G5级(金属杂质<0.1ppb)高纯酸是晶圆清洗/蚀刻/剥离的核心工艺化学品。包括硫酸(H₂SO₄)、盐酸(HCl)、硝酸(HNO₃)、氢氟酸(HF)、磷酸(H₃PO₄)、双氧水(H₂O₂)、氨水(NH₄OH)。G5认证周期18-24个月，是国产替代深水区。2026Q1国产G5硫酸产能集中释放。",
+      "key_companies": [
+        {
+          "code": "688545",
+          "name": "兴福电子",
+          "role": "G5磷酸国内市占>80%(连续3年第一)，G5硫酸国内市占~31%，进台积电/SK海力士/GF/中芯国际"
+        },
+        {
+          "code": "300655",
+          "name": "晶瑞电材",
+          "role": "G5双氧水国内唯一量产(市占>40%/晶圆厂>60%)，G5硫酸通过中芯国际验证"
+        },
+        {
+          "code": "688549",
+          "name": "中巨芯",
+          "role": "G5氢氟酸国内首个1x nm量产，进SK海力士/台积电/中芯国际，2024营收10.3亿"
+        },
+        {
+          "code": "603078",
+          "name": "江化微",
+          "role": "G5/C8级酸碱有机溶剂全平台，G5硫酸镇江基地2025投产爬坡"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国半导体湿电子化学品市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 130,
+          "source_name": "CEMIA 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "集成电路级湿化学品综合国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 44,
+          "source_name": "CEMIA 2023 12英寸存储>80%/逻辑>40%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "purified_chemical",
+      "layer": 1
+    },
+    {
+      "id": "ec_solvents",
+      "name": "电子级溶剂与显影液",
+      "position": "upstream",
+      "tier": 1,
+      "description": "PGMEA(丙二醇甲醚醋酸酯)是光刻胶主溶剂和晶圆边缘清洗剂，PGME是其前驱体。NMP(N-甲基吡咯烷酮)用于晶圆清洗/剥离。TMAH(四甲基氢氧化铵)是正性光刻胶显影液核心成分。8/12英寸晶圆用TMAH几乎100%进口，国产替代空间极大。",
+      "key_companies": [
+        {
+          "code": "300721",
+          "name": "怡达股份",
+          "role": "G5级PGMEA/PGME 8万吨/年，进中芯国际28nm，通过ASML供应链审计，出口日韩"
+        },
+        {
+          "code": "603931",
+          "name": "格林达",
+          "role": "TMAH显影液国内唯一G5级，国家单项冠军企业，面板→半导体升级中"
+        },
+        {
+          "code": "300655",
+          "name": "晶瑞电材",
+          "role": "G5 NMP技术储备(全球少数)，在建10万吨电子级NMP+2万吨回收"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "半导体级TMAH国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 5,
+          "source_name": "中信建投 8/12英寸几乎全进口",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国电子级PGMEA市场需求_万吨_年",
+          "unit": "万吨/年",
+          "type": "market",
+          "current_value": 15,
+          "source_name": "券商估算 2025半导体+面板",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "purified_chemical",
+      "layer": 1
+    },
+    {
+      "id": "ec_si_mo_precursors",
+      "name": "电子级硅基与金属有机源",
+      "position": "upstream",
+      "tier": 1,
+      "description": "三氯氢硅(SiHCl₃/TCS)是硅烷(SiH₄)和多晶硅的关键中间体，经歧化反应制取电子级硅烷。TEOS(正硅酸乙酯)是CVD SiO₂介质层核心硅源。金属有机源(MO源：TMGa/TMAl/TMIn/TEGa)是化合物半导体MOCVD外延必需原料——决定外延层纯度和光电性能。全球MO源90%+被AkzoNobel(荷兰)和Dockweiler(德国)垄断，南大光电是国内唯一批量化MO源供应商(全球市占~8%)。",
+      "key_companies": [
+        {
+          "code": "603938",
+          "name": "三孚股份",
+          "role": "电子级三氯氢硅(TCS)国内最大（~6.5万吨/年），SiHCl₃→SiH₄核心前驱体"
+        },
+        {
+          "code": "002409",
+          "name": "雅克科技",
+          "role": "SOD/High-K前驱体(TEMAH/TEMAZ)全球供应商，ALD/CVD前驱体平台化"
+        },
+        {
+          "code": "300346",
+          "name": "南大光电",
+          "role": "MO源(TEGa/TMGa/TMAl/TMIn)国内龙头，全球市占~8%，化合物半导体MOCVD核心原料"
+        },
+        {
+          "code": "688106",
+          "name": "金宏气体",
+          "role": "电子级TEOS(正硅酸乙酯)量产，CVD SiO₂工艺核心硅源"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国电子级TCS市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 25,
+          "source_name": "券商估算 半导体+光伏级",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体ALD/CVD前驱体国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 20,
+          "source_name": "券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "MO源全球市占率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 8,
+          "source_name": "南大光电2025年报",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "purified_chemical",
+      "layer": 1
+    },
+    {
+      "id": "ec_pr_resin",
+      "name": "光刻胶核心原料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "光刻胶树脂(成膜骨架)+PAG(光产酸剂)占光刻胶原料成本60%+。树脂按波长分酚醛(g/i线)、PHS(KrF)、丙烯酸酯(ArF)。PAG是KrF/ArF/EUV化学放大光刻胶的\"光开关\"。全球PAG 75%依赖进口，日本三井化学/三菱化学垄断单体，住友/Dow垄断树脂。",
+      "key_companies": [
+        {
+          "code": "002643",
+          "name": "万润股份",
+          "role": "国内唯一百吨级ArF高端树脂量产(~65吨/年)，二期规划935吨/年成全国最大"
+        },
+        {
+          "code": "605589",
+          "name": "圣泉集团",
+          "role": "光刻胶酚醛树脂国内唯一>1吨批产量产(~200吨/年)，KrF+g/i线主力"
+        },
+        {
+          "code": "300429",
+          "name": "强力新材",
+          "role": "KrF PAG光产酸剂及单体，PCB光刻胶化学品全球龙头"
+        },
+        {
+          "code": "688199",
+          "name": "久日新材",
+          "role": "DNQ重氮萘醌感光剂(g/i线)，PAG开发中"
+        },
+        {
+          "code": "688113",
+          "name": "八亿时空",
+          "role": "KrF PHS树脂~50吨/年"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国光刻胶树脂市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 50,
+          "source_name": "券商估算 树脂占光刻胶成本40-75%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "PAG进口依赖度_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 75,
+          "source_name": "天风证券 PAG国产化率~25%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "光刻胶树脂单体国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 50,
+          "source_name": "行业数据 2025 专利份额从5%升至22%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "functional_material",
+      "layer": 2
+    },
+    {
+      "id": "ec_electroplating",
+      "name": "半导体电镀与湿法沉积化学品",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体电镀液(铜互连大马士革镀铜液、TSV深孔镀铜液、铜柱凸块镀液、锡银镀液)是实现芯片三维互连的核心湿法化学品。与CMP(减材)互补——电镀是增材工艺。镀铜液由硫酸铜+硫酸+氯离子+有机添加剂(抑制剂/加速剂/整平剂)组成，添加剂配方是核心壁垒，全球90%+被Atotech(德国)、DuPont(美国)垄断。先进封装TSV/Bumping需求爆发驱动电镀液用量增长。",
+      "key_companies": [
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "铜互连电镀液+TSV铜电镀液国内领先，进中芯国际铜互连产线，半导体电镀+清洗平台化"
+        },
+        {
+          "code": "688720",
+          "name": "艾森股份",
+          "role": "先进封装电镀液(铜柱/锡银电镀)龙头，电镀液+光刻胶双轮驱动，供长电科技/通富微电"
+        },
+        {
+          "code": "002741",
+          "name": "光华科技",
+          "role": "PCB电子化学品龙头(沉铜/电镀/化金)，半导体级电镀液延伸，先进封装电镀验证中"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球半导体电镀液市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 12,
+          "source_name": "TECHCET 2025 含先进封装电镀",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "铜互连电镀液国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 25,
+          "source_name": "券商研报 上海新阳/艾森合计",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "functional_material",
+      "layer": 2
+    },
+    {
+      "id": "ec_packaging_polymer",
+      "name": "电子封装高分子材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "环氧塑封料(EMC)占IC封装材料成本90%以上，其核心原料包括：邻甲酚醛环氧树脂(CNE，提供机械强度和耐热性)、酚醛树脂固化剂(形成交联网络)、酸酐固化剂(低应力封装)、球形硅微粉填料(降低CTE热膨胀)。先进封装Underfill底部填充胶需要低粘度(<10Pa·s)、高Tg(>150°C)、低CTE。全球CNE树脂被日本化药/DIC/三菱化学垄断70%+，球形硅微粉被日本电化/龙森垄断。",
+      "key_companies": [
+        {
+          "code": "603002",
+          "name": "宏昌电子",
+          "role": "电子级环氧树脂龙头(半导体封装用)，年产~15万吨，EMC核心树脂供应商"
+        },
+        {
+          "code": "300041",
+          "name": "回天新材",
+          "role": "电子胶粘剂龙头，底部填充胶(Underfill)+芯片粘接胶(DAP)，已通过长电/华天验证"
+        },
+        {
+          "code": "300481",
+          "name": "濮阳惠成",
+          "role": "电子级酸酐固化剂(四氢苯酐/六氢苯酐)国内市占>60%，EMC硬化体系核心"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国EMC用环氧树脂市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 35,
+          "source_name": "券商估算 封装用环氧树脂",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "先进封装Underfill国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 15,
+          "source_name": "券商研报 底部填充胶国产化",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "球形硅微粉进口依赖度_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 70,
+          "source_name": "日本电化/龙森垄断，国产联瑞新材(非上市)突破中",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "functional_material",
+      "layer": 2
+    },
+    {
+      "id": "ec_cmp_abrasive",
+      "name": "CMP纳米磨料与添加剂",
+      "position": "upstream",
+      "tier": 1,
+      "description": "CMP抛光液由纳米磨料(55%成本)+化学添加剂(氧化剂/缓蚀剂/pH调节剂/表面活性剂)组成。磨料分纳米氧化铈CeO₂(氧化物/STI抛光)、胶体二氧化硅SiO₂(介质/金属抛光)、氧化铝Al₂O₃(硬质材料)。全球铈基磨料85%被德国Merck垄断，中国产量仅占3.2%。",
+      "key_companies": [
+        {
+          "code": "688019",
+          "name": "安集科技",
+          "role": "CMP抛光液全球市占~13%，自研国产铈基磨料量产大幅提升客户良率"
+        },
+        {
+          "code": "300054",
+          "name": "鼎龙股份",
+          "role": "自产CMP磨料粒子获千万级批量订单(2024.07)，仙桃基地磨料+抛光液一体化"
+        },
+        {
+          "code": "300405",
+          "name": "科隆股份",
+          "role": "纳米氧化铈CMP小规模订单，与抛光液企业持续验证测试"
+        },
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "铜/钨CMP抛光液+电镀液+TSV铜电镀，半导体材料平台化"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球CMP抛光液市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 38,
+          "source_name": "国金证券/华经产业研究院 2025",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球铈基CMP磨料国产占比_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 3.2,
+          "source_name": "行业数据 Merck垄断85%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "functional_material",
+      "layer": 2
+    }
+  ],
+  "supply_relationships": [
+    {
+      "supplier_code": "603505",
+      "buyer_code": "600160",
+      "product": "萤石(氟化钙)/酸级萤石精粉",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "金石资源萤石供巨化股份AHF产线(国内最大萤石→AHF链条)"
+    },
+    {
+      "supplier_code": "600160",
+      "buyer_code": "688549",
+      "product": "无水氢氟酸(AHF)/高纯氟气",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "巨化股份是中巨芯第一大股东(26.4%)，AHF→电子级HF/F₂全链条供应"
+    },
+    {
+      "supplier_code": "002407",
+      "buyer_code": "688545",
+      "product": "G5级电子级氢氟酸",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "多氟多G5 HF与兴福电子G5酸共同供应中芯国际/长江存储"
+    },
+    {
+      "supplier_code": "603379",
+      "buyer_code": "688549",
+      "product": "电子级氢氟酸(森田化学技术)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "三美合资森田新材料产电子级HF，与中巨芯共享含氟电子化学品市场"
+    },
+    {
+      "supplier_code": "002643",
+      "product": "ArF/KrF光刻胶树脂",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "万润股份光刻胶树脂供彤程新材/南大光电/晶瑞电材等国产光刻胶厂商"
+    },
+    {
+      "supplier_code": "605589",
+      "product": "g/i线/KrF光刻胶酚醛树脂",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "圣泉集团酚醛树脂供国产光刻胶厂商(彤程新材/晶瑞电材等)"
+    },
+    {
+      "supplier_code": "300429",
+      "product": "KrF PAG光产酸剂",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "强力新材PAG供国产KrF光刻胶配方"
+    },
+    {
+      "supplier_code": "300405",
+      "buyer_code": "688019",
+      "product": "纳米氧化铈CMP磨料",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "科隆股份纳米氧化铈送样安集科技CMP抛光液验证"
+    },
+    {
+      "supplier_code": "300721",
+      "buyer_code": "605589",
+      "product": "G5级PGMEA(光刻胶溶剂)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "怡达股份G5 PGMEA供圣泉集团光刻胶树脂配方，电子级溶剂→光刻胶原料核心链接"
+    },
+    {
+      "supplier_code": "300721",
+      "product": "G5级PGMEA/PGME溶剂",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "怡达股份G5 PGMEA供晶瑞电材/彤程新材光刻胶配方，进中芯国际28nm"
+    },
+    {
+      "supplier_code": "600141",
+      "buyer_code": "688545",
+      "product": "电子级磷酸(湿电子化学品上游)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "兴发集团电子级黄磷/磷酸供兴福电子生产G5级磷酸，国内最大磷化工→湿电子化学品链条"
+    },
+    {
+      "supplier_code": "600141",
+      "buyer_code": "600096",
+      "product": "黄磷/湿法磷酸(交叉供应)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "兴发集团与云天化磷化工上游互采/行业协作，电子级磷酸共用市场"
+    },
+    {
+      "supplier_code": "603938",
+      "buyer_code": "002409",
+      "product": "电子级三氯氢硅(TCS，前驱体硅源)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "三孚股份TCS供雅克科技SOD/High-K前驱体合成，国内最大TCS—前驱体链条"
+    },
+    {
+      "supplier_code": "603938",
+      "product": "电子级三氯氢硅(多晶硅/硅烷核心原料)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "三孚股份TCS供通威/大全等多晶硅厂及硅烷科技等，国内产量~6.5万吨/年"
+    },
+    {
+      "supplier_code": "300346",
+      "product": "MO源(TEGa/TMGa/TMAl/TMIn)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "南大光电MO源供三安光电/华灿光电/乾照光电MOCVD外延，国内唯一批量化供应商"
+    },
+    {
+      "supplier_code": "300236",
+      "product": "TSV铜电镀液+铜互连电镀液",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "上海新阳供中芯国际铜互连产线/长电科技先进封装TSV"
+    },
+    {
+      "supplier_code": "688720",
+      "product": "铜柱电镀液+锡银电镀液",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "艾森股份先进封装电镀液供长电科技/通富微电先进封装线"
+    },
+    {
+      "supplier_code": "603002",
+      "buyer_code": "300041",
+      "product": "电子级环氧树脂(EMC/Underfill基体)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "宏昌电子环氧树脂供回天新材/华海诚科等EMC及胶粘剂厂商"
+    },
+    {
+      "supplier_code": "300481",
+      "product": "酸酐固化剂(EMC硬化体系)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "濮阳惠成酸酐固化剂供华海诚科/德邦科技等EMC/Underfill配方，国内市占>60%"
+    },
+    {
+      "supplier_code": "688545",
+      "buyer_code": "688019",
+      "product": "G5级硫酸/双氧水/氨水(CMP抛光液原料)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "兴福电子G5级酸/双氧水供安集科技CMP抛光液配制，国内最大湿电子化学品→CMP供应链"
+    },
+    {
+      "supplier_code": "688545",
+      "buyer_code": "300236",
+      "product": "G5级硫酸/盐酸(电镀液基础化学品)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "兴福电子G5级酸供上海新阳铜互连/TSV电镀液配制"
+    },
+    {
+      "supplier_code": "300655",
+      "buyer_code": "688019",
+      "product": "G5级双氧水/氨水(CMP抛光液原料)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "晶瑞电材G5双氧水(国内晶圆厂市占>60%)供安集科技CMP抛光液"
+    }
+  ],
+  "group_labels": {
+    "base_chemical": [
+      "⚗️ 基础氟化工",
+      "#1e6b4a"
+    ],
+    "purified_chemical": [
+      "🧪 电子级纯化品",
+      "#2e7d32"
+    ],
+    "functional_material": [
+      "🔬 功能性材料",
+      "#1565c0"
+    ]
+  },
+  "group_order": [
+    "base_chemical",
+    "purified_chemical",
+    "functional_material"
+  ]
+}

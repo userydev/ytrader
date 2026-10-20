@@ -1,0 +1,2433 @@
+{
+  "industry": "半导体",
+  "icon": "🔬",
+  "flow_description": "<div id=\"flow-arrows\">原材料 → 设备/设计 → 晶圆制造 → 封装测试 → 终端应用</div>",
+  "segments": [
+    {
+      "id": "semi_silicon_wafer",
+      "name": "硅片",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体级多晶硅 → 单晶硅棒 → 硅片切割。12英寸大硅片是先进制程核心材料，全球前五大供应商占90%份额，国产化率仍低。",
+      "key_companies": [
+        {
+          "code": "688126",
+          "name": "沪硅产业",
+          "role": "12英寸大硅片龙头"
+        },
+        {
+          "code": "002129",
+          "name": "TCL中环",
+          "role": "光伏+半导体硅片"
+        },
+        {
+          "code": "605358",
+          "name": "立昂微",
+          "role": "12英寸重掺/轻掺硅片龙头"
+        },
+        {
+          "code": "688432",
+          "name": "有研硅",
+          "role": "4-12英寸全尺寸硅片"
+        },
+        {
+          "code": "688584",
+          "name": "上海合晶",
+          "role": "6/8/12英寸外延片专精"
+        },
+        {
+          "code": "688783",
+          "name": "西安奕材",
+          "role": "12英寸硅片国产主力（国内第一/全球第六，~85万片/月）"
+        },
+        {
+          "code": "688233",
+          "name": "神工股份",
+          "role": "刻蚀用大直径硅材料龙头，硅零部件国产替代"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "产能_万片_月",
+          "unit": "万片/月",
+          "type": "capacity",
+          "current_value": 270,
+          "source_name": "Bernstein Research / C114",
+          "source_url": "https://www.c114.com.cn/news/51/a1309702.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "产量_万片_月",
+          "unit": "万片/月",
+          "type": "output",
+          "current_value": 240,
+          "source_name": "SEMI / 券商研报估算",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "全球硅片出货面积_百万平方英寸",
+          "unit": "MSI",
+          "type": "market",
+          "current_value": 14500,
+          "source_name": "SEMI 2025",
+          "source_url": "https://www.semi.org",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "new_capacity": [
+        {
+          "company": "沪硅产业",
+          "scale": "30万片/月(12英寸)",
+          "expected_online": "2026-Q4",
+          "status": "construction"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_sic_substrate",
+      "name": "SiC衬底",
+      "position": "upstream",
+      "tier": 1,
+      "description": "第三代半导体碳化硅衬底，新能源车+AI电源核心材料，全球产能紧缺，国产替代加速。",
+      "key_companies": [
+        {
+          "code": "688234",
+          "name": "天岳先进",
+          "role": "SiC衬底全球前三"
+        },
+        {
+          "code": "688469",
+          "name": "芯联集成",
+          "role": "SiC器件IDM"
+        },
+        {
+          "code": "600703",
+          "name": "三安光电",
+          "role": "SiC全产业链IDM"
+        },
+        {
+          "code": "002617",
+          "name": "露笑科技",
+          "role": "6英寸导电型SiC衬底"
+        },
+        {
+          "code": "603595",
+          "name": "东尼电子",
+          "role": "SiC衬底验证爬坡"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "产能_万片_年",
+          "unit": "万片/年",
+          "type": "capacity",
+          "current_value": 100,
+          "source_name": "天岳先进+天科合达年报",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "产量_万片_年",
+          "unit": "万片/年",
+          "type": "output",
+          "current_value": 80,
+          "source_name": "天岳先进2025年报(69万片)+天科合达估算",
+          "source_url": "http://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/company/rptid/831313421639/index.phtml",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "全球SiC衬底市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 30,
+          "source_name": "Yole / 券商研报",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_specialty_gas",
+      "name": "电子特气",
+      "position": "upstream",
+      "tier": 1,
+      "description": "高纯特种气体（蚀刻/沉积/掺杂用），晶圆制造消耗品，进入门槛极高，需通过晶圆厂长周期认证。",
+      "key_companies": [
+        {
+          "code": "688268",
+          "name": "华特气体",
+          "role": "进入台积电供应链"
+        },
+        {
+          "code": "002409",
+          "name": "雅克科技",
+          "role": "前驱体/SOD全球供应商"
+        },
+        {
+          "code": "688106",
+          "name": "金宏气体",
+          "role": "超纯氨国内第一"
+        },
+        {
+          "code": "600378",
+          "name": "昊华科技",
+          "role": "含氟特气国家队"
+        },
+        {
+          "code": "300346",
+          "name": "南大光电",
+          "role": "磷烷/砷烷全球领先"
+        },
+        {
+          "code": "688146",
+          "name": "中船特气",
+          "role": "电子特气国内第一/全球第九，NF3+WF6产能全球最大，已入台积电3nm供应链"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内电子特气市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 320,
+          "source_name": "华泰证券 2026",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 30,
+          "source_name": "华泰证券/SEMI",
+          "source_url": "https://fund.eastmoney.com/a/202605073730238452.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_target_material",
+      "name": "溅射靶材",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体溅射靶材（铝/钛/钽/铜），进入3nm制程，涨价周期受益者。",
+      "key_companies": [
+        {
+          "code": "300666",
+          "name": "江丰电子",
+          "role": "半导体靶材龙头"
+        },
+        {
+          "code": "600206",
+          "name": "有研新材",
+          "role": "铜/铝/钛/钽/钴靶材品类最全"
+        },
+        {
+          "code": "300263",
+          "name": "隆华科技",
+          "role": "钼靶国内市占率>50%"
+        },
+        {
+          "code": "300706",
+          "name": "阿石创",
+          "role": "钼靶全球市占率33%"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球靶材市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 180,
+          "source_name": "券商研报",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "特殊靶材价格涨幅_百分比",
+          "unit": "%",
+          "type": "price_change",
+          "current_value": 8,
+          "source_name": "券商研报估算",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_cmp_materials",
+      "name": "CMP抛光材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "CMP抛光液+抛光垫，晶圆平坦化核心耗材，国产化率快速提升。",
+      "key_companies": [
+        {
+          "code": "688019",
+          "name": "安集科技",
+          "role": "CMP抛光液龙头"
+        },
+        {
+          "code": "300054",
+          "name": "鼎龙股份",
+          "role": "抛光垫+CMP平台化"
+        },
+        {
+          "code": "600309",
+          "name": "万华化学",
+          "role": "CMP抛光垫新进入者"
+        },
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "铜/钨CMP抛光液+TSV封装胶"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "产能_吨_年",
+          "unit": "吨/年",
+          "type": "capacity",
+          "current_value": 5000,
+          "source_name": "安集科技+鼎龙股份产能估算",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 20,
+          "source_name": "抛光液~20%/抛光垫<10% 综合",
+          "source_url": "https://fund.eastmoney.com/a/202605073730238452.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_photoresist",
+      "name": "光刻胶",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体光刻胶（g/i/KrF/ArF/EUV），日本垄断90%以上，国产替代空间最大环节之一，受益涨价周期。",
+      "key_companies": [
+        {
+          "code": "603650",
+          "name": "彤程新材",
+          "role": "半导体光刻胶"
+        },
+        {
+          "code": "002643",
+          "name": "万润股份",
+          "role": "光刻胶材料"
+        },
+        {
+          "code": "300655",
+          "name": "晶瑞电材",
+          "role": "g/i线光刻胶市占30%+"
+        },
+        {
+          "code": "300346",
+          "name": "南大光电",
+          "role": "ArF光刻胶国产龙头(28nm量产)"
+        },
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "KrF光刻胶批量供货+TSV封装胶"
+        },
+        {
+          "code": "688720",
+          "name": "艾森股份",
+          "role": "先进封装光刻胶主力，电镀液+光刻胶双轮驱动"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球光刻胶市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 28,
+          "source_name": "富士经济/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 15,
+          "source_name": "KrF~12%/ArF~5% 综合",
+          "source_url": "https://fund.eastmoney.com/a/202605073730238452.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_photomask",
+      "name": "光掩模/光罩",
+      "position": "upstream",
+      "tier": 1,
+      "description": "光掩模(Photomask)是芯片光刻工艺的\"底片\"，电路图案通过光掩模转移到晶圆上。全球市场被日本凸版/大日本印刷/美国Photronics垄断，国产化率极低，是半导体材料国产替代最后的高地之一。2025年路维光电/清溢光电加速扩产，市场开始关注。",
+      "key_companies": [
+        {
+          "code": "688401",
+          "name": "路维光电",
+          "role": "高精度掩模版龙头，G11面板掩模量产，半导体掩模扩产"
+        },
+        {
+          "code": "688138",
+          "name": "清溢光电",
+          "role": "面板+半导体掩模版双线，合肥12英寸半导体掩模项目"
+        },
+        {
+          "code": "300395",
+          "name": "菲利华",
+          "role": "合成石英光掩模基板，国内唯一通过日韩光掩模厂认证"
+        },
+        {
+          "code": "688548",
+          "name": "广钢气体",
+          "role": "合肥长鑫光掩模项目配套大宗电子气站"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "华泰证券 整体国产化率",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "全球半导体光掩模市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 52,
+          "source_name": "SEMI/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_wet_chemicals",
+      "name": "湿电子化学品",
+      "position": "upstream",
+      "tier": 1,
+      "description": "高纯试剂(G1-G5级)：硫酸/双氧水/氢氟酸/氨水/磷酸/蚀刻液/剥离液。用于晶圆清洗/蚀刻/显影。G5级(金属杂质<0.1ppb)是先进制程准入门槛。晶圆厂扩产→用量线性增长，是半导体材料中\"量价齐升\"逻辑最顺的赛道之一。",
+      "key_companies": [
+        {
+          "code": "603078",
+          "name": "江化微",
+          "role": "国内湿电子化学品龙头，G5级硫酸通过中芯国际验证"
+        },
+        {
+          "code": "300655",
+          "name": "晶瑞电材",
+          "role": "超纯双氧水/氨水/氢氟酸，G5级批量供货"
+        },
+        {
+          "code": "688549",
+          "name": "中巨芯",
+          "role": "电子级氢氟酸/硝酸/硫酸，含氟电子特气+湿化学品双平台"
+        },
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "电镀液/清洗液/蚀刻液，TSV铜电镀液国内领先"
+        },
+        {
+          "code": "300481",
+          "name": "濮阳惠成",
+          "role": "功能电子材料(酸酐固化剂/芴类材料)"
+        },
+        {
+          "code": "603931",
+          "name": "格林达",
+          "role": "TMAH显影液龙头，国内市占率第一"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内湿电子化学品市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 180,
+          "source_name": "华泰证券",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 44,
+          "source_name": "华泰证券 G3-G4级综合",
+          "source_url": "https://fund.eastmoney.com/a/202605073730238452.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "material",
+      "layer": 0
+    },
+    {
+      "id": "semi_equipment",
+      "name": "半导体设备",
+      "position": "upstream",
+      "tier": 1,
+      "description": "刻蚀/薄膜沉积/清洗/检测/离子注入等核心设备，国产替代深水区，2026Q1国产设备金额占比达55%。",
+      "key_companies": [
+        {
+          "code": "002371",
+          "name": "北方华创",
+          "role": "全平台设备龙头"
+        },
+        {
+          "code": "688012",
+          "name": "中微公司",
+          "role": "刻蚀设备龙头"
+        },
+        {
+          "code": "688072",
+          "name": "拓荆科技",
+          "role": "薄膜沉积龙头"
+        },
+        {
+          "code": "688082",
+          "name": "盛美上海",
+          "role": "清洗设备龙头"
+        },
+        {
+          "code": "688120",
+          "name": "华海清科",
+          "role": "CMP设备龙头"
+        },
+        {
+          "code": "688037",
+          "name": "芯源微",
+          "role": "前道涂胶显影(国内唯一)"
+        },
+        {
+          "code": "603690",
+          "name": "至纯科技",
+          "role": "湿法清洗设备国内份额近50%"
+        },
+        {
+          "code": "300567",
+          "name": "精测电子",
+          "role": "半导体量检测设备龙头"
+        },
+        {
+          "code": "688361",
+          "name": "中科飞测",
+          "role": "半导体缺陷检测/量测设备龙头，国内唯一2Xnm光学检测"
+        },
+        {
+          "code": "300604",
+          "name": "长川科技",
+          "role": "封测设备龙头，测试机/分选机/探针台/AOI全平台"
+        },
+        {
+          "code": "688200",
+          "name": "华峰测控",
+          "role": "模拟/功率半导体测试机龙头，车规级AEC-Q100认证"
+        },
+        {
+          "code": "600641",
+          "name": "万业企业",
+          "role": "离子注入机（凯世通），国产离子注入唯一量产"
+        },
+        {
+          "code": "688147",
+          "name": "微导纳米",
+          "role": "ALD原子层沉积设备国内第一，已导入华虹集团"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国产设备采购额_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 520,
+          "source_name": "SEMI/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 25,
+          "source_name": "SEMI 2025 综合国产化率",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "头部企业订单额_亿元",
+          "unit": "亿元",
+          "type": "order"
+        },
+        {
+          "name": "设备交期_月",
+          "unit": "月",
+          "type": "lead_time"
+        }
+      ],
+      "group": "equipment",
+      "layer": 1
+    },
+    {
+      "id": "semi_equipment_parts",
+      "name": "半导体设备零部件",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体设备由数万零部件构成：密封圈/阀门/管路/射频电源/真空泵/机械手/静电卡盘/陶瓷件/石英件。美日主导，制裁倒逼国产替代，2025年设备零部件成为A股独立炒作主题。逻辑类似\"卖铲子的铲子\"——设备国产化率高→零部件需求放大。",
+      "key_companies": [
+        {
+          "code": "688409",
+          "name": "富创精密",
+          "role": "国产半导体设备零部件平台龙头，金属件/模组/气体管路"
+        },
+        {
+          "code": "300260",
+          "name": "新莱应材",
+          "role": "超高洁净管阀(UHP)，进入应用材料/泛林/中微供应链"
+        },
+        {
+          "code": "688596",
+          "name": "正帆科技",
+          "role": "气体输送系统(Gas Box/Skid)，中芯/长存/长鑫核心供应商"
+        },
+        {
+          "code": "300820",
+          "name": "英杰电气",
+          "role": "射频电源/直流电源，刻蚀/薄膜沉积设备核心部件"
+        },
+        {
+          "code": "688448",
+          "name": "磁谷科技",
+          "role": "磁悬浮真空泵，替代进口干泵"
+        },
+        {
+          "code": "688652",
+          "name": "京仪装备",
+          "role": "半导体温控设备/废气处理设备龙头"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内半导体设备零部件市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 250,
+          "source_name": "券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 15,
+          "source_name": "华泰证券 核心零部件",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "equipment",
+      "layer": 1
+    },
+    {
+      "id": "semi_glass_substrate",
+      "name": "玻璃基板(先进封装)",
+      "position": "upstream",
+      "tier": 1,
+      "description": "玻璃基板是下一代先进封装核心材料，替代有机ABF载板。英特尔2023年首发展示，计划2030年商业化；三星电机/Absolics加速布局。A股炒作核心是TGV(玻璃通孔)+\"玻璃替代有机\"产业趋势，2025-2026年最热半导体主题之一。",
+      "key_companies": [
+        {
+          "code": "603773",
+          "name": "沃格光电",
+          "role": "TGV玻璃通孔核心标的，MiniLED玻璃基板量产"
+        },
+        {
+          "code": "688170",
+          "name": "德龙激光",
+          "role": "TGV激光钻孔设备，玻璃基板制孔核心装备"
+        },
+        {
+          "code": "300776",
+          "name": "帝尔激光",
+          "role": "光伏+半导体激光精密加工，TGV钻孔设备布局"
+        },
+        {
+          "code": "600707",
+          "name": "彩虹股份",
+          "role": "显示玻璃基板G8.5量产，半导体玻璃基板布局"
+        },
+        {
+          "code": "300684",
+          "name": "中石科技",
+          "role": "TGV玻璃基板导热界面材料(TIM)"
+        },
+        {
+          "code": "002185",
+          "name": "华天科技",
+          "role": "玻璃基板封装工艺研发"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球TGV玻璃基板市场规模_预测_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 5,
+          "source_name": "Yole 2026E (早期商业化)",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "TGV产能_万片_年",
+          "unit": "万片/年",
+          "type": "capacity"
+        }
+      ],
+      "group": "packaging_prep",
+      "layer": 1
+    },
+    {
+      "id": "semi_ic_substrate",
+      "name": "IC载板/封装基板",
+      "position": "upstream",
+      "tier": 1,
+      "description": "IC载板是连接芯片与PCB的关键桥梁。ABF载板(Ajinomoto Build-up Film)用于CPU/GPU/AI芯片，BT载板用于存储/MEMS。AI服务器引爆ABF载板需求，全球产能紧缺，是玻璃基板的\"前浪\"（玻璃替代的就是ABF）。味之素是全球ABF膜唯一供应商。",
+      "key_companies": [
+        {
+          "code": "002916",
+          "name": "深南电路",
+          "role": "PCB+IC载板双龙头，ABF载板FC-BGA批量供货"
+        },
+        {
+          "code": "002436",
+          "name": "兴森科技",
+          "role": "BT载板龙头国内第一，ABF载板扩产中"
+        },
+        {
+          "code": "603228",
+          "name": "景旺电子",
+          "role": "IC载板(珠海)+高端HDI"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球IC载板市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 160,
+          "source_name": "Prismark/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "ABF载板国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 5,
+          "source_name": "华泰证券 <5%",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "packaging_prep",
+      "layer": 1
+    },
+    {
+      "id": "semi_packaging_materials",
+      "name": "封装材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体封装所需核心材料：键合丝(金/银/铜/钯铜)、引线框架、环氧塑封料(EMC/GMC/LMC)、底部填充胶(Underfill)、热界面材料(TIM1/TIM2)。先进封装(Chiplet/3D/HBM)对TIM和Underfill要求极高，是CoWoS必需消耗品，HBM堆叠封装拉动了TIM需求暴增。",
+      "key_companies": [
+        {
+          "code": "002119",
+          "name": "康强电子",
+          "role": "引线框架+键合丝龙头，国内市占率第一"
+        },
+        {
+          "code": "688535",
+          "name": "华海诚科",
+          "role": "环氧塑封料(EMC)，先进封装GMC/LMC已通过长电验证"
+        },
+        {
+          "code": "300684",
+          "name": "中石科技",
+          "role": "热界面材料(TIM1/TIM2)，AI芯片散热核心供应商"
+        },
+        {
+          "code": "688035",
+          "name": "德邦科技",
+          "role": "芯片粘接胶/底部填充胶/导热界面材料，华为海思供应商"
+        },
+        {
+          "code": "300236",
+          "name": "上海新阳",
+          "role": "TSV铜电镀液+封装光刻胶"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内半导体封装材料市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 450,
+          "source_name": "券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "先进封装材料国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 18,
+          "source_name": "华泰证券估算",
+          "source_url": "https://hk.stockstar.com/IG2026051900010380.shtml",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "packaging_prep",
+      "layer": 1
+    },
+    {
+      "id": "semi_eda_ip",
+      "name": "EDA与IP核",
+      "position": "midstream",
+      "tier": 2,
+      "description": "EDA(电子设计自动化)是芯片设计的\"画笔\"，全球被Synopsys/Cadence/Siemens EDA三巨头垄断95%+份额。IP核是芯片设计可复用模块。美国对华EDA禁令(2022.8)催化国产替代窗口，华大九天是A股唯一全流程EDA标的。2025年国产EDA市占率从3%提升至~8%。",
+      "key_companies": [
+        {
+          "code": "301269",
+          "name": "华大九天",
+          "role": "国产EDA龙头，模拟IC全流程+数字后端工具链"
+        },
+        {
+          "code": "688206",
+          "name": "概伦电子",
+          "role": "SPICE仿真/器件建模EDA，台积电5nm认证"
+        },
+        {
+          "code": "301095",
+          "name": "广立微",
+          "role": "良率提升/测试芯片EDA，Foundry端工具"
+        },
+        {
+          "code": "688521",
+          "name": "芯原股份",
+          "role": "全球第七大半导体IP供应商(IP+设计服务双平台)"
+        },
+        {
+          "code": "688262",
+          "name": "国芯科技",
+          "role": "嵌入式CPU IP核(国产替代ARM)"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内EDA市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 180,
+          "source_name": "券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产EDA市占率_百分比",
+          "unit": "%",
+          "type": "ratio"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 1
+    },
+    {
+      "id": "semi_ai_chip",
+      "name": "AI算力芯片",
+      "position": "midstream",
+      "tier": 2,
+      "description": "GPU/AI加速芯片设计，AI产业核心算力底座，国产替代紧迫度最高环节，2026Q1板块营收+81%。",
+      "key_companies": [
+        {
+          "code": "688256",
+          "name": "寒武纪",
+          "role": "国产AI芯片龙头"
+        },
+        {
+          "code": "688041",
+          "name": "海光信息",
+          "role": "CPU+DCU双轮驱动"
+        },
+        {
+          "code": "688521",
+          "name": "芯原股份",
+          "role": "AI芯片设计服务"
+        },
+        {
+          "code": "688802",
+          "name": "沐曦股份",
+          "role": "GPU训练+推理"
+        },
+        {
+          "code": "002261",
+          "name": "拓维信息",
+          "role": "华为昇腾整机授权(兆瀚)"
+        },
+        {
+          "code": "000034",
+          "name": "神州数码",
+          "role": "神州鲲泰AI服务器"
+        },
+        {
+          "code": "688795",
+          "name": "摩尔线程",
+          "role": "国产GPU第一股"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内AI芯片市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 2398,
+          "source_name": "IDC/券商研报 2025",
+          "source_url": "https://www.tmtpost.com/8006210.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "出货量_万颗",
+          "unit": "万颗",
+          "type": "output",
+          "current_value": 400,
+          "source_name": "IDC 2025 加速卡出货量",
+          "source_url": "https://www.tmtpost.com/8006210.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 41,
+          "source_name": "Bernstein Research 2025出货量口径",
+          "source_url": "https://www.pconline.com.cn/ai/2153/21532351.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "new_capacity": [
+        {
+          "company": "寒武纪",
+          "scale": "思元系列新一代量产",
+          "expected_online": "2026-H2",
+          "status": "ramp_up"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_storage",
+      "name": "存储芯片",
+      "position": "midstream",
+      "tier": 2,
+      "description": "DRAM + NAND Flash + NOR Flash，全球超级周期中，2026Q1 DRAM合约价+90%以上，HBM市场规模预计510亿美元。",
+      "key_companies": [
+        {
+          "code": "603986",
+          "name": "兆易创新",
+          "role": "NOR Flash+MCU龙头"
+        },
+        {
+          "code": "688008",
+          "name": "澜起科技",
+          "role": "内存接口芯片全球龙头"
+        },
+        {
+          "code": "688525",
+          "name": "佰维存储",
+          "role": "AI端侧存储"
+        },
+        {
+          "code": "301308",
+          "name": "江波龙",
+          "role": "国内存储模组第一/全球第六"
+        },
+        {
+          "code": "300042",
+          "name": "朗科科技",
+          "role": "存储模组/品牌"
+        },
+        {
+          "code": "300223",
+          "name": "北京君正",
+          "role": "利基DRAM国内第一"
+        },
+        {
+          "code": "688766",
+          "name": "普冉股份",
+          "role": "NOR Flash设计"
+        },
+        {
+          "code": "688110",
+          "name": "东芯股份",
+          "role": "NAND+DRAM设计"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "DRAM合约价涨跌幅_百分比",
+          "unit": "%",
+          "type": "price_change",
+          "current_value": 58,
+          "source_name": "TrendForce 2026E",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "NAND合约价涨跌幅_百分比",
+          "unit": "%",
+          "type": "price_change",
+          "current_value": 32,
+          "source_name": "TrendForce 2026E",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "全球DRAM市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 978,
+          "source_name": "WSTS/券商研报 2025",
+          "source_url": "https://ee.ofweek.com/2026-06/ART-8110-2812-30690836.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "HBM市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_analog_mcu",
+      "name": "模拟芯片与MCU",
+      "position": "midstream",
+      "tier": 2,
+      "description": "信号链+电源管理+MCU微控制器，涨价周期受益者，2026Q1板块营收+27%，国产替代稳步推进。",
+      "key_companies": [
+        {
+          "code": "300661",
+          "name": "圣邦股份",
+          "role": "模拟芯片龙头"
+        },
+        {
+          "code": "688536",
+          "name": "思瑞浦",
+          "role": "高性能信号链"
+        },
+        {
+          "code": "688052",
+          "name": "纳芯微",
+          "role": "传感器+隔离+驱动"
+        },
+        {
+          "code": "300327",
+          "name": "中颖电子",
+          "role": "白家电MCU国内领先"
+        },
+        {
+          "code": "603986",
+          "name": "兆易创新",
+          "role": "MCU+Flash双龙头"
+        },
+        {
+          "code": "688045",
+          "name": "必易微",
+          "role": "AC-DC电源管理芯片"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内模拟芯片市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 520,
+          "source_name": "IC Insights/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 18,
+          "source_name": "券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "平均交期_周",
+          "unit": "周",
+          "type": "lead_time"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_rf_frontend",
+      "name": "射频前端",
+      "position": "midstream",
+      "tier": 2,
+      "description": "射频前端(PA功率放大器/滤波器/射频开关/LNA低噪声放大器)是手机/基站通信核心芯片。5G手机PA+滤波器用量翻倍，模组化(FEMiD/PAMiD)趋势明显。市场长期被Skyworks/Qorvo/Qualcomm/Broadcom垄断，国产替代从分立器件→模组的路径清晰。卓胜微是A股射频前端标杆。",
+      "key_companies": [
+        {
+          "code": "300782",
+          "name": "卓胜微",
+          "role": "射频开关/LNA国内第一→PA/滤波器模组化转型"
+        },
+        {
+          "code": "688153",
+          "name": "唯捷创芯",
+          "role": "4G/5G PA龙头，国内射频PA市占率第一"
+        },
+        {
+          "code": "688798",
+          "name": "艾为电子",
+          "role": "射频前端+音频功放+电源管理，手机多品类覆盖"
+        },
+        {
+          "code": "603501",
+          "name": "豪威集团",
+          "role": "射频IC+SOC(韦尔半导体)，射频接收模组"
+        },
+        {
+          "code": "688403",
+          "name": "汇成股份",
+          "role": "SAW/BAW滤波器晶圆级封装"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内射频前端市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 350,
+          "source_name": "Yole/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 25,
+          "source_name": "卓胜微/唯捷创芯等合计市占率",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_cis",
+      "name": "CIS图像传感器",
+      "position": "midstream",
+      "tier": 2,
+      "description": "CMOS图像传感器，车载+AI眼镜+安防多轮驱动，国产厂商全球份额持续提升。",
+      "key_companies": [
+        {
+          "code": "603501",
+          "name": "豪威集团",
+          "role": "车载CIS龙头"
+        },
+        {
+          "code": "002273",
+          "name": "水晶光电",
+          "role": "光学元器件"
+        },
+        {
+          "code": "688728",
+          "name": "格科微",
+          "role": "手机CIS全球第二(23%份额)"
+        },
+        {
+          "code": "688213",
+          "name": "思特威",
+          "role": "CIS芯片设计龙头，安防/无人机全球第一，手机/汽车高速增长"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球CIS市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 260,
+          "source_name": "Yole/IC Insights 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "车载CIS出货量_亿颗",
+          "unit": "亿颗",
+          "type": "output"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_mems_sensor",
+      "name": "MEMS传感器",
+      "position": "midstream",
+      "tier": 2,
+      "description": "MEMS(微机电系统)传感器——加速度计/陀螺仪/压力传感器/麦克风/气体传感器/红外探测器。汽车(安全气囊/TPMS/ESC)、工业、医疗需求旺盛。全球市场被Bosch/ST/TDK/Infineon垄断90%+，国产MEMS在麦克风(敏芯)和红外(睿创)领域率先突破。赛微电子是全球最大MEMS纯代工厂。",
+      "key_companies": [
+        {
+          "code": "688286",
+          "name": "敏芯股份",
+          "role": "MEMS麦克风+压力传感器国内龙头"
+        },
+        {
+          "code": "688002",
+          "name": "睿创微纳",
+          "role": "非制冷红外MEMS探测器全球前三，军用+民用双线"
+        },
+        {
+          "code": "688665",
+          "name": "四方光电",
+          "role": "MEMS气体传感器，汽车(动力电池热失控)/工业双赛道"
+        },
+        {
+          "code": "688052",
+          "name": "纳芯微",
+          "role": "MEMS压力+温度+磁传感器，车规级批量出货"
+        },
+        {
+          "code": "300456",
+          "name": "赛微电子",
+          "role": "MEMS纯代工全球第一(瑞典Silex+北京8英寸Fab3)"
+        },
+        {
+          "code": "688582",
+          "name": "芯动联科",
+          "role": "MEMS陀螺仪/加速度计龙头，高性能惯性传感器"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内MEMS传感器市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 220,
+          "source_name": "Yole/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 15,
+          "source_name": "敏芯股份/赛微电子等合计",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_power_discrete",
+      "name": "功率半导体",
+      "position": "midstream",
+      "tier": 2,
+      "description": "IGBT + SiC MOSFET + 功率二极管，新能源车+AI电源双驱动，SiC渗透率快速提升。",
+      "key_companies": [
+        {
+          "code": "603290",
+          "name": "斯达半导",
+          "role": "IGBT模块龙头"
+        },
+        {
+          "code": "300373",
+          "name": "扬杰科技",
+          "role": "功率半导体IDM"
+        },
+        {
+          "code": "688187",
+          "name": "时代电气",
+          "role": "IGBT+SiC IDM龙头"
+        },
+        {
+          "code": "605111",
+          "name": "新洁能",
+          "role": "MOSFET+IGBT Fabless"
+        },
+        {
+          "code": "688396",
+          "name": "华润微",
+          "role": "功率半导体IDM全品类"
+        },
+        {
+          "code": "688261",
+          "name": "东微半导",
+          "role": "超结MOSFET+SiC+GaN"
+        },
+        {
+          "code": "600460",
+          "name": "士兰微",
+          "role": "功率半导体IDM龙头，IGBT/SiC/MOSFET全品类"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内IGBT市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 500,
+          "source_name": "国金证券 2025",
+          "source_url": "https://m.zhitongcaijing.com/contentnew/appcontentdetail.html?content_id=722977",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "SiC渗透率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 20,
+          "source_name": "NE时代/券商研报 2025",
+          "source_url": "https://www.21ic.com/a/1003169.html",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "design_ip",
+      "layer": 2
+    },
+    {
+      "id": "semi_wafer_fab",
+      "name": "晶圆制造",
+      "position": "midstream",
+      "tier": 3,
+      "description": "晶圆代工，半导体产业链核心瓶颈环节，扩产周期2-3年，重资产、高门槛。产能利用率是关键指标。",
+      "key_companies": [
+        {
+          "code": "688981",
+          "name": "中芯国际",
+          "role": "国产代工龙头(14nm)"
+        },
+        {
+          "code": "688347",
+          "name": "华虹公司",
+          "role": "特色工艺代工"
+        },
+        {
+          "code": "688249",
+          "name": "晶合集成",
+          "role": "DDIC+CIS代工"
+        },
+        {
+          "code": "688172",
+          "name": "燕东微",
+          "role": "6/8/12英寸IDM+代工"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "产能_万片_月_8英寸等效",
+          "unit": "万片/月",
+          "type": "capacity",
+          "current_value": 320,
+          "source_name": "SEMI 2026E 中国大陆12英寸总产能",
+          "source_url": "https://ee.ofweek.com/2026-05/ART-8420-2816-30688353.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "产量_万片_月",
+          "unit": "万片/月",
+          "type": "output",
+          "current_value": 290,
+          "source_name": "基于~90%综合产能利用率估算",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "产能利用率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 93,
+          "source_name": "中芯国际+华虹综合 2026Q1",
+          "source_url": "https://ee.ofweek.com/2026-05/ART-8420-2816-30688353.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "全球晶圆代工营收_亿美元",
+          "unit": "亿美元",
+          "type": "market"
+        }
+      ],
+      "new_capacity": [
+        {
+          "company": "中芯国际",
+          "scale": "临港12英寸新产线",
+          "expected_online": "2026-H2",
+          "status": "construction"
+        },
+        {
+          "company": "华虹公司",
+          "scale": "无锡12英寸二期",
+          "expected_online": "2026-Q4",
+          "status": "equipment"
+        }
+      ],
+      "group": "wafer_fab",
+      "layer": 3
+    },
+    {
+      "id": "semi_packaging",
+      "name": "封装测试",
+      "position": "midstream",
+      "tier": 3,
+      "description": "传统封装→先进封装(CoWoS/Chiplet/玻璃基板)，AI芯片标配，产能紧缺高景气环节。CoWoS产能是当前最大供需瓶颈之一。",
+      "key_companies": [
+        {
+          "code": "600584",
+          "name": "长电科技",
+          "role": "全球第三封测龙头"
+        },
+        {
+          "code": "002156",
+          "name": "通富微电",
+          "role": "AMD深度合作"
+        },
+        {
+          "code": "002185",
+          "name": "华天科技",
+          "role": "三大封测厂之一"
+        },
+        {
+          "code": "688362",
+          "name": "甬矽电子",
+          "role": "先进封装标的"
+        },
+        {
+          "code": "603005",
+          "name": "晶方科技",
+          "role": "WLCSP先进封装龙头"
+        },
+        {
+          "code": "688216",
+          "name": "气派科技",
+          "role": "QFN/DFN特色封测"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "先进封装产能_万颗_月",
+          "unit": "万颗/月",
+          "type": "capacity"
+        },
+        {
+          "name": "CoWoS全球产能_万片_月",
+          "unit": "万片/月",
+          "type": "capacity",
+          "current_value": 9,
+          "source_name": "台积电 2026",
+          "source_url": "https://finance.sina.cn/2026-02-09/detail-inhmfqcf9150021.d.html",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "先进封装渗透率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 45,
+          "source_name": "通富微电先进封装收入占比",
+          "source_url": "https://xueqiu.com/1855261132/371844203",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "new_capacity": [
+        {
+          "company": "长电科技",
+          "scale": "Chiplet/CoWoS扩产",
+          "expected_online": "2026-Q3",
+          "status": "construction"
+        }
+      ],
+      "group": "packaging",
+      "layer": 4
+    },
+    {
+      "id": "semi_ai_server",
+      "name": "AI服务器",
+      "position": "downstream",
+      "tier": 4,
+      "description": "AI算力需求核心驱动力，GPU服务器+推理服务器，全球CAGR 30%+。",
+      "key_companies": [
+        {
+          "code": "601138",
+          "name": "工业富联",
+          "role": "全球AI服务器代工龙头"
+        },
+        {
+          "code": "000977",
+          "name": "浪潮信息",
+          "role": "国产AI服务器龙头"
+        },
+        {
+          "code": "603019",
+          "name": "中科曙光",
+          "role": "国产高性能计算龙头"
+        },
+        {
+          "code": "000938",
+          "name": "紫光股份",
+          "role": "新华三AI服务器+交换机"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球AI服务器出货量_万台",
+          "unit": "万台",
+          "type": "output",
+          "current_value": 220,
+          "source_name": "IDC/TrendForce 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "国内AI服务器市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 1800,
+          "source_name": "IDC/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "end_product",
+      "layer": 5
+    },
+    {
+      "id": "semi_pcb_ccl",
+      "name": "PCB与覆铜板",
+      "position": "downstream",
+      "tier": 4,
+      "description": "AI服务器配套PCB/CCL，高速高频材料升级，2026Q1 PCB板块营收+32%。",
+      "key_companies": [
+        {
+          "code": "300476",
+          "name": "胜宏科技",
+          "role": "AI服务器PCB核心供应商"
+        },
+        {
+          "code": "002463",
+          "name": "沪电股份",
+          "role": "高端通讯PCB"
+        },
+        {
+          "code": "688519",
+          "name": "南亚新材",
+          "role": "高速CCL"
+        },
+        {
+          "code": "002916",
+          "name": "深南电路",
+          "role": "PCB龙头(最高120层背板)"
+        },
+        {
+          "code": "600183",
+          "name": "生益科技",
+          "role": "全球CCL销量第二"
+        },
+        {
+          "code": "603228",
+          "name": "景旺电子",
+          "role": "AI服务器PCB+车用PCB"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内PCB产值_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 3800,
+          "source_name": "Prismark/CPCA 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "AI服务器PCB占比_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 20,
+          "source_name": "Prismark估算 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "end_product",
+      "layer": 5
+    },
+    {
+      "id": "semi_auto_electronics",
+      "name": "汽车电子",
+      "position": "downstream",
+      "tier": 4,
+      "description": "新能源车+智能驾驶推动汽车电子用量爆发。核心产品包括域控制器/智能座舱/ADAS/激光雷达/T-Box/V2X。华为(鸿蒙座舱+MDC智驾平台)和比亚迪(自研+垂直整合)是中国汽车电子两大主线。2026年智驾域控渗透率突破30%，L2+向L3跨越。",
+      "key_companies": [
+        {
+          "code": "002920",
+          "name": "德赛西威",
+          "role": "智能座舱+智驾域控龙头，英伟达Orin/Thor中国核心Tier1"
+        },
+        {
+          "code": "601689",
+          "name": "拓普集团",
+          "role": "热管理+智能刹车(IBS)+空悬，特斯拉/华为核心供应商"
+        },
+        {
+          "code": "688326",
+          "name": "经纬恒润",
+          "role": "汽车电子全栈Tier1(车身域/智驾域/底盘域)"
+        },
+        {
+          "code": "600699",
+          "name": "均胜电子",
+          "role": "汽车安全+智能座舱+智驾域控，全球化Tier1"
+        },
+        {
+          "code": "300496",
+          "name": "中科创达",
+          "role": "智能座舱OS+智驾中间件，高通/地平线核心软件伙伴"
+        },
+        {
+          "code": "603786",
+          "name": "科博达",
+          "role": "底盘/照明/能源管理控制器，大众/比亚迪核心供应商"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "国内汽车电子市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 2200,
+          "source_name": "盖世汽车/券商研报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        },
+        {
+          "name": "智能座舱渗透率_百分比",
+          "unit": "%",
+          "type": "ratio"
+        },
+        {
+          "name": "智驾域控渗透率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 30,
+          "source_name": "NE时代/高工智能汽车 2026H1",
+          "source_url": "",
+          "last_updated": "2026-06-17"
+        }
+      ],
+      "group": "end_product",
+      "layer": 5
+    }
+  ],
+  "supply_relationships": [
+    {
+      "supplier_code": "688126",
+      "buyer_code": "688981",
+      "product": "12英寸硅片",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "沪硅产业是国内主要12英寸硅片供应商，供应中芯国际"
+    },
+    {
+      "supplier_code": "688126",
+      "buyer_code": "688347",
+      "product": "12英寸硅片",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "供应华虹半导体"
+    },
+    {
+      "supplier_code": "002129",
+      "buyer_code": "688981",
+      "product": "半导体硅片",
+      "relationship_type": "secondary",
+      "confidence": 4,
+      "notes": "TCL中环半导体硅片供应中芯国际"
+    },
+    {
+      "supplier_code": "688234",
+      "buyer_code": "603290",
+      "product": "SiC衬底",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "天岳先进SiC衬底供应斯达半导"
+    },
+    {
+      "supplier_code": "688234",
+      "buyer_code": "300373",
+      "product": "SiC衬底",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "供应扬杰科技"
+    },
+    {
+      "supplier_code": "688019",
+      "buyer_code": "688981",
+      "product": "CMP抛光液",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "安集科技是中芯国际CMP抛光液核心供应商"
+    },
+    {
+      "supplier_code": "300054",
+      "buyer_code": "688981",
+      "product": "CMP抛光垫",
+      "relationship_type": "secondary",
+      "confidence": 4,
+      "notes": "鼎龙股份抛光垫进入中芯国际供应链"
+    },
+    {
+      "supplier_code": "688268",
+      "buyer_code": "688981",
+      "product": "高纯电子特气",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "华特气体进入中芯国际供应链，是主要特气供应商"
+    },
+    {
+      "supplier_code": "002409",
+      "buyer_code": "688981",
+      "product": "前驱体/SOD",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "雅克科技前驱体供应中芯国际"
+    },
+    {
+      "supplier_code": "300666",
+      "buyer_code": "688981",
+      "product": "溅射靶材",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "江丰电子溅射靶材供应中芯国际"
+    },
+    {
+      "supplier_code": "002371",
+      "buyer_code": "688981",
+      "product": "刻蚀/薄膜/清洗设备",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "北方华创全平台设备供应中芯国际"
+    },
+    {
+      "supplier_code": "002371",
+      "buyer_code": "688347",
+      "product": "刻蚀/薄膜设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "北方华创设备供应华虹半导体"
+    },
+    {
+      "supplier_code": "688012",
+      "buyer_code": "688981",
+      "product": "等离子体刻蚀机",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "中微公司刻蚀设备进入中芯国际5nm验证"
+    },
+    {
+      "supplier_code": "688082",
+      "buyer_code": "688981",
+      "product": "清洗设备",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "盛美上海单片清洗设备供应中芯国际"
+    },
+    {
+      "supplier_code": "688072",
+      "buyer_code": "688981",
+      "product": "PECVD/ALD薄膜设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "拓荆科技薄膜沉积设备供应中芯国际"
+    },
+    {
+      "supplier_code": "688120",
+      "buyer_code": "688981",
+      "product": "CMP设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "华海清科CMP设备供应中芯国际"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "603986",
+      "product": "晶圆代工(NOR Flash)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "中芯国际代工兆易创新NOR Flash芯片"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "300661",
+      "product": "晶圆代工(模拟芯片)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中芯国际代工圣邦股份模拟芯片"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "688256",
+      "product": "晶圆代工(AI芯片)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "中芯国际为寒武纪提供部分AI芯片代工"
+    },
+    {
+      "supplier_code": "688347",
+      "buyer_code": "603290",
+      "product": "特色工艺代工(IGBT)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "华虹半导体代工斯达半导IGBT芯片"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "603501",
+      "product": "晶圆代工(CIS)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中芯国际代工豪威集团CIS芯片"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "688256",
+      "product": "先进封装(Chiplet)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "长电科技为寒武纪提供先进封装服务"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "688041",
+      "product": "先进封装",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "长电科技为海光信息提供封装服务"
+    },
+    {
+      "supplier_code": "002156",
+      "buyer_code": "688256",
+      "product": "先进封装",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "通富微电与寒武纪深度合作封装"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "603986",
+      "product": "封装测试(NOR Flash)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "长电科技是兆易创新主要封测供应商"
+    },
+    {
+      "supplier_code": "688256",
+      "buyer_code": "601138",
+      "product": "AI训练/推理芯片",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "寒武纪AI芯片搭载于工业富联AI服务器"
+    },
+    {
+      "supplier_code": "688256",
+      "buyer_code": "000977",
+      "product": "AI训练芯片",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "寒武纪AI芯片供应浪潮信息服务器"
+    },
+    {
+      "supplier_code": "688041",
+      "buyer_code": "000977",
+      "product": "CPU/DCU",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "海光信息CPU/DCU搭载浪潮服务器"
+    },
+    {
+      "supplier_code": "300476",
+      "buyer_code": "601138",
+      "product": "AI服务器PCB",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "胜宏科技是工业富联AI服务器PCB核心供应商"
+    },
+    {
+      "supplier_code": "002463",
+      "buyer_code": "601138",
+      "product": "高速通讯PCB",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "沪电股份高端PCB供应工业富联"
+    },
+    {
+      "supplier_code": "002463",
+      "buyer_code": "000977",
+      "product": "高速服务器PCB",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "沪电股份PCB供应浪潮信息"
+    },
+    {
+      "supplier_code": "600703",
+      "product": "SiC衬底+外延",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "三安光电SiC衬底供意法半导体(合资安意法)"
+    },
+    {
+      "supplier_code": "002617",
+      "product": "SiC衬底",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "露笑科技供比亚迪3年长协50万片/年"
+    },
+    {
+      "supplier_code": "688106",
+      "product": "超纯氨/高纯氧化亚氮",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "金宏气体供中芯国际(北方集成电路二期12亿大宗气站)"
+    },
+    {
+      "supplier_code": "600378",
+      "product": "三氟化氮/六氟化硫",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "昊华科技已进入中芯国际14nm先进制程产线"
+    },
+    {
+      "supplier_code": "300346",
+      "product": "磷烷/砷烷/前驱体/ArF光刻胶",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "南大光电单一客户(中芯国际)贡献超30%营收"
+    },
+    {
+      "supplier_code": "600206",
+      "product": "铜/铝/钛/钽靶材",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "有研新材供中芯国际(董秘2025年8月确认)"
+    },
+    {
+      "supplier_code": "300263",
+      "product": "钛靶/铜靶/钼靶",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "隆华科技中芯国际一级合格供应商,钼靶份额20-25%"
+    },
+    {
+      "supplier_code": "300346",
+      "product": "ArF光刻胶(28nm量产)",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "南大光电国内唯一ArF量产企业,供中芯国际"
+    },
+    {
+      "supplier_code": "300236",
+      "product": "TSV封装光刻胶/KrF胶",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "上海新阳供长电科技/华为海思"
+    },
+    {
+      "supplier_code": "688037",
+      "product": "涂胶显影设备(Track)",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "芯源微国内唯一前道涂胶显影厂商,供中芯国际(深圳/绍兴/宁波厂)"
+    },
+    {
+      "supplier_code": "603690",
+      "product": "湿法清洗设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "至纯科技供中芯国际/华虹/长江存储/长鑫/三星/海力士"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "688728",
+      "product": "晶圆代工(CIS)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "中芯国际代工格科微CIS芯片(长期核心伙伴)"
+    },
+    {
+      "supplier_code": "688981",
+      "buyer_code": "688187",
+      "product": "晶圆代工(IGBT)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中芯国际代工时代电气IGBT芯片"
+    },
+    {
+      "supplier_code": "688347",
+      "buyer_code": "688396",
+      "product": "特色工艺代工(功率器件)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "华虹半导体代工华润微功率器件"
+    },
+    {
+      "supplier_code": "002156",
+      "buyer_code": "688187",
+      "product": "IGBT/SiC模块封装",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "通富微电封测时代电气车载IGBT模块"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "603501",
+      "product": "CIS封装测试",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "长电科技封测豪威集团CIS芯片"
+    },
+    {
+      "supplier_code": "002261",
+      "buyer_code": "000977",
+      "product": "昇腾AI服务器整机",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "拓维信息(兆瀚)昇腾服务器供货浪潮信息"
+    },
+    {
+      "supplier_code": "688795",
+      "buyer_code": "601138",
+      "product": "国产GPU芯片",
+      "relationship_type": "secondary",
+      "confidence": 4,
+      "notes": "摩尔线程GPU供工业富联AI服务器(胜宏科技PCB配套)"
+    },
+    {
+      "supplier_code": "002916",
+      "buyer_code": "601138",
+      "product": "120层AI服务器背板",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "深南电路供工业富联/华为AI服务器PCB"
+    },
+    {
+      "supplier_code": "600183",
+      "buyer_code": "300476",
+      "product": "超低损耗CCL",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "生益科技CCL供胜宏科技(后者供摩尔线程/工业富联)"
+    },
+    {
+      "supplier_code": "603228",
+      "buyer_code": "601138",
+      "product": "AI服务器HDI/HLC",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "景旺电子珠海HDI工厂供工业富联"
+    },
+    {
+      "supplier_code": "600703",
+      "buyer_code": "688469",
+      "product": "SiC衬底",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "三安光电(湖南三安)SiC衬底自用于芯联集成代工"
+    },
+    {
+      "supplier_code": "688106",
+      "buyer_code": "688981",
+      "product": "超纯氨/高纯氧化亚氮/大宗气站",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "金宏气体供中芯国际(北方集成电路二期12亿大宗气站)"
+    },
+    {
+      "supplier_code": "600378",
+      "buyer_code": "688981",
+      "product": "三氟化氮/六氟化硫",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "昊华科技已进入中芯国际14nm先进制程产线"
+    },
+    {
+      "supplier_code": "300346",
+      "buyer_code": "688981",
+      "product": "磷烷/砷烷/前驱体/ArF光刻胶",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "南大光电单一客户(中芯国际)贡献超30%营收"
+    },
+    {
+      "supplier_code": "600206",
+      "buyer_code": "688981",
+      "product": "铜/铝/钛/钽靶材",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "有研新材供中芯国际(董秘2025年8月确认)"
+    },
+    {
+      "supplier_code": "300263",
+      "buyer_code": "688981",
+      "product": "钛靶/铜靶/钼靶",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "隆华科技中芯国际一级合格供应商,钼靶份额20-25%"
+    },
+    {
+      "supplier_code": "300346",
+      "buyer_code": "688981",
+      "product": "ArF光刻胶(28nm量产)",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "南大光电国内唯一ArF量产企业,供中芯国际"
+    },
+    {
+      "supplier_code": "300655",
+      "buyer_code": "688981",
+      "product": "g/i线光刻胶",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "晶瑞电材i线光刻胶已批量供中芯国际"
+    },
+    {
+      "supplier_code": "688037",
+      "buyer_code": "688981",
+      "product": "涂胶显影设备(Track)",
+      "relationship_type": "exclusive",
+      "confidence": 5,
+      "notes": "芯源微国内唯一前道涂胶显影厂商,供中芯国际(深圳/绍兴/宁波厂)"
+    },
+    {
+      "supplier_code": "603690",
+      "buyer_code": "688981",
+      "product": "湿法清洗设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "至纯科技供中芯国际/华虹/长江存储"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "688187",
+      "product": "IGBT/SiC模块封装",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "长电科技封测时代电气车载IGBT模块"
+    },
+    {
+      "supplier_code": "600584",
+      "buyer_code": "688728",
+      "product": "CIS封装测试",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "长电科技封测格科微CIS芯片"
+    },
+    {
+      "supplier_code": "688795",
+      "buyer_code": "300476",
+      "product": "国产GPU芯片配套PCB",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "摩尔线程GPU配套胜宏科技高端PCB"
+    },
+    {
+      "supplier_code": "688401",
+      "buyer_code": "688981",
+      "product": "半导体光掩模版",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "路维光电半导体掩模版进入中芯国际验证"
+    },
+    {
+      "supplier_code": "688138",
+      "buyer_code": "688981",
+      "product": "半导体光掩模版",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "清溢光电合肥12英寸掩模项目对准中芯国际需求"
+    },
+    {
+      "supplier_code": "300395",
+      "buyer_code": "688401",
+      "product": "合成石英光掩模基板",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "菲利华石英基板供路维光电/清溢光电(国内唯一通过日韩认证)"
+    },
+    {
+      "supplier_code": "603078",
+      "buyer_code": "688981",
+      "product": "G5级硫酸/双氧水/氨水",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "江化微G5级硫酸已通过中芯国际验证并批量供货"
+    },
+    {
+      "supplier_code": "300655",
+      "buyer_code": "688981",
+      "product": "超纯双氧水/氨水/氢氟酸",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "晶瑞电材G5级超纯双氧水供中芯国际"
+    },
+    {
+      "supplier_code": "688549",
+      "buyer_code": "688981",
+      "product": "电子级氢氟酸/硝酸",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中巨芯电子级氢氟酸供中芯国际(一期/二期)"
+    },
+    {
+      "supplier_code": "300236",
+      "buyer_code": "688981",
+      "product": "电镀液/清洗液",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "上海新阳电镀液供中芯国际铜互连产线"
+    },
+    {
+      "supplier_code": "688409",
+      "buyer_code": "002371",
+      "product": "金属件/模组/气体管路",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "富创精密是北方华创核心零部件供应商(金属件/管路)"
+    },
+    {
+      "supplier_code": "300260",
+      "buyer_code": "688012",
+      "product": "超高洁净管阀(UHP)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "新莱应材管阀进入中微公司/北方华创/应用材料供应链"
+    },
+    {
+      "supplier_code": "688596",
+      "buyer_code": "688981",
+      "product": "Gas Box/气体输送系统",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "正帆科技气体系统供中芯国际/长存/长鑫"
+    },
+    {
+      "supplier_code": "300820",
+      "buyer_code": "688012",
+      "product": "射频电源",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "英杰电气射频电源进入中微刻蚀设备(替代MKS/AE)"
+    },
+    {
+      "supplier_code": "603773",
+      "buyer_code": "002185",
+      "product": "TGV玻璃基板",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "沃格光电TGV玻璃基板供华天科技封装验证"
+    },
+    {
+      "supplier_code": "688170",
+      "buyer_code": "603773",
+      "product": "TGV激光钻孔设备",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "德龙激光TGV钻孔设备供沃格光电"
+    },
+    {
+      "supplier_code": "002916",
+      "buyer_code": "600584",
+      "product": "FC-BGA载板(ABF)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "深南电路ABF载板供长电科技先进封装"
+    },
+    {
+      "supplier_code": "002119",
+      "buyer_code": "600584",
+      "product": "引线框架/键合丝",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "康强电子引线框架+键合丝供长电/华天/通富"
+    },
+    {
+      "supplier_code": "688535",
+      "buyer_code": "600584",
+      "product": "环氧塑封料(EMC/GMC)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "华海诚科GMC/LMC通过长电科技先进封装验证"
+    },
+    {
+      "supplier_code": "300684",
+      "buyer_code": "688256",
+      "product": "热界面材料(TIM1/TIM2)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中石科技TIM供寒武纪/海光AI芯片散热"
+    },
+    {
+      "supplier_code": "688035",
+      "buyer_code": "600584",
+      "product": "芯片粘接胶/Underfill",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "德邦科技底部填充胶供长电科技先进封装"
+    },
+    {
+      "supplier_code": "301269",
+      "buyer_code": "688256",
+      "product": "模拟IC全流程EDA",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "华大九天EDA工具供寒武纪/海光信息/兆易创新"
+    },
+    {
+      "supplier_code": "301269",
+      "buyer_code": "688041",
+      "product": "数字后端+模拟全流程EDA",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "华大九天供海光信息CPU/DCU设计"
+    },
+    {
+      "supplier_code": "688206",
+      "buyer_code": "688012",
+      "product": "SPICE仿真/器件建模EDA",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "概伦电子供中微公司设备仿真建模"
+    },
+    {
+      "supplier_code": "300782",
+      "product": "射频开关/LNA/PA模组",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "卓胜微射频前端供三星/小米/OPPO/vivo/H(第一大客户贡献营收40%+)"
+    },
+    {
+      "supplier_code": "688153",
+      "product": "4G/5G PA模组",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "唯捷创芯PA供小米/OPPO/vivo/传音,国内PA市占率最高"
+    },
+    {
+      "supplier_code": "300456",
+      "buyer_code": "688286",
+      "product": "MEMS麦克风代工(8英寸)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "赛微电子(瑞典Silex+北京Fab3)代工敏芯股份MEMS麦克风芯片"
+    },
+    {
+      "supplier_code": "300456",
+      "buyer_code": "688002",
+      "product": "MEMS红外探测器代工",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "赛微电子北京Fab3为睿创微纳提供MEMS代工"
+    },
+    {
+      "supplier_code": "002920",
+      "product": "智能座舱+智驾域控(Orin/Thor平台)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "德赛西威域控供理想/小鹏/广汽/比亚迪/大众"
+    },
+    {
+      "supplier_code": "601689",
+      "product": "热管理+智能刹车(IBS)+内饰",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "拓普集团供特斯拉(第一大客户40%+营收)+华为问界+比亚迪"
+    },
+    {
+      "supplier_code": "688326",
+      "product": "ADAS域控/车身域控/T-Box",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "经纬恒润供一汽/上汽/吉利/蔚来/小鹏"
+    }
+  ],
+  "group_labels": {
+    "material": [
+      "🧪 材料/耗材",
+      "#1b6e2e"
+    ],
+    "equipment": [
+      "🔧 设备/零部件",
+      "#43a047"
+    ],
+    "packaging_prep": [
+      "📦 封装上游",
+      "#6d8a70"
+    ],
+    "design_ip": [
+      "🧠 芯片设计",
+      "#546e7a"
+    ],
+    "wafer_fab": [
+      "🏭 晶圆制造",
+      "#e8a840"
+    ],
+    "packaging": [
+      "📦 封装测试",
+      "#e06040"
+    ],
+    "end_product": [
+      "🖥 终端应用",
+      "#c0392b"
+    ]
+  },
+  "group_order": [
+    "material",
+    "equipment",
+    "packaging_prep",
+    "design_ip",
+    "wafer_fab",
+    "packaging",
+    "end_product"
+  ]
+}

@@ -1,55 +1,27 @@
-# 开源产品与产业链数据调研
+# 本轮依赖研究与取舍
 
-日期：2026-10-15。目标：个人 A 股信息整合与关系可视化；iOS 应用和桌面 Web。A 股数据来源已经确定为同花顺 iFinD。本次为公开资料、仓库及门户页面核查，未部署项目、执行第三方代码或调用用户的数据密钥。
+2026-10-18，本轮读取公开项目实际源码及数据，不沿用旧项目资料。源码可读、接口能返回和产品质量通过是三个不同结论。
 
-后续更新（同日）：已按用户授权完成[锂电产业链账号实查](IFIND-VALIDATION.md)。快查企业数据中的节点树和上下游接口可用，企业列表接口返回 404。以下“尚待核实”描述保留为公开资料调研时的证据边界，以实查记录为当前结论。产品目标同时明确为宏观结论、大致利好利空及原因，不能仅做静态关系展示。
-
-> 本文保留初次公开调研的历史证据；产品决策以 [PRODUCT.md](PRODUCT.md) 为准，新闻来源的最新实查与选择以 [NEWS.md](NEWS.md) 为准。下文关于账号“尚未验证”的原始记录，已被 [IFIND-VALIDATION.md](IFIND-VALIDATION.md) 中的后续实查补充，不作当前能力结论。
-
-## 结论
-
-最贴近展示目标的是 `ai-stock-pool` 的产业位置、公司列表和关系图设计。建议借鉴其表格驱动展示方式，保持 ytrader 的功能范围与数据接入独立。
-
-数据上优先利用现有 iFinD MCP；后续实查确认快查图谱可作结构骨架，少量关系与公司映射可整理补足，再关联公司数据和资讯。需要简明解释影响方向及原因，当前没有必要引入复杂图推理或大型投研平台。
-
-## 开源与公开参考项目
-
-| 项目 | 已核实内容 | 对本项目的价值与限制 |
+| 方案 | 实际发现 | 本项目取舍 |
 | --- | --- | --- |
-| [ai-stock-pool](https://github.com/yaoleifly/ai-stock-pool) | MIT；产业链工作台，包含上中下游布局、A 股映射、公司列表；关系图与特征矩阵使用 `stock-pool.csv`，前端读取 CSV/JSON 和接口。 | 最贴近目标的展示参考。偏 AI 产业及美股/A 股映射，其主动发现、政策评分等额外功能不在我们的当前范围；仓库数据不等于完整、持续维护的 A 股产业链库。 |
-| [AntV G6](https://github.com/antvis/G6) | MIT；JavaScript 图可视化框架。 | 可用于产业环节、上下游和公司联动展示。它提供绘图能力，不提供金融数据；是否采用及 iOS 展示方式待界面设计。 |
-| [OpenBB](https://github.com/OpenBB-finance/OpenBB) | 当前 [LICENSE](https://github.com/OpenBB-finance/OpenBB/blob/develop/LICENSE) 声明 Apache-2.0；面向分析师、量化及 AI 的数据平台。 | 可参考数据适配和组织方式。当前已有 iFinD 与 ycore 方向，暂不建议引入整个平台增加整合范围。 |
-| [ChainKnowledgeGraph](https://github.com/liuhuanyong/ChainKnowledgeGraph) | 公开的 A 股公司、行业、产品关系示例，提供公司—产品、产品—产品等 JSON 数据；未找到明确许可证。 | 有助于理解关系表怎样组织。数据时效、来源授权和使用许可未确认，不作为现成生产数据导入。 |
-| [ifind-sector-attribution](https://github.com/seuzxh/ifind-sector-attribution) | 使用传统 iFinD 接口整理概念板块、成分股并展示看板；未找到明确许可证。 | 可参考同花顺代码与分类的关联方式。主要是行业/概念与股票映射，不足以证明可取得真实上下游关系；它的传统接口也不能直接套用为当前 MCP 账号权限。 |
+| [Horizon](https://github.com/Thysrael/Horizon) | 编排先合 URL、重要性筛选、同事件去重、分类平衡，再扩充选中内容 | 采用处理顺序；保留所有来源及更新，避免合并后丢引用 |
+| [ChainKnowledgeGraph](https://github.com/liuhuanyong/ChainKnowledgeGraph/tree/498a21293a7cf50a8438154c4351349c2732fe1e) | 静态 JSONL：4654 公司、511 行业、95559 产品；关系没有逐条来源 URL/日期，仓库未见许可文件 | 数据结构有研究价值；不分发原数据，不以此声称当前全 A 股产业链完整 |
+| [KAG supplychain](https://github.com/OpenSPG/KAG/tree/fdab15b3929d2ee40dfcdd388f90233096a6afc9/kag/examples/supplychain) | 类型化 CSV 导入、公司链接、价格→成本→利润规则；示例公司脱敏 | 借鉴类型与条件传导，不当现成 A 股数据源；规则不等于确定盈利结果 |
+| [supply-chain-kg](https://github.com/123qsa/supply-chain-kg/tree/6c12816aaff4604969763abfda43fd3bf84fb0f0) | 公司发现限定少数概念板块；失败有 mock 路径 | 不作为核心关系提供者，不继承模拟回退 |
+| [financial_stock_knowledge_graph](https://github.com/kevin-meng/financial_stock_knowledge_graph/tree/d27e576975f91488479d6dfbf4311066400b47d0) | Tushare 公司/持股等数据与图更新；不是产品供应链 | 借鉴增量更新；不复用许可不明数据 |
+| [apple-chain-graph](https://github.com/Coolgiserz/apple-chain-graph/tree/aa83b97f2416be58cb3beaea95c08a86c40dbedc) | 产品/部件/供应商与来源注册表；静态研究快照，部分来源仅主页 | 借鉴树和持续证据面板；来源必须能支持具体边，不照搬供应商结论 |
+| [supplychain](https://github.com/eugenehp/supplychain/tree/9d9f62a4bff2b80979b07950b853bdf5dcca151d) | SEC/ASX 文档与主题图，部分权重手设；许可限制非商用 | 仅研究证据检索方法，不纳入代码或分发数据 |
+| [industry-chain-mcp-server](https://github.com/handaas/industry-chain-mcp-server) | MIT 接口包装，实际数据需独立商业服务凭据 | 仅可选供应商接入思路，不当免费独立数据集 |
+| [AKShare stock_info.py](https://github.com/akfamily/akshare/blob/main/akshare/stock/stock_info.py) | 对接交易所名单，沪、深、北独立获取 | 逐市场验证覆盖；不因单源失败批量退市 |
+| [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) | 面向受限决策任务的模型路线 | 作为候选决策适配器；需中文校准/质量/延迟/成本评测，不默认替换规则 |
 
-许可证按当日仓库及许可证文件读取；代码许可不代替底层金融数据授权。本次没有对这些项目作运行体验或代码质量验收。
+## 实际网络验证
+- 华尔街见闻公开快讯接口返回正文、原文 URL 与 display_time；前端不能只消费标题。
+- AKShare 1.19.1 交易所名单于 2026-10-18T09:38:57Z 获取：沪主板 1702、科创板 618、深圳 2906、北京 351，共 5577。此为该次获取结果，不代表永久固定数量。完整报告在本地验证产物中；后续应用同步还须按代码集合核对。
+- 公开接口可用不等于获得数据再分发授权。程序接入与数据分发分别处理；不捆绑来源许可未核实的产业数据库。
 
-## iFinD：当前账号与公开能力
+## 评测边界
+规则与模型按具体判断环节比较，不把大模型通用能力当推荐系统质量。事件样本以同事件组和时间段划分，覆盖转载、标题改写、旧闻重发、新增事实、辟谣与近似不同事件。真实模型未调用时，质量/校准/延迟/成本保持未验证。
 
-- 用户提供的账号页面是 **iFinD MCP & Skill**，页面显示试用版并已有个人令牌。本文不记录账号标识或密钥。
-- 官方[前置准备](https://mcp.51ifind.com/#/docs/guide-prepare)说明，MCP 与官方 Skill 共用此类密钥；该入口应与传统终端/SDK 权限分别核实。
-- 官方[数据范围](https://mcp.51ifind.com/#/domains)与[常见问题](https://mcp.51ifind.com/#/docs/guide-faq)列出证券指标、行业宏观 EDB、板块成分、日内行情、智能筛选，以及公告和新闻的语义检索。
-- 公告新闻搜索返回相关段落；这项能力本身不能证明存在完整新闻订阅流。
-- FAQ 说明大数据量可以下载原始 CSV 后计算；这不等于任意产业链数据都支持导出。
-- **公开目录没有明确列出完整产业链节点、上下游边和公司映射的查询接口。** 当前无法确认是否藏在可搜索指标中，也未用用户账号查询验证；不能断言不存在或已可用。
-- 传统 iFinD 的[升级公告](https://fthzcnc.10jqka.com.cn/thsft/iFindService/index/index/list?page=1)包含供应链图谱、产业链相关应用；[传统接口手册](https://quantapi.10jqka.com.cn/gwstatic/static/ds_web/quantapi-web/help-center/manual.html)列出基础资料、财务、行情和公告等调用。终端可展示，不自动意味着当前 MCP 可批量取出相同关系数据。
-
-## 产业链数据产品与获取方式
-
-| 渠道 | 已核实的可用形式 | 当前建议 |
-| --- | --- | --- |
-| iFinD MCP / 终端生态 | MCP 的指标与搜索能力可查文档；终端有产业链相关展示。当前账号的关系字段与导出范围尚未验证。 | 第一优先。先查产业链归属、主营产品、上下游等字段是否可得，减少多源对接。 |
-| [Wind 产业链与供应链数据库](https://www.wind.com.cn/portal/zh/PDB/index.html) | 官方介绍产业上下游、公司主营、客户供应商与产业资讯。已核实产品存在，未核实具体关系数据的 API、导出权限或报价。 | 可参考完整产品怎样组织信息，暂不增加采购或接入依赖。 |
-| [企查查企业图谱 API](https://openapi.qcc.com/dataApi/962) | 官方接口描述包含供应商、客户等企业关系。 | 若未来确实需要企业之间的已披露供应关系，可作为补充候选；它与产业环节之间的上下游关系应分开。当前不引入。 |
-| 财联社等公开产业链图文 | 如[低空经济产业链全景图](https://www.cls.cn/detail/1622257)，是带日期的图文资料，不是已确认可获取的结构化 API。 | 用作整理少数产业链的参考，保留出处和日期，不假设图片里的公司范围完整或持续更新。 |
-| 上市公司公告、年报与公司资料 | 可通过 iFinD 公告搜索或[巨潮资讯](https://www.cninfo.com.cn/)等披露入口查找原文。 | 补充公司主营产品及关系依据；部分披露只出现匿名客户，不能补猜成具体企业关系。 |
-
-## 最简落地建议
-
-1. 用三类表组织：产业环节、环节之间的关系、公司与环节的关联。记录来源和更新时间。初期可用 CSV/JSON 导入维护，不预设必须采用图数据库。
-2. 页面展示产业环节及连线，点选后显示关联公司和相关资讯。行业/概念归属、产品上下游、企业客户供应商三种关系要标注清楚，不混用。
-3. 行情、财务和可检索资讯沿用 iFinD。产业链关系能直接取就接入；不能取时，以有来源的关系表补足。
-4. AI 可辅助归类、摘要和整理资料；核心浏览应依靠已保存的数据，不要求每次打开页面都实时生成产业链。
-5. 个股独立分析作为另一条功能线；首批推荐方法和具体输出已在产品定义中给出。
-
-一个产业主题的节点、上下游和公司关联可得性现已实查，见 [IFIND-VALIDATION.md](IFIND-VALIDATION.md)。下一步围绕首批覆盖与结论展示安排产品方案。
+## 覆盖冲突
+同次核对中，东方财富沪 A 查询返回总数 2467，与交易所接口取得的沪主板+科创 2320 不一致。上海两张名单最新上市日期分别为 2026-09-17、2026-09-16，不能由获取时间直接推定源数据已更新至当日。需要按代码集合、证券类型及状态进一步对账。首版不得仅以 HTTP 成功或行数超过阈值宣称当前全 A 股覆盖完整。

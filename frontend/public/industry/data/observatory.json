@@ -1,0 +1,722 @@
+{
+  "version": 1,
+  "as_of": "2026-10-19",
+  "mode": "snapshot",
+  "industries": {
+    "gold": {
+      "news": [],
+      "nodes": {
+        "mining": {
+          "flow": "矿山开发与采选 → 矿产金",
+          "economics": "收入受实现售价与销量影响；利润还要看产量、品位、单位成本及资本开支。矿山扩产不等于即时新增供给。",
+          "watch": ["黄金实现售价与单位成本", "产量、品位与投产进度"],
+          "metrics": []
+        },
+        "refining": {
+          "flow": "矿产金、回收金 → 精炼金",
+          "economics": "加工量、加工费用、回收率与运营成本决定加工业务表现；金价上涨不能直接替代精炼利润判断。",
+          "watch": ["加工量、费用与回收率", "运营成本和营运资金"],
+          "metrics": []
+        },
+        "bullion": {
+          "flow": "标准金供给 → 各类需求",
+          "economics": "质量合格的黄金连接供给与需求；流通业务要区分服务费用、价差、库存敞口和资金占用，不能等同采矿收益。",
+          "watch": ["供需、库存与交割", "流通费用与资金占用"],
+          "metrics": []
+        },
+        "investment": {
+          "flow": "投资与储备用途，非制造步骤",
+          "economics": "需求分类包括金条金币、ETF、央行和OTC等。风险不确定性可能增强投资需求，美元、利率等机会成本因素可能抵消；不是无条件涨价结论。",
+          "watch": ["投资需求与储备需求", "美元、利率及风险变化"],
+          "metrics": []
+        },
+        "jewellery": {
+          "flow": "黄金 → 首饰与消费",
+          "economics": "经营表现取决于销量、工费、渠道费用及库存。金价上升可能抑制购买量并增加资金占用，不能统一视为利好。",
+          "watch": ["销量、工费及渠道费用", "库存周转与资金占用"],
+          "metrics": []
+        },
+        "technology": {
+          "flow": "黄金 → 技术与工业用途",
+          "economics": "需求取决于应用规模、单位用金量及替代技术；更高原料金价可能增加采购成本，不自动转为利润。",
+          "watch": ["应用规模与单位用金量", "替代技术与采购成本"],
+          "metrics": []
+        },
+        "recycling": {
+          "flow": "存量黄金 → 回收 → 精炼",
+          "economics": "回收供给对价格与经济冲击通常更及时反应；实际回收量、收集成本和处理费用决定业务表现，并非全部存量立即出售。",
+          "watch": ["回收量与出售意愿", "收集成本和处理费用"],
+          "metrics": []
+        }
+      }
+    },
+    "crude-oil": {
+      "news": [
+        {
+          "id": "oil-nbs-202609",
+          "title": "9月原油加工量下降8.4%，原油产量增长2.2%",
+          "publisher": "国家统计局",
+          "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965613.html",
+          "date": "2026-10-19",
+          "summary": "国内规上工业9月原油加工量5748万吨、原油产量1821万吨。",
+          "node_ids": [
+            "refining",
+            "extraction",
+            "crude"
+          ],
+          "company_ids": [],
+          "impacts": [
+            {
+              "node_id": "refining",
+              "headline": "加工量同比下降",
+              "reason": "加工量描述活动规模，利润还需结合产品价差与成本。",
+              "watch": "产品价差、检修与库存",
+              "company_ids": []
+            },
+            {
+              "node_id": "extraction",
+              "headline": "国内产量同比增长",
+              "reason": "全国总量变化不能直接代替单家公司的产量或利润。",
+              "watch": "公司产量、实现油价与成本",
+              "company_ids": []
+            },
+            {
+              "node_id": "crude",
+              "headline": "产出与加工走势分化",
+              "reason": "国内产量不是全部供给；炼厂采购还受进口和库存影响。",
+              "watch": "进口量与原油库存",
+              "company_ids": []
+            }
+          ],
+          "facts": []
+        },
+        {
+          "id": "oil-opec-20261004",
+          "title": "OPEC+七国维持11月所需生产水平",
+          "publisher": "OPEC",
+          "url": "https://www.opec.org/pr-detail/616-4-october-2026.html",
+          "date": "2026-10-04",
+          "summary": "七国决定11月延续9月所需生产水平，并将在11月1日再次开会。",
+          "node_ids": [
+            "crude",
+            "extraction"
+          ],
+          "company_ids": [],
+          "impacts": [
+            {
+              "node_id": "crude",
+              "headline": "生产目标维持",
+              "reason": "这次决定没有宣布新的减产；实际供应还取决于执行和交付。",
+              "watch": "实际产量、出口和库存",
+              "company_ids": []
+            },
+            {
+              "node_id": "extraction",
+              "headline": "目标与产量需分开看",
+              "reason": "生产目标不等于实际产量，也不能直接推出油价或利润方向。",
+              "watch": "生产执行与油价",
+              "company_ids": []
+            }
+          ],
+          "facts": []
+        },
+        {
+          "id": "oil-spc-plan",
+          "title": "2026年计划加工原油1200万吨",
+          "publisher": "上海石化",
+          "url": "https://spc.sinopec.com/spc/investor/performance_report/Documents/20260320/doc_20260320_568588867006.pdf",
+          "date": "2026-03-20",
+          "summary": "上海石化在2025年报中披露2026年原油加工计划。",
+          "node_ids": [
+            "refining"
+          ],
+          "company_ids": [
+            "shanghai-petrochemical"
+          ],
+          "impacts": [
+            {
+              "node_id": "refining",
+              "headline": "上海石化年度加工计划",
+              "reason": "计划为公司全年目标，不能当作已实现产量。",
+              "watch": "实际加工进度与产品价差",
+              "company_ids": [
+                "shanghai-petrochemical"
+              ]
+            }
+          ],
+          "facts": []
+        }
+      ],
+      "nodes": {
+        "extraction": {
+          "flow": "油气资源 → 原油",
+          "economics": "收入取决于实现油价和销量；利润还受开采成本、资本开支影响。",
+          "watch": [
+            "实现油价与单位成本",
+            "产量和资本开支"
+          ],
+          "metrics": [
+            {
+              "label": "原油产量",
+              "value": "1821万吨",
+              "change": "同比 +2.2%",
+              "period": "2026年9月",
+              "scope": "中国规上工业",
+              "source": {
+                "publisher": "国家统计局",
+                "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965613.html",
+                "date": "2026-10-19"
+              }
+            }
+          ]
+        },
+        "crude": {
+          "flow": "供给与炼厂采购交汇",
+          "economics": "生产目标、实际产量和可交付供应并不相同；需要一起看供需与库存。",
+          "watch": [
+            "实际产量与出口",
+            "炼厂采购和库存"
+          ],
+          "metrics": [
+            {
+              "label": "OPEC+七国生产目标",
+              "value": "维持9月水平",
+              "change": "",
+              "period": "2026年11月",
+              "scope": "所需生产水平，非实际产量",
+              "source": {
+                "publisher": "OPEC",
+                "url": "https://www.opec.org/pr-detail/616-4-october-2026.html",
+                "date": "2026-10-04"
+              }
+            }
+          ]
+        },
+        "refining": {
+          "flow": "原油 → 燃料、化工原料",
+          "economics": "买入原油、卖出成品；产品价差、加工量和单位成本共同决定利润。",
+          "watch": [
+            "产品与原油价差",
+            "加工量、开工率和库存"
+          ],
+          "metrics": [
+            {
+              "label": "原油加工量",
+              "value": "5748万吨",
+              "change": "同比 -8.4%",
+              "period": "2026年9月",
+              "scope": "中国规上工业",
+              "source": {
+                "publisher": "国家统计局",
+                "url": "https://www.stats.gov.cn/sj/zxfb/202610/t20261019_1965613.html",
+                "date": "2026-10-19"
+              }
+            }
+          ]
+        },
+        "fuels": {
+          "flow": "汽油、柴油等成品油",
+          "economics": "销量来自交通及能源消费；售价和原料成本不同步会改变加工利润。",
+          "watch": [
+            "终端销量",
+            "成品油价差与库存"
+          ],
+          "metrics": []
+        },
+        "feedstock": {
+          "flow": "石脑油等化工投入",
+          "economics": "原料采购价与化工产品售价共同影响下游价差。",
+          "watch": [
+            "石脑油与产品价差",
+            "化工开工率"
+          ],
+          "metrics": []
+        },
+        "chemicals": {
+          "flow": "化工原料 → 材料",
+          "economics": "原料成本、产品售价和需求变化共同影响盈利，油价方向不能代替产品价差。",
+          "watch": [
+            "产品价差",
+            "下游订单与库存"
+          ],
+          "metrics": []
+        },
+        "logistics": {
+          "flow": "原油和成品油储运",
+          "economics": "运输收入还取决于货量、航程和可用运力，不能只看油价。",
+          "watch": [
+            "运输量与运价",
+            "航程和运力利用"
+          ],
+          "metrics": []
+        },
+        "transport": {
+          "flow": "交通与能源消费",
+          "economics": "终端需求通过燃料消费和库存变化传向炼厂采购。",
+          "watch": [
+            "出行与货运量",
+            "汽柴油消费和库存"
+          ],
+          "metrics": []
+        }
+      }
+    },
+    "ai-compute": {
+      "news": [
+        {
+          "id": "ai-hc2000",
+          "title": "浪潮信息发布元脑HC2000多元算力机组",
+          "publisher": "浪潮信息",
+          "url": "https://www.ieisystem.com/about/news/23426.html",
+          "date": "2026-09-22",
+          "summary": "公司发布高密液冷AI整机柜与MCIS推理软件栈协同方案。",
+          "node_ids": [
+            "server",
+            "cooling",
+            "software"
+          ],
+          "company_ids": [
+            "ieit"
+          ],
+          "impacts": [
+            {
+              "node_id": "server",
+              "headline": "HC2000产品发布",
+              "reason": "发布说明产品方案；采购、交付和收入还需客户订单支持。",
+              "watch": "客户采用与订单交付",
+              "company_ids": [
+                "ieit"
+              ]
+            },
+            {
+              "node_id": "cooling",
+              "headline": "采用高密液冷方案",
+              "reason": "产品设计体现散热配置变化，未披露本页其他散热公司的供货关系。",
+              "watch": "散热方案采购及供应商",
+              "company_ids": []
+            },
+            {
+              "node_id": "software",
+              "headline": "配套MCIS软件栈",
+              "reason": "软件与硬件协同调度计算负载；商业兑现需核对客户采用方式。",
+              "watch": "部署采用与收入模式",
+              "company_ids": [
+                "ieit"
+              ]
+            }
+          ],
+          "facts": []
+        },
+        {
+          "id": "ai-nea-electricity",
+          "title": "8月互联网数据服务用电量增长37.9%",
+          "publisher": "国家能源局",
+          "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+          "date": "2026-09-20",
+          "summary": "国家能源局披露，8月互联网数据服务用电量102亿千瓦时。该口径覆盖互联网数据服务，不等同于AI用电。",
+          "node_ids": [
+            "power",
+            "cluster"
+          ],
+          "company_ids": [],
+          "impacts": [
+            {
+              "node_id": "power",
+              "headline": "互联网数据服务用电增长",
+              "reason": "行业总量可观察活动变化，但不能推出单个机房缺电。",
+              "watch": "具体项目用电容量和接入",
+              "company_ids": []
+            },
+            {
+              "node_id": "cluster",
+              "headline": "用电增加不等于盈利增加",
+              "reason": "利用率、电价和业务结构仍会影响机房运营结果。",
+              "watch": "项目利用率与电力成本",
+              "company_ids": []
+            }
+          ],
+          "facts": []
+        }
+      ],
+      "nodes": {
+        "accelerator": {
+          "flow": "计算芯片与内存",
+          "economics": "产品适配、供给能力和客户采用共同决定交付，不同芯片不能按行业需求等比例推算。",
+          "watch": [
+            "产品适配与供给",
+            "客户采用和交付"
+          ],
+          "metrics": []
+        },
+        "server": {
+          "flow": "部件集成 → 计算设备",
+          "economics": "预算转成订单、交付并验收后才能兑现；产品发布本身不等于收入。",
+          "watch": [
+            "新增订单与验收",
+            "产品结构和成本"
+          ],
+          "metrics": [
+            {
+              "label": "浪潮信息 HC2000",
+              "value": "产品发布",
+              "change": "",
+              "period": "2026-09-22",
+              "scope": "单家公司产品动态",
+              "source": {
+                "publisher": "浪潮信息",
+                "url": "https://www.ieisystem.com/about/news/23426.html",
+                "date": "2026-09-22"
+              }
+            }
+          ]
+        },
+        "cluster": {
+          "flow": "设备部署 → 可用算力",
+          "economics": "供电、上架率和利用率决定机房资源能否形成持续服务。",
+          "watch": [
+            "可用电力与上架率",
+            "项目验收和利用率"
+          ],
+          "metrics": []
+        },
+        "network": {
+          "flow": "服务器互连",
+          "economics": "网络需求受集群架构与规模影响，收入仍需对应产品选型和份额。",
+          "watch": [
+            "组网架构与速率",
+            "产品选型和份额"
+          ],
+          "metrics": []
+        },
+        "storage": {
+          "flow": "数据供给与存取",
+          "economics": "存储容量与带宽配置跟随负载变化，不能由算力规模直接推算收入。",
+          "watch": [
+            "容量与带宽配置",
+            "存储采购和交付"
+          ],
+          "metrics": []
+        },
+        "software": {
+          "flow": "资源调度与推理软件",
+          "economics": "软件改善利用效率；商业兑现取决于收费方式、采用规模和交付。",
+          "watch": [
+            "客户采用与收费",
+            "资源利用效率"
+          ],
+          "metrics": []
+        },
+        "power": {
+          "flow": "电力接入与供配电",
+          "economics": "机房可用电力限制可投运容量，行业用电增长不等于单项目扩容获批。",
+          "watch": [
+            "项目可用电力",
+            "接入批复和建设周期"
+          ],
+          "metrics": [
+            {
+              "label": "互联网数据服务用电",
+              "value": "102亿千瓦时",
+              "change": "同比 +37.9%",
+              "period": "2026年8月",
+              "scope": "全国互联网数据服务，非AI单独口径",
+              "source": {
+                "publisher": "国家能源局",
+                "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+                "date": "2026-09-20"
+              }
+            }
+          ]
+        },
+        "cooling": {
+          "flow": "设备热量移除",
+          "economics": "功率密度影响散热方案，液冷需求仍需项目设计和采购确认。",
+          "watch": [
+            "机柜功率与方案",
+            "项目选型和订单"
+          ],
+          "metrics": []
+        },
+        "workload": {
+          "flow": "训练与推理需求",
+          "economics": "负载规模和成本约束共同影响计算采购，最终要看预算与资源使用。",
+          "watch": [
+            "业务调用和预算",
+            "推理成本与利用率"
+          ],
+          "metrics": []
+        }
+      }
+    },
+    "innovative-drugs": {
+      "news": [
+        {
+          "id": "drug-hengrui-itp",
+          "title": "海曲泊帕儿童ITP新适应症获批",
+          "publisher": "恒瑞医药",
+          "url": "https://www.hengrui.com/media/detail-1034.html",
+          "date": "2026-09-11",
+          "summary": "恒瑞披露，新适应症覆盖符合治疗条件的6岁及以上儿童慢性ITP患者。",
+          "node_ids": [
+            "review",
+            "use",
+            "commercial"
+          ],
+          "company_ids": [
+            "hengrui"
+          ],
+          "impacts": [
+            {
+              "node_id": "review",
+              "headline": "特定药物适应症获批",
+              "reason": "批准扩大海曲泊帕适用范围，只对应该产品及规定人群。",
+              "watch": "批准范围及配套准入",
+              "company_ids": [
+                "hengrui"
+              ]
+            },
+            {
+              "node_id": "use",
+              "headline": "适用人群扩展",
+              "reason": "获批提供使用前提，销售兑现还取决于医院准入、支付和处方。",
+              "watch": "医院准入和实际销售",
+              "company_ids": [
+                "hengrui"
+              ]
+            },
+            {
+              "node_id": "commercial",
+              "headline": "关注供货与销售兑现",
+              "reason": "不能由获批消息直接推断第三方CRO/CDMO订单。",
+              "watch": "供应与销售进度",
+              "company_ids": [
+                "hengrui"
+              ]
+            }
+          ],
+          "facts": []
+        }
+      ],
+      "nodes": {
+        "discovery": {
+          "flow": "靶点、分子与候选药物",
+          "economics": "候选项目需持续用实验验证，早期进展不能代替后续临床证据。",
+          "watch": [
+            "研发里程碑",
+            "候选项目与资金投入"
+          ],
+          "metrics": []
+        },
+        "preclinical": {
+          "flow": "安全性与药效研究",
+          "economics": "实验结果支持临床申请，后续仍需人体试验验证。",
+          "watch": [
+            "药效与毒理证据",
+            "临床申请进展"
+          ],
+          "metrics": []
+        },
+        "clinical": {
+          "flow": "人体安全性与有效性",
+          "economics": "临床数据只对应特定药物、适应症和人群；应核对终点、对照和后续计划。",
+          "watch": [
+            "主要终点和安全性",
+            "入组与试验里程碑"
+          ],
+          "metrics": []
+        },
+        "review": {
+          "flow": "证据申报 → 准入",
+          "economics": "批准改变特定产品的准入范围，实际销售仍取决于供货、支付与使用。",
+          "watch": [
+            "适应症和人群范围",
+            "审评结论及后续准入"
+          ],
+          "metrics": [
+            {
+              "label": "海曲泊帕儿童ITP",
+              "value": "新适应症获批",
+              "change": "",
+              "period": "2026-09-11",
+              "scope": "恒瑞披露；适用符合条件的≥6岁儿童",
+              "source": {
+                "publisher": "恒瑞医药",
+                "url": "https://www.hengrui.com/media/detail-1034.html",
+                "date": "2026-09-11"
+              }
+            }
+          ]
+        },
+        "commercial": {
+          "flow": "规模制造与供货",
+          "economics": "获批后的供应准备和需求兑现影响销售，实际销量还要看支付与渠道。",
+          "watch": [
+            "供应准备与成本",
+            "准入与销售兑现"
+          ],
+          "metrics": []
+        },
+        "use": {
+          "flow": "处方使用与上市监测",
+          "economics": "可及性、临床采用和支付条件影响使用规模；获批不等于立即放量。",
+          "watch": [
+            "医院准入和处方",
+            "支付覆盖和上市后安全性"
+          ],
+          "metrics": []
+        },
+        "cro": {
+          "flow": "受托研究服务",
+          "economics": "客户研发开支与项目合同形成服务需求，药物成功不能自动映射到服务商订单。",
+          "watch": [
+            "项目合同与执行",
+            "客户研发开支"
+          ],
+          "metrics": []
+        },
+        "cdmo": {
+          "flow": "工艺开发与受托制造",
+          "economics": "制造业务取决于具体项目关系、订单规模和产能交付。",
+          "watch": [
+            "项目归属与订单",
+            "产能利用和交付"
+          ],
+          "metrics": []
+        }
+      }
+    },
+    "grid": {
+      "news": [
+        {
+          "id": "grid-nea-202608",
+          "title": "8月全国用电负荷创新高至15.6亿千瓦",
+          "publisher": "国家能源局",
+          "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+          "date": "2026-09-20",
+          "summary": "8月全社会用电量10332亿千瓦时，同比增长1.7%；用电负荷达到15.6亿千瓦。",
+          "node_ids": [
+            "users",
+            "operate",
+            "project"
+          ],
+          "company_ids": [],
+          "impacts": [
+            {
+              "node_id": "users",
+              "headline": "用电量与峰值负荷变化",
+              "reason": "用电量反映期间消费，峰值负荷反映容量压力，两者需要分开观察。",
+              "watch": "负荷时段与地区分布",
+              "company_ids": []
+            },
+            {
+              "node_id": "operate",
+              "headline": "峰值负荷提高运行要求",
+              "reason": "高峰压力可能影响调度与运行安排，不能直接推出设备更新订单。",
+              "watch": "运行约束与改造计划",
+              "company_ids": []
+            },
+            {
+              "node_id": "project",
+              "headline": "设备需求仍需项目落地",
+              "reason": "建设或改造需求要经过规划、预算与招标后才形成采购。",
+              "watch": "项目核准与招标",
+              "company_ids": []
+            }
+          ],
+          "facts": []
+        }
+      ],
+      "nodes": {
+        "project": {
+          "flow": "规划、建设与采购",
+          "economics": "需求和预算要转成具体项目与招标，才可能成为设备企业订单。",
+          "watch": [
+            "项目核准和招标",
+            "建设预算与中标"
+          ],
+          "metrics": []
+        },
+        "primary": {
+          "flow": "电压变换与电能开断",
+          "economics": "产品需求由项目类型、规格与中标份额决定，收入取决于交付验收。",
+          "watch": [
+            "招标规格与中标",
+            "交付周期与材料成本"
+          ],
+          "metrics": []
+        },
+        "secondary": {
+          "flow": "保护、控制与自动化",
+          "economics": "系统建设和改造带来配置需求，软件硬件交付及联调决定兑现。",
+          "watch": [
+            "项目配置与份额",
+            "联调验收与回款"
+          ],
+          "metrics": []
+        },
+        "cable": {
+          "flow": "电能输送与连接",
+          "economics": "材料价格、合同报价和项目交付共同决定利润。",
+          "watch": [
+            "铜铝成本与报价",
+            "交付量与回款"
+          ],
+          "metrics": []
+        },
+        "acceptance": {
+          "flow": "设备交付与项目联调",
+          "economics": "验收是合同执行的重要节点，推迟可能改变收入与回款时点。",
+          "watch": [
+            "项目验收进度",
+            "合同确认与回款"
+          ],
+          "metrics": []
+        },
+        "operate": {
+          "flow": "系统调度与持续运行",
+          "economics": "负荷与能源结构变化影响运行要求，设备需求还需具体改造项目。",
+          "watch": [
+            "峰值负荷和运行约束",
+            "检修与改造计划"
+          ],
+          "metrics": [
+            {
+              "label": "最大用电负荷",
+              "value": "15.6亿千瓦",
+              "change": "较上年最大负荷 +4969万千瓦",
+              "period": "2026年8月",
+              "scope": "全国",
+              "source": {
+                "publisher": "国家能源局",
+                "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+                "date": "2026-09-20"
+              }
+            }
+          ]
+        },
+        "users": {
+          "flow": "工商业和居民用电",
+          "economics": "用电量和峰值负荷分别描述能量需求与容量压力，不能混作同一指标。",
+          "watch": [
+            "用电量及产业结构",
+            "峰值负荷与时段"
+          ],
+          "metrics": [
+            {
+              "label": "全社会用电量",
+              "value": "10332亿千瓦时",
+              "change": "同比 +1.7%",
+              "period": "2026年8月",
+              "scope": "全国全口径",
+              "source": {
+                "publisher": "国家能源局",
+                "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+                "date": "2026-09-20"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

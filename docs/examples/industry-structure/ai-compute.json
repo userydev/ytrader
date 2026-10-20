@@ -1,0 +1,252 @@
+{
+  "format": "industry-structure-study-v1",
+  "status": "reviewed_research_sample",
+  "industry": {
+    "id": "ai-compute",
+    "name": "AI算力",
+    "demand": "运行模型训练和推理任务",
+    "boundary": "以GPU服务器到集群运行的典型架构为边界；不展开芯片制造全链、所有技术路线和机房工程。供应商产品只作角色样例，不代表市场份额。",
+    "summary": "计算部件组成服务器；服务器与网络、存储和软件共同形成可运行系统，供电与散热提供运行条件。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "nodes": [
+    {
+      "id": "accelerator",
+      "name": "GPU计算部件",
+      "kind": "product",
+      "description": "承担并行计算。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "server",
+      "name": "AI服务器",
+      "kind": "product",
+      "description": "集成计算部件的服务器系统。",
+      "sources": [
+        "nv-architecture",
+        "ieit"
+      ]
+    },
+    {
+      "id": "network",
+      "name": "网络互连",
+      "kind": "product",
+      "description": "连接计算节点及存储。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "存储系统",
+      "kind": "product",
+      "description": "提供训练数据与结果的读写。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "集群管理与调度软件",
+      "kind": "product",
+      "description": "管理资源和工作负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "power",
+      "name": "供电设施",
+      "kind": "product",
+      "description": "满足系统用电要求。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cooling",
+      "name": "散热设施",
+      "kind": "product",
+      "description": "维持设备所需环境。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cluster",
+      "name": "AI集群运行",
+      "kind": "activity",
+      "description": "协同运行计算、网络、存储和软件。",
+      "sources": [
+        "nv-architecture",
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "workload",
+      "name": "训练与推理",
+      "kind": "application",
+      "description": "使用算力完成模型任务。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "ai-compute:r1",
+      "from_id": "accelerator",
+      "to_id": "server",
+      "kind": "component_of",
+      "explanation": "GPU构成该类AI服务器的计算部件。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r2",
+      "from_id": "server",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "服务器提供计算节点。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r3",
+      "from_id": "network",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "网络承担节点间及存储通信。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r4",
+      "from_id": "storage",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "存储支撑数据访问。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r5",
+      "from_id": "software",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "管理软件支撑集群调度。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r6",
+      "from_id": "power",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "供电是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r7",
+      "from_id": "cooling",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "散热是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r8",
+      "from_id": "cluster",
+      "to_id": "workload",
+      "kind": "used_for",
+      "explanation": "运行训练与推理负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA"
+    },
+    {
+      "id": "ieit",
+      "name": "浪潮信息（IEIT Systems）"
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "nvidia",
+      "node_id": "accelerator",
+      "role": "提供GPU计算产品",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "company_id": "nvidia",
+      "node_id": "server",
+      "role": "提供DGX服务器",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "server",
+      "role": "提供AI服务器",
+      "sources": [
+        "ieit"
+      ]
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "software",
+      "role": "提供AIStation等管理软件",
+      "sources": [
+        "ieit"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "nv-architecture",
+      "title": "DGX SuperPOD关键组件",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/dgx-superpod-components.html",
+      "locator": "Key Components；硬件/软件表。用于典型架构，不推广具体规格到所有AI系统。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "nv-facility",
+      "title": "DGX H100数据中心设计",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/design-guides/dgx-superpod-data-center-design-h100/latest/index.html",
+      "locator": "部署规划总述；仅采用供电、散热这一通用依赖。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "ieit",
+      "title": "AI服务器及软件产品",
+      "publisher": "IEIT Systems",
+      "url": "https://www.ieisystems.com/en/product/ai/index.html",
+      "locator": "Summary、AI Servers、AI Software；未据此声称与NVIDIA存在某笔交易。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    }
+  ]
+}

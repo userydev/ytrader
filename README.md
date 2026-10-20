@@ -1,18 +1,35 @@
 # ytrader
 
-个人自用的每日大事影响解释产品，面向桌面 Web 与 iOS，最终关联 A 股产业与公司。
+以产业链为核心的中文投资研究工具：从重要新闻理解变量变化，沿产业关系找到公司，再核对业务与基本面。核心代码采用 MIT；第三方内容权利见 [THIRD_PARTY.md](THIRD_PARTY.md)。
 
-核心目标：用户打开就看懂今天有哪些值得关注的变化、通过什么机制影响哪些产业和公司、为什么。产品主动完成关联与解释，产业链随事件展开；产业和个股新闻、独立个股分析作为补充。事实、观点与条件性判断分开。
+## 当前阶段：核心功能可体验版
 
-当前阶段为**内容系统本地可运行版**。新闻采集、产业关系、公司业务与条件分析已入库，并接通新的内容首页。当前收录 61 条新闻、16 家公司、63 条上下游关系和 3751 个分类及产业节点；分类目录不等于完整产业链。新闻与公司资料仍有时间、原报告及变化核实缺口，目前仅一条政策形成两条条件机制，尚未完成每日重要事件的广泛自动分析。
+2026-10-20。按用户最新范围统一产业链视觉样式，侧栏汉堡菜单仅新闻、产业链、个股。新闻推荐、产业关联与传导、公司资料/财务详情已接通；四项算法独立并记录版本。Gemini 3.8 Flash已通过实际新闻与公司分析调用。用户最终体验尚待认可。
 
-本地预览：[打开 ytrader](http://127.0.0.1:5173/)。已启动限额、串行的定时采集；进度、验证、剩余缺口和停止方式见 [检查点](docs/CHECKPOINT.md)。本轮依据与开工盘点见 [内容建设记录](docs/CONTENT-BASELINE.md)。原 FIRST-LOOP 与 IMPLEMENTATION 仅为历史实施记录。
+1. 新会话先读 [交接](docs/HANDOFF.md)、[当前检查点](docs/CHECKPOINT.md) 与 [文档目录](docs/INDEX.md)。
+2. 当前实施依据为 [核心开发约定](docs/CORE-DEVELOPMENT.md) 与 [核心接口约定](docs/CORE-INTERFACES.md)。
+3. 启动、验证与限制见 [核心交付记录](docs/CORE-VALIDATION.md)。ycore契约已准备，尚未实连；公共来源不承诺SLA。
 
-## 阅读顺序
+Claude 恢复文档起草角色；Codex负责判断、审查、集成和体验验收。用户决定产品目标、开发文档和重大取舍。
 
-1. [开工决策报告](docs/KICKOFF.md)、[条件核验与用户事项](docs/READINESS.md)、[角色与责任](docs/TEAM.md)。
-2. [产品需求](docs/PRODUCT.md)：用户路径、行为和状态规则、需求验收。
-3. [系统设计](docs/ARCHITECTURE.md)、[接口契约](docs/CONTRACTS.md)、[交付门槛](docs/DELIVERY.md)。
-4. [复用决策](docs/REUSE.md)、[新闻方案](docs/NEWS.md)、[部署](docs/DEPLOYMENT.md)、[数据研究](docs/RESEARCH.md)、[iFinD 实查](docs/IFIND-VALIDATION.md)。
+## 保留的体验入口
 
-状态与接续约束见 [检查点](docs/CHECKPOINT.md)及[开发阶段说明](docs/DEVELOPMENT.md)。`dev` 为主要开发分支，`main` 为稳定发布分支。尚未部署线上服务；本地验收预览见检查点。
+| 入口 | 用途与状态 |
+| --- | --- |
+| [核心功能统一应用](http://127.0.0.1:58730/events) | 当前可体验版；新闻、产业链、个股同一端口；设置不进入主流程 |
+| [新闻推荐](http://127.0.0.1:58720/events) | 算法推荐、持续事件、媒体报道与产业传导；待用户体验认可 |
+| [产业桥接](http://127.0.0.1:58721/) | 携新闻进入多产业，含黄金结构；与新闻服务配合 |
+| [产业与个股稿](http://127.0.0.1:58700/?industry=ai-compute&company=ieit) | 保留的桌面基本面样稿，数据有来源与报告期 |
+| [原业务服务](http://127.0.0.1:8000) | 已有 React/FastAPI 业务与设置；不代表最新设计已全部整合 |
+
+58730是本轮统一可体验版本；其余入口保留作历史对照，均不代表生产发布。产业方向被用户认为基本可用；个股稿和最新新闻稿尚待体验认可。运行清单见 [运行资源](docs/RUNTIME-INVENTORY.md)。
+
+## 工程与证据
+
+当前代码为 React/TypeScript、FastAPI、SQLite。开发分支 `dev`，稳定分支 `main`。工作区包含大量重建删除和未跟踪文件，不能执行 `git clean`、重置或按“无用文件”删除。
+
+[新闻算法](docs/NEWS-SELECTION.md) · [最新验证范围](docs/EDITORIAL-VALIDATION.md) · [新闻页面契约](docs/surfaces/news-radar.md) · [产业内容定义](docs/CHAIN-CORE-LOGIC.md)
+
+[启动参考](docs/STARTUP.md)、[架构](docs/ARCHITECTURE.md)、[接口](docs/CONTRACTS.md)、[部署](docs/DEPLOYMENT.md)描述已有实现，后续须按确认后的产品文档校准。不要为了阅读文档重建 `frontend/dist`、改动现用数据库或重启8000服务。
+
+本轮不提交、推送、部署、采购或开发交易执行。旧入口说明保存在 [整理前快照](docs/archive/2026-10-20-pre-handoff/README.md)。

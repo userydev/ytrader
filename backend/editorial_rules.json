@@ -1,0 +1,1345 @@
+{
+  "version": "editorial-rules-v1.1.2",
+  "weights": {
+    "importance": 24,
+    "change": 5,
+    "freshness": 6,
+    "homepage": 5,
+    "selection": 2,
+    "exclusive": 4,
+    "origin": 1,
+    "commentary_penalty": 3,
+    "price_penalty": 12
+  },
+  "diversity": {
+    "story_penalty": 4,
+    "publisher_penalty": 1,
+    "publisher_penalty_cap": 3,
+    "story_limit": 4
+  },
+  "non_news_sections": [
+    "sport",
+    "sports",
+    "football",
+    "cricket",
+    "tennis",
+    "culture",
+    "arts",
+    "artanddesign",
+    "music",
+    "film",
+    "stage",
+    "books",
+    "fashion",
+    "life",
+    "lifestyle",
+    "lifeandstyle",
+    "travel",
+    "food",
+    "wellness",
+    "crosswords",
+    "games"
+  ],
+  "commercial_exception": [
+    "broadcast rights",
+    "broadcasting rights",
+    "media rights",
+    "acquisition",
+    "acquires",
+    "takeover",
+    "merger",
+    "bankruptcy",
+    "转播权",
+    "版权收购",
+    "收购",
+    "并购",
+    "破产"
+  ],
+  "routine_issuance_patterns": [
+    "(?:发行|增发|续发|招标|招投标).{0,35}(?:国债|地方债|金融债|债券|期债|年期)",
+    "(?:国债|地方债|金融债|政策性银行|农发行|国开行|进出口行).{0,45}(?:发行|增发|续发|招标)",
+    "(?:中标利率|全场倍数|边际倍数|投标倍数|认购倍数)",
+    "\\b(?:treasury|bond|bonds|bills|gilts)\\b.{0,45}\\b(?:auction|auctions|bid.to.cover)\\b",
+    "\\b(?:auction|auctions|bid.to.cover)\\b.{0,45}\\b(?:treasury|bond|bonds|bills|gilts)\\b"
+  ],
+  "issuance_exception": [
+    "failed auction",
+    "auction fails",
+    "debt crisis",
+    "default",
+    "emergency",
+    "首次违约",
+    "违约",
+    "流标",
+    "发行失败",
+    "债务危机",
+    "紧急救助"
+  ],
+  "price_only_patterns": [
+    "(?:涨幅|跌幅|涨至|跌至|上涨|下跌|涨超|跌超|涨逾|跌逾|涨近|跌近|涨破|跌破|报于|现报).{0,18}\\d",
+    "\\b(?:shares|stocks|futures|yields|prices)\\b.{0,35}\\b(?:rise|rises|fall|falls|gain|gains|drop|drops|up|down)\\b"
+  ],
+  "price_fundamental_terms": [
+    "earnings",
+    "guidance",
+    "inflation",
+    "tariff",
+    "sanctions",
+    "default",
+    "acquisition",
+    "supply disruption",
+    "rate cut",
+    "rate hike",
+    "业绩",
+    "营收",
+    "利润",
+    "指引",
+    "通胀",
+    "关税",
+    "制裁",
+    "违约",
+    "收购",
+    "停产",
+    "减产",
+    "降息",
+    "加息",
+    "袭击",
+    "封锁"
+  ],
+  "importance_rules": [
+    {
+      "id": "strategic-route",
+      "tier": 4,
+      "label": "关键航道袭击/通行中断，涉及跨国运输与供给风险",
+      "headline_any": [
+        "Hormuz",
+        "Red Sea",
+        "Suez",
+        "Bab el-Mandeb",
+        "霍尔木兹",
+        "红海",
+        "苏伊士",
+        "曼德海峡"
+      ],
+      "groups": [
+        [
+          "attack",
+          "attacks",
+          "attacked",
+          "blockade",
+          "closure",
+          "closed",
+          "disruption",
+          "halt",
+          "halts",
+          "封锁",
+          "袭击",
+          "中断",
+          "关闭",
+          "停航"
+        ]
+      ]
+    },
+    {
+      "id": "war-change",
+      "tier": 4,
+      "label": "跨国军事冲突/停火进展，涉及地缘与政策风险",
+      "headline_any": [
+        "war",
+        "invasion",
+        "airstrike",
+        "airstrikes",
+        "missile",
+        "missiles",
+        "ceasefire",
+        "blockade",
+        "militarily",
+        "战争",
+        "入侵",
+        "空袭",
+        "导弹",
+        "停火",
+        "封锁"
+      ],
+      "groups": [
+        [
+          "military",
+          "militarily",
+          "army",
+          "troops",
+          "navy",
+          "NATO",
+          "Iran",
+          "Israel",
+          "Russia",
+          "Ukraine",
+          "Yemen",
+          "Gaza",
+          "Sudan",
+          "Lebanon",
+          "Taiwan",
+          "China",
+          "North Korea",
+          "India",
+          "Pakistan",
+          "United States",
+          "军方",
+          "军队",
+          "北约",
+          "伊朗",
+          "以色列",
+          "俄罗斯",
+          "乌克兰",
+          "也门",
+          "加沙",
+          "黎巴嫩",
+          "台湾",
+          "中国",
+          "朝鲜",
+          "印度",
+          "巴基斯坦",
+          "美国"
+        ],
+        [
+          "attack",
+          "attacks",
+          "attacked",
+          "strike",
+          "strikes",
+          "struck",
+          "hits",
+          "killed",
+          "kills",
+          "launched",
+          "fired",
+          "ceasefire",
+          "blockade",
+          "invades",
+          "invasion",
+          "reignited",
+          "delaying",
+          "deliveries",
+          "袭击",
+          "空袭",
+          "导弹发射",
+          "发射导弹",
+          "停火",
+          "封锁",
+          "入侵",
+          "开战",
+          "阵亡",
+          "伤亡",
+          "交付",
+          "拦截"
+        ]
+      ]
+    },
+    {
+      "id": "international-escalation",
+      "tier": 4,
+      "label": "国家间袭击/冲突升级线索，需继续核对规模与影响",
+      "headline_any": [
+        "attacks",
+        "attacked",
+        "strikes",
+        "struck",
+        "袭击",
+        "开战"
+      ],
+      "groups": [
+        [
+          "Iran",
+          "Israel",
+          "Russia",
+          "Ukraine",
+          "Yemen",
+          "Gaza",
+          "military",
+          "troops",
+          "border",
+          "伊朗",
+          "以色列",
+          "俄罗斯",
+          "乌克兰",
+          "也门",
+          "加沙",
+          "军方",
+          "边境"
+        ]
+      ]
+    },
+    {
+      "id": "central-bank-decision",
+      "tier": 3,
+      "label": "央行决策/政策预期，影响利率与流动性条件",
+      "headline_any": [
+        "Fed",
+        "Federal Reserve",
+        "ECB",
+        "European Central Bank",
+        "Bank of Japan",
+        "central bank",
+        "美联储",
+        "欧洲央行",
+        "日本央行",
+        "中国央行",
+        "中国人民银行",
+        "央行"
+      ],
+      "groups": [
+        [
+          "rate",
+          "rates",
+          "inflation",
+          "easing",
+          "tightening",
+          "bond buying",
+          "利率",
+          "降息",
+          "加息",
+          "通胀",
+          "宽松",
+          "紧缩",
+          "降准",
+          "流动性"
+        ]
+      ]
+    },
+    {
+      "id": "national-policy",
+      "tier": 3,
+      "label": "国家贸易/财政/监管政策，涉及跨行业经营条件",
+      "headline_any": [
+        "tariff",
+        "tariffs",
+        "sanctions",
+        "export controls",
+        "export ban",
+        "budget",
+        "stimulus",
+        "关税",
+        "制裁",
+        "出口管制",
+        "禁运",
+        "财政刺激",
+        "预算案"
+      ],
+      "groups": [
+        [
+          "government",
+          "president",
+          "parliament",
+          "minister",
+          "administration",
+          "United States",
+          "US",
+          "U.S.",
+          "China",
+          "EU",
+          "Europe",
+          "Russia",
+          "Iran",
+          "政府",
+          "总统",
+          "议会",
+          "财政部",
+          "国务院",
+          "美国",
+          "中国",
+          "欧盟",
+          "欧洲",
+          "俄罗斯",
+          "伊朗"
+        ]
+      ]
+    },
+    {
+      "id": "national-data",
+      "tier": 3,
+      "label": "全国性经济数据，涉及增长/就业/通胀预期",
+      "headline_any": [
+        "GDP",
+        "inflation",
+        "CPI",
+        "payrolls",
+        "unemployment",
+        "employment report",
+        "trade deficit",
+        "经济增长",
+        "国内生产总值",
+        "通胀",
+        "失业率",
+        "非农",
+        "贸易顺差",
+        "贸易逆差"
+      ],
+      "headline_groups": [
+        [
+          "US",
+          "U.S.",
+          "United States",
+          "UK",
+          "Britain",
+          "China",
+          "Japan",
+          "Germany",
+          "France",
+          "India",
+          "eurozone",
+          "全国",
+          "中国",
+          "美国",
+          "英国",
+          "日本",
+          "德国",
+          "法国",
+          "印度",
+          "欧元区"
+        ]
+      ]
+    },
+    {
+      "id": "diplomacy",
+      "tier": 3,
+      "label": "国际谈判/对外政策动向，关注实际协议与执行条件",
+      "headline_any": [
+        "talks",
+        "deal",
+        "deals",
+        "peace",
+        "diplomacy",
+        "summit",
+        "谈判",
+        "和谈",
+        "协议",
+        "峰会",
+        "外交"
+      ],
+      "entities_min": 2
+    },
+    {
+      "id": "systemic-credit",
+      "tier": 3,
+      "label": "信用风险/融资条件变化，关注风险扩散范围",
+      "headline_any": [
+        "default insurance",
+        "credit default swaps",
+        "debt crisis",
+        "bank run",
+        "bailout",
+        "banking crisis",
+        "信用利差",
+        "违约保险",
+        "债务危机",
+        "挤兑",
+        "银行危机",
+        "救助"
+      ],
+      "groups": [
+        [
+          "debt",
+          "credit",
+          "bank",
+          "banks",
+          "insurance",
+          "default",
+          "债务",
+          "信用",
+          "银行",
+          "违约",
+          "救助"
+        ]
+      ]
+    },
+    {
+      "id": "energy-balance",
+      "tier": 3,
+      "label": "能源供给/贸易格局变量，影响成本与供需条件",
+      "headline_any": [
+        "oil",
+        "crude",
+        "gas",
+        "OPEC",
+        "原油",
+        "石油",
+        "天然气",
+        "欧佩克"
+      ],
+      "groups": [
+        [
+          "supply",
+          "output",
+          "production",
+          "exports",
+          "imports",
+          "balance",
+          "sanctions",
+          "shortage",
+          "pipeline",
+          "供给",
+          "供应",
+          "产量",
+          "出口",
+          "进口",
+          "减产",
+          "管道",
+          "断供",
+          "格局"
+        ]
+      ]
+    },
+    {
+      "id": "major-industry",
+      "tier": 3,
+      "label": "大型产业投资/交易变量，关注执行与实际交付",
+      "headline_any": [
+        "acquisition",
+        "acquires",
+        "merger",
+        "takeover",
+        "capex",
+        "spending",
+        "investment",
+        "invests",
+        "orders",
+        "contract",
+        "contracts",
+        "收购",
+        "并购",
+        "投资",
+        "资本开支",
+        "订单",
+        "合同"
+      ],
+      "requires_scale_or_major_entity": true,
+      "groups": [
+        [
+          "acquisition",
+          "acquires",
+          "merger",
+          "takeover",
+          "capex",
+          "spending",
+          "investment",
+          "invests",
+          "orders",
+          "contract",
+          "contracts",
+          "收购",
+          "并购",
+          "投资",
+          "资本开支",
+          "订单",
+          "合同"
+        ]
+      ]
+    },
+    {
+      "id": "commodity-trade",
+      "tier": 2,
+      "label": "实物商品贸易/供需数据，而非单纯价格涨跌",
+      "headline_any": [
+        "gold",
+        "bullion",
+        "copper",
+        "wheat",
+        "黄金",
+        "金条",
+        "铜",
+        "小麦"
+      ],
+      "groups": [
+        [
+          "exports",
+          "imports",
+          "output",
+          "production",
+          "inventory",
+          "inventories",
+          "出口",
+          "进口",
+          "产量",
+          "库存",
+          "采购量"
+        ]
+      ]
+    },
+    {
+      "id": "economic-data",
+      "tier": 2,
+      "label": "经济/贸易量变量，影响范围需按地区与口径核对",
+      "headline_any": [
+        "GDP",
+        "PMI",
+        "exports",
+        "imports",
+        "industrial output",
+        "retail sales",
+        "国内生产总值",
+        "出口",
+        "进口",
+        "工业增加值",
+        "零售额"
+      ],
+      "groups": [
+        [
+          "rises",
+          "rose",
+          "falls",
+          "fell",
+          "increased",
+          "decreased",
+          "growth",
+          "data",
+          "report",
+          "增长",
+          "下降",
+          "增至",
+          "降至",
+          "数据",
+          "统计",
+          "公布"
+        ]
+      ]
+    },
+    {
+      "id": "public-policy",
+      "tier": 2,
+      "label": "公共政策/政局进展，关注政策连续性与落实",
+      "headline_any": [
+        "election",
+        "elections",
+        "resigns",
+        "resignation",
+        "coup",
+        "emergency",
+        "选举",
+        "辞职",
+        "政变",
+        "紧急状态"
+      ],
+      "groups": [
+        [
+          "president",
+          "government",
+          "minister",
+          "parliament",
+          "election",
+          "elections",
+          "总统",
+          "政府",
+          "总理",
+          "议会",
+          "选举",
+          "政变"
+        ]
+      ]
+    },
+    {
+      "id": "rights-transaction",
+      "tier": 2,
+      "label": "体育/媒体版权交易，涉及经营收入与资产权属",
+      "headline_any": [
+        "broadcast rights",
+        "broadcasting rights",
+        "media rights",
+        "转播权",
+        "版权收购"
+      ],
+      "groups": [
+        [
+          "sold",
+          "sells",
+          "sale",
+          "deal",
+          "contract",
+          "acquisition",
+          "acquires",
+          "revenue",
+          "buys",
+          "bought",
+          "签约",
+          "合同",
+          "出售",
+          "收购",
+          "购入",
+          "拍卖",
+          "收入"
+        ]
+      ]
+    },
+    {
+      "id": "competition-policy",
+      "tier": 3,
+      "label": "竞争监管/贸易准入变化，影响产业经营条件",
+      "headline_any": [
+        "antitrust",
+        "competition regulator",
+        "export restrictions",
+        "反垄断",
+        "出口限制"
+      ],
+      "groups": [
+        [
+          "regulator",
+          "commission",
+          "court",
+          "government",
+          "approves",
+          "approval",
+          "ban",
+          "bans",
+          "rules",
+          "监管",
+          "法院",
+          "政府",
+          "委员会",
+          "批准",
+          "禁止",
+          "限制"
+        ]
+      ]
+    },
+    {
+      "id": "company-variable",
+      "tier": 1,
+      "label": "企业经营/交易变量，影响范围暂限于相关业务",
+      "headline_any": [
+        "earnings",
+        "revenue",
+        "profit",
+        "guidance",
+        "acquisition",
+        "acquires",
+        "merger",
+        "takeover",
+        "funding",
+        "financing",
+        "contract",
+        "contracts",
+        "orders",
+        "capex",
+        "shutdown",
+        "outage",
+        "业绩",
+        "营收",
+        "利润",
+        "收购",
+        "并购",
+        "融资",
+        "订单",
+        "合同",
+        "停产",
+        "投产",
+        "资本开支"
+      ],
+      "groups": [
+        [
+          "earnings",
+          "revenue",
+          "profit",
+          "guidance",
+          "acquisition",
+          "acquires",
+          "merger",
+          "takeover",
+          "funding",
+          "financing",
+          "contract",
+          "contracts",
+          "orders",
+          "capex",
+          "shutdown",
+          "outage",
+          "业绩",
+          "营收",
+          "利润",
+          "收购",
+          "并购",
+          "融资",
+          "订单",
+          "合同",
+          "停产",
+          "投产",
+          "资本开支"
+        ]
+      ]
+    }
+  ],
+  "entities": {
+    "russia": [
+      "Russia",
+      "Russian",
+      "俄罗斯",
+      "俄军"
+    ],
+    "ukraine": [
+      "Ukraine",
+      "Ukrainian",
+      "乌克兰",
+      "乌军"
+    ],
+    "iran": [
+      "Iran",
+      "Iranian",
+      "伊朗"
+    ],
+    "israel": [
+      "Israel",
+      "Israeli",
+      "以色列"
+    ],
+    "gaza": [
+      "Gaza",
+      "加沙"
+    ],
+    "hormuz": [
+      "Hormuz",
+      "霍尔木兹"
+    ],
+    "red-sea": [
+      "Red Sea",
+      "红海"
+    ],
+    "houthi": [
+      "Houthi",
+      "Houthis",
+      "胡塞"
+    ],
+    "us": [
+      "United States",
+      "U.S.",
+      "美国"
+    ],
+    "china": [
+      "China",
+      "Chinese",
+      "中国"
+    ],
+    "eu": [
+      "European Union",
+      "欧盟"
+    ],
+    "fed": [
+      "Federal Reserve",
+      "Fed",
+      "美联储"
+    ],
+    "ecb": [
+      "European Central Bank",
+      "ECB",
+      "欧洲央行"
+    ],
+    "boj": [
+      "Bank of Japan",
+      "日本央行"
+    ],
+    "pboc": [
+      "People's Bank of China",
+      "中国人民银行",
+      "中国央行"
+    ],
+    "nvidia": [
+      "Nvidia",
+      "英伟达"
+    ],
+    "microsoft": [
+      "Microsoft",
+      "微软"
+    ],
+    "amazon": [
+      "Amazon",
+      "亚马逊"
+    ],
+    "alphabet": [
+      "Alphabet",
+      "Google",
+      "谷歌"
+    ],
+    "meta": [
+      "Meta Platforms",
+      "Facebook",
+      "脸书"
+    ],
+    "openai": [
+      "OpenAI"
+    ],
+    "tsmc": [
+      "TSMC",
+      "台积电"
+    ],
+    "opec": [
+      "OPEC",
+      "欧佩克"
+    ]
+  },
+  "actions": {
+    "policy": [
+      "tariff",
+      "tariffs",
+      "sanctions",
+      "export controls",
+      "export restrictions",
+      "ban",
+      "bans",
+      "关税",
+      "制裁",
+      "出口管制",
+      "禁令"
+    ],
+    "conflict": [
+      "war",
+      "attack",
+      "attacks",
+      "attacked",
+      "militarily",
+      "战争",
+      "袭击",
+      "ceasefire",
+      "invasion",
+      "missile",
+      "missiles",
+      "airstrike",
+      "airstrikes",
+      "blockade",
+      "peace talks",
+      "停火",
+      "入侵",
+      "导弹",
+      "空袭",
+      "封锁",
+      "和谈"
+    ],
+    "supply": [
+      "supply",
+      "output",
+      "production",
+      "exports",
+      "imports",
+      "oil market",
+      "market share",
+      "balance",
+      "trade flows",
+      "supply chain",
+      "市场份额",
+      "供给格局",
+      "供应",
+      "供给",
+      "出口",
+      "进口",
+      "产量",
+      "production cut",
+      "output cut",
+      "production cuts",
+      "output cuts",
+      "shutdown",
+      "outage",
+      "capacity",
+      "supply disruption",
+      "减产",
+      "停产",
+      "产能",
+      "投产",
+      "供应中断",
+      "复产"
+    ],
+    "capex": [
+      "capital expenditure",
+      "capex",
+      "invests",
+      "investment plan",
+      "spending plan",
+      "资本开支",
+      "投资计划",
+      "扩建",
+      "斥资"
+    ],
+    "orders": [
+      "contract",
+      "contracts",
+      "orders",
+      "backlog",
+      "订单",
+      "合同",
+      "签约"
+    ],
+    "earnings": [
+      "earnings",
+      "revenue",
+      "profit",
+      "guidance",
+      "业绩",
+      "营收",
+      "利润",
+      "盈利预警",
+      "业绩指引"
+    ],
+    "regulation": [
+      "antitrust",
+      "regulator",
+      "regulators",
+      "approves",
+      "approval",
+      "approved",
+      "lawsuit",
+      "反垄断",
+      "监管",
+      "获批",
+      "批准",
+      "诉讼"
+    ],
+    "rates": [
+      "interest rate",
+      "interest rates",
+      "rate cut",
+      "rate cuts",
+      "rate hike",
+      "inflation",
+      "CPI",
+      "利率",
+      "降息",
+      "加息",
+      "通胀"
+    ],
+    "transaction": [
+      "acquisition",
+      "acquires",
+      "merger",
+      "takeover",
+      "收购",
+      "并购",
+      "重组"
+    ],
+    "logistics": [
+      "shipping",
+      "cargo",
+      "container ships",
+      "vessel",
+      "vessels",
+      "tanker",
+      "tankers",
+      "航运",
+      "船舶",
+      "货船",
+      "油轮",
+      "航道"
+    ],
+    "credit": [
+      "debt",
+      "default insurance",
+      "credit default swaps",
+      "borrowing costs",
+      "bond yields",
+      "债务",
+      "违约",
+      "信用利差",
+      "融资成本",
+      "债券收益率"
+    ]
+  },
+  "changes": [
+    "surge",
+    "surges",
+    "rises",
+    "rising",
+    "falls",
+    "falling",
+    "shifts",
+    "shift",
+    "tilts",
+    "changes",
+    "changed",
+    "increases",
+    "increased",
+    "decreases",
+    "decreased",
+    "spilled",
+    "spill",
+    "attacks",
+    "attacked",
+    "announces",
+    "announced",
+    "raises",
+    "raised",
+    "cuts",
+    "cut",
+    "halts",
+    "halted",
+    "resumes",
+    "resumed",
+    "approves",
+    "approved",
+    "agrees",
+    "agreed",
+    "signs",
+    "signed",
+    "launches",
+    "launched",
+    "imposes",
+    "imposed",
+    "rejects",
+    "rejected",
+    "closes",
+    "closed",
+    "strikes",
+    "struck",
+    "kills",
+    "killed",
+    "declares",
+    "declared",
+    "revises",
+    "revised",
+    "宣布",
+    "上调",
+    "下调",
+    "暂停",
+    "恢复",
+    "批准",
+    "签署",
+    "实施",
+    "否认",
+    "更正",
+    "取消",
+    "终止",
+    "袭击",
+    "达成",
+    "披露",
+    "增长",
+    "下降",
+    "减产",
+    "投产",
+    "封锁",
+    "停火"
+  ],
+  "exclude": [
+    "coupon",
+    "coupons",
+    "promo code",
+    "shopping deals",
+    "download our app",
+    "best stocks to buy",
+    "stocks to buy now",
+    "优惠券",
+    "领券",
+    "值得买",
+    "荐股榜",
+    "必买股票",
+    "下载APP"
+  ],
+  "low_relevance": [
+    "cricket",
+    "rugby",
+    "match report",
+    "live score",
+    "beauty",
+    "fashion",
+    "板球",
+    "橄榄球",
+    "网红",
+    "tennis",
+    "football",
+    "celebrity",
+    "celebrities",
+    "divorce",
+    "separation",
+    "recipe",
+    "recipes",
+    "horoscope",
+    "crossword",
+    "newsletter",
+    "网球",
+    "足球",
+    "明星私生活",
+    "离婚",
+    "星座",
+    "菜谱",
+    "订阅简报"
+  ],
+  "economic_context": [
+    "supply",
+    "output",
+    "production",
+    "oil",
+    "crude",
+    "gold",
+    "shipping",
+    "debt",
+    "credit",
+    "insurance",
+    "default",
+    "inflation",
+    "interest rates",
+    "capital expenditure",
+    "capex",
+    "earnings",
+    "revenue",
+    "profit",
+    "tariff",
+    "tariffs",
+    "exports",
+    "imports",
+    "acquisition",
+    "contract",
+    "sponsorship",
+    "broadcast rights",
+    "供应",
+    "产量",
+    "原油",
+    "黄金",
+    "航运",
+    "债务",
+    "利率",
+    "通胀",
+    "资本开支",
+    "营收",
+    "利润",
+    "关税",
+    "融资",
+    "收购",
+    "订单",
+    "转播权"
+  ],
+  "commentary": [
+    "analysis",
+    "analyses",
+    "analyst",
+    "analysts",
+    "分析",
+    "opinion",
+    "editorial",
+    "commentary",
+    "what to expect",
+    "explainer",
+    "观点",
+    "评论",
+    "解读",
+    "怎么看"
+  ],
+  "analysis_frame": [
+    "outlook",
+    "balance",
+    "reshapes",
+    "reshaping",
+    "what it means",
+    "why",
+    "how",
+    "前景",
+    "格局",
+    "意味着",
+    "为何",
+    "如何"
+  ],
+  "price_recap": [
+    "market wrap",
+    "stocks close",
+    "shares close",
+    "收盘综述",
+    "行情回顾",
+    "盘后复盘"
+  ],
+  "stories": [
+    {
+      "id": "ukraine-conflict",
+      "name": "俄乌局势",
+      "entities_any": [
+        "russia",
+        "ukraine"
+      ],
+      "actions_any": [
+        "conflict",
+        "policy"
+      ],
+      "max_gap_days": 45
+    },
+    {
+      "id": "middle-east-conflict",
+      "name": "中东局势与能源运输",
+      "entities_any": [
+        "iran",
+        "israel",
+        "gaza",
+        "hormuz",
+        "red-sea",
+        "houthi"
+      ],
+      "actions_any": [
+        "conflict",
+        "policy",
+        "supply",
+        "logistics"
+      ],
+      "max_gap_days": 45
+    },
+    {
+      "id": "central-bank",
+      "name": "央行利率与通胀",
+      "entities_any": [
+        "fed",
+        "ecb",
+        "boj",
+        "pboc"
+      ],
+      "actions_any": [
+        "rates"
+      ],
+      "anchor_entity": true,
+      "max_gap_days": 60
+    },
+    {
+      "id": "ai-investment",
+      "name": "AI资本开支与算力供给",
+      "entities_any": [
+        "nvidia",
+        "microsoft",
+        "amazon",
+        "alphabet",
+        "meta",
+        "openai",
+        "tsmc"
+      ],
+      "actions_any": [
+        "capex",
+        "supply",
+        "orders"
+      ],
+      "requires": [
+        "AI",
+        "GPU",
+        "data center",
+        "data centre",
+        "artificial intelligence",
+        "人工智能",
+        "算力",
+        "数据中心",
+        "芯片"
+      ],
+      "anchor_entity": true,
+      "max_gap_days": 45
+    },
+    {
+      "id": "trade-controls",
+      "name": "贸易政策与出口管制",
+      "entities_any": [
+        "us",
+        "china",
+        "eu"
+      ],
+      "actions_any": [
+        "policy"
+      ],
+      "anchor_entity": true,
+      "max_gap_days": 30
+    },
+    {
+      "id": "opec-supply",
+      "name": "OPEC供给政策",
+      "entities_any": [
+        "opec"
+      ],
+      "actions_any": [
+        "supply"
+      ],
+      "max_gap_days": 45
+    }
+  ]
+}

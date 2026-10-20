@@ -1,0 +1,148 @@
+{
+  "id": "medical-devices",
+  "version": "2026-10-18.1",
+  "license": "MIT",
+  "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics",
+  "as_of": "2026-10-18T13:30:00Z",
+  "nodes": [
+    {
+      "id": "medical-devices:theme",
+      "label": "医疗器械",
+      "kind": "segment"
+    },
+    {
+      "id": "company:SZ:300760",
+      "label": "迈瑞医疗",
+      "kind": "company",
+      "symbol": "SZ:300760"
+    },
+    {
+      "id": "medical-devices:hematology",
+      "label": "血液细胞分析仪",
+      "kind": "product"
+    },
+    {
+      "id": "medical-devices:chemistry",
+      "label": "生化分析仪",
+      "kind": "product"
+    },
+    {
+      "id": "medical-devices:immune",
+      "label": "化学发光免疫检测",
+      "kind": "product"
+    },
+    {
+      "id": "medical-devices:ivd",
+      "label": "体外诊断",
+      "kind": "product"
+    }
+  ],
+  "edges": [
+    {
+      "id": "medical-devices:edge:0",
+      "from_id": "company:SZ:300760",
+      "to_id": "medical-devices:hematology",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:1",
+      "from_id": "company:SZ:300760",
+      "to_id": "medical-devices:chemistry",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:2",
+      "from_id": "company:SZ:300760",
+      "to_id": "medical-devices:immune",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:3",
+      "from_id": "company:SZ:300760",
+      "to_id": "medical-devices:ivd",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:4",
+      "from_id": "medical-devices:hematology",
+      "to_id": "medical-devices:ivd",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:5",
+      "from_id": "medical-devices:chemistry",
+      "to_id": "medical-devices:ivd",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:edge:6",
+      "from_id": "medical-devices:immune",
+      "to_id": "medical-devices:ivd",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    },
+    {
+      "id": "medical-devices:company:SZ:300760",
+      "from_id": "company:SZ:300760",
+      "to_id": "medical-devices:theme",
+      "relation": "classification",
+      "evidence_ids": [
+        "medical-devices:evidence:0"
+      ],
+      "confidence": null,
+      "as_of": "2026-10-18T13:30:00Z",
+      "source_url": "https://www.mindray.com/cn/products/laboratory-diagnostics"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "medical-devices:evidence:0",
+      "title": "迈瑞医疗官网：体外诊断仪器",
+      "url": "https://www.mindray.com/cn/products/laboratory-diagnostics",
+      "excerpt": "原创事实摘要：产品目录列示血液细胞检测、生化分析、化学发光免疫、凝血、尿液等检测系统；这些产品属于体外诊断业务。 本包只记录业务类别或工艺关系，不表示特定公司间供货，也不表示投资收益。2026-10-18核读；网页未标统一发布日期。",
+      "published_at": null,
+      "source": "迈瑞医疗官网"
+    }
+  ]
+}

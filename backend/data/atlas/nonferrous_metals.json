@@ -1,0 +1,561 @@
+{
+  "industry": "有色金属（半导体上游）",
+  "icon": "⛏",
+  "segments": [
+    {
+      "id": "nf_hp_copper",
+      "name": "高纯铜(溅射靶材级)",
+      "position": "upstream",
+      "tier": 1,
+      "description": "半导体级高纯铜(5N-7N)是溅射靶材基础原料。6N+超高纯铜进入3nm制程铜互连靶材，提纯路径：电解铜(3N)→真空精炼(4N-5N)→区域熔炼/电解精炼(6N-7N)。全球6N+铜量产仅日矿金属(日本)、日立金属(日本)、有研亿金(中国)三家。靶材级铜与引线框架铜合金是完全不同的冶金路径——前者追求极致纯度，后者追求力学性能与导电率平衡。",
+      "key_companies": [
+        {
+          "code": "600206",
+          "name": "有研新材",
+          "role": "子公司有研亿金6N/7N超高纯铜百吨级量产，国内极少数稳定供应铜靶材坯料"
+        },
+        {
+          "code": "600362",
+          "name": "江西铜业",
+          "role": "5N-7N高纯铜国内最大冶炼企业，铜靶材原料上游"
+        },
+        {
+          "code": "688530",
+          "name": "欧莱新材",
+          "role": "高纯无氧铜锭基地在建（韶关），向上游靶材坯料延伸"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球铜溅射靶材市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 11,
+          "source_name": "券商研报 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "300mm晶圆高纯铜靶材国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 38,
+          "source_name": "券商研报 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_metal",
+      "layer": 1
+    },
+    {
+      "id": "nf_hp_aluminum",
+      "name": "高纯铝",
+      "position": "upstream",
+      "tier": 1,
+      "description": "5N-6N超高纯铝是半导体铝互连溅射靶材的核心原料，全球仅3家6N级供应商（新疆众和+日本住友/日轻），此前100%依赖日本进口，新疆众和打破垄断。",
+      "key_companies": [
+        {
+          "code": "600888",
+          "name": "新疆众和",
+          "role": "国内唯一6N级超高纯铝量产企业，靶材坯料供应江丰电子/有研亿金"
+        },
+        {
+          "code": "002532",
+          "name": "天山铝业",
+          "role": "高纯铝产能6万吨/年（建成4万吨），半导体靶材方向占比提升中"
+        },
+        {
+          "code": "600673",
+          "name": "东阳光",
+          "role": "电子铝箔→化成箔完整产业链，半导体靶材级供应待验证"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "6N级超高纯铝全球供应商数量",
+          "unit": "家",
+          "type": "market",
+          "current_value": 3,
+          "source_name": "行业数据",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "新疆众和高纯铝产量_万吨_年",
+          "unit": "万吨/年",
+          "type": "output",
+          "current_value": 7.95,
+          "source_name": "新疆众和年报 2025",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_metal",
+      "layer": 1
+    },
+    {
+      "id": "nf_precious_metal",
+      "name": "半导体用贵金属材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "金(Au)、银(Ag)、钯(Pd)、铂(Pt)是半导体封装和器件制造的关键贵金属。金丝/银丝/镀钯铜丝用于芯片键合（连接芯片焊盘→引线框架），金/铂靶材用于MEMS器件和传感器电极溅射，银浆用于芯片粘接和热界面。全球半导体键合丝市场约43亿元（Au丝~17%/Ag丝~42%/Cu丝~37%）。贵金属靶材和蒸发材料是化合物半导体（GaAs/GaN器件）的必需消耗品。",
+      "key_companies": [
+        {
+          "code": "600206",
+          "name": "有研新材",
+          "role": "高纯金/银/铂/钯靶材及蒸发材料，贵金属靶材品类最全国内唯一，同供键合丝/溅射靶"
+        },
+        {
+          "code": "600489",
+          "name": "中金黄金",
+          "role": "高纯金锭(4N5-5N)，国内最大黄金冶炼商，半导体封装用键合金丝上游"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球半导体用金键合丝市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 18,
+          "source_name": "券商研报 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体封装用银浆国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 30,
+          "source_name": "券商研报 银浆国产化",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_metal",
+      "layer": 1
+    },
+    {
+      "id": "nf_refractory",
+      "name": "高纯难熔金属",
+      "position": "upstream",
+      "tier": 1,
+      "description": "高纯钽(Ta)/钛(Ti)/钨(W)/钼(Mo)是半导体PVD溅射靶材核心原料。钽用于阻挡层(TaN)，钛用于粘附层，钨用于栅极/插塞，3nm+钼替代钨趋势加速。全球靶材涨价60-70%，国产认证突破中。",
+      "key_companies": [
+        {
+          "code": "000962",
+          "name": "东方钽业",
+          "role": "5N9级超高纯钽靶坯量产，全球钽丝市占60%世界第一"
+        },
+        {
+          "code": "600549",
+          "name": "厦门钨业",
+          "role": "5N钨靶通过台积电12英寸认证，钼酸铵国内市占超40%"
+        },
+        {
+          "code": "601958",
+          "name": "金钼股份",
+          "role": "5N钼靶国内唯一通过海外头部客户认证，中芯国际10亿长协"
+        },
+        {
+          "code": "000969",
+          "name": "安泰科技",
+          "role": "高纯钨/钼靶材上游核心供应商，12英寸钼靶通过中芯国际认证"
+        },
+        {
+          "code": "600456",
+          "name": "宝钛股份",
+          "role": "钛材全产业链龙头，高纯钛靶坯重要上游"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "靶材涨价幅度_百分比",
+          "unit": "%",
+          "type": "price_change",
+          "current_value": 65,
+          "source_name": "券商研报 2026Q1",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球钼靶供应现状",
+          "unit": "",
+          "type": "status",
+          "current_value": 0,
+          "source_name": "台积电3nm月耗钼靶超2吨/供应紧缺",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_metal",
+      "layer": 1
+    },
+    {
+      "id": "nf_hp_cobalt",
+      "name": "高纯钴及新兴互连金属",
+      "position": "upstream",
+      "tier": 1,
+      "description": "高纯钴(5N-6N)是先进制程(3nm及以下)铜互连替代材料。Co在M0/M1层取代Cu：更薄阻挡层(Co liner替代TaN+Co seed)、更好抗电迁移性、更低接触电阻。每片3nm晶圆消耗钴靶~0.3g，台积电3nm月产能10万片→年钴靶需求~360kg，虽量小但单价极高（6N钴靶~$8000/kg）。全球半导体钴靶市场<2亿美元但CAGR>40%。中国钴冶炼全球主导(华友/寒锐占全球精炼钴产能60%+)，但半导体级钴靶坯仍处验证期。",
+      "key_companies": [
+        {
+          "code": "603799",
+          "name": "华友钴业",
+          "role": "全球钴业龙头，刚果金钴矿→冶炼→高纯钴粉全链条，半导体级钴靶坯延伸中"
+        },
+        {
+          "code": "300618",
+          "name": "寒锐钴业",
+          "role": "钴粉/钴盐产能国内前三，5N高纯钴粉量产，半导体靶材/高温合金原料"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球半导体用钴靶材市场规模_亿美元",
+          "unit": "亿美元",
+          "type": "market",
+          "current_value": 1.8,
+          "source_name": "TECHCET 2025 先进制程驱动",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球精炼钴中国产能占比_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 78,
+          "source_name": "华友钴业+寒锐钴业2025年报合计",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "refined_metal",
+      "layer": 1
+    },
+    {
+      "id": "nf_bonding_wire",
+      "name": "键合丝",
+      "position": "upstream",
+      "tier": 1,
+      "description": "键合丝是芯片封装核心材料，连接芯片焊盘与引线框架。按材质分键合金丝(17%)、银丝(42%)、铜丝(37%)、铝丝(4%)。\"铜代金\"趋势下镀钯铜丝国产替代空间大。全球Top3(贺利氏/铭凯益/日铁)占55%。",
+      "key_companies": [
+        {
+          "code": "002119",
+          "name": "康强电子",
+          "role": "键合丝+引线框架龙头，金丝/铜丝供应长电/华天/通富，引线框架国内市占第一"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球键合丝市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 43.2,
+          "source_name": "券商研报 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "中国键合丝总需求量_亿米",
+          "unit": "亿米",
+          "type": "market",
+          "current_value": 360.1,
+          "source_name": "行业数据 2022",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "semi_product",
+      "layer": 2
+    },
+    {
+      "id": "nf_leadframe_alloy",
+      "name": "引线框架铜合金",
+      "position": "upstream",
+      "tier": 1,
+      "description": "引线框架铜合金带材(C7025/C19400/KCF/EFTEC-64T)是IC引线框架的骨架材料，要求高强度(>600MPa)、高导电率(>50%IACS)、精密冲压成型性和热匹配性。冶金路径：电解铜→合金熔炼(添加Fe/P/Zn/Sn)→热轧→冷轧(精度±2μm)→去应力退火→分条。全球高端引线框架铜带90%+被三菱伸铜(日本)、维兰德(德国)垄断。铜合金引线框架→冲压/蚀刻成型→封装厂，是封测直接上游。",
+      "key_companies": [
+        {
+          "code": "601137",
+          "name": "博威合金",
+          "role": "引线框架铜合金带材龙头，C7025/C194/KCF系列，供康强电子/长电科技，国内市占率第一"
+        },
+        {
+          "code": "002171",
+          "name": "楚江新材",
+          "role": "高精度铜合金带材，电子引线框架用铜带量产，铜加工综合龙头"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国引线框架铜合金市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 55,
+          "source_name": "券商研报 2025 含冲压框架",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "高精度引线框架铜带国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 55,
+          "source_name": "博威合金/楚江新材合计市占",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "semi_product",
+      "layer": 2
+    },
+    {
+      "id": "nf_pkg_interconnect",
+      "name": "封装互连材料(焊料/浆料)",
+      "position": "upstream",
+      "tier": 1,
+      "description": "BGA/CSP焊球(SAC305/SnAgCu)、芯片粘接银浆/烧结银、铜柱凸块是芯片与基板/PCB之间的电热互连材料。焊球直径从0.76mm(BGA)缩至0.15mm(先进CSP)，对球形度(<±2%)和氧化控制要求极高。全球焊球市场被Senju(日本千住)、Alpha(美国麦德美)、Indium(美国)垄断85%+。烧结银(Ag sintering)是SiC功率模块关键互连材料，替代传统焊料满足200°C+高温工作。A股直接标的极少，龙头企业多未上市（康普锡威/北京达博）。",
+      "key_companies": [
+        {
+          "code": "002119",
+          "name": "康强电子",
+          "role": "键合丝+引线框架一站式，封装互连材料综合供应商，引线框架国内市占第一"
+        },
+        {
+          "code": "600206",
+          "name": "有研新材",
+          "role": "母公司有研集团控股康普锡威(国内最大焊锡粉厂商，非上市)，锡基焊料粉上游"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "全球半导体焊料球市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 22,
+          "source_name": "券商研报 2025 BGA/CSP/WLCSP",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "BGA焊球国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "券商研报 Senju/Alpha/Indium垄断",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "semi_product",
+      "layer": 2
+    },
+    {
+      "id": "nf_scattered_metals",
+      "name": "稀散金属（镓/铟/锗）",
+      "position": "upstream",
+      "tier": 1,
+      "description": "镓(Ga)用于GaAs/GaN化合物半导体，铟(In)用于InP衬底和ITO靶材，锗(Ge)用于Ge衬底和SiGe外延。中国镓储量占全球68%、锗占41%、铟供应占70%+。但高端衬底深加工仍依赖日本住友和美国AXT。2023年镓/锗出口管制凸显战略价值。",
+      "key_companies": [
+        {
+          "code": "002428",
+          "name": "云南锗业",
+          "role": "GaAs晶片80万片/年+InP晶片15万片/年，国内唯一2-6英寸InP衬底量产"
+        },
+        {
+          "code": "600497",
+          "name": "驰宏锌锗",
+          "role": "锗产能60吨/年，产品覆盖四氯化锗→锗单晶全链条"
+        },
+        {
+          "code": "601600",
+          "name": "中国铝业",
+          "role": "镓资源核心方（氧化铝副产），中国镓储量占全球68%"
+        },
+        {
+          "code": "000960",
+          "name": "锡业股份",
+          "role": "铟储量4821吨全球第一，原生铟国内市占近30%"
+        },
+        {
+          "code": "600961",
+          "name": "株冶集团",
+          "role": "铟产量全球第一(61%)，高纯铟4N5-7N量产"
+        },
+        {
+          "code": "000751",
+          "name": "锌业股份",
+          "role": "亚洲最大半导体用铟供应商，ITO靶材全球市占超30%"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "磷化铟衬底自给率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "行业数据 日本住友/美国AXT垄断90%",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "全球精铟产量_吨_年",
+          "unit": "吨/年",
+          "type": "output",
+          "current_value": 1150,
+          "source_name": "行业数据 2024 中国占70%+",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "mining_smelting",
+      "layer": 0
+    },
+    {
+      "id": "nf_rare_earth",
+      "name": "稀土功能材料",
+      "position": "upstream",
+      "tier": 1,
+      "description": "稀土铈(Ce)基抛光粉是半导体CMP工艺核心耗材，用于晶圆平坦化精密抛光。中国稀土抛光材料产量占全球72%，但以手机盖板玻璃为主（1.7-4万元/吨），半导体纳米级（>30万元/吨）占比尚小。高端CMP抛光液仍依赖美国Cabot、日本Fujimi。",
+      "key_companies": [
+        {
+          "code": "600111",
+          "name": "北方稀土",
+          "role": "抛光材料产能3.2万吨/年全球最大，依托白云鄂博轻稀土基地"
+        },
+        {
+          "code": "600552",
+          "name": "凯盛科技",
+          "role": "CeO2-Al2O3复合抛光粉达Ra<0.2nm，联合中科院开发"
+        },
+        {
+          "code": "300405",
+          "name": "科隆股份",
+          "role": "纳米氧化铈CMP小规模订单，持续与CMP抛光液企业对接测试"
+        }
+      ],
+      "data_points": [
+        {
+          "name": "中国稀土抛光材料市场规模_亿元",
+          "unit": "亿元",
+          "type": "market",
+          "current_value": 7.68,
+          "source_name": "行业数据 2024",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        },
+        {
+          "name": "半导体CMP抛光液国产化率_百分比",
+          "unit": "%",
+          "type": "ratio",
+          "current_value": 10,
+          "source_name": "券商研报 <10% 依赖Cabot/Fujimi",
+          "source_url": "",
+          "last_updated": "2026-06-18"
+        }
+      ],
+      "group": "mining_smelting",
+      "layer": 0
+    }
+  ],
+  "supply_relationships": [
+    {
+      "supplier_code": "600206",
+      "buyer_code": "002119",
+      "product": "6N/7N高纯铜(键合铜丝原料)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "有研新材高纯铜供康强电子键合铜丝产线"
+    },
+    {
+      "supplier_code": "600888",
+      "buyer_code": "000969",
+      "product": "6N高纯铝(靶材坯料)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "新疆众和6N高纯铝供安泰科技/江丰电子等靶材厂商"
+    },
+    {
+      "supplier_code": "000962",
+      "buyer_code": "000969",
+      "product": "高纯钽粉/钽锭(钽靶坯原料)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "东方钽业高纯钽供安泰科技等溅射靶材制造"
+    },
+    {
+      "supplier_code": "600111",
+      "buyer_code": "300405",
+      "product": "铈基稀土(纳米氧化铈CMP原料)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "北方稀土铈基材料供科隆股份纳米氧化铈CMP研发"
+    },
+    {
+      "supplier_code": "600206",
+      "product": "6N/7N高纯铜(溅射靶材坯料)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "有研亿金高纯铜靶材坯料供下游靶材厂(江丰电子/阿石创等)"
+    },
+    {
+      "supplier_code": "600489",
+      "buyer_code": "002119",
+      "product": "高纯金(键合金丝原料)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "中金黄金高纯金锭供康强电子/贺利氏(上海)等键合丝厂商"
+    },
+    {
+      "supplier_code": "600206",
+      "buyer_code": "002119",
+      "product": "高纯金/银/钯(键合丝及靶材原料)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "有研新材贵金属靶材及蒸发材料供康强电子键合丝产线"
+    },
+    {
+      "supplier_code": "603799",
+      "buyer_code": "600206",
+      "product": "高纯钴(钴靶坯原料)",
+      "relationship_type": "secondary",
+      "confidence": 3,
+      "notes": "华友钴业高纯钴供有研新材/江丰电子钴靶材制造，半导体级验证中"
+    },
+    {
+      "supplier_code": "601137",
+      "buyer_code": "002119",
+      "product": "引线框架铜合金带材(C7025/C194/KCF)",
+      "relationship_type": "primary",
+      "confidence": 5,
+      "notes": "博威合金铜带供康强电子引线框架冲压，国内最大铜合金→引线框架链条"
+    },
+    {
+      "supplier_code": "600206",
+      "buyer_code": "002119",
+      "product": "锡基焊料粉(康普锡威)",
+      "relationship_type": "primary",
+      "confidence": 4,
+      "notes": "有研集团(有研新材母公司)控股康普锡威供康强电子等封装厂焊料粉"
+    }
+  ],
+  "group_labels": {
+    "mining_smelting": [
+      "⛏ 矿冶/回收",
+      "#8b6914"
+    ],
+    "refined_metal": [
+      "🔩 高纯金属精炼",
+      "#b8860b"
+    ],
+    "semi_product": [
+      "🔗 半导体级产品",
+      "#cd853f"
+    ]
+  },
+  "group_order": [
+    "mining_smelting",
+    "refined_metal",
+    "semi_product"
+  ]
+}

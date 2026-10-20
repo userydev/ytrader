@@ -1,0 +1,653 @@
+{
+  "format": "industry-reference-v1",
+  "status": "reference",
+  "industry": {
+    "id": "ai-compute",
+    "name": "AI算力",
+    "demand": "运行模型训练和推理任务",
+    "boundary": "以GPU服务器到集群运行的典型架构为边界；不展开芯片制造全链、所有技术路线和机房工程。供应商产品只作角色样例，不代表市场份额。",
+    "summary": "计算部件与服务器构成计算节点，网络、存储和软件组织协作，机房及供电散热支持训练与推理持续运行。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "structure": {
+    "version": 1,
+    "organization": "composition",
+    "thesis": "计算部件组成服务器，服务器提供集群的计算节点；网络、存储、软件与供电散热协同，使集群能承载训练和推理，而不是把所有配套串成加工步骤。",
+    "groups": [
+      {
+        "id": "hardware",
+        "title": "计算硬件",
+        "role": "core",
+        "purpose": "GPU承担并行计算，服务器将计算部件组织成可部署的计算节点。",
+        "node_ids": [
+          "accelerator",
+          "server"
+        ]
+      },
+      {
+        "id": "operation",
+        "title": "集群协同运行",
+        "role": "core",
+        "purpose": "让多台计算节点与数据、网络及调度协同工作，形成可运行的算力系统。",
+        "node_ids": [
+          "cluster"
+        ]
+      },
+      {
+        "id": "tasks",
+        "title": "训练与推理用途",
+        "role": "core",
+        "purpose": "使用集群算力完成模型训练和推理，说明硬件与系统最终服务什么需求。",
+        "node_ids": [
+          "workload"
+        ]
+      },
+      {
+        "id": "coordination",
+        "title": "通信、数据与调度",
+        "role": "support",
+        "purpose": "网络交换数据、存储持续供数、软件分配任务，分别解决集群协作所需的不同条件。",
+        "node_ids": [
+          "network",
+          "storage",
+          "software"
+        ]
+      },
+      {
+        "id": "facilities",
+        "title": "供电与散热条件",
+        "role": "support",
+        "purpose": "为运行设备持续供电并排出热量，使集群具备部署和稳定工作的环境。",
+        "node_ids": [
+          "power",
+          "cooling"
+        ]
+      }
+    ],
+    "primary_relation_ids": [
+      "ai-compute:r1",
+      "ai-compute:r2",
+      "ai-compute:r8"
+    ],
+    "reading_order": [
+      "hardware",
+      "operation",
+      "tasks",
+      "coordination",
+      "facilities"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "accelerator",
+      "name": "计算与内存部件",
+      "kind": "product",
+      "description": "处理器、加速计算及内存接口提供不同的计算与数据连接能力。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "server",
+      "name": "AI服务器",
+      "kind": "product",
+      "description": "集成计算部件的服务器系统。",
+      "sources": [
+        "nv-architecture",
+        "ieit"
+      ]
+    },
+    {
+      "id": "network",
+      "name": "网络互连",
+      "kind": "product",
+      "description": "连接计算节点及存储。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "存储系统",
+      "kind": "product",
+      "description": "提供训练数据与结果的读写。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "集群管理与调度软件",
+      "kind": "product",
+      "description": "管理资源和工作负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "power",
+      "name": "供电设施",
+      "kind": "product",
+      "description": "满足系统用电要求。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cooling",
+      "name": "散热设施",
+      "kind": "product",
+      "description": "维持设备所需环境。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cluster",
+      "name": "集群与机房运行",
+      "kind": "activity",
+      "description": "协同运行计算、网络、存储和软件。",
+      "sources": [
+        "nv-architecture",
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "workload",
+      "name": "训练与推理",
+      "kind": "application",
+      "description": "使用算力完成模型任务。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "ai-compute:r1",
+      "from_id": "accelerator",
+      "to_id": "server",
+      "kind": "component_of",
+      "explanation": "GPU构成该类AI服务器的计算部件。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r2",
+      "from_id": "server",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "服务器提供计算节点。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r3",
+      "from_id": "network",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "网络承担节点间及存储通信。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r4",
+      "from_id": "storage",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "存储支撑数据访问。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r5",
+      "from_id": "software",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "管理软件支撑集群调度。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r6",
+      "from_id": "power",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "供电是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r7",
+      "from_id": "cooling",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "散热是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r8",
+      "from_id": "cluster",
+      "to_id": "workload",
+      "kind": "used_for",
+      "explanation": "运行训练与推理负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "identity_note": "产业参与者，无A股证券链接",
+      "profile_verified": false,
+      "profile": {}
+    },
+    {
+      "id": "ieit",
+      "name": "浪潮信息（IEIT Systems）",
+      "symbol": "SZ:000977",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile": {
+        "products": "服务器与AI服务器，以及存储、网络等IT基础设施。",
+        "buyers": "云计算、数据中心与企业IT客户（买方类别，不指认客户）。",
+        "purpose": "将处理器、内存、存储等组件组合为可交付、可部署的计算设备。",
+        "watch": "实际订单、产品结构、交付节奏与毛利变化。",
+        "condition": "扩容意向须经过配置选型、采购和交付，才可能体现为公司业务；总算力投入不等于公司订单。"
+      },
+      "profile_verified": true
+    },
+    {
+      "id": "hygon",
+      "name": "海光信息",
+      "symbol": "SH:688041",
+      "profile": {
+        "products": "CPU产品；DCU为本稿编辑整理的业务角色，不据本次来源提供规格。",
+        "buyers": "计算设备厂商、服务器集成及行业计算客户。",
+        "purpose": "为计算系统提供处理能力；须与软件、内存和整机适配。",
+        "watch": "产品适配、客户验证及批量交付。",
+        "condition": "计算需求须转为兼容的产品选型和采购；CPU官网资料不构成DCU性能或订单证明。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "cambricon",
+      "name": "寒武纪",
+      "symbol": "SH:688256",
+      "profile": {
+        "products": "智能计算芯片及相关计算产品。",
+        "buyers": "计算设备集成、数据中心及智能计算应用客户。",
+        "purpose": "执行AI计算任务，需配合系统和软件生态部署。",
+        "watch": "软件适配、产品验证与实际交付。",
+        "condition": "AI任务增长须落到兼容平台的采购；不能仅凭行业扩容判断公司订单。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "montage",
+      "name": "澜起科技",
+      "symbol": "SH:688008",
+      "profile": {
+        "products": "内存接口芯片等产品。",
+        "buyers": "内存模组及相关计算硬件厂商。",
+        "purpose": "支持处理器与内存系统的数据连接，不等同于提供整条内存。",
+        "watch": "内存代际切换、产品采用与出货结构。",
+        "condition": "服务器需求需传到匹配内存平台的接口产品采购，并考虑单机配置变化。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "fii",
+      "name": "工业富联",
+      "symbol": "SH:601138",
+      "profile": {
+        "products": "云计算相关服务器等设备及制造服务。",
+        "buyers": "云计算设备、网络及企业基础设施客户类别。",
+        "purpose": "将系统方案转成可批量制造和交付的设备。",
+        "watch": "设备组合、产能利用与交付毛利。",
+        "condition": "客户方案定型、制造分工和订单落地后，扩容才可能传入公司业务。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "sugon",
+      "name": "中科曙光",
+      "symbol": "SH:603019",
+      "profile": {
+        "products": "服务器、计算设备及相关系统。",
+        "buyers": "科研、行业计算及企业IT客户。",
+        "purpose": "组织计算硬件和系统，为行业任务提供计算能力。",
+        "watch": "项目订单、系统交付与验收进度。",
+        "condition": "算力需求要落实到公司适用的项目与产品，不将全部集群建设视为其市场份额。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创",
+      "symbol": "SZ:300308",
+      "profile": {
+        "products": "高速光通信模块。",
+        "buyers": "网络设备、数据中心等光连接采购方。",
+        "purpose": "在高速链路中完成光电信号转换，连接集群设备。",
+        "watch": "速率代际、产品结构、出货与良率。",
+        "condition": "集群网络方案需采用相应光连接规格，且采购和交付成立。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "eoptolink",
+      "name": "新易盛",
+      "symbol": "SZ:300502",
+      "profile": {
+        "products": "光通信模块等光连接产品。",
+        "buyers": "通信与数据中心网络设备相关客户。",
+        "purpose": "满足网络链路的光电转换与传输连接。",
+        "watch": "产品规格切换、客户验证及批量交付。",
+        "condition": "网络升级必须转成匹配公司产品的需求，不能将每个新增服务器等同固定模块数量。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "unis",
+      "name": "紫光股份",
+      "symbol": "SZ:000938",
+      "profile": {
+        "products": "网络设备及相关数字基础设施产品。",
+        "buyers": "企业、运营及数据中心网络采购方。",
+        "purpose": "以交换、连接与网络管理组织设备间的数据流。",
+        "watch": "网络设备订单、产品组合与项目交付。",
+        "condition": "集群扩容须形成相应网络架构和公司设备采购，不指认任何芯片或服务器公司的供应关系。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "envicool",
+      "name": "英维克",
+      "symbol": "SZ:002837",
+      "profile": {
+        "products": "温控与散热设备及解决方案。",
+        "buyers": "数据中心、设备集成及相关工业客户。",
+        "purpose": "带走设备运行产生的热量，维持运行条件。",
+        "watch": "散热方案选型、项目订单与交付。",
+        "condition": "功率密度变化需转化成适用温控方案；散热需求不等于所有方案采用同一供应商。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "kehua",
+      "name": "科华数据",
+      "symbol": "SZ:002335",
+      "profile": {
+        "products": "电源、供配电及数据中心相关产品与服务。",
+        "buyers": "数据中心建设运营、企业及行业客户。",
+        "purpose": "为机房和IT设备提供稳定供电等基础设施条件。",
+        "watch": "供电设备订单、工程交付与业务结构。",
+        "condition": "机房项目须具备电力接入、建设和采购条件；公司业务不能概括成提供全部算力设备。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "runze",
+      "name": "润泽科技",
+      "symbol": "SZ:300442",
+      "profile": {
+        "products": "数据中心基础设施与机房承载相关服务。",
+        "buyers": "数据中心容量采购及相关运营客户类别。",
+        "purpose": "提供机房空间、供电散热等承载条件，并非提供所有GPU或大模型。",
+        "watch": "可交付容量、上架使用与电力条件。",
+        "condition": "建设容量须完成交付并获客户使用，且持续具备电力和运行条件。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "dataport",
+      "name": "数据港",
+      "symbol": "SH:603881",
+      "profile": {
+        "products": "数据中心建设运营与机房基础设施相关服务。",
+        "buyers": "数据中心容量与基础设施服务采购方。",
+        "purpose": "承载服务器等设备运行，不将其等同于芯片供给或模型开发。",
+        "watch": "项目交付、上架进度与容量使用。",
+        "condition": "客户部署、电力保障和项目交付共同成立后，新增容量才可能形成业务。"
+      },
+      "profile_verified": false
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "nvidia",
+      "node_id": "accelerator",
+      "role": "提供GPU计算产品",
+      "sources": [
+        "nv-architecture"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "nvidia",
+      "node_id": "server",
+      "role": "提供DGX服务器",
+      "sources": [
+        "nv-architecture"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "server",
+      "role": "提供AI服务器",
+      "sources": [
+        "ieit"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "software",
+      "role": "提供AIStation等管理软件",
+      "sources": [
+        "ieit"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "hygon",
+      "node_id": "accelerator",
+      "role": "CPU / DCU计算产品",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "cambricon",
+      "node_id": "accelerator",
+      "role": "智能计算芯片",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "montage",
+      "node_id": "accelerator",
+      "role": "内存接口芯片",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "fii",
+      "node_id": "server",
+      "role": "云计算服务器制造",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "sugon",
+      "node_id": "server",
+      "role": "服务器与计算系统",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "innolight",
+      "node_id": "network",
+      "role": "高速光模块",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "eoptolink",
+      "node_id": "network",
+      "role": "光通信模块",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "unis",
+      "node_id": "network",
+      "role": "交换与网络设备",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "envicool",
+      "node_id": "cooling",
+      "role": "温控与散热设备",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "kehua",
+      "node_id": "power",
+      "role": "电源与供配电系统",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "runze",
+      "node_id": "cluster",
+      "role": "数据中心机房承载",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "dataport",
+      "node_id": "cluster",
+      "role": "数据中心基础设施服务",
+      "sources": [],
+      "basis": "editorial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "nv-architecture",
+      "title": "DGX SuperPOD关键组件",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/dgx-superpod-components.html",
+      "locator": "Key Components；硬件/软件表。用于典型架构，不推广具体规格到所有AI系统。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "nv-facility",
+      "title": "DGX H100数据中心设计",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/design-guides/dgx-superpod-data-center-design-h100/latest/index.html",
+      "locator": "部署规划总述；仅采用供电、散热这一通用依赖。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "ieit",
+      "title": "AI服务器及软件产品",
+      "publisher": "IEIT Systems",
+      "url": "https://www.ieisystems.com/en/product/ai/index.html",
+      "locator": "Summary、AI Servers、AI Software；未据此声称与NVIDIA存在某笔交易。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    }
+  ],
+  "version": "2026-10-18.matrix-review",
+  "origin": "public_reference",
+  "default_company": "ieit",
+  "scenarios": [
+    {
+      "id": "expansion",
+      "title": "云厂商扩容",
+      "label": "情景示例",
+      "category": "需求",
+      "indicator": "新增算力与设备采购需求",
+      "entry_node": "workload",
+      "affected_nodes": [
+        "workload",
+        "cluster",
+        "server",
+        "accelerator",
+        "network"
+      ],
+      "relation_ids": [
+        "ai-compute:r1",
+        "ai-compute:r2",
+        "ai-compute:r3",
+        "ai-compute:r8"
+      ],
+      "steps": [
+        "训练与推理需求增加",
+        "进入容量规划与采购",
+        "服务器、芯片及互联按选型交付"
+      ],
+      "condition": "扩容计划须落实预算、配置、采购与交付；各类设备不按统一比例受益。",
+      "watch": "观察实际订单、产品选型、交付与毛利。"
+    },
+    {
+      "id": "power-limit",
+      "title": "机房供电受限",
+      "label": "情景示例",
+      "category": "供给",
+      "indicator": "可用电力与可投运容量",
+      "entry_node": "power",
+      "affected_nodes": [
+        "power",
+        "cluster",
+        "workload"
+      ],
+      "relation_ids": [
+        "ai-compute:r6",
+        "ai-compute:r8"
+      ],
+      "steps": [
+        "可用电力形成约束",
+        "机房投运或设备上架受限",
+        "可交付算力可能变化"
+      ],
+      "condition": "要区分电力接入、临时限制与长期供给；替代场地和能效可改变影响。",
+      "watch": "观察机房交付、上架与设备验收节奏。"
+    }
+  ],
+  "categories": [
+    "需求",
+    "供给",
+    "价格与成本",
+    "技术与效率",
+    "规则与准入",
+    "资金与投资"
+  ],
+  "ai": {
+    "label": "AI辅助 · 示例解读",
+    "overview": "算力要同时具备计算、数据传输、调度和运行条件。芯片厂交付部件，服务器厂交付整机，光模块和网络设备连接集群，机房与供电散热使设备持续工作。公司处在不同交付位置。",
+    "gap": "空白表示当前资料未收录。AI可以解释该环节通常需要什么产品或服务，以及应该核对哪些资料；它不能仅凭产业位置确认某家公司有业务、供货或订单。",
+    "questions": [
+      "这个产业如何运转",
+      "解释当前选择",
+      "理解资料空白"
+    ],
+    "disclosure": "本页展示预写的AI解读示例，未连接实时问答；补充推断不写回已收录业务。"
+  }
+}

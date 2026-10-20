@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "status": "foundation",
+  "version": "2026-10-20.gold-foundation",
+  "industry": {
+    "id": "gold",
+    "name": "黄金",
+    "demand": "投资与储备、首饰及技术用途",
+    "summary": "矿产金与回收金经精炼进入标准金供给，再流向不同需求用途；存量黄金可回收再利用。",
+    "boundary": "介绍黄金供需结构与影响机制；暂无实时行情及公司财务数据。"
+  },
+  "nodes": [
+    { "id": "mining", "name": "黄金采矿", "description": "矿山开发与采选提供矿产金，项目建设周期较长。", "sources": ["wgc-supply"] },
+    { "id": "refining", "name": "加工精炼", "description": "加工矿产金与回收金，保证黄金质量；加工量与加工费用不同于金价敞口。", "sources": ["wgc-supply"] },
+    { "id": "bullion", "name": "标准金与流通", "description": "精炼后的黄金以符合质量要求的形式进入交易、交割与不同需求用途。", "sources": ["wgc-supply"] },
+    { "id": "investment", "name": "投资与储备", "description": "包含金条金币、ETF、央行与其他投资需求分类；是需求用途，不是实物制造工序。", "sources": ["wgc-demand", "wgc-outlook"] },
+    { "id": "jewellery", "name": "首饰需求", "description": "黄金进入首饰加工、渠道与消费；销量、工费及库存影响经营。", "sources": ["wgc-demand"] },
+    { "id": "technology", "name": "技术与工业需求", "description": "黄金用于技术与工业领域，需求取决于应用规模及单位用金量。", "sources": ["wgc-demand"] },
+    { "id": "recycling", "name": "黄金回收", "description": "存量黄金回收后重新进入加工精炼；对价格与经济冲击的反应通常比矿山供给更及时。", "sources": ["wgc-supply"] }
+  ],
+  "relations": [
+    { "id": "gold:r1", "from_id": "mining", "to_id": "refining", "kind": "precedes", "explanation": "矿产金进入加工精炼", "sources": ["wgc-supply"] },
+    { "id": "gold:r2", "from_id": "recycling", "to_id": "refining", "kind": "precedes", "explanation": "回收金重新进入精炼", "sources": ["wgc-supply"] },
+    { "id": "gold:r3", "from_id": "refining", "to_id": "bullion", "kind": "precedes", "explanation": "加工精炼形成满足质量要求的黄金供给", "sources": ["wgc-supply"] },
+    { "id": "gold:r4", "from_id": "bullion", "to_id": "investment", "kind": "demand", "explanation": "投资与储备吸收黄金供给；此箭头是需求关系，非制造工序", "sources": ["wgc-demand"] },
+    { "id": "gold:r5", "from_id": "bullion", "to_id": "jewellery", "kind": "demand", "explanation": "黄金流向首饰需求", "sources": ["wgc-demand"] },
+    { "id": "gold:r6", "from_id": "bullion", "to_id": "technology", "kind": "demand", "explanation": "黄金流向技术与工业用途", "sources": ["wgc-demand"] },
+    { "id": "gold:r7", "from_id": "jewellery", "to_id": "recycling", "kind": "recycles", "explanation": "存量首饰可回收再精炼，不代表当期全部消费立即回流", "sources": ["wgc-supply"] },
+    { "id": "gold:r8", "from_id": "technology", "to_id": "recycling", "kind": "recycles", "explanation": "技术用途中的可回收黄金可返回供给端，取决于收集和回收条件", "sources": ["wgc-supply"] }
+  ],
+  "companies": [
+    {
+      "id": "zijin",
+      "name": "紫金矿业",
+      "symbol": "SH:601899",
+      "profile_verified": true,
+      "profile": {
+        "purpose": "多金属矿业公司，黄金业务是其业务组成之一，整体经营并非纯黄金敞口。",
+        "products": "黄金采矿与矿产金生产；公司同时经营其他金属。",
+        "buyers": "该资料未披露客户构成。",
+        "watch": "黄金业务产销量、实现售价、单位成本与项目投产；不据金价推定公司整体利润。",
+        "condition": "黄金业务表现需结合产销量、实现售价与成本判断；业务介绍不代表最新产量、估值或财务表现。",
+        "sources": [
+          { "title": "紫金矿业 · 2026年新年致辞（黄金业务）", "url": "https://www.zijinmining.com/news/news-detail-122507.htm" }
+        ]
+      }
+    }
+  ],
+  "participations": [
+    { "company_id": "zijin", "node_id": "mining", "role": "黄金采矿；多金属公司的黄金业务，非纯黄金公司", "sources": ["zijin-message"], "basis": "public-source" }
+  ],
+  "structure": {
+    "note": "矿产金与回收金 → 精炼 → 标准金 → 各类需求。投资与储备是需求用途，不是制造步骤；底部回流箭头表示存量黄金的回收闭环。",
+    "groups": [
+      { "id": "supply", "title": "供给", "role": "core", "node_ids": ["mining", "recycling"] },
+      { "id": "processing", "title": "加工与流通", "role": "core", "node_ids": ["refining", "bullion"] },
+      { "id": "demand", "title": "需求用途", "role": "core", "node_ids": ["investment", "jewellery", "technology"] }
+    ]
+  },
+  "layout": {
+    "mining": [14, 78], "refining": [196, 78], "bullion": [378, 78],
+    "recycling": [14, 380], "investment": [378, 380], "jewellery": [560, 380], "technology": [742, 380]
+  },
+  "default_company": "zijin",
+  "scenarios": [],
+  "categories": ["供给", "需求", "机会成本", "价格与成本"],
+  "sources": [
+    { "id": "wgc-supply", "publisher": "World Gold Council", "title": "Gold supply", "url": "https://www.gold.org/gold-supply", "locator": "黄金供给：矿产金、回收金与精炼质量" },
+    { "id": "wgc-outlook", "publisher": "World Gold Council", "title": "Gold Outlook 2026", "url": "https://www.gold.org/goldhub/research/gold-outlook-2026", "locator": "影响金价的四类因素：经济扩张、风险不确定性、机会成本与动量；非实时行情" },
+    { "id": "wgc-demand", "publisher": "World Gold Council", "title": "Gold Demand Trends Q1 2026 · Executive summary", "url": "https://www.gold.org/download/file/20774/GDT-Q1-2026-Exec-Summary.pdf", "locator": "黄金需求分类：首饰、技术、ETF、央行、金条金币与OTC" },
+    { "id": "zijin-message", "publisher": "紫金矿业", "title": "2026年新年致辞", "url": "https://www.zijinmining.com/news/news-detail-122507.htm", "locator": "黄金采矿与海外黄金业务；用于了解业务范围" }
+  ]
+}

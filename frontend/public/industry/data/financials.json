@@ -1,0 +1,133 @@
+{
+  "period": "2025年报",
+  "as_of": "2025-12-31",
+  "checked_at": "2026-10-19",
+  "unit": "亿元",
+  "coverage_note": "本稿收录四家代表公司的2025年报及同报告比较数据，不含实时行情。",
+  "companies": {
+    "shanghai-petrochemical": {
+      "name": "上海石化",
+      "years": [
+        2023,
+        2024,
+        2025
+      ],
+      "revenue": [
+        930.13595,
+        871.3282,
+        755.63186
+      ],
+      "net_profit": [
+        -14.05876,
+        3.165,
+        -14.32595
+      ],
+      "operating_cashflow": [
+        8.06996,
+        77.40447,
+        19.9333
+      ],
+      "revenue_yoy": -13.28,
+      "profit_change_label": "由盈转亏",
+      "source": {
+        "title": "上海石化2025年年度报告",
+        "url": "https://spc.sinopec.com/spc/investor/performance_report/Documents/20260320/doc_20260320_568588867006.pdf",
+        "locator": "近三年主要会计数据（中国企业会计准则）；人民币千元"
+      },
+      "note": "中国企业会计准则；原单位千元；公司整体数据，不代表某一业务环节。"
+    },
+    "ieit": {
+      "name": "浪潮信息",
+      "years": [
+        2023,
+        2024,
+        2025
+      ],
+      "revenue": [
+        660.304433,
+        1150.285164,
+        1647.819977
+      ],
+      "net_profit": [
+        17.688385,
+        22.935632,
+        24.128663
+      ],
+      "operating_cashflow": [
+        5.326253,
+        0.748664,
+        54.530521
+      ],
+      "revenue_yoy": 43.25,
+      "profit_change_label": "同比 +5.20%",
+      "source": {
+        "title": "浪潮信息2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225096638.PDF",
+        "locator": "第7页，主要会计数据；人民币万元"
+      },
+      "note": "2023、2024年采用2025年报追溯调整后口径；公司整体数据。"
+    },
+    "hengrui": {
+      "name": "恒瑞医药",
+      "years": [
+        2023,
+        2024,
+        2025
+      ],
+      "revenue": [
+        228.197847,
+        279.846053,
+        316.294162
+      ],
+      "net_profit": [
+        43.024359,
+        63.36527,
+        77.110548
+      ],
+      "operating_cashflow": [
+        76.436651,
+        74.22753,
+        112.353781
+      ],
+      "revenue_yoy": 13.02,
+      "profit_change_label": "同比 +21.69%",
+      "source": {
+        "title": "恒瑞医药2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225032585.PDF",
+        "locator": "第6页，近三年主要会计数据；人民币元"
+      },
+      "note": "中国企业会计准则；含公司整体业务及许可收入，不等于单一药物收入。"
+    },
+    "nari": {
+      "name": "国电南瑞",
+      "years": [
+        2023,
+        2024,
+        2025
+      ],
+      "revenue": [
+        519.613067,
+        578.291723,
+        662.289632
+      ],
+      "net_profit": [
+        71.789705,
+        76.102357,
+        82.789717
+      ],
+      "operating_cashflow": [
+        113.171866,
+        110.867885,
+        127.687021
+      ],
+      "revenue_yoy": 14.53,
+      "profit_change_label": "同比 +8.79%",
+      "source": {
+        "title": "国电南瑞2025年年度报告",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257886.PDF",
+        "locator": "第13页，近三年主要会计数据；人民币元"
+      },
+      "note": "2023、2024年采用2025年报调整后口径；公司整体数据。"
+    }
+  }
+}

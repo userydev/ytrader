@@ -1,0 +1,39 @@
+{
+  "description": "Offline fixtures, not a deployment or independent verification. Financial optional-field values supplied by the host for SH:600276 / 2026-06-30; all news/graph text below is synthetic. Full original panorama context fixtures remain the unchanged four JSON files and are exercised by tests/test_core_contracts.py.",
+  "responses": {
+    "empty_editorial": {
+      "data": {"generated_at": "2026-10-20T12:00:00Z", "algorithm_version": "editorial-rules-v1.1.2", "algorithm_versions": {"recommendation": "1.1.2", "event_grouping": "1.1.0", "industry_transmission": "1.1.2", "security_matching": "1.0.0"}, "state": "empty", "items": [], "default_event_id": null, "exclusive_available": false, "coverage_note": "Offline fixture", "collection": {"active_job_id": null, "last_checked": null, "warnings": []}, "run_id": "editorial-run:fixture"},
+      "meta": {"source": "fixture", "as_of": null, "version": "1", "completeness": "unavailable", "warnings": []}
+    },
+    "panorama_catalog": {
+      "data": {"items": [{"id": "gold", "name": "黄金"}, {"id": "crude-oil", "name": "原油"}, {"id": "ai-compute", "name": "AI算力"}, {"id": "innovative-drugs", "name": "创新药"}, {"id": "grid", "name": "电网设备"}], "schema_version": "1"},
+      "meta": {"source": "fixture", "as_of": null, "version": "1", "completeness": "complete", "warnings": []}
+    },
+    "synthetic_panorama": {
+      "data": {"format": 1, "status": "draft", "version": "fixture.1", "industry": {"id": "gold", "name": "黄金（测试）", "summary": "测试结构，非产业事实", "boundary": "仅验证契约", "demand": "测试用途"}, "nodes": [{"id": "bullion", "name": "测试环节", "description": "原创测试", "sources": []}], "relations": [], "companies": [], "participations": [], "sources": [], "structure": {"groups": [{"id": "fixture", "title": "测试组", "node_ids": ["bullion"]}]}, "scenarios": []},
+      "meta": {"source": "fixture", "as_of": null, "version": "1", "completeness": "partial", "warnings": ["合成样例，不作产业证据"]}
+    },
+    "security": {
+      "data": {"security": {"symbol": "SH:600276", "code": "600276", "name": "恒瑞医药", "exchange": "SH", "industry": null, "status": "listed", "as_of": null, "source": "fixture"}, "events": [], "paths": []},
+      "meta": {"source": "fixture", "as_of": null, "version": "1", "completeness": "partial", "warnings": ["未猜测行业"]}
+    },
+    "profile_unavailable": {
+      "data": {"symbol": "SH:600276", "name": "恒瑞医药", "full_name": null, "introduction": null, "business_scope": null, "website": null, "province": null, "industry": null, "listing_date": null, "established_date": null, "source": "fixture", "source_url": null, "as_of": null, "fetched_at": null, "status": "unavailable", "evidence_ids": [], "businesses": [], "topics": []},
+      "meta": {"source": "fixture", "as_of": null, "version": "1", "completeness": "unavailable", "warnings": ["来源暂不可用；未编造简介"]}
+    },
+    "fundamentals_optional_units": {
+      "data": {"symbol": "SH:600276", "status": "stale", "source": "host-provided-source-sample", "source_url": "https://emweb.eastmoney.com/PC_HSF10/NewFinanceAnalysis/ZYZBAjaxNew?type=0&code=SH600276", "fetched_at": "2026-10-20T00:00:00Z", "warnings": ["仅展示宿主确认的新增字段，其余为空；不是完整财务样本"], "evidence_ids": [],
+        "periods": [{"period_end": "2026-06-30", "period_type": "H1", "currency": "CNY", "revenue": null, "net_profit_parent": null, "operating_cash_flow": null, "total_liabilities": null, "total_assets": null, "revenue_yoy_pct": null, "net_profit_parent_yoy_pct": null, "gross_margin_pct": null, "debt_to_asset_pct": null, "debt_to_asset_basis": null, "net_profit_excluding_nonrecurring": 3729589028.7, "net_profit_excluding_nonrecurring_yoy_pct": -12.714223413637, "roe_weighted_pct": 8.04, "basic_eps": 0.68, "monetary_funds": 38734324278.37, "accounts_receivable": 4920299209.76, "inventories": 2993971049.37}],
+        "tables": {"indicators": {"status": "stale", "fetched_at": "2026-10-20T00:00:00Z", "source_urls": []}, "balance": {"status": "stale", "fetched_at": "2026-10-20T00:00:00Z", "source_urls": []}, "cashflow": {"status": "unavailable", "fetched_at": null, "source_urls": []}, "composition": {"status": "unavailable", "fetched_at": null, "source_urls": []}}, "composition": null},
+      "meta": {"source": "fixture", "as_of": "2026-06-30", "version": "1", "completeness": "partial", "warnings": ["基础报告期不等于当前实时数据"]}
+    },
+    "synthetic_editorial_detail": {
+      "data": {"event": {"id": "event:fixture", "title": "测试报道"}, "title": "测试报道", "summary": "仅验证引用", "articles": [{"id": "article:fixture", "title": "测试报道", "content": "合成新闻，不是事实证据。", "url": "https://example.com/fixture", "source": "测试来源", "published_at": "2026-10-20T00:00:00Z"}],
+        "industry_links": [],
+        "current": {"id": "progress:fixture", "event_id": "event:fixture", "story": {"id": "story:fixture"}, "articles": [{"id": "article:fixture", "title": "测试报道", "content": "合成新闻，不是事实证据。", "url": "https://example.com/fixture", "source": "测试来源", "published_at": "2026-10-20T00:00:00Z", "attribution": {"publisher": "测试来源"}}], "reasons": [], "exclusive_claims": [], "algorithm": {"score": 0, "importance_tier": 0, "suppression": [], "excluded": ["未进入召回路径"]}, "industry_links": []},
+        "progresses": [{"id": "progress:fixture", "event_id": "event:fixture", "story": {"id": "story:fixture"}, "articles": [{"id": "article:fixture", "title": "测试报道", "content": "合成新闻，不是事实证据。", "url": "https://example.com/fixture", "source": "测试来源", "published_at": "2026-10-20T00:00:00Z", "attribution": {"publisher": "测试来源"}}], "reasons": [], "exclusive_claims": [], "algorithm": {"score": 0, "importance_tier": 0, "suppression": [], "excluded": ["未进入召回路径"]}, "industry_links": []}],
+        "story": {"id": "story:fixture", "basis": "同一入库事件的测试进展", "progresses": [{"id": "progress:fixture", "event_id": "event:fixture", "title": "测试报道"}]}, "generated_at": "2026-10-20T12:00:00Z", "algorithm_version": "editorial-rules-v1.1.2"},
+      "meta": {"source": "fixture", "as_of": "2026-10-20T12:00:00Z", "version": "1", "completeness": "partial", "warnings": ["合成新闻样例"]}
+    }
+  }
+}
