@@ -1,0 +1,5719 @@
+{
+  "nodes": [
+    {
+      "node_id": "innovative-drugs:discovery",
+      "name": "药物发现与筛选优化",
+      "kind": "activity",
+      "description": "靶点研究、筛选测定与先导优化等早期研究活动。不同药物模态的技术不统一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:assays",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:candidate",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:candidate",
+      "name": "在研候选分子",
+      "kind": "product",
+      "description": "早期研究获得、仍需评价的候选分子或实验化合物。节点存在不代表获批或必然成功。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:candidate",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:preclinical",
+      "name": "临床前研究",
+      "kind": "activity",
+      "description": "包括体外与体内等药理和安全性研究；不是所有项目共用相同动物或试验方案。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:preclinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:in-vitro",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:in-vivo",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:preclinical_data",
+      "name": "临床前研究数据",
+      "kind": "product",
+      "description": "临床前评价获得的研究结果与报告。不是具体药物安全或剂量的结论。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:clinical_trials",
+      "name": "人体临床研究",
+      "kind": "activity",
+      "description": "通过人体研究收集研究问题所需数据。临床试验准入及实施条件另行适用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:clinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:trial-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:clinical_data",
+      "name": "临床研究数据与分析结果",
+      "kind": "product",
+      "description": "临床研究及其处理分析形成的数据资料，不承诺结果支持获批。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:trial-data",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:study-reports",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:regulatory_submission",
+      "name": "注册资料编制与提交",
+      "kind": "activity",
+      "description": "为研究或上市申请整理并提交研究与CMC资料。采用FDA示意接口，不作为全球现行法规清单。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:cmc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:study-reports",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:regulatory_dossier",
+      "name": "研究及CMC申报资料",
+      "kind": "product",
+      "description": "包含相应研究、药物成分及制剂信息的申报资料总类。IND与上市申请的要求不等同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:cmc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:nda-data",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:study-reports",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:regulatory_review",
+      "name": "监管资料审评",
+      "kind": "activity",
+      "description": "对提交资料作审查并决定是否允许相应研究或上市。审评不制造药品，也不保证批准。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:decision",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:cmc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:api_starting_materials",
+      "name": "API起始物料与中间体",
+      "kind": "product",
+      "description": "采用适用原料药路线的起始物料及中间体，不将全部溶剂试剂都视作最终活性结构组成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:starting-material",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:process_development",
+      "name": "药物制造工艺开发",
+      "kind": "activity",
+      "description": "为临床或商业化制造开发与优化适用工艺。开发工作本身不等于生产出合格批次。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-process",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:api_manufacturing",
+      "name": "小分子原料药制造",
+      "kind": "activity",
+      "description": "采用化学合成和适用分离加工路线制造小分子原料药的活动示例。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:chemical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:api_substance",
+      "name": "小分子原料药",
+      "kind": "product",
+      "description": "供后续制剂加工使用的小分子活性成分。本节点不证明特定产品已获批、放行或可直接服用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-formulation",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:cell_culture",
+      "name": "细胞培养或发酵表达",
+      "kind": "activity",
+      "description": "生物原料药制造中采用细胞培养或发酵表达的上游活动总类，不局限所有抗体或所有生物药。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:culture_harvest",
+      "name": "含目标蛋白培养收获物",
+      "kind": "product",
+      "description": "适用培养流程获得的含目标蛋白及相关杂质的收获物或上清液。未推定每个产品均按同一澄清步骤。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:culture-fluid",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:mab_purification",
+      "name": "抗体捕获与精制纯化",
+      "kind": "activity",
+      "description": "本稿采用蛋白A捕获及后续精制的单抗下游示例，其他生物药路线不自动继承。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:capture-polish",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:biologic_substance",
+      "name": "纯化抗体原液",
+      "kind": "product",
+      "description": "适用抗体流程纯化获得、供后续药品加工采用的生物原料药中间产品。纯化不自动证明最终放行或许可。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:capture-polish",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:biologic_manufacturing",
+      "name": "生物原料药制造",
+      "kind": "activity",
+      "description": "包含适用培养、收获及纯化等环节的复合制造阶段。保留高层级公司角色，不据此分配内部各子法人工序。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-biologic",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:chromatography_media",
+      "name": "层析填料与膜介质",
+      "kind": "product",
+      "description": "抗体纯化采用的层析填料及膜。可使用方式和寿命随产品工艺而异，不当然视为一次性消耗品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:media",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:excipients",
+      "name": "制剂辅料",
+      "kind": "product",
+      "description": "与适用活性成分共同用于制剂加工的非活性辅料总类；不提供配方或用量。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-formulation",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:drug_product_manufacturing",
+      "name": "制剂开发加工与包装",
+      "kind": "activity",
+      "description": "将适用活性成分与辅料加工为剂型并包装的制造活动，包含临床用药及适用商业化产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-formulation",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-dp",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:finished_drug",
+      "name": "成品制剂",
+      "kind": "product",
+      "description": "制造加工形成的制剂产品；研究和医疗使用分别须满足相应准入条件，不能以实物制造代替许可。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-production",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:quality_testing",
+      "name": "制造质量检测与控制",
+      "kind": "activity",
+      "description": "对制造物料、中间产品或成品执行适用质量检测与控制的活动；不在本稿设定现行法定标准。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:quality",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:drug_commercialization",
+      "name": "药品推广与渠道销售",
+      "kind": "activity",
+      "description": "已具备相应条件的药品商业推广及渠道销售。药企、经销商和终端承担的任务不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-marketing",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-marketing",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:drug_distribution_services",
+      "name": "药品渠道供给服务",
+      "kind": "service",
+      "description": "通过适用经销渠道向医院、医疗机构或零售药店供给药品的服务总类。没有推定具体供销合同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:medical_application",
+      "name": "医疗用药场景",
+      "kind": "application",
+      "description": "在适用许可和专业医疗判断下的用药场景。本稿不提供具体药品适应症、疗效或治疗选择建议。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:clinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:post-market",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:post_market_monitoring",
+      "name": "上市后安全监测与研究",
+      "kind": "activity",
+      "description": "产品进入市场后的安全报告审查及相应后续研究，不表示临床使用已经结束。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:post-market",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:tiger-postmarket",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-safety",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:discovery_services",
+      "name": "药物发现研究服务",
+      "kind": "service",
+      "description": "以受托研究方式提供药物发现支持。免费方法手册不自动构成企业商业服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:preclinical_services",
+      "name": "临床前评价服务",
+      "kind": "service",
+      "description": "受托提供非临床评价及相应测试的服务。服务商不因此拥有候选药品权益。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-testing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:clinical_services",
+      "name": "临床研究技术服务",
+      "kind": "service",
+      "description": "受托提供适用临床研究及运营技术支持，区别申办方、自有管线和医疗机构职责。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-clinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:tiger-clinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:process_development_services",
+      "name": "制造工艺开发服务",
+      "kind": "service",
+      "description": "为客户项目提供工艺技术开发与优化的服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-process",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:contract_manufacturing_services",
+      "name": "药品受托制造服务",
+      "kind": "service",
+      "description": "为委托方提供适用药物或制剂生产的CDMO服务，不转移或推定最终产品权益。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-chemical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-dp",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:as-biologic",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:clinical_data_services",
+      "name": "临床数据管理与统计服务",
+      "kind": "service",
+      "description": "为客户提供临床数据管理和统计分析的服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:bioanalysis_services",
+      "name": "生物分析与临床样本检测服务",
+      "kind": "service",
+      "description": "为研究提供生物分析或临床试验样本检测，不等同制造批次的全部质量放行检验。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-bioanalysis",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-testing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:pharmacovigilance_services",
+      "name": "临床阶段药物警戒服务",
+      "kind": "service",
+      "description": "本稿采用昭衍上市前临床服务相关的药物警戒披露，不将其改写为已开展全部上市后临床服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-pv",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:post_market_services",
+      "name": "上市后研究服务",
+      "kind": "service",
+      "description": "为客户提供适用上市后研究的受托服务，不保证安全性结论。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-postmarket",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:clinical_data_processing",
+      "name": "临床数据管理与分析",
+      "kind": "activity",
+      "description": "组织、管理及统计分析临床研究数据的活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "innovative-drugs:bioanalysis_activity",
+      "name": "研究样本检测与生物分析",
+      "kind": "activity",
+      "description": "检测临床样本或开展适用生物分析的研究配套活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-bioanalysis",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-testing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:discovery",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:candidate",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:preclinical",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:preclinical_data",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:clinical_trials",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:clinical_data",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:regulatory_submission",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:regulatory_dossier",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:regulatory_review",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:api_starting_materials",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:process_development",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:api_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:api_substance",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:cell_culture",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:culture_harvest",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:mab_purification",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:biologic_substance",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:biologic_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:chromatography_media",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:excipients",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:drug_product_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:finished_drug",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:quality_testing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:drug_commercialization",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:drug_distribution_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:medical_application",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:post_market_monitoring",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:discovery_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:preclinical_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:clinical_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:process_development_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:contract_manufacturing_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:clinical_data_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:bioanalysis_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:pharmacovigilance_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:post_market_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:clinical_data_processing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "node_id": "innovative-drugs:bioanalysis_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:innovative-drugs:research",
+      "industry_id": "innovative-drugs",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "research",
+          "name": "药物发现与研究",
+          "node_ids": [
+            "innovative-drugs:discovery",
+            "innovative-drugs:candidate",
+            "innovative-drugs:preclinical",
+            "innovative-drugs:preclinical_data",
+            "innovative-drugs:clinical_trials",
+            "innovative-drugs:clinical_data"
+          ]
+        },
+        {
+          "group_id": "regulatory",
+          "name": "资料与审评接口",
+          "node_ids": [
+            "innovative-drugs:regulatory_submission",
+            "innovative-drugs:regulatory_dossier",
+            "innovative-drugs:regulatory_review"
+          ]
+        },
+        {
+          "group_id": "small-molecule",
+          "name": "小分子与工艺开发",
+          "node_ids": [
+            "innovative-drugs:api_starting_materials",
+            "innovative-drugs:process_development",
+            "innovative-drugs:api_manufacturing",
+            "innovative-drugs:api_substance"
+          ]
+        },
+        {
+          "group_id": "biologic",
+          "name": "抗体生物制造示例",
+          "node_ids": [
+            "innovative-drugs:biologic_manufacturing",
+            "innovative-drugs:cell_culture",
+            "innovative-drugs:culture_harvest",
+            "innovative-drugs:mab_purification",
+            "innovative-drugs:biologic_substance",
+            "innovative-drugs:chromatography_media"
+          ]
+        },
+        {
+          "group_id": "dose-quality",
+          "name": "制剂与质量",
+          "node_ids": [
+            "innovative-drugs:excipients",
+            "innovative-drugs:drug_product_manufacturing",
+            "innovative-drugs:finished_drug",
+            "innovative-drugs:quality_testing"
+          ]
+        },
+        {
+          "group_id": "cxo",
+          "name": "研究与生产受托服务",
+          "node_ids": [
+            "innovative-drugs:discovery_services",
+            "innovative-drugs:preclinical_services",
+            "innovative-drugs:clinical_services",
+            "innovative-drugs:process_development_services",
+            "innovative-drugs:contract_manufacturing_services",
+            "innovative-drugs:clinical_data_services",
+            "innovative-drugs:bioanalysis_services",
+            "innovative-drugs:pharmacovigilance_services",
+            "innovative-drugs:post_market_services",
+            "innovative-drugs:clinical_data_processing",
+            "innovative-drugs:bioanalysis_activity"
+          ]
+        },
+        {
+          "group_id": "commercial",
+          "name": "渠道应用与持续监测",
+          "node_ids": [
+            "innovative-drugs:drug_commercialization",
+            "innovative-drugs:drug_distribution_services",
+            "innovative-drugs:medical_application",
+            "innovative-drugs:post_market_monitoring"
+          ]
+        }
+      ],
+      "reading_order": [
+        "research",
+        "regulatory",
+        "small-molecule",
+        "biologic",
+        "dose-quality",
+        "cxo",
+        "commercial"
+      ],
+      "relation_ids": [
+        "rel:innovative-drugs:discover-candidate",
+        "rel:innovative-drugs:candidate-evaluation",
+        "rel:innovative-drugs:preclinical-data",
+        "rel:innovative-drugs:clinical-data",
+        "rel:innovative-drugs:submission-preclinical_data",
+        "rel:innovative-drugs:submission-clinical_data",
+        "rel:innovative-drugs:dossier-preparation",
+        "rel:innovative-drugs:dossier-review",
+        "rel:innovative-drugs:discovery-preclinical",
+        "rel:innovative-drugs:preclinical-clinical",
+        "rel:innovative-drugs:api-material",
+        "rel:innovative-drugs:process-support",
+        "rel:innovative-drugs:api-output",
+        "rel:innovative-drugs:culture-harvest",
+        "rel:innovative-drugs:harvest-purification",
+        "rel:innovative-drugs:media-use",
+        "rel:innovative-drugs:antibody-output",
+        "rel:innovative-drugs:biomanufacturing-cell_culture",
+        "rel:innovative-drugs:biomanufacturing-mab_purification",
+        "rel:innovative-drugs:formulate-api_substance",
+        "rel:innovative-drugs:formulate-biologic_substance",
+        "rel:innovative-drugs:formulate-excipients",
+        "rel:innovative-drugs:finished-dose",
+        "rel:innovative-drugs:quality-api_manufacturing",
+        "rel:innovative-drugs:quality-biologic_manufacturing",
+        "rel:innovative-drugs:quality-drug_product_manufacturing",
+        "rel:innovative-drugs:market-product",
+        "rel:innovative-drugs:channel-service",
+        "rel:innovative-drugs:medical-supply",
+        "rel:innovative-drugs:medical-use",
+        "rel:innovative-drugs:postmarket-product",
+        "rel:innovative-drugs:service-discovery_services-discovery",
+        "rel:innovative-drugs:service-preclinical_services-preclinical",
+        "rel:innovative-drugs:service-clinical_services-clinical_trials",
+        "rel:innovative-drugs:service-process_development_services-process_development",
+        "rel:innovative-drugs:service-contract_manufacturing_services-api_manufacturing",
+        "rel:innovative-drugs:service-contract_manufacturing_services-drug_product_manufacturing",
+        "rel:innovative-drugs:service-contract_manufacturing_services-biologic_manufacturing",
+        "rel:innovative-drugs:service-clinical_data_services-clinical_data_processing",
+        "rel:innovative-drugs:service-bioanalysis_services-bioanalysis_activity",
+        "rel:innovative-drugs:service-pharmacovigilance_services-clinical_trials",
+        "rel:innovative-drugs:service-post_market_services-post_market_monitoring",
+        "rel:innovative-drugs:data-processing"
+      ],
+      "note": "阅读分组，不等同于事实边或因果路径；不存UI状态。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:innovative-drugs:discover-candidate",
+      "from_node_id": "innovative-drugs:discovery",
+      "to_node_id": "innovative-drugs:candidate",
+      "kind": "produces",
+      "statement": "发现研究可产出供进一步研究的候选分子。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:candidate",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:candidate-evaluation",
+      "from_node_id": "innovative-drugs:candidate",
+      "to_node_id": "innovative-drugs:preclinical",
+      "kind": "used_for",
+      "statement": "候选分子用于相应临床前评价。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:preclinical-data",
+      "from_node_id": "innovative-drugs:preclinical",
+      "to_node_id": "innovative-drugs:preclinical_data",
+      "kind": "produces",
+      "statement": "临床前研究产出相应研究数据和结果。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:clinical-data",
+      "from_node_id": "innovative-drugs:clinical_trials",
+      "to_node_id": "innovative-drugs:clinical_data",
+      "kind": "produces",
+      "statement": "临床研究收集产生相应研究数据。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:clinical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:trial-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:submission-preclinical_data",
+      "from_node_id": "innovative-drugs:preclinical_data",
+      "to_node_id": "innovative-drugs:regulatory_submission",
+      "kind": "used_for",
+      "statement": "相应研究资料用于适用注册资料编制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:nda-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "FDA上市申请示例；不等于IND与NDA/BLA共用全部内容，也不保证申请成功。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:submission-clinical_data",
+      "from_node_id": "innovative-drugs:clinical_data",
+      "to_node_id": "innovative-drugs:regulatory_submission",
+      "kind": "used_for",
+      "statement": "相应研究资料用于适用注册资料编制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:nda-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "FDA上市申请示例；不等于IND与NDA/BLA共用全部内容，也不保证申请成功。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:dossier-preparation",
+      "from_node_id": "innovative-drugs:regulatory_submission",
+      "to_node_id": "innovative-drugs:regulatory_dossier",
+      "kind": "produces",
+      "statement": "资料编制形成提交的研究及CMC文件包，不是监管机构制造药品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:cmc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:study-reports",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:dossier-review",
+      "from_node_id": "innovative-drugs:regulatory_dossier",
+      "to_node_id": "innovative-drugs:regulatory_review",
+      "kind": "used_for",
+      "statement": "提交资料用于相应审评和是否允许的决定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:decision",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:cmc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:discovery-preclinical",
+      "from_node_id": "innovative-drugs:discovery",
+      "to_node_id": "innovative-drugs:preclinical",
+      "kind": "precedes",
+      "statement": "FDA一般研发阶段示意中的前后顺序，不证明项目必然进入下一阶段。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:stages",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "一般研发阶段示意；IND审查、失败、并行工作与不同药物路线的细节未穷举。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:preclinical-clinical",
+      "from_node_id": "innovative-drugs:preclinical",
+      "to_node_id": "innovative-drugs:clinical_trials",
+      "kind": "precedes",
+      "statement": "FDA一般研发阶段示意中的前后顺序，不证明项目必然进入下一阶段。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:stages",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "一般研发阶段示意；IND审查、失败、并行工作与不同药物路线的细节未穷举。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:api-material",
+      "from_node_id": "innovative-drugs:api_starting_materials",
+      "to_node_id": "innovative-drugs:api_manufacturing",
+      "kind": "input_to",
+      "statement": "适用起始物料与中间体投入原料药制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:starting-material",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:process-support",
+      "from_node_id": "innovative-drugs:process_development",
+      "to_node_id": "innovative-drugs:api_manufacturing",
+      "kind": "supports",
+      "statement": "适用工艺开发支持原料药制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:api-output",
+      "from_node_id": "innovative-drugs:api_manufacturing",
+      "to_node_id": "innovative-drugs:api_substance",
+      "kind": "produces",
+      "statement": "小分子原料药制造活动产出相应原料药。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:chemical",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:culture-harvest",
+      "from_node_id": "innovative-drugs:cell_culture",
+      "to_node_id": "innovative-drugs:culture_harvest",
+      "kind": "produces",
+      "statement": "适用培养表达流程获得含目标蛋白的收获物。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:culture-fluid",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:harvest-purification",
+      "from_node_id": "innovative-drugs:culture_harvest",
+      "to_node_id": "innovative-drugs:mab_purification",
+      "kind": "input_to",
+      "statement": "适用含抗体培养收获物投入抗体纯化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:culture-fluid",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:capture-polish",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:media-use",
+      "from_node_id": "innovative-drugs:chromatography_media",
+      "to_node_id": "innovative-drugs:mab_purification",
+      "kind": "used_for",
+      "statement": "层析填料与膜用于相应抗体纯化，不断言一次性消耗。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:media",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:capture-polish",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:antibody-output",
+      "from_node_id": "innovative-drugs:mab_purification",
+      "to_node_id": "innovative-drugs:biologic_substance",
+      "kind": "produces",
+      "statement": "适用下游捕获精制过程获得纯化抗体原液。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:capture-polish",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:biomanufacturing-cell_culture",
+      "from_node_id": "innovative-drugs:cell_culture",
+      "to_node_id": "innovative-drugs:biologic_manufacturing",
+      "kind": "part_of",
+      "statement": "相应培养或纯化活动是所限定生物原料药制造复合阶段的组成环节。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "技术阶段组成，不是药物类别层级或公司内部法人归属。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:biomanufacturing-mab_purification",
+      "from_node_id": "innovative-drugs:mab_purification",
+      "to_node_id": "innovative-drugs:biologic_manufacturing",
+      "kind": "part_of",
+      "statement": "相应培养或纯化活动是所限定生物原料药制造复合阶段的组成环节。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:bioprocess",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "技术阶段组成，不是药物类别层级或公司内部法人归属。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:formulate-api_substance",
+      "from_node_id": "innovative-drugs:api_substance",
+      "to_node_id": "innovative-drugs:drug_product_manufacturing",
+      "kind": "input_to",
+      "statement": "适用活性成分或辅料投入相应制剂加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-formulation",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "按产品工艺分别采用；不表示每种剂型可交换原料或适用所有抗体。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:formulate-biologic_substance",
+      "from_node_id": "innovative-drugs:biologic_substance",
+      "to_node_id": "innovative-drugs:drug_product_manufacturing",
+      "kind": "input_to",
+      "statement": "适用活性成分或辅料投入相应制剂加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "按产品工艺分别采用；不表示每种剂型可交换原料或适用所有抗体。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:formulate-excipients",
+      "from_node_id": "innovative-drugs:excipients",
+      "to_node_id": "innovative-drugs:drug_product_manufacturing",
+      "kind": "input_to",
+      "statement": "适用活性成分或辅料投入相应制剂加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-formulation",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "按产品工艺分别采用；不表示每种剂型可交换原料或适用所有抗体。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:finished-dose",
+      "from_node_id": "innovative-drugs:drug_product_manufacturing",
+      "to_node_id": "innovative-drugs:finished_drug",
+      "kind": "produces",
+      "statement": "制剂加工和包装形成成品制剂；许可和质量放行是独立条件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-definition",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-production",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:quality-api_manufacturing",
+      "from_node_id": "innovative-drugs:quality_testing",
+      "to_node_id": "innovative-drugs:api_manufacturing",
+      "kind": "supports",
+      "statement": "适用质量检测和控制支持相应制造阶段。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:quality",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅一般质量控制接口，不将单一公司质量体系转成全行业现行规则。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:quality-biologic_manufacturing",
+      "from_node_id": "innovative-drugs:quality_testing",
+      "to_node_id": "innovative-drugs:biologic_manufacturing",
+      "kind": "supports",
+      "statement": "适用质量检测和控制支持相应制造阶段。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:quality",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅一般质量控制接口，不将单一公司质量体系转成全行业现行规则。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:quality-drug_product_manufacturing",
+      "from_node_id": "innovative-drugs:quality_testing",
+      "to_node_id": "innovative-drugs:drug_product_manufacturing",
+      "kind": "supports",
+      "statement": "适用质量检测和控制支持相应制造阶段。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:quality",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hr-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅一般质量控制接口，不将单一公司质量体系转成全行业现行规则。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:market-product",
+      "from_node_id": "innovative-drugs:finished_drug",
+      "to_node_id": "innovative-drugs:drug_commercialization",
+      "kind": "used_for",
+      "statement": "满足适用条件的成品药品用于推广及渠道销售。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-production",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅适用可商业化产品；候选分子或临床批次不能由本边自动取得上市销售资格。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:channel-service",
+      "from_node_id": "innovative-drugs:drug_commercialization",
+      "to_node_id": "innovative-drugs:drug_distribution_services",
+      "kind": "produces",
+      "statement": "相应药品销售和经销渠道组织交付渠道供给服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-marketing",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "服务可能由药企与经销商分别实施；没有主体间确定交易边。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:medical-supply",
+      "from_node_id": "innovative-drugs:drug_distribution_services",
+      "to_node_id": "innovative-drugs:medical_application",
+      "kind": "used_for",
+      "statement": "适用药品渠道服务支持医院等终端的用药场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "医疗使用仍须具体产品许可与专业判断；不推定给药或疗效。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:medical-use",
+      "from_node_id": "innovative-drugs:finished_drug",
+      "to_node_id": "innovative-drugs:medical_application",
+      "kind": "used_for",
+      "statement": "具有相应适用条件的成品制剂用于医疗用药场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-channel",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "不构成针对具体药物、疾病或个人的医疗建议。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:postmarket-product",
+      "from_node_id": "innovative-drugs:finished_drug",
+      "to_node_id": "innovative-drugs:post_market_monitoring",
+      "kind": "used_for",
+      "statement": "已进入市场的产品是上市后安全监测和研究的对象。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:post-market",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-discovery_services-discovery",
+      "from_node_id": "innovative-drugs:discovery_services",
+      "to_node_id": "innovative-drugs:discovery",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-preclinical_services-preclinical",
+      "from_node_id": "innovative-drugs:preclinical_services",
+      "to_node_id": "innovative-drugs:preclinical",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-clinical_services-clinical_trials",
+      "from_node_id": "innovative-drugs:clinical_services",
+      "to_node_id": "innovative-drugs:clinical_trials",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-process_development_services-process_development",
+      "from_node_id": "innovative-drugs:process_development_services",
+      "to_node_id": "innovative-drugs:process_development",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-process",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-contract_manufacturing_services-api_manufacturing",
+      "from_node_id": "innovative-drugs:contract_manufacturing_services",
+      "to_node_id": "innovative-drugs:api_manufacturing",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-chemical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-contract_manufacturing_services-drug_product_manufacturing",
+      "from_node_id": "innovative-drugs:contract_manufacturing_services",
+      "to_node_id": "innovative-drugs:drug_product_manufacturing",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-dp",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-contract_manufacturing_services-biologic_manufacturing",
+      "from_node_id": "innovative-drugs:contract_manufacturing_services",
+      "to_node_id": "innovative-drugs:biologic_manufacturing",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-biologic",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-clinical_data_services-clinical_data_processing",
+      "from_node_id": "innovative-drugs:clinical_data_services",
+      "to_node_id": "innovative-drugs:clinical_data_processing",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-bioanalysis_services-bioanalysis_activity",
+      "from_node_id": "innovative-drugs:bioanalysis_services",
+      "to_node_id": "innovative-drugs:bioanalysis_activity",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-bioanalysis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-pharmacovigilance_services-clinical_trials",
+      "from_node_id": "innovative-drugs:pharmacovigilance_services",
+      "to_node_id": "innovative-drugs:clinical_trials",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-pv",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:service-post_market_services-post_market_monitoring",
+      "from_node_id": "innovative-drugs:post_market_services",
+      "to_node_id": "innovative-drugs:post_market_monitoring",
+      "kind": "supports",
+      "statement": "相应受托服务支持所限定研究、制造或监测活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-postmarket",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只表功能接口；服务商不因此获得客户管线、药品许可或最终权益。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:innovative-drugs:data-processing",
+      "from_node_id": "innovative-drugs:clinical_data",
+      "to_node_id": "innovative-drugs:clinical_data_processing",
+      "kind": "used_for",
+      "statement": "临床研究数据用于管理及统计分析。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性功能或物料关系；不是特定供货合同、许可成功、治疗效果或已发生新闻影响。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company:innovative-drugs:hengrui",
+      "name": "江苏恒瑞医药股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hengrui-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:junshi",
+      "name": "上海君实生物医药科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:junshi-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "name": "无锡药明康德新药开发股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wuxi-apptec-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:asymchem",
+      "name": "凯莱英医药集团（天津）股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:asymchem-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:joinn",
+      "name": "北京昭衍新药研究中心股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:tigermed",
+      "name": "杭州泰格医药科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tigermed-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "company_id": "company:innovative-drugs:hengrui",
+      "symbol": "SH:600276",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hengrui-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:hengrui-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:junshi",
+      "symbol": "SH:688180",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:junshi-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:junshi-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "symbol": "SH:603259",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wuxi-apptec-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:wuxi-apptec-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:asymchem",
+      "symbol": "SZ:002821",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:asymchem-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:asymchem-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:joinn",
+      "symbol": "SH:603127",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:joinn-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:innovative-drugs:tigermed",
+      "symbol": "SZ:300347",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tigermed-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:tigermed-security",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:innovative-drugs:tiger-exchange",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:innovative-drugs:hr-discovery",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:discovery",
+      "role": "创新药早期机制与靶点研究",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:hr-preclinical",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:preclinical",
+      "role": "候选分子临床前研究",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:hr-clinical_trials",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:clinical_trials",
+      "role": "临床方案设计与申办责任",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:hr-drug_commercialization",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:drug_commercialization",
+      "role": "国内分销模式药品销售",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:hr-quality_testing",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:quality_testing",
+      "role": "制造中间产品和半成品检测",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:hr-post_market_monitoring",
+      "company_id": "company:innovative-drugs:hengrui",
+      "node_id": "innovative-drugs:post_market_monitoring",
+      "role": "上市药品相关药物警戒管理",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。药企创新与其他药品并营，未将整体数据视为创新药独占产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:hr-safety",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:js-discovery",
+      "company_id": "company:innovative-drugs:junshi",
+      "node_id": "innovative-drugs:discovery",
+      "role": "抗体候选物筛选评价",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。在研项目与商业批次分开；无具体药品当前获批范围或疗效断言。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:js-preclinical",
+      "company_id": "company:innovative-drugs:junshi",
+      "node_id": "innovative-drugs:preclinical",
+      "role": "候选分子临床前综合评价",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。在研项目与商业批次分开；无具体药品当前获批范围或疗效断言。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:js-clinical_trials",
+      "company_id": "company:innovative-drugs:junshi",
+      "node_id": "innovative-drugs:clinical_trials",
+      "role": "临床试验申办与方案设计",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。在研项目与商业批次分开；无具体药品当前获批范围或疗效断言。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:js-drug_product_manufacturing",
+      "company_id": "company:innovative-drugs:junshi",
+      "node_id": "innovative-drugs:drug_product_manufacturing",
+      "role": "披露抗体注射液商业批次生产",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。在研项目与商业批次分开；无具体药品当前获批范围或疗效断言。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-production",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:js-drug_commercialization",
+      "company_id": "company:innovative-drugs:junshi",
+      "node_id": "innovative-drugs:drug_commercialization",
+      "role": "自营推广与经销商渠道销售",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。在研项目与商业批次分开；无具体药品当前获批范围或疗效断言。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:js-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:wx-discovery_services",
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "node_id": "innovative-drugs:discovery_services",
+      "role": "化学药发现研究服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。只取WuXi Chemistry及Testing披露；不是药明生物，不采用已剥离业务作为现存服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:wx-preclinical_services",
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "node_id": "innovative-drugs:preclinical_services",
+      "role": "药物评价与测试服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。只取WuXi Chemistry及Testing披露；不是药明生物，不采用已剥离业务作为现存服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-testing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:wx-process_development_services",
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "node_id": "innovative-drugs:process_development_services",
+      "role": "临床前到商业化阶段开发服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。只取WuXi Chemistry及Testing披露；不是药明生物，不采用已剥离业务作为现存服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:wx-contract_manufacturing_services",
+      "company_id": "company:innovative-drugs:wuxi-apptec",
+      "node_id": "innovative-drugs:contract_manufacturing_services",
+      "role": "化学药合同生产服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。只取WuXi Chemistry及Testing披露；不是药明生物，不采用已剥离业务作为现存服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:wx-discovery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:as-process_development_services",
+      "company_id": "company:innovative-drugs:asymchem",
+      "node_id": "innovative-drugs:process_development_services",
+      "role": "制药工艺技术开发",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。明确已投产抗体车间与计划ADC车间不同；不以未来交付或中标作实际能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-process",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:as-contract_manufacturing_services",
+      "company_id": "company:innovative-drugs:asymchem",
+      "node_id": "innovative-drugs:contract_manufacturing_services",
+      "role": "小分子及适用生物药CDMO服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。明确已投产抗体车间与计划ADC车间不同；不以未来交付或中标作实际能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-chemical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:as-biologic_manufacturing",
+      "company_id": "company:innovative-drugs:asymchem",
+      "node_id": "innovative-drugs:biologic_manufacturing",
+      "role": "已投产抗体车间制造业务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。明确已投产抗体车间与计划ADC车间不同；不以未来交付或中标作实际能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-biologic",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:as-drug_product_manufacturing",
+      "company_id": "company:innovative-drugs:asymchem",
+      "node_id": "innovative-drugs:drug_product_manufacturing",
+      "role": "制剂临床项目生产交付",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。明确已投产抗体车间与计划ADC车间不同；不以未来交付或中标作实际能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-dp",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:as-clinical_services",
+      "company_id": "company:innovative-drugs:asymchem",
+      "node_id": "innovative-drugs:clinical_services",
+      "role": "临床研究受托服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。明确已投产抗体车间与计划ADC车间不同；不以未来交付或中标作实际能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:as-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:joinn-preclinical_services",
+      "company_id": "company:innovative-drugs:joinn",
+      "node_id": "innovative-drugs:preclinical_services",
+      "role": "非临床核心评价服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。仅限定上市前临床相关警戒；没有从“上市前”推“上市后临床服务”。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-preclinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:joinn-clinical_services",
+      "company_id": "company:innovative-drugs:joinn",
+      "node_id": "innovative-drugs:clinical_services",
+      "role": "早期临床研究服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。仅限定上市前临床相关警戒；没有从“上市前”推“上市后临床服务”。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:joinn-bioanalysis_services",
+      "company_id": "company:innovative-drugs:joinn",
+      "node_id": "innovative-drugs:bioanalysis_services",
+      "role": "临床试验样本检测",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。仅限定上市前临床相关警戒；没有从“上市前”推“上市后临床服务”。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-bioanalysis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:joinn-pharmacovigilance_services",
+      "company_id": "company:innovative-drugs:joinn",
+      "node_id": "innovative-drugs:pharmacovigilance_services",
+      "role": "上市前临床相关药物警戒",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接实施全部工序，不转移关联集团或客户的药品权益。仅限定上市前临床相关警戒；没有从“上市前”推“上市后临床服务”。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:joinn-pv",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:tiger-clinical_services",
+      "company_id": "company:innovative-drugs:tigermed",
+      "node_id": "innovative-drugs:clinical_services",
+      "role": "临床试验技术服务",
+      "scope": "2026年半年报合并业务口径；不是2025年报或下半年预测；不推定母法人独立执行各子公司任务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-clinical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:tiger-clinical_data_services",
+      "company_id": "company:innovative-drugs:tigermed",
+      "node_id": "innovative-drugs:clinical_data_services",
+      "role": "数据管理与统计分析",
+      "scope": "2026年半年报合并业务口径；不是2025年报或下半年预测；不推定母法人独立执行各子公司任务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-data",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:tiger-bioanalysis_services",
+      "company_id": "company:innovative-drugs:tigermed",
+      "node_id": "innovative-drugs:bioanalysis_services",
+      "role": "研发及实验室检测服务",
+      "scope": "2026年半年报合并业务口径；不是2025年报或下半年预测；不推定母法人独立执行各子公司任务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-lab",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:innovative-drugs:tiger-post_market_services",
+      "company_id": "company:innovative-drugs:tigermed",
+      "node_id": "innovative-drugs:post_market_services",
+      "role": "药品上市后研究服务",
+      "scope": "2026年半年报合并业务口径；不是2025年报或下半年预测；不推定母法人独立执行各子公司任务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:innovative-drugs:tiger-postmarket",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "innovative-drugs-notebook:fda-process",
+      "source_version": "sha256:eff5d02708d597b28b4d456344e9d38876706a6a5b3a9f753020450f1c2c4bac",
+      "title": "The Drug Development Process",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/learn-about-drug-and-device-approvals/drug-development-process",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:47:57.911072+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": "page dated 2018; generic stages only",
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-step1",
+      "source_version": "sha256:a15fa6b57939b3e0c9ffc918a27c66dd2c5e937312d17a27b9b32f91506206e1",
+      "title": "Step 1: Discovery and Development",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/drug-development-process/step-1-discovery-and-development",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:47:59.042640+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-step2",
+      "source_version": "sha256:c9a2384c5d76f64fcf3df9cb0c9250659e3819bc686ff4f4c561778cda8590d9",
+      "title": "Step 2: Preclinical Research",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/drug-development-process/step-2-preclinical-research",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:48:00.022876+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-step3",
+      "source_version": "sha256:af64b8d26701047f05b671645c52e1d786c775efb8a63b89ba3d07818de6bb40",
+      "title": "Step 3: Clinical Research",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/drug-development-process/step-3-clinical-research",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:48:00.543344+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-step4",
+      "source_version": "sha256:516f60ae65ff77ca8bb4a85329677d7994d799242ef6c3f2351e98a9a2301522",
+      "title": "Step 4: FDA Drug Review",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/drug-development-process/step-4-fda-drug-review",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:48:01.098629+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-step5",
+      "source_version": "sha256:77e55a880bf6adbb074ce77aa187da54b0c3504e5c47d965ffc2b5d4a38db9b8",
+      "title": "Step 5: FDA Post-Market Drug Safety Monitoring",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/patients/drug-development-process/step-5-fda-post-market-drug-safety-monitoring",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:48:01.628491+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_process_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:fda-cmc",
+      "source_version": "sha256:594451989199cb506b2a9e592f3ad72ad350891d5946cee846887023dd76c60e",
+      "title": "IND Applications for Clinical Investigations: Chemistry, Manufacturing, and Control (CMC) Information",
+      "publisher": "U.S. FDA",
+      "url": "https://www.fda.gov/drugs/investigational-new-drug-application-ind/ind-applications-clinical-investigations-chemistry-manufacturing-and-control-cmc-information",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:56:55.885588+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_technical_explanation",
+      "reporting_period": "technical dossier categories only; no current-law conclusion",
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:q7a",
+      "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83",
+      "title": "Q7A Good Manufacturing Practice Guidance for Active Pharmaceutical Ingredients",
+      "publisher": "U.S. FDA / ICH",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/q7a-good-manufacturing-practice-guidance-active-pharmaceutical-ingredients",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:47:59.406637+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "historical_technical_guidance",
+      "reporting_period": "August 2001; selected material/process functions only",
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:agm",
+      "source_version": "sha256:fba79af8c3bce6eb084536dbba9f0f75e18b2aee09ecab068040b31bfa12a73b",
+      "title": "Assay Guidance Manual eBook",
+      "publisher": "NIH NCATS",
+      "url": "https://ncats.nih.gov/research/research-resources/agm/agm-ebook",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:47:58.040483+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_methods_resource",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:cytiva",
+      "source_version": "sha256:38f910dd1361dc2ebbd2fe69b77be3b8ee53c791329a3dfa42a1ce24537275e2",
+      "title": "Purification of monoclonal antibodies using modern chromatography media and membranes",
+      "publisher": "GE Healthcare; archived on Cytiva CDN",
+      "url": "https://cdn.cytivalifesciences.com/api/public/content/digi-17015-pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:49:49.660250+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "technical_process_white_paper",
+      "reporting_period": "historical GE-branded technical paper; no current catalogue/company-ownership claim",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "title": "江苏恒瑞医药股份有限公司2025年年度报告摘要",
+      "publisher": "江苏恒瑞医药股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-26/1225032582.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:51:51.327578+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "title": "上海君实生物医药科技股份有限公司2025年年度报告摘要（Eastmoney附件镜像）",
+      "publisher": "上海君实生物医药科技股份有限公司",
+      "url": "https://pdf.dfcfw.com/pdf/H2_AN202603131820550803_1.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:51:51.303523+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "issuer_report_pdf_bytes_via_public_mirror",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "title": "无锡药明康德新药开发股份有限公司2025年年度报告",
+      "publisher": "无锡药明康德新药开发股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-24/1225025225.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:51:51.777308+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "title": "凯莱英医药集团（天津）股份有限公司2025年年度报告摘要",
+      "publisher": "凯莱英医药集团（天津）股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225053958.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:51:51.595929+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "title": "北京昭衍新药研究中心股份有限公司2025年年度报告",
+      "publisher": "北京昭衍新药研究中心股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225054470.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:52:48.531844+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "title": "杭州泰格医药科技股份有限公司2026年半年度报告",
+      "publisher": "杭州泰格医药科技股份有限公司",
+      "url": "https://www.tigermedgrp.com/files/2989264f62ec5e6e0345e4150471ab65.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:52:51.383738+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "semiannual_report",
+      "reporting_period": "2026 H1",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "capture_note": "检索概述被2025查询误导；实际封面和正文是2026半年报，采用真实报告期。",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e:innovative-drugs:stages",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-process",
+      "source_version": "sha256:eff5d02708d597b28b4d456344e9d38876706a6a5b3a9f753020450f1c2c4bac",
+      "locator": "Five-stage overview; stage ordering from actual page, not a concatenated quotation",
+      "excerpt": "Discovery and Development"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:candidate",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step1",
+      "source_version": "sha256:a15fa6b57939b3e0c9ffc918a27c66dd2c5e937312d17a27b9b32f91506206e1",
+      "locator": "Discovery; potential only, no probability or promise of success",
+      "excerpt": "thousands of compounds may be potential candidates for development as a medical treatment"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:preclinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step2",
+      "source_version": "sha256:c9a2384c5d76f64fcf3df9cb0c9250659e3819bc686ff4f4c561778cda8590d9",
+      "locator": "Preclinical research; information produced, no dosing advice adopted",
+      "excerpt": "provide detailed information on dosing and toxicity levels"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:in-vitro",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step2",
+      "source_version": "sha256:c9a2384c5d76f64fcf3df9cb0c9250659e3819bc686ff4f4c561778cda8590d9",
+      "locator": "Types of preclinical research; not all research requires the same animal route",
+      "excerpt": "In Vitro"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:in-vivo",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step2",
+      "source_version": "sha256:c9a2384c5d76f64fcf3df9cb0c9250659e3819bc686ff4f4c561778cda8590d9",
+      "locator": "Types of preclinical research",
+      "excerpt": "In Vivo"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step3",
+      "source_version": "sha256:af64b8d26701047f05b671645c52e1d786c775efb8a63b89ba3d07818de6bb40",
+      "locator": "Clinical Research introduction",
+      "excerpt": "“Clinical research” refers to studies, or trials, that are done in people."
+    },
+    {
+      "evidence_id": "e:innovative-drugs:trial-data",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step3",
+      "source_version": "sha256:af64b8d26701047f05b671645c52e1d786c775efb8a63b89ba3d07818de6bb40",
+      "locator": "Designing clinical trials; source describes protocol and data collection",
+      "excerpt": "what data will be collected"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:nda-data",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step4",
+      "source_version": "sha256:516f60ae65ff77ca8bb4a85329677d7994d799242ef6c3f2351e98a9a2301522",
+      "locator": "New Drug Application; selected dossier interface, not a universal global requirement",
+      "excerpt": "from preclinical data to Phase 3 trial data"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:study-reports",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step4",
+      "source_version": "sha256:516f60ae65ff77ca8bb4a85329677d7994d799242ef6c3f2351e98a9a2301522",
+      "locator": "New Drug Application; no list of current legal obligations adopted",
+      "excerpt": "reports on all studies, data, and analyses"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:decision",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step4",
+      "source_version": "sha256:516f60ae65ff77ca8bb4a85329677d7994d799242ef6c3f2351e98a9a2301522",
+      "locator": "FDA review introduction; decision is not physical drug manufacture",
+      "excerpt": "approve or not to approve it"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:post-market",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-step5",
+      "source_version": "sha256:77e55a880bf6adbb074ce77aa187da54b0c3504e5c47d965ffc2b5d4a38db9b8",
+      "locator": "Post-market introduction; no specific product risk claim adopted",
+      "excerpt": "FDA reviews reports of problems with prescription and over-the-counter drugs"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:cmc",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:fda-cmc",
+      "source_version": "sha256:594451989199cb506b2a9e592f3ad72ad350891d5946cee846887023dd76c60e",
+      "locator": "Contents; dossier category interface only",
+      "excerpt": "Chemistry, Manufacturing, and Control information for: (1) drug substance; (2) drug product"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:chemical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:q7a",
+      "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83",
+      "locator": "Scope; one API manufacturing route, not all APIs",
+      "excerpt": "manufactured by chemical synthesis"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:starting-material",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:q7a",
+      "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83",
+      "locator": "Scope; definition includes incorporation as a significant structural fragment",
+      "excerpt": "API starting material"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:bioprocess",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:q7a",
+      "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83",
+      "locator": "Section XVIII, General; manufacturing sequence only",
+      "excerpt": "cultivation of cells or extraction and purification of material from living organisms"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:quality",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:q7a",
+      "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83",
+      "locator": "Scope of manufacturing; not current legal certification",
+      "excerpt": "quality control"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:assays",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:agm",
+      "source_version": "sha256:fba79af8c3bce6eb084536dbba9f0f75e18b2aee09ecab068040b31bfa12a73b",
+      "locator": "AGM intended development use; free methods resource, not a commercial CRO contract",
+      "excerpt": "high-throughput screening, lead optimization"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:culture-fluid",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:cytiva",
+      "source_version": "sha256:38f910dd1361dc2ebbd2fe69b77be3b8ee53c791329a3dfa42a1ce24537275e2",
+      "locator": "PDF page 3; Introduction; supernatant and impurities described in surrounding paragraph",
+      "excerpt": "cell culture supernatant"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:capture-polish",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:cytiva",
+      "source_version": "sha256:38f910dd1361dc2ebbd2fe69b77be3b8ee53c791329a3dfa42a1ce24537275e2",
+      "locator": "PDF page 3; Introduction; MAb purification platform example, not all biologics",
+      "excerpt": "protein A-based capture step followed by one or two polishing steps"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:media",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:cytiva",
+      "source_version": "sha256:38f910dd1361dc2ebbd2fe69b77be3b8ee53c791329a3dfa42a1ce24537275e2",
+      "locator": "PDF page 3; Introduction; purification materials, not necessarily one-use consumables",
+      "excerpt": "chromatography media (resins) and membranes"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hengrui-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "江苏恒瑞医药股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:junshi-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "上海君实生物医药科技股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wuxi-apptec-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "无锡药明康德新药开发股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:asymchem-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "凯莱英医药集团（天津）股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "北京昭衍新药研究中心股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tigermed-name",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 1; cover / legal-name disclosure",
+      "excerpt": "杭州泰格医药科技股份有限公司"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hengrui-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 2; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "A股 上海证券交易所 恒瑞医药 600276"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:junshi-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 2; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "A股 上海证券交易所科创板 君实生物 688180"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wuxi-apptec-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 6; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "A股 上交所 药明康德 603259"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:asymchem-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "股票简称 凯莱英 股票代码 002821.SZ/06821.HK\n股票上市交易所 深圳证券交易所"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 6; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "A股 上海证券交易所 昭衍新药 603127"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tigermed-security",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 10; 公司股票简况 / 公司简介; actual code and exchange table",
+      "excerpt": "股票简称 泰格医药 股票代码 300347"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tiger-exchange",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 10; 公司简介; separate contiguous field, no skipped-field quotation",
+      "excerpt": "股票上市证券交易所 深圳证券交易所"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-discovery",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 6; 研发模式; discovery function",
+      "excerpt": "对疾病发病机理与靶点作用机制的深入研究"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-preclinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 6; 研发模式; candidate versus marketed product separated",
+      "excerpt": "在确定临床候选化合物后，公司会对其进行临床前研究。"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 7; 研发模式; sponsor role, not every site activity performed by parent",
+      "excerpt": "公司的职责包括设计临床方案"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-marketing",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 8; 销售模式; no volume/price adopted",
+      "excerpt": "公司在国内主要通过分销模式获得药品销售收入"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-quality",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 7; 生产模式; actual manufacturing quality activity",
+      "excerpt": "对中间产品、半成品进行质量检测"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:hr-safety",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:hengrui",
+      "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378",
+      "locator": "PDF page 7; 生产模式; marketed-product safety management context",
+      "excerpt": "公司还建立了完善的药物警\n戒系统"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-discovery",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 15; 研发模式; antibody discovery example",
+      "excerpt": "进行靶点筛选并进行抗体候选物的评估和选择"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-preclinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 15; 研发模式",
+      "excerpt": "公司对候选药物分子进行临床前综合评估"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 15; 研发模式; sponsor role",
+      "excerpt": "公司作为申办方，主要负责设计临床试验方案"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-production",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 3; 主营业务; only a disclosed antibody injection manufacturing example, not a treatment recommendation",
+      "excerpt": "负责生产商业化批次的特瑞普利单抗注射液"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-marketing",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 16; 销售模式",
+      "excerpt": "主要采用自\n营团队进行商业化推广"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:js-channel",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:junshi",
+      "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7",
+      "locator": "PDF page 16; 销售模式; distributor task, not issuer-owned logistics claim",
+      "excerpt": "再由经销商将药品在授权区域内配送至医院或者零售药店"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wx-definition",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 5; CDMO glossary definition; structural interface only, not company role proof",
+      "excerpt": "化学或生物合成的原料药生产、中\n间体制造、制剂生产（如粉剂、针剂）以及包装"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wx-formulation",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 5; API glossary definition; general formulation interface, no specific formulation recipe",
+      "excerpt": "一般再经过添加辅料、加工，制成可直接使用的制\n剂"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wx-discovery",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 119; 收入主要业务类型, WuXi Chemistry; actual continuing business scope",
+      "excerpt": "提供从化学药物的发现研究，到临床前和临床阶段开发，\n到商业化生产的一体化、端到端的服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:wx-testing",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:wuxi-apptec",
+      "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2",
+      "locator": "PDF page 119; 收入主要业务类型, WuXi Testing; not disposed clinical units",
+      "excerpt": "整合药学，药理学，药性评价，毒理学和生\n物分析"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-business",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 2; 主要业务; CDMO context",
+      "excerpt": "致力于全球制药工艺的技术创新和商业化应用"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-chemical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 2; 小分子CDMO服务; function only, no current regulation or volume claim repeated",
+      "excerpt": "公司小分子 CDMO 业务聚焦在法规监管要求严、供货量级大的产品阶段"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-process",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 2; 小分子CDMO服务; technical development service scope",
+      "excerpt": "更多新技术应用到公司所服务的临床和商业化项目中"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-biologic",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 3; 生物大分子CDMO; contrast with separate planned ADC workshop, which is excluded",
+      "excerpt": "奉贤一期商业化抗体车间实现投产"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-dp",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 3; 制剂CDMO; actual delivery, not current projected facility commissioning",
+      "excerpt": "多个口服纳米晶项目顺利实现\n临床交付"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:as-clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:asymchem",
+      "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d",
+      "locator": "PDF page 3; 临床CRO业务; no count or customer ownership adopted",
+      "excerpt": "公司正在进行的临床研究项目"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-preclinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 10; 主要业务; not only an industry overview or certification",
+      "excerpt": "药物非临床服务为公司的核心业务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 11; 主要业务; do not infer every confirmatory trial service",
+      "excerpt": "药物临床服务主要涵盖药物早期临床试验服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-bioanalysis",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 23; 药物临床服务方面; actual service offering",
+      "excerpt": "提供一站式的临床试验样本检测业务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:joinn-pv",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:joinn",
+      "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4",
+      "locator": "PDF page 192; 分部信息; pre-approval context, not evidence of post-market clinical service",
+      "excerpt": "主要提供药品上市前的临床服务以及药物警戒服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tiger-clinical",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 16; 主营业务经营情况; in current company activity section, not a ranking claim",
+      "excerpt": "临床试验技术服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tiger-data",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 15; 报告期业务; consolidated scope",
+      "excerpt": "主要为全球客户提供全天候数据管理和统计分析服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tiger-lab",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 18; 临床试验相关及实验室服务; consolidated laboratory scope",
+      "excerpt": "提供从药物发现到临床前研发及实验室检测的一体化服务"
+    },
+    {
+      "evidence_id": "e:innovative-drugs:tiger-postmarket",
+      "revision": 1,
+      "source_id": "innovative-drugs-notebook:tigermed",
+      "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f",
+      "locator": "PDF page 15; 报告期业务; only drug research portion adopted, no specific safety outcome promised",
+      "excerpt": "提供从临床前咨询、药品和器械临床试验到上市后研究的一站式解决方案"
+    }
+  ],
+  "releases": [
+    {
+      "release_id": "innovative-drugs-notebook-research-20261020-v1",
+      "industry_id": "innovative-drugs",
+      "schema_version": "curated-chain-proposal-0.2",
+      "status": "proposed",
+      "published_at": null,
+      "parent_release_id": null,
+      "change_summary": "创新药主要模块研究草稿：研发数据与审评、小分子及抗体制造示例、制剂质量、受托服务、渠道与安全监测；原文可定位，非穷举、非用户最终认可或正式发布。",
+      "record_refs": [
+        {
+          "object_type": "industry",
+          "id": "innovative-drugs",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:candidate",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:preclinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:clinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:regulatory_submission",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:regulatory_dossier",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:regulatory_review",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:api_starting_materials",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:process_development",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:api_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:api_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:cell_culture",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:culture_harvest",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:mab_purification",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:biologic_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:biologic_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:chromatography_media",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:excipients",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:finished_drug",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:quality_testing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:drug_commercialization",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:drug_distribution_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:medical_application",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:post_market_monitoring",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:discovery_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:preclinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:clinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:process_development_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:contract_manufacturing_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:clinical_data_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:bioanalysis_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:pharmacovigilance_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:post_market_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:clinical_data_processing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "innovative-drugs:bioanalysis_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:discover-candidate",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:candidate-evaluation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:preclinical-data",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:clinical-data",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:submission-preclinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:submission-clinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:dossier-preparation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:dossier-review",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:discovery-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:preclinical-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:api-material",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:process-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:api-output",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:culture-harvest",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:harvest-purification",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:media-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:antibody-output",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:biomanufacturing-cell_culture",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:biomanufacturing-mab_purification",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:formulate-api_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:formulate-biologic_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:formulate-excipients",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:finished-dose",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:quality-api_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:quality-biologic_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:quality-drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:market-product",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:channel-service",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:medical-supply",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:medical-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:postmarket-product",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-discovery_services-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-preclinical_services-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-clinical_services-clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-process_development_services-process_development",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-contract_manufacturing_services-api_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-contract_manufacturing_services-drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-contract_manufacturing_services-biologic_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-clinical_data_services-clinical_data_processing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-bioanalysis_services-bioanalysis_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-pharmacovigilance_services-clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:service-post_market_services-post_market_monitoring",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:innovative-drugs:data-processing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-drug_commercialization",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-quality_testing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:hr-post_market_monitoring",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:js-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:js-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:js-clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:js-drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:js-drug_commercialization",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:wx-discovery_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:wx-preclinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:wx-process_development_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:wx-contract_manufacturing_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:as-process_development_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:as-contract_manufacturing_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:as-biologic_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:as-drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:as-clinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:joinn-preclinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:joinn-clinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:joinn-bioanalysis_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:joinn-pharmacovigilance_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:tiger-clinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:tiger-clinical_data_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:tiger-bioanalysis_services",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:innovative-drugs:tiger-post_market_services",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:hengrui",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:junshi",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:wuxi-apptec",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:asymchem",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:joinn",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:innovative-drugs:tigermed",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600276",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:688180",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:603259",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SZ:002821",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:603127",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SZ:300347",
+          "revision": 1
+        },
+        {
+          "object_type": "view",
+          "id": "view:innovative-drugs:research",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:stages",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:candidate",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:in-vitro",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:in-vivo",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:trial-data",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:nda-data",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:study-reports",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:decision",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:post-market",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:cmc",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:chemical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:starting-material",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:bioprocess",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:quality",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:assays",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:culture-fluid",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:capture-polish",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:media",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hengrui-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:junshi-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wuxi-apptec-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:asymchem-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tigermed-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hengrui-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:junshi-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wuxi-apptec-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:asymchem-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tigermed-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tiger-exchange",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-quality",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:hr-safety",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-production",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:js-channel",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wx-definition",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wx-formulation",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wx-discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:wx-testing",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-chemical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-process",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-biologic",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-dp",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:as-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-bioanalysis",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:joinn-pv",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tiger-clinical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tiger-data",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tiger-lab",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:innovative-drugs:tiger-postmarket",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:discovery",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:candidate",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:preclinical",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:preclinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:clinical_trials",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:clinical_data",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:regulatory_submission",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:regulatory_dossier",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:regulatory_review",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:api_starting_materials",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:process_development",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:api_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:api_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:cell_culture",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:culture_harvest",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:mab_purification",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:biologic_substance",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:biologic_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:chromatography_media",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:excipients",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:drug_product_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:finished_drug",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:quality_testing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:drug_commercialization",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:drug_distribution_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:medical_application",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:post_market_monitoring",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:discovery_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:preclinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:clinical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:process_development_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:contract_manufacturing_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:clinical_data_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:bioanalysis_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:pharmacovigilance_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:post_market_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:clinical_data_processing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "innovative-drugs",
+          "node_id": "innovative-drugs:bioanalysis_activity",
+          "revision": 1
+        }
+      ],
+      "source_refs": [
+        {
+          "source_id": "innovative-drugs-notebook:fda-process",
+          "source_version": "sha256:eff5d02708d597b28b4d456344e9d38876706a6a5b3a9f753020450f1c2c4bac"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-step1",
+          "source_version": "sha256:a15fa6b57939b3e0c9ffc918a27c66dd2c5e937312d17a27b9b32f91506206e1"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-step2",
+          "source_version": "sha256:c9a2384c5d76f64fcf3df9cb0c9250659e3819bc686ff4f4c561778cda8590d9"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-step3",
+          "source_version": "sha256:af64b8d26701047f05b671645c52e1d786c775efb8a63b89ba3d07818de6bb40"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-step4",
+          "source_version": "sha256:516f60ae65ff77ca8bb4a85329677d7994d799242ef6c3f2351e98a9a2301522"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-step5",
+          "source_version": "sha256:77e55a880bf6adbb074ce77aa187da54b0c3504e5c47d965ffc2b5d4a38db9b8"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:fda-cmc",
+          "source_version": "sha256:594451989199cb506b2a9e592f3ad72ad350891d5946cee846887023dd76c60e"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:q7a",
+          "source_version": "sha256:7889dae5971e270821f4702fa6a7fa4cdb5bfc9ad2de073082b4072d2fbc5e83"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:agm",
+          "source_version": "sha256:fba79af8c3bce6eb084536dbba9f0f75e18b2aee09ecab068040b31bfa12a73b"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:cytiva",
+          "source_version": "sha256:38f910dd1361dc2ebbd2fe69b77be3b8ee53c791329a3dfa42a1ce24537275e2"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:hengrui",
+          "source_version": "sha256:513f7ff8f2fc827ca6c52906d5f7e28f5f700f663ab367115ac3e212aef77378"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:junshi",
+          "source_version": "sha256:ae49b92ced636601cc13634f2d564bfe9ff0a17aeaa9c3fdd1e3cba453249ec7"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:wuxi-apptec",
+          "source_version": "sha256:7f1431d66eae399d4b35639bb650e23287c7f52dacbb47b4b4a197fb5026d6a2"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:asymchem",
+          "source_version": "sha256:c30c0354683d6c6ea6f8434b6e588e05541febd43d43e98c39aca446e413c66d"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:joinn",
+          "source_version": "sha256:410dc66df3190722ee45256219f4daa88e5dd5f22def08bd885a3b964260fcb4"
+        },
+        {
+          "source_id": "innovative-drugs-notebook:tigermed",
+          "source_version": "sha256:724636e58aa4dab4139df7b8dd4790865f0e16b1b1947c27ec33e2d6820bd28f"
+        }
+      ]
+    }
+  ],
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "innovative-drugs",
+    "revision": 1,
+    "name": "创新药",
+    "need": "通过药物发现、评价、工艺开发和制造，将具备研究依据的候选转为可按适用许可用于临床的药品，并持续监测安全性",
+    "boundary": "覆盖发现、临床前与临床、注册资料与审评接口、小分子API和抗体原液示例、制剂质量、CRO/CDMO、商业渠道与上市后监测。未穷举全部药物模态、地区审批制度、实验方案或具体药品疗效。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "公司为6个上市主体样本，不是全市场名录；更多创新药企、试剂设备、辅料及流通企业仍待逐项补证。",
+      "生物制造以传统单抗纯化和一般培养接口为主；ADC、核酸、多肽、细胞和基因治疗等不同模态未完整展开。已有CDMO业务范围不自动补出每条工艺路线。",
+      "质量放行、稳定性、物流冷链、批次检验与国内外注册/支付准入的更细分支未完全建模。FDA资料为流程及技术示例，不代表所有地区当前法律要求。",
+      "许可授权、药品权益转移与BD合作尚未建立足够细化的结构节点及事实证据；服务合同不自动赋予产品权属，不编造具体客户供销关系。",
+      "部分原文与示例有历史日期，报告角色按2025或2026H1保留；没有当前价格、财务估值、临床成功率、现行适应症、治疗建议、预测或条件冲击系数。"
+    ],
+    "coverage_note": "创新药主要模块研究草稿：研发数据与审评、小分子及抗体制造示例、制剂质量、受托服务、渠道与安全监测；原文可定位，非穷举、非用户最终认可或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "药物发现与研究",
+        "node_ids": [
+          "innovative-drugs:discovery",
+          "innovative-drugs:candidate",
+          "innovative-drugs:preclinical",
+          "innovative-drugs:preclinical_data",
+          "innovative-drugs:clinical_trials",
+          "innovative-drugs:clinical_data"
+        ]
+      },
+      {
+        "module": "资料与审评接口",
+        "node_ids": [
+          "innovative-drugs:regulatory_submission",
+          "innovative-drugs:regulatory_dossier",
+          "innovative-drugs:regulatory_review"
+        ]
+      },
+      {
+        "module": "小分子与工艺开发",
+        "node_ids": [
+          "innovative-drugs:api_starting_materials",
+          "innovative-drugs:process_development",
+          "innovative-drugs:api_manufacturing",
+          "innovative-drugs:api_substance"
+        ]
+      },
+      {
+        "module": "抗体生物制造示例",
+        "node_ids": [
+          "innovative-drugs:biologic_manufacturing",
+          "innovative-drugs:cell_culture",
+          "innovative-drugs:culture_harvest",
+          "innovative-drugs:mab_purification",
+          "innovative-drugs:biologic_substance",
+          "innovative-drugs:chromatography_media"
+        ]
+      },
+      {
+        "module": "制剂与质量",
+        "node_ids": [
+          "innovative-drugs:excipients",
+          "innovative-drugs:drug_product_manufacturing",
+          "innovative-drugs:finished_drug",
+          "innovative-drugs:quality_testing"
+        ]
+      },
+      {
+        "module": "研究与生产受托服务",
+        "node_ids": [
+          "innovative-drugs:discovery_services",
+          "innovative-drugs:preclinical_services",
+          "innovative-drugs:clinical_services",
+          "innovative-drugs:process_development_services",
+          "innovative-drugs:contract_manufacturing_services",
+          "innovative-drugs:clinical_data_services",
+          "innovative-drugs:bioanalysis_services",
+          "innovative-drugs:pharmacovigilance_services",
+          "innovative-drugs:post_market_services",
+          "innovative-drugs:clinical_data_processing",
+          "innovative-drugs:bioanalysis_activity"
+        ]
+      },
+      {
+        "module": "渠道应用与持续监测",
+        "node_ids": [
+          "innovative-drugs:drug_commercialization",
+          "innovative-drugs:drug_distribution_services",
+          "innovative-drugs:medical_application",
+          "innovative-drugs:post_market_monitoring"
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "observations": [],
+    "news_associations": [],
+    "news_impacts": [],
+    "ai_candidates": []
+  },
+  "generated_at": "2026-10-20T21:01:14.717727+00:00"
+}

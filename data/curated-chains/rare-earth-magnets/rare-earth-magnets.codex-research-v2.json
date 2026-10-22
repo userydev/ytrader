@@ -1,0 +1,1412 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "rare-earth-magnets",
+    "revision": 2,
+    "name": "稀土与永磁材料",
+    "need": "将稀土原料转为可用于电机等设备的永磁材料。",
+    "boundary": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "以NdFeB金属至磁体路线为主；矿山开采及分离工艺尚未细分，不把所有稀土都视为磁材。",
+      "烧结、粘结及软磁分开；重稀土添加为可选，不以推广性能替代各牌号规格。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "稀土原料与合金",
+        "node_ids": [
+          "rare-earth-magnets:oxide",
+          "rare-earth-magnets:reduction",
+          "rare-earth-magnets:metal",
+          "rare-earth-magnets:alloy"
+        ]
+      },
+      {
+        "module": "磁体制造",
+        "node_ids": [
+          "rare-earth-magnets:powder",
+          "rare-earth-magnets:forming",
+          "rare-earth-magnets:block",
+          "rare-earth-magnets:finish"
+        ]
+      },
+      {
+        "module": "磁材产品",
+        "node_ids": [
+          "rare-earth-magnets:sintered",
+          "rare-earth-magnets:bonded",
+          "rare-earth-magnets:component",
+          "rare-earth-magnets:ndfeb"
+        ]
+      },
+      {
+        "module": "应用与回收",
+        "node_ids": [
+          "rare-earth-magnets:ev",
+          "rare-earth-magnets:wind",
+          "rare-earth-magnets:robot",
+          "rare-earth-magnets:recycle"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "rare-earth-magnets:oxide",
+      "name": "稀土氧化物",
+      "kind": "product",
+      "description": "进入适用金属还原路线的原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:reduction",
+      "name": "稀土金属还原",
+      "kind": "activity",
+      "description": "MP描述的熔盐电解路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:metal",
+      "name": "稀土金属",
+      "kind": "product",
+      "description": "金属化后用于磁体合金。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:alloy",
+      "name": "NdFeB合金制备",
+      "kind": "activity",
+      "description": "稀土及其他金属的速凝铸片路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:6e3c346d1426",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:powder",
+      "name": "合金粉末",
+      "kind": "product",
+      "description": "后续成型的粉末接口，制粉细节待补。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:forming",
+      "name": "压制与烧结",
+      "kind": "activity",
+      "description": "粉末压实并加热致密化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:block",
+      "name": "致密磁块",
+      "kind": "product",
+      "description": "待后加工的磁体材料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:finish",
+      "name": "磁体成形与后加工",
+      "kind": "activity",
+      "description": "加工形状及表面；不推断统一镀层。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:73ce15260d4d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:sintered",
+      "name": "烧结钕铁硼磁体",
+      "kind": "product",
+      "description": "烧结NdFeB产品路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:49807f8b726d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:bonded",
+      "name": "粘结钕铁硼磁体",
+      "kind": "product",
+      "description": "另一磁体制备路线，非烧结必经步骤。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:5049eff1934b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:component",
+      "name": "磁组件与电机转子",
+      "kind": "product",
+      "description": "金力公开的组件业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:ev",
+      "name": "新能源汽车电机应用",
+      "kind": "application",
+      "description": "适用永磁材料下游类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:wind",
+      "name": "风电应用",
+      "kind": "application",
+      "description": "适用风机路线，不等于所有风机使用永磁。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:robot",
+      "name": "机器人及伺服电机应用",
+      "kind": "application",
+      "description": "材料应用类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:recycle",
+      "name": "稀土回收综合利用",
+      "kind": "activity",
+      "description": "金力公开业务类别，未量化回收率。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "rare-earth-magnets:ndfeb",
+      "name": "钕铁硼永磁材料",
+      "kind": "product",
+      "description": "NdFeB总类，具体烧结或粘结路线另证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:oxide",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:reduction",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:metal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:alloy",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:powder",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:forming",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:block",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:finish",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:sintered",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:bonded",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:component",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:ev",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:wind",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:robot",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:recycle",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "node_id": "rare-earth-magnets:ndfeb",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:f75767e21eb2556b",
+      "from_node_id": "rare-earth-magnets:oxide",
+      "to_node_id": "rare-earth-magnets:reduction",
+      "kind": "input_to",
+      "statement": "氧化物投入适用金属还原。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:1efa049b470506bc",
+      "from_node_id": "rare-earth-magnets:reduction",
+      "to_node_id": "rare-earth-magnets:metal",
+      "kind": "produces",
+      "statement": "熔盐电解形成金属。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:3513cf18239e5d34",
+      "from_node_id": "rare-earth-magnets:metal",
+      "to_node_id": "rare-earth-magnets:alloy",
+      "kind": "input_to",
+      "statement": "金属参与合金制备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:6e3c346d1426",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:2ab26fbff1e01563",
+      "from_node_id": "rare-earth-magnets:alloy",
+      "to_node_id": "rare-earth-magnets:powder",
+      "kind": "precedes",
+      "statement": "结构推断：合金制备与制粉接口相接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:6e3c346d1426",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:b07ddecd2028e93c",
+      "from_node_id": "rare-earth-magnets:powder",
+      "to_node_id": "rare-earth-magnets:forming",
+      "kind": "input_to",
+      "statement": "粉末进行压实和加热。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:7de148591a17418e",
+      "from_node_id": "rare-earth-magnets:forming",
+      "to_node_id": "rare-earth-magnets:block",
+      "kind": "produces",
+      "statement": "致密化形成磁块。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:1aad706cae39b84d",
+      "from_node_id": "rare-earth-magnets:block",
+      "to_node_id": "rare-earth-magnets:finish",
+      "kind": "input_to",
+      "statement": "磁块后加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:73ce15260d4d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:579364240e110fe9",
+      "from_node_id": "rare-earth-magnets:finish",
+      "to_node_id": "rare-earth-magnets:sintered",
+      "kind": "produces",
+      "statement": "结构推断：后加工与烧结磁体成品接口相接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:49807f8b726d",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:73ce15260d4d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:e344a08e43ae46e9",
+      "from_node_id": "rare-earth-magnets:sintered",
+      "to_node_id": "rare-earth-magnets:component",
+      "kind": "input_to",
+      "statement": "结构推断：适用磁体进入磁组件集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:sanhuan:49807f8b726d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:84a2fa4c5bb18ff6",
+      "from_node_id": "rare-earth-magnets:component",
+      "to_node_id": "rare-earth-magnets:ev",
+      "kind": "used_for",
+      "statement": "结构推断：组件与新能源汽车应用衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:846f556a188ee77c",
+      "from_node_id": "rare-earth-magnets:sintered",
+      "to_node_id": "rare-earth-magnets:wind",
+      "kind": "used_for",
+      "statement": "结构推断：适用磁体用于风电。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:b03f38f490957530",
+      "from_node_id": "rare-earth-magnets:sintered",
+      "to_node_id": "rare-earth-magnets:robot",
+      "kind": "used_for",
+      "statement": "结构推断：适用磁体用于机器人及伺服。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:rare-earth-magnets:40c4a59dcf577496",
+      "from_node_id": "rare-earth-magnets:ndfeb",
+      "to_node_id": "rare-earth-magnets:component",
+      "kind": "input_to",
+      "statement": "结构推断：适用NdFeB材料进入磁组件及转子集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_mp_materials",
+      "name": "MP Materials",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:0eaff47c0f23",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_jlmag",
+      "name": "江西金力永磁科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:d0f7849aa605",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_sanhuan",
+      "name": "北京中科三环高技术股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:b791dd9bddc4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:300748",
+      "company_id": "company_jlmag",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:748bbf573d0d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:64234767549f35e8",
+      "company_id": "company_mp_materials",
+      "node_id": "rare-earth-magnets:reduction",
+      "role": "稀土金属生产路线",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:1300a35d6c7dca79",
+      "company_id": "company_mp_materials",
+      "node_id": "rare-earth-magnets:alloy",
+      "role": "NdFeB合金",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:6e3c346d1426",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:085493657fea4f3f",
+      "company_id": "company_mp_materials",
+      "node_id": "rare-earth-magnets:finish",
+      "role": "磁体制造",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mp-magnetics:73ce15260d4d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:54d024178e4a0e5b",
+      "company_id": "company_jlmag",
+      "node_id": "rare-earth-magnets:component",
+      "role": "磁组件与电机转子",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:1ba5bbed2ab143c2",
+      "company_id": "company_jlmag",
+      "node_id": "rare-earth-magnets:recycle",
+      "role": "稀土回收综合利用",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:9407eb4379547c66",
+      "company_id": "company_sanhuan",
+      "node_id": "rare-earth-magnets:sintered",
+      "role": "烧结NdFeB磁体",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:49807f8b726d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:af5bbe5a4ff19960",
+      "company_id": "company_sanhuan",
+      "node_id": "rare-earth-magnets:bonded",
+      "role": "粘结NdFeB磁体",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sanhuan:5049eff1934b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:rare-earth-magnets:dc3122b51fc2f727",
+      "company_id": "company_jlmag",
+      "node_id": "rare-earth-magnets:ndfeb",
+      "role": "高性能钕铁硼永磁材料",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:rare-earth-magnets:codex-research-v1",
+      "industry_id": "rare-earth-magnets",
+      "revision": 2,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "稀土原料与合金",
+          "node_ids": [
+            "rare-earth-magnets:oxide",
+            "rare-earth-magnets:reduction",
+            "rare-earth-magnets:metal",
+            "rare-earth-magnets:alloy"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "磁体制造",
+          "node_ids": [
+            "rare-earth-magnets:powder",
+            "rare-earth-magnets:forming",
+            "rare-earth-magnets:block",
+            "rare-earth-magnets:finish"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "磁材产品",
+          "node_ids": [
+            "rare-earth-magnets:sintered",
+            "rare-earth-magnets:bonded",
+            "rare-earth-magnets:component",
+            "rare-earth-magnets:ndfeb"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用与回收",
+          "node_ids": [
+            "rare-earth-magnets:ev",
+            "rare-earth-magnets:wind",
+            "rare-earth-magnets:robot",
+            "rare-earth-magnets:recycle"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:rare-earth-magnets:f75767e21eb2556b",
+        "rel:new20261021:rare-earth-magnets:1efa049b470506bc",
+        "rel:new20261021:rare-earth-magnets:3513cf18239e5d34",
+        "rel:new20261021:rare-earth-magnets:2ab26fbff1e01563",
+        "rel:new20261021:rare-earth-magnets:b07ddecd2028e93c",
+        "rel:new20261021:rare-earth-magnets:7de148591a17418e",
+        "rel:new20261021:rare-earth-magnets:1aad706cae39b84d",
+        "rel:new20261021:rare-earth-magnets:579364240e110fe9",
+        "rel:new20261021:rare-earth-magnets:e344a08e43ae46e9",
+        "rel:new20261021:rare-earth-magnets:84a2fa4c5bb18ff6",
+        "rel:new20261021:rare-earth-magnets:846f556a188ee77c",
+        "rel:new20261021:rare-earth-magnets:b03f38f490957530",
+        "rel:new20261021:rare-earth-magnets:40c4a59dcf577496"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "title": "Magnetics",
+      "publisher": "MP Materials",
+      "url": "https://mpmaterials.com/magnetics/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:37.900157+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "792e7fc7091ebd05bc3e36623a06363d6ecaa90b90f8a517ee1cf92d45e92a15",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:jlmag",
+      "source_version": "sha256:844ec98dff9da21f37968045ceba054457ed53815b11d438f0151feba32f0fa5",
+      "title": "公司及产品",
+      "publisher": "金力永磁",
+      "url": "https://www.jlmag.com.cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:11.965081+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "b92c7f6d4760b5cc629a46c1219644e7c9c582399f9e93730153703a38af5f59",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sanhuan",
+      "source_version": "sha256:706a947f42d4081354235a47674b002d80d28cc3f1738a94d508cb6a47019d64",
+      "title": "公司及产品",
+      "publisher": "中科三环",
+      "url": "https://www.san-huan.com.cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:12.010040+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "bd9ac6445f9a87d407a84d956fc16a0e16f245916c5a3ae048b0bb7b8dda351a",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:mp-magnetics:c9d2d299384d",
+      "revision": 1,
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "excerpt": "molten salt electrolysis",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mp-magnetics.txt:27"
+      },
+      "summary": "MP所述氧化物还原至稀土金属路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mp-magnetics:6e3c346d1426",
+      "revision": 1,
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "excerpt": "strip casting",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mp-magnetics.txt:29"
+      },
+      "summary": "MP通过速凝铸片制备NdFeB合金。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mp-magnetics:675bb3467da4",
+      "revision": 1,
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "excerpt": "Alloy powder is compacted",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mp-magnetics.txt:31"
+      },
+      "summary": "MP描述压粉、加热形成致密磁块。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mp-magnetics:73ce15260d4d",
+      "revision": 1,
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "excerpt": "shaped and finished",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mp-magnetics.txt:33"
+      },
+      "summary": "磁块后加工；重稀土可按需要添加。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mp-magnetics:0eaff47c0f23",
+      "revision": 1,
+      "source_id": "codex-20261021:mp-magnetics",
+      "source_version": "sha256:1d377ee93e677950bf5b3c5d2e00e349a9dea49b50339051e41eeb2e30555872",
+      "excerpt": "MP Materials",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mp-magnetics.txt:1"
+      },
+      "summary": "公司金属至磁体业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jlmag:d0f7849aa605",
+      "revision": 1,
+      "source_id": "codex-20261021:jlmag",
+      "source_version": "sha256:844ec98dff9da21f37968045ceba054457ed53815b11d438f0151feba32f0fa5",
+      "excerpt": "江西金力永磁科技股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jlmag.txt:1"
+      },
+      "summary": "主体名称。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jlmag:748bbf573d0d",
+      "revision": 1,
+      "source_id": "codex-20261021:jlmag",
+      "source_version": "sha256:844ec98dff9da21f37968045ceba054457ed53815b11d438f0151feba32f0fa5",
+      "excerpt": "300748.SZ",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jlmag.txt:7"
+      },
+      "summary": "金力A股代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jlmag:761c02a074ca",
+      "revision": 1,
+      "source_id": "codex-20261021:jlmag",
+      "source_version": "sha256:844ec98dff9da21f37968045ceba054457ed53815b11d438f0151feba32f0fa5",
+      "excerpt": "高性能钕铁硼永磁材料、磁组件、具身机器人电机转子，以及稀土回收综合利用",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jlmag.txt:44"
+      },
+      "summary": "官网公开产品和回收业务范围。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jlmag:c6f9ad9c9642",
+      "revision": 1,
+      "source_id": "codex-20261021:jlmag",
+      "source_version": "sha256:844ec98dff9da21f37968045ceba054457ed53815b11d438f0151feba32f0fa5",
+      "excerpt": "新能源汽车及汽车零部件、节能变频空调、风力发电、机器人及工业伺服电机",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jlmag.txt:35"
+      },
+      "summary": "金力材料下游应用类别，不推定指定客户供货。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sanhuan:b791dd9bddc4",
+      "revision": 1,
+      "source_id": "codex-20261021:sanhuan",
+      "source_version": "sha256:706a947f42d4081354235a47674b002d80d28cc3f1738a94d508cb6a47019d64",
+      "excerpt": "北京中科三环高技术股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sanhuan.txt:1"
+      },
+      "summary": "主体名称。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sanhuan:49807f8b726d",
+      "revision": 1,
+      "source_id": "codex-20261021:sanhuan",
+      "source_version": "sha256:706a947f42d4081354235a47674b002d80d28cc3f1738a94d508cb6a47019d64",
+      "excerpt": "烧结钕铁硼磁体",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sanhuan.txt:43"
+      },
+      "summary": "中科三环烧结磁体产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sanhuan:5049eff1934b",
+      "revision": 1,
+      "source_id": "codex-20261021:sanhuan",
+      "source_version": "sha256:706a947f42d4081354235a47674b002d80d28cc3f1738a94d508cb6a47019d64",
+      "excerpt": "粘结钕铁硼磁体",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sanhuan.txt:47"
+      },
+      "summary": "区别于烧结路线的产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 3,
+      "scope": "first_research_draft_major_modules_not_exhaustive",
+      "refinement": "公司总类归属收紧，不由概述推定具体矿种或制造路线"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

@@ -1,0 +1,1388 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "natural-gas-lng",
+    "revision": 1,
+    "name": "天然气与LNG",
+    "need": "把天然气资源加工并经管网或LNG路线送达终端。",
+    "boundary": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "管道气与LNG是并列物流路径；不是所有天然气都先液化。",
+      "EIA资料用于技术结构，未采用页面历史美国进出口数量或各国贸易份额。",
+      "本轮公司样本限中国海油上游生产；液化设备、运输船、接收站与城燃运营公司待专门取证。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "上游与加工",
+        "node_ids": [
+          "natural-gas-lng:production",
+          "natural-gas-lng:well",
+          "natural-gas-lng:gather",
+          "natural-gas-lng:dry"
+        ]
+      },
+      {
+        "module": "管网与储气",
+        "node_ids": [
+          "natural-gas-lng:pipeline",
+          "natural-gas-lng:storage",
+          "natural-gas-lng:distribution"
+        ]
+      },
+      {
+        "module": "LNG路线",
+        "node_ids": [
+          "natural-gas-lng:liquefy",
+          "natural-gas-lng:lng",
+          "natural-gas-lng:carrier",
+          "natural-gas-lng:terminal",
+          "natural-gas-lng:regas"
+        ]
+      },
+      {
+        "module": "终端应用",
+        "node_ids": [
+          "natural-gas-lng:power",
+          "natural-gas-lng:industry",
+          "natural-gas-lng:consumer"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "natural-gas-lng:production",
+      "name": "天然气勘探开发与生产",
+      "kind": "activity",
+      "description": "上游天然气资源开发生产。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:cnooc:97fa49d95e51",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-gas:cd08beec010d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:well",
+      "name": "井口天然气",
+      "kind": "product",
+      "description": "未经完整处理的上游气体。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:cd08beec010d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:gather",
+      "name": "集输与天然气加工",
+      "kind": "activity",
+      "description": "去除适用杂质及分离烃液。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:e4bc16e831d8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:dry",
+      "name": "管输品质天然气",
+      "kind": "product",
+      "description": "按管输要求处理的气体。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:775314fb7620",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:pipeline",
+      "name": "干线输送",
+      "kind": "service",
+      "description": "高压长距离管道输送。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:58572252ee33",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:storage",
+      "name": "地下储气",
+      "kind": "service",
+      "description": "适用储层及储气设施调节供需。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:3d9e5a2182cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:distribution",
+      "name": "地方配气",
+      "kind": "service",
+      "description": "从主干线到终端服务管线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:ca376767f86a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:liquefy",
+      "name": "天然气液化",
+      "kind": "activity",
+      "description": "适用天然气冷却液化路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:e2d82b10b2cf",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:lng",
+      "name": "液化天然气LNG",
+      "kind": "product",
+      "description": "低温液态天然气物流产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:e2d82b10b2cf",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:carrier",
+      "name": "LNG运输",
+      "kind": "service",
+      "description": "低温船舶及适用容器运输。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:806a8d08d6fa",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:terminal",
+      "name": "LNG接收与低温储存",
+      "kind": "service",
+      "description": "卸船及低温储罐接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:5085f1304f0d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:regas",
+      "name": "再气化",
+      "kind": "activity",
+      "description": "将LNG恢复气态送入适用管网。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:1c155dbeec76",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:power",
+      "name": "燃气发电应用",
+      "kind": "application",
+      "description": "气体用于适用发电设施。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:industry",
+      "name": "工业用气应用",
+      "kind": "application",
+      "description": "工业气体燃料或原料应用接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "natural-gas-lng:consumer",
+      "name": "居民及商业用气",
+      "kind": "application",
+      "description": "居民商业终端用气接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:production",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:well",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:gather",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:dry",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:pipeline",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:storage",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:distribution",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:liquefy",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:lng",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:carrier",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:terminal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:regas",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:power",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:industry",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "node_id": "natural-gas-lng:consumer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:eef099a70e42fb43",
+      "from_node_id": "natural-gas-lng:production",
+      "to_node_id": "natural-gas-lng:well",
+      "kind": "produces",
+      "statement": "结构推断：生产形成井口气接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:cnooc:97fa49d95e51",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-gas:cd08beec010d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:bbd4cab09ece72de",
+      "from_node_id": "natural-gas-lng:well",
+      "to_node_id": "natural-gas-lng:gather",
+      "kind": "input_to",
+      "statement": "井口气进入集输及加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:e4bc16e831d8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:b0ca28c039a01b11",
+      "from_node_id": "natural-gas-lng:gather",
+      "to_node_id": "natural-gas-lng:dry",
+      "kind": "produces",
+      "statement": "按要求加工形成干气。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:775314fb7620",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:2f8009bbb9e05645",
+      "from_node_id": "natural-gas-lng:dry",
+      "to_node_id": "natural-gas-lng:pipeline",
+      "kind": "input_to",
+      "statement": "干气通过长距离管网输送。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:775314fb7620",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-gas:58572252ee33",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:7b66ebdec75c6a29",
+      "from_node_id": "natural-gas-lng:pipeline",
+      "to_node_id": "natural-gas-lng:storage",
+      "kind": "supports",
+      "statement": "结构推断：低需求阶段可向适用储气设施注入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:3d9e5a2182cc",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:876ed9c31ca5545a",
+      "from_node_id": "natural-gas-lng:storage",
+      "to_node_id": "natural-gas-lng:pipeline",
+      "kind": "supports",
+      "statement": "结构推断：高需求阶段储气向供气系统补充。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:3d9e5a2182cc",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:631df57750c650ea",
+      "from_node_id": "natural-gas-lng:pipeline",
+      "to_node_id": "natural-gas-lng:distribution",
+      "kind": "supports",
+      "statement": "干线衔接地方配气。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:ca376767f86a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:58e48f4d1b471d74",
+      "from_node_id": "natural-gas-lng:dry",
+      "to_node_id": "natural-gas-lng:liquefy",
+      "kind": "input_to",
+      "statement": "结构推断：适用管道气进入液化路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:e2d82b10b2cf",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:3dd17263ecbdb2b0",
+      "from_node_id": "natural-gas-lng:liquefy",
+      "to_node_id": "natural-gas-lng:lng",
+      "kind": "produces",
+      "statement": "液化形成LNG。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:e2d82b10b2cf",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:a029390cce56db6f",
+      "from_node_id": "natural-gas-lng:lng",
+      "to_node_id": "natural-gas-lng:carrier",
+      "kind": "input_to",
+      "statement": "LNG进入专用运输路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:806a8d08d6fa",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:2ff276f43dcad25f",
+      "from_node_id": "natural-gas-lng:carrier",
+      "to_node_id": "natural-gas-lng:terminal",
+      "kind": "supports",
+      "statement": "进口接收站卸载LNG并低温储存。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:5085f1304f0d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:51ca842f6b12bb46",
+      "from_node_id": "natural-gas-lng:terminal",
+      "to_node_id": "natural-gas-lng:regas",
+      "kind": "supports",
+      "statement": "储存LNG按需再气化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:1c155dbeec76",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:8545ad6951c36827",
+      "from_node_id": "natural-gas-lng:regas",
+      "to_node_id": "natural-gas-lng:pipeline",
+      "kind": "supports",
+      "statement": "再气化气体接入适用管道。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:1c155dbeec76",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:bf13463bb14857c8",
+      "from_node_id": "natural-gas-lng:distribution",
+      "to_node_id": "natural-gas-lng:consumer",
+      "kind": "used_for",
+      "statement": "结构推断：配气服务终端。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-gas:ca376767f86a",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:3d5f365c96b52d45",
+      "from_node_id": "natural-gas-lng:pipeline",
+      "to_node_id": "natural-gas-lng:power",
+      "kind": "used_for",
+      "statement": "管道天然气供应适用电厂。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:natural-gas-lng:3ef7909d793b0b2a",
+      "from_node_id": "natural-gas-lng:pipeline",
+      "to_node_id": "natural-gas-lng:industry",
+      "kind": "used_for",
+      "statement": "管道气供应适用工业设施。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company:cnooc-ltd",
+      "name": "中国海洋石油有限公司",
+      "revision": 2,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cnooc-identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "aliases": [
+        "中国海洋石油有限公司"
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:600938",
+      "company_id": "company:cnooc-ltd",
+      "revision": 2,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:natural-gas-lng:1c1c701910a6147a",
+      "company_id": "company:cnooc-ltd",
+      "node_id": "natural-gas-lng:production",
+      "role": "原油及天然气上游勘探开发生产",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:cnooc:97fa49d95e51",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:natural-gas-lng:codex-research-v1",
+      "industry_id": "natural-gas-lng",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "上游与加工",
+          "node_ids": [
+            "natural-gas-lng:production",
+            "natural-gas-lng:well",
+            "natural-gas-lng:gather",
+            "natural-gas-lng:dry"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "管网与储气",
+          "node_ids": [
+            "natural-gas-lng:pipeline",
+            "natural-gas-lng:storage",
+            "natural-gas-lng:distribution"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "LNG路线",
+          "node_ids": [
+            "natural-gas-lng:liquefy",
+            "natural-gas-lng:lng",
+            "natural-gas-lng:carrier",
+            "natural-gas-lng:terminal",
+            "natural-gas-lng:regas"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "终端应用",
+          "node_ids": [
+            "natural-gas-lng:power",
+            "natural-gas-lng:industry",
+            "natural-gas-lng:consumer"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:natural-gas-lng:eef099a70e42fb43",
+        "rel:new20261021:natural-gas-lng:bbd4cab09ece72de",
+        "rel:new20261021:natural-gas-lng:b0ca28c039a01b11",
+        "rel:new20261021:natural-gas-lng:2f8009bbb9e05645",
+        "rel:new20261021:natural-gas-lng:7b66ebdec75c6a29",
+        "rel:new20261021:natural-gas-lng:876ed9c31ca5545a",
+        "rel:new20261021:natural-gas-lng:631df57750c650ea",
+        "rel:new20261021:natural-gas-lng:58e48f4d1b471d74",
+        "rel:new20261021:natural-gas-lng:3dd17263ecbdb2b0",
+        "rel:new20261021:natural-gas-lng:a029390cce56db6f",
+        "rel:new20261021:natural-gas-lng:2ff276f43dcad25f",
+        "rel:new20261021:natural-gas-lng:51ca842f6b12bb46",
+        "rel:new20261021:natural-gas-lng:8545ad6951c36827",
+        "rel:new20261021:natural-gas-lng:bf13463bb14857c8",
+        "rel:new20261021:natural-gas-lng:3d5f365c96b52d45",
+        "rel:new20261021:natural-gas-lng:3ef7909d793b0b2a"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "title": "Natural gas delivery and storage",
+      "publisher": "US EIA",
+      "url": "https://www.eia.gov/energyexplained/natural-gas/delivery-and-storage.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:14.556767+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "25d3a222adf57490114b0953cfa97a0afb1413c1e3df31a0bc254ea344f243cf",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "title": "Liquefied natural gas",
+      "publisher": "US EIA",
+      "url": "https://www.eia.gov/energyexplained/natural-gas/liquefied-natural-gas.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:14.192337+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "221e31c83db5034238026e717a065280c1087d61c1da34165ae7e49af5daadd4",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:cnooc",
+      "source_version": "sha256:3cf51a029e587dd4c817af09e70ff8859f28ddcfeee7c563bb3f2c8b88b84485",
+      "title": "公司及业务",
+      "publisher": "中国海油",
+      "url": "https://www.cnoocltd.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:15.939854+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "a14a9d42d8ed1424d1221e72f9bedd48dc33830b17f0a0c2f4fac21c1dc45fb8",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "title": "主要作业区与公司介绍",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://www.cnoocltd.com/gywm/zyzyq/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T15:38:33.678171+00:00",
+      "access": "full_text",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "title": "中国海洋石油有限公司2025年年度报告",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260326/81871f1916b64c92a4f1a40775c49f24.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:14:19.461609+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:eia-gas:cd08beec010d",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "wellhead natural gas",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:249"
+      },
+      "summary": "井口气进入集输及加工。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-gas:e4bc16e831d8",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "natural gas processing plants",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:255"
+      },
+      "summary": "加工去除适用杂质及烃液。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-gas:775314fb7620",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "dry natural gas",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:255"
+      },
+      "summary": "处理后的干天然气进入高压长距离管线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-gas:58572252ee33",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "transmission pipelines",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:266"
+      },
+      "summary": "长距离管网输送接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-gas:3d9e5a2182cc",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "underground facilities",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:273"
+      },
+      "summary": "按需求储气的地下设施类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-gas:ca376767f86a",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-gas",
+      "source_version": "sha256:1e39ef2161890e550c2f212fe097ba4cf26adcf2aa880b864c72422fc6aca2b6",
+      "excerpt": "service lines",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-gas.txt:271"
+      },
+      "summary": "干线到配气及终端服务管线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-lng:e2d82b10b2cf",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "excerpt": "liquefy the gas",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-lng.txt:253"
+      },
+      "summary": "LNG出口设施接收管道气并液化。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-lng:806a8d08d6fa",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "excerpt": "LNG carriers",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-lng.txt:253"
+      },
+      "summary": "专用低温船舶运输路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-lng:5085f1304f0d",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "excerpt": "cryogenic storage tanks",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-lng.txt:254"
+      },
+      "summary": "接收站卸载与低温储存。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-lng:1c155dbeec76",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "excerpt": "After regasification",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-lng.txt:254"
+      },
+      "summary": "再气化后进入管线与终端。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-lng:f5ae806b1b55",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-lng",
+      "source_version": "sha256:af142eabae4942e87e3907b714ab6d59fb8d81cb135bc2530a241dfdc564c919",
+      "excerpt": "industrial facilities",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-lng.txt:254"
+      },
+      "summary": "再气化气体面向电厂、工业及居民商业用户。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:cnooc:29fa4f5dbba0",
+      "revision": 1,
+      "source_id": "codex-20261021:cnooc",
+      "source_version": "sha256:3cf51a029e587dd4c817af09e70ff8859f28ddcfeee7c563bb3f2c8b88b84485",
+      "excerpt": "中国海洋石油有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/cnooc.txt:1"
+      },
+      "summary": "公司主体及上游业务说明。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:cnooc:6be98a13bcc7",
+      "revision": 1,
+      "source_id": "codex-20261021:cnooc",
+      "source_version": "sha256:3cf51a029e587dd4c817af09e70ff8859f28ddcfeee7c563bb3f2c8b88b84485",
+      "excerpt": "600938",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/cnooc.txt:81"
+      },
+      "summary": "官网沪港代码分别600938和00883。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:cnooc:97fa49d95e51",
+      "revision": 1,
+      "source_id": "codex-20261021:cnooc",
+      "source_version": "sha256:3cf51a029e587dd4c817af09e70ff8859f28ddcfeee7c563bb3f2c8b88b84485",
+      "excerpt": "勘探、开发、生产及销售原油和天然气",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/cnooc.txt:82"
+      },
+      "summary": "上游业务范围，不据此赋予LNG接收站运营角色。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "e:oil:cnooc-role",
+      "revision": 1,
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "locator": "公司介绍 / paragraph 2",
+      "excerpt": "勘探、开发、生产及销售原油和天然气"
+    },
+    {
+      "evidence_id": "e:oil:cnooc-security",
+      "revision": 1,
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "locator": "公司介绍 / paragraph 1",
+      "excerpt": "600938和00883"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-identity",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 1; 封面",
+      "excerpt": "中国海洋石油有限公司"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-security",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 1; 封面；交易所映射沿用既有证券证据",
+      "excerpt": "公司代码：600938 公司简称：中国海油"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 4,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

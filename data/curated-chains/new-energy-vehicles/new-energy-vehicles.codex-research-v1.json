@@ -1,0 +1,1198 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "new-energy-vehicles",
+    "revision": 1,
+    "name": "新能源汽车",
+    "need": "以电驱车辆、补能与配套系统满足交通运输需求。",
+    "boundary": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "首批按BEV结构建模；PHEV/增程/燃料电池另需专门来源，不套用纯电无发动机结论。",
+      "智能驾驶、汽车软件、换电、整车制造工序及售后回收尚未形成逐环节证据。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "电驱核心",
+        "node_ids": [
+          "new-energy-vehicles:battery",
+          "new-energy-vehicles:motor",
+          "new-energy-vehicles:controller",
+          "new-energy-vehicles:dc",
+          "new-energy-vehicles:trans"
+        ]
+      },
+      {
+        "module": "车身与热管理",
+        "node_ids": [
+          "new-energy-vehicles:aux",
+          "new-energy-vehicles:thermal"
+        ]
+      },
+      {
+        "module": "整车与补能",
+        "node_ids": [
+          "new-energy-vehicles:vehicle",
+          "new-energy-vehicles:assembly",
+          "new-energy-vehicles:obc",
+          "new-energy-vehicles:port",
+          "new-energy-vehicles:evse",
+          "new-energy-vehicles:charging"
+        ]
+      },
+      {
+        "module": "应用",
+        "node_ids": [
+          "new-energy-vehicles:passenger"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "new-energy-vehicles:battery",
+      "name": "牵引电池包",
+      "kind": "product",
+      "description": "储存牵引所需电能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:motor",
+      "name": "牵引电机",
+      "kind": "product",
+      "description": "利用电池能量产生车辆驱动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:controller",
+      "name": "功率电子控制器",
+      "kind": "product",
+      "description": "控制送往电机的能量及转矩/转速。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:dc",
+      "name": "DC/DC变换器",
+      "kind": "product",
+      "description": "将高压直流转换为附件需要的较低电压。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:trans",
+      "name": "电驱传动机构",
+      "kind": "product",
+      "description": "把电机机械动力传给车轮的传动接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:aux",
+      "name": "辅助电池",
+      "kind": "product",
+      "description": "为车辆附件提供电力的辅助电池。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:thermal",
+      "name": "热管理系统",
+      "kind": "product",
+      "description": "维持电机、功率电子等组件适用温度的系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:vehicle",
+      "name": "纯电动整车",
+      "kind": "product",
+      "description": "本稿只按AFDC的BEV组件示意定义。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:assembly",
+      "name": "整车系统集成",
+      "kind": "activity",
+      "description": "编辑建模的整车部件集成接口，不主张统一工厂工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:obc",
+      "name": "车载充电机OBC",
+      "kind": "product",
+      "description": "把输入交流转换为电池充电需要的直流。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:port",
+      "name": "充电接口",
+      "kind": "product",
+      "description": "连接车辆与外部电源的物理接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:evse",
+      "name": "外部充电设备EVSE",
+      "kind": "product",
+      "description": "向车辆提供充电连接/供电的设备接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:charging",
+      "name": "车辆充电活动",
+      "kind": "activity",
+      "description": "外部电源为牵引电池补充能量。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "new-energy-vehicles:passenger",
+      "name": "乘用车出行",
+      "kind": "application",
+      "description": "比亚迪所述乘用车业务应用；不是车型销量判断。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:battery",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:motor",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:controller",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:dc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:trans",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:aux",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:thermal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:vehicle",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:assembly",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:obc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:port",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:evse",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:charging",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "node_id": "new-energy-vehicles:passenger",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:3e7fd94d1211fc95",
+      "from_node_id": "new-energy-vehicles:battery",
+      "to_node_id": "new-energy-vehicles:motor",
+      "kind": "supports",
+      "statement": "牵引电池为电机驱动提供电力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:7684638ac6ca2311",
+      "from_node_id": "new-energy-vehicles:motor",
+      "to_node_id": "new-energy-vehicles:trans",
+      "kind": "supports",
+      "statement": "结构推断：牵引电机与车轮传动机构衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:b18daf26deeb145c",
+      "from_node_id": "new-energy-vehicles:controller",
+      "to_node_id": "new-energy-vehicles:motor",
+      "kind": "supports",
+      "statement": "功率电子控制器控制电机能量流。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:47bbc473ff4857fd",
+      "from_node_id": "new-energy-vehicles:battery",
+      "to_node_id": "new-energy-vehicles:dc",
+      "kind": "input_to",
+      "statement": "DC/DC接受较高电压电池电源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:a3701d02ad129a02",
+      "from_node_id": "new-energy-vehicles:dc",
+      "to_node_id": "new-energy-vehicles:aux",
+      "kind": "supports",
+      "statement": "DC/DC可为辅助电池充电并支持附件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:4d20c022c5ef677c",
+      "from_node_id": "new-energy-vehicles:thermal",
+      "to_node_id": "new-energy-vehicles:vehicle",
+      "kind": "supports",
+      "statement": "热管理支撑车辆组件温度控制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:80ffd462900141fa",
+      "from_node_id": "new-energy-vehicles:evse",
+      "to_node_id": "new-energy-vehicles:port",
+      "kind": "supports",
+      "statement": "结构推断：外部充电设备连接车辆充电口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:d7d55a4aa653fba6",
+      "from_node_id": "new-energy-vehicles:port",
+      "to_node_id": "new-energy-vehicles:obc",
+      "kind": "supports",
+      "statement": "结构推断：交流充电输入衔接OBC。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:7937ba502d44f0ce",
+      "from_node_id": "new-energy-vehicles:obc",
+      "to_node_id": "new-energy-vehicles:charging",
+      "kind": "used_for",
+      "statement": "OBC承担交流转直流充电；不指全部直流快充必须经过OBC。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:994dbcb1d69d18fe",
+      "from_node_id": "new-energy-vehicles:charging",
+      "to_node_id": "new-energy-vehicles:battery",
+      "kind": "supports",
+      "statement": "充电活动补充牵引电池能量。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:8699cd497b132f71",
+      "from_node_id": "new-energy-vehicles:assembly",
+      "to_node_id": "new-energy-vehicles:vehicle",
+      "kind": "produces",
+      "statement": "结构推断：部件经系统集成形成整车。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:new-energy-vehicles:b799ae2a958fa298",
+      "from_node_id": "new-energy-vehicles:vehicle",
+      "to_node_id": "new-energy-vehicles:passenger",
+      "kind": "used_for",
+      "statement": "结构推断：适用整车用于乘用车出行。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_byd",
+      "name": "比亚迪股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_catl",
+      "name": "宁德时代新能源科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:002594",
+      "company_id": "company_byd",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-investor:4ca8f9bcc6ce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:300750",
+      "company_id": "company_catl",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:new-energy-vehicles:b3256cc86cb1c7ba",
+      "company_id": "company_byd",
+      "node_id": "new-energy-vehicles:vehicle",
+      "role": "乘用车整车业务（集团范围）",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:new-energy-vehicles:d16160a4ba096753",
+      "company_id": "company_byd",
+      "node_id": "new-energy-vehicles:battery",
+      "role": "电池核心技术",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:new-energy-vehicles:fef01c22c731af6b",
+      "company_id": "company_byd",
+      "node_id": "new-energy-vehicles:motor",
+      "role": "电机核心技术",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:new-energy-vehicles:9954d260ebbbbd81",
+      "company_id": "company_byd",
+      "node_id": "new-energy-vehicles:controller",
+      "role": "电控核心技术",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:new-energy-vehicles:5fdc74129fdaf94c",
+      "company_id": "company_catl",
+      "node_id": "new-energy-vehicles:battery",
+      "role": "动力电池方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:new-energy-vehicles:codex-research-v1",
+      "industry_id": "new-energy-vehicles",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "电驱核心",
+          "node_ids": [
+            "new-energy-vehicles:battery",
+            "new-energy-vehicles:motor",
+            "new-energy-vehicles:controller",
+            "new-energy-vehicles:dc",
+            "new-energy-vehicles:trans"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "车身与热管理",
+          "node_ids": [
+            "new-energy-vehicles:aux",
+            "new-energy-vehicles:thermal"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "整车与补能",
+          "node_ids": [
+            "new-energy-vehicles:vehicle",
+            "new-energy-vehicles:assembly",
+            "new-energy-vehicles:obc",
+            "new-energy-vehicles:port",
+            "new-energy-vehicles:evse",
+            "new-energy-vehicles:charging"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用",
+          "node_ids": [
+            "new-energy-vehicles:passenger"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:new-energy-vehicles:3e7fd94d1211fc95",
+        "rel:new20261021:new-energy-vehicles:7684638ac6ca2311",
+        "rel:new20261021:new-energy-vehicles:b18daf26deeb145c",
+        "rel:new20261021:new-energy-vehicles:47bbc473ff4857fd",
+        "rel:new20261021:new-energy-vehicles:a3701d02ad129a02",
+        "rel:new20261021:new-energy-vehicles:4d20c022c5ef677c",
+        "rel:new20261021:new-energy-vehicles:80ffd462900141fa",
+        "rel:new20261021:new-energy-vehicles:d7d55a4aa653fba6",
+        "rel:new20261021:new-energy-vehicles:7937ba502d44f0ce",
+        "rel:new20261021:new-energy-vehicles:994dbcb1d69d18fe",
+        "rel:new20261021:new-energy-vehicles:8699cd497b132f71",
+        "rel:new20261021:new-energy-vehicles:b799ae2a958fa298"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:afdc-ev",
+      "source_version": "sha256:bf92a846252a9dd8d04a1dbc781db7137898fc436411f4fd1825a2d2024b9f19",
+      "title": "All-electric car components",
+      "publisher": "US DOE AFDC",
+      "url": "https://afdc.energy.gov/vehicles/how-do-all-electric-cars-work",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152447+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "d990fc287ad03e70f4f0aba863ee22b081aca5e74ffe9ba41c15860d3b8ae3e1",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:byd-about",
+      "source_version": "sha256:c55ffc226d9fdb398124ac2e9100578a714ff046f093d88910dc7372089b63be",
+      "title": "关于比亚迪",
+      "publisher": "比亚迪",
+      "url": "https://www.bydglobal.com/cn/about",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975106+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "39eabe471029fff063b54c221fc7d199d95bdee396b1b2e0d88864c90514d5e4",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:byd-investor",
+      "source_version": "sha256:6fd92f9e7906f480cfedf06022d635319a3cc2b616f539eec0d033aa1f139c67",
+      "title": "投资者关系",
+      "publisher": "比亚迪",
+      "url": "https://www.bydglobal.com/cn/investor-relations",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975154+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "bebcd9d77ef9f673e3730f764604649ac4f7161786fc6f7b96beec54e9c3f214",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "title": "公司及产品",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152543+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7a07573cce53711c49db120ca38a48750c94134ab482735b827b123f4e03e17e",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "title": "企业简介",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/about/profile/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.974795+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "6577a7db469d518f0aa15e9b00ab7cf5b917b15a9976b47a84b954f338625389",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:afdc-ev:5dce45f18a7f",
+      "revision": 1,
+      "source_id": "codex-20261021:afdc-ev",
+      "source_version": "sha256:bf92a846252a9dd8d04a1dbc781db7137898fc436411f4fd1825a2d2024b9f19",
+      "excerpt": "Using power from the traction battery pack, this motor drives the vehicle's wheels.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/afdc-ev.txt:93"
+      },
+      "summary": "BEV电池包经牵引电机驱动车轮；不泛化全部新能源车。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:afdc-ev:3119fb81c789",
+      "revision": 1,
+      "source_id": "codex-20261021:afdc-ev",
+      "source_version": "sha256:bf92a846252a9dd8d04a1dbc781db7137898fc436411f4fd1825a2d2024b9f19",
+      "excerpt": "Onboard charger",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/afdc-ev.txt:94"
+      },
+      "summary": "本页逐项定义充电口、OBC、DC/DC、电控、热管理和传动等BEV组件。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:byd-about:3463e2f52671",
+      "revision": 1,
+      "source_id": "codex-20261021:byd-about",
+      "source_version": "sha256:c55ffc226d9fdb398124ac2e9100578a714ff046f093d88910dc7372089b63be",
+      "excerpt": "自研核心部件(电池、电机、电控)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/byd-about.txt:57"
+      },
+      "summary": "比亚迪官网披露集团垂直整合及整车业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:byd-investor:4ca8f9bcc6ce",
+      "revision": 1,
+      "source_id": "codex-20261021:byd-investor",
+      "source_version": "sha256:6fd92f9e7906f480cfedf06022d635319a3cc2b616f539eec0d033aa1f139c67",
+      "excerpt": "002594.SZ",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/byd-investor.txt:79"
+      },
+      "summary": "比亚迪官网A股栏目。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+      "revision": 1,
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "excerpt": "为电动汽车提供可靠动力",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl.txt:124"
+      },
+      "summary": "宁德时代官网动力电池应用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+      "revision": 1,
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "excerpt": "300750",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl-profile.txt:149"
+      },
+      "summary": "宁德时代官网上市记录与发行人简介。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 1,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

@@ -1,0 +1,1336 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "copper",
+    "revision": 2,
+    "name": "铜",
+    "need": "将铜矿或适用再生原料转为铜金属及下游导电导热材料。",
+    "boundary": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "工艺以Metso 2024技术册为结构基线；分别标记硫化矿火法及氧化矿浸出萃取电积，硫化矿也存在湿法分支。",
+      "紫金复用原主体并核对当前官网铜资源开采总类；未凭简介判断硫化矿或氧化矿工艺。江铜集团未绑定上市股份代码；再生铜、加工与更多公司待细化。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "矿石与选矿",
+        "node_ids": [
+          "copper:sulf",
+          "copper:oxide",
+          "copper:crush",
+          "copper:float",
+          "copper:conc",
+          "copper:mining"
+        ]
+      },
+      {
+        "module": "火法与精炼",
+        "node_ids": [
+          "copper:smelt",
+          "copper:anode",
+          "copper:refine"
+        ]
+      },
+      {
+        "module": "湿法路线",
+        "node_ids": [
+          "copper:leach",
+          "copper:sx",
+          "copper:ew"
+        ]
+      },
+      {
+        "module": "产品与应用",
+        "node_ids": [
+          "copper:cath",
+          "copper:power"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "copper:sulf",
+      "name": "硫化铜矿原料",
+      "kind": "product",
+      "description": "硫化矿路线输入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:oxide",
+      "name": "氧化铜矿原料",
+      "kind": "product",
+      "description": "氧化矿路线输入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:crush",
+      "name": "破碎与磨矿",
+      "kind": "activity",
+      "description": "矿石粒度处理接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9dcc62b1a4d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:float",
+      "name": "浮选与精矿脱水",
+      "kind": "activity",
+      "description": "适用硫化矿选矿及固液分离。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9680dc86dc2b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:conc",
+      "name": "铜精矿",
+      "kind": "product",
+      "description": "适用选矿路线中间品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:smelt",
+      "name": "熔炼与吹炼",
+      "kind": "activity",
+      "description": "示例硫化矿火法路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9b4ccd8f0158",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:anode",
+      "name": "阳极铜与火法精炼",
+      "kind": "product",
+      "description": "火法精炼及阳极浇铸接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:refine",
+      "name": "电解精炼",
+      "kind": "activity",
+      "description": "以阳极铜进行精炼，区别电积。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:leach",
+      "name": "浸出",
+      "kind": "activity",
+      "description": "适用矿石湿法浸出。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:d181f35401c8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:sx",
+      "name": "溶剂萃取",
+      "kind": "activity",
+      "description": "浸出液中铜的萃取分离接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:ew",
+      "name": "电积",
+      "kind": "activity",
+      "description": "适用湿法流程中从溶液获得铜。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:cath",
+      "name": "阴极铜",
+      "kind": "product",
+      "description": "金属铜产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jxcc:79511c681dd1",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:power",
+      "name": "电力与电子应用",
+      "kind": "application",
+      "description": "导电材料下游接口，铜材加工待补。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:613e0c674386",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "copper:mining",
+      "name": "铜资源勘探与开采",
+      "kind": "activity",
+      "description": "铜资源业务总类，不用主体概述判定具体矿石类型。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zijin-about:dc642a8ce66c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "copper",
+      "node_id": "copper:sulf",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:oxide",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:crush",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:float",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:conc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:smelt",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:anode",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:refine",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:leach",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:sx",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:ew",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:cath",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:power",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "copper",
+      "node_id": "copper:mining",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:copper:85b8f8699a09ba76",
+      "from_node_id": "copper:sulf",
+      "to_node_id": "copper:crush",
+      "kind": "input_to",
+      "statement": "硫化矿进行破碎磨矿。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9dcc62b1a4d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:065f8f5928764533",
+      "from_node_id": "copper:crush",
+      "to_node_id": "copper:float",
+      "kind": "precedes",
+      "statement": "适用硫化矿粒度处理后浮选。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:2b8a863d24db3a78",
+      "from_node_id": "copper:float",
+      "to_node_id": "copper:conc",
+      "kind": "produces",
+      "statement": "选矿获得铜精矿。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:410c3c565b1e849e",
+      "from_node_id": "copper:conc",
+      "to_node_id": "copper:smelt",
+      "kind": "input_to",
+      "statement": "适用精矿投入熔炼。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9b4ccd8f0158",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:da6a04e36ed3e37b",
+      "from_node_id": "copper:smelt",
+      "to_node_id": "copper:anode",
+      "kind": "precedes",
+      "statement": "吹炼后与火法精炼及阳极浇铸衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:aead57d604d2f2a6",
+      "from_node_id": "copper:anode",
+      "to_node_id": "copper:refine",
+      "kind": "input_to",
+      "statement": "阳极进入电解精炼。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:c37ae7c11a2aa6cd",
+      "from_node_id": "copper:refine",
+      "to_node_id": "copper:cath",
+      "kind": "produces",
+      "statement": "结构推断：精炼形成阴极铜接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:jxcc:79511c681dd1",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:9d99da59fd50995f",
+      "from_node_id": "copper:oxide",
+      "to_node_id": "copper:leach",
+      "kind": "input_to",
+      "statement": "氧化矿适用路线进入浸出。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:d181f35401c8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:f6f721723b197496",
+      "from_node_id": "copper:leach",
+      "to_node_id": "copper:sx",
+      "kind": "precedes",
+      "statement": "浸出液进入萃取。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:ff25140a711fa1ca",
+      "from_node_id": "copper:sx",
+      "to_node_id": "copper:ew",
+      "kind": "precedes",
+      "statement": "萃取与电积衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:650cbe9b260beda3",
+      "from_node_id": "copper:ew",
+      "to_node_id": "copper:cath",
+      "kind": "produces",
+      "statement": "结构推断：适用电积形成阴极铜接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:jxcc:79511c681dd1",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:copper:84f94cbc2d0fa424",
+      "from_node_id": "copper:cath",
+      "to_node_id": "copper:power",
+      "kind": "input_to",
+      "statement": "结构推断：铜经下游加工进入电力电子材料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:613e0c674386",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_metso",
+      "name": "Metso Corporation",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_jiangxi_copper_group",
+      "name": "江西铜业集团有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jxcc:4cb04a51ba49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:zijin",
+      "name": "紫金矿业集团股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "company_id": "company:gold:zijin",
+      "symbol": "SH:601899",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:copper:fce80520a79c194e",
+      "company_id": "company_metso",
+      "node_id": "copper:crush",
+      "role": "铜矿破碎磨矿技术设备",
+      "scope": "仅2024技术册产品及工艺范围；不把历史项目预计投产写成已验收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9dcc62b1a4d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:copper:1bfbdbc3618b8f06",
+      "company_id": "company_metso",
+      "node_id": "copper:smelt",
+      "role": "铜冶炼技术设备",
+      "scope": "仅2024技术册产品及工艺范围；不把历史项目预计投产写成已验收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:9b4ccd8f0158",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:copper:9da6a440ecf8aed0",
+      "company_id": "company_metso",
+      "node_id": "copper:ew",
+      "role": "湿法电积工艺设备",
+      "scope": "仅2024技术册产品及工艺范围；不把历史项目预计投产写成已验收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:copper:8101ee92fe74fb2a",
+      "company_id": "company_jiangxi_copper_group",
+      "node_id": "copper:cath",
+      "role": "集团官网阴极铜产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jxcc:79511c681dd1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:copper:739ecbfc8f9df73e",
+      "company_id": "company:gold:zijin",
+      "node_id": "copper:mining",
+      "role": "铜资源勘探与开采",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zijin-about:dc642a8ce66c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:copper:codex-research-v1",
+      "industry_id": "copper",
+      "revision": 2,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "矿石与选矿",
+          "node_ids": [
+            "copper:sulf",
+            "copper:oxide",
+            "copper:crush",
+            "copper:float",
+            "copper:conc",
+            "copper:mining"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "火法与精炼",
+          "node_ids": [
+            "copper:smelt",
+            "copper:anode",
+            "copper:refine"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "湿法路线",
+          "node_ids": [
+            "copper:leach",
+            "copper:sx",
+            "copper:ew"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "产品与应用",
+          "node_ids": [
+            "copper:cath",
+            "copper:power"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:copper:85b8f8699a09ba76",
+        "rel:new20261021:copper:065f8f5928764533",
+        "rel:new20261021:copper:2b8a863d24db3a78",
+        "rel:new20261021:copper:410c3c565b1e849e",
+        "rel:new20261021:copper:da6a04e36ed3e37b",
+        "rel:new20261021:copper:aead57d604d2f2a6",
+        "rel:new20261021:copper:c37ae7c11a2aa6cd",
+        "rel:new20261021:copper:9d99da59fd50995f",
+        "rel:new20261021:copper:f6f721723b197496",
+        "rel:new20261021:copper:ff25140a711fa1ca",
+        "rel:new20261021:copper:650cbe9b260beda3",
+        "rel:new20261021:copper:84f94cbc2d0fa424"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "title": "Copper processing solutions",
+      "publisher": "Metso",
+      "url": "https://www.metso.com/globalassets/commodities/copper-solutions-4905-04-24-en-mng.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:36.340641+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "ee9cae8be5426b652ae0f65a91ca20a2970c5f6078acf11c617192c9fb45189a",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:jxcc",
+      "source_version": "sha256:393c5af00907071982177fc1a75a36b0afd6fb3b0d5de1da0187bab33cadaca5",
+      "title": "公司及产品",
+      "publisher": "江西铜业",
+      "url": "https://www.jxcc.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:12.284431+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "f064a851207c99c63c8a97cd416f00ab900d9568f1df492977b9bee684820e2f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:zijin-about",
+      "source_version": "sha256:c5bd96d85f17002cc40a99c33828e96ef14df4f54c2c82b4d899ebee7cfb5324",
+      "title": "About Zijin",
+      "publisher": "紫金矿业",
+      "url": "https://www.zijinmining.com/about/about_us.htm",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:13:32.936691+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "e3c9aca43fe9fda4f1f6b4297796a7026b2c4b70d19830f5e1500d274809385f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "title": "紫金矿业集团股份有限公司2025年年度报告摘要",
+      "publisher": "紫金矿业集团股份有限公司",
+      "url": "https://www.zjky.cn/upload/file/2026/03/20/bb50638f28b449db9b1688af53a7bfd7.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:55:36.298414+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "capture_note": "PDF元数据标题残留2024；本轮实际封面及正文为2025年度报告摘要，按原文而非元数据判年。",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:f7f887270592",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Sulfide process",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:170"
+      },
+      "summary": "技术册第7页硫化矿流程。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:2552e12c6d10",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Oxide process",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:199"
+      },
+      "summary": "第8页氧化矿流程。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:9dcc62b1a4d0",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Primary crushing",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:92"
+      },
+      "summary": "破碎磨矿设备类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:9680dc86dc2b",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Flotation machine",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:82"
+      },
+      "summary": "选矿与固液分离接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:9b4ccd8f0158",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Flash smelting",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:108"
+      },
+      "summary": "火法冶炼路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:dcc88ecfa14c",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Electrorefining",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:110"
+      },
+      "summary": "阳极铜电解精炼路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:d181f35401c8",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Leaching",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:158"
+      },
+      "summary": "浸出、萃取及电积湿法路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:40d17d05c5e9",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Electrowinning",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:146"
+      },
+      "summary": "湿法电积，区别于阳极电解精炼。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:copper-process-pdf:613e0c674386",
+      "revision": 1,
+      "source_id": "codex-20261021:copper-process-pdf",
+      "source_version": "sha256:af303cca64678acfc7b66b810a79e574b55eac8672c7c9beb5d22574597a9d94",
+      "excerpt": "Electric power",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/copper-process-pdf.txt:25"
+      },
+      "summary": "铜电力及设备应用，未采用需求增速预测。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jxcc:4cb04a51ba49",
+      "revision": 1,
+      "source_id": "codex-20261021:jxcc",
+      "source_version": "sha256:393c5af00907071982177fc1a75a36b0afd6fb3b0d5de1da0187bab33cadaca5",
+      "excerpt": "江西铜业集团有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jxcc.txt:1"
+      },
+      "summary": "集团主体，未混同上市股份公司。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jxcc:79511c681dd1",
+      "revision": 1,
+      "source_id": "codex-20261021:jxcc",
+      "source_version": "sha256:393c5af00907071982177fc1a75a36b0afd6fb3b0d5de1da0187bab33cadaca5",
+      "excerpt": "阴极铜生产商",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jxcc.txt:148"
+      },
+      "summary": "江铜集团官网阴极铜产品描述。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:zijin-about:dc642a8ce66c",
+      "revision": 1,
+      "source_id": "codex-20261021:zijin-about",
+      "source_version": "sha256:c5bd96d85f17002cc40a99c33828e96ef14df4f54c2c82b4d899ebee7cfb5324",
+      "excerpt": "exploration and extraction of metals such as copper",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/zijin-about.txt:222"
+      },
+      "summary": "紫金官网说明含铜在内的金属勘探与开采业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:zijin-about:5bc7734e248e",
+      "revision": 1,
+      "source_id": "codex-20261021:zijin-about",
+      "source_version": "sha256:c5bd96d85f17002cc40a99c33828e96ef14df4f54c2c82b4d899ebee7cfb5324",
+      "excerpt": "601899",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/zijin-about.txt:223"
+      },
+      "summary": "官网A股代码与原有紫金主体精确复用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "e:gold:zijin-name",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 1; cover",
+      "excerpt": "紫金矿业集团股份有限公司"
+    },
+    {
+      "evidence_id": "e:gold:zijin-security",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 2; 公司简介; A-share column mapping",
+      "excerpt": "股票种类 A股 H股\n股票上市交易所 上交所 联交所\n股票简称 紫金矿业 紫金矿业\n股票代码 601899 2899"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 3,
+      "scope": "first_research_draft_major_modules_not_exhaustive",
+      "refinement": "公司总类归属收紧，不由概述推定具体矿种或制造路线"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

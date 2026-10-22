@@ -1,0 +1,1358 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "energy-storage",
+    "revision": 1,
+    "name": "储能系统",
+    "need": "以储能介质、功率转换和控制系统实现电能的时移及电力服务。",
+    "boundary": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "本稿聚焦锂电储能系统；抽蓄、压缩空气、液流等不套用锂电BOM。",
+      "结构技术基线来自2023阳光液冷系统手册，当前业务来自官网；不把历史机型参数当作2026行业标准。",
+      "不把调峰、套利、备电功能写成收益保障；接网、安全及工程适配须按具体项目核查。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "储能介质",
+        "node_ids": [
+          "energy-storage:cell",
+          "energy-storage:module"
+        ]
+      },
+      {
+        "module": "转换与控制",
+        "node_ids": [
+          "energy-storage:bms",
+          "energy-storage:pcs",
+          "energy-storage:ems"
+        ]
+      },
+      {
+        "module": "安全与集成",
+        "node_ids": [
+          "energy-storage:thermal",
+          "energy-storage:fire",
+          "energy-storage:transform",
+          "energy-storage:integration",
+          "energy-storage:ess"
+        ]
+      },
+      {
+        "module": "应用与运营",
+        "node_ids": [
+          "energy-storage:home",
+          "energy-storage:ci",
+          "energy-storage:utility",
+          "energy-storage:operation"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "energy-storage:cell",
+      "name": "储能电芯",
+      "kind": "product",
+      "description": "适用锂电化学体系电芯。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:ae516994f6f3",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:module",
+      "name": "电池模块与电池簇",
+      "kind": "product",
+      "description": "电芯向系统组合的层级。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:bms",
+      "name": "电池管理系统BMS",
+      "kind": "product",
+      "description": "电池状态监控与管理接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:c2d52b78884a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:pcs",
+      "name": "储能变流器PCS",
+      "kind": "product",
+      "description": "双向功率转换及充放电接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:ems",
+      "name": "能量管理系统EMS",
+      "kind": "product",
+      "description": "按项目配置实施监控、协调和管理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:b42a036f1bf1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:thermal",
+      "name": "热管理系统",
+      "kind": "product",
+      "description": "液冷机型温度管理样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:1f51781eb2e5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:fire",
+      "name": "消防探测与联动",
+      "kind": "product",
+      "description": "探测、报警、排风等适用保护接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:ef316005de89",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:transform",
+      "name": "变压器与电力接入",
+      "kind": "product",
+      "description": "适用系统电压及接入接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:ad8d55ea22be",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:integration",
+      "name": "储能系统集成",
+      "kind": "activity",
+      "description": "电池、转换、控制及辅助系统工程集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:ef316005de89",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:ess",
+      "name": "电池储能系统ESS",
+      "kind": "product",
+      "description": "集成后提供储能服务的设备系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:ae516994f6f3",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:home",
+      "name": "户用储能应用",
+      "kind": "application",
+      "description": "家庭侧应用类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:ci",
+      "name": "工商业储能应用",
+      "kind": "application",
+      "description": "工商业侧应用类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:utility",
+      "name": "电力储能应用",
+      "kind": "application",
+      "description": "电网侧及大型储能业务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "energy-storage:operation",
+      "name": "运行监控与维护",
+      "kind": "service",
+      "description": "适用系统监控、故障告警及维护接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:cell",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:module",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:bms",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:pcs",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:ems",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:thermal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:fire",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:transform",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:integration",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:ess",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:home",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:ci",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:utility",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "energy-storage",
+      "node_id": "energy-storage:operation",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:energy-storage:5901557337ab60a2",
+      "from_node_id": "energy-storage:cell",
+      "to_node_id": "energy-storage:module",
+      "kind": "part_of",
+      "statement": "结构推断：电芯组成适用模块及电池簇。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:f384ed60298f8319",
+      "from_node_id": "energy-storage:module",
+      "to_node_id": "energy-storage:integration",
+      "kind": "input_to",
+      "statement": "结构推断：电池层级进入系统集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:179efdc832e4da75",
+      "from_node_id": "energy-storage:bms",
+      "to_node_id": "energy-storage:integration",
+      "kind": "part_of",
+      "statement": "结构推断：电池管理纳入系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:c2d52b78884a",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:e0313f9e5a27c84f",
+      "from_node_id": "energy-storage:pcs",
+      "to_node_id": "energy-storage:integration",
+      "kind": "part_of",
+      "statement": "双向功率转换纳入系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:583d38701d1b85c9",
+      "from_node_id": "energy-storage:ems",
+      "to_node_id": "energy-storage:integration",
+      "kind": "supports",
+      "statement": "结构推断：EMS参与系统协调管理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:4b80523107247788",
+      "from_node_id": "energy-storage:thermal",
+      "to_node_id": "energy-storage:integration",
+      "kind": "part_of",
+      "statement": "液冷温控构成该机型辅助系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:1f51781eb2e5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:5b484a55aabc0bfa",
+      "from_node_id": "energy-storage:fire",
+      "to_node_id": "energy-storage:integration",
+      "kind": "part_of",
+      "statement": "消防及联动构成适用保护接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:ef316005de89",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:b77833cbb5d807aa",
+      "from_node_id": "energy-storage:transform",
+      "to_node_id": "energy-storage:integration",
+      "kind": "part_of",
+      "statement": "结构推断：变压器参与适用系统接入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:ad8d55ea22be",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:c2851132f026526c",
+      "from_node_id": "energy-storage:integration",
+      "to_node_id": "energy-storage:ess",
+      "kind": "produces",
+      "statement": "结构推断：系统集成形成储能设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:659185673142ac94",
+      "from_node_id": "energy-storage:ess",
+      "to_node_id": "energy-storage:home",
+      "kind": "used_for",
+      "statement": "结构推断：储能系统可按户用方案部署。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:c8ac670e3da84fc2",
+      "from_node_id": "energy-storage:ess",
+      "to_node_id": "energy-storage:ci",
+      "kind": "used_for",
+      "statement": "结构推断：储能系统可按工商业方案部署。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:2f5ed21d3dbc9a01",
+      "from_node_id": "energy-storage:ess",
+      "to_node_id": "energy-storage:utility",
+      "kind": "used_for",
+      "statement": "结构推断：储能系统可按电力储能方案部署。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:energy-storage:d1f24fc4e4a32e27",
+      "from_node_id": "energy-storage:ems",
+      "to_node_id": "energy-storage:operation",
+      "kind": "supports",
+      "statement": "EMS支持SOC管理及监控接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_catl",
+      "name": "宁德时代新能源科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_sungrow",
+      "name": "阳光电源股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:300750",
+      "company_id": "company_catl",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:300274",
+      "company_id": "company_sungrow",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:ede8643a2268",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:energy-storage:1c80b5b539b39ab3",
+      "company_id": "company_catl",
+      "node_id": "energy-storage:ess",
+      "role": "磷酸铁锂储能系统与解决方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:ae516994f6f3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:energy-storage:e2bc8bd8779fd683",
+      "company_id": "company_sungrow",
+      "node_id": "energy-storage:ess",
+      "role": "储能系统业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:energy-storage:91fff3a5044cea8c",
+      "company_id": "company_sungrow",
+      "node_id": "energy-storage:pcs",
+      "role": "储能变流器",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:energy-storage:7f31222d7fdf9c7d",
+      "company_id": "company_sungrow",
+      "node_id": "energy-storage:ems",
+      "role": "EMS3000CP产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow-ems:b42a036f1bf1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:energy-storage:codex-research-v1",
+      "industry_id": "energy-storage",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "储能介质",
+          "node_ids": [
+            "energy-storage:cell",
+            "energy-storage:module"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "转换与控制",
+          "node_ids": [
+            "energy-storage:bms",
+            "energy-storage:pcs",
+            "energy-storage:ems"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "安全与集成",
+          "node_ids": [
+            "energy-storage:thermal",
+            "energy-storage:fire",
+            "energy-storage:transform",
+            "energy-storage:integration",
+            "energy-storage:ess"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用与运营",
+          "node_ids": [
+            "energy-storage:home",
+            "energy-storage:ci",
+            "energy-storage:utility",
+            "energy-storage:operation"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:energy-storage:5901557337ab60a2",
+        "rel:new20261021:energy-storage:f384ed60298f8319",
+        "rel:new20261021:energy-storage:179efdc832e4da75",
+        "rel:new20261021:energy-storage:e0313f9e5a27c84f",
+        "rel:new20261021:energy-storage:583d38701d1b85c9",
+        "rel:new20261021:energy-storage:4b80523107247788",
+        "rel:new20261021:energy-storage:5b484a55aabc0bfa",
+        "rel:new20261021:energy-storage:b77833cbb5d807aa",
+        "rel:new20261021:energy-storage:c2851132f026526c",
+        "rel:new20261021:energy-storage:659185673142ac94",
+        "rel:new20261021:energy-storage:c8ac670e3da84fc2",
+        "rel:new20261021:energy-storage:2f5ed21d3dbc9a01",
+        "rel:new20261021:energy-storage:d1f24fc4e4a32e27"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "title": "公司及产品",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152543+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7a07573cce53711c49db120ca38a48750c94134ab482735b827b123f4e03e17e",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "title": "企业简介",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/about/profile/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.974795+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "6577a7db469d518f0aa15e9b00ab7cf5b917b15a9976b47a84b954f338625389",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "title": "液冷系统运维指导（2023）",
+      "publisher": "阳光电源",
+      "url": "https://info-support.sungrowpower.com/application/pdf/2023/06/17/E205-%E5%9B%BD%E5%86%85%E6%B6%B2%E5%86%B7%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4%E6%8C%87%E5%AF%BC-Ver11-202305.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:13:32.937150+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "f45f1b4a41d59ecbb3b6cad7655e3a901e4ce32b10e45741f2cae50b8c9eabad",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sungrow-ems",
+      "source_version": "sha256:fc540ac498c2a476b0423dc1a0cf4ad944916f4f7e7fd4bd267e57a8762be8f5",
+      "title": "EMS3000CP能量管理系统",
+      "publisher": "阳光电源",
+      "url": "https://cn.sungrowpower.com/iSolarCloud/product/35/196.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:13:32.937078+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "879cdae2c8ee93c9386111f4e74241e8cd952260a15c1ee2b79f37179b25d1af",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sungrow-ess",
+      "source_version": "sha256:b81caa1f7198a0491817e5568e4836bc4a3573adfd460be6f00bbf4090a94a04",
+      "title": "储能系统业务",
+      "publisher": "阳光电源",
+      "url": "https://cn.sungrowpower.com/solution/4.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:13:32.937033+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7cf2b08f3aec5ee758bb734a4fbad961a8d1a9e32457b6770c7ff3af2a67e728",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sungrow",
+      "source_version": "sha256:32924ab0ce8f9e9e55321f26515f67ab92ec0fcb22676b5ff22d0355de5aaaa7",
+      "title": "公司及产品",
+      "publisher": "阳光电源",
+      "url": "https://www.sungrowpower.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:13.755503+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "3e3b5823e356e1b12bc7c24f4854f682a86848a61f8ead3e1ccbc5f22f4d8acb",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:catl:ae516994f6f3",
+      "revision": 1,
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "excerpt": "基于磷酸铁锂化学体系",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl.txt:130"
+      },
+      "summary": "宁德时代公开的锂电储能系统路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl-profile:67f8c322a1a0",
+      "revision": 1,
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "excerpt": "300750",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl-profile.txt:149"
+      },
+      "summary": "原有宁德主体及代码复用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:16e90a5aab9a",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "2.1 储能变流器（PCS）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:135"
+      },
+      "summary": "2023手册说明双向变流、充放电及控制接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:fc1088a5cb0f",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "电池模块 BM",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:102"
+      },
+      "summary": "手册电芯、模块、电池簇与系统层级。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:c2d52b78884a",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "BMS (Battery Management System)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:113"
+      },
+      "summary": "手册电池管理体系。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:1f51781eb2e5",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "液冷温控系统",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:242"
+      },
+      "summary": "该液冷系统的温度管理模块。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:ef316005de89",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "2.9 消防系统（FSS）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:143"
+      },
+      "summary": "该系统消防、探测及联动接口，具体配置有可选项。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-thermal:ad8d55ea22be",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-thermal",
+      "source_version": "sha256:b73467a7fe5c0bdf53754c2c2b698a134891f0a827db06182265f11de4828415",
+      "excerpt": "变压器",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-thermal.txt:223"
+      },
+      "summary": "系统电力接口设备。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-ems:0669b3d7b1ce",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-ems",
+      "source_version": "sha256:fc540ac498c2a476b0423dc1a0cf4ad944916f4f7e7fd4bd267e57a8762be8f5",
+      "excerpt": "支持储能SOC均衡管理",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-ems.txt:539"
+      },
+      "summary": "EMS公开功能说明，不采用收益宣传。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-ems:b42a036f1bf1",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-ems",
+      "source_version": "sha256:fc540ac498c2a476b0423dc1a0cf4ad944916f4f7e7fd4bd267e57a8762be8f5",
+      "excerpt": "峰谷套利、防逆流、动态增容",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-ems.txt:545"
+      },
+      "summary": "该EMS型号的边端功能类别，不保证项目收益。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-ess:ede8643a2268",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-ess",
+      "source_version": "sha256:b81caa1f7198a0491817e5568e4836bc4a3573adfd460be6f00bbf4090a94a04",
+      "excerpt": "300274.SZ",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-ess.txt:629"
+      },
+      "summary": "阳光电源官网证券代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow-ess:9c71dfd7f0d2",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow-ess",
+      "source_version": "sha256:b81caa1f7198a0491817e5568e4836bc4a3573adfd460be6f00bbf4090a94a04",
+      "excerpt": "户用储能",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow-ess.txt:111"
+      },
+      "summary": "官网同时列工商业及电力储能类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+      "revision": 1,
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "excerpt": "300750",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl-profile.txt:149"
+      },
+      "summary": "宁德时代官网上市记录与发行人简介。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow",
+      "source_version": "sha256:32924ab0ce8f9e9e55321f26515f67ab92ec0fcb22676b5ff22d0355de5aaaa7",
+      "excerpt": "PV Inverter",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow.txt:30"
+      },
+      "summary": "阳光电源光伏逆变器产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 4,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

@@ -1,0 +1,1297 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "coal",
+    "revision": 1,
+    "name": "煤炭",
+    "need": "开采、洗选和运输煤炭，服务发电、冶金及化工等用途。",
+    "boundary": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "露天与井工开采是并列路线；动力煤、炼焦煤及化工用煤不可无条件互换。",
+      "EIA技术介绍含历史美国统计，本稿不采用其数量、成本对比或距离阈值作为中国当期指标。",
+      "公司样本为中煤能源集团合并业务，未核查各矿产能、热值、硫分、长协或煤价。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "资源与采矿",
+        "node_ids": [
+          "coal:resource",
+          "coal:equipment",
+          "coal:surface",
+          "coal:underground"
+        ]
+      },
+      {
+        "module": "洗选与物流",
+        "node_ids": [
+          "coal:raw",
+          "coal:prep",
+          "coal:coal",
+          "coal:logistics"
+        ]
+      },
+      {
+        "module": "下游用途",
+        "node_ids": [
+          "coal:power",
+          "coal:coking",
+          "coal:coke",
+          "coal:metallurgy",
+          "coal:chem",
+          "coal:products"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "coal:resource",
+      "name": "煤炭资源",
+      "kind": "product",
+      "description": "适用矿床资源接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:equipment",
+      "name": "煤矿机械装备",
+      "kind": "product",
+      "description": "适配矿山及开采方式的设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:ac8c7a44b013",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:surface",
+      "name": "露天开采",
+      "kind": "activity",
+      "description": "露天矿采煤路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:underground",
+      "name": "井工开采",
+      "kind": "activity",
+      "description": "地下矿开采路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:raw",
+      "name": "原煤",
+      "kind": "product",
+      "description": "采后待适用加工的煤炭。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:prep",
+      "name": "选煤与加工",
+      "kind": "activity",
+      "description": "去除适用杂质并按煤质加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:coal",
+      "name": "商品煤",
+      "kind": "product",
+      "description": "按用途及煤质规格形成的煤炭产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:chinacoal:9ddf048f6f1d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:logistics",
+      "name": "煤炭运输与贸易",
+      "kind": "service",
+      "description": "铁路、船舶及适用短途运输接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:061b69dd9758",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:chinacoal:9ddf048f6f1d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:power",
+      "name": "燃煤发电",
+      "kind": "application",
+      "description": "煤燃烧产热并经蒸汽系统发电。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:8f9f1991c9d6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:coking",
+      "name": "煤焦化",
+      "kind": "activity",
+      "description": "适用炼焦煤进入焦化路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:coke",
+      "name": "焦炭",
+      "kind": "product",
+      "description": "适用冶金及工业路线的焦炭产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:metallurgy",
+      "name": "冶金应用",
+      "kind": "application",
+      "description": "适用焦炭参与炼铁；煤质需匹配。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:chem",
+      "name": "煤化工转化",
+      "kind": "activity",
+      "description": "煤气化等适用化工路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c32e910c8965",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "coal:products",
+      "name": "煤化工产品",
+      "kind": "product",
+      "description": "甲醇、尿素、烯烃等不同路线产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "coal",
+      "node_id": "coal:resource",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:equipment",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:surface",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:underground",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:raw",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:prep",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:coal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:logistics",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:power",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:coking",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:coke",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:metallurgy",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:chem",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "coal",
+      "node_id": "coal:products",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:coal:9a2232ceabe87bb5",
+      "from_node_id": "coal:resource",
+      "to_node_id": "coal:surface",
+      "kind": "input_to",
+      "statement": "结构推断：适用资源以露天方式开采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:fd44f8e3f5169ea5",
+      "from_node_id": "coal:resource",
+      "to_node_id": "coal:underground",
+      "kind": "input_to",
+      "statement": "结构推断：适用资源以井工方式开采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:5b1ff0e12a05e36b",
+      "from_node_id": "coal:equipment",
+      "to_node_id": "coal:surface",
+      "kind": "supports",
+      "statement": "结构推断：适配煤矿装备支持开采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:ac8c7a44b013",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:605580c67912fcd2",
+      "from_node_id": "coal:equipment",
+      "to_node_id": "coal:underground",
+      "kind": "supports",
+      "statement": "结构推断：适配井工装备支持开采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:ac8c7a44b013",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:cd0320b706ba5a52",
+      "from_node_id": "coal:surface",
+      "to_node_id": "coal:raw",
+      "kind": "produces",
+      "statement": "结构推断：露天采矿形成原煤接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:a15328e8707a112d",
+      "from_node_id": "coal:underground",
+      "to_node_id": "coal:raw",
+      "kind": "produces",
+      "statement": "结构推断：井工采矿形成原煤接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:2b23353fbe62f631",
+      "from_node_id": "coal:raw",
+      "to_node_id": "coal:prep",
+      "kind": "input_to",
+      "statement": "原煤可进入选煤加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:77b1b7c73a4d57dc",
+      "from_node_id": "coal:prep",
+      "to_node_id": "coal:coal",
+      "kind": "produces",
+      "statement": "结构推断：选煤加工形成适用煤炭产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:30f9b9fa88dc1424",
+      "from_node_id": "coal:coal",
+      "to_node_id": "coal:logistics",
+      "kind": "input_to",
+      "statement": "商品煤进入适用物流。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-mining:061b69dd9758",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:6158e03a8edca1fd",
+      "from_node_id": "coal:logistics",
+      "to_node_id": "coal:power",
+      "kind": "supports",
+      "statement": "结构推断：匹配煤质的煤炭供应发电。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:8f9f1991c9d6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:dc0dc15fbeba52b0",
+      "from_node_id": "coal:coal",
+      "to_node_id": "coal:coking",
+      "kind": "input_to",
+      "statement": "结构推断：适用炼焦煤进入焦化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:21729b1772c24083",
+      "from_node_id": "coal:coking",
+      "to_node_id": "coal:coke",
+      "kind": "produces",
+      "statement": "结构推断：焦化形成煤焦产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:2730ab592f660470",
+      "from_node_id": "coal:coke",
+      "to_node_id": "coal:metallurgy",
+      "kind": "used_for",
+      "statement": "适用焦炭用于冶金。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:ae23108df1e87ea3",
+      "from_node_id": "coal:coal",
+      "to_node_id": "coal:chem",
+      "kind": "input_to",
+      "statement": "结构推断：适用煤炭进入化工转化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eia-coal-use:c32e910c8965",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:coal:aaf5627d69b3b630",
+      "from_node_id": "coal:chem",
+      "to_node_id": "coal:products",
+      "kind": "produces",
+      "statement": "结构推断：相应煤化工路线形成不同化工品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_china_coal_energy",
+      "name": "中国中煤能源股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:8a692473a166",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:601898",
+      "company_id": "company_china_coal_energy",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal-faq:d0f90b79d90a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:coal:c3b38971ca3c0256",
+      "company_id": "company_china_coal_energy",
+      "node_id": "coal:coal",
+      "role": "煤炭生产与贸易",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:9ddf048f6f1d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:coal:3d18554efc33b343",
+      "company_id": "company_china_coal_energy",
+      "node_id": "coal:equipment",
+      "role": "煤矿工程机械装备及服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:ac8c7a44b013",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:coal:d8e54cb1d805b2ab",
+      "company_id": "company_china_coal_energy",
+      "node_id": "coal:products",
+      "role": "煤化工业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:coal:codex-research-v1",
+      "industry_id": "coal",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "资源与采矿",
+          "node_ids": [
+            "coal:resource",
+            "coal:equipment",
+            "coal:surface",
+            "coal:underground"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "洗选与物流",
+          "node_ids": [
+            "coal:raw",
+            "coal:prep",
+            "coal:coal",
+            "coal:logistics"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "下游用途",
+          "node_ids": [
+            "coal:power",
+            "coal:coking",
+            "coal:coke",
+            "coal:metallurgy",
+            "coal:chem",
+            "coal:products"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2"
+      ],
+      "relation_ids": [
+        "rel:new20261021:coal:9a2232ceabe87bb5",
+        "rel:new20261021:coal:fd44f8e3f5169ea5",
+        "rel:new20261021:coal:5b1ff0e12a05e36b",
+        "rel:new20261021:coal:605580c67912fcd2",
+        "rel:new20261021:coal:cd0320b706ba5a52",
+        "rel:new20261021:coal:a15328e8707a112d",
+        "rel:new20261021:coal:2b23353fbe62f631",
+        "rel:new20261021:coal:77b1b7c73a4d57dc",
+        "rel:new20261021:coal:30f9b9fa88dc1424",
+        "rel:new20261021:coal:6158e03a8edca1fd",
+        "rel:new20261021:coal:dc0dc15fbeba52b0",
+        "rel:new20261021:coal:21729b1772c24083",
+        "rel:new20261021:coal:2730ab592f660470",
+        "rel:new20261021:coal:ae23108df1e87ea3",
+        "rel:new20261021:coal:aaf5627d69b3b630"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:eia-coal-mining",
+      "source_version": "sha256:13533803498b4326a96dd1ef0ddf48fd86e101f4212d63180ee072c7a7ec66db",
+      "title": "Coal mining and transportation",
+      "publisher": "US EIA",
+      "url": "https://www.eia.gov/energyexplained/coal/mining-and-transportation.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:18.118368+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "6ab1df520a7f79a03914e8bd3db1aeec686fe0f35c251daf8a6ee565574e1533",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:eia-coal-use",
+      "source_version": "sha256:647bf290e0364df921a28b14c8c3adc5ee85f9784a58ceec1e33db8673565c3a",
+      "title": "Use of coal",
+      "publisher": "US EIA",
+      "url": "https://www.eia.gov/energyexplained/coal/use-of-coal.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:18.577949+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "61d5826a492b0d4fb676ba87ab31b936b2ea5f0ec2de55fa3696042a125513d1",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:chinacoal",
+      "source_version": "sha256:77b36912839c7d18314e525958ef998831525ac2805660a344616a2042d33774",
+      "title": "公司及业务",
+      "publisher": "中煤能源",
+      "url": "https://www.chinacoalenergy.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:21.247948+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "3536bdf4486007d7bd319c935c55d965fd681ea6a68d9fe418aa29c77b779e1f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:chinacoal-faq",
+      "source_version": "sha256:7180ae5fd84e80862b5a5d04dc20513e353fc1b2073cd7189519064ed5d5e00b",
+      "title": "Investor FAQs",
+      "publisher": "中煤能源",
+      "url": "https://en.chinacoalenergy.com/col/col4926/index.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:17:50.577318+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "9a83d01c23405860b05a24cb5ba2a6f049ee41b8aca6bcc37829215ee35fb733",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:eia-coal-mining:e985057c35a2",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-mining",
+      "source_version": "sha256:13533803498b4326a96dd1ef0ddf48fd86e101f4212d63180ee072c7a7ec66db",
+      "excerpt": "Surface mining",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-mining.txt:252"
+      },
+      "summary": "露天开采路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-mining:80f582fd143d",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-mining",
+      "source_version": "sha256:13533803498b4326a96dd1ef0ddf48fd86e101f4212d63180ee072c7a7ec66db",
+      "excerpt": "Underground mining",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-mining.txt:253"
+      },
+      "summary": "井工开采路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-mining:b9c0cb48a250",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-mining",
+      "source_version": "sha256:13533803498b4326a96dd1ef0ddf48fd86e101f4212d63180ee072c7a7ec66db",
+      "excerpt": "preparation plant",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-mining.txt:257"
+      },
+      "summary": "采后选煤加工。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-mining:061b69dd9758",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-mining",
+      "source_version": "sha256:13533803498b4326a96dd1ef0ddf48fd86e101f4212d63180ee072c7a7ec66db",
+      "excerpt": "Trains",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-mining.txt:261"
+      },
+      "summary": "煤炭可由铁路等方式运输。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-use:8f9f1991c9d6",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-use",
+      "source_version": "sha256:647bf290e0364df921a28b14c8c3adc5ee85f9784a58ceec1e33db8673565c3a",
+      "excerpt": "Coal-fired power plants",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-use.txt:261"
+      },
+      "summary": "煤用于火力发电。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-use:c1ec24217af7",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-use",
+      "source_version": "sha256:647bf290e0364df921a28b14c8c3adc5ee85f9784a58ceec1e33db8673565c3a",
+      "excerpt": "coal coke",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-use.txt:263"
+      },
+      "summary": "炼焦后煤焦用于适用冶金路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eia-coal-use:c32e910c8965",
+      "revision": 1,
+      "source_id": "codex-20261021:eia-coal-use",
+      "source_version": "sha256:647bf290e0364df921a28b14c8c3adc5ee85f9784a58ceec1e33db8673565c3a",
+      "excerpt": "processed into chemicals",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eia-coal-use.txt:270"
+      },
+      "summary": "煤转化为合成气等再进入化工。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:chinacoal:8a692473a166",
+      "revision": 1,
+      "source_id": "codex-20261021:chinacoal",
+      "source_version": "sha256:77b36912839c7d18314e525958ef998831525ac2805660a344616a2042d33774",
+      "excerpt": "中国中煤能源股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/chinacoal.txt:7"
+      },
+      "summary": "中煤主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:chinacoal-faq:d0f90b79d90a",
+      "revision": 1,
+      "source_id": "codex-20261021:chinacoal-faq",
+      "source_version": "sha256:7180ae5fd84e80862b5a5d04dc20513e353fc1b2073cd7189519064ed5d5e00b",
+      "excerpt": "601898",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/chinacoal-faq.txt:27"
+      },
+      "summary": "官网投资者问答A股代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:chinacoal:9ddf048f6f1d",
+      "revision": 1,
+      "source_id": "codex-20261021:chinacoal",
+      "source_version": "sha256:77b36912839c7d18314e525958ef998831525ac2805660a344616a2042d33774",
+      "excerpt": "煤炭生产与贸易",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/chinacoal.txt:24"
+      },
+      "summary": "公司煤炭生产与贸易板块。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:chinacoal:ac8c7a44b013",
+      "revision": 1,
+      "source_id": "codex-20261021:chinacoal",
+      "source_version": "sha256:77b36912839c7d18314e525958ef998831525ac2805660a344616a2042d33774",
+      "excerpt": "煤矿工程机械装备",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/chinacoal.txt:31"
+      },
+      "summary": "公司煤矿装备制造及服务板块。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:chinacoal:a433750f5a4f",
+      "revision": 1,
+      "source_id": "codex-20261021:chinacoal",
+      "source_version": "sha256:77b36912839c7d18314e525958ef998831525ac2805660a344616a2042d33774",
+      "excerpt": "产品主要包括烯烃、甲醇、尿素、硝铵、焦炭",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/chinacoal.txt:27"
+      },
+      "summary": "公司化工产品类别，不将所有用煤合为一种煤质。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 5,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

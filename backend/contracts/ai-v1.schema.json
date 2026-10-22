@@ -1,0 +1,631 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ytrader:ai:v1",
+  "title": "YTrader synchronous AI gateway v1",
+  "description": "Future provider-neutral sync boundary, reference-served by ytrader. Not the current ycore async model-invocations protocol and not authorization to bypass source-rights, product-auth or budget policies. Never forwards through another ycore gateway. No fallback or automatic billable retries; Idempotency-Key/request_id is stable for explicit same-job reuse, not an exactly-once billing guarantee.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/chatRequest"
+    },
+    {
+      "$ref": "#/$defs/chatEnvelope"
+    },
+    {
+      "$ref": "#/$defs/capabilitiesEnvelope"
+    },
+    {
+      "$ref": "#/$defs/configEnvelope"
+    },
+    {
+      "$ref": "#/$defs/configUpdate"
+    },
+    {
+      "$ref": "#/$defs/testEnvelope"
+    }
+  ],
+  "x-endpoints": {
+    "GET /api/v1/ai/config": {
+      "response": "#/$defs/configEnvelope"
+    },
+    "PUT /api/v1/ai/config": {
+      "request": "#/$defs/configUpdate",
+      "response": "#/$defs/configEnvelope",
+      "calls_model": false
+    },
+    "POST /api/v1/ai/test": {
+      "request": null,
+      "response": "#/$defs/testEnvelope",
+      "saved_config_only": true
+    },
+    "POST /api/v1/config/test-model": {
+      "alias": "/api/v1/ai/test"
+    },
+    "GET /api/v1/ai/capabilities": {
+      "response": "#/$defs/capabilitiesEnvelope"
+    },
+    "POST /api/v1/ai/chat": {
+      "request": "#/$defs/chatRequest",
+      "response": "#/$defs/chatEnvelope",
+      "idempotency_header": "Idempotency-Key equals request_id"
+    },
+    "GET /api/v1/contracts/ai": {
+      "response": "standard v1 envelope containing this schema"
+    }
+  },
+  "x-limits": {
+    "max_input_bytes": 500000,
+    "max_messages": 100,
+    "max_content_characters": 500000,
+    "max_output_tokens": 8000,
+    "max_response_content_bytes": 1000000,
+    "input_measure": "UTF-8 compact JSON of messages with literal Unicode; reject oversize, do not silently truncate"
+  },
+  "x-sdk": {
+    "package": "pydantic-ai-slim[openai,anthropic,google]==2.59.0",
+    "provider_packages": {
+      "openai": "3.36.0",
+      "google-genai": "2.32.0",
+      "anthropic": "1.17.0"
+    },
+    "interface": "direct.model_request; no Agent, tools, fallback or instrumentation",
+    "formats": {
+      "openai": "OpenAIChatModel/OpenAIProvider",
+      "gemini": "GoogleModel/GoogleProvider, official Gemini API, not Vertex or CLI",
+      "anthropic": "AnthropicModel/AnthropicProvider"
+    },
+    "network": "httpx2 transport bridges to injected bounded Network; captured origin/base path only, no redirects or SDK environment credentials",
+    "retries": "OpenAI/Anthropic max_retries=0; Google HttpRetryOptions(attempts=1); one outbound model request"
+  },
+  "x-presets": {
+    "Gemini": {
+      "base_url": "https://generativelanguage.googleapis.com",
+      "api_format": "gemini"
+    },
+    "OpenAI": {
+      "base_url": "https://api.openai.com/v1",
+      "api_format": "openai",
+      "options": {
+        "token_limit_field": "max_completion_tokens",
+        "send_temperature": false,
+        "json_mode": true
+      }
+    },
+    "Claude": {
+      "base_url": "https://api.anthropic.com",
+      "api_format": "anthropic"
+    },
+    "DeepSeek": {
+      "base_url": "https://api.deepseek.com",
+      "api_format": "openai"
+    },
+    "Qwen": {
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "api_format": "openai"
+    },
+    "Kimi": {
+      "base_url": "https://api.moonshot.cn/v1",
+      "api_format": "openai"
+    },
+    "GLM": {
+      "base_url": "https://open.bigmodel.cn/api/paas/v4",
+      "api_format": "openai"
+    },
+    "Grok": {
+      "base_url": "https://api.x.ai/v1",
+      "api_format": "openai"
+    },
+    "OpenRouter": {
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_format": "openai"
+    }
+  },
+  "x-preset-behavior": "Draft-only official API roots/prefixes; new OpenAI-compatible presets omit temperature, use max_tokens except official OpenAI max_completion_tokens; saved/custom options are preserved. Model ID is user-supplied, no default latest model. Legacy loopback connections remain unchanged and are labeled custom API, never official Gemini. No CLI credential access or migration.",
+  "x-configuration": {
+    "secret_storage": "private keys.json; separate model and ai_gateway namespaces; data ycore credential never copied on AI save",
+    "revision": "read-only integer default 0; increment only on effective AI profile/options/credential/provider changes",
+    "empty_key": "omitted or empty preserves same-destination stored credential unless clear_api_key",
+    "destination_change": "URL or api_format change clears old profile credential unless a new nonempty key is supplied in the same save; omitted api_format preserves saved protocol",
+    "clear_conflict": "clear_api_key plus nonempty api_key is rejected",
+    "scope": "AI profile fields only; never data_mode, data ycore_url/key, auto_analyze or sync settings",
+    "normalization": "Direct base removes final /chat/completions for legacy compatibility. OpenAI uses an API prefix; Gemini/Anthropic use SDK service roots. SDK appends native paths. ycore base is service root, removing final /api/v1.",
+    "legacy": "Read-only fallback to data ycore URL/key if no independent ai_gateway_url; saves always bind an independent gateway profile without copying data credentials."
+  },
+  "$defs": {
+    "purpose": {
+      "enum": [
+        "connection_test",
+        "event_analysis",
+        "company_analysis",
+        "industry_structure",
+        "industry_association",
+        "industry_impact",
+        "curated_candidate",
+        "restricted_decision"
+      ]
+    },
+    "provider": {
+      "enum": [
+        "openai-compatible",
+        "ycore"
+      ],
+      "description": "Legacy direct route ID openai-compatible does not prescribe the wire protocol; use api_format. ycore is an independent sync contract."
+    },
+    "apiFormat": {
+      "enum": [
+        "openai",
+        "gemini",
+        "anthropic"
+      ],
+      "description": "Direct SDK protocol. Stored default openai for legacy configs; native Gemini/Claude require an explicit saved API key, never an environment or CLI credential."
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "\\S"
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "version",
+        "source",
+        "as_of",
+        "completeness",
+        "warnings"
+      ],
+      "properties": {
+        "version": {
+          "const": "1"
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "as_of": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            }
+          ]
+        },
+        "completeness": {
+          "const": "complete"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "options": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "OpenAI protocol only: token field uses OpenAIModelProfile.openai_chat_supports_max_completion_tokens; JSON mode uses supports_json_object_output and prompted output. Native protocols use SDK defaults without OpenAI parameters.",
+      "properties": {
+        "token_limit_field": {
+          "enum": [
+            "max_tokens",
+            "max_completion_tokens"
+          ],
+          "default": "max_tokens"
+        },
+        "send_temperature": {
+          "type": "boolean",
+          "default": true
+        },
+        "json_mode": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "directProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_url",
+        "model",
+        "api_format",
+        "key_set",
+        "options"
+      ],
+      "properties": {
+        "base_url": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "api_format": {
+          "$ref": "#/$defs/apiFormat"
+        },
+        "key_set": {
+          "type": "boolean"
+        },
+        "options": {
+          "$ref": "#/$defs/options"
+        }
+      }
+    },
+    "gatewayProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "base_url",
+        "model",
+        "key_set",
+        "legacy_connection"
+      ],
+      "properties": {
+        "base_url": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "key_set": {
+          "type": "boolean"
+        },
+        "legacy_connection": {
+          "type": "boolean"
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "provider",
+        "revision",
+        "profiles"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "1"
+        },
+        "provider": {
+          "$ref": "#/$defs/provider"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 0,
+          "readOnly": true
+        },
+        "profiles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "openai-compatible",
+            "ycore"
+          ],
+          "properties": {
+            "openai-compatible": {
+              "$ref": "#/$defs/directProfile"
+            },
+            "ycore": {
+              "$ref": "#/$defs/gatewayProfile"
+            }
+          }
+        }
+      }
+    },
+    "configUpdate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "base_url",
+        "model"
+      ],
+      "properties": {
+        "provider": {
+          "$ref": "#/$defs/provider"
+        },
+        "base_url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        },
+        "model": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "api_key": {
+          "type": "string",
+          "maxLength": 8192,
+          "writeOnly": true
+        },
+        "clear_api_key": {
+          "type": "boolean",
+          "default": false
+        },
+        "options": {
+          "$ref": "#/$defs/options"
+        },
+        "api_format": {
+          "$ref": "#/$defs/apiFormat"
+        }
+      }
+    },
+    "message": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role",
+        "content"
+      ],
+      "properties": {
+        "role": {
+          "enum": [
+            "system",
+            "user",
+            "assistant"
+          ]
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500000
+        }
+      }
+    },
+    "chatRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "request_id",
+        "purpose",
+        "messages",
+        "max_output_tokens",
+        "response_format"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "1"
+        },
+        "request_id": {
+          "type": "string",
+          "format": "uuid",
+          "minLength": 36,
+          "maxLength": 36
+        },
+        "purpose": {
+          "$ref": "#/$defs/purpose"
+        },
+        "model": {
+          "$ref": "#/$defs/model"
+        },
+        "messages": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 100,
+          "items": {
+            "$ref": "#/$defs/message"
+          }
+        },
+        "max_output_tokens": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8000
+        },
+        "response_format": {
+          "enum": [
+            "text",
+            "json"
+          ]
+        }
+      }
+    },
+    "chatResponse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "request_id",
+        "provider",
+        "model",
+        "content",
+        "finish_reason",
+        "usage"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "1"
+        },
+        "request_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "provider": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "model": {
+          "$ref": "#/$defs/model"
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "finish_reason": {
+          "const": "stop"
+        },
+        "usage": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      },
+      "description": "request_id must equal request. Actual model must be bounded and nonempty; it may differ from the requested advertised model alias. Reject truncated, tool-call, refusal, malformed metadata or identity mismatches; never fall back locally. JSON response format requires valid complete JSON content."
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_version",
+        "transport",
+        "configured",
+        "chat_endpoint",
+        "purposes",
+        "response_formats",
+        "max_input_bytes",
+        "max_output_tokens",
+        "models"
+      ],
+      "properties": {
+        "contract_version": {
+          "const": "1"
+        },
+        "transport": {
+          "const": "sync"
+        },
+        "configured": {
+          "type": "boolean"
+        },
+        "chat_endpoint": {
+          "const": "/api/v1/ai/chat"
+        },
+        "purposes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/purpose"
+          }
+        },
+        "response_formats": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "text",
+              "json"
+            ]
+          }
+        },
+        "max_input_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500000
+        },
+        "max_output_tokens": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8000
+        },
+        "models": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/model"
+          }
+        }
+      },
+      "description": "Reference advertises limits 500000/8000 and all purposes, text/json. Client checks saved target capabilities before every chat. Missing 404/405/501 capability becomes safe 501."
+    },
+    "testResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "ok",
+        "provider",
+        "model",
+        "latency_ms",
+        "contract_version"
+      ],
+      "properties": {
+        "ok": {
+          "const": true
+        },
+        "provider": {
+          "$ref": "#/$defs/provider"
+        },
+        "model": {
+          "$ref": "#/$defs/model"
+        },
+        "latency_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "contract_version": {
+          "const": "1"
+        }
+      }
+    },
+    "configEnvelope": {
+      "type": "object",
+      "required": [
+        "data",
+        "meta"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/config"
+        },
+        "meta": {
+          "$ref": "#/$defs/meta"
+        }
+      }
+    },
+    "testEnvelope": {
+      "type": "object",
+      "required": [
+        "data",
+        "meta"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/testResult"
+        },
+        "meta": {
+          "$ref": "#/$defs/meta"
+        }
+      }
+    },
+    "chatEnvelope": {
+      "type": "object",
+      "required": [
+        "data",
+        "meta"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/chatResponse"
+        },
+        "meta": {
+          "$ref": "#/$defs/meta"
+        }
+      }
+    },
+    "capabilitiesEnvelope": {
+      "type": "object",
+      "required": [
+        "data",
+        "meta"
+      ],
+      "properties": {
+        "data": {
+          "$ref": "#/$defs/capabilities"
+        },
+        "meta": {
+          "$ref": "#/$defs/meta"
+        }
+      }
+    }
+  },
+  "x-ycore": {
+    "upstream": "Cloudflare AI Gateway",
+    "boundary": "ytrader normalized AI request -> ycore service policy adapter -> Cloudflare AI Gateway -> provider",
+    "authentication": "ytrader holds only the independent ycore service credential; Cloudflare gateway and provider keys remain server-side in ycore",
+    "routing": "Cloudflare /compat uses the standard OpenAI-compatible SDK path; pass provider/model namespace unchanged. Native Cloudflare provider paths remain an internal ycore choice.",
+    "policy": "Preserve ycore product authorization, source rights, idempotency and budget/usage authority; never silently bypass ycore or fall back to direct Cloudflare",
+    "status": "Current async /ycore/v1/model-invocations still requires policy-preserving adaptation before real integration; schema is not a claim of live compatibility"
+  }
+}

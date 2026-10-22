@@ -1,0 +1,244 @@
+{
+  "version": "maintained-2026-10-21-25-industries",
+  "items": [
+    {
+      "industry_id": "crude-oil",
+      "name": "原油",
+      "scope": "原油供给、炼制与产出、储运配套；不等同于全部油气产业",
+      "gaps": [
+        "尚未导入新版研究包",
+        "现有资料待按新格式维护"
+      ],
+      "legacy_available": true
+    },
+    {
+      "industry_id": "gold",
+      "name": "黄金",
+      "scope": "黄金供给、加工与用途；金融价格与结构事实分开",
+      "gaps": [
+        "尚未导入新版研究包",
+        "现有资料待按新格式维护"
+      ],
+      "legacy_available": true
+    },
+    {
+      "industry_id": "ai-compute",
+      "name": "AI算力",
+      "scope": "算力硬件、系统与配套；公司角色需独立证据",
+      "gaps": [
+        "尚未导入新版研究包",
+        "现有资料待按新格式维护"
+      ],
+      "legacy_available": true
+    },
+    {
+      "industry_id": "grid",
+      "name": "电网设备",
+      "scope": "电网设备及系统配套；不从同链推导供货关系",
+      "gaps": [
+        "尚未导入新版研究包",
+        "现有资料待按新格式维护"
+      ],
+      "legacy_available": true
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "name": "创新药",
+      "scope": "创新药研发、生产与应用；审批及公司主体边界单独核查",
+      "gaps": [
+        "尚未导入新版研究包",
+        "现有资料待按新格式维护"
+      ],
+      "legacy_available": true
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "name": "半导体设计与晶圆制造",
+      "scope": "覆盖EDA/IP、设计验证、晶圆制造、存储与通用芯片类别；设备/材料为接口，封装与测试仅留边界，不替代单独产业包。",
+      "gaps": [
+        "首批公司样本涵盖EDA、IP、无晶圆厂、代工与存储，尚未穷举逻辑、模拟、射频、功率及存储IDM企业。",
+        "设计流程采用典型数字与定制电路接口；模拟/射频设计不强行套用RTL综合流程。工艺多次循环，不是单向流水线。",
+        "未形成工艺节点、产能、良率、价格和客户采购的当期数据库。HBM仅复用既有AI链精确限定。",
+        "封测、设备和材料仅给接口；先进封装、半导体材料另包研究。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "name": "半导体设备",
+      "scope": "重点覆盖前道工艺设备、量测检测与服务；先进封装设备只作连接接口，电子材料和工厂公辅系统不在本包展开。",
+      "gaps": [
+        "尚未覆盖涂胶显影、清洗、离子注入、量测检测等全部A股主体及关键零部件公司；不以产品菜单推断细分型号能力。",
+        "设备类别不代表能覆盖全部工艺节点、材料与尺寸；国产化率、验证进展、装机量与客户采购另需当期证据。",
+        "射频电源、真空阀泵、反应腔、流量控制及耗材未逐层补足，不制造特定供应商边。",
+        "混合键合、MOCVD与硅基逻辑前道的适用范围分别限定；不把泛半导体设备等同于先进逻辑设备。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "optical-communications",
+      "name": "光通信",
+      "scope": "覆盖光芯片/器件、收发模块、光纤光缆、传送和接入网络；区分数据中心内部、DCI及电信网络。铜缆交换、电网电缆和全部半导体工艺不在本包展开。",
+      "gaps": [
+        "公司为光器件、纤缆、系统样本；新易盛本轮官网读取出现异常，未以搜索摘要补造新角色，后续用正式公告/年报取证。",
+        "硅光、可插拔、CPO/NPO、IM-DD和相干路线并存；不把某厂商平台推广成行业统一BOM或量产事实。",
+        "预制棒拉丝、成缆及部分网络功能边仍为明确标注的结构推断；海缆、接入PON、测试与专用材料未逐项展开。",
+        "没有速率份额、出货、客户名单、价格与产能推断；800G/1.6T等宣传不代替逐型号规格及交付事实。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "name": "锂电池",
+      "scope": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "name": "新能源汽车",
+      "scope": "电池/电驱/电控、整车、热管理、智能汽车核心系统、充换电与售后回收",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "name": "半导体材料",
+      "scope": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "industrial-automation",
+      "name": "工业自动化",
+      "scope": "控制、驱动、传感、执行、工业软件与集成；不等同于全部机床/机器人",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "name": "先进封装与测试",
+      "scope": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "name": "人形机器人",
+      "scope": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "pcb",
+      "name": "PCB及配套电子材料",
+      "scope": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "commercial-space",
+      "name": "商业航天",
+      "scope": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "name": "稀土与永磁材料",
+      "scope": "采矿/分离冶炼、金属合金、磁材加工、应用与回收，注明重轻稀土差异",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "copper",
+      "name": "铜",
+      "scope": "勘探开采、选矿、冶炼/精炼、加工、主要应用与再生铜",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "photovoltaics",
+      "name": "光伏",
+      "scope": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "energy-storage",
+      "name": "储能系统",
+      "scope": "以电化学储能为主，电芯接口、PCS/BMS/EMS、热安全、集成/EPC、运营与回收；其他技术单列边界",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "name": "天然气与LNG",
+      "scope": "开采/处理、液化、管道/LNG运输/接收/再气化、储气与分销/终端用途",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "medical-devices",
+      "name": "医疗器械",
+      "scope": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "steel",
+      "name": "钢铁",
+      "scope": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "coal",
+      "name": "煤炭",
+      "scope": "勘探开采洗选、运储港口、动力煤/炼焦煤用途、配套装备服务；与钢铁/电力/煤化工接口",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    },
+    {
+      "industry_id": "fertilizers",
+      "name": "化肥",
+      "scope": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用",
+      "gaps": [
+        "已列入本轮研究排期，尚未保存本链研究包。"
+      ],
+      "legacy_available": false
+    }
+  ]
+}

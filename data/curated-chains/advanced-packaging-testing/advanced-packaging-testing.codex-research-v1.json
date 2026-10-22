@@ -1,0 +1,1352 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "advanced-packaging-testing",
+    "revision": 1,
+    "name": "先进封装与测试",
+    "need": "将晶圆器件连接、保护并验证为可用芯片成品。",
+    "boundary": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "2.5D/3D、倒装、焊线及晶圆级封装并存，不把全部封装等同于先进封装。",
+      "未验证指定AI芯片客户、HBM订单、良率、产能或各封装路线收入；设备与材料另包。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "设计与投入",
+        "node_ids": [
+          "advanced-packaging-testing:design",
+          "advanced-packaging-testing:wafer",
+          "advanced-packaging-testing:substr"
+        ]
+      },
+      {
+        "module": "封装路线",
+        "node_ids": [
+          "advanced-packaging-testing:frame",
+          "advanced-packaging-testing:flip",
+          "advanced-packaging-testing:wlp",
+          "advanced-packaging-testing:3d",
+          "advanced-packaging-testing:pack"
+        ]
+      },
+      {
+        "module": "测试与交付",
+        "node_ids": [
+          "advanced-packaging-testing:ate",
+          "advanced-packaging-testing:interface",
+          "advanced-packaging-testing:final",
+          "advanced-packaging-testing:slt",
+          "advanced-packaging-testing:chip"
+        ]
+      },
+      {
+        "module": "应用接口",
+        "node_ids": [
+          "advanced-packaging-testing:hpc"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "advanced-packaging-testing:design",
+      "name": "封装设计仿真",
+      "kind": "service",
+      "description": "热、电及力学设计分析。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:cae69bdc2346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:wafer",
+      "name": "晶圆中测",
+      "kind": "service",
+      "description": "晶圆阶段的测试服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:substr",
+      "name": "封装基板",
+      "kind": "product",
+      "description": "连接、支撑和散热所用载体。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:485a47064068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:frame",
+      "name": "引线框架封装",
+      "kind": "activity",
+      "description": "引线框架路线的封装接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:flip",
+      "name": "倒装芯片互连",
+      "kind": "activity",
+      "description": "以焊接凸块连接适用芯片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:254483a470de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:wlp",
+      "name": "晶圆级封装",
+      "kind": "activity",
+      "description": "以晶圆级工艺为特征的封装路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:3d",
+      "name": "2.5D/3D集成",
+      "kind": "activity",
+      "description": "适用路线的异构或三维集成，不等同所有封装。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:f43e2566ce77",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:pack",
+      "name": "芯片封装服务",
+      "kind": "service",
+      "description": "适配设计及器件要求的封装。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:ate",
+      "name": "自动测试设备ATE",
+      "kind": "product",
+      "description": "测试设备总类，按器件选择。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:b4c195f09d25",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:interface",
+      "name": "测试接口板",
+      "kind": "product",
+      "description": "芯片测试设备的接口产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:c4bb21677598",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:final",
+      "name": "成品测试",
+      "kind": "service",
+      "description": "封装后的成品测试服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:slt",
+      "name": "系统级测试",
+      "kind": "service",
+      "description": "按系统层面场景测试器件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:advantest:40d9fff6e3a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:chip",
+      "name": "可交付芯片成品",
+      "kind": "product",
+      "description": "通过适用封装与测试的成品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "advanced-packaging-testing:hpc",
+      "name": "高性能计算应用",
+      "kind": "application",
+      "description": "官网列明的应用类别，不证明指定客户关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:design",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:wafer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:substr",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:frame",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:flip",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:wlp",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:3d",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:pack",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:ate",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:interface",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:final",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:slt",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:chip",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "node_id": "advanced-packaging-testing:hpc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:fa6535576f4e3c92",
+      "from_node_id": "advanced-packaging-testing:design",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "supports",
+      "statement": "设计仿真支持封装方案。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:cae69bdc2346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:0c85e0d89bd81bc4",
+      "from_node_id": "advanced-packaging-testing:wafer",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "precedes",
+      "statement": "结构推断：晶圆中测与后续封装构成服务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:5802dd8ce4b0e819",
+      "from_node_id": "advanced-packaging-testing:substr",
+      "to_node_id": "advanced-packaging-testing:flip",
+      "kind": "input_to",
+      "statement": "适配基材参与倒装互连。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:254483a470de",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:tfme:485a47064068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:32b301cd296a3c6a",
+      "from_node_id": "advanced-packaging-testing:frame",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "part_of",
+      "statement": "引线框架是可选封装路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:fd73a6fdda181073",
+      "from_node_id": "advanced-packaging-testing:flip",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "part_of",
+      "statement": "倒装互连是可选路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:14127efc144f072a",
+      "from_node_id": "advanced-packaging-testing:wlp",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "part_of",
+      "statement": "晶圆级工艺构成封装路线之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:38b192e234096746",
+      "from_node_id": "advanced-packaging-testing:3d",
+      "to_node_id": "advanced-packaging-testing:pack",
+      "kind": "part_of",
+      "statement": "结构推断：2.5D/3D集成纳入适用封装视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:f43e2566ce77",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:715599b5c58ab192",
+      "from_node_id": "advanced-packaging-testing:pack",
+      "to_node_id": "advanced-packaging-testing:final",
+      "kind": "precedes",
+      "statement": "结构推断：封装与成品测试衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:3084711883450a4f",
+      "from_node_id": "advanced-packaging-testing:ate",
+      "to_node_id": "advanced-packaging-testing:final",
+      "kind": "used_for",
+      "statement": "结构推断：ATE用于适用器件测试。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:b4c195f09d25",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:0515150ff09fda3c",
+      "from_node_id": "advanced-packaging-testing:interface",
+      "to_node_id": "advanced-packaging-testing:ate",
+      "kind": "supports",
+      "statement": "结构推断：测试接口板支持测试设备接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:c4bb21677598",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:a6d0c7ecb2751f33",
+      "from_node_id": "advanced-packaging-testing:final",
+      "to_node_id": "advanced-packaging-testing:chip",
+      "kind": "supports",
+      "statement": "结构推断：测试支持成品交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:advanced-packaging-testing:906d7cbe63802d78",
+      "from_node_id": "advanced-packaging-testing:slt",
+      "to_node_id": "advanced-packaging-testing:chip",
+      "kind": "supports",
+      "statement": "结构推断：系统级测试是适用器件的补充测试。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "封装材料/基板、设备、先进工艺/异构集成、封装测试服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_jcet",
+      "name": "江苏长电科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:e47b586e50d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_tfme",
+      "name": "通富微电子股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:515404653e70",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_advantest",
+      "name": "ADVANTEST CORPORATION",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:b4c195f09d25",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:002156",
+      "company_id": "company_tfme",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:515404653e70",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:4f5a13dc5a60291b",
+      "company_id": "company_jcet",
+      "node_id": "advanced-packaging-testing:design",
+      "role": "封装设计与仿真",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:cae69bdc2346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:bb43ba461a242f68",
+      "company_id": "company_jcet",
+      "node_id": "advanced-packaging-testing:pack",
+      "role": "芯片及器件封装",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:eedb0b8ab33c724f",
+      "company_id": "company_jcet",
+      "node_id": "advanced-packaging-testing:final",
+      "role": "成品测试",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:08380ed4bfd57687",
+      "company_id": "company_tfme",
+      "node_id": "advanced-packaging-testing:pack",
+      "role": "封装服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:4de04055ad2b50a9",
+      "company_id": "company_tfme",
+      "node_id": "advanced-packaging-testing:3d",
+      "role": "2.5D/3D集成方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:f43e2566ce77",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:60d58ba71814f2ac",
+      "company_id": "company_tfme",
+      "node_id": "advanced-packaging-testing:slt",
+      "role": "系统级测试",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:c378487554661cc9",
+      "company_id": "company_advantest",
+      "node_id": "advanced-packaging-testing:ate",
+      "role": "自动测试设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:b4c195f09d25",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:46b6313f10d58741",
+      "company_id": "company_advantest",
+      "node_id": "advanced-packaging-testing:slt",
+      "role": "系统级测试设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:40d9fff6e3a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:advanced-packaging-testing:6918e7d3359a1a1a",
+      "company_id": "company_advantest",
+      "node_id": "advanced-packaging-testing:interface",
+      "role": "测试接口板",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:advantest:c4bb21677598",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:advanced-packaging-testing:codex-research-v1",
+      "industry_id": "advanced-packaging-testing",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "设计与投入",
+          "node_ids": [
+            "advanced-packaging-testing:design",
+            "advanced-packaging-testing:wafer",
+            "advanced-packaging-testing:substr"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "封装路线",
+          "node_ids": [
+            "advanced-packaging-testing:frame",
+            "advanced-packaging-testing:flip",
+            "advanced-packaging-testing:wlp",
+            "advanced-packaging-testing:3d",
+            "advanced-packaging-testing:pack"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "测试与交付",
+          "node_ids": [
+            "advanced-packaging-testing:ate",
+            "advanced-packaging-testing:interface",
+            "advanced-packaging-testing:final",
+            "advanced-packaging-testing:slt",
+            "advanced-packaging-testing:chip"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用接口",
+          "node_ids": [
+            "advanced-packaging-testing:hpc"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:advanced-packaging-testing:fa6535576f4e3c92",
+        "rel:new20261021:advanced-packaging-testing:0c85e0d89bd81bc4",
+        "rel:new20261021:advanced-packaging-testing:5802dd8ce4b0e819",
+        "rel:new20261021:advanced-packaging-testing:32b301cd296a3c6a",
+        "rel:new20261021:advanced-packaging-testing:fd73a6fdda181073",
+        "rel:new20261021:advanced-packaging-testing:14127efc144f072a",
+        "rel:new20261021:advanced-packaging-testing:38b192e234096746",
+        "rel:new20261021:advanced-packaging-testing:715599b5c58ab192",
+        "rel:new20261021:advanced-packaging-testing:3084711883450a4f",
+        "rel:new20261021:advanced-packaging-testing:0515150ff09fda3c",
+        "rel:new20261021:advanced-packaging-testing:a6d0c7ecb2751f33",
+        "rel:new20261021:advanced-packaging-testing:906d7cbe63802d78"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:jcet",
+      "source_version": "sha256:db1b334f860cc4156e1faefcd75eaa1c3c0d9a32f69b227a5d56e0fdd7a675ba",
+      "title": "公司及服务",
+      "publisher": "长电科技",
+      "url": "https://www.jcetglobal.com/cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:09.879830+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7d40079750e7b8c1b9feccc1b42b55b429e3a85ea4b3a7d275510d312816983d",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "title": "公司及服务",
+      "publisher": "通富微电",
+      "url": "https://www.tfme.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:10.092601+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "e61570924f8ff8ffc2eb8a84fbe2fe06149a43ad821087e242aeaed091bf7e90",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:advantest",
+      "source_version": "sha256:71253a99aa46dbab27e840e1ffb675881c511cf886a4c2d8f0ff54d4e6fa421b",
+      "title": "Test products",
+      "publisher": "Advantest",
+      "url": "https://www.advantest.com/en/products/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:10.106867+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "c2cf991f1221ea5ade03212ffd0b4140ed41fa67ecf120c61dfe174c925fbfec",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:jcet:e47b586e50d0",
+      "revision": 1,
+      "source_id": "codex-20261021:jcet",
+      "source_version": "sha256:db1b334f860cc4156e1faefcd75eaa1c3c0d9a32f69b227a5d56e0fdd7a675ba",
+      "excerpt": "江苏长电科技股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jcet.txt:172"
+      },
+      "summary": "官网页脚确认公司主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jcet:7658b6cc4a9c",
+      "revision": 1,
+      "source_id": "codex-20261021:jcet",
+      "source_version": "sha256:db1b334f860cc4156e1faefcd75eaa1c3c0d9a32f69b227a5d56e0fdd7a675ba",
+      "excerpt": "涵盖微系统集成、设计仿真、晶圆中测、芯片及器件封装、成品测试",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jcet.txt:92"
+      },
+      "summary": "长电披露设计、封装、测试等业务链条。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jcet:fc3fc87f90d2",
+      "revision": 1,
+      "source_id": "codex-20261021:jcet",
+      "source_version": "sha256:db1b334f860cc4156e1faefcd75eaa1c3c0d9a32f69b227a5d56e0fdd7a675ba",
+      "excerpt": "包括引线框架封装、复合基板封装、倒装芯片互连和先进晶圆级技术",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jcet.txt:122"
+      },
+      "summary": "长电列出的封装路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jcet:cae69bdc2346",
+      "revision": 1,
+      "source_id": "codex-20261021:jcet",
+      "source_version": "sha256:db1b334f860cc4156e1faefcd75eaa1c3c0d9a32f69b227a5d56e0fdd7a675ba",
+      "excerpt": "力学/热/电表征和仿真",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jcet.txt:119"
+      },
+      "summary": "封装设计需分析力学、热与电表征。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tfme:515404653e70",
+      "revision": 1,
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "excerpt": "通富微电（证券代码：002156）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tfme.txt:93"
+      },
+      "summary": "通富官网身份及代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tfme:6a734fd91acc",
+      "revision": 1,
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "excerpt": "设计仿真，圆片中测，封装，成品测试，系统级测试",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tfme.txt:108"
+      },
+      "summary": "通富明确的一站式服务序列。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tfme:f43e2566ce77",
+      "revision": 1,
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "excerpt": "2.5D/3D集成解决方案",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tfme.txt:65"
+      },
+      "summary": "通富披露的差异化集成路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tfme:485a47064068",
+      "revision": 1,
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "excerpt": "基板可为芯片提供电连接、保护、支撑、散热、组装等功效",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tfme.txt:62"
+      },
+      "summary": "基板在封装中的功能。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tfme:254483a470de",
+      "revision": 1,
+      "source_id": "codex-20261021:tfme",
+      "source_version": "sha256:bad08d869925cbcab80ae28615d8c59e66d2889a59f32c1a0abe75ff8d4e3c39",
+      "excerpt": "硅芯片使用焊接凸块而非焊线直接固定在基材上",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tfme.txt:71"
+      },
+      "summary": "倒装封装的互连方式。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:advantest:b4c195f09d25",
+      "revision": 1,
+      "source_id": "codex-20261021:advantest",
+      "source_version": "sha256:71253a99aa46dbab27e840e1ffb675881c511cf886a4c2d8f0ff54d4e6fa421b",
+      "excerpt": "Automated Test Equipment",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/advantest.txt:102"
+      },
+      "summary": "Advantest测试设备产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:advantest:40d9fff6e3a2",
+      "revision": 1,
+      "source_id": "codex-20261021:advantest",
+      "source_version": "sha256:71253a99aa46dbab27e840e1ffb675881c511cf886a4c2d8f0ff54d4e6fa421b",
+      "excerpt": "System Level Test Systems",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/advantest.txt:118"
+      },
+      "summary": "Advantest系统级测试产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:advantest:c4bb21677598",
+      "revision": 1,
+      "source_id": "codex-20261021:advantest",
+      "source_version": "sha256:71253a99aa46dbab27e840e1ffb675881c511cf886a4c2d8f0ff54d4e6fa421b",
+      "excerpt": "Test Interface Boards",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/advantest.txt:132"
+      },
+      "summary": "测试接口板产品，另列测试插座及分选机。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 2,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

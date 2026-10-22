@@ -1,0 +1,342 @@
+{
+  "format": "industry-reference-v1",
+  "status": "reference",
+  "industry": {
+    "id": "ai-compute",
+    "name": "AI算力",
+    "demand": "运行模型训练和推理任务",
+    "boundary": "以GPU服务器到集群运行的典型架构为边界；不展开芯片制造全链、所有技术路线和机房工程。供应商产品只作角色样例，不代表市场份额。",
+    "summary": "计算部件组成服务器；服务器与网络、存储和软件共同形成可运行系统，供电与散热提供运行条件。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "structure": {
+    "version": 1,
+    "organization": "composition",
+    "thesis": "计算部件组成服务器，服务器提供集群的计算节点；网络、存储、软件与供电散热协同，使集群能承载训练和推理，而不是把所有配套串成加工步骤。",
+    "groups": [
+      {"id": "hardware", "title": "计算硬件", "role": "core", "purpose": "GPU承担并行计算，服务器将计算部件组织成可部署的计算节点。", "node_ids": ["accelerator", "server"]},
+      {"id": "operation", "title": "集群协同运行", "role": "core", "purpose": "让多台计算节点与数据、网络及调度协同工作，形成可运行的算力系统。", "node_ids": ["cluster"]},
+      {"id": "tasks", "title": "训练与推理用途", "role": "core", "purpose": "使用集群算力完成模型训练和推理，说明硬件与系统最终服务什么需求。", "node_ids": ["workload"]},
+      {"id": "coordination", "title": "通信、数据与调度", "role": "support", "purpose": "网络交换数据、存储持续供数、软件分配任务，分别解决集群协作所需的不同条件。", "node_ids": ["network", "storage", "software"]},
+      {"id": "facilities", "title": "供电与散热条件", "role": "support", "purpose": "为运行设备持续供电并排出热量，使集群具备部署和稳定工作的环境。", "node_ids": ["power", "cooling"]}
+    ],
+    "primary_relation_ids": ["ai-compute:r1", "ai-compute:r2", "ai-compute:r8"],
+    "reading_order": ["hardware", "operation", "tasks", "coordination", "facilities"]
+  },
+  "nodes": [
+    {
+      "id": "accelerator",
+      "name": "GPU计算部件",
+      "kind": "product",
+      "description": "承担并行计算。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "server",
+      "name": "AI服务器",
+      "kind": "product",
+      "description": "集成计算部件的服务器系统。",
+      "sources": [
+        "nv-architecture",
+        "ieit"
+      ]
+    },
+    {
+      "id": "network",
+      "name": "网络互连",
+      "kind": "product",
+      "description": "连接计算节点及存储。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "storage",
+      "name": "存储系统",
+      "kind": "product",
+      "description": "提供训练数据与结果的读写。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "software",
+      "name": "集群管理与调度软件",
+      "kind": "product",
+      "description": "管理资源和工作负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "power",
+      "name": "供电设施",
+      "kind": "product",
+      "description": "满足系统用电要求。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cooling",
+      "name": "散热设施",
+      "kind": "product",
+      "description": "维持设备所需环境。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "cluster",
+      "name": "AI集群运行",
+      "kind": "activity",
+      "description": "协同运行计算、网络、存储和软件。",
+      "sources": [
+        "nv-architecture",
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "workload",
+      "name": "训练与推理",
+      "kind": "application",
+      "description": "使用算力完成模型任务。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "ai-compute:r1",
+      "from_id": "accelerator",
+      "to_id": "server",
+      "kind": "component_of",
+      "explanation": "GPU构成该类AI服务器的计算部件。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r2",
+      "from_id": "server",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "服务器提供计算节点。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r3",
+      "from_id": "network",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "网络承担节点间及存储通信。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r4",
+      "from_id": "storage",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "存储支撑数据访问。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r5",
+      "from_id": "software",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "管理软件支撑集群调度。",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "id": "ai-compute:r6",
+      "from_id": "power",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "供电是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r7",
+      "from_id": "cooling",
+      "to_id": "cluster",
+      "kind": "supports",
+      "explanation": "散热是集群部署条件。",
+      "sources": [
+        "nv-facility"
+      ]
+    },
+    {
+      "id": "ai-compute:r8",
+      "from_id": "cluster",
+      "to_id": "workload",
+      "kind": "used_for",
+      "explanation": "运行训练与推理负载。",
+      "sources": [
+        "nv-architecture"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "identity_note": "产业参与者，无A股证券链接"
+    },
+    {
+      "id": "ieit",
+      "name": "浪潮信息（IEIT Systems）",
+      "symbol": "SZ:000977",
+      "identity_note": "本轮与已同步证券主表核对"
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "nvidia",
+      "node_id": "accelerator",
+      "role": "提供GPU计算产品",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "company_id": "nvidia",
+      "node_id": "server",
+      "role": "提供DGX服务器",
+      "sources": [
+        "nv-architecture"
+      ]
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "server",
+      "role": "提供AI服务器",
+      "sources": [
+        "ieit"
+      ]
+    },
+    {
+      "company_id": "ieit",
+      "node_id": "software",
+      "role": "提供AIStation等管理软件",
+      "sources": [
+        "ieit"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "nv-architecture",
+      "title": "DGX SuperPOD关键组件",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture-scalable-infrastructure-b200/latest/dgx-superpod-components.html",
+      "locator": "Key Components；硬件/软件表。用于典型架构，不推广具体规格到所有AI系统。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "nv-facility",
+      "title": "DGX H100数据中心设计",
+      "publisher": "NVIDIA",
+      "url": "https://docs.nvidia.com/dgx-superpod/design-guides/dgx-superpod-data-center-design-h100/latest/index.html",
+      "locator": "部署规划总述；仅采用供电、散热这一通用依赖。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "ieit",
+      "title": "AI服务器及软件产品",
+      "publisher": "IEIT Systems",
+      "url": "https://www.ieisystems.com/en/product/ai/index.html",
+      "locator": "Summary、AI Servers、AI Software；未据此声称与NVIDIA存在某笔交易。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    }
+  ],
+  "version": "2026-10-18.3",
+  "origin": "public_reference",
+  "explanation": {
+    "overview": "AI算力要解决的是：让计算设备协同完成模型训练和推理。GPU提供计算能力，服务器把计算部件组织起来；当任务需要多台服务器时，网络负责交换数据，存储负责持续供数，软件负责分配和运行任务。供电与散热让这些设备能稳定工作。因此，看算力产业既要看计算产品，也要看通信、数据访问和机房配套。",
+    "steps": [
+      {
+        "title": "计算部件组成服务器",
+        "text": "GPU是这类AI服务器的计算部件。服务器是可部署的系统，不是GPU的下一道加工材料。",
+        "node_ids": [
+          "accelerator",
+          "server"
+        ],
+        "sources": [
+          "nv-architecture"
+        ]
+      },
+      {
+        "title": "多个系统共同支撑集群",
+        "text": "服务器提供计算节点，网络连接节点，存储提供数据，软件管理资源。这些是协作关系；某项配套不足时，单独增加GPU不能保证任务按比例加快。",
+        "node_ids": [
+          "server",
+          "network",
+          "storage",
+          "software",
+          "cluster"
+        ],
+        "sources": [
+          "nv-architecture"
+        ]
+      },
+      {
+        "title": "基础设施支撑实际运行",
+        "text": "供电与散热属于部署条件。它们不作为模型的计算输入，却影响设备能否持续运行。最终集群服务训练和推理任务。",
+        "node_ids": [
+          "power",
+          "cooling",
+          "cluster",
+          "workload"
+        ],
+        "sources": [
+          "nv-facility",
+          "nv-architecture"
+        ]
+      }
+    ],
+    "distinctions": [
+      {
+        "title": "组成与支撑要分开",
+        "text": "GPU组成服务器；散热支撑集群运行。两者都重要，但关系含义不同。",
+        "sources": [
+          "nv-architecture",
+          "nv-facility"
+        ]
+      },
+      {
+        "title": "公司可以跨多个位置",
+        "text": "同一供应商可以同时提供硬件和管理软件。产业位置由具体产品确定，不用一个概念标签代替。",
+        "sources": [
+          "ieit",
+          "nv-architecture"
+        ]
+      }
+    ],
+    "questions": [
+      "GPU、网络、存储分别解决什么问题？",
+      "为什么不能只用GPU数量解释一套算力系统？",
+      "芯片制造、光模块和液冷还能怎样展开？"
+    ],
+    "gaps": [
+      "当前主干从计算部件到集群运行；芯片设计、晶圆制造、封装、内存和光互连的细分尚未展开。",
+      "未收录所有技术路线和参与公司；具体客户关系、订单和业务占比属于进一步研究。"
+    ]
+  }
+}

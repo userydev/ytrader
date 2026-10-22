@@ -1,0 +1,634 @@
+{
+  "format": "industry-reference-v1",
+  "status": "reference",
+  "industry": {
+    "id": "crude-oil",
+    "name": "原油",
+    "demand": "提供燃料和化工原料",
+    "boundary": "解释勘探开发、原油、炼制及两类主要用途；不展开天然气、每种炼化工艺、全部成品和下游化学品。",
+    "summary": "原油进入炼制后形成多种产出，分流到燃料和化工用途；储运支撑投入与交付。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "structure": {
+    "version": 1,
+    "organization": "production",
+    "thesis": "开采获取原油，炼制把原料转成不同产出，再分流到燃料和化工用途；储运为接收原料与交付产品提供条件。",
+    "groups": [
+      {
+        "id": "supply",
+        "title": "获取原料",
+        "role": "core",
+        "purpose": "勘探开发与开采提供原油，形成炼制所需的原料供给。",
+        "node_ids": [
+          "extraction",
+          "crude"
+        ]
+      },
+      {
+        "id": "processing",
+        "title": "炼制与分流",
+        "role": "core",
+        "purpose": "通过分离、转化和处理形成不同产品，使同一投入能通向燃料与化工两类用途。",
+        "node_ids": [
+          "refining"
+        ]
+      },
+      {
+        "id": "energy",
+        "title": "燃料用途分支",
+        "role": "core",
+        "purpose": "炼制所得燃料进入交通与能源场景，满足燃料使用需求。",
+        "node_ids": [
+          "fuels",
+          "transport"
+        ]
+      },
+      {
+        "id": "materials",
+        "title": "化工用途分支",
+        "role": "core",
+        "purpose": "炼制所得化工原料进入化工生产，连接燃料以外的原料需求。",
+        "node_ids": [
+          "feedstock",
+          "chemicals"
+        ]
+      },
+      {
+        "id": "delivery",
+        "title": "储运配套",
+        "role": "support",
+        "purpose": "储存与运输支撑炼制环节的原油接收和产品交付，解决供给与加工地点之间的衔接。",
+        "node_ids": [
+          "logistics"
+        ]
+      }
+    ],
+    "primary_relation_ids": [
+      "crude-oil:r1",
+      "crude-oil:r2",
+      "crude-oil:r3",
+      "crude-oil:r4",
+      "crude-oil:r5",
+      "crude-oil:r6"
+    ],
+    "reading_order": [
+      "supply",
+      "processing",
+      "energy",
+      "materials",
+      "delivery"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "extraction",
+      "name": "勘探开发与开采",
+      "kind": "activity",
+      "description": "获取并生产原油。",
+      "sources": [
+        "cnooc"
+      ]
+    },
+    {
+      "id": "crude",
+      "name": "原油",
+      "kind": "product",
+      "description": "炼制的主要投入。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "refining",
+      "name": "炼制",
+      "kind": "activity",
+      "description": "通过分离、转化和处理形成产品。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "fuels",
+      "name": "燃料产品",
+      "kind": "product",
+      "description": "合并表示汽油等燃料产出。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "feedstock",
+      "name": "化工原料",
+      "kind": "product",
+      "description": "合并表示进入化工用途的炼制产出。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "交通与能源用途",
+      "kind": "application",
+      "description": "使用燃料的主要场景之一。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "chemicals",
+      "name": "化工生产",
+      "kind": "application",
+      "description": "使用炼制产出的原料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "储存与运输",
+      "kind": "service",
+      "description": "支撑投入和产品交付。",
+      "sources": [
+        "eia"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "crude-oil:r1",
+      "from_id": "extraction",
+      "to_id": "crude",
+      "kind": "produces",
+      "explanation": "开采活动产出原油。",
+      "sources": [
+        "cnooc"
+      ]
+    },
+    {
+      "id": "crude-oil:r2",
+      "from_id": "crude",
+      "to_id": "refining",
+      "kind": "input_to",
+      "explanation": "原油作为炼制投入。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r3",
+      "from_id": "refining",
+      "to_id": "fuels",
+      "kind": "produces",
+      "explanation": "炼制产出燃料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r4",
+      "from_id": "refining",
+      "to_id": "feedstock",
+      "kind": "produces",
+      "explanation": "炼制也产出化工原料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r5",
+      "from_id": "fuels",
+      "to_id": "transport",
+      "kind": "used_for",
+      "explanation": "燃料用于交通等场景。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r6",
+      "from_id": "feedstock",
+      "to_id": "chemicals",
+      "kind": "input_to",
+      "explanation": "化工原料进入化工生产。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r7",
+      "from_id": "logistics",
+      "to_id": "refining",
+      "kind": "supports",
+      "explanation": "储运支撑原油接收和产品交付。",
+      "sources": [
+        "eia"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "cnooc-ltd",
+      "name": "中国海洋石油有限公司",
+      "symbol": "SH:600938",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile": {
+        "products": "油气勘探、开发、生产与销售。",
+        "buyers": "油气采购、加工等行业客户。",
+        "purpose": "通过勘探开发形成油气产出；本图角色是上游产出方，不是炼厂。",
+        "watch": "实现售价、产销量、开发成本与税费。",
+        "condition": "价格上升先影响实现售价，盈利还受销量、成本、税费影响；不能直接推导股价或利润幅度。"
+      },
+      "profile_verified": true
+    },
+    {
+      "id": "shanghai-petrochemical",
+      "name": "中国石化上海石油化工股份有限公司",
+      "symbol": "SH:600688",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile_verified": true,
+      "profile": {
+        "products": "炼化一体化生产，提供汽油、柴油、喷气燃料与石脑油等产品。",
+        "buyers": "燃料采购、化工原料加工等买方类别。",
+        "purpose": "将原油加工后分别交付燃料与化工原料。",
+        "watch": "产品与原油价差、加工负荷、库存及下游需求。",
+        "condition": "原油价格是炼化投入成本。利润还取决于产品售价、需求与库存，不能仅按油价方向判断。"
+      }
+    },
+    {
+      "id": "petrochina",
+      "name": "中国石油",
+      "symbol": "SH:601857",
+      "profile": {
+        "products": "油气勘探开发、炼油化工及油气产品销售等。",
+        "buyers": "油气加工、工业及成品油销售相关客户。",
+        "purpose": "既提供上游产出，也加工和销售下游产品；不同业务对油价敏感度不同。",
+        "watch": "分业务产销量、实现售价与炼化价差。",
+        "condition": "须分拆开采收益、加工投入成本和产品售价，不能以油价单方向概括公司。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "sinopec",
+      "name": "中国石化",
+      "symbol": "SH:600028",
+      "profile": {
+        "products": "油气开发、炼油、化工产品及销售等。",
+        "buyers": "燃料销售、交通和化工原料等行业客户。",
+        "purpose": "把原油加工为燃料和化工原料，同时具有上游业务角色。",
+        "watch": "原油投入成本、产品价差和分业务销量。",
+        "condition": "油价变化需与产品定价、库存和需求共同分析，炼化收益不随油价机械同向。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "cosl",
+      "name": "中海油服",
+      "symbol": "SH:601808",
+      "profile": {
+        "products": "钻井与油田技术等服务。",
+        "buyers": "油气勘探开发企业。",
+        "purpose": "帮助开发方勘探与作业，不是原油交易中介。",
+        "watch": "作业量、设备利用与服务订单。",
+        "condition": "油价或现金流变化须转成开发预算与作业安排，才可能影响服务需求。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "cooec",
+      "name": "海油工程",
+      "symbol": "SH:600583",
+      "profile": {
+        "products": "海洋油气工程建设等工程服务。",
+        "buyers": "海洋油气项目开发建设方。",
+        "purpose": "为海上开发建设工程设施，配套油气产出。",
+        "watch": "新签项目、工程进度和交付成本。",
+        "condition": "开发投资需转为公司参与的工程合同，收入仍取决于履约进度及确认条件。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "cosco-energy",
+      "name": "中远海能",
+      "symbol": "SH:600026",
+      "profile": {
+        "products": "油品运输；本图使用其原油运输编辑角色。",
+        "buyers": "油品贸易、油气及炼化相关运输采购方。",
+        "purpose": "连接产区与加工或库存地点，提供运输能力。",
+        "watch": "运距、运量、可用运力与运价。",
+        "condition": "减产对运量和航线影响需单独验证，原油涨价不直接等于运价上涨。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "nanjing-tanker",
+      "name": "招商南油",
+      "symbol": "SH:601975",
+      "profile": {
+        "products": "成品油运输等油品运输服务。",
+        "buyers": "成品油贸易、炼化及相关运输采购方。",
+        "purpose": "将已加工的成品油运向使用市场；本图不把其放入原油运输。",
+        "watch": "成品油运量、航线运距与运价。",
+        "condition": "燃料需求和贸易格局需改变对应航线运输需求；不能从原油供给直接推算订单。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "hengli",
+      "name": "恒力石化",
+      "symbol": "SH:600346",
+      "profile": {
+        "products": "炼化、化工原料及化纤相关产品。",
+        "buyers": "燃料、化工与下游材料加工客户。",
+        "purpose": "将原油等原料加工转化为燃料和材料所需产品。",
+        "watch": "产品与原料价差、负荷和库存。",
+        "condition": "原料涨价能否被产品价格覆盖取决于需求与成本传递，不能将油价上涨视为必然利好。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "rongsheng",
+      "name": "荣盛石化",
+      "symbol": "SZ:002493",
+      "profile": {
+        "products": "炼化及化工材料相关产品。",
+        "buyers": "化工原料、材料加工及燃料相关客户类别。",
+        "purpose": "通过炼化加工提供燃料与化工材料链条的原料。",
+        "watch": "炼化价差、材料需求和装置负荷。",
+        "condition": "油价只是一项投入变量，还须看产品需求、库存和加工成本。"
+      },
+      "profile_verified": false
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "cnooc-ltd",
+      "node_id": "extraction",
+      "role": "从事原油勘探开发与生产",
+      "sources": [
+        "cnooc"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "fuels",
+      "role": "提供汽油、柴油和喷气燃料等炼油产品",
+      "sources": [
+        "spc-products"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "feedstock",
+      "role": "提供用于乙烯生产的石脑油",
+      "sources": [
+        "spc-products"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "refining",
+      "role": "从事炼化一体化生产",
+      "sources": [
+        "spc-profile",
+        "spc-products"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "petrochina",
+      "node_id": "extraction",
+      "role": "油气勘探与生产",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "petrochina",
+      "node_id": "refining",
+      "role": "原油炼制",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "petrochina",
+      "node_id": "fuels",
+      "role": "成品油生产与销售",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "sinopec",
+      "node_id": "extraction",
+      "role": "油气开发",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "sinopec",
+      "node_id": "refining",
+      "role": "炼油与化工加工",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "sinopec",
+      "node_id": "fuels",
+      "role": "燃料生产与销售",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "sinopec",
+      "node_id": "feedstock",
+      "role": "化工原料生产",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "cosl",
+      "node_id": "extraction",
+      "role": "钻井与油田技术服务",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "cooec",
+      "node_id": "extraction",
+      "role": "海洋油气工程建设",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "cosco-energy",
+      "node_id": "logistics",
+      "role": "原油等能源运输",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "nanjing-tanker",
+      "node_id": "logistics",
+      "role": "成品油运输",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "hengli",
+      "node_id": "refining",
+      "role": "炼化加工",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "hengli",
+      "node_id": "feedstock",
+      "role": "化工原料",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "hengli",
+      "node_id": "chemicals",
+      "role": "化纤等材料产品",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "rongsheng",
+      "node_id": "refining",
+      "role": "炼化加工",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "rongsheng",
+      "node_id": "feedstock",
+      "role": "化工原料",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "rongsheng",
+      "node_id": "chemicals",
+      "role": "化工材料",
+      "sources": [],
+      "basis": "editorial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "eia",
+      "title": "原油炼制过程",
+      "publisher": "美国能源信息署（EIA）",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-the-refining-process.php",
+      "locator": "How crude oil is refined、Separation、Conversion、Treatment、Storage。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "cnooc",
+      "title": "主要作业区与公司介绍",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://www.cnoocltd.com/gywm/zyzyq/",
+      "locator": "公司介绍：主营勘探、开发、生产及销售原油和天然气；只采用原油角色。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "spc-products",
+      "title": "产品介绍",
+      "publisher": "上海石化",
+      "url": "https://spc.sinopec.com/spc/business/ywgs/A136004005Gone1.shtml",
+      "locator": "公开检索返回官网正文：炼油产品下的汽油、柴油、喷气燃料、石脑油；直开抓取未稳定成功。",
+      "checked_at": "2026-10-18",
+      "access": "indexed_page_text"
+    },
+    {
+      "id": "spc-profile",
+      "title": "企业简介",
+      "publisher": "上海石化",
+      "url": "https://spc.sinopec.com/spc/about/companyprofile/A136002001Gone1.shtml",
+      "locator": "公司简介：国内主要炼化一体化综合性石油化工企业之一。",
+      "checked_at": "2026-10-18",
+      "access": "indexed_page_text"
+    }
+  ],
+  "version": "2026-10-18.matrix-review",
+  "origin": "public_reference",
+  "default_company": "shanghai-petrochemical",
+  "scenarios": [
+    {
+      "id": "supply",
+      "title": "产油国减产",
+      "label": "情景示例",
+      "category": "供给",
+      "indicator": "原油供应收紧",
+      "entry_node": "extraction",
+      "affected_nodes": [
+        "extraction",
+        "crude",
+        "refining",
+        "fuels",
+        "feedstock"
+      ],
+      "relation_ids": [
+        "crude-oil:r1",
+        "crude-oil:r2",
+        "crude-oil:r3",
+        "crude-oil:r4"
+      ],
+      "steps": [
+        "上游：实现售价可能变化",
+        "炼化：原料成本变化",
+        "还需看产品价差与库存"
+      ],
+      "condition": "减产先改变供给预期，价格是否上涨仍取决于需求、库存与其他供给。",
+      "watch": "对上游观察售价与销量；对上海石化等炼化角色观察产品价差，方向不直接等同。"
+    },
+    {
+      "id": "fuel-demand",
+      "title": "交通燃料需求走弱",
+      "label": "情景示例",
+      "category": "需求",
+      "indicator": "燃料销量与产品价差",
+      "entry_node": "transport",
+      "affected_nodes": [
+        "transport",
+        "fuels",
+        "refining"
+      ],
+      "relation_ids": [
+        "crude-oil:r3",
+        "crude-oil:r5"
+      ],
+      "steps": [
+        "交通用油需求下降",
+        "燃料销售与价格承压",
+        "炼厂负荷与采购可能调整"
+      ],
+      "condition": "传导强弱取决于库存、出口及产品结构；需验证真实需求与价格变化。",
+      "watch": "看燃料销售、炼化价差和加工负荷。"
+    }
+  ],
+  "categories": [
+    "需求",
+    "供给",
+    "价格与成本",
+    "技术与效率",
+    "规则与准入",
+    "资金与投资"
+  ],
+  "ai": {
+    "label": "AI辅助 · 示例解读",
+    "overview": "这条产业链把地下原油变成燃料和材料原料。中国海油主要处在开采端；上海石化把原油加工成汽柴油、喷气燃料和石脑油。看公司差异，要看它卖原油、加工原油，还是提供运输与工程服务。",
+    "gap": "空白表示当前资料未收录。AI可以解释该环节通常需要什么产品或服务，以及应该核对哪些资料；它不能仅凭产业位置确认某家公司有业务、供货或订单。",
+    "questions": [
+      "这个产业如何运转",
+      "解释当前选择",
+      "理解资料空白"
+    ],
+    "disclosure": "本页展示预写的AI解读示例，未连接实时问答；补充推断不写回已收录业务。"
+  }
+}

@@ -1,0 +1,1233 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "pcb",
+    "revision": 1,
+    "name": "PCB及配套电子材料",
+    "need": "将电路设计加工为承载并连接电子元件的印制线路板。",
+    "boundary": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "工序以Eurocircuits标准多层板示例为准；HDI、封装载板、柔性板和特殊材料不直接套用同一流程。",
+      "已加入生益科技覆铜板集团业务样本；本轮未取得母公司证券代码原文，不与子公司生益电子688183混绑。国内更多PCB制造、HDI与载板企业仍待取证。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "材料与设计",
+        "node_ids": [
+          "pcb:cad",
+          "pcb:resin",
+          "pcb:glass",
+          "pcb:foil",
+          "pcb:ccl"
+        ]
+      },
+      {
+        "module": "制板工艺",
+        "node_ids": [
+          "pcb:image",
+          "pcb:aoi",
+          "pcb:lay",
+          "pcb:drill",
+          "pcb:plate",
+          "pcb:mask",
+          "pcb:finish"
+        ]
+      },
+      {
+        "module": "测试与交付",
+        "node_ids": [
+          "pcb:test",
+          "pcb:pcb"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "pcb:cad",
+      "name": "PCB设计与制造数据",
+      "kind": "product",
+      "description": "设计布局及制造数据接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:c3614ad8294e",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:resin",
+      "name": "环氧树脂",
+      "kind": "product",
+      "description": "示例层压板树脂体系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:glass",
+      "name": "玻璃纤维",
+      "kind": "product",
+      "description": "示例层压板增强材料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:foil",
+      "name": "铜箔",
+      "kind": "product",
+      "description": "示例导体层材料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:ccl",
+      "name": "覆铜层压板",
+      "kind": "product",
+      "description": "树脂、玻纤与预覆铜构成的板材。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:image",
+      "name": "内层图形与蚀刻",
+      "kind": "activity",
+      "description": "形成内层线路。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f6536af6ff79",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:3c939012a3f4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:aoi",
+      "name": "内层光学检查",
+      "kind": "activity",
+      "description": "压合前图形检查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:414ea706fd8e",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:lay",
+      "name": "叠层与压合",
+      "kind": "activity",
+      "description": "示例的多层板压合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:6a79f8c57aa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:drill",
+      "name": "钻孔",
+      "kind": "activity",
+      "description": "通孔及导通孔加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:9b539a4395a4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:plate",
+      "name": "孔金属化与镀铜",
+      "kind": "activity",
+      "description": "实现适用孔及外层导电结构。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:a9c1f91a682c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:mask",
+      "name": "阻焊层加工",
+      "kind": "activity",
+      "description": "保护铜表面并减少组装焊接短路。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:e7e3bfaf9031",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:finish",
+      "name": "表面处理",
+      "kind": "activity",
+      "description": "保护待焊铜面，具体工艺按板型。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:2c30c2773e35",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:test",
+      "name": "电气测试",
+      "kind": "activity",
+      "description": "按原设计检查开短路。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f636f05b74b4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "pcb:pcb",
+      "name": "印制线路板",
+      "kind": "product",
+      "description": "制造后待电子组装的裸板。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:81125810b8a0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:cad",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:resin",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:glass",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:foil",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:ccl",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:image",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:aoi",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:lay",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:drill",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:plate",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:mask",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:finish",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:test",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "pcb",
+      "node_id": "pcb:pcb",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:pcb:9b545f8a702a6ad9",
+      "from_node_id": "pcb:resin",
+      "to_node_id": "pcb:ccl",
+      "kind": "input_to",
+      "statement": "环氧树脂构成示例板材。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:3095f11af8d81dba",
+      "from_node_id": "pcb:glass",
+      "to_node_id": "pcb:ccl",
+      "kind": "input_to",
+      "statement": "玻纤构成示例板材。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:b8bd9317f978dd4f",
+      "from_node_id": "pcb:foil",
+      "to_node_id": "pcb:ccl",
+      "kind": "input_to",
+      "statement": "铜箔预覆在示例芯板。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:366abfad2b4e14b7",
+      "from_node_id": "pcb:cad",
+      "to_node_id": "pcb:image",
+      "kind": "supports",
+      "statement": "结构推断：设计数据用于图形加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:c3614ad8294e",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f6536af6ff79",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:6596d373eca2648e",
+      "from_node_id": "pcb:ccl",
+      "to_node_id": "pcb:image",
+      "kind": "input_to",
+      "statement": "覆铜板进入内层加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f6536af6ff79",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:7610d9b635b0c7fd",
+      "from_node_id": "pcb:image",
+      "to_node_id": "pcb:aoi",
+      "kind": "precedes",
+      "statement": "内层线路加工后进行AOI。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:414ea706fd8e",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:76c4be9f203229ad",
+      "from_node_id": "pcb:aoi",
+      "to_node_id": "pcb:lay",
+      "kind": "precedes",
+      "statement": "结构推断：内层检查后叠层压合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:414ea706fd8e",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:6a79f8c57aa7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:8e7ceddfc943ab8d",
+      "from_node_id": "pcb:lay",
+      "to_node_id": "pcb:drill",
+      "kind": "precedes",
+      "statement": "结构推断：压合后进行钻孔。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:6a79f8c57aa7",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:9b539a4395a4",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:898e488f884182dd",
+      "from_node_id": "pcb:drill",
+      "to_node_id": "pcb:plate",
+      "kind": "precedes",
+      "statement": "结构推断：钻孔后进入导通处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:9b539a4395a4",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:a9c1f91a682c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:4df2ad2de699bc2a",
+      "from_node_id": "pcb:plate",
+      "to_node_id": "pcb:mask",
+      "kind": "precedes",
+      "statement": "结构推断：线路金属工序后加工阻焊。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:a9c1f91a682c",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:e7e3bfaf9031",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:99b1a79a645e2402",
+      "from_node_id": "pcb:mask",
+      "to_node_id": "pcb:finish",
+      "kind": "precedes",
+      "statement": "结构推断：示例在阻焊后进行表面处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:e7e3bfaf9031",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:2c30c2773e35",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:26dfc402e4c6dcef",
+      "from_node_id": "pcb:finish",
+      "to_node_id": "pcb:test",
+      "kind": "precedes",
+      "statement": "结构推断：成板加工后进入电气检查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:2c30c2773e35",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f636f05b74b4",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:pcb:242595667161f170",
+      "from_node_id": "pcb:test",
+      "to_node_id": "pcb:pcb",
+      "kind": "supports",
+      "statement": "电气测试支持PCB交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f636f05b74b4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "铜箔、玻纤、树脂、覆铜板、PCB制造/设备/检测与下游；不泛化到全部电子元件；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_eurocircuits",
+      "name": "Eurocircuits",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:81125810b8a0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_shengyi",
+      "name": "广东生益科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:shengyi-profile:6050c950169f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:pcb:6ba9cd6af6cf6e05",
+      "company_id": "company_eurocircuits",
+      "node_id": "pcb:pcb",
+      "role": "标准PCB制造",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:81125810b8a0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:pcb:6495a8bf7f07eb00",
+      "company_id": "company_eurocircuits",
+      "node_id": "pcb:test",
+      "role": "多层板电气测试",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:pcb-process:f636f05b74b4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:pcb:218fed7c452cfe2d",
+      "company_id": "company_shengyi",
+      "node_id": "pcb:ccl",
+      "role": "覆铜板产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:shengyi-profile:414cbeef4c31",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:pcb:codex-research-v1",
+      "industry_id": "pcb",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "材料与设计",
+          "node_ids": [
+            "pcb:cad",
+            "pcb:resin",
+            "pcb:glass",
+            "pcb:foil",
+            "pcb:ccl"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "制板工艺",
+          "node_ids": [
+            "pcb:image",
+            "pcb:aoi",
+            "pcb:lay",
+            "pcb:drill",
+            "pcb:plate",
+            "pcb:mask",
+            "pcb:finish"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "测试与交付",
+          "node_ids": [
+            "pcb:test",
+            "pcb:pcb"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2"
+      ],
+      "relation_ids": [
+        "rel:new20261021:pcb:9b545f8a702a6ad9",
+        "rel:new20261021:pcb:3095f11af8d81dba",
+        "rel:new20261021:pcb:b8bd9317f978dd4f",
+        "rel:new20261021:pcb:366abfad2b4e14b7",
+        "rel:new20261021:pcb:6596d373eca2648e",
+        "rel:new20261021:pcb:7610d9b635b0c7fd",
+        "rel:new20261021:pcb:76c4be9f203229ad",
+        "rel:new20261021:pcb:8e7ceddfc943ab8d",
+        "rel:new20261021:pcb:898e488f884182dd",
+        "rel:new20261021:pcb:4df2ad2de699bc2a",
+        "rel:new20261021:pcb:99b1a79a645e2402",
+        "rel:new20261021:pcb:26dfc402e4c6dcef",
+        "rel:new20261021:pcb:242595667161f170"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "title": "PCB manufacture step-by-step",
+      "publisher": "Eurocircuits",
+      "url": "https://www.eurocircuits.com/technical-guidelines/pcb-manufacturing-technology/making-a-pcb-pcb-manufacture-step-by-step/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975341+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "9b7b3f7cb91c5f3a9ee2012d4cf197a3f0106832ca9323c303c814c542db3186",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:shengyi-profile",
+      "source_version": "sha256:9956a0ba46d6d52373c21f737cba6e49284ddd850dc9a681f49466d4bfb7f7b1",
+      "title": "集团介绍",
+      "publisher": "生益科技",
+      "url": "https://www.syst.com.cn/cn/jtjs/index_29.aspx",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:07:43.618672+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "df1f89f047010190075028a418821647c3d02695db6fefc36d88a417590c0f11",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:pcb-process:81125810b8a0",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "printed circuit boards",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:30"
+      },
+      "summary": "Eurocircuits说明其标准PCB制造业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:c3614ad8294e",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "CAD",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:33"
+      },
+      "summary": "设计数据用于制造准备。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:ac9b9e846335",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "glass-fibre core",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:39"
+      },
+      "summary": "多层板示例的覆铜层压板组成。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:f6536af6ff79",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Print inner",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:38"
+      },
+      "summary": "内层图形工序。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:3c939012a3f4",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Etch inner",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:41"
+      },
+      "summary": "去除非线路区域铜。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:414ea706fd8e",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "AOI",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:44"
+      },
+      "summary": "内层AOI检查。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:6a79f8c57aa7",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Lay-up",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:47"
+      },
+      "summary": "使用半固化片及铜箔叠层压合。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:9b539a4395a4",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Drilling",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:50"
+      },
+      "summary": "孔加工接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:a9c1f91a682c",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Plating.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:59"
+      },
+      "summary": "镀铜及孔互连工序。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:e7e3bfaf9031",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "soldermask",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:33"
+      },
+      "summary": "阻焊工序。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:2c30c2773e35",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "surface finishes",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:68"
+      },
+      "summary": "焊盘表面处理类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:pcb-process:f636f05b74b4",
+      "revision": 1,
+      "source_id": "codex-20261021:pcb-process",
+      "source_version": "sha256:ba932e0f6377ae12bc557e041604634b78c3514fafcc5dcd5cf69f2ab538bcb1",
+      "excerpt": "Electrical test.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/pcb-process.txt:77"
+      },
+      "summary": "按设计数据检查开短路。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:shengyi-profile:414cbeef4c31",
+      "revision": 1,
+      "source_id": "codex-20261021:shengyi-profile",
+      "source_version": "sha256:9956a0ba46d6d52373c21f737cba6e49284ddd850dc9a681f49466d4bfb7f7b1",
+      "excerpt": "自主生产覆铜板、半固化片、绝缘层压板",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/shengyi-profile.txt:48"
+      },
+      "summary": "生益科技集团主营业务类别，区别于下属PCB制造主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:shengyi-profile:6050c950169f",
+      "revision": 1,
+      "source_id": "codex-20261021:shengyi-profile",
+      "source_version": "sha256:9956a0ba46d6d52373c21f737cba6e49284ddd850dc9a681f49466d4bfb7f7b1",
+      "excerpt": "广东生益科技股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/shengyi-profile.txt:87"
+      },
+      "summary": "集团组织架构确认主体，不把子公司688183代码绑给母公司。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 2,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

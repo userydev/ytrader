@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-19",
+  "summary_note": "恢复百科导言的定义、范围与主要构成；中文改写，非逐字摘录。本页分工补充来自已收录结构。",
+  "industries": {
+    "gold": {
+      "summary": {
+        "title": "黄金产业",
+        "text": "矿产金与回收金构成黄金供给，经加工精炼形成符合质量要求的黄金，流向投资与储备、首饰和技术用途。存量黄金可以回收并重新精炼。",
+        "paragraphs": [
+          "矿产金与回收金构成黄金供给，经加工精炼形成符合质量要求的黄金，流向投资与储备、首饰和技术用途。存量黄金可以回收并重新精炼；矿山建设周期较长，回收对价格和经济冲击的反应通常更及时。",
+          "投资与储备是需求用途，不是制造步骤。风险上升可能增强投资需求，但美元与利率等机会成本因素可能抵消；采矿看售价、产量与成本，精炼看加工量与费用，首饰看销量、工费、渠道和库存。暂无实时行情。"
+        ],
+        "sources": [
+          { "title": "World Gold Council · Gold supply", "url": "https://www.gold.org/gold-supply" },
+          { "title": "World Gold Council · Gold Outlook 2026", "url": "https://www.gold.org/goldhub/research/gold-outlook-2026" },
+          { "title": "World Gold Council · GDT Q1 2026需求分类", "url": "https://www.gold.org/download/file/20774/GDT-Q1-2026-Exec-Summary.pdf" }
+        ],
+        "attribution": "依据世界黄金协会公开资料整理，介绍黄金供需结构、需求分类与影响机制，不含实时行情或业绩数据。资料日期：2026-10-20。"
+      },
+      "scenarios": {}
+    },
+    "crude-oil": {
+      "summary": {
+        "title": "原油产业",
+        "text": "石油产业由围绕石油及其产品开展的勘探、开采、加工、储运和销售活动构成。石油既被加工成汽油、柴油等燃料，也为化工生产提供原料，最终进入交通运输、能源使用和材料制造等领域。\n按产业分工，可将其划为上游、中游和下游：上游寻找并开发油气资源；中游承担运输、储存等衔接活动；下游进行炼制、产品加工与销售。大型一体化企业可能跨越多个环节，专业企业则提供钻井、工程建设或运输等服务。",
+        "paragraphs": [
+          "石油产业由围绕石油及其产品开展的勘探、开采、加工、储运和销售活动构成。石油既被加工成汽油、柴油等燃料，也为化工生产提供原料，最终进入交通运输、能源使用和材料制造等领域。",
+          "按产业分工，可将其划为上游、中游和下游：上游寻找并开发油气资源；中游承担运输、储存等衔接活动；下游进行炼制、产品加工与销售。大型一体化企业可能跨越多个环节，专业企业则提供钻井、工程建设或运输等服务。"
+        ],
+        "sources": [
+          {
+            "title": "维基百科 · 石油产业",
+            "url": "https://zh.wikipedia.org/wiki/石油产业"
+          },
+          {
+            "title": "Wikipedia · Petroleum industry",
+            "url": "https://en.wikipedia.org/wiki/Petroleum_industry"
+          }
+        ],
+        "source": {
+          "title": "维基百科 · 石油产业",
+          "url": "https://zh.wikipedia.org/wiki/石油产业"
+        },
+        "attribution": "依据维基百科导言整理；产业分工补充来自本页已收录结构。"
+      },
+      "scenarios": {
+        "supply": {
+          "entry_node": "crude",
+          "annotations": {
+            "crude": {
+              "change": "供应减少",
+              "effect": "油价存在上行压力"
+            },
+            "extraction": {
+              "change": "原油售价可能上升",
+              "effect": "开采收入可能改善"
+            },
+            "refining": {
+              "change": "采购成本可能上升",
+              "effect": "利润取决于加工价差"
+            },
+            "fuels": {
+              "change": "产品价格可能跟涨",
+              "effect": "看能否转嫁成本"
+            },
+            "feedstock": {
+              "change": "原料成本可能上升",
+              "effect": "看化工品价差"
+            },
+            "logistics": {
+              "change": "贸易流可能改变",
+              "effect": "货量与运价待核实"
+            }
+          }
+        },
+        "fuel-demand": {
+          "entry_node": "transport",
+          "annotations": {
+            "transport": {
+              "change": "燃料需求走弱",
+              "effect": "终端消费减少"
+            },
+            "fuels": {
+              "change": "销量或售价承压",
+              "effect": "库存压力可能增加"
+            },
+            "refining": {
+              "change": "加工负荷可能下降",
+              "effect": "价差与成本共同决定利润"
+            },
+            "crude": {
+              "change": "炼厂采购可能减少",
+              "effect": "油价仍受全球供需影响"
+            },
+            "logistics": {
+              "change": "运输货量有压力",
+              "effect": "运价还要看运力航程"
+            }
+          }
+        }
+      }
+    },
+    "ai-compute": {
+      "summary": {
+        "title": "AI算力产业",
+        "text": "人工智能计算需要处理大量矩阵运算和数据。人工智能加速器是为机器学习、神经网络等任务设计的处理器或计算系统，GPU、专用加速芯片等可用于模型训练和推理，应用范围从终端设备延伸至云计算服务器。\n本图聚焦数据中心内的算力供给：计算芯片与内存装入服务器，服务器通过网络连接成集群，存储系统负责数据供给，管理软件组织计算任务；供电和散热设施支持设备持续运行。芯片性能、系统协同和机房条件共同决定计算资源能否转化为可用服务。",
+        "paragraphs": [
+          "人工智能计算需要处理大量矩阵运算和数据。人工智能加速器是为机器学习、神经网络等任务设计的处理器或计算系统，GPU、专用加速芯片等可用于模型训练和推理，应用范围从终端设备延伸至云计算服务器。",
+          "本图聚焦数据中心内的算力供给：计算芯片与内存装入服务器，服务器通过网络连接成集群，存储系统负责数据供给，管理软件组织计算任务；供电和散热设施支持设备持续运行。芯片性能、系统协同和机房条件共同决定计算资源能否转化为可用服务。"
+        ],
+        "sources": [
+          {
+            "title": "维基百科 · 人工智能加速器",
+            "url": "https://zh.wikipedia.org/wiki/人工智能加速器"
+          }
+        ],
+        "source": {
+          "title": "维基百科 · 人工智能加速器",
+          "url": "https://zh.wikipedia.org/wiki/人工智能加速器"
+        },
+        "attribution": "依据维基百科导言整理；产业分工补充来自本页已收录结构。"
+      },
+      "scenarios": {
+        "expansion": {
+          "entry_node": "workload",
+          "annotations": {
+            "workload": {
+              "change": "容量需求增加",
+              "effect": "先确认预算与采购"
+            },
+            "server": {
+              "change": "采购需求可能增加",
+              "effect": "订单兑现才形成收入"
+            },
+            "accelerator": {
+              "change": "部件需求可能增加",
+              "effect": "看产品适配与供应能力"
+            },
+            "network": {
+              "change": "互联需求可能增加",
+              "effect": "看架构与项目份额"
+            },
+            "cluster": {
+              "change": "新增部署需求",
+              "effect": "投运取决于机房条件"
+            },
+            "power": {
+              "change": "配套需求可能增加",
+              "effect": "不能替代具体招标"
+            },
+            "cooling": {
+              "change": "散热需求可能增加",
+              "effect": "方案和中标待验证"
+            }
+          }
+        },
+        "power-limit": {
+          "entry_node": "power",
+          "annotations": {
+            "power": {
+              "change": "可用电力受限",
+              "effect": "扩容方案尚待核实"
+            },
+            "cluster": {
+              "change": "投运容量受约束",
+              "effect": "利用率和交付可能承压"
+            },
+            "server": {
+              "change": "到货未必能投运",
+              "effect": "收入时点需看验收"
+            },
+            "cooling": {
+              "change": "能效要求提高",
+              "effect": "不等于液冷订单增加"
+            }
+          }
+        }
+      }
+    },
+    "innovative-drugs": {
+      "summary": {
+        "title": "创新药产业",
+        "text": "药物研发把早期发现的候选化合物或治疗方案逐步转化为能够上市使用的药品。开发过程先通过临床前研究了解其作用与风险，再开展人体临床试验，评价安全性和有效性，并将研究结果提交监管机构审评。\n获得上市批准之后，药品还需要完成规模化生产、质量控制和供应，才能进入医疗使用。研发企业可能覆盖多个阶段，也会委托CRO开展研究服务、委托CDMO进行工艺开发和生产。各阶段以证据和准入要求衔接，某个阶段的进展不等于最终获批或商业化成功。",
+        "paragraphs": [
+          "药物研发把早期发现的候选化合物或治疗方案逐步转化为能够上市使用的药品。开发过程先通过临床前研究了解其作用与风险，再开展人体临床试验，评价安全性和有效性，并将研究结果提交监管机构审评。",
+          "获得上市批准之后，药品还需要完成规模化生产、质量控制和供应，才能进入医疗使用。研发企业可能覆盖多个阶段，也会委托CRO开展研究服务、委托CDMO进行工艺开发和生产。各阶段以证据和准入要求衔接，某个阶段的进展不等于最终获批或商业化成功。"
+        ],
+        "sources": [
+          {
+            "title": "维基百科 · 药物研发",
+            "url": "https://zh.wikipedia.org/wiki/药物研发"
+          },
+          {
+            "title": "Wikipedia · Drug development",
+            "url": "https://en.wikipedia.org/wiki/Drug_development"
+          }
+        ],
+        "source": {
+          "title": "维基百科 · 药物研发",
+          "url": "https://zh.wikipedia.org/wiki/药物研发"
+        },
+        "attribution": "依据维基百科导言整理；产业分工补充来自本页已收录结构。"
+      },
+      "scenarios": {
+        "trial": {
+          "entry_node": "clinical",
+          "annotations": {
+            "clinical": {
+              "change": "临床证据改善",
+              "effect": "仅作用于特定药物"
+            },
+            "review": {
+              "change": "申报依据可能增强",
+              "effect": "审批结论仍待审评"
+            },
+            "commercial": {
+              "change": "商业化可能性改善",
+              "effect": "不等于已经获批或放量"
+            },
+            "cro": {
+              "change": "后续研究需求待定",
+              "effect": "合同不能由结果推出"
+            },
+            "cdmo": {
+              "change": "制造需求待核实",
+              "effect": "需确认项目与合同"
+            }
+          }
+        },
+        "access": {
+          "entry_node": "commercial",
+          "annotations": {
+            "commercial": {
+              "change": "支付覆盖扩大",
+              "effect": "可及性可能改善"
+            },
+            "use": {
+              "change": "使用机会可能增加",
+              "effect": "还要看准入和实际处方"
+            },
+            "cdmo": {
+              "change": "供货需求待核实",
+              "effect": "取决于客户订单"
+            },
+            "cro": {
+              "change": "短期关系不明确",
+              "effect": "暂不能推定订单增长"
+            }
+          }
+        }
+      }
+    },
+    "grid": {
+      "summary": {
+        "title": "电网设备产业",
+        "text": "电网是将发电端和用电端连接起来的电力输送网络。发出的电能经过变电设施调整电压，借助输电线路进行远距离输送，再由配电网络送达用户。不同规模的电网可以互联，扩大电力调配的范围。\n电网设备产业为这些过程提供一次设备、保护与自动化系统、电缆和连接部件。一次设备承担变换、开断和输送电能的任务，保护控制系统负责监测与协调运行。设备通常随建设项目完成选型、采购、交付、联调和验收，之后进入长期运行维护。",
+        "paragraphs": [
+          "电网是将发电端和用电端连接起来的电力输送网络。发出的电能经过变电设施调整电压，借助输电线路进行远距离输送，再由配电网络送达用户。不同规模的电网可以互联，扩大电力调配的范围。",
+          "电网设备产业为这些过程提供一次设备、保护与自动化系统、电缆和连接部件。一次设备承担变换、开断和输送电能的任务，保护控制系统负责监测与协调运行。设备通常随建设项目完成选型、采购、交付、联调和验收，之后进入长期运行维护。"
+        ],
+        "sources": [
+          {
+            "title": "维基百科 · 供电网络",
+            "url": "https://zh.wikipedia.org/wiki/供电网络"
+          },
+          {
+            "title": "Wikipedia · Electrical grid",
+            "url": "https://en.wikipedia.org/wiki/Electrical_grid"
+          }
+        ],
+        "source": {
+          "title": "维基百科 · 供电网络",
+          "url": "https://zh.wikipedia.org/wiki/供电网络"
+        },
+        "attribution": "依据维基百科导言整理；产业分工补充来自本页已收录结构。"
+      },
+      "scenarios": {
+        "investment": {
+          "entry_node": "project",
+          "annotations": {
+            "project": {
+              "change": "建设预算增加",
+              "effect": "先转成具体招标"
+            },
+            "primary": {
+              "change": "设备招标可能增加",
+              "effect": "中标交付后兑现"
+            },
+            "secondary": {
+              "change": "控制保护需求增加",
+              "effect": "看项目类型和份额"
+            },
+            "cable": {
+              "change": "线缆需求可能增加",
+              "effect": "利润仍看材料与报价"
+            },
+            "acceptance": {
+              "change": "项目交付后验收",
+              "effect": "收入确认还需时间"
+            }
+          }
+        },
+        "delay": {
+          "entry_node": "acceptance",
+          "annotations": {
+            "acceptance": {
+              "change": "验收时点后移",
+              "effect": "收入或回款可能延后"
+            },
+            "primary": {
+              "change": "设备验收延后",
+              "effect": "利润确认可能承压"
+            },
+            "secondary": {
+              "change": "联调验收延后",
+              "effect": "收入回款可能推迟"
+            },
+            "cable": {
+              "change": "项目进度放缓",
+              "effect": "看合同交付条款"
+            }
+          }
+        }
+      }
+    }
+  },
+  "news": {
+    "shanghai-petrochemical": [
+      {
+        "date": "2026-03-20",
+        "type": "年报公告",
+        "title": "2026年计划加工原油1200万吨",
+        "summary": "公司在2025年报中披露经营计划；计划量不等于已完成产量。",
+        "publisher": "上海石化",
+        "url": "https://spc.sinopec.com/spc/investor/performance_report/Documents/20260320/doc_20260320_568588867006.pdf"
+      }
+    ],
+    "ieit": [
+      {
+        "date": "2026-09-22",
+        "type": "公司新闻",
+        "title": "元脑HC2000多元算力机组发布",
+        "summary": "公司介绍多元算力、高密液冷与推理软件栈的协同方案。",
+        "publisher": "浪潮信息",
+        "url": "https://www.ieisystem.com/about/news/23426.html"
+      }
+    ],
+    "hengrui": [
+      {
+        "date": "2026-09-11",
+        "type": "公司新闻",
+        "title": "海曲泊帕儿童ITP新适应症获批",
+        "summary": "公司披露适用范围扩展至符合条件的6岁及以上儿童患者。",
+        "publisher": "恒瑞医药",
+        "url": "https://www.hengrui.com/media/detail-1034.html"
+      }
+    ],
+    "nari": [
+      {
+        "date": "2026-04-30",
+        "type": "年报公告",
+        "title": "2025年年度报告披露",
+        "summary": "可查看经营情况、业务结构与三年主要会计数据。",
+        "publisher": "国电南瑞 / 巨潮资讯",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257886.PDF"
+      }
+    ]
+  }
+}

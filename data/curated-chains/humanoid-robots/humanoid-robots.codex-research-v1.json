@@ -1,0 +1,1281 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "humanoid-robots",
+    "revision": 1,
+    "name": "人形机器人",
+    "need": "组合感知、计算和运动执行，形成双足人形机器人平台。",
+    "boundary": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "用宇树H1/H1-2作为整机配置样本；不外推为全行业BOM。",
+      "鸣志及兆威仅列其已披露的运动控制/机器人部件能力，不推定为宇树供应商或已获得人形量产订单。",
+      "未展开训练数据、基础模型、力传感器及全部减速器路线；整机展示不等同工厂任务经济性验证。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "感知与计算",
+        "node_ids": [
+          "humanoid-robots:lidar",
+          "humanoid-robots:camera",
+          "humanoid-robots:perception",
+          "humanoid-robots:compute"
+        ]
+      },
+      {
+        "module": "驱动与执行",
+        "node_ids": [
+          "humanoid-robots:motor",
+          "humanoid-robots:servo",
+          "humanoid-robots:bearing",
+          "humanoid-robots:micro",
+          "humanoid-robots:joint"
+        ]
+      },
+      {
+        "module": "整机集成",
+        "node_ids": [
+          "humanoid-robots:battery",
+          "humanoid-robots:hand",
+          "humanoid-robots:assembly",
+          "humanoid-robots:robot"
+        ]
+      },
+      {
+        "module": "任务接口",
+        "node_ids": [
+          "humanoid-robots:development"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "humanoid-robots:lidar",
+      "name": "三维激光雷达",
+      "kind": "product",
+      "description": "H1平台的环境感知部件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:camera",
+      "name": "深度相机",
+      "kind": "product",
+      "description": "H1平台深度感知部件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:perception",
+      "name": "空间感知",
+      "kind": "activity",
+      "description": "接收空间数据的感知接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:compute",
+      "name": "控制与感知计算平台",
+      "kind": "product",
+      "description": "按整机型号配置的计算能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:motor",
+      "name": "永磁同步关节电机",
+      "kind": "product",
+      "description": "H1平台关节电机配置。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:servo",
+      "name": "伺服驱动与电机",
+      "kind": "product",
+      "description": "运动控制部件能力接口，不指定整机客户。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:moons-profile:0f35cf120048",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:bearing",
+      "name": "交叉滚子轴承",
+      "kind": "product",
+      "description": "H1关节输出轴承样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:d1b59a161624",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:micro",
+      "name": "微型驱动与执行关节",
+      "kind": "product",
+      "description": "兆威披露的微型驱动及工业机器人关节接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zwgear:4f538516e0c4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:joint",
+      "name": "关节运动执行",
+      "kind": "activity",
+      "description": "电机、驱动和机械支承组合的运动接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:unitree:d1b59a161624",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:battery",
+      "name": "机器人电池系统",
+      "kind": "product",
+      "description": "整机电源配置，不采用平台标称数值作全行业要求。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:8e949ef1fe09",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:hand",
+      "name": "可选灵巧手",
+      "kind": "product",
+      "description": "H1-2可选末端部件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:233ee10482ea",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:assembly",
+      "name": "人形机器人系统集成",
+      "kind": "activity",
+      "description": "感知、计算及运动部件在整机中集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:robot",
+      "name": "双足人形机器人",
+      "kind": "product",
+      "description": "宇树H1系列为样本的整机类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "humanoid-robots:development",
+      "name": "开发与任务验证",
+      "kind": "application",
+      "description": "具体任务能力需另行验证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:lidar",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:camera",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:perception",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:compute",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:motor",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:servo",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:bearing",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:micro",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:joint",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:battery",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:hand",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:assembly",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:robot",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "node_id": "humanoid-robots:development",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:f19135d64b1b45e8",
+      "from_node_id": "humanoid-robots:lidar",
+      "to_node_id": "humanoid-robots:perception",
+      "kind": "used_for",
+      "statement": "雷达参与H1平台深度感知。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:67d012401948fd29",
+      "from_node_id": "humanoid-robots:camera",
+      "to_node_id": "humanoid-robots:perception",
+      "kind": "used_for",
+      "statement": "深度相机参与空间感知。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:1bbc004f0f1efc11",
+      "from_node_id": "humanoid-robots:perception",
+      "to_node_id": "humanoid-robots:compute",
+      "kind": "supports",
+      "statement": "结构推断：感知输入进入相应计算接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:fcfd6e7c3dbe0a21",
+      "from_node_id": "humanoid-robots:motor",
+      "to_node_id": "humanoid-robots:joint",
+      "kind": "part_of",
+      "statement": "结构推断：关节电机参与运动执行。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:973b11a27460edf8",
+      "from_node_id": "humanoid-robots:bearing",
+      "to_node_id": "humanoid-robots:joint",
+      "kind": "part_of",
+      "statement": "结构推断：输出轴承支持机械关节。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:d1b59a161624",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:05513ed8049b2047",
+      "from_node_id": "humanoid-robots:servo",
+      "to_node_id": "humanoid-robots:joint",
+      "kind": "supports",
+      "statement": "结构推断：适配伺服驱动可用于运动接口；不指定整机。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:moons-profile:0f35cf120048",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:fc64a737552160d5",
+      "from_node_id": "humanoid-robots:compute",
+      "to_node_id": "humanoid-robots:assembly",
+      "kind": "part_of",
+      "statement": "控制及感知计算配置纳入H1集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:9b64f9f8adf42cb5",
+      "from_node_id": "humanoid-robots:joint",
+      "to_node_id": "humanoid-robots:assembly",
+      "kind": "part_of",
+      "statement": "结构推断：运动关节纳入整机集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:unitree:d1b59a161624",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:9b9023448ac36dc6",
+      "from_node_id": "humanoid-robots:battery",
+      "to_node_id": "humanoid-robots:assembly",
+      "kind": "part_of",
+      "statement": "电池纳入H1配置。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:8e949ef1fe09",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:4ad3ee370ea50fc1",
+      "from_node_id": "humanoid-robots:hand",
+      "to_node_id": "humanoid-robots:assembly",
+      "kind": "part_of",
+      "statement": "灵巧手为H1-2可选配置。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:233ee10482ea",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:9b497caab77850af",
+      "from_node_id": "humanoid-robots:assembly",
+      "to_node_id": "humanoid-robots:robot",
+      "kind": "produces",
+      "statement": "结构推断：集成形成适用人形整机。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:humanoid-robots:6f5fa55a3e0793da",
+      "from_node_id": "humanoid-robots:robot",
+      "to_node_id": "humanoid-robots:development",
+      "kind": "used_for",
+      "statement": "结构推断：用户开发平台支持任务验证，未证明具体任务经济性。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "执行器/减速器/电机/传感/控制计算、电池、整机/软件与应用集成；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_unitree",
+      "name": "Unitree Robotics",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_moons",
+      "name": "上海鸣志电器股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:moons-profile:140b8fbcfc5c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_zwgear",
+      "name": "深圳市兆威机电股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zwgear:8c07a429fc1a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:603728",
+      "company_id": "company_moons",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:moons-stock:75a42f343cb6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:003021",
+      "company_id": "company_zwgear",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zwgear:8c07a429fc1a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:humanoid-robots:bc6553634a590a54",
+      "company_id": "company_unitree",
+      "node_id": "humanoid-robots:robot",
+      "role": "H1系列人形机器人",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:humanoid-robots:bb92462855a8ac74",
+      "company_id": "company_unitree",
+      "node_id": "humanoid-robots:motor",
+      "role": "H1平台关节电机配置",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:humanoid-robots:adbaebfccd60bbe2",
+      "company_id": "company_moons",
+      "node_id": "humanoid-robots:servo",
+      "role": "运动控制产品",
+      "scope": "仅公司运动控制部件类别；本证据不证明人形机器人供货或客户关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:moons-profile:0f35cf120048",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:humanoid-robots:7a87041046d3ae78",
+      "company_id": "company_zwgear",
+      "node_id": "humanoid-robots:micro",
+      "role": "微型驱动与工业机器人执行关节",
+      "scope": "仅官网公开产品及应用方向；不认定指定人形整机供应商。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:zwgear:4f538516e0c4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:humanoid-robots:codex-research-v1",
+      "industry_id": "humanoid-robots",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "感知与计算",
+          "node_ids": [
+            "humanoid-robots:lidar",
+            "humanoid-robots:camera",
+            "humanoid-robots:perception",
+            "humanoid-robots:compute"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "驱动与执行",
+          "node_ids": [
+            "humanoid-robots:motor",
+            "humanoid-robots:servo",
+            "humanoid-robots:bearing",
+            "humanoid-robots:micro",
+            "humanoid-robots:joint"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "整机集成",
+          "node_ids": [
+            "humanoid-robots:battery",
+            "humanoid-robots:hand",
+            "humanoid-robots:assembly",
+            "humanoid-robots:robot"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "任务接口",
+          "node_ids": [
+            "humanoid-robots:development"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:humanoid-robots:f19135d64b1b45e8",
+        "rel:new20261021:humanoid-robots:67d012401948fd29",
+        "rel:new20261021:humanoid-robots:1bbc004f0f1efc11",
+        "rel:new20261021:humanoid-robots:fcfd6e7c3dbe0a21",
+        "rel:new20261021:humanoid-robots:973b11a27460edf8",
+        "rel:new20261021:humanoid-robots:05513ed8049b2047",
+        "rel:new20261021:humanoid-robots:fc64a737552160d5",
+        "rel:new20261021:humanoid-robots:9b64f9f8adf42cb5",
+        "rel:new20261021:humanoid-robots:9b9023448ac36dc6",
+        "rel:new20261021:humanoid-robots:4ad3ee370ea50fc1",
+        "rel:new20261021:humanoid-robots:9b497caab77850af",
+        "rel:new20261021:humanoid-robots:6f5fa55a3e0793da"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "title": "H1 humanoid",
+      "publisher": "宇树科技",
+      "url": "https://www.unitree.com/h1",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:10.307742+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "e7e5420a15d7bf68016fb4cd97a4855af1c9a911761c8503d271e8464c5a8198",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:moons-profile",
+      "source_version": "sha256:20d537e337ce11da7203b6eb590a2c1997a85a896b9463c9b9dc21bff2b56cde",
+      "title": "Who we are",
+      "publisher": "鸣志电器",
+      "url": "https://www.moons.com.cn/about-us/who-we-are",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:36.157473+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "af7f1f76d94e3ea87086d6dd7b595316f84027f41aff072e376a4188bee8ddeb",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:moons-stock",
+      "source_version": "sha256:01d954ca4312ee656f89e7ef79d4ca44155e52a0af660a7aee7988376d609aca",
+      "title": "投资者关系",
+      "publisher": "鸣志电器",
+      "url": "https://www.moons.com.cn/about-us/investor-relations",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:36.320956+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "19e830fcae5fe096eff74645e43c3c39e62f6534d475f55280d4ba88e77042c6",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:zwgear",
+      "source_version": "sha256:466deeaa86d13dcd0cd051adca7489c53f5dc844d5fdbe33384dcf886adb86e0",
+      "title": "公司及产品",
+      "publisher": "兆威机电",
+      "url": "https://www.zwgear.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:10.711562+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "c029aa7ec4c193cfabd441a5106333118fc4530b721cba710165f6dc63acf2a0",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:unitree:de9673f3bc24",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "H1 / H1-2",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:28"
+      },
+      "summary": "宇树人形整机平台样本。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:794802a9ddd3",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "LiDAR + depth camera",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:90"
+      },
+      "summary": "H1系列深度感知配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:3fabd0212fa4",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "permanent magnet synchronous motor",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:158"
+      },
+      "summary": "H1系列关节电机类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:d1b59a161624",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "crossed roller bearings",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:154"
+      },
+      "summary": "关节输出轴承类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:c6603e42a44f",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "Perception Computing",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:173"
+      },
+      "summary": "平台控制与感知计算配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:8e949ef1fe09",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "Battery capacity",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:102"
+      },
+      "summary": "平台电池配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:unitree:233ee10482ea",
+      "revision": 1,
+      "source_id": "codex-20261021:unitree",
+      "source_version": "sha256:feec2e11b245899b9612420221ff0b11bb4f7199f76f5abc06fab71551fc8a44",
+      "excerpt": "Dex5-1",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/unitree.txt:39"
+      },
+      "summary": "H1-2可选灵巧手，并非所有机型标配。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:moons-profile:140b8fbcfc5c",
+      "revision": 1,
+      "source_id": "codex-20261021:moons-profile",
+      "source_version": "sha256:20d537e337ce11da7203b6eb590a2c1997a85a896b9463c9b9dc21bff2b56cde",
+      "excerpt": "上海鸣志电器股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/moons-profile.txt:165"
+      },
+      "summary": "鸣志主体及运动控制业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:moons-stock:75a42f343cb6",
+      "revision": 1,
+      "source_id": "codex-20261021:moons-stock",
+      "source_version": "sha256:01d954ca4312ee656f89e7ef79d4ca44155e52a0af660a7aee7988376d609aca",
+      "excerpt": "股票代码* 603728",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/moons-stock.txt:164"
+      },
+      "summary": "鸣志官网投资者信息代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:moons-profile:0f35cf120048",
+      "revision": 1,
+      "source_id": "codex-20261021:moons-profile",
+      "source_version": "sha256:20d537e337ce11da7203b6eb590a2c1997a85a896b9463c9b9dc21bff2b56cde",
+      "excerpt": "伺服驱动器与电机",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/moons-profile.txt:55"
+      },
+      "summary": "鸣志产品类别，不自动证明人形订单。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:zwgear:8c07a429fc1a",
+      "revision": 1,
+      "source_id": "codex-20261021:zwgear",
+      "source_version": "sha256:466deeaa86d13dcd0cd051adca7489c53f5dc844d5fdbe33384dcf886adb86e0",
+      "excerpt": "股票代码 02692.HK 003021.SZ",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/zwgear.txt:2"
+      },
+      "summary": "兆威官网证券代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:zwgear:4f538516e0c4",
+      "revision": 1,
+      "source_id": "codex-20261021:zwgear",
+      "source_version": "sha256:466deeaa86d13dcd0cd051adca7489c53f5dc844d5fdbe33384dcf886adb86e0",
+      "excerpt": "工业机器人执行关节",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/zwgear.txt:202"
+      },
+      "summary": "兆威公开工业机器人执行关节及微型驱动能力。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 2,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

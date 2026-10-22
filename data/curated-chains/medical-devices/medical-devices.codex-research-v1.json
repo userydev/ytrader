@@ -1,0 +1,1300 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "medical-devices",
+    "revision": 1,
+    "name": "医疗器械",
+    "need": "研发制造用于诊断、监护和治疗等医疗场景的设备及相关产品。",
+    "boundary": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "用设备产品类别与产业生命周期组织；上游传感器、专用芯片、精密加工、耗材渠道尚未逐项取证。",
+      "FDA仅作为美国市场监管环节样本，不能直接替代中国NMPA或其他地区规定；注册、列名与上市许可不同。",
+      "不评价疗效、诊断准确率、适应证或具体产品合规状态；公司产品目录不等于全部地区已获准销售。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "研发制造",
+        "node_ids": [
+          "medical-devices:design",
+          "medical-devices:qms",
+          "medical-devices:manufacture"
+        ]
+      },
+      {
+        "module": "市场与全生命周期",
+        "node_ids": [
+          "medical-devices:market",
+          "medical-devices:label",
+          "medical-devices:service",
+          "medical-devices:surveillance"
+        ]
+      },
+      {
+        "module": "设备产品",
+        "node_ids": [
+          "medical-devices:monitor",
+          "medical-devices:ivd",
+          "medical-devices:ultrasound",
+          "medical-devices:ct",
+          "medical-devices:radiotherapy"
+        ]
+      },
+      {
+        "module": "医疗应用",
+        "node_ids": [
+          "medical-devices:diagnosis",
+          "medical-devices:care"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "medical-devices:design",
+      "name": "器械研发与设计",
+      "kind": "activity",
+      "description": "产品设计开发接口，验证要求按产品及地区。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:qms",
+      "name": "质量管理",
+      "kind": "activity",
+      "description": "美国FDA资料所述质量体系样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:manufacture",
+      "name": "器械制造与包装",
+      "kind": "activity",
+      "description": "设备制造包装接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:market",
+      "name": "市场准入（地区适用）",
+      "kind": "service",
+      "description": "分类决定上市前途径；美国为本稿监管例。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:b5a11ad3619f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:label",
+      "name": "产品标签与随附信息",
+      "kind": "product",
+      "description": "按市场适用规则提供产品信息。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:2e44acf6e76a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:service",
+      "name": "安装与维护",
+      "kind": "service",
+      "description": "器械全生命周期服务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:surveillance",
+      "name": "上市后监测与报告",
+      "kind": "activity",
+      "description": "FDA美国市场报告机制样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:6bacf1e99c5c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:monitor",
+      "name": "生命信息与监护设备",
+      "kind": "product",
+      "description": "监护产品类别，不推定指定临床功效。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:mindray-news:20fbfe442cee",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:ivd",
+      "name": "体外诊断仪器",
+      "kind": "product",
+      "description": "体外检测仪器接口，试剂耗材另行取证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:mindray-news:20fbfe442cee",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:ultrasound",
+      "name": "超声影像设备",
+      "kind": "product",
+      "description": "超声成像类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:85e5e43575d6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:ct",
+      "name": "CT成像系统",
+      "kind": "product",
+      "description": "X射线断层成像设备类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:93d59bc81650",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:radiotherapy",
+      "name": "影像与放疗设备",
+      "kind": "product",
+      "description": "目录总类，具体放疗配置另证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:6e5259a3dae6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:diagnosis",
+      "name": "诊断应用",
+      "kind": "application",
+      "description": "器械类别面向的诊断场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:united-imaging:93d59bc81650",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "medical-devices:care",
+      "name": "监护与医疗支持应用",
+      "kind": "application",
+      "description": "监护类设备应用接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:mindray-news:20fbfe442cee",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:design",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:qms",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:manufacture",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:market",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:label",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:service",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:surveillance",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:monitor",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:ivd",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:ultrasound",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:ct",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:radiotherapy",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:diagnosis",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "medical-devices",
+      "node_id": "medical-devices:care",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:medical-devices:ca722ad6c7474877",
+      "from_node_id": "medical-devices:design",
+      "to_node_id": "medical-devices:manufacture",
+      "kind": "precedes",
+      "statement": "结构推断：设计与制造形成产业生命周期接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:c43bf467e584d3e7",
+      "from_node_id": "medical-devices:qms",
+      "to_node_id": "medical-devices:design",
+      "kind": "supports",
+      "statement": "适用质量体系覆盖设计控制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:8daa7ebb73124e6a",
+      "from_node_id": "medical-devices:qms",
+      "to_node_id": "medical-devices:manufacture",
+      "kind": "supports",
+      "statement": "适用质量体系覆盖制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:d081e3af32b92cc4",
+      "from_node_id": "medical-devices:market",
+      "to_node_id": "medical-devices:diagnosis",
+      "kind": "supports",
+      "statement": "结构推断：按市场及产品适用的准入支持商业使用；不宣称具体产品获批。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:b5a11ad3619f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:caa69ac9f62e301f",
+      "from_node_id": "medical-devices:label",
+      "to_node_id": "medical-devices:diagnosis",
+      "kind": "supports",
+      "statement": "结构推断：产品随附信息支持适用使用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:2e44acf6e76a",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:3cfc7438fb267e13",
+      "from_node_id": "medical-devices:service",
+      "to_node_id": "medical-devices:monitor",
+      "kind": "supports",
+      "statement": "结构推断：安装维护服务面向适用设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:362839b817c46c0c",
+      "from_node_id": "medical-devices:surveillance",
+      "to_node_id": "medical-devices:qms",
+      "kind": "supports",
+      "statement": "结构推断：上市后报告向风险与质量管理提供反馈。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fda-devices:6bacf1e99c5c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:20d52acbb5ebcf41",
+      "from_node_id": "medical-devices:manufacture",
+      "to_node_id": "medical-devices:monitor",
+      "kind": "produces",
+      "statement": "结构推断：制造与监护设备产品接口衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:6e0e07741363c8e6",
+      "from_node_id": "medical-devices:manufacture",
+      "to_node_id": "medical-devices:ivd",
+      "kind": "produces",
+      "statement": "结构推断：制造与IVD产品接口衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:2a1ef4b38d292827",
+      "from_node_id": "medical-devices:ultrasound",
+      "to_node_id": "medical-devices:diagnosis",
+      "kind": "used_for",
+      "statement": "结构推断：超声设备构成影像诊断产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:85e5e43575d6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:c16fc2b410d9676c",
+      "from_node_id": "medical-devices:ct",
+      "to_node_id": "medical-devices:diagnosis",
+      "kind": "used_for",
+      "statement": "结构推断：CT构成影像诊断产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:93d59bc81650",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:cd6724f62b228426",
+      "from_node_id": "medical-devices:ivd",
+      "to_node_id": "medical-devices:diagnosis",
+      "kind": "used_for",
+      "statement": "结构推断：体外诊断仪器构成检验接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:medical-devices:0ca45545379458a8",
+      "from_node_id": "medical-devices:monitor",
+      "to_node_id": "medical-devices:care",
+      "kind": "used_for",
+      "statement": "结构推断：监护设备用于适用监护场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "高值耗材、影像/监护生命支持、体外诊断三分支；材料部件、研发注册、制造流通/服务；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_mindray",
+      "name": "深圳迈瑞生物医疗电子股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-news:2ff7acffeae2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_united_imaging",
+      "name": "上海联影医疗科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:4b4ab2a0f330",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:medical-devices:84f66f5944f9e62d",
+      "company_id": "company_mindray",
+      "node_id": "medical-devices:monitor",
+      "role": "监护系统产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:medical-devices:c2a421a4efcd62f8",
+      "company_id": "company_mindray",
+      "node_id": "medical-devices:ivd",
+      "role": "体外诊断仪器",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:medical-devices:8a3191395f6ad87d",
+      "company_id": "company_mindray",
+      "node_id": "medical-devices:ultrasound",
+      "role": "超声影像产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mindray-current:85e5e43575d6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:medical-devices:f40705310693124a",
+      "company_id": "company_united_imaging",
+      "node_id": "medical-devices:ct",
+      "role": "CT成像系统",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:93d59bc81650",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:medical-devices:d166963362c2022b",
+      "company_id": "company_united_imaging",
+      "node_id": "medical-devices:radiotherapy",
+      "role": "影像与放疗设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:united-imaging:6e5259a3dae6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:medical-devices:codex-research-v1",
+      "industry_id": "medical-devices",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "研发制造",
+          "node_ids": [
+            "medical-devices:design",
+            "medical-devices:qms",
+            "medical-devices:manufacture"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "市场与全生命周期",
+          "node_ids": [
+            "medical-devices:market",
+            "medical-devices:label",
+            "medical-devices:service",
+            "medical-devices:surveillance"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "设备产品",
+          "node_ids": [
+            "medical-devices:monitor",
+            "medical-devices:ivd",
+            "medical-devices:ultrasound",
+            "medical-devices:ct",
+            "medical-devices:radiotherapy"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "医疗应用",
+          "node_ids": [
+            "medical-devices:diagnosis",
+            "medical-devices:care"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:medical-devices:ca722ad6c7474877",
+        "rel:new20261021:medical-devices:c43bf467e584d3e7",
+        "rel:new20261021:medical-devices:8daa7ebb73124e6a",
+        "rel:new20261021:medical-devices:d081e3af32b92cc4",
+        "rel:new20261021:medical-devices:caa69ac9f62e301f",
+        "rel:new20261021:medical-devices:3cfc7438fb267e13",
+        "rel:new20261021:medical-devices:362839b817c46c0c",
+        "rel:new20261021:medical-devices:20d52acbb5ebcf41",
+        "rel:new20261021:medical-devices:6e0e07741363c8e6",
+        "rel:new20261021:medical-devices:2a1ef4b38d292827",
+        "rel:new20261021:medical-devices:c16fc2b410d9676c",
+        "rel:new20261021:medical-devices:cd6724f62b228426",
+        "rel:new20261021:medical-devices:0ca45545379458a8"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:mindray-news",
+      "source_version": "sha256:40155260a64551e2353f2b06efe94fda373765679647e58b914154daff78d321",
+      "title": "2026业务简介",
+      "publisher": "迈瑞医疗",
+      "url": "https://www.mindray.com/cn/media-center/news/nclm-2026-mindray-Innovation-journey",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:55:05.195317+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "43368192db095b01de3ae186c3babc1d37e8ec0952965c655cdad81cedca952f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:mindray-current",
+      "source_version": "sha256:70769e7b0b0edcd08171e78ab61750c0ff1390ab2434e0534c69f7ef12dea667",
+      "title": "公司产品及简介",
+      "publisher": "迈瑞医疗",
+      "url": "https://www.mindray.com/cn",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:55:05.195211+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "60a8adc8016452cfb345fe10ec404716057ab84444cd27814534d4a146b9261a",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:united-imaging",
+      "source_version": "sha256:994abbec9818c0661710a43e5776cfcc217bd504da8d9507f9d61fdc0964af7b",
+      "title": "公司及产品",
+      "publisher": "联影医疗",
+      "url": "https://www.united-imaging.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:17.227253+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "e55aa72f75b9be426839046ea70de5da3e79ed9a35e46435cf8ad0f6ba3f1bbe",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "title": "Overview of device regulation",
+      "publisher": "US FDA",
+      "url": "https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/overview-device-regulation",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:16.026539+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "416fd063f7f702c40c4851e1ce07925c672faf42ac39bf175e8e1fdef8a51f30",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:mindray-news:2ff7acffeae2",
+      "revision": 1,
+      "source_id": "codex-20261021:mindray-news",
+      "source_version": "sha256:40155260a64551e2353f2b06efe94fda373765679647e58b914154daff78d321",
+      "excerpt": "深圳迈瑞生物医疗电子股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mindray-news.txt:560"
+      },
+      "summary": "迈瑞官网主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mindray-news:20fbfe442cee",
+      "revision": 1,
+      "source_id": "codex-20261021:mindray-news",
+      "source_version": "sha256:40155260a64551e2353f2b06efe94fda373765679647e58b914154daff78d321",
+      "excerpt": "业务涵盖体外诊断、生命信息与支持、医学影像",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mindray-news.txt:491"
+      },
+      "summary": "迈瑞公开业务范围。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mindray-current:2d72580cc1a5",
+      "revision": 1,
+      "source_id": "codex-20261021:mindray-current",
+      "source_version": "sha256:70769e7b0b0edcd08171e78ab61750c0ff1390ab2434e0534c69f7ef12dea667",
+      "excerpt": "监护系统",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mindray-current.txt:29"
+      },
+      "summary": "产品目录核实监护类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mindray-current:8503b96c6541",
+      "revision": 1,
+      "source_id": "codex-20261021:mindray-current",
+      "source_version": "sha256:70769e7b0b0edcd08171e78ab61750c0ff1390ab2434e0534c69f7ef12dea667",
+      "excerpt": "体外诊断仪器",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mindray-current.txt:157"
+      },
+      "summary": "产品目录核实体外诊断仪器。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mindray-current:85e5e43575d6",
+      "revision": 1,
+      "source_id": "codex-20261021:mindray-current",
+      "source_version": "sha256:70769e7b0b0edcd08171e78ab61750c0ff1390ab2434e0534c69f7ef12dea667",
+      "excerpt": "超声影像",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mindray-current.txt:273"
+      },
+      "summary": "产品目录核实超声影像类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:united-imaging:4b4ab2a0f330",
+      "revision": 1,
+      "source_id": "codex-20261021:united-imaging",
+      "source_version": "sha256:994abbec9818c0661710a43e5776cfcc217bd504da8d9507f9d61fdc0964af7b",
+      "excerpt": "上海联影医疗科技股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/united-imaging.txt:117"
+      },
+      "summary": "联影官网主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:united-imaging:93d59bc81650",
+      "revision": 1,
+      "source_id": "codex-20261021:united-imaging",
+      "source_version": "sha256:994abbec9818c0661710a43e5776cfcc217bd504da8d9507f9d61fdc0964af7b",
+      "excerpt": "X 射线计算机断层扫描系统",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/united-imaging.txt:28"
+      },
+      "summary": "联影CT设备类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:united-imaging:6e5259a3dae6",
+      "revision": 1,
+      "source_id": "codex-20261021:united-imaging",
+      "source_version": "sha256:994abbec9818c0661710a43e5776cfcc217bd504da8d9507f9d61fdc0964af7b",
+      "excerpt": "影像与放疗设备",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/united-imaging.txt:25"
+      },
+      "summary": "联影影像和放疗业务类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fda-devices:bc4506baeeab",
+      "revision": 1,
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "excerpt": "Quality Management System Regulation",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fda-devices.txt:73"
+      },
+      "summary": "FDA美国市场质量管理要求，适用地区明确。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fda-devices:a1a1bc72ad66",
+      "revision": 1,
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "excerpt": "design, manufacture, packaging",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fda-devices.txt:121"
+      },
+      "summary": "该要求覆盖设计制造等生命周期活动。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fda-devices:b5a11ad3619f",
+      "revision": 1,
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "excerpt": "Premarket Approval",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fda-devices.txt:78"
+      },
+      "summary": "美国上市前途径按器械类别而异，不认定所有器械都走PMA。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fda-devices:2e44acf6e76a",
+      "revision": 1,
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "excerpt": "Labeling",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fda-devices.txt:61"
+      },
+      "summary": "标签与随附信息环节。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fda-devices:6bacf1e99c5c",
+      "revision": 1,
+      "source_id": "codex-20261021:fda-devices",
+      "source_version": "sha256:b9646794a6db34b40d1ce4f596d14d31a61a04d19213c8cec14adebe614f4ed2",
+      "excerpt": "Medical Device Reporting",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fda-devices.txt:86"
+      },
+      "summary": "美国上市后特定不良事件报告机制。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 4,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

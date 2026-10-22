@@ -1,0 +1,557 @@
+{
+  "format": "industry-reference-v1",
+  "status": "reference",
+  "industry": {
+    "id": "innovative-drugs",
+    "name": "创新药",
+    "demand": "把药物研发推进到可用于患者的产品",
+    "boundary": "流程以FDA公开说明为例，不能当作中国注册细则；公司服务角色跨地区，仅说明产业分工。未展开药物类别、单项管线、支付与流通。",
+    "summary": "研发流程逐步积累证据，审评决定是否获准上市；临床服务及研发制造服务可以支撑不同阶段。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "structure": {
+    "version": 1,
+    "organization": "development",
+    "thesis": "从发现、临床前到临床逐步积累证据，经审评决定是否获准上市，使用后仍需安全监测。以FDA流程为例，阶段推进不保证成功或批准；专业服务与商业生产跨阶段提供研究和供应能力。",
+    "groups": [
+      {
+        "id": "finding",
+        "title": "发现候选药物",
+        "role": "core",
+        "purpose": "寻找并研究候选药物，为后续验证确定研究对象。",
+        "node_ids": [
+          "discovery"
+        ]
+      },
+      {
+        "id": "laboratory",
+        "title": "临床前验证",
+        "role": "core",
+        "purpose": "用实验室等研究积累证据，为是否满足进入临床的条件提供依据。",
+        "node_ids": [
+          "preclinical"
+        ]
+      },
+      {
+        "id": "human",
+        "title": "临床研究",
+        "role": "core",
+        "purpose": "在人体中研究安全性和有效性，形成后续审评所需的研究资料。",
+        "node_ids": [
+          "clinical"
+        ]
+      },
+      {
+        "id": "decision",
+        "title": "注册审评",
+        "role": "core",
+        "purpose": "主管机关审查提交资料并决定是否批准；这是准入判断而非保证获批的生产工序。",
+        "node_ids": [
+          "review"
+        ]
+      },
+      {
+        "id": "patients",
+        "title": "上市使用与监测",
+        "role": "core",
+        "purpose": "获准后进入相应市场使用并持续监测安全性，满足患者用药需求。",
+        "node_ids": [
+          "use"
+        ]
+      },
+      {
+        "id": "supply",
+        "title": "商业供应能力",
+        "role": "support",
+        "purpose": "商业化生产支撑药品供应，相关制造准备不必等批准后才开始。",
+        "node_ids": [
+          "commercial"
+        ]
+      },
+      {
+        "id": "services",
+        "title": "跨阶段专业服务",
+        "role": "support",
+        "purpose": "CRO支持临床执行，CDMO为临床及商业阶段提供研发制造能力，不是药企的必经下一站。",
+        "node_ids": [
+          "cro",
+          "cdmo"
+        ]
+      }
+    ],
+    "primary_relation_ids": [
+      "innovative-drugs:r1",
+      "innovative-drugs:r2",
+      "innovative-drugs:r3",
+      "innovative-drugs:r4"
+    ],
+    "reading_order": [
+      "finding",
+      "laboratory",
+      "human",
+      "decision",
+      "patients",
+      "supply",
+      "services"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "discovery",
+      "name": "药物发现与开发",
+      "kind": "activity",
+      "description": "寻找和研究候选药物。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "preclinical",
+      "name": "临床前研究",
+      "kind": "activity",
+      "description": "开展实验室等研究。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "clinical",
+      "name": "临床研究",
+      "kind": "activity",
+      "description": "在人体中研究安全性和有效性。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "review",
+      "name": "注册审评",
+      "kind": "activity",
+      "description": "主管机关审查资料并作出决定。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "commercial",
+      "name": "商业化生产",
+      "kind": "activity",
+      "description": "为商业供应生产药品；不是必须等获批才开始准备。",
+      "sources": [
+        "asymchem"
+      ]
+    },
+    {
+      "id": "use",
+      "name": "上市使用与安全监测",
+      "kind": "application",
+      "description": "药品上市后仍需监测安全性。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "cro",
+      "name": "临床研究服务（CRO）",
+      "kind": "service",
+      "description": "提供临床运营、医学及注册相关服务。",
+      "sources": [
+        "tigermed"
+      ]
+    },
+    {
+      "id": "cdmo",
+      "name": "药物研发与制造服务（CDMO）",
+      "kind": "service",
+      "description": "提供研发和不同阶段的制造支持。",
+      "sources": [
+        "asymchem"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "innovative-drugs:r1",
+      "from_id": "discovery",
+      "to_id": "preclinical",
+      "kind": "precedes",
+      "explanation": "表示典型研发流程顺序，不表示每个候选药物都能推进。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r2",
+      "from_id": "preclinical",
+      "to_id": "clinical",
+      "kind": "precedes",
+      "explanation": "后续进入临床研究仍需满足条件。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r3",
+      "from_id": "clinical",
+      "to_id": "review",
+      "kind": "precedes",
+      "explanation": "研究资料用于后续审评。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r4",
+      "from_id": "review",
+      "to_id": "use",
+      "kind": "precedes",
+      "explanation": "获准上市是进入相应市场使用的条件；审评可能不批准。",
+      "sources": [
+        "fda"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r5",
+      "from_id": "commercial",
+      "to_id": "use",
+      "kind": "supports",
+      "explanation": "商业化生产支撑药品供应。",
+      "sources": [
+        "asymchem",
+        "fda"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r6",
+      "from_id": "cro",
+      "to_id": "clinical",
+      "kind": "supports",
+      "explanation": "临床CRO为临床研究提供专业服务。",
+      "sources": [
+        "tigermed"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r7",
+      "from_id": "cdmo",
+      "to_id": "clinical",
+      "kind": "supports",
+      "explanation": "CDMO可在临床阶段提供研发制造支持。",
+      "sources": [
+        "asymchem"
+      ]
+    },
+    {
+      "id": "innovative-drugs:r8",
+      "from_id": "cdmo",
+      "to_id": "commercial",
+      "kind": "supports",
+      "explanation": "CDMO也可承担商业阶段制造服务。",
+      "sources": [
+        "asymchem"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "hengrui",
+      "name": "恒瑞医药",
+      "symbol": "SH:600276",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile": {
+        "products": "创新药研发与药品商业化；官网公开抗肿瘤及其他治疗领域研发管线。",
+        "buyers": "医疗机构、医药流通等药品采购方；临床使用与支付另受准入约束。",
+        "purpose": "推进具体药物项目的研究、注册和药品供应，而不是只占据单一研发节点。",
+        "watch": "试验读出、注册进展、获批产品销售与支付准入。",
+        "condition": "具体项目是判断单元；一项试验改善仍需监管与商业判断，一个药成功不等于全部管线成功。"
+      },
+      "profile_verified": true
+    },
+    {
+      "id": "tigermed",
+      "name": "泰格医药",
+      "symbol": "SZ:300347",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile": {
+        "products": "临床研究相关专业服务。",
+        "buyers": "药企、生物技术公司及其他研究申办方。",
+        "purpose": "支持临床研究组织与执行，服务交付不等于试验必然成功。",
+        "watch": "新签订单、项目启动和研究执行进度。",
+        "condition": "临床资产投入须形成服务委托并执行，不把全部临床试验自动视为公司订单。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "asymchem",
+      "name": "凯莱英（Asymchem）",
+      "symbol": "SZ:002821",
+      "identity_note": "本轮与已同步证券主表核对",
+      "profile": {
+        "products": "药物工艺开发、放大与生产等CDMO服务。",
+        "buyers": "药物研发及商业化企业。",
+        "purpose": "支持临床用药和商业化生产的工艺与供应。",
+        "watch": "项目阶段、订单执行与生产交付。",
+        "condition": "研发或获批项目须明确委托及生产份额，且满足工艺和质量要求，才形成业务。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "zelgen",
+      "name": "泽璟制药",
+      "symbol": "SH:688266",
+      "profile": {
+        "products": "创新药研发与药品商业化相关业务。",
+        "buyers": "药品采购、流通及医疗使用相关客户类别。",
+        "purpose": "推进自有药物资产从研发到注册及供应，阶段应按具体项目区分。",
+        "watch": "项目临床结果、注册进度与产品销售。",
+        "condition": "公司跨阶段并不表示每条管线均已获批；研究结果需经监管和商业验证。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "kelun",
+      "name": "科伦药业",
+      "symbol": "SZ:002422",
+      "profile": {
+        "products": "药品及创新药研发相关业务。",
+        "buyers": "医药流通与医疗机构等药品采购方。",
+        "purpose": "开展药品开发与供应；本稿只示意药企贯穿阶段的角色。",
+        "watch": "具体项目进展、获批产品供应及销售结构。",
+        "condition": "须区分项目主体、研发阶段与既有产品业务，不能将单项研发结果扩大到全部业务。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "joinn",
+      "name": "昭衍新药",
+      "symbol": "SH:603127",
+      "profile": {
+        "products": "非临床安全性评价等服务。",
+        "buyers": "药物研发企业及研究申办方。",
+        "purpose": "为候选药物进入后续研究提供非临床评价支持，不替代监管审批。",
+        "watch": "评价服务新签订单、项目执行与产能利用。",
+        "condition": "研发投入需实际进入公司承接的评价项目；不能从某药企临床结果推断命名服务关系。"
+      },
+      "profile_verified": false
+    },
+    {
+      "id": "wuxi",
+      "name": "药明康德",
+      "symbol": "SH:603259",
+      "profile": {
+        "products": "药物研发及生产相关服务，不概括为仅做生产。",
+        "buyers": "药企、生物技术企业及研究机构。",
+        "purpose": "在研发、工艺及生产等多个阶段提供外部服务能力。",
+        "watch": "分业务订单、项目推进与交付。",
+        "condition": "资产推进并不自动形成委托；须看实际服务范围、客户选择与合规条件。"
+      },
+      "profile_verified": false
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "hengrui",
+      "node_id": "discovery",
+      "role": "药物研发企业",
+      "sources": [
+        "hengrui"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "hengrui",
+      "node_id": "commercial",
+      "role": "从事药物生产",
+      "sources": [
+        "hengrui"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "tigermed",
+      "node_id": "cro",
+      "role": "提供临床研发服务",
+      "sources": [
+        "tigermed"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "asymchem",
+      "node_id": "cdmo",
+      "role": "提供药物研发与制造服务",
+      "sources": [
+        "asymchem"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "hengrui",
+      "node_id": "clinical",
+      "role": "开展创新药临床开发",
+      "sources": [
+        "hengrui"
+      ],
+      "basis": "source-backed"
+    },
+    {
+      "company_id": "zelgen",
+      "node_id": "discovery",
+      "role": "创新药研发",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "zelgen",
+      "node_id": "clinical",
+      "role": "临床开发",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "zelgen",
+      "node_id": "commercial",
+      "role": "药品商业化",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "kelun",
+      "node_id": "discovery",
+      "role": "创新药相关研发",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "kelun",
+      "node_id": "commercial",
+      "role": "药品生产与供应",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "joinn",
+      "node_id": "preclinical",
+      "role": "非临床安全性评价",
+      "sources": [],
+      "basis": "editorial"
+    },
+    {
+      "company_id": "wuxi",
+      "node_id": "cdmo",
+      "role": "药物研发与制造服务",
+      "sources": [],
+      "basis": "editorial"
+    }
+  ],
+  "sources": [
+    {
+      "id": "fda",
+      "title": "药物开发流程",
+      "publisher": "FDA",
+      "url": "https://www.fda.gov/patients/learn-about-drug-and-device-approvals/drug-development-process",
+      "locator": "Steps 1–5；美国流程示例。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "tigermed",
+      "title": "Clinical Development",
+      "publisher": "Tigermed",
+      "url": "https://www.tigermedgrp.com/en/solutions/clinical-development",
+      "locator": "Full-Service Provider of Clinical Development、Key Capabilities。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "hengrui",
+      "title": "公司概况",
+      "publisher": "恒瑞医药",
+      "url": "https://www.hengrui.com/about/survey.html",
+      "locator": "公司概况：研发、生产及推广药物；创新产品临床开发与临床试验。只采用参与角色，不采用管线数量和财务占比。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "asymchem",
+      "title": "Investor Relations公司简介",
+      "publisher": "Asymchem",
+      "url": "https://www.asymchem.com/investor-relations",
+      "locator": "公开检索返回的Overview正文：CDMO、early clinical stage to commercial stage。直开页面未稳定取得正文，后续自动抓取需另验。",
+      "checked_at": "2026-10-18",
+      "access": "indexed_page_text"
+    }
+  ],
+  "version": "2026-10-18.matrix-review",
+  "origin": "public_reference",
+  "default_company": "hengrui",
+  "scenarios": [
+    {
+      "id": "trial",
+      "title": "临床结果改善",
+      "label": "情景示例",
+      "category": "技术与效率",
+      "indicator": "具体药物的临床证据状态",
+      "entry_node": "clinical",
+      "affected_nodes": [
+        "clinical",
+        "review",
+        "commercial",
+        "use"
+      ],
+      "relation_ids": [
+        "innovative-drugs:r3",
+        "innovative-drugs:r4",
+        "innovative-drugs:r5"
+      ],
+      "steps": [
+        "特定项目的证据改善",
+        "影响注册或合作判断",
+        "获批及商业化仍需后续条件"
+      ],
+      "condition": "单一试验结果不能代表全部管线；仍需整体获益风险、审评与支付准入判断。",
+      "watch": "跟踪具体项目读出、申报、批准和产品销售。"
+    },
+    {
+      "id": "access",
+      "title": "支付准入改善",
+      "label": "情景示例",
+      "category": "规则与准入",
+      "indicator": "药品可及性与支付覆盖",
+      "entry_node": "use",
+      "affected_nodes": [
+        "use",
+        "commercial"
+      ],
+      "relation_ids": [
+        "innovative-drugs:r5"
+      ],
+      "steps": [
+        "支付或准入条件改善",
+        "可能影响实际临床使用",
+        "销售仍受价格与竞争约束"
+      ],
+      "condition": "准入不等于所有药品放量，需具体到药物、适应症和实际使用。",
+      "watch": "观察获批产品销售、价格、回款与供应。"
+    }
+  ],
+  "categories": [
+    "需求",
+    "供给",
+    "价格与成本",
+    "技术与效率",
+    "规则与准入",
+    "资金与投资"
+  ],
+  "ai": {
+    "label": "AI辅助 · 示例解读",
+    "overview": "药企推进的是具体药物资产：发现候选物，积累临床前和临床证据，再申请上市并供应药品。CRO、CDMO和非临床评价公司提供跨阶段服务，服务收入不等于药物研发一定成功。",
+    "gap": "空白表示当前资料未收录。AI可以解释该环节通常需要什么产品或服务，以及应该核对哪些资料；它不能仅凭产业位置确认某家公司有业务、供货或订单。",
+    "questions": [
+      "这个产业如何运转",
+      "解释当前选择",
+      "理解资料空白"
+    ],
+    "disclosure": "本页展示预写的AI解读示例，未连接实时问答；补充推断不写回已收录业务。"
+  }
+}

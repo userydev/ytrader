@@ -1,0 +1,341 @@
+{
+  "format": "industry-reference-v1",
+  "status": "reference",
+  "industry": {
+    "id": "crude-oil",
+    "name": "原油",
+    "demand": "提供燃料和化工原料",
+    "boundary": "解释勘探开发、原油、炼制及两类主要用途；不展开天然气、每种炼化工艺、全部成品和下游化学品。",
+    "summary": "原油进入炼制后形成多种产出，分流到燃料和化工用途；储运支撑投入与交付。",
+    "basis": "editorial_scope_and_grouping"
+  },
+  "structure": {
+    "version": 1,
+    "organization": "production",
+    "thesis": "开采获取原油，炼制把原料转成不同产出，再分流到燃料和化工用途；储运为接收原料与交付产品提供条件。",
+    "groups": [
+      {"id": "supply", "title": "获取原料", "role": "core", "purpose": "勘探开发与开采提供原油，形成炼制所需的原料供给。", "node_ids": ["extraction", "crude"]},
+      {"id": "processing", "title": "炼制与分流", "role": "core", "purpose": "通过分离、转化和处理形成不同产品，使同一投入能通向燃料与化工两类用途。", "node_ids": ["refining"]},
+      {"id": "energy", "title": "燃料用途分支", "role": "core", "purpose": "炼制所得燃料进入交通与能源场景，满足燃料使用需求。", "node_ids": ["fuels", "transport"]},
+      {"id": "materials", "title": "化工用途分支", "role": "core", "purpose": "炼制所得化工原料进入化工生产，连接燃料以外的原料需求。", "node_ids": ["feedstock", "chemicals"]},
+      {"id": "delivery", "title": "储运配套", "role": "support", "purpose": "储存与运输支撑炼制环节的原油接收和产品交付，解决供给与加工地点之间的衔接。", "node_ids": ["logistics"]}
+    ],
+    "primary_relation_ids": ["crude-oil:r1", "crude-oil:r2", "crude-oil:r3", "crude-oil:r4", "crude-oil:r5", "crude-oil:r6"],
+    "reading_order": ["supply", "processing", "energy", "materials", "delivery"]
+  },
+  "nodes": [
+    {
+      "id": "extraction",
+      "name": "勘探开发与开采",
+      "kind": "activity",
+      "description": "获取并生产原油。",
+      "sources": [
+        "cnooc"
+      ]
+    },
+    {
+      "id": "crude",
+      "name": "原油",
+      "kind": "product",
+      "description": "炼制的主要投入。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "refining",
+      "name": "炼制",
+      "kind": "activity",
+      "description": "通过分离、转化和处理形成产品。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "fuels",
+      "name": "燃料产品",
+      "kind": "product",
+      "description": "合并表示汽油等燃料产出。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "feedstock",
+      "name": "化工原料",
+      "kind": "product",
+      "description": "合并表示进入化工用途的炼制产出。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "交通与能源用途",
+      "kind": "application",
+      "description": "使用燃料的主要场景之一。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "chemicals",
+      "name": "化工生产",
+      "kind": "application",
+      "description": "使用炼制产出的原料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "储存与运输",
+      "kind": "service",
+      "description": "支撑投入和产品交付。",
+      "sources": [
+        "eia"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "crude-oil:r1",
+      "from_id": "extraction",
+      "to_id": "crude",
+      "kind": "produces",
+      "explanation": "开采活动产出原油。",
+      "sources": [
+        "cnooc"
+      ]
+    },
+    {
+      "id": "crude-oil:r2",
+      "from_id": "crude",
+      "to_id": "refining",
+      "kind": "input_to",
+      "explanation": "原油作为炼制投入。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r3",
+      "from_id": "refining",
+      "to_id": "fuels",
+      "kind": "produces",
+      "explanation": "炼制产出燃料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r4",
+      "from_id": "refining",
+      "to_id": "feedstock",
+      "kind": "produces",
+      "explanation": "炼制也产出化工原料。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r5",
+      "from_id": "fuels",
+      "to_id": "transport",
+      "kind": "used_for",
+      "explanation": "燃料用于交通等场景。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r6",
+      "from_id": "feedstock",
+      "to_id": "chemicals",
+      "kind": "input_to",
+      "explanation": "化工原料进入化工生产。",
+      "sources": [
+        "eia"
+      ]
+    },
+    {
+      "id": "crude-oil:r7",
+      "from_id": "logistics",
+      "to_id": "refining",
+      "kind": "supports",
+      "explanation": "储运支撑原油接收和产品交付。",
+      "sources": [
+        "eia"
+      ]
+    }
+  ],
+  "companies": [
+    {
+      "id": "cnooc-ltd",
+      "name": "中国海洋石油有限公司",
+      "symbol": "SH:600938",
+      "identity_note": "本轮与已同步证券主表核对"
+    },
+    {
+      "id": "shanghai-petrochemical",
+      "name": "中国石化上海石油化工股份有限公司",
+      "symbol": "SH:600688",
+      "identity_note": "本轮与已同步证券主表核对"
+    }
+  ],
+  "participations": [
+    {
+      "company_id": "cnooc-ltd",
+      "node_id": "extraction",
+      "role": "从事原油勘探开发与生产",
+      "sources": [
+        "cnooc"
+      ]
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "fuels",
+      "role": "提供汽油、柴油和喷气燃料等炼油产品",
+      "sources": [
+        "spc-products"
+      ]
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "feedstock",
+      "role": "提供用于乙烯生产的石脑油",
+      "sources": [
+        "spc-products"
+      ]
+    },
+    {
+      "company_id": "shanghai-petrochemical",
+      "node_id": "refining",
+      "role": "从事炼化一体化生产",
+      "sources": [
+        "spc-profile",
+        "spc-products"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "eia",
+      "title": "原油炼制过程",
+      "publisher": "美国能源信息署（EIA）",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-the-refining-process.php",
+      "locator": "How crude oil is refined、Separation、Conversion、Treatment、Storage。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "cnooc",
+      "title": "主要作业区与公司介绍",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://www.cnoocltd.com/gywm/zyzyq/",
+      "locator": "公司介绍：主营勘探、开发、生产及销售原油和天然气；只采用原油角色。",
+      "checked_at": "2026-10-18",
+      "access": "page_text"
+    },
+    {
+      "id": "spc-products",
+      "title": "产品介绍",
+      "publisher": "上海石化",
+      "url": "https://spc.sinopec.com/spc/business/ywgs/A136004005Gone1.shtml",
+      "locator": "公开检索返回官网正文：炼油产品下的汽油、柴油、喷气燃料、石脑油；直开抓取未稳定成功。",
+      "checked_at": "2026-10-18",
+      "access": "indexed_page_text"
+    },
+    {
+      "id": "spc-profile",
+      "title": "企业简介",
+      "publisher": "上海石化",
+      "url": "https://spc.sinopec.com/spc/about/companyprofile/A136002001Gone1.shtml",
+      "locator": "公司简介：国内主要炼化一体化综合性石油化工企业之一。",
+      "checked_at": "2026-10-18",
+      "access": "indexed_page_text"
+    }
+  ],
+  "version": "2026-10-18.3",
+  "origin": "public_reference",
+  "explanation": {
+    "overview": "原油产业把地下资源转成可使用的燃料和化工原料。勘探开发与开采得到原油；炼制通过分离、转化和处理形成多种产出。一部分用于交通等燃料需求，另一部分进入化工生产。储存和运输连接供给、加工与交付。理解这条链的关键是看清加工分流，而不是只记住几家石油公司。",
+    "steps": [
+      {
+        "title": "先获取原油",
+        "text": "勘探开发与开采提供原油，原油再作为炼制的投入。生产原油和加工原油是不同的产业角色。",
+        "node_ids": [
+          "extraction",
+          "crude",
+          "refining"
+        ],
+        "sources": [
+          "cnooc",
+          "eia"
+        ]
+      },
+      {
+        "title": "炼制形成多种产品",
+        "text": "同一炼制环节可以形成燃料与化工原料等不同产出。这不是每桶原油只生产一种成品的单线过程。",
+        "node_ids": [
+          "refining",
+          "fuels",
+          "feedstock"
+        ],
+        "sources": [
+          "eia"
+        ]
+      },
+      {
+        "title": "产出分流到不同用途",
+        "text": "汽油、柴油等用于燃料场景；石脑油可用于乙烯生产。储运支撑原油接收和产品交付，连接产地、加工地点与使用地点。",
+        "node_ids": [
+          "fuels",
+          "feedstock",
+          "transport",
+          "chemicals",
+          "logistics"
+        ],
+        "sources": [
+          "eia",
+          "spc-products"
+        ]
+      }
+    ],
+    "distinctions": [
+      {
+        "title": "原料、加工活动和产出不同",
+        "text": "“原油”是产品，“炼制”是活动，“燃料产品”是产出。分清这三类，才能解释上下游连接。",
+        "sources": [
+          "eia"
+        ]
+      },
+      {
+        "title": "石油与化工有交点",
+        "text": "炼制不只服务加油需求。石脑油等原料继续进入化工，产业可以在这里连接另一条链。",
+        "sources": [
+          "eia",
+          "spc-products"
+        ]
+      },
+      {
+        "title": "公司角色要落到具体活动",
+        "text": "中国海油在勘探开发与生产位置；上海石化在炼制及炼化产品位置。参与同一产业不等于两家公司之间存在已披露供货。",
+        "sources": [
+          "cnooc",
+          "spc-profile",
+          "spc-products"
+        ]
+      }
+    ],
+    "questions": [
+      "原油经过什么环节才成为可使用的产品？",
+      "炼制为何会形成两条主要用途分支？",
+      "油田服务、炼化设备和下游化工还缺哪些位置？"
+    ],
+    "gaps": [
+      "按两类主要用途合并产出，尚未展开全部炼化工艺、油田服务、天然气及下游化学品。",
+      "公司仅列少量公开角色样例，不代表全行业公司名单或公司之间存在交易。"
+    ]
+  }
+}

@@ -1,0 +1,5158 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "crude-oil",
+    "revision": 2,
+    "name": "原油",
+    "aliases": [
+      "原油产业链"
+    ],
+    "need": "提供石油燃料、化工原料及部分非燃料产品",
+    "boundary": "包括勘探开发、采出、油田技术与海上工程配套、原油储运、炼制工艺与主要用途接口；天然气独立链、各下游化工全链不展开。 补充油品销售营销与废润滑油再精炼支路；再生基础油不作为原油。",
+    "graph_status": "draft",
+    "current_release": null,
+    "coverage_note": "宿主初稿与Notebook单链补充经原文逐项核对，覆盖主要环节与限定配套实例；代表公司仍非全市场穷举。所有事实为draft，未进入产品库或正式发布。",
+    "gaps": [
+      "上海石化、恒力石化等其他代表主体与炼化工程设备/催化剂专业公司仍可继续补证，当前不以母集团介绍代替上市主体业务。",
+      "运输储运和炼油工艺为概括结构；地区、油藏、装置与工艺适用条件仍需按具体问题细化。",
+      "废润滑油再生采用NZIC历史技术实例，不代表全部处理路线、当前中国监管或任何企业现有产能。",
+      "使用2013年12月API技术报告及其他历史资料时只取物理业务接口，未把预测、统计或历史公司指标冒充2026现值。",
+      "未采集具体供应合同、订单、收入占比、市场份额或因果冲击系数；不由结构边推定已发生传导。"
+    ],
+    "coverage_matrix": [
+      {
+        "module": "资源与开发生产",
+        "node_ids": [
+          "node:petroleum-geological-exploration",
+          "node:petroleum-exploratory-drilling",
+          "node:petroleum-development-wells",
+          "node:crude-oil-production",
+          "node:crude-petroleum"
+        ]
+      },
+      {
+        "module": "油田与工程配套",
+        "node_ids": [
+          "node:hydraulic-fracturing-services",
+          "node:fracturing-fluids-proppants",
+          "node:enhanced-oil-recovery-services",
+          "node:offshore-field-engineering",
+          "node:offshore-production-facilities",
+          "node:oilfield-technical-services",
+          "node:offshore-support-vessels"
+        ]
+      },
+      {
+        "module": "储运",
+        "node_ids": [
+          "node:petroleum-transport",
+          "node:petroleum-tank-storage"
+        ]
+      },
+      {
+        "module": "炼制与产出",
+        "node_ids": [
+          "node:petroleum-refining",
+          "node:petroleum-distillation",
+          "node:petroleum-fractions",
+          "node:petroleum-conversion",
+          "node:petroleum-reforming",
+          "node:refinery-hydrogen-catalysts",
+          "node:petroleum-treatment-blending",
+          "node:petroleum-fuels",
+          "node:petrochemical-feedstocks",
+          "node:petroleum-nonfuel-products"
+        ]
+      },
+      {
+        "module": "用途与生命周期接口",
+        "node_ids": [
+          "node:transport-fuel-applications",
+          "node:stationary-petroleum-fuel-applications",
+          "node:petrochemical-production",
+          "node:offshore-well-abandonment"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "node:petroleum-geological-exploration",
+      "name": "油气地质与地球物理勘探",
+      "kind": "service",
+      "description": "利用地质研究和物探识别含油气地层与勘探目标；仅取原油相关部分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:exploration",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-exploratory-drilling",
+      "name": "油气探井与测试",
+      "kind": "activity",
+      "description": "通过探井及测试核实资源；不把发现等同于经济可采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:exploratory-well",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-development-wells",
+      "name": "油田开发井与完井",
+      "kind": "activity",
+      "description": "在资源与经济性条件满足后建设开发井，并配置适合地层的完井和生产条件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:development-wells",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cosl-well-services",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:crude-oil-production",
+      "name": "原油采出与油田生产",
+      "kind": "activity",
+      "description": "通过自然压力或适用的辅助开采技术从油藏采出原油；不展开天然气独立链。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:production-routes",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:crude-petroleum",
+      "name": "原油",
+      "kind": "product",
+      "description": "从地下采出的石油烃混合物；原油品质及炼厂适配条件不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:crude-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:hydraulic-fracturing-services",
+      "name": "压裂作业",
+      "kind": "activity",
+      "description": "为适用的低渗透等油气资源形成流动通道；不是所有油井的必备工序。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fracturing-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:fracturing-fluids-proppants",
+      "name": "压裂用水、化学剂及支撑剂",
+      "kind": "product",
+      "description": "压裂作业投入集合，不代表任何单一材料在全部技术路线均必用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fracturing-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:enhanced-oil-recovery-services",
+      "name": "注入增产与辅助采油服务",
+      "kind": "service",
+      "description": "按地层条件采用蒸汽、水或二氧化碳等注入措施；本轮不比较各路线经济性。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:recovery-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:offshore-field-engineering",
+      "name": "海洋油气开发工程服务",
+      "kind": "service",
+      "description": "海洋油气工程设计、采购、建造、安装、调试与维修服务；原油链只采用其油田相关范围。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:offshore-production-facilities",
+      "name": "海上平台与水下生产设施",
+      "kind": "product",
+      "description": "海上钻井及生产所用平台、生产设施等的集合；具体装备随水深及方案变化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:offshore-equipment",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:offshore-platforms",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:oilfield-technical-services",
+      "name": "油田技术服务",
+      "kind": "service",
+      "description": "定向钻井、测井、钻完井液、固井、完井、修井及增产等专业服务集合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-well-services",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:offshore-support-vessels",
+      "name": "海上作业船舶服务",
+      "kind": "service",
+      "description": "为海上油气作业提供船舶支持；不同于原油远洋贸易运输。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-marine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-transport",
+      "name": "原油与成品油运输服务",
+      "kind": "service",
+      "description": "管道及水运、铁路、公路等运输方式的集合；不强制把不同路线串成流程。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:transport-modes",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cosco-role",
+          "revision": 2,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:api-tankers",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-tank-storage",
+      "name": "石油储罐与仓储",
+      "kind": "service",
+      "description": "原油接收、炼厂与产品交付之间的临时储存；不作为额外的石油生产步骤。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:storage",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:api-storage",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-refining",
+      "name": "石油炼制",
+      "kind": "activity",
+      "description": "采用分离、转化和处理等环节，将原油与适用的其他投入加工成石油产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:other-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-distillation",
+      "name": "常压及适用的减压蒸馏",
+      "kind": "activity",
+      "description": "按沸点范围分离馏分；常压蒸馏为基础，减压蒸馏视炼厂复杂程度配置。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-fractions",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-fractions",
+      "name": "炼厂中间馏分与组分",
+      "kind": "product",
+      "description": "蒸馏及后续处理形成的中间物流集合，不能直接等同于全部合格成品油。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-fractions",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-conversion",
+      "name": "炼厂转化工艺",
+      "kind": "activity",
+      "description": "包括适用的裂化、加氢裂化及其他分子转化路线；不同炼厂配置不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:conversion-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-reforming",
+      "name": "炼厂重整工艺",
+      "kind": "activity",
+      "description": "炼厂转化技术分支之一；本稿只表示其结构位置，不给通用装置参数。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:reforming",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:refinery-hydrogen-catalysts",
+      "name": "炼制用氢气与催化剂接口",
+      "kind": "product",
+      "description": "按具体转化工艺采用的配套投入集合；不展开氢能或催化剂的独立产业链。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:conversion-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-treatment-blending",
+      "name": "石油产品处理与调合",
+      "kind": "activity",
+      "description": "对中间物流进行适用的处理与调合以满足产品要求；不默认任一工艺适合全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:blending",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-fuels",
+      "name": "石油燃料产品",
+      "kind": "product",
+      "description": "汽油、柴油、航空燃料及其他石油燃料的集合；各品种规格及市场不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petrochemical-feedstocks",
+      "name": "石油化工原料",
+      "kind": "product",
+      "description": "用于化工生产的石油原料集合；不把天然气等其他来源自动归为原油来源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:chemical-feedstocks",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-nonfuel-products",
+      "name": "润滑油、沥青等非燃料产品",
+      "kind": "product",
+      "description": "石油炼制的部分非燃料产出集合；本稿不展开每个品种的专属工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:other-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:transport-fuel-applications",
+      "name": "交通运输燃料应用",
+      "kind": "application",
+      "description": "使用石油燃料的道路、航空、航运等交通场景；不等同于单一行业需求量。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:stationary-petroleum-fuel-applications",
+      "name": "石油燃料的供热与发电应用",
+      "kind": "application",
+      "description": "石油燃料在适用的供热、固定设备及发电场景中的用途；不比较能源竞争力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petrochemical-production",
+      "name": "石油化工生产应用",
+      "kind": "application",
+      "description": "将石油原料用于化学品、塑料及其他化工品生产的跨链接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:chemical-feedstocks",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:offshore-well-abandonment",
+      "name": "海上井弃置与设施拆除",
+      "kind": "service",
+      "description": "海上井封堵弃置及相关工程拆除服务；监管依据需按实际司法辖区核查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:offshore-abandonment",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cooec-abandonment",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:petroleum-products-marketing",
+      "name": "成品油批发零售与营销",
+      "kind": "activity",
+      "description": "成品油通过适用的批发、零售和营销网络交付；具体模式与地区依经营主体和报告期间限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-marketing",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:petro-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:crude-oil-sales-trading",
+      "name": "原油与油品销售及贸易",
+      "kind": "activity",
+      "description": "包括自产原油销售及披露主体的油品贸易；参与该节点不自动证明第三方贸易或任意交易关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-trading",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:petro-trading",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cnooc-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:offshore-facility-construction",
+      "name": "海上油气设施建造与安装",
+      "kind": "activity",
+      "description": "海上生产设施的适用设计、采购、建造与海上安装调试活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:lubricating-oils",
+      "name": "润滑油",
+      "kind": "product",
+      "description": "石油非燃料产出的一类；这里只展开润滑使用与废油再精炼接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:other-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:nzi-used",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:lubricating-oil-use",
+      "name": "润滑油使用",
+      "kind": "activity",
+      "description": "润滑油使用过程中因污染物与性质变化而可能失去继续使用条件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-used",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:used-lubricating-oil",
+      "name": "废润滑油",
+      "kind": "product",
+      "description": "使用后不适于继续原用途的润滑油；不等同于原油。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-used",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:used-oil-rerefining",
+      "name": "废润滑油再精炼",
+      "kind": "activity",
+      "description": "所引工艺实例包括脱水、真空分馏和后续提纯；不是普遍适用的唯一废油处理方式。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-recycle",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:nzi-fraction",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:base-oil",
+      "name": "再生润滑油馏分",
+      "kind": "product",
+      "description": "所引再精炼蒸馏过程获得的润滑油馏分；本节点不等同于已完成添加剂调合的成品润滑油。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-fraction",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node:bitumen-extender",
+      "name": "再精炼残渣沥青调和用途料",
+      "kind": "product",
+      "description": "所引工艺的不蒸馏残渣用于道路沥青调和的实例，不等同于新产沥青。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-residue",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-geological-exploration",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-exploratory-drilling",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-development-wells",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:crude-oil-production",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:crude-petroleum",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:hydraulic-fracturing-services",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:fracturing-fluids-proppants",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:enhanced-oil-recovery-services",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:offshore-field-engineering",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:offshore-production-facilities",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:oilfield-technical-services",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:offshore-support-vessels",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-transport",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-tank-storage",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-refining",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-distillation",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-fractions",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-conversion",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-reforming",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:refinery-hydrogen-catalysts",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-treatment-blending",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-fuels",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petrochemical-feedstocks",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-nonfuel-products",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:transport-fuel-applications",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:stationary-petroleum-fuel-applications",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petrochemical-production",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:offshore-well-abandonment",
+      "revision": 1,
+      "context_note": "在本原油链采用此定义；链内组织不等于额外事实或公司交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:petroleum-products-marketing",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:crude-oil-sales-trading",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:offshore-facility-construction",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:lubricating-oils",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:lubricating-oil-use",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:used-lubricating-oil",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:used-oil-rerefining",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:base-oil",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    },
+    {
+      "industry_id": "crude-oil",
+      "node_id": "node:bitumen-extender",
+      "revision": 1,
+      "context_note": "原油链内的限定接口；不表示普遍工艺或具体交易关系。"
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:crude-oil-research-1",
+      "industry_id": "crude-oil",
+      "revision": 2,
+      "groups": [
+        {
+          "group_id": "upstream",
+          "name": "资源与开发生产",
+          "node_ids": [
+            "node:petroleum-geological-exploration",
+            "node:petroleum-exploratory-drilling",
+            "node:petroleum-development-wells",
+            "node:crude-oil-production",
+            "node:crude-petroleum"
+          ]
+        },
+        {
+          "group_id": "support",
+          "name": "油田与工程配套",
+          "node_ids": [
+            "node:hydraulic-fracturing-services",
+            "node:fracturing-fluids-proppants",
+            "node:enhanced-oil-recovery-services",
+            "node:offshore-field-engineering",
+            "node:offshore-production-facilities",
+            "node:oilfield-technical-services",
+            "node:offshore-support-vessels"
+          ]
+        },
+        {
+          "group_id": "delivery",
+          "name": "储运",
+          "node_ids": [
+            "node:petroleum-transport",
+            "node:petroleum-tank-storage"
+          ]
+        },
+        {
+          "group_id": "processing",
+          "name": "炼制与产出",
+          "node_ids": [
+            "node:petroleum-refining",
+            "node:petroleum-distillation",
+            "node:petroleum-fractions",
+            "node:petroleum-conversion",
+            "node:petroleum-reforming",
+            "node:refinery-hydrogen-catalysts",
+            "node:petroleum-treatment-blending",
+            "node:petroleum-fuels",
+            "node:petrochemical-feedstocks",
+            "node:petroleum-nonfuel-products"
+          ]
+        },
+        {
+          "group_id": "applications",
+          "name": "用途与生命周期接口",
+          "node_ids": [
+            "node:transport-fuel-applications",
+            "node:stationary-petroleum-fuel-applications",
+            "node:petrochemical-production",
+            "node:offshore-well-abandonment"
+          ]
+        },
+        {
+          "group_id": "marketing-recycling",
+          "name": "销售营销与再生接口",
+          "node_ids": [
+            "node:petroleum-products-marketing",
+            "node:crude-oil-sales-trading",
+            "node:offshore-facility-construction",
+            "node:lubricating-oils",
+            "node:lubricating-oil-use",
+            "node:used-lubricating-oil",
+            "node:used-oil-rerefining",
+            "node:base-oil",
+            "node:bitumen-extender"
+          ]
+        }
+      ],
+      "relation_ids": [
+        "rel:oil:explore-test",
+        "rel:oil:test-develop",
+        "rel:oil:develop-produce",
+        "rel:oil:produce-crude",
+        "rel:oil:fracture-input",
+        "rel:oil:fracture-support",
+        "rel:oil:recovery-support",
+        "rel:oil:well-services-support",
+        "rel:oil:engineering-support",
+        "rel:oil:facilities-support",
+        "rel:oil:marine-support",
+        "rel:oil:transport-refining",
+        "rel:oil:storage-refining",
+        "rel:oil:crude-refining",
+        "rel:oil:distillation-part",
+        "rel:oil:conversion-part",
+        "rel:oil:reforming-part",
+        "rel:oil:treatment-part",
+        "rel:oil:distillation-fractions",
+        "rel:oil:fractions-conversion",
+        "rel:oil:hydrogen-catalysts",
+        "rel:oil:refining-fuels",
+        "rel:oil:refining-feedstocks",
+        "rel:oil:refining-nonfuels",
+        "rel:oil:fuels-transport",
+        "rel:oil:fuels-stationary",
+        "rel:oil:feedstocks-chemicals",
+        "rel:oil:production-abandonment",
+        "rel:oil:nb:construct-facility",
+        "rel:oil:nb:refining-lube",
+        "rel:oil:nb:lube-use",
+        "rel:oil:nb:lube-use-waste",
+        "rel:oil:nb:recycle-input",
+        "rel:oil:nb:recycle-fraction",
+        "rel:oil:nb:recycle-residue",
+        "rel:oil:nb:fuels-marketing",
+        "rel:oil:nb:crude-sales"
+      ],
+      "note": "阅读组织，不存UI状态；关系中part_of不作为生产因果路径。",
+      "reading_order": [
+        "upstream",
+        "support",
+        "delivery",
+        "processing",
+        "applications",
+        "marketing-recycling"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:oil:explore-test",
+      "from_node_id": "node:petroleum-geological-exploration",
+      "to_node_id": "node:petroleum-exploratory-drilling",
+      "kind": "precedes",
+      "statement": "地质与物探结果可引导探井部署；仍需钻探测试验证。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:exploration",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:exploratory-well",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:test-develop",
+      "from_node_id": "node:petroleum-exploratory-drilling",
+      "to_node_id": "node:petroleum-development-wells",
+      "kind": "precedes",
+      "statement": "探井与测试后，在资源及经济性条件满足时建设开发井。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:development-wells",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:develop-produce",
+      "from_node_id": "node:petroleum-development-wells",
+      "to_node_id": "node:crude-oil-production",
+      "kind": "precedes",
+      "statement": "开发井与适用的完井条件为原油生产提供先行工程基础。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:development-wells",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:production-routes",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:produce-crude",
+      "from_node_id": "node:crude-oil-production",
+      "to_node_id": "node:crude-petroleum",
+      "kind": "produces",
+      "statement": "原油采出活动产出原油。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:fracture-input",
+      "from_node_id": "node:fracturing-fluids-proppants",
+      "to_node_id": "node:hydraulic-fracturing-services",
+      "kind": "input_to",
+      "statement": "适用的压裂作业使用水、化学剂及支撑剂等投入。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "适用的压裂路线",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fracturing-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:fracture-support",
+      "from_node_id": "node:hydraulic-fracturing-services",
+      "to_node_id": "node:crude-oil-production",
+      "kind": "supports",
+      "statement": "压裂可为适用地层的原油采出提供流动通道。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "适用的低渗透等油藏",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fracturing-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:recovery-support",
+      "from_node_id": "node:enhanced-oil-recovery-services",
+      "to_node_id": "node:crude-oil-production",
+      "kind": "supports",
+      "statement": "适用的注入措施可辅助油藏流体进入生产井。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "地层条件允许的注入增产路线",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:recovery-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:well-services-support",
+      "from_node_id": "node:oilfield-technical-services",
+      "to_node_id": "node:petroleum-development-wells",
+      "kind": "supports",
+      "statement": "专业油田技术服务支持钻完井等活动。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-well-services",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:engineering-support",
+      "from_node_id": "node:offshore-field-engineering",
+      "to_node_id": "node:petroleum-development-wells",
+      "kind": "supports",
+      "statement": "海洋工程服务支持适用的海上油田开发。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "海上油田工程",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:facilities-support",
+      "from_node_id": "node:offshore-field-engineering",
+      "to_node_id": "node:offshore-facility-construction",
+      "kind": "supports",
+      "statement": "海洋工程服务支持海上生产设施建造与安装活动。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "海上油气工程",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:marine-support",
+      "from_node_id": "node:offshore-support-vessels",
+      "to_node_id": "node:offshore-facility-construction",
+      "kind": "supports",
+      "statement": "适用海上作业船舶服务支持海上设施建造安装等工程活动。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "海上作业",
+        "products": null,
+        "note": "仅表达服务配套类别，不主张中海油服与海油工程之间存在交易。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-marine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:transport-refining",
+      "from_node_id": "node:petroleum-transport",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "supports",
+      "statement": "原油采集后的运输衔接炼厂接收等目的地。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:transport-modes",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:storage-refining",
+      "from_node_id": "node:petroleum-tank-storage",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "supports",
+      "statement": "原油和产品仓储支撑炼厂接收及交付。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:storage",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:crude-refining",
+      "from_node_id": "node:crude-petroleum",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "input_to",
+      "statement": "原油是石油炼制的主要投入之一，原油质量影响加工配置。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:crude-quality",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:distillation-part",
+      "from_node_id": "node:petroleum-distillation",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "part_of",
+      "statement": "蒸馏分离是炼制的组成环节。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:refinery-fractions",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:conversion-part",
+      "from_node_id": "node:petroleum-conversion",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "part_of",
+      "statement": "转化工艺是适用炼厂加工结构的组成部分。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:conversion-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:reforming-part",
+      "from_node_id": "node:petroleum-fractions",
+      "to_node_id": "node:petroleum-reforming",
+      "kind": "input_to",
+      "statement": "适合重整的石脑油馏分可投入重整；不是全部馏分的统一去向。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为适合重整的石脑油组分；将工艺种类关系改成有条件的物料投入，避免伪组成边。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:reforming",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:treatment-part",
+      "from_node_id": "node:petroleum-treatment-blending",
+      "to_node_id": "node:petroleum-refining",
+      "kind": "part_of",
+      "statement": "处理与调合构成炼制末端的适用加工环节。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:blending",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:distillation-fractions",
+      "from_node_id": "node:petroleum-distillation",
+      "to_node_id": "node:petroleum-fractions",
+      "kind": "produces",
+      "statement": "蒸馏按沸点分离形成不同中间馏分。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:refinery-fractions",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:fractions-conversion",
+      "from_node_id": "node:petroleum-fractions",
+      "to_node_id": "node:petroleum-conversion",
+      "kind": "input_to",
+      "statement": "适用的中间馏分可进入后续转化加工。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "采用相应转化装置的炼厂",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:conversion-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:hydrogen-catalysts",
+      "from_node_id": "node:refinery-hydrogen-catalysts",
+      "to_node_id": "node:petroleum-conversion",
+      "kind": "input_to",
+      "statement": "具体转化工艺可采用催化剂及氢气等配套投入。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": null,
+        "technology": "相关催化或加氢转化工艺",
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:conversion-inputs",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:refining-fuels",
+      "from_node_id": "node:petroleum-refining",
+      "to_node_id": "node:petroleum-fuels",
+      "kind": "produces",
+      "statement": "石油炼制产出多种燃料产品。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:refinery-stages",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:refining-feedstocks",
+      "from_node_id": "node:petroleum-refining",
+      "to_node_id": "node:petrochemical-feedstocks",
+      "kind": "produces",
+      "statement": "石油加工的部分产品用作石化原料。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:chemical-feedstocks",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:refining-nonfuels",
+      "from_node_id": "node:petroleum-refining",
+      "to_node_id": "node:petroleum-nonfuel-products",
+      "kind": "produces",
+      "statement": "石油炼制也有润滑油等非燃料产出。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:other-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:fuels-transport",
+      "from_node_id": "node:petroleum-fuels",
+      "to_node_id": "node:transport-fuel-applications",
+      "kind": "used_for",
+      "statement": "适用石油燃料用于交通运输。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:fuels-stationary",
+      "from_node_id": "node:petroleum-fuels",
+      "to_node_id": "node:stationary-petroleum-fuel-applications",
+      "kind": "used_for",
+      "statement": "适用石油燃料用于供热与发电等固定场景。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:fuel-uses",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:feedstocks-chemicals",
+      "from_node_id": "node:petrochemical-feedstocks",
+      "to_node_id": "node:petrochemical-production",
+      "kind": "used_for",
+      "statement": "石化行业使用部分石油原料生产化工品。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "概括结构，不表示所有地区、项目或装置均采用该路线；不代表具体交易关系。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:chemical-feedstocks",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:production-abandonment",
+      "from_node_id": "node:crude-oil-production",
+      "to_node_id": "node:offshore-well-abandonment",
+      "kind": "precedes",
+      "statement": "适用的海上井在不再具备经济性后进入封堵弃置阶段。",
+      "applicability": {
+        "coverage": "bounded",
+        "region": "美国相关监管语境",
+        "technology": "海上井",
+        "products": null,
+        "note": "只记录所引EIA段落的监管语境，不直接外推各国弃置要求。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:offshore-abandonment",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:construct-facility",
+      "from_node_id": "node:offshore-facility-construction",
+      "to_node_id": "node:offshore-production-facilities",
+      "kind": "produces",
+      "statement": "适用的建造安装活动交付海上生产设施。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为海洋工程披露业务的结构归纳；不证明任意具体项目。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:refining-lube",
+      "from_node_id": "node:petroleum-refining",
+      "to_node_id": "node:lubricating-oils",
+      "kind": "produces",
+      "statement": "石油加工的适用产品包括润滑油。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "产物接口，不表示每套炼厂均生产全部非燃料产品。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:other-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:lube-use",
+      "from_node_id": "node:lubricating-oils",
+      "to_node_id": "node:lubricating-oil-use",
+      "kind": "used_for",
+      "statement": "润滑油用于润滑活动。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为NZIC所述历史再精炼工艺实例；不推及全部废油、当代中国法律、产能或企业。再生油不是原油。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-used",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:lube-use-waste",
+      "from_node_id": "node:lubricating-oil-use",
+      "to_node_id": "node:used-lubricating-oil",
+      "kind": "produces",
+      "statement": "润滑油使用后可因污染和性质变化形成不适于继续使用的废润滑油。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为NZIC所述历史再精炼工艺实例；不推及全部废油、当代中国法律、产能或企业。再生油不是原油。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-used",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:recycle-input",
+      "from_node_id": "node:used-lubricating-oil",
+      "to_node_id": "node:used-oil-rerefining",
+      "kind": "input_to",
+      "statement": "适用废润滑油进入所述再精炼过程。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为NZIC所述历史再精炼工艺实例；不推及全部废油、当代中国法律、产能或企业。再生油不是原油。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-recycle",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:recycle-fraction",
+      "from_node_id": "node:used-oil-rerefining",
+      "to_node_id": "node:base-oil",
+      "kind": "produces",
+      "statement": "所述再精炼蒸馏过程产出润滑油馏分。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为NZIC所述历史再精炼工艺实例；不推及全部废油、当代中国法律、产能或企业。再生油不是原油。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-fraction",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:recycle-residue",
+      "from_node_id": "node:used-oil-rerefining",
+      "to_node_id": "node:bitumen-extender",
+      "kind": "produces",
+      "statement": "所述工艺的不蒸馏残渣可用作道路沥青调和料。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅为NZIC所述历史再精炼工艺实例；不推及全部废油、当代中国法律、产能或企业。再生油不是原油。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:nzi-residue",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:fuels-marketing",
+      "from_node_id": "node:petroleum-fuels",
+      "to_node_id": "node:petroleum-products-marketing",
+      "kind": "input_to",
+      "statement": "适用汽油、柴油等炼制油品进入营销分销活动。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "2025中国石化合并业务披露的结构接口；不泛化到所有品种和经营主体。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:oil:nb:crude-sales",
+      "from_node_id": "node:crude-petroleum",
+      "to_node_id": "node:crude-oil-sales-trading",
+      "kind": "input_to",
+      "statement": "自产原油进入披露的销售安排。",
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅中国海油披露的自产原油销售；不推定该主体从事独立第三方贸易。"
+      },
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:cnooc-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company:cnooc-ltd",
+      "name": "中国海洋石油有限公司",
+      "revision": 2,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cnooc-identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "aliases": [
+        "中国海洋石油有限公司"
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:cooec",
+      "name": "海洋石油工程股份有限公司",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cooec-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:cosl",
+      "name": "中海油田服务股份有限公司",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-security",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:cosco-shipping-energy",
+      "name": "中远海运能源运输股份有限公司",
+      "revision": 2,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosco-security",
+          "revision": 2,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cosco-identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "aliases": [
+        "中远海运能源运输股份有限公司"
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:rongsheng-petrochemical",
+      "name": "荣盛石化股份有限公司",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:rongsheng-security",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:zhejiang-petrochemical",
+      "name": "浙江石油化工有限公司",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:zpc-name",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:sinopec-corp",
+      "name": "中国石油化工股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:petrochina-corp",
+      "name": "中国石油天然气股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:600938",
+      "company_id": "company:cnooc-ltd",
+      "revision": 2,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cnooc-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cnooc-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:600583",
+      "company_id": "company:cooec",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:cooec-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:601808",
+      "company_id": "company:cosl",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-security",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:600026",
+      "company_id": "company:cosco-shipping-energy",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosco-security",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:002493",
+      "company_id": "company:rongsheng-petrochemical",
+      "revision": 1,
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:rongsheng-security",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:sinopec-corp",
+      "symbol": "SH:600028",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:petrochina-corp",
+      "symbol": "SH:601857",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:oil:cnooc-producer",
+      "company_id": "company:cnooc-ltd",
+      "node_id": "node:crude-oil-production",
+      "role": "原油勘探开发与生产",
+      "scope": "2025公司及合并业务口径；油气并营，只纳入原油部分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:cnooc-production",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cooec-engineering",
+      "company_id": "company:cooec",
+      "node_id": "node:offshore-field-engineering",
+      "role": "海洋油气工程EPCI及维修服务",
+      "scope": "仅取其油田相关工程范围，不转移母集团油气生产业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-role",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cooec-decommission",
+      "company_id": "company:cooec",
+      "node_id": "node:offshore-well-abandonment",
+      "role": "海上设施弃置拆除设计与工程服务",
+      "scope": "官网项目服务范围，不表示承接所有井封堵或符合所有司法辖区的全部服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cooec-abandonment",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cosl-drilling",
+      "company_id": "company:cosl",
+      "node_id": "node:petroleum-development-wells",
+      "role": "钻井服务",
+      "scope": "公司官网服务目录；原油链采用油田相关服务部分，不指认客户。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cosl-geophysical",
+      "company_id": "company:cosl",
+      "node_id": "node:petroleum-geological-exploration",
+      "role": "物探与勘察服务",
+      "scope": "公司官网服务目录；不据此推导资源所有权。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-geophysical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cosl-well",
+      "company_id": "company:cosl",
+      "node_id": "node:oilfield-technical-services",
+      "role": "钻完井等油田技术服务",
+      "scope": "公司官网服务目录；各服务是否适用由具体项目决定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-well-services",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cosl-marine",
+      "company_id": "company:cosl",
+      "node_id": "node:offshore-support-vessels",
+      "role": "海上作业船舶服务",
+      "scope": "只取船舶作业支持，不等同于远洋油轮贸易运输。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:cosl-marine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:cosco-transport",
+      "company_id": "company:cosco-shipping-energy",
+      "node_id": "node:petroleum-transport",
+      "role": "原油及成品油海上运输服务",
+      "scope": "2025合并业绩公告，集团沿海及国际油品运输；LNG/LPG等业务不移入本链。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:cosco-transport",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:nb:cosco-coastal",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:rongsheng-refining-group",
+      "company_id": "company:rongsheng-petrochemical",
+      "node_id": "node:petroleum-refining",
+      "role": "合并集团的炼化与油品业务",
+      "scope": "2024可持续发展报告明确包含附属公司的合并集团范围；具体装置经营主体单列，不写为上市母体直接经营，也不采用非上市母集团的其他业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:rongsheng-role",
+          "revision": 2,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:rongsheng-scope",
+          "revision": 2,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:zpc-refining",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:zpc-refining",
+      "company_id": "company:zhejiang-petrochemical",
+      "node_id": "node:petroleum-refining",
+      "role": "炼化一体化项目经营参与",
+      "scope": "由荣盛2024报告关于浙石化项目的披露支持；不列股票，不把子公司装置写成上市母体直接经营。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:zpc-name",
+          "revision": 2,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:oil:zpc-refining",
+          "revision": 2,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:sino-crude-oil-production",
+      "company_id": "company:sinopec-corp",
+      "node_id": "node:crude-oil-production",
+      "role": "原油勘探开发与生产",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-upstream",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:sino-petroleum-refining",
+      "company_id": "company:sinopec-corp",
+      "node_id": "node:petroleum-refining",
+      "role": "石油炼制",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-refining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:sino-petroleum-products-marketing",
+      "company_id": "company:sinopec-corp",
+      "node_id": "node:petroleum-products-marketing",
+      "role": "成品油营销与分销",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:sino-crude-oil-sales-trading",
+      "company_id": "company:sinopec-corp",
+      "node_id": "node:crude-oil-sales-trading",
+      "role": "油品销售及进出口贸易",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:sino-trading",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:petro-crude-oil-production",
+      "company_id": "company:petrochina-corp",
+      "node_id": "node:crude-oil-production",
+      "role": "原油勘探开发与生产",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-upstream",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:petro-petroleum-refining",
+      "company_id": "company:petrochina-corp",
+      "node_id": "node:petroleum-refining",
+      "role": "石油炼制",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-refining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:petro-petroleum-products-marketing",
+      "company_id": "company:petrochina-corp",
+      "node_id": "node:petroleum-products-marketing",
+      "role": "成品油营销与分销",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-marketing",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:petro-crude-oil-sales-trading",
+      "company_id": "company:petrochina-corp",
+      "node_id": "node:crude-oil-sales-trading",
+      "role": "油品销售及进出口贸易",
+      "scope": "2025合并报告业务口径；只取原油及相关油品范围，不推定上市母公司法人独立运营全部业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:petro-trading",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:oil:nb:cnooc-sales",
+      "company_id": "company:cnooc-ltd",
+      "node_id": "node:crude-oil-sales-trading",
+      "role": "通过披露附属公司销售自产原油",
+      "scope": "2025披露的自产原油销售安排；本条不证明独立第三方原油贸易业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:oil:nb:cnooc-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "title": "Refining crude oil — The refining process",
+      "publisher": "EIA",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-the-refining-process.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T15:38:33.481064+00:00",
+      "access": "full_text",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "title": "主要作业区与公司介绍",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://www.cnoocltd.com/gywm/zyzyq/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T15:38:33.678171+00:00",
+      "access": "full_text",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "title": "Where our oil comes from in depth",
+      "publisher": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/where-our-oil-comes-from-in-depth.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:56:00.869650+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "eia-offshore-production",
+      "source_version": "sha256:dc9429bb206be5c2e7ef1c7560bc41a1f9128e471b3c4eb325630584614f6a7d",
+      "title": "Offshore oil and natural gas production",
+      "publisher": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/offshore-oil-and-gas-in-depth.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:56:01.750422+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "eia-petroleum-uses",
+      "source_version": "sha256:2a319e77a8501c56bd769ebb4526c57807b26aabfca20b6ea4e0ea11054159e1",
+      "title": "Use of oil",
+      "publisher": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/use-of-oil.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:56:02.759448+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "eia-refinery-inputs-outputs",
+      "source_version": "sha256:2a8b2d4e26d99278aaf8f8ed842aa35646f43ede16da28555f8c67c826e9b259",
+      "title": "Refining crude oil — inputs and outputs",
+      "publisher": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/oil-and-petroleum-products/refining-crude-oil-inputs-and-outputs.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:56:01.868710+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cooec-profile",
+      "source_version": "sha256:de10e4c871b7993d765f1da85bba74d1775fd8946f7f5e57521989abebcf7284",
+      "title": "公司简介",
+      "publisher": "海洋石油工程股份有限公司",
+      "url": "https://www.cnoocengineering.com/gywm/gsjj/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:55:51.735916+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cooec-design-services",
+      "source_version": "sha256:d8a12e7f03fe2ebcc0d20218b5e19498e65762bc209ea3dd10a2c36050acd673",
+      "title": "设计服务与业绩",
+      "publisher": "海洋石油工程股份有限公司",
+      "url": "https://www.cnoocengineering.com/fwyyj/zyfw/sj/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T16:55:51.752663+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cosl-home-business",
+      "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde",
+      "title": "服务与产品",
+      "publisher": "中海油田服务股份有限公司",
+      "url": "https://www.cosl.com.cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T17:07:21.717523+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cosl-report",
+      "source_version": "sha256:a3055b095f46abdf36aeae12fdc04fa7837a6342ed4570f0ac70107fcdbe725f",
+      "title": "2024年半年度报告摘要",
+      "publisher": "中海油田服务股份有限公司",
+      "url": "https://www.cosl.com.cn/attach/0/9edc34849478455786cf3a9e67a8dd03.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T17:04:34.171418+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": "2024H1",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "cosco-energy-2023-report",
+      "source_version": "sha256:1ca4d2a4ca77c3ced96b46d9e419b503bcd6fc833a3627cddd80760e5f04d2f8",
+      "title": "2023年年度报告",
+      "publisher": "中远海运能源运输股份有限公司",
+      "url": "https://energy.coscoshipping.com/cms_files/filemanager/1575/attach/202410/70DD59F7C9CFC167B62A0DFA8E4AF161.pdf?fileName=600026_20240329_RGCW.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T17:04:39.893731+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": "2023 annual report",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "title": "2024可持续发展报告",
+      "publisher": "荣盛石化股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2025-04-25/1223285141.PDF",
+      "published_at": "2025-04-24",
+      "retrieved_at": "2026-10-20T17:04:36.433814+00:00",
+      "access": "full_text",
+      "source_capture_pending": false,
+      "doc_version": "2024 sustainability report",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "title": "中国石油化工股份有限公司2025年度报告（繁体）",
+      "publisher": "中国石油化工股份有限公司",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0322/2026032200058_c.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:14:19.086768+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "title": "中国海洋石油有限公司2025年年度报告",
+      "publisher": "中国海洋石油有限公司",
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260326/81871f1916b64c92a4f1a40775c49f24.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:14:19.461609+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "title": "中国石油天然气股份有限公司二零二五年度业绩公告（年度报告摘要）",
+      "publisher": "中国石油天然气股份有限公司",
+      "url": "https://www.petrochina.com.cn/petrochina/ndyjgb/202603/b86c15862fa64c95b5ab6fe964ab60df/files/60cef1b51ae2479d844a965d645b691b.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:32:35.049239+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "annual_results_summary",
+      "reporting_period": "2025",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:cosco-energy-2025",
+      "source_version": "sha256:5b2ebb940b1f0ab72e3cd30c2984eb7db2565ccb8a8f6f88be8548469540e882",
+      "title": "中远海运能源运输股份有限公司2025年度业绩公告",
+      "publisher": "中远海运能源运输股份有限公司",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0326/2026032601902.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:14:22.330911+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "annual_results",
+      "reporting_period": "2025",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:api-infrastructure",
+      "source_version": "sha256:ad78a764a66f078833b5dbf8b1ebae8d7339c88c64326768fb3f3fef14e8d592",
+      "title": "Oil & Natural Gas Transportation & Storage Infrastructure: Status, Trends, & Economic Benefits",
+      "publisher": "IHS Global Inc. for American Petroleum Institute",
+      "url": "https://www.api.org/-/media/files/policy/soae-2014/api-infrastructure-investment-study.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:40:19.630844+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "technical_report",
+      "reporting_period": "December 2013, as printed on cover; not current market data",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:api-tankers",
+      "source_version": "sha256:af96bbe531a3022e5ac2e561a247f1b644e67026ee0d90b2caced332a97c3fce",
+      "title": "TANKERS",
+      "publisher": "American Petroleum Institute",
+      "url": "https://www.api.org/~/media/files/oil-and-natural-gas/tankers/tankers-lores.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:40:19.598216+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "technical_brochure",
+      "reporting_period": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "oil-notebook:nzic-rerefining",
+      "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b",
+      "title": "The Re-refining of Used Lubricating Oils",
+      "publisher": "New Zealand Institute of Chemistry",
+      "url": "https://nzic.org.nz/unsecure_files/book/7B.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:40:20.681182+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "source_type": "technical_paper",
+      "reporting_period": null,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e:oil:exploration",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "How is crude oil found and produced? / seismic surveys",
+      "excerpt": "seismic surveys"
+    },
+    {
+      "evidence_id": "e:oil:exploratory-well",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "How is crude oil found and produced? / exploratory and development wells",
+      "excerpt": "exploratory well"
+    },
+    {
+      "evidence_id": "e:oil:development-wells",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "How is crude oil found and produced? / exploratory and development wells",
+      "excerpt": "development wells"
+    },
+    {
+      "evidence_id": "e:oil:fracturing-inputs",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "Advances in drilling and production technologies / hydraulic fracturing",
+      "excerpt": "water, chemicals, and sand"
+    },
+    {
+      "evidence_id": "e:oil:recovery-inputs",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "Advances in drilling and production technologies / injection",
+      "excerpt": "Steam, water, or carbon dioxide"
+    },
+    {
+      "evidence_id": "e:oil:transport-modes",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "Advances in drilling and production technologies / transport after collection",
+      "excerpt": "pipelines, barges, trains, or trucks"
+    },
+    {
+      "evidence_id": "e:oil:production-routes",
+      "revision": 1,
+      "source_id": "eia-exploration-production",
+      "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a",
+      "locator": "Conventional and unconventional production",
+      "excerpt": "Conventional and unconventional production"
+    },
+    {
+      "evidence_id": "e:oil:offshore-equipment",
+      "revision": 1,
+      "source_id": "eia-offshore-production",
+      "source_version": "sha256:dc9429bb206be5c2e7ef1c7560bc41a1f9128e471b3c4eb325630584614f6a7d",
+      "locator": "Offshore oil and natural gas production / production equipment",
+      "excerpt": "production equipment is lowered to the ocean floor"
+    },
+    {
+      "evidence_id": "e:oil:offshore-platforms",
+      "revision": 1,
+      "source_id": "eia-offshore-production",
+      "source_version": "sha256:dc9429bb206be5c2e7ef1c7560bc41a1f9128e471b3c4eb325630584614f6a7d",
+      "locator": "Offshore oil and natural gas production / drilling platforms",
+      "excerpt": "platforms that hold the drilling equipment"
+    },
+    {
+      "evidence_id": "e:oil:offshore-abandonment",
+      "revision": 1,
+      "source_id": "eia-offshore-production",
+      "source_version": "sha256:dc9429bb206be5c2e7ef1c7560bc41a1f9128e471b3c4eb325630584614f6a7d",
+      "locator": "Offshore oil and natural gas production / uneconomic wells",
+      "excerpt": "they are sealed and abandoned"
+    },
+    {
+      "evidence_id": "e:oil:refinery-stages",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "How crude oil is refined into petroleum products / basic steps",
+      "excerpt": "All refineries follow three basic steps:"
+    },
+    {
+      "evidence_id": "e:oil:refinery-fractions",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "Separation / liquids and vapors",
+      "excerpt": "separate into petroleum components"
+    },
+    {
+      "evidence_id": "e:oil:conversion-inputs",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "Conversion / cracking",
+      "excerpt": "heat, pressure, catalysts, and sometimes hydrogen"
+    },
+    {
+      "evidence_id": "e:oil:reforming",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "Conversion / reforming",
+      "excerpt": "Reforming"
+    },
+    {
+      "evidence_id": "e:oil:blending",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "Treatment / gasoline blending",
+      "excerpt": "gasoline blend"
+    },
+    {
+      "evidence_id": "e:oil:storage",
+      "revision": 1,
+      "source_id": "eia-refining",
+      "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e",
+      "locator": "Storage / incoming crude and outgoing products",
+      "excerpt": "stored temporarily in large tanks"
+    },
+    {
+      "evidence_id": "e:oil:crude-quality",
+      "revision": 1,
+      "source_id": "eia-refinery-inputs-outputs",
+      "source_version": "sha256:2a8b2d4e26d99278aaf8f8ed842aa35646f43ede16da28555f8c67c826e9b259",
+      "locator": "Not all crude oil is the same",
+      "excerpt": "density (API gravity) and sulfur content"
+    },
+    {
+      "evidence_id": "e:oil:other-inputs",
+      "revision": 1,
+      "source_id": "eia-refinery-inputs-outputs",
+      "source_version": "sha256:2a8b2d4e26d99278aaf8f8ed842aa35646f43ede16da28555f8c67c826e9b259",
+      "locator": "Refineries use more than just crude oil",
+      "excerpt": "Liquids that condense in natural gas wells"
+    },
+    {
+      "evidence_id": "e:oil:other-products",
+      "revision": 1,
+      "source_id": "eia-refinery-inputs-outputs",
+      "source_version": "sha256:2a8b2d4e26d99278aaf8f8ed842aa35646f43ede16da28555f8c67c826e9b259",
+      "locator": "Petroleum products produced / product table",
+      "excerpt": "Lubricants"
+    },
+    {
+      "evidence_id": "e:oil:chemical-feedstocks",
+      "revision": 1,
+      "source_id": "eia-petroleum-uses",
+      "source_version": "sha256:2a319e77a8501c56bd769ebb4526c57807b26aabfca20b6ea4e0ea11054159e1",
+      "locator": "Use of oil / industrial sector",
+      "excerpt": "a raw material (a feedstock)"
+    },
+    {
+      "evidence_id": "e:oil:fuel-uses",
+      "revision": 1,
+      "source_id": "eia-petroleum-uses",
+      "source_version": "sha256:2a319e77a8501c56bd769ebb4526c57807b26aabfca20b6ea4e0ea11054159e1",
+      "locator": "Use of oil / petroleum product uses",
+      "excerpt": "propel vehicles, to heat buildings, and to produce electricity"
+    },
+    {
+      "evidence_id": "e:oil:cnooc-role",
+      "revision": 1,
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "locator": "公司介绍 / paragraph 2",
+      "excerpt": "勘探、开发、生产及销售原油和天然气"
+    },
+    {
+      "evidence_id": "e:oil:cnooc-security",
+      "revision": 1,
+      "source_id": "cnooc-operations",
+      "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52",
+      "locator": "公司介绍 / paragraph 1",
+      "excerpt": "600938和00883"
+    },
+    {
+      "evidence_id": "e:oil:cooec-role",
+      "revision": 1,
+      "source_id": "cooec-profile",
+      "source_version": "sha256:de10e4c871b7993d765f1da85bba74d1775fd8946f7f5e57521989abebcf7284",
+      "locator": "公司简介 / opening paragraph",
+      "excerpt": "设计、采购、建造和海上安装、调试、维修"
+    },
+    {
+      "evidence_id": "e:oil:cooec-security",
+      "revision": 1,
+      "source_id": "cooec-profile",
+      "source_version": "sha256:de10e4c871b7993d765f1da85bba74d1775fd8946f7f5e57521989abebcf7284",
+      "locator": "公司简介 / opening paragraph",
+      "excerpt": "600583"
+    },
+    {
+      "evidence_id": "e:oil:cooec-abandonment",
+      "revision": 1,
+      "source_id": "cooec-design-services",
+      "source_version": "sha256:d8a12e7f03fe2ebcc0d20218b5e19498e65762bc209ea3dd10a2c36050acd673",
+      "locator": "服务与业绩 / 弃置拆除项目工作范围",
+      "excerpt": "设施弃置拆除设计与施工工程总包服务"
+    },
+    {
+      "evidence_id": "e:oil:cosl-business",
+      "revision": 1,
+      "source_id": "cosl-home-business",
+      "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde",
+      "locator": "服务与产品 / service navigation",
+      "excerpt": "钻井服务"
+    },
+    {
+      "evidence_id": "e:oil:cosl-well-services",
+      "revision": 1,
+      "source_id": "cosl-home-business",
+      "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde",
+      "locator": "服务与产品 / 油田技术服务",
+      "excerpt": "钻完井液"
+    },
+    {
+      "evidence_id": "e:oil:cosl-geophysical",
+      "revision": 1,
+      "source_id": "cosl-home-business",
+      "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde",
+      "locator": "服务与产品 / 物探与勘察服务",
+      "excerpt": "物探与勘察服务"
+    },
+    {
+      "evidence_id": "e:oil:cosl-marine",
+      "revision": 1,
+      "source_id": "cosl-home-business",
+      "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde",
+      "locator": "服务与产品 / 船舶服务",
+      "excerpt": "船舶服务"
+    },
+    {
+      "evidence_id": "e:oil:cosl-security",
+      "revision": 2,
+      "source_id": "cosl-report",
+      "source_version": "sha256:a3055b095f46abdf36aeae12fdc04fa7837a6342ed4570f0ac70107fcdbe725f",
+      "locator": "pdf_page: 1; section: 报告封面",
+      "excerpt": "公司代码：601808",
+      "original_locator": {
+        "pdf_page": 1,
+        "section": "报告封面"
+      }
+    },
+    {
+      "evidence_id": "e:oil:cosco-role",
+      "revision": 2,
+      "source_id": "cosco-energy-2023-report",
+      "source_version": "sha256:1ca4d2a4ca77c3ced96b46d9e419b503bcd6fc833a3627cddd80760e5f04d2f8",
+      "locator": "pdf_page: 12; section: 三、报告期内公司从事的业务情况",
+      "excerpt": "国际和中国沿海原油及成品油运输",
+      "original_locator": {
+        "pdf_page": 12,
+        "section": "三、报告期内公司从事的业务情况"
+      }
+    },
+    {
+      "evidence_id": "e:oil:cosco-security",
+      "revision": 2,
+      "source_id": "cosco-energy-2023-report",
+      "source_version": "sha256:1ca4d2a4ca77c3ced96b46d9e419b503bcd6fc833a3627cddd80760e5f04d2f8",
+      "locator": "pdf_page: 1; section: 报告封面",
+      "excerpt": "公司代码：600026",
+      "original_locator": {
+        "pdf_page": 1,
+        "section": "报告封面"
+      }
+    },
+    {
+      "evidence_id": "e:oil:rongsheng-role",
+      "revision": 2,
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "locator": "pdf_page: 6; printed_pages: 007-008; section: 公司简介",
+      "excerpt": "各类油品、化工品、聚酯产品",
+      "original_locator": {
+        "pdf_page": 6,
+        "printed_pages": "007-008",
+        "section": "公司简介"
+      }
+    },
+    {
+      "evidence_id": "e:oil:rongsheng-security",
+      "revision": 2,
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "locator": "pdf_page: 6; section: 公司简介",
+      "excerpt": "股票代码：002493",
+      "original_locator": {
+        "pdf_page": 6,
+        "section": "公司简介"
+      }
+    },
+    {
+      "evidence_id": "e:oil:rongsheng-scope",
+      "revision": 2,
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "locator": "pdf_page: 2; section: 关于本报告",
+      "excerpt": "及其附属公司",
+      "original_locator": {
+        "pdf_page": 2,
+        "section": "关于本报告"
+      }
+    },
+    {
+      "evidence_id": "e:oil:zpc-refining",
+      "revision": 2,
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "locator": "pdf_page: 26; printed_pages: 047-048; section: 浙石化放空火炬气回收利用项目案例",
+      "excerpt": "炼化一体化项目的配套设施",
+      "original_locator": {
+        "pdf_page": 26,
+        "printed_pages": "047-048",
+        "section": "浙石化放空火炬气回收利用项目案例"
+      }
+    },
+    {
+      "evidence_id": "e:oil:zpc-name",
+      "revision": 2,
+      "source_id": "rongsheng-2024-sustainability",
+      "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c",
+      "locator": "pdf_page: 2; section: 释义",
+      "excerpt": "浙江石油化工有限公司",
+      "original_locator": {
+        "pdf_page": 2,
+        "section": "释义"
+      }
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-identity",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 3; 释义",
+      "excerpt": "「中國石化」是指中國石油化工股份有限公司"
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-security",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 220; 公司资料/A股",
+      "excerpt": "上海證券交易所\n股票簡稱：中國石化\n股票代號：600028"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-identity",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 1; 封面",
+      "excerpt": "中国海洋石油有限公司"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-security",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 1; 封面；交易所映射沿用既有证券证据",
+      "excerpt": "公司代码：600938 公司简称：中国海油"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-identity",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 1; 封面",
+      "excerpt": "中国石油天然气股份有限公司"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-security",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 1; 封面",
+      "excerpt": "于上海证券交易所股票代码：601857"
+    },
+    {
+      "evidence_id": "e:oil:nb:cosco-identity",
+      "revision": 1,
+      "source_id": "oil-notebook:cosco-energy-2025",
+      "source_version": "sha256:5b2ebb940b1f0ab72e3cd30c2984eb7db2565ccb8a8f6f88be8548469540e882",
+      "locator": "PDF page 1; 封面",
+      "excerpt": "中遠海運能源運輸股份有限公司"
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-upstream",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 93; 财务报表附注1",
+      "excerpt": "勘探、開發及生產原油及天然氣；"
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-refining",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 93; 财务报表附注1",
+      "excerpt": "煉油、運輸、儲存及營銷原油及石油產品；"
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-marketing",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 145; 财务报表附注41 分部报告",
+      "excerpt": "營銷及分銷－擁有及經營油庫及加油站，並通過批發及零售網絡，分銷和銷售已煉製的石油產品，主要為汽油及柴油。"
+    },
+    {
+      "evidence_id": "e:oil:nb:sino-trading",
+      "revision": 1,
+      "source_id": "oil-notebook:sinopec-hkex",
+      "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675",
+      "locator": "PDF page 3; 公司简介",
+      "excerpt": "石油、天然氣、石油產品、石油化工及其他化工產品和其他商品、技術的進出口、代理進出口業務"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-upstream",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 2; 1.5 公司简介",
+      "excerpt": "原油及天然气的勘探、开发、生产"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-refining",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 2; 1.5 公司简介",
+      "excerpt": "原油及石油产品的炼制"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-marketing",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 2; 1.5 公司简介",
+      "excerpt": "炼油产品和非油品的销售以及贸易业务"
+    },
+    {
+      "evidence_id": "e:oil:nb:petro-trading",
+      "revision": 1,
+      "source_id": "oil-notebook:petrochina-2025-summary",
+      "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f",
+      "locator": "PDF page 13; 3.1.2 销售业务/国际贸易业务",
+      "excerpt": "扩大成品油等油气产品贸易规模"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-production",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 7; 公司简介",
+      "excerpt": "主要业务为勘探、开发、生产及销售原油和天然气"
+    },
+    {
+      "evidence_id": "e:oil:nb:cnooc-sales",
+      "revision": 1,
+      "source_id": "oil-notebook:cnooc-2025",
+      "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606",
+      "locator": "PDF page 20; 销售与市场/原油销售",
+      "excerpt": "公司主要通过其全资附属公司－中海油国际贸易有限责任公司在国内市场销售中国海域生产的原油。"
+    },
+    {
+      "evidence_id": "e:oil:nb:cosco-transport",
+      "revision": 1,
+      "source_id": "oil-notebook:cosco-energy-2025",
+      "source_version": "sha256:5b2ebb940b1f0ab72e3cd30c2984eb7db2565ccb8a8f6f88be8548469540e882",
+      "locator": "PDF page 16; Management Discussion and Analysis / main businesses",
+      "excerpt": "shipping of crude oil, product oil"
+    },
+    {
+      "evidence_id": "e:oil:nb:cosco-coastal",
+      "revision": 1,
+      "source_id": "oil-notebook:cosco-energy-2025",
+      "source_version": "sha256:5b2ebb940b1f0ab72e3cd30c2984eb7db2565ccb8a8f6f88be8548469540e882",
+      "locator": "PDF page 6; Note 1 CORPORATE INFORMATION",
+      "excerpt": "oil shipment along the PRC coast and international shipment"
+    },
+    {
+      "evidence_id": "e:oil:nb:api-storage",
+      "revision": 1,
+      "source_id": "oil-notebook:api-infrastructure",
+      "source_version": "sha256:ad78a764a66f078833b5dbf8b1ebae8d7339c88c64326768fb3f3fef14e8d592",
+      "locator": "PDF page 13; Section 2, physical storage definition",
+      "excerpt": "facilities involved in the physical storage of hydrocarbons"
+    },
+    {
+      "evidence_id": "e:oil:nb:api-tankers",
+      "revision": 1,
+      "source_id": "oil-notebook:api-tankers",
+      "source_version": "sha256:af96bbe531a3022e5ac2e561a247f1b644e67026ee0d90b2caced332a97c3fce",
+      "locator": "PDF page 5; Tanker operations",
+      "excerpt": "safely deliver petroleum and other hydrocarbons to ports"
+    },
+    {
+      "evidence_id": "e:oil:nb:nzi-recycle",
+      "revision": 1,
+      "source_id": "oil-notebook:nzic-rerefining",
+      "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b",
+      "locator": "PDF page 1; Introduction; historical New Zealand process example, no vehicle service-interval claim",
+      "excerpt": "re-refined and reused"
+    },
+    {
+      "evidence_id": "e:oil:nb:nzi-fraction",
+      "revision": 1,
+      "source_id": "oil-notebook:nzic-rerefining",
+      "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b",
+      "locator": "PDF page 4; Step 2 - Diesel stripping",
+      "excerpt": "produce a lubricating oil fraction"
+    },
+    {
+      "evidence_id": "e:oil:nb:nzi-residue",
+      "revision": 1,
+      "source_id": "oil-notebook:nzic-rerefining",
+      "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b",
+      "locator": "PDF page 4; Step 2 - Diesel stripping",
+      "excerpt": "successfully used as bitumen extender"
+    },
+    {
+      "evidence_id": "e:oil:nb:nzi-used",
+      "revision": 1,
+      "source_id": "oil-notebook:nzic-rerefining",
+      "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b",
+      "locator": "PDF page 3; USED OIL AND ITS COMPOSITION",
+      "excerpt": "A lubricating oil becomes unfit for further use"
+    }
+  ],
+  "releases": [
+    {
+      "release_id": "crude-oil-notebook-research-20261020-v2",
+      "industry_id": "crude-oil",
+      "schema_version": "curated-chain-proposal-0.2",
+      "status": "proposed",
+      "published_at": null,
+      "parent_release_id": null,
+      "change_summary": "补充2025上市公司合并业务、销售营销与历史再精炼实例，修正服务到设施和工艺种类边；未正式发布。",
+      "record_refs": [
+        {
+          "object_type": "industry",
+          "id": "crude-oil",
+          "revision": 2
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-geological-exploration",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-exploratory-drilling",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-development-wells",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:crude-oil-production",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:crude-petroleum",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:hydraulic-fracturing-services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:fracturing-fluids-proppants",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:enhanced-oil-recovery-services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:offshore-field-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:offshore-production-facilities",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:oilfield-technical-services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:offshore-support-vessels",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-transport",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-tank-storage",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-distillation",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-fractions",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-conversion",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-reforming",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:refinery-hydrogen-catalysts",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-treatment-blending",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-fuels",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petrochemical-feedstocks",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-nonfuel-products",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:transport-fuel-applications",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:stationary-petroleum-fuel-applications",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petrochemical-production",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:offshore-well-abandonment",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:petroleum-products-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:crude-oil-sales-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:offshore-facility-construction",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:lubricating-oils",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:lubricating-oil-use",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:used-lubricating-oil",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:used-oil-rerefining",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:base-oil",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "node:bitumen-extender",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:explore-test",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:test-develop",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:develop-produce",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:produce-crude",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:fracture-input",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:fracture-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:recovery-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:well-services-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:engineering-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:facilities-support",
+          "revision": 2
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:marine-support",
+          "revision": 2
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:transport-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:storage-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:crude-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:distillation-part",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:conversion-part",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:reforming-part",
+          "revision": 2
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:treatment-part",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:distillation-fractions",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:fractions-conversion",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:hydrogen-catalysts",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:refining-fuels",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:refining-feedstocks",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:refining-nonfuels",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:fuels-transport",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:fuels-stationary",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:feedstocks-chemicals",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:production-abandonment",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:construct-facility",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:refining-lube",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:lube-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:lube-use-waste",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:recycle-input",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:recycle-fraction",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:recycle-residue",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:fuels-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:oil:nb:crude-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cnooc-producer",
+          "revision": 2
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cooec-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cooec-decommission",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cosl-drilling",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cosl-geophysical",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cosl-well",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cosl-marine",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:cosco-transport",
+          "revision": 2
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:rongsheng-refining-group",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:zpc-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:sino-crude-oil-production",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:sino-petroleum-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:sino-petroleum-products-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:sino-crude-oil-sales-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:petro-crude-oil-production",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:petro-petroleum-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:petro-petroleum-products-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:petro-crude-oil-sales-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:oil:nb:cnooc-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:cnooc-ltd",
+          "revision": 2
+        },
+        {
+          "object_type": "company",
+          "id": "company:cooec",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:cosl",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:cosco-shipping-energy",
+          "revision": 2
+        },
+        {
+          "object_type": "company",
+          "id": "company:rongsheng-petrochemical",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:zhejiang-petrochemical",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:sinopec-corp",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:petrochina-corp",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600938",
+          "revision": 2
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600583",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:601808",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600026",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SZ:002493",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600028",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:601857",
+          "revision": 1
+        },
+        {
+          "object_type": "view",
+          "id": "view:crude-oil-research-1",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:exploration",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:exploratory-well",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:development-wells",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:fracturing-inputs",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:recovery-inputs",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:transport-modes",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:production-routes",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:offshore-equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:offshore-platforms",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:offshore-abandonment",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:refinery-stages",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:refinery-fractions",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:conversion-inputs",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:reforming",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:blending",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:storage",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:crude-quality",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:other-inputs",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:other-products",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:chemical-feedstocks",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:fuel-uses",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cnooc-role",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cnooc-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cooec-role",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cooec-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cooec-abandonment",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosl-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosl-well-services",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosl-geophysical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosl-marine",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosl-security",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosco-role",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:cosco-security",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:rongsheng-role",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:rongsheng-security",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:rongsheng-scope",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:zpc-refining",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:zpc-name",
+          "revision": 2
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-identity",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cnooc-identity",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cnooc-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-identity",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cosco-identity",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-upstream",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:sino-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-upstream",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:petro-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cnooc-production",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cnooc-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cosco-transport",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:cosco-coastal",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:api-storage",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:api-tankers",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:nzi-recycle",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:nzi-fraction",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:nzi-residue",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:oil:nb:nzi-used",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-geological-exploration",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-exploratory-drilling",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-development-wells",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:crude-oil-production",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:crude-petroleum",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:hydraulic-fracturing-services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:fracturing-fluids-proppants",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:enhanced-oil-recovery-services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:offshore-field-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:offshore-production-facilities",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:oilfield-technical-services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:offshore-support-vessels",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-transport",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-tank-storage",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-distillation",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-fractions",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-conversion",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-reforming",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:refinery-hydrogen-catalysts",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-treatment-blending",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-fuels",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petrochemical-feedstocks",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-nonfuel-products",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:transport-fuel-applications",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:stationary-petroleum-fuel-applications",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petrochemical-production",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:offshore-well-abandonment",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:petroleum-products-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:crude-oil-sales-trading",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:offshore-facility-construction",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:lubricating-oils",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:lubricating-oil-use",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:used-lubricating-oil",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:used-oil-rerefining",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:base-oil",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "crude-oil",
+          "node_id": "node:bitumen-extender",
+          "revision": 1
+        }
+      ],
+      "source_refs": [
+        {
+          "source_id": "eia-refining",
+          "source_version": "sha256:af7d8c6d5dc761cb6ef4563d6768602a0dfb1a7dfa235ea82197d0e00edb131e"
+        },
+        {
+          "source_id": "cnooc-operations",
+          "source_version": "sha256:536d3338912be4011b3a2cef064ce02e19cf938602d10e6f29cfad886591fc52"
+        },
+        {
+          "source_id": "eia-exploration-production",
+          "source_version": "sha256:3c26ae1baf0b10c18636392a31afc025c8e105705ac3f37dd2bed6607f39d93a"
+        },
+        {
+          "source_id": "eia-offshore-production",
+          "source_version": "sha256:dc9429bb206be5c2e7ef1c7560bc41a1f9128e471b3c4eb325630584614f6a7d"
+        },
+        {
+          "source_id": "eia-petroleum-uses",
+          "source_version": "sha256:2a319e77a8501c56bd769ebb4526c57807b26aabfca20b6ea4e0ea11054159e1"
+        },
+        {
+          "source_id": "eia-refinery-inputs-outputs",
+          "source_version": "sha256:2a8b2d4e26d99278aaf8f8ed842aa35646f43ede16da28555f8c67c826e9b259"
+        },
+        {
+          "source_id": "cooec-profile",
+          "source_version": "sha256:de10e4c871b7993d765f1da85bba74d1775fd8946f7f5e57521989abebcf7284"
+        },
+        {
+          "source_id": "cooec-design-services",
+          "source_version": "sha256:d8a12e7f03fe2ebcc0d20218b5e19498e65762bc209ea3dd10a2c36050acd673"
+        },
+        {
+          "source_id": "cosl-home-business",
+          "source_version": "sha256:b25a7a90ef4ac7a23d7734cc96a68a2b5b648ade3abb075f023d5f09b63cffde"
+        },
+        {
+          "source_id": "cosl-report",
+          "source_version": "sha256:a3055b095f46abdf36aeae12fdc04fa7837a6342ed4570f0ac70107fcdbe725f"
+        },
+        {
+          "source_id": "cosco-energy-2023-report",
+          "source_version": "sha256:1ca4d2a4ca77c3ced96b46d9e419b503bcd6fc833a3627cddd80760e5f04d2f8"
+        },
+        {
+          "source_id": "rongsheng-2024-sustainability",
+          "source_version": "sha256:3ba184ca9c17de4af91459cd28178793bb95217acc54104fba7278f413b2d00c"
+        },
+        {
+          "source_id": "oil-notebook:sinopec-hkex",
+          "source_version": "sha256:a7fce606422dab7131eac89fae4b47f26ac9123d366c570737887f6da8152675"
+        },
+        {
+          "source_id": "oil-notebook:cnooc-2025",
+          "source_version": "sha256:8b8b0577c0f38a5a1d54582ed64f233521a986ce27c805679c7846a1bb475606"
+        },
+        {
+          "source_id": "oil-notebook:petrochina-2025-summary",
+          "source_version": "sha256:1823a3694b922e07a6acbedba84de32079efceeaab68f5dc1b1bf550e59f4b0f"
+        },
+        {
+          "source_id": "oil-notebook:cosco-energy-2025",
+          "source_version": "sha256:5b2ebb940b1f0ab72e3cd30c2984eb7db2565ccb8a8f6f88be8548469540e882"
+        },
+        {
+          "source_id": "oil-notebook:api-infrastructure",
+          "source_version": "sha256:ad78a764a66f078833b5dbf8b1ebae8d7339c88c64326768fb3f3fef14e8d592"
+        },
+        {
+          "source_id": "oil-notebook:api-tankers",
+          "source_version": "sha256:af96bbe531a3022e5ac2e561a247f1b644e67026ee0d90b2caced332a97c3fce"
+        },
+        {
+          "source_id": "oil-notebook:nzic-rerefining",
+          "source_version": "sha256:f5c5efd1902c37d0e362132ea358240cfe73962b311f095cbcea33a4f298801b"
+        }
+      ]
+    }
+  ],
+  "extensions": {
+    "observations": [],
+    "news_associations": [],
+    "news_impacts": [],
+    "ai_candidates": []
+  },
+  "generated_at": "2026-10-20T19:43:43.245666+00:00"
+}

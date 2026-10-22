@@ -1,0 +1,12 @@
+/* Shared helpers for the current news page and update control. */
+.news-page{max-width:1280px;margin:0 auto;padding:28px 40px 60px;overflow-wrap:anywhere}
+.news-update{display:flex;align-items:flex-end;flex-direction:column;gap:0;flex-shrink:0;max-width:340px}
+.news-update .job-progress{font-size:12px;width:100%;margin:10px 0 0;background:#FFFEFA;border-color:#D9DEE3;padding:10px 12px}
+.news-update .message{margin:10px 0 0;width:100%}
+.news-update .job-progress a{margin-left:0;display:block}
+.news-update .job-progress p{font-size:12px;margin:0;color:inherit}
+.news-update .job-progress progress{accent-color:#315E94}
+@media(min-width:1600px){.news-page{max-width:1340px;padding-left:50px;padding-right:50px}}
+@media(max-width:1100px){.news-page{padding:24px 28px 48px}}
+@media(max-width:800px){.news-update{max-width:280px}}
+@media(max-width:560px){.news-page{padding:22px 18px 40px}.news-update{max-width:100%;align-items:flex-start}.news-update .job-progress{max-width:none}}

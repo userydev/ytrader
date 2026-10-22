@@ -1,0 +1,4996 @@
+{
+  "nodes": [
+    {
+      "node_id": "grid:winding_metals",
+      "name": "铜与铝绕组材料",
+      "kind": "product",
+      "description": "供传统变压器绕组采用的铜或铝导体材料。两者为设计选择，不表示同台同时使用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:winding",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:electrical_steel",
+      "name": "电工钢铁芯材料",
+      "kind": "product",
+      "description": "供传统变压器磁芯采用的电工钢。未将全部非晶合金都归为电工钢。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:core",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:transformer_manufacturing",
+      "name": "变压器制造",
+      "kind": "activity",
+      "description": "将磁芯与绕组等部件加工装配为变压器；当前只展开两类核心材料接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:core",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:winding",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:equipment_manufacturing",
+      "name": "其他输配电装备制造",
+      "kind": "activity",
+      "description": "开关、换流阀、保护控制与线路等装备的研发制造总类。工艺并不统一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:power_transformer",
+      "name": "交流电力变压器",
+      "kind": "product",
+      "description": "用于交流电网升降电压的电力变压器。独立于直流换流变压器。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:transform",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:converter_transformer",
+      "name": "直流换流变压器",
+      "kind": "product",
+      "description": "直流电网建设采用的换流变压器装备，不单独承担完整AC/DC转换。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:reactor",
+      "name": "电抗器",
+      "kind": "product",
+      "description": "交流电网电抗器及直流平波电抗器总类；具体用途随类型而异。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:converter_valve",
+      "name": "换流阀",
+      "kind": "product",
+      "description": "直流输电系统采用的换流阀装备；本稿不展开内部器件及不同换流技术。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:nari-valve",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:gis_switchgear",
+      "name": "GIS气体绝缘组合电器",
+      "kind": "product",
+      "description": "电网采用的气体绝缘组合开关装备；本稿不展开内部组成关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-gis",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:ac_circuit_breaker",
+      "name": "交流断路器",
+      "kind": "product",
+      "description": "交流开关装备类别，本稿采用平高SF6罐式断路器实例，不推及所有技术路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-breaker",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:dc_circuit_breaker",
+      "name": "直流断路器",
+      "kind": "product",
+      "description": "多端直流系统所需的直流开断装备类别；不等于所有HVDC工程均已安装。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:dc-breaker",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-dc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:power_line_cable",
+      "name": "电力线路与电缆",
+      "kind": "product",
+      "description": "输配电连接与传输所用物理线路、导体和电缆总类；不包含光通信电缆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:submarine_power_cable",
+      "name": "海底电力电缆",
+      "kind": "product",
+      "description": "海上风电连接等电力传输接口的海缆，不将海底通信光缆混入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:surge_arrester",
+      "name": "避雷器",
+      "kind": "product",
+      "description": "用于电网资产雷电与操作过电压防护的装备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:surge",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:insulation_accessories",
+      "name": "绝缘子与套管",
+      "kind": "product",
+      "description": "输配电设备的绝缘配套产品总类；本稿不将其功能细化为未经补证的逐型号连接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:relay_protection_device",
+      "name": "继电保护设备",
+      "kind": "product",
+      "description": "电网与变电站的继电保护产品总类；不展开具体保护定值或动作逻辑。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:dispatch_automation_system",
+      "name": "电网调度自动化系统",
+      "kind": "product",
+      "description": "供电网安全稳定分析、运行调度与监控采用的自动化系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-dispatch",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:reactive_compensation",
+      "name": "无功补偿与有源滤波装备",
+      "kind": "product",
+      "description": "用于电能质量治理的动态无功补偿和高压有源滤波产品总类；非超级电容器同义词。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-reactive",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:grid_construction_activity",
+      "name": "电网工程建设",
+      "kind": "activity",
+      "description": "电网基础设施建设及设备安装调试活动；不等于单纯持有施工资质。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-epc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-construction",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:grid_maintenance_activity",
+      "name": "电网装备运维检修",
+      "kind": "activity",
+      "description": "电网及相关装备的巡检、检修与远程监测活动；设备服务商与运营者角色分开。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-service",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:pg-maintenance",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-maintenance",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:ac_transmission_activity",
+      "name": "交流输电运行",
+      "kind": "activity",
+      "description": "通过交流输电网传输电能的运行活动；本稿不记电量、负荷或电价现值。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:hvdc_transmission_activity",
+      "name": "高压直流输电运行",
+      "kind": "activity",
+      "description": "采用HVDC及相关电力电子装备进行远距离输电的运行活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:hvdc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:substation_operation",
+      "name": "交流变电运行",
+      "kind": "activity",
+      "description": "交流电网中的变电及交流电压升降活动；不与HVDC换流转换混合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:transform",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:distribution_operation",
+      "name": "配电网运行",
+      "kind": "activity",
+      "description": "通过配电网连接家庭和企业用户并组织配供电的运行活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-core",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:dispatch_control_activity",
+      "name": "调度监控与继电保护运行",
+      "kind": "activity",
+      "description": "电网调度自动化、安全稳定分析、监控与保护的运行活动总类。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-dispatch",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:power_quality_activity",
+      "name": "电能质量治理",
+      "kind": "activity",
+      "description": "采用动态无功补偿、有源滤波等装备的电能质量治理活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-reactive",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:grid_engineering_service",
+      "name": "电网工程与系统集成服务",
+      "kind": "service",
+      "description": "电网设备工程设计、采购、施工、安装调试和系统集成等服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-epc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:pg-engineering",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-engineering",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:grid_maintenance_service",
+      "name": "电网装备运维技术服务",
+      "kind": "service",
+      "description": "为电网和特定装备提供的运维检修及远程技术服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-service",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:pg-maintenance",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:ac_transmission_service",
+      "name": "交流输电服务",
+      "kind": "service",
+      "description": "交流输电运行交付的电能传输服务。服务不是变电设备产出的能源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:hvdc_transmission_service",
+      "name": "高压直流输电服务",
+      "kind": "service",
+      "description": "HVDC运行交付的远距离电能传输服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:power_distribution_service",
+      "name": "配供电服务",
+      "kind": "service",
+      "description": "配电运行向家庭、企业等终端用户提供的配供电服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-core",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:industrial_power_consumption",
+      "name": "企业与工业用电",
+      "kind": "application",
+      "description": "企业和工业设施的终端用电场景。具体负荷敏感性不在本稿推定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:residential_power_consumption",
+      "name": "居民家庭用电",
+      "kind": "application",
+      "description": "家庭终端用电场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "grid:submarine_cable_engineering",
+      "name": "海底电力电缆敷设工程",
+      "kind": "activity",
+      "description": "海上风电接入接口的电力海缆运输与敷设工程；不等于完整风场运维。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "grid",
+      "node_id": "grid:winding_metals",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:electrical_steel",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:transformer_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:equipment_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:power_transformer",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:converter_transformer",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:reactor",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:converter_valve",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:gis_switchgear",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:ac_circuit_breaker",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:dc_circuit_breaker",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:power_line_cable",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:submarine_power_cable",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:surge_arrester",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:insulation_accessories",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:relay_protection_device",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:dispatch_automation_system",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:reactive_compensation",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:grid_construction_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:grid_maintenance_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:ac_transmission_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:hvdc_transmission_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:substation_operation",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:distribution_operation",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:dispatch_control_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:power_quality_activity",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:grid_engineering_service",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:grid_maintenance_service",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:ac_transmission_service",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:hvdc_transmission_service",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:power_distribution_service",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:industrial_power_consumption",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:residential_power_consumption",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "grid",
+      "node_id": "grid:submarine_cable_engineering",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:grid:research",
+      "industry_id": "grid",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "materials",
+          "name": "材料与制造",
+          "node_ids": [
+            "grid:winding_metals",
+            "grid:electrical_steel",
+            "grid:transformer_manufacturing",
+            "grid:equipment_manufacturing"
+          ]
+        },
+        {
+          "group_id": "primary",
+          "name": "一次装备与线路",
+          "node_ids": [
+            "grid:power_transformer",
+            "grid:converter_transformer",
+            "grid:reactor",
+            "grid:converter_valve",
+            "grid:gis_switchgear",
+            "grid:ac_circuit_breaker",
+            "grid:dc_circuit_breaker",
+            "grid:power_line_cable",
+            "grid:submarine_power_cable",
+            "grid:surge_arrester",
+            "grid:insulation_accessories"
+          ]
+        },
+        {
+          "group_id": "control",
+          "name": "保护控制与电能质量",
+          "node_ids": [
+            "grid:relay_protection_device",
+            "grid:dispatch_automation_system",
+            "grid:reactive_compensation",
+            "grid:dispatch_control_activity",
+            "grid:power_quality_activity"
+          ]
+        },
+        {
+          "group_id": "operations",
+          "name": "输变配电运行",
+          "node_ids": [
+            "grid:ac_transmission_activity",
+            "grid:hvdc_transmission_activity",
+            "grid:substation_operation",
+            "grid:distribution_operation"
+          ]
+        },
+        {
+          "group_id": "engineering",
+          "name": "工程与运维",
+          "node_ids": [
+            "grid:grid_construction_activity",
+            "grid:grid_maintenance_activity",
+            "grid:grid_engineering_service",
+            "grid:grid_maintenance_service",
+            "grid:submarine_cable_engineering"
+          ]
+        },
+        {
+          "group_id": "services",
+          "name": "交付服务与终端",
+          "node_ids": [
+            "grid:ac_transmission_service",
+            "grid:hvdc_transmission_service",
+            "grid:power_distribution_service",
+            "grid:industrial_power_consumption",
+            "grid:residential_power_consumption"
+          ]
+        }
+      ],
+      "reading_order": [
+        "materials",
+        "primary",
+        "control",
+        "operations",
+        "engineering",
+        "services"
+      ],
+      "relation_ids": [
+        "rel:grid:copper-aluminium",
+        "rel:grid:steel-core",
+        "rel:grid:make-power_transformer",
+        "rel:grid:make-converter_transformer",
+        "rel:grid:make-reactor",
+        "rel:grid:make-converter_valve",
+        "rel:grid:make-gis_switchgear",
+        "rel:grid:make-ac_circuit_breaker",
+        "rel:grid:make-dc_circuit_breaker",
+        "rel:grid:make-power_line_cable",
+        "rel:grid:make-submarine_power_cable",
+        "rel:grid:make-surge_arrester",
+        "rel:grid:make-insulation_accessories",
+        "rel:grid:make-relay_protection_device",
+        "rel:grid:make-dispatch_automation_system",
+        "rel:grid:make-reactive_compensation",
+        "rel:grid:use-power_transformer-substation_operation",
+        "rel:grid:use-converter_transformer-hvdc_transmission_activity",
+        "rel:grid:use-reactor-ac_transmission_activity",
+        "rel:grid:use-reactor-hvdc_transmission_activity",
+        "rel:grid:use-converter_valve-hvdc_transmission_activity",
+        "rel:grid:use-gis_switchgear-substation_operation",
+        "rel:grid:use-dc_circuit_breaker-hvdc_transmission_activity",
+        "rel:grid:use-power_line_cable-ac_transmission_activity",
+        "rel:grid:use-power_line_cable-distribution_operation",
+        "rel:grid:use-surge_arrester-substation_operation",
+        "rel:grid:use-relay_protection_device-dispatch_control_activity",
+        "rel:grid:use-dispatch_automation_system-dispatch_control_activity",
+        "rel:grid:use-reactive_compensation-power_quality_activity",
+        "rel:grid:use-submarine_power_cable-submarine_cable_engineering",
+        "rel:grid:support-grid_engineering_service",
+        "rel:grid:support-grid_maintenance_service",
+        "rel:grid:service-ac_transmission_activity",
+        "rel:grid:service-hvdc_transmission_activity",
+        "rel:grid:service-distribution_operation",
+        "rel:grid:serve-industrial_power_consumption",
+        "rel:grid:serve-residential_power_consumption"
+      ],
+      "note": "阅读分组，不等同于事实边或因果路径；不存UI状态。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:grid:copper-aluminium",
+      "from_node_id": "grid:winding_metals",
+      "to_node_id": "grid:transformer_manufacturing",
+      "kind": "input_to",
+      "statement": "铜或铝导体投入传统变压器绕组制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:winding",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:steel-core",
+      "from_node_id": "grid:electrical_steel",
+      "to_node_id": "grid:transformer_manufacturing",
+      "kind": "input_to",
+      "statement": "电工钢投入传统变压器磁芯制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:core",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-power_transformer",
+      "from_node_id": "grid:transformer_manufacturing",
+      "to_node_id": "grid:power_transformer",
+      "kind": "produces",
+      "statement": "变压器制造产出所限定类型的变压器装备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-converter_transformer",
+      "from_node_id": "grid:transformer_manufacturing",
+      "to_node_id": "grid:converter_transformer",
+      "kind": "produces",
+      "statement": "变压器制造产出所限定类型的变压器装备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-reactor",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:reactor",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-converter_valve",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:converter_valve",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-gis_switchgear",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:gis_switchgear",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-ac_circuit_breaker",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:ac_circuit_breaker",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-breaker",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:pg-gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-dc_circuit_breaker",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:dc_circuit_breaker",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-dc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-power_line_cable",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:power_line_cable",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-submarine_power_cable",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:submarine_power_cable",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-surge_arrester",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:surge_arrester",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-insulation_accessories",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:insulation_accessories",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-relay_protection_device",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:relay_protection_device",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-dispatch_automation_system",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:dispatch_automation_system",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-dispatch",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:make-reactive_compensation",
+      "from_node_id": "grid:equipment_manufacturing",
+      "to_node_id": "grid:reactive_compensation",
+      "kind": "produces",
+      "statement": "对应类别的输配电装备制造活动产出该产品；不表示单一产线包办全部产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-reactive",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-power_transformer-substation_operation",
+      "from_node_id": "grid:power_transformer",
+      "to_node_id": "grid:substation_operation",
+      "kind": "used_for",
+      "statement": "交流电力变压器用于交流电压升降运行。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:transform",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-converter_transformer-hvdc_transmission_activity",
+      "from_node_id": "grid:converter_transformer",
+      "to_node_id": "grid:hvdc_transmission_activity",
+      "kind": "used_for",
+      "statement": "直流换流变压器用于直流电网建设和其输电运行接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-reactor-ac_transmission_activity",
+      "from_node_id": "grid:reactor",
+      "to_node_id": "grid:ac_transmission_activity",
+      "kind": "used_for",
+      "statement": "交流电网用电抗器用于交流电网运行。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-ac",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-reactor-hvdc_transmission_activity",
+      "from_node_id": "grid:reactor",
+      "to_node_id": "grid:hvdc_transmission_activity",
+      "kind": "used_for",
+      "statement": "平波电抗器用于直流电网接口，不泛化所有电抗器。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-converter_valve-hvdc_transmission_activity",
+      "from_node_id": "grid:converter_valve",
+      "to_node_id": "grid:hvdc_transmission_activity",
+      "kind": "used_for",
+      "statement": "换流阀用于直流输电系统接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-gis_switchgear-substation_operation",
+      "from_node_id": "grid:gis_switchgear",
+      "to_node_id": "grid:substation_operation",
+      "kind": "used_for",
+      "statement": "GIS装备用于变电站运行接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-dc_circuit_breaker-hvdc_transmission_activity",
+      "from_node_id": "grid:dc_circuit_breaker",
+      "to_node_id": "grid:hvdc_transmission_activity",
+      "kind": "used_for",
+      "statement": "多端直流系统采用直流断路器，不断言全部HVDC工程的实际配置。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:dc-breaker",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-power_line_cable-ac_transmission_activity",
+      "from_node_id": "grid:power_line_cable",
+      "to_node_id": "grid:ac_transmission_activity",
+      "kind": "used_for",
+      "statement": "相应交流电力线路用于交流输电。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-power_line_cable-distribution_operation",
+      "from_node_id": "grid:power_line_cable",
+      "to_node_id": "grid:distribution_operation",
+      "kind": "used_for",
+      "statement": "配电线路用于配电网运行，作为资产而非消耗原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-surge_arrester-substation_operation",
+      "from_node_id": "grid:surge_arrester",
+      "to_node_id": "grid:substation_operation",
+      "kind": "used_for",
+      "statement": "避雷器用于变电站资产过电压防护。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:surge",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-relay_protection_device-dispatch_control_activity",
+      "from_node_id": "grid:relay_protection_device",
+      "to_node_id": "grid:dispatch_control_activity",
+      "kind": "used_for",
+      "statement": "继电保护设备用于相应变电站保护与监控活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-dispatch_automation_system-dispatch_control_activity",
+      "from_node_id": "grid:dispatch_automation_system",
+      "to_node_id": "grid:dispatch_control_activity",
+      "kind": "used_for",
+      "statement": "调度自动化系统用于电网运行调度及安全分析。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-dispatch",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-reactive_compensation-power_quality_activity",
+      "from_node_id": "grid:reactive_compensation",
+      "to_node_id": "grid:power_quality_activity",
+      "kind": "used_for",
+      "statement": "动态无功补偿和有源滤波装备用于对应电能质量治理活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-reactive",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:use-submarine_power_cable-submarine_cable_engineering",
+      "from_node_id": "grid:submarine_power_cable",
+      "to_node_id": "grid:submarine_cable_engineering",
+      "kind": "used_for",
+      "statement": "海底电力电缆用于海上风电连接接口的敷设工程。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:support-grid_engineering_service",
+      "from_node_id": "grid:grid_engineering_service",
+      "to_node_id": "grid:grid_construction_activity",
+      "kind": "supports",
+      "statement": "相应工程或运维服务支持电网建设或检修活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-epc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:support-grid_maintenance_service",
+      "from_node_id": "grid:grid_maintenance_service",
+      "to_node_id": "grid:grid_maintenance_activity",
+      "kind": "supports",
+      "statement": "相应工程或运维服务支持电网建设或检修活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-service",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:service-ac_transmission_activity",
+      "from_node_id": "grid:ac_transmission_activity",
+      "to_node_id": "grid:ac_transmission_service",
+      "kind": "produces",
+      "statement": "对应电网运行活动交付所限定的输电或配供电服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:lines",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:service-hvdc_transmission_activity",
+      "from_node_id": "grid:hvdc_transmission_activity",
+      "to_node_id": "grid:hvdc_transmission_service",
+      "kind": "produces",
+      "statement": "对应电网运行活动交付所限定的输电或配供电服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:hvdc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:service-distribution_operation",
+      "from_node_id": "grid:distribution_operation",
+      "to_node_id": "grid:power_distribution_service",
+      "kind": "produces",
+      "statement": "对应电网运行活动交付所限定的输电或配供电服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:serve-industrial_power_consumption",
+      "from_node_id": "grid:power_distribution_service",
+      "to_node_id": "grid:industrial_power_consumption",
+      "kind": "used_for",
+      "statement": "配供电服务用于相应终端用电场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:grid:serve-residential_power_consumption",
+      "from_node_id": "grid:power_distribution_service",
+      "to_node_id": "grid:residential_power_consumption",
+      "kind": "used_for",
+      "statement": "配供电服务用于相应终端用电场景。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "示意性的技术或功能关系；不是特定公司交易、已发生冲击或全市场普遍配置。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company:grid:nari",
+      "name": "国电南瑞科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:pinggao",
+      "name": "河南平高电气股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pinggao-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:chinaxd",
+      "name": "中国西电电气股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:chinaxd-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:tbea",
+      "name": "特变电工股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tbea-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:sieyuan",
+      "name": "思源电气股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sieyuan-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:hengtong",
+      "name": "江苏亨通光电股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:hengtong-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:stategrid-jiangsu",
+      "name": "国网江苏省电力有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:stategrid-jiangsu-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "company_id": "company:grid:nari",
+      "symbol": "SH:600406",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:nari-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:pinggao",
+      "symbol": "SH:600312",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pinggao-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:pinggao-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:chinaxd",
+      "symbol": "SH:601179",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:chinaxd-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:chinaxd-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:tbea",
+      "symbol": "SH:600089",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tbea-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:tbea-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:sieyuan",
+      "symbol": "SZ:002028",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sieyuan-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sieyuan-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:grid:hengtong",
+      "symbol": "SH:600487",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:hengtong-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:hengtong-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:grid:nari-dispatch",
+      "company_id": "company:grid:nari",
+      "node_id": "grid:dispatch_automation_system",
+      "role": "电网调度自动化产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-dispatch",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:nari-relay",
+      "company_id": "company:grid:nari",
+      "node_id": "grid:relay_protection_device",
+      "role": "继电保护与变电站监控产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:nari-service",
+      "company_id": "company:grid:nari",
+      "node_id": "grid:grid_maintenance_service",
+      "role": "规划集成与运维检修服务",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-service",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:nari-valve",
+      "company_id": "company:grid:nari",
+      "node_id": "grid:converter_valve",
+      "role": "可控换相换流阀研发",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。仅披露研发阶段，不推为批量出货或全部HVDC技术。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:nari-valve",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:pg-gis",
+      "company_id": "company:grid:pinggao",
+      "node_id": "grid:gis_switchgear",
+      "role": "GIS组合开关设备研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:pg-breaker",
+      "company_id": "company:grid:pinggao",
+      "node_id": "grid:ac_circuit_breaker",
+      "role": "罐式断路器研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-breaker",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:pg-epc",
+      "company_id": "company:grid:pinggao",
+      "node_id": "grid:grid_engineering_service",
+      "role": "诊断规划设计咨询施工方案",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-engineering",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:pg-om",
+      "company_id": "company:grid:pinggao",
+      "node_id": "grid:grid_maintenance_service",
+      "role": "高压开关设备远程运维能力",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:pg-maintenance",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:xd-transformer",
+      "company_id": "company:grid:chinaxd",
+      "node_id": "grid:transformer_manufacturing",
+      "role": "输配电变压器研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:xd-valve",
+      "company_id": "company:grid:chinaxd",
+      "node_id": "grid:converter_valve",
+      "role": "换流阀研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:xd-insulation",
+      "company_id": "company:grid:chinaxd",
+      "node_id": "grid:insulation_accessories",
+      "role": "绝缘子与套管制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:xd-surge",
+      "company_id": "company:grid:chinaxd",
+      "node_id": "grid:surge_arrester",
+      "role": "避雷器制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:xd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:xd-engineering",
+      "company_id": "company:grid:chinaxd",
+      "node_id": "grid:grid_engineering_service",
+      "role": "输配电设备成套与工程承包",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:xd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:tb-transformer",
+      "company_id": "company:grid:tbea",
+      "node_id": "grid:transformer_manufacturing",
+      "role": "交流与直流相关变压器研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。排除煤炭、多晶硅、发电与铝材等其他板块；不从中标推完成交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:tb-reactor",
+      "company_id": "company:grid:tbea",
+      "node_id": "grid:reactor",
+      "role": "交流电抗器与直流平波电抗器产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。排除煤炭、多晶硅、发电与铝材等其他板块；不从中标推完成交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:tb-cable",
+      "company_id": "company:grid:tbea",
+      "node_id": "grid:power_line_cable",
+      "role": "输变电电线电缆研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。排除煤炭、多晶硅、发电与铝材等其他板块；不从中标推完成交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-manufacture",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:tb-engineering",
+      "company_id": "company:grid:tbea",
+      "node_id": "grid:grid_engineering_service",
+      "role": "输变电国际成套系统集成",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。排除煤炭、多晶硅、发电与铝材等其他板块；不从中标推完成交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:tb-engineering",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sy-gis",
+      "company_id": "company:grid:sieyuan",
+      "node_id": "grid:gis_switchgear",
+      "role": "GIS及GIL产品研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-gis",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sy-dc",
+      "company_id": "company:grid:sieyuan",
+      "node_id": "grid:dc_circuit_breaker",
+      "role": "直流断路器产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-dc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sy-relay",
+      "company_id": "company:grid:sieyuan",
+      "node_id": "grid:relay_protection_device",
+      "role": "变电站继电保护及监控产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-relay",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sy-reactive",
+      "company_id": "company:grid:sieyuan",
+      "node_id": "grid:reactive_compensation",
+      "role": "动态无功补偿和有源滤波产品",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-reactive",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sy-epc",
+      "company_id": "company:grid:sieyuan",
+      "node_id": "grid:grid_engineering_service",
+      "role": "工程设计采购施工与安装调试",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sy-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sy-epc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:ht-cable",
+      "company_id": "company:grid:hengtong",
+      "node_id": "grid:submarine_power_cable",
+      "role": "海底电力电缆研发制造",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。仅取海上风电电力连接接口；非浙江亨通控股，非光通信海缆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:ht-laying",
+      "company_id": "company:grid:hengtong",
+      "node_id": "grid:submarine_cable_engineering",
+      "role": "海底电力电缆运输敷设",
+      "scope": "2025报告合并业务口径；不等于上市母法人直接运营所有设施，不转移母集团或其他关联公司的能力。不将风场运维表述改为电网或海缆运维已交付。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:ht-submarine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sg-construction",
+      "company_id": "company:grid:stategrid-jiangsu",
+      "node_id": "grid:grid_construction_activity",
+      "role": "江苏电网基础设施建设",
+      "scope": "2024社会责任报告本主体与江苏地区范围；非国家电网全国业务，不采用2025工作承诺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sg-core",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-construction",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sg-maintenance",
+      "company_id": "company:grid:stategrid-jiangsu",
+      "node_id": "grid:grid_maintenance_activity",
+      "role": "江苏配电网运检",
+      "scope": "2024社会责任报告本主体与江苏地区范围；非国家电网全国业务，不采用2025工作承诺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sg-core",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-maintenance",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:grid:sg-distribution",
+      "company_id": "company:grid:stategrid-jiangsu",
+      "node_id": "grid:distribution_operation",
+      "role": "江苏配电网运行与不停电作业",
+      "scope": "2024社会责任报告本主体与江苏地区范围；非国家电网全国业务，不采用2025工作承诺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:grid:sg-core",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:grid:sg-distribution",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "grid-notebook:eia-delivery",
+      "source_version": "sha256:8917c9e74ad1b8f89f1048fb6093d735f80ab260f3f6b28223ebfdde9e1ed131",
+      "title": "How electricity is delivered to consumers",
+      "publisher": "U.S. EIA",
+      "url": "https://www.eia.gov/energyexplained/electricity/delivery-to-consumers.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:22:08.961070+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_technical_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:eia-circuits-transformers",
+      "source_version": "sha256:8777e0c6b83d046c9d33c082ce1a078d829adba2303227ef3e91c6e3825b91b9",
+      "title": "Batteries, circuits, and transformers",
+      "publisher": "U.S. EIA",
+      "url": "https://www.eia.gov/energyexplained/electricity/batteries-circuits-and-transformers.php",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:22:06.854073+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_technical_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:doe",
+      "source_version": "sha256:6c91db433252e9568487df7944c60a33d9e186754131fb9295fcebc65f717cfd",
+      "title": "Grid Modernization Strategy 2024",
+      "publisher": "U.S. DOE",
+      "url": "https://www.energy.gov/sites/default/files/2024-12/Grid%20Modernization%20Strategy%202024.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:16:39.982692+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "official_technical_strategy",
+      "reporting_period": "2024; selected technical functions only",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:doe-critical-materials-2023",
+      "source_version": "sha256:5f168dae430d49021b033974067680429474bbc1589e03dc24e8224e4e102082",
+      "title": "Critical Materials Assessment 2023",
+      "publisher": "U.S. DOE",
+      "url": "https://www.energy.gov/sites/default/files/2023-07/doe-critical-material-assessment_07312023.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:33:54.588035+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "official_materials_assessment",
+      "reporting_period": "2023; transformer material function only",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:siemens",
+      "source_version": "sha256:ecf339989ba318f5e5e6cbace710d09b44cba2ff0d4b29374ca4aa5cc041ea4e",
+      "title": "TechFacts — Overvoltage protection in substations",
+      "publisher": "Siemens Energy",
+      "url": "https://assets.siemens-energy.com/dam/9cda00e6-7418-4338-bb82-b045007334c1/TechFacts-101-pdf_Original%20file.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:19:09.920675+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "technical_note",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "title": "国网江苏省电力有限公司2024年社会责任报告",
+      "publisher": "国网江苏省电力有限公司",
+      "url": "http://www.js.sgcc.com.cn/images/shzr/shzrbg/2025/12/14/1449775639735050240.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:20:20.698799+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "corporate_social_responsibility_report",
+      "reporting_period": "2024",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "title": "国电南瑞科技股份有限公司2025年年度报告摘要",
+      "publisher": "国电南瑞科技股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225258000.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:25:38.877581+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "title": "河南平高电气股份有限公司2025年年度报告摘要",
+      "publisher": "河南平高电气股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225093687.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:25:39.057995+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:chinaxd",
+      "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed",
+      "title": "中国西电电气股份有限公司2025年年度报告",
+      "publisher": "中国西电电气股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225094842.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:28:13.663266+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "title": "特变电工股份有限公司2025年年度报告（Sina附件镜像）",
+      "publisher": "特变电工股份有限公司",
+      "url": "http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-4/2026-04-16/12093012.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:28:13.505457+00:00",
+      "access": "snapshot",
+      "upstream_provider": "Sina public attachment mirror; issuer TBEA",
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "issuer_report_pdf_bytes_via_public_mirror",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "title": "思源电气股份有限公司2025年年度报告摘要",
+      "publisher": "思源电气股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-18/1225117828.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:33:51.000982+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "grid-notebook:hengtong",
+      "source_version": "sha256:bcba3bb1bdb03f9bbf1ad2bfd1d1ec2d1209b543e31df82b1ea5c46cd8130929",
+      "title": "江苏亨通光电股份有限公司2025年年度报告摘要",
+      "publisher": "江苏亨通光电股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-25/1225195797.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T20:33:51.244984+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e:grid:lines",
+      "revision": 1,
+      "source_id": "grid-notebook:eia-delivery",
+      "source_version": "sha256:8917c9e74ad1b8f89f1048fb6093d735f80ab260f3f6b28223ebfdde9e1ed131",
+      "locator": "Delivering electricity; surrounding paragraph describes generation-to-consumer network",
+      "excerpt": "transmission and distribution power lines"
+    },
+    {
+      "evidence_id": "e:grid:distribution",
+      "revision": 1,
+      "source_id": "grid-notebook:eia-delivery",
+      "source_version": "sha256:8917c9e74ad1b8f89f1048fb6093d735f80ab260f3f6b28223ebfdde9e1ed131",
+      "locator": "Electricity sources and types of providers; US utility function example",
+      "excerpt": "distribution system that connects homes and businesses to the grid"
+    },
+    {
+      "evidence_id": "e:grid:transform",
+      "revision": 1,
+      "source_id": "grid-notebook:eia-circuits-transformers",
+      "source_version": "sha256:8777e0c6b83d046c9d33c082ce1a078d829adba2303227ef3e91c6e3825b91b9",
+      "locator": "Transformers play a crucial role; voltage function, not AC/DC conversion",
+      "excerpt": "increasing (stepping up) or reducing (stepping down) voltages"
+    },
+    {
+      "evidence_id": "e:grid:hvdc",
+      "revision": 1,
+      "source_id": "grid-notebook:doe",
+      "source_version": "sha256:6c91db433252e9568487df7944c60a33d9e186754131fb9295fcebc65f717cfd",
+      "locator": "PDF page 15; High Voltage DC and Power Electronics paragraph; no economics adopted",
+      "excerpt": "can efficiently move\nelectricity over long distances"
+    },
+    {
+      "evidence_id": "e:grid:dc-breaker",
+      "revision": 1,
+      "source_id": "grid-notebook:doe",
+      "source_version": "sha256:6c91db433252e9568487df7944c60a33d9e186754131fb9295fcebc65f717cfd",
+      "locator": "PDF page 15; same paragraph; multi-terminal system scope, not universal deployment claim",
+      "excerpt": "DC circuit breakers are essential\ndevices in such multi-terminal DC systems"
+    },
+    {
+      "evidence_id": "e:grid:core",
+      "revision": 1,
+      "source_id": "grid-notebook:doe-critical-materials-2023",
+      "source_version": "sha256:5f168dae430d49021b033974067680429474bbc1589e03dc24e8224e4e102082",
+      "locator": "PDF page 69; Section 2.7.3.2; printed p43, actual PDF p69",
+      "excerpt": "These windings are wrapped around a core made of electrical steel."
+    },
+    {
+      "evidence_id": "e:grid:winding",
+      "revision": 1,
+      "source_id": "grid-notebook:doe-critical-materials-2023",
+      "source_version": "sha256:5f168dae430d49021b033974067680429474bbc1589e03dc24e8224e4e102082",
+      "locator": "PDF page 70; Section 2.7.3.2; printed p44, actual PDF p70",
+      "excerpt": "Transformer windings are made from aluminum or copper"
+    },
+    {
+      "evidence_id": "e:grid:gis",
+      "revision": 1,
+      "source_id": "grid-notebook:siemens",
+      "source_version": "sha256:ecf339989ba318f5e5e6cbace710d09b44cba2ff0d4b29374ca4aa5cc041ea4e",
+      "locator": "PDF page 2; Modern substation protection layout context",
+      "excerpt": "gas-insulated substations (GIS)"
+    },
+    {
+      "evidence_id": "e:grid:surge",
+      "revision": 1,
+      "source_id": "grid-notebook:siemens",
+      "source_version": "sha256:ecf339989ba318f5e5e6cbace710d09b44cba2ff0d4b29374ca4aa5cc041ea4e",
+      "locator": "PDF page 2; Modern substation surge-arrester installation; scope limited to stated overvoltage functions",
+      "excerpt": "to protect the mentioned assets from lightning\nand switching overvoltages"
+    },
+    {
+      "evidence_id": "e:grid:nari-name",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "国电南瑞科技股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:pinggao-name",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "河南平高电气股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:chinaxd-name",
+      "revision": 1,
+      "source_id": "grid-notebook:chinaxd",
+      "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "中国西电电气股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:tbea-name",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "特变电工股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:sieyuan-name",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "思源电气股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:hengtong-name",
+      "revision": 1,
+      "source_id": "grid-notebook:hengtong",
+      "source_version": "sha256:bcba3bb1bdb03f9bbf1ad2bfd1d1ec2d1209b543e31df82b1ea5c46cd8130929",
+      "locator": "PDF page 1; cover / legal company identity",
+      "excerpt": "江苏亨通光电股份有限公司"
+    },
+    {
+      "evidence_id": "e:grid:stategrid-jiangsu-name",
+      "revision": 1,
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "locator": "PDF page 2; cover / legal company identity",
+      "excerpt": "国网江苏省电力有限公司"
+    },
+    {
+      "evidence_id": "e:grid:nari-security",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "600406"
+    },
+    {
+      "evidence_id": "e:grid:pinggao-security",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "600312"
+    },
+    {
+      "evidence_id": "e:grid:chinaxd-security",
+      "revision": 1,
+      "source_id": "grid-notebook:chinaxd",
+      "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "601179"
+    },
+    {
+      "evidence_id": "e:grid:tbea-security",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 7; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "A股 上海证券交易所 特变电工 600089"
+    },
+    {
+      "evidence_id": "e:grid:sieyuan-security",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "股票简称 思源电气 股票代码 002028\n股票上市交易所 深圳证券交易所"
+    },
+    {
+      "evidence_id": "e:grid:hengtong-security",
+      "revision": 1,
+      "source_id": "grid-notebook:hengtong",
+      "source_version": "sha256:bcba3bb1bdb03f9bbf1ad2bfd1d1ec2d1209b543e31df82b1ea5c46cd8130929",
+      "locator": "PDF page 1; 公司股票简况 / 公司简介; exchange and code checked against actual table",
+      "excerpt": "公司代码：600487 公司简称：亨通光电"
+    },
+    {
+      "evidence_id": "e:grid:nari-dispatch",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 6; 电网智能业务; actual products, no ranking adopted",
+      "excerpt": "主要产品包括电网安全稳定分析与控制、电网调度自动化"
+    },
+    {
+      "evidence_id": "e:grid:nari-relay",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 6; 电网智能业务; product/service scope, not specific equipment customer supply",
+      "excerpt": "新一代自主可控变电站监控、继电保护、变电站智能运检、直流输电系统"
+    },
+    {
+      "evidence_id": "e:grid:nari-valve",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 8; 能源低碳; R&D stage retained, ranking not repeated as dataset claim",
+      "excerpt": "研发世界首套可控换相换流阀"
+    },
+    {
+      "evidence_id": "e:grid:nari-service",
+      "revision": 1,
+      "source_id": "grid-notebook:nari",
+      "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1",
+      "locator": "PDF page 10; 经营模式; service offering scope",
+      "excerpt": "涵盖规划设计、系统集成、运维检修、技术咨询等环节"
+    },
+    {
+      "evidence_id": "e:grid:pg-gis",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 5; 主要产品; voltage numbers omitted",
+      "excerpt": "气体绝缘封闭式组合电器（GIS/H-GIS）"
+    },
+    {
+      "evidence_id": "e:grid:pg-breaker",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 5; 主要产品; AC product range from surrounding list",
+      "excerpt": "SF6 罐式断路器"
+    },
+    {
+      "evidence_id": "e:grid:pg-engineering",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 5; 主要业务; actual offering rather than qualification alone",
+      "excerpt": "为用户提供诊断、规划、设计、咨询、施工等\n能源整体解决方案"
+    },
+    {
+      "evidence_id": "e:grid:pg-maintenance",
+      "revision": 1,
+      "source_id": "grid-notebook:pinggao",
+      "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154",
+      "locator": "PDF page 5; 主要业务; capability only, no project delivery or all-grid maintenance implied",
+      "excerpt": "拥有高压开关设备远程运维能力及全寿命周期管理大数据平台"
+    },
+    {
+      "evidence_id": "e:grid:xd-business",
+      "revision": 1,
+      "source_id": "grid-notebook:chinaxd",
+      "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed",
+      "locator": "PDF page 11; 主要业务; consolidated business scope",
+      "excerpt": "主营业务为输配电及控制设备研发、设计、制造、销售、检测、相关设备成套、技\n术研究、服务与工程承包等业务。"
+    },
+    {
+      "evidence_id": "e:grid:xd-products",
+      "revision": 1,
+      "source_id": "grid-notebook:chinaxd",
+      "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed",
+      "locator": "PDF page 11; 主要产品; distinguish insulators/bushings from power production",
+      "excerpt": "主要包括变压器、开关、换流阀、绝缘子和避雷器、套管、电\n容器、交直流互感器、电力电子、能源设备控制等产品装备"
+    },
+    {
+      "evidence_id": "e:grid:tb-manufacture",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 12; 主要业务; only transmission/distribution equipment scope",
+      "excerpt": "输变电业务主要包括变压器、电抗器、电容器、开关、互感器、套管、电力二次\n设备、电线电缆及其他输变电产品的研发、生产和销售"
+    },
+    {
+      "evidence_id": "e:grid:tb-hvdc",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 12; main-product/usage table; columns verified in extracted page order",
+      "excerpt": "直流换流变压器和\n平波电抗器\n应用于直流电网建设。"
+    },
+    {
+      "evidence_id": "e:grid:tb-ac",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 12; same table; only AC grid use adopted, generation excluded",
+      "excerpt": "交流电力变压器和\n电抗器\n应用于交流电网和发电\n站建设。"
+    },
+    {
+      "evidence_id": "e:grid:tb-engineering",
+      "revision": 1,
+      "source_id": "grid-notebook:tbea",
+      "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17",
+      "locator": "PDF page 12; 主要业务; no particular client or contract completion inferred",
+      "excerpt": "提供输变电国际成套\n系统集成服务"
+    },
+    {
+      "evidence_id": "e:grid:sy-business",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 主要业务; consolidated manufacturing scope",
+      "excerpt": "主营业务范围涵盖输配电设备及其核心零部件的研发、设计、制造、销售\n及服务与工程总包"
+    },
+    {
+      "evidence_id": "e:grid:sy-gis",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 主要产品; equipment range",
+      "excerpt": "GIS 和 GIL"
+    },
+    {
+      "evidence_id": "e:grid:sy-dc",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 主要产品; no voltage/type interchangeability inferred",
+      "excerpt": "直流断路器"
+    },
+    {
+      "evidence_id": "e:grid:sy-relay",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 主要产品; substation scope",
+      "excerpt": "变电站继电保护设备和监\n控系统"
+    },
+    {
+      "evidence_id": "e:grid:sy-reactive",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 主要产品; separate from supercapacitors",
+      "excerpt": "动态无功补偿系统、高压有源滤波系统"
+    },
+    {
+      "evidence_id": "e:grid:sy-epc",
+      "revision": 1,
+      "source_id": "grid-notebook:sieyuan",
+      "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663",
+      "locator": "PDF page 2; 经营模式; no particular project completion claim",
+      "excerpt": "公司工程总承包（EPC）业务涵盖工程设计、设备采购、土建施工、安装调试等环节"
+    },
+    {
+      "evidence_id": "e:grid:ht-submarine",
+      "revision": 1,
+      "source_id": "grid-notebook:hengtong",
+      "source_version": "sha256:bcba3bb1bdb03f9bbf1ad2bfd1d1ec2d1209b543e31df82b1ea5c46cd8130929",
+      "locator": "PDF page 4; 海洋能源; adopt only power-cable manufacturing/transport/laying interface, not optical cable or grid-wide O&M",
+      "excerpt": "形成了从海底电缆研发制造、运输、嵌岩打桩、 一体化打桩、风机安装、敷设到\n风场运维的海上风电场运营完整产业链。"
+    },
+    {
+      "evidence_id": "e:grid:sg-core",
+      "revision": 1,
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "locator": "PDF page 5; 公司概况; 2024 provincial subsidiary scope, no national parent-business transfer",
+      "excerpt": "以投资建设运营江苏电网为\n核心业务"
+    },
+    {
+      "evidence_id": "e:grid:sg-maintenance",
+      "revision": 1,
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "locator": "PDF page 10; 2024履责行动; no number adopted",
+      "excerpt": "配电网运检网格全部实现作业在线管控"
+    },
+    {
+      "evidence_id": "e:grid:sg-construction",
+      "revision": 1,
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "locator": "PDF page 21; 助力乡村全面振兴; actual 2024 activity",
+      "excerpt": "升级农村电力基础设施"
+    },
+    {
+      "evidence_id": "e:grid:sg-distribution",
+      "revision": 1,
+      "source_id": "grid-notebook:stategrid-jiangsu",
+      "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85",
+      "locator": "PDF page 10; 高水平保供; actual 2024 activity",
+      "excerpt": "完成不停电作业"
+    }
+  ],
+  "releases": [
+    {
+      "release_id": "grid-notebook-research-20261020-v1",
+      "industry_id": "grid",
+      "schema_version": "curated-chain-proposal-0.2",
+      "status": "proposed",
+      "published_at": null,
+      "parent_release_id": null,
+      "change_summary": "电网主要模块研究草稿：材料制造、一次装备、输变配运行、二次控制、电能质量、工程运维与终端接口；本轮原文支撑，仍非穷举、用户认可或正式发布。",
+      "record_refs": [
+        {
+          "object_type": "industry",
+          "id": "grid",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:winding_metals",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:electrical_steel",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:transformer_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:equipment_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:power_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:converter_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:reactor",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:converter_valve",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:gis_switchgear",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:ac_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:dc_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:power_line_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:submarine_power_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:surge_arrester",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:insulation_accessories",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:relay_protection_device",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:dispatch_automation_system",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:reactive_compensation",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:grid_construction_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:grid_maintenance_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:ac_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:substation_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:distribution_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:dispatch_control_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:power_quality_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:grid_engineering_service",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:grid_maintenance_service",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:ac_transmission_service",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:hvdc_transmission_service",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:power_distribution_service",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:industrial_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:residential_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "grid:submarine_cable_engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:copper-aluminium",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:steel-core",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-power_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-converter_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-reactor",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-converter_valve",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-gis_switchgear",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-ac_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-dc_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-power_line_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-submarine_power_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-surge_arrester",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-insulation_accessories",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-relay_protection_device",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-dispatch_automation_system",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:make-reactive_compensation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-power_transformer-substation_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-converter_transformer-hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-reactor-ac_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-reactor-hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-converter_valve-hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-gis_switchgear-substation_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-dc_circuit_breaker-hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-power_line_cable-ac_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-power_line_cable-distribution_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-surge_arrester-substation_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-relay_protection_device-dispatch_control_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-dispatch_automation_system-dispatch_control_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-reactive_compensation-power_quality_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:use-submarine_power_cable-submarine_cable_engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:support-grid_engineering_service",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:support-grid_maintenance_service",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:service-ac_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:service-hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:service-distribution_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:serve-industrial_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:grid:serve-residential_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:nari-dispatch",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:nari-relay",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:nari-service",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:nari-valve",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:pg-gis",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:pg-breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:pg-epc",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:pg-om",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:xd-transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:xd-valve",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:xd-insulation",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:xd-surge",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:xd-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:tb-transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:tb-reactor",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:tb-cable",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:tb-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sy-gis",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sy-dc",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sy-relay",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sy-reactive",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sy-epc",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:ht-cable",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:ht-laying",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sg-construction",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sg-maintenance",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:grid:sg-distribution",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:nari",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:pinggao",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:chinaxd",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:tbea",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:sieyuan",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:hengtong",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:grid:stategrid-jiangsu",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600406",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600312",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:601179",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600089",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SZ:002028",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600487",
+          "revision": 1
+        },
+        {
+          "object_type": "view",
+          "id": "view:grid:research",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:lines",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:distribution",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:transform",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:hvdc",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:dc-breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:core",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:winding",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:gis",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:surge",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pinggao-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:chinaxd-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tbea-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sieyuan-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:hengtong-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:stategrid-jiangsu-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pinggao-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:chinaxd-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tbea-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sieyuan-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:hengtong-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-dispatch",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-relay",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-valve",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:nari-service",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pg-gis",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pg-breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pg-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:pg-maintenance",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:xd-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:xd-products",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tb-manufacture",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tb-hvdc",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tb-ac",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:tb-engineering",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-gis",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-dc",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-relay",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-reactive",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sy-epc",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:ht-submarine",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sg-core",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sg-maintenance",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sg-construction",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:grid:sg-distribution",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:winding_metals",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:electrical_steel",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:transformer_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:equipment_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:power_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:converter_transformer",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:reactor",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:converter_valve",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:gis_switchgear",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:ac_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:dc_circuit_breaker",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:power_line_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:submarine_power_cable",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:surge_arrester",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:insulation_accessories",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:relay_protection_device",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:dispatch_automation_system",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:reactive_compensation",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:grid_construction_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:grid_maintenance_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:ac_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:hvdc_transmission_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:substation_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:distribution_operation",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:dispatch_control_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:power_quality_activity",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:grid_engineering_service",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:grid_maintenance_service",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:ac_transmission_service",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:hvdc_transmission_service",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:power_distribution_service",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:industrial_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:residential_power_consumption",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "grid",
+          "node_id": "grid:submarine_cable_engineering",
+          "revision": 1
+        }
+      ],
+      "source_refs": [
+        {
+          "source_id": "grid-notebook:eia-delivery",
+          "source_version": "sha256:8917c9e74ad1b8f89f1048fb6093d735f80ab260f3f6b28223ebfdde9e1ed131"
+        },
+        {
+          "source_id": "grid-notebook:eia-circuits-transformers",
+          "source_version": "sha256:8777e0c6b83d046c9d33c082ce1a078d829adba2303227ef3e91c6e3825b91b9"
+        },
+        {
+          "source_id": "grid-notebook:doe",
+          "source_version": "sha256:6c91db433252e9568487df7944c60a33d9e186754131fb9295fcebc65f717cfd"
+        },
+        {
+          "source_id": "grid-notebook:doe-critical-materials-2023",
+          "source_version": "sha256:5f168dae430d49021b033974067680429474bbc1589e03dc24e8224e4e102082"
+        },
+        {
+          "source_id": "grid-notebook:siemens",
+          "source_version": "sha256:ecf339989ba318f5e5e6cbace710d09b44cba2ff0d4b29374ca4aa5cc041ea4e"
+        },
+        {
+          "source_id": "grid-notebook:stategrid-jiangsu",
+          "source_version": "sha256:caed27d8c2299d9245e6e1e4dfd88476d529dd1b8b734bd893a92c82dd0ccc85"
+        },
+        {
+          "source_id": "grid-notebook:nari",
+          "source_version": "sha256:134a2f1385aa0ea70dba58b6fdbbe5312a65e3f69d1b3ff0e3a17e294e5d37c1"
+        },
+        {
+          "source_id": "grid-notebook:pinggao",
+          "source_version": "sha256:5d22814654561fe28d7875488f4f520dbcf25a219409af124e915f4753bfc154"
+        },
+        {
+          "source_id": "grid-notebook:chinaxd",
+          "source_version": "sha256:3e99e4105dde74de870e5a776a2cb607526fe6364ce0407338f2e7dabafce1ed"
+        },
+        {
+          "source_id": "grid-notebook:tbea",
+          "source_version": "sha256:84d08386c5ad48875d48aeb32d611f75832ab0c6cef9d7fc15df1f3bec186c17"
+        },
+        {
+          "source_id": "grid-notebook:sieyuan",
+          "source_version": "sha256:3c271eccfdfa6daf66992e2dafb56f3b3d4c52e31b26bf408475016179032663"
+        },
+        {
+          "source_id": "grid-notebook:hengtong",
+          "source_version": "sha256:bcba3bb1bdb03f9bbf1ad2bfd1d1ec2d1209b543e31df82b1ea5c46cd8130929"
+        }
+      ]
+    }
+  ],
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "grid",
+    "revision": 1,
+    "name": "电网",
+    "need": "通过输电、变电、配电和运行控制，将电源与终端用电连接，交付电力传输和配供电服务",
+    "boundary": "覆盖材料与电力装备制造、交流和HVDC输变电、配电、调度保护、工程运维与用电接入。发电、储能电芯、光通信和车辆制造仅保留必要边界，不展开其全部产业。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "公司为6家上市主体和1家省级运营主体样本，不是全市场穷举；更多配网、计量、变压器材料和专业运维企业待逐项补证。",
+      "当前仅展开变压器绕组与磁芯材料。开关绝缘介质、半导体器件、导体与海缆逐层材料未形成充分接口证据，不从企业集团采购清单反推用途。",
+      "交流断路器及绝缘配件目前保留产品与制造角色，不强行补无直接来源的逐型号使用边；HVDC阀型、站内转换、拓扑与保护动作细节仍缺。",
+      "终端覆盖居民和企业用电；电动车充电、分布式能源并网、储能并网与计量结算待专门来源，不将配电接入和充电服务合并。",
+      "2018 HVDC测试论文、2013 ABB技术刊和未保存原版国标只作候选档案，不用于2026状态或现行法规主张；没有价格、订单、客户、份额、产能、兼容性、因果影响或投资建议。"
+    ],
+    "coverage_note": "电网主要模块研究草稿：材料制造、一次装备、输变配运行、二次控制、电能质量、工程运维与终端接口；本轮原文支撑，仍非穷举、用户认可或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "材料与制造",
+        "node_ids": [
+          "grid:winding_metals",
+          "grid:electrical_steel",
+          "grid:transformer_manufacturing",
+          "grid:equipment_manufacturing"
+        ]
+      },
+      {
+        "module": "一次装备与线路",
+        "node_ids": [
+          "grid:power_transformer",
+          "grid:converter_transformer",
+          "grid:reactor",
+          "grid:converter_valve",
+          "grid:gis_switchgear",
+          "grid:ac_circuit_breaker",
+          "grid:dc_circuit_breaker",
+          "grid:power_line_cable",
+          "grid:submarine_power_cable",
+          "grid:surge_arrester",
+          "grid:insulation_accessories"
+        ]
+      },
+      {
+        "module": "保护控制与电能质量",
+        "node_ids": [
+          "grid:relay_protection_device",
+          "grid:dispatch_automation_system",
+          "grid:reactive_compensation",
+          "grid:dispatch_control_activity",
+          "grid:power_quality_activity"
+        ]
+      },
+      {
+        "module": "输变配电运行",
+        "node_ids": [
+          "grid:ac_transmission_activity",
+          "grid:hvdc_transmission_activity",
+          "grid:substation_operation",
+          "grid:distribution_operation"
+        ]
+      },
+      {
+        "module": "工程与运维",
+        "node_ids": [
+          "grid:grid_construction_activity",
+          "grid:grid_maintenance_activity",
+          "grid:grid_engineering_service",
+          "grid:grid_maintenance_service",
+          "grid:submarine_cable_engineering"
+        ]
+      },
+      {
+        "module": "交付服务与终端",
+        "node_ids": [
+          "grid:ac_transmission_service",
+          "grid:hvdc_transmission_service",
+          "grid:power_distribution_service",
+          "grid:industrial_power_consumption",
+          "grid:residential_power_consumption"
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "observations": [],
+    "news_associations": [],
+    "news_impacts": [],
+    "ai_candidates": []
+  },
+  "generated_at": "2026-10-20T20:42:26.638411+00:00"
+}
