@@ -5,13 +5,18 @@ import json
 import copy
 
 from .core_contracts import PANORAMA_CATALOG
-from .industry_sources import IndustrySources, from_industry, version, CHAIN_POLICY, security_symbol
+from .industry_sources import IndustrySources, from_industry, CHAIN_POLICY, security_symbol
+from .identities import version
 from .algorithms import industry_association, industry_impact
 from .analysis import model_headers
 from .config import UserError
 from .adapters import UpstreamError
 from .db import dump
 from .models import utcnow
+
+
+def text_quote(quote, article):
+    return isinstance(quote, str) and bool(quote.strip()) and quote in article['title'] + '\n' + article.get('content', '')
 
 
 class IndustryResearch:
@@ -24,6 +29,7 @@ class IndustryResearch:
         self._association_revision = None
         self._position_revision = None
         self._positions = None
+        self.curated = None
 
     def catalog(self, q='', offset=0, limit=40, external=True):
         source_items = self.sources.catalog(q, 0, 2_000_000, include_external=external)
@@ -45,25 +51,14 @@ class IndustryResearch:
     def graph(self, iid, offset=0, result_id=''):
         found = self.sources.get(iid, offset)
         if found:
-            if found.get('needs_research') and result_id != 'source':
-                existing = self.industries.find_existing(found['industry']['name'], iid, found['version'])
-                if existing:
-                    organized = self.graph(existing['id'], 0, result_id)
-                    organized['research_industry_id'] = existing['id']
-                    organized['industry']['id'] = iid
-                    organized.update(source_id=iid, source_kind='ai', needs_research=False, structure_gap=False,
-                                     source_quality='ai_organized_unverified', source_version=found['version'])
-                    for field in ('source_records', 'pagination', 'classifications'):
-                        if field in found:
-                            organized[field] = found[field]
-                    return self.current_identities(organized)
+            # Stored AI answers are candidates, never silently adopted on read.
             return self.current_identities(found)
         base = self.industries.base(iid)
         if not base:
             return None
         results = self.industries.stored(iid)
         valid = [r for r in results if r['kind'] == 'industry_supplement' and r['input_version'] == base['input_version']]
-        selected = next((r for r in valid if r['id'] == result_id), None) if result_id else next(iter(valid), None)
+        selected = next((r for r in valid if r['id'] == result_id), None) if result_id else None
         if result_id and result_id != 'base' and not selected:
             raise UserError('该回答不存在或基线版本已更新；未替换为其他回答', 404)
         view = dict(selected['graph'], origin='ai', model=selected['model'], created_at=selected['created_at'],
@@ -80,8 +75,22 @@ class IndustryResearch:
         A renamed or missing historical subject is kept in the source record,
         not relabelled as today's company with yesterday's business role.
         """
+        verified = False
+        if self.curated and graph.get('format') == 'curated-chain-v02' and graph.get('source_kind') == 'curated_v02' and graph.get('status') == 'published':
+            publication = graph.get('release', {})
+            state = self.curated.detail(graph['industry']['id'])
+            verified = any(p['release_id'] == graph.get('version') and p['package_id'] == publication.get('package_id') for p in state['publications'])
+        graph['_curated_verified'] = verified
         with self.db.connect() as c:
             for company in graph['companies']:
+                company.pop('verified_symbols', None)
+                company.pop('security_names', None)
+                if verified:
+                    bindings = [s for s in graph.get('securities', []) if s['company_id'] == company['id'] and s.get('review_status') == 'reviewed']
+                    company['verified_symbols'] = [s['symbol'] for s in bindings]
+                    company['security_names'] = {s['symbol']: row['name'] for s in bindings if (row := c.execute('SELECT name FROM securities WHERE symbol=?', (s['symbol'],)).fetchone())}
+                    company['identity_note'] = '已发布包的显式Company→Security核查绑定；公司全名与证券简称分开保留'
+                    continue
                 symbol = company.get('symbol')
                 if not symbol:
                     continue
@@ -117,45 +126,47 @@ class IndustryResearch:
         revision = self.industries.revision()
         if self._positions is None or revision != self._position_revision:
             index = {}
-            graphs = list(original_graphs.values()) + list(self.sources.bundled().values())
+            graphs = list(original_graphs.values()) + [g for g in self.sources.bundled().values() if g['industry']['id'] not in original_graphs]
             for item in self.industries.items()['items']:
                 base = self.industries.base(item['id'])
                 if not base:
                     continue
                 if item['id'] not in original_graphs:
                     graphs.append(base)
-                for r in self.industries.stored(item['id']):
-                    if r['kind'] == 'industry_supplement' and r['input_version'] == base['input_version']:
-                        graphs.append(dict(r['graph'], origin='ai', result_id=r['id'], model=r['model']))
+                # Candidate supplement answers do not become company positions.
             for original in graphs:
                 g = self.current_identities(copy.deepcopy(original))
                 iid, name = g['industry']['id'], g['industry']['name']
                 nodes = {n['id']: n for n in g['nodes']}
-                companies = {c['id']: c for c in g['companies'] if c.get('symbol')}
+                companies = {c['id']: c for c in g['companies'] if c.get('symbol') or c.get('verified_symbols')}
                 sources = {s['id']: s for s in g['sources']}
                 origin = g.get('origin', 'source_record')
                 for p in g['participations']:
                     company, node = companies.get(p['company_id']), nodes.get(p['node_id'])
                     if not company or not node:
                         continue
-                    index.setdefault(company['symbol'], []).append(dict(industry_id=iid, industry_name=name,
-                        node_id=node['id'], node_name=node['name'], role=p['role'],
-                        kind='ai' if origin == 'ai' else 'position', origin=origin,
-                        source_kind=g.get('source_kind', 'panorama' if iid in PANORAMA_CATALOG else origin),
-                        as_of=g.get('as_of'), sources=[sources[s] for s in p.get('sources', []) if s in sources],
-                        source_record=p.get('source_record'), source_records=p.get('source_records'), company_name=company['name'], result_id=g.get('result_id') or ('base' if iid not in PANORAMA_CATALOG and iid not in self.sources.bundled() else None),
-                        summary=company.get('profile', {}).get('purpose') or company.get('profile', {}).get('products')))
+                    for bound_symbol in company.get('verified_symbols', [company.get('symbol')]):
+                        index.setdefault(bound_symbol, []).append(dict(industry_id=iid, industry_name=name,
+                            node_id=node['id'], node_name=node['name'], role=p['role'], scope=p.get('scope'),
+                            kind='ai' if origin == 'ai' else 'position', origin=origin,
+                            source_kind=g.get('source_kind', 'panorama' if iid in PANORAMA_CATALOG else origin),
+                            verified_binding=g.get('_curated_verified', False), security_name=company.get('security_names', {}).get(bound_symbol),
+                            graph_release_id=g['version'] if g.get('source_kind') == 'curated_v02' else None,
+                            as_of=g.get('as_of'), sources=[sources[s] for s in p.get('sources', []) if s in sources],
+                            source_record=dict(company_id=company['id'], company_name=company['name'], security_name=company.get('security_names', {}).get(bound_symbol), graph_release_id=g['version']) if g.get('source_kind') == 'curated_v02' else p.get('source_record'), source_records=p.get('source_records'), company_name=company['name'], result_id=g['version'] if g.get('source_kind') == 'curated_v02' else g.get('result_id') or ('base' if iid not in PANORAMA_CATALOG and iid not in self.sources.bundled() else None),
+                            summary=company.get('profile', {}).get('purpose') or company.get('profile', {}).get('products')))
             self._positions, self._position_revision = index, revision
         ckg = self.sources.company_positions()
         items = []
         for symbol in symbols:
             with self.db.connect() as c:
                 current = c.execute('SELECT name FROM securities WHERE symbol=?', (symbol,)).fetchone()
-            historical = [r for r in ckg.get(symbol, []) if current and r.get('historical_names') == [current['name']]]
-            roles = [r for r in self._positions.get(symbol, []) if current and r.get('company_name') == current['name']] + historical
+            published_ids = {iid for iid, graph in original_graphs.items() if graph.get('source_kind') == 'curated_v02'}
+            historical = [r for r in ckg.get(symbol, []) if r['industry_id'] not in published_ids and current and r.get('historical_names') == [current['name']]]
+            roles = [r for r in self._positions.get(symbol, []) if current and (r.get('verified_binding') or r.get('company_name') == current['name'])] + historical
             unique = {(r['industry_id'], r['node_id'], r.get('result_id'), r['role']): r for r in roles}
             items.append(dict(symbol=symbol, roles=list(unique.values()), warnings=[], status='ready'))
-        return dict(items=items, version=str(revision))
+        return dict(items=items, version=version([revision, [(iid, g['version']) for iid, g in original_graphs.items()]]))
 
     def association_catalog(self, refresh=False):
         # Never scan external JSONL, or call a model, on synchronous news GETs.
@@ -191,6 +202,24 @@ class IndustryResearch:
         cached = self.db.get('industry-association:' + nv)
         if cached and cached.get('input_version') == nv:
             links += cached['links']
+        # Completed analyze associations are also readable in per-progress views.
+        # Event-context hashes and progress hashes differ: join by exact immutable
+        # article/version proof, never by title or by a different progress's ID.
+        article_map = {a['id']: a for a in articles}
+        if article_map:
+            with self.db.connect() as c:
+                marks = ','.join('?' for _ in article_map)
+                rows = c.execute('SELECT data FROM analyses WHERE event_id IN (SELECT DISTINCT event_id FROM articles WHERE id IN (' + marks + '))', tuple(article_map)).fetchall()
+            for row in rows:
+                analysis = json.loads(row[0])
+                association = analysis.get('industry_association', {})
+                if analysis.get('status') != 'complete' or association.get('status') != 'complete' or association.get('evidence_version') != analysis.get('evidence_version'):
+                    continue
+                for link in association.get('links', []):
+                    proof = [e for e in link.get('evidence', []) if e.get('article_id') in article_map and
+                        e.get('article_version') == version({k: article_map[e['article_id']].get(k) for k in ('id', 'title', 'content', 'published_at')}) and text_quote(e.get('quote'), article_map[e['article_id']])]
+                    if proof:
+                        links.append(dict(link, evidence=proof, projection_news_version=nv))
         # Preserve broad relevance even when there is no exact transmission path.
         unique = {x['industry_id']: x for x in links}
         for impact in impacts:
@@ -198,7 +227,7 @@ class IndustryResearch:
         if self._source_versions is None:
             # Original immutable documents: versioned independently from news.
             from pathlib import Path
-            root = Path(__file__).resolve().parent.parent / 'frontend/public/industry/data'
+            root = Path(__file__).resolve().parent / 'data' / 'panorama'
             self._source_versions = {}
             for iid in PANORAMA_CATALOG:
                 try:
@@ -206,6 +235,16 @@ class IndustryResearch:
                 except (OSError, ValueError):
                     self._source_versions[iid] = None
         bound = industry_impact.bind(impacts, nv, self._source_versions)
+        if self.curated:
+            current = {i['industry_id']: i['current_release'] for i in self.curated.catalog()['items'] if i['current_release']}
+            def bind_current(link):
+                rid = current.get(link['industry_id'])
+                if rid and (link.get('graph_release_id') or link.get('source_version')) != rid:
+                    return dict(link, node_ids=[], relation='association', binding_status='graph_release_mismatch',
+                        condition='当前发布结构已变化；仅保留主题关联，不把旧节点映射到新ID。')
+                return link
+            bound = [bind_current(link) for link in bound]
+            unique = {iid: bind_current(link) for iid, link in unique.items()}
         return list(unique.values()), bound, nv, cv
 
     def association_payload(self, item):
@@ -216,9 +255,45 @@ class IndustryResearch:
         return dict(event_id=item['event_id'], progress_id=item['id'], articles=articles,
                     catalog=catalog, input_version=industry_association.binding(articles, self.catalog_version()))
 
+    def completion_association(self, eid, articles, evidence_version, payload, jid, update):
+        """Synchronous part of analyze, never a second queued completion job."""
+        if payload.get('data_mode') != 'local':
+            raise UserError('ycore未声明同版本产业关联完成能力；未回退本地目录，待核查', 501)
+        catalog = self.association_catalog()
+        cv = self.catalog_version()
+        nv = industry_association.binding(articles, cv)
+        links = industry_association.associate(articles, catalog)
+        if not links:
+            request = dict(payload, event_id=eid, progress_id='analysis:' + evidence_version,
+                articles=[{k: a.get(k) for k in ('id', 'title', 'content', 'published_at')} for a in articles],
+                catalog=[{k: i[k] for k in ('id', 'name')} for i in catalog], input_version=nv)
+            if len(dump(request['articles'])) > 150000:
+                raise UserError('新闻关联输入过大，待核查；分析不得标记完成', 413)
+            self.run_association(jid, request, update)
+            links = self.db.get('industry-association:' + nv, {}).get('links', [])
+        validated = []
+        by_id = {a['id']: a for a in articles}
+        for link in links:
+            if not link.get('industry_id') or not link.get('name') or link['name'] in ('产业', '行业', '其他', '未知', '经济', '市场'):
+                continue
+            proof = []
+            for e in link.get('evidence', []):
+                a = by_id.get(e.get('article_id'))
+                if a and text_quote(e.get('quote'), a):
+                    proof.append(dict(e, article_version=version({k: a.get(k) for k in ('id', 'title', 'content', 'published_at')})))
+            if proof:
+                validated.append(dict(link, evidence=proof, news_version=evidence_version,
+                    association_id='association:' + version([eid, evidence_version, link['industry_id']]), revision=1,
+                    reason=link['mechanism'], catalog_version=cv, association_algorithm_version=industry_association.VERSION,
+                    created_at=utcnow(), maintenance_status='not_maintained' if link['industry_id'].startswith('open-') else 'identity_only'))
+        if not validated:
+            raise UserError('没有具备具体产业身份与原文证据的可靠关联，待核查；未强配维护清单', 422)
+        return dict(status='complete', event_id=eid, evidence_version=evidence_version, news_version=nv,
+                    catalog_version=cv, links=validated, created_at=utcnow())
+
     def run_association(self, jid, payload, update):
         cache_key = 'industry-association:' + payload['input_version']
-        if self.db.get(cache_key):
+        if self.db.get(cache_key, {}).get('links'):
             return '已有同版本关联结果，未重复调用模型'
         industries = self.industries
         industries.check_destination(payload)
@@ -249,6 +324,8 @@ class IndustryResearch:
                 raise ValueError()
         except (KeyError, IndexError, TypeError, ValueError, UpstreamError):
             raise UserError('产业关联补充失败或证据不合格；来源关联与新闻已保留', 502) from None
+        if not links:
+            raise UserError('本新闻版本未得到可靠具体产业关联，保留待核查', 422)
         for secret in (industries.settings.key('model'), industries.settings.key('ycore')):
             if secret and secret in dump(dict(links=links, model=model)):
                 raise UserError('关联响应不合格，未保存', 422)

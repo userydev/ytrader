@@ -76,7 +76,12 @@ def validate_catalog(data):
     return data
 
 
-def validate_panorama(data, industry_id, securities=None):
+def validate_draft_panorama(data, industry_id):
+    require(data.get('format') == 'curated-chain-draft-v02')
+    return validate_panorama(data, industry_id, allow_draft=True)
+
+
+def validate_panorama(data, industry_id, securities=None, *, allow_draft=False):
     string(industry_id)
     if securities is not None:
         validate_panorama_securities(securities)
@@ -87,14 +92,39 @@ def validate_panorama(data, industry_id, securities=None):
         require(data['industry_id'] == industry_id)
     for key in ('name', 'summary', 'boundary', 'demand'):
         string(industry[key])
-    require(data['format'] in (1, 'industry-reference-v1') and type(data['format']) is not bool)
+    draft = data['format'] == 'curated-chain-draft-v02'
+    require(data['format'] in (1, 'industry-reference-v1', 'curated-chain-v02') or (allow_draft and draft))
+    require(type(data['format']) is not bool)
+    curated = data['format'] == 'curated-chain-v02' or draft
+    if curated:
+        require(data.get('source_kind') == 'curated_v02')
+        if draft:
+            proposal = obj(data.get('draft'), ('package_id', 'saved_at', 'status', 'proposed_releases'))
+            string(proposal['package_id'])
+            stamp(proposal['saved_at'])
+            array(proposal['proposed_releases'])
+            require(data['status'] == proposal['status'] == 'draft' and data.get('release') is None)
+            require(data['version'] == 'draft:' + proposal['package_id'])
+            require('published_at' not in proposal)
+        else:
+            require(data['status'] == 'published')
+            publication = obj(data.get('release'), ('release_id', 'package_id', 'published_at', 'status'))
+            require(publication['status'] == 'published' and publication['release_id'] == data['version'])
+            string(publication['package_id'])
+            stamp(publication['published_at'])
+        array(data.get('memberships'))
+        array(data.get('evidence'))
+        array(data.get('securities'))
     string(data['status'])
     string(data['version'])
     nodes, relations, companies, sources = (ids(data[k]) for k in ('nodes', 'relations', 'companies', 'sources'))
     require(bool(nodes))
     for source in data['sources']:
         string(source['title'])
-        web_url(source['url'])
+        if curated and not source.get('url'):
+            string(source.get('local_document_id'))
+        else:
+            web_url(source['url'])
     for node in data['nodes']:
         string(node['name'])
         string(node['description'])
@@ -331,6 +361,8 @@ def transmission_links(data):
 def validate_transmission_references(data, graphs):
     for link in transmission_links(data):
         graph = graphs[link['industry_id']]
+        if graph.get('source_kind') == 'curated_v02' and link['node_ids']:
+            require((link.get('graph_release_id') or link.get('source_version')) == graph['version'])
         refs(link['node_ids'], ids(graph['nodes']))
 
 

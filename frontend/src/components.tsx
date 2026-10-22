@@ -1,7 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import type { FormEvent, ReactNode } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, RefreshCw, Search } from 'lucide-react';
+import { ArrowUpRight, RefreshCw, Search } from 'lucide-react';
 import { dateTime, post, safeUrl } from './api';
 import { useAction, useApi } from './hooks';
 import type { Job, Meta } from './types';
@@ -22,7 +21,6 @@ export function ErrorBox({ message, retry }: { message: string | null; retry?: (
   if (!message) return null;
   return <div className="message error" role="alert"><p>{message}</p>{retry && <button type="button" onClick={retry}>重试</button>}</div>;
 }
-export function Notice({ message }: { message: string | null }) { return message ? <p className="message success" role="status">{message}</p> : null; }
 export function Loading({ label = '正在读取数据…' }: { label?: string }) { return <p className="loading" role="status"><RefreshCw size={15} aria-hidden="true" />{label}</p>; }
 export function Empty({ title, children }: { title: string; children?: ReactNode }) {
   return <div className="empty"><h3>{title}</h3>{children && <div>{children}</div>}</div>;
@@ -63,12 +61,6 @@ export function JobProgress({ job, onFinish }: { job: Job; onFinish?: (job: Job)
 }
 export function PageHeader({ title, description, children }: { title: string; description?: string; children?: ReactNode }) {
   return <header className="page-header"><div><h1>{title}</h1>{description && <p>{description}</p>}</div>{children && <div className="header-actions">{children}</div>}</header>;
-}
-export function ContextReturn() {
-  const location = useLocation();
-  const state = location.state as { returnTo?: unknown; returnLabel?: unknown; returnState?: unknown } | null;
-  if (typeof state?.returnTo !== 'string' || !/^\/(events|securities|chain)(\/|\?|$)/.test(state.returnTo)) return null;
-  return <Link className="back-link context-return" to={state.returnTo} state={state.returnState}><ArrowLeft size={16} aria-hidden="true" />{typeof state.returnLabel === 'string' ? state.returnLabel : '返回上一研究路径'}</Link>;
 }
 export function Status({ value }: { value: string }) {
   const labels: Record<string, string> = {

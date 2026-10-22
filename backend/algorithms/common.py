@@ -1,16 +1,27 @@
 """Text/time primitives shared by pure rules; never consult the current clock."""
 import re
 from datetime import datetime
+from functools import lru_cache
+
+
+_ASCII_LETTER = re.compile(r'[A-Za-z]')
 
 
 def timestamp(value):
     return datetime.fromisoformat(value.replace('Z', '+00:00'))
 
 
+@lru_cache(maxsize=8192)
+def _rule_pattern(term):
+    """Retain bounded compiled rules, never article text or match results."""
+    pattern = re.escape(term)
+    if _ASCII_LETTER.search(term):
+        pattern = r'(?<![A-Za-z0-9_])' + pattern + r'(?![A-Za-z0-9_])'
+    return re.compile(pattern, re.I)
+
+
 def matches(value, term):
-    if re.search(r'[A-Za-z]', term):
-        return re.search(r'(?<![A-Za-z0-9_])' + re.escape(term) + r'(?![A-Za-z0-9_])', value, re.I)
-    return re.search(re.escape(term), value, re.I)
+    return _rule_pattern(term).search(value)
 
 
 def hits(value, terms):

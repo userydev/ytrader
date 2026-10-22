@@ -1,0 +1,4443 @@
+{
+  "nodes": [
+    {
+      "node_id": "gold:exploration",
+      "name": "黄金资源勘查",
+      "kind": "activity",
+      "description": "黄金资源勘查与开发前工作；不把资源发现等同于已可经济开采。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-explore",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-explore",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:mining",
+      "name": "黄金采矿",
+      "kind": "activity",
+      "description": "适用的金矿开采业务；砂金与硬岩、不同矿山方法不强行合并为一种具体采法。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lode",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:placer",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zijin-mining",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:rom_ore",
+      "name": "采出原矿石",
+      "kind": "product",
+      "description": "所引硬岩选冶流程的原矿投入；不是所有黄金供给的共同起点。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:rom",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:crushing_milling",
+      "name": "破碎、磨矿与分级",
+      "kind": "activity",
+      "description": "原矿的适用物理准备；不把矿石变成另一种易处理/难处理性质。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:crush",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:prepared_ore",
+      "name": "经破碎磨细的含金物料",
+      "kind": "product",
+      "description": "物理准备后的含金物料；易处理或难处理是矿性条件，不是该工序新生产的矿种。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:crush",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:flotation",
+      "name": "适用矿石浮选富集",
+      "kind": "activity",
+      "description": "所引难处理矿路线的浮选环节；不代表所有金矿采用浮选。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:float",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:gold_concentrate",
+      "name": "含金精矿",
+      "kind": "product",
+      "description": "适用选矿富集形成的含金精矿；成分与后续处理按矿性限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:float",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:pre_treatment",
+      "name": "难处理含金物料预处理",
+      "kind": "activity",
+      "description": "所引难处理路线在浸出前采取适用氧化等预处理；不固定为同一种方法。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:pretreated_feed",
+      "name": "适于后续浸出的预处理含金物料",
+      "kind": "product",
+      "description": "难处理路线预处理后的物料接口，不强行规定统一物相或全部固液分离步骤。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:leaching_recovery",
+      "name": "浸出吸附、解吸与金房回收",
+      "kind": "activity",
+      "description": "按所引流程聚合浸出/CIL或CIP、解吸与金房作业；不表示浸出一步直接变成粗金。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:goldroom",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:dore",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:gold_dore",
+      "name": "粗金与合质金",
+      "kind": "product",
+      "description": "金房回收或披露生产经营中的合质金接口；不统一设定成分或纯度。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:dore",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-sales",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:refining_process",
+      "name": "黄金精炼",
+      "kind": "activity",
+      "description": "将适用含金原料进一步精炼；电解、Miller与王水等是方法实例，不要求全部串行采用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:refine",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-refine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:fine_gold",
+      "name": "精炼金与标准金",
+      "kind": "product",
+      "description": "经精炼并按适用标准交付的金属金；不统一假定单一纯度或所有产品具有Good Delivery资格。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:refine",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-refine",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:base_metal_processing",
+      "name": "有色金属矿处理与副产金回收接口",
+      "kind": "activity",
+      "description": "跨链供给接口：所引USGS说明某些金来自有色金属矿处理的副产回收，不展开全部铜冶炼工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:byproduct",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:byproduct_gold",
+      "name": "有色金属矿处理副产回收金",
+      "kind": "product",
+      "description": "副产回收的黄金供给接口；材料形态和后续精炼需求未统一规定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:byproduct",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:gold_scrap",
+      "name": "新旧含金废料",
+      "kind": "product",
+      "description": "可用于二次精炼的适用新旧含金废料；不假定所有电子废物可直接入炉。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:secondary",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:gold_scrap_recycling",
+      "name": "废金回收加工与二次精炼",
+      "kind": "activity",
+      "description": "聚合适用废金回收、加工和二次精炼的多阶段路径；企业角色仅表示其明确披露参与的部分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:secondary",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:lf-recycle",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:jewellery_manufacturing",
+      "name": "黄金珠宝首饰制造",
+      "kind": "activity",
+      "description": "黄金珠宝的设计与加工制造接口，不设定全部首饰采用同一铸造法或纯度。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:jewellery_products",
+      "name": "黄金珠宝首饰",
+      "kind": "product",
+      "description": "适用黄金珠宝首饰产出；仅取黄金相关部分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:jewellery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:jewellery_marketing",
+      "name": "黄金珠宝营销与销售",
+      "kind": "activity",
+      "description": "黄金珠宝适用的品牌、批发、零售等销售渠道；不等同于矿山供货合同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:jewellery_application",
+      "name": "首饰佩戴与消费用途",
+      "kind": "application",
+      "description": "黄金作为珠宝饰品材料的用途。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:jewellery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:minting_bars_coins",
+      "name": "实物金制品加工",
+      "kind": "activity",
+      "description": "金条、金币等实物金制品的制造接口；不指定压铸技术，也不把销售角色当制造角色。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:investment_bullion",
+      "name": "金条、金币等实物金制品",
+      "kind": "product",
+      "description": "实物金产品集合；具体形制、用途和发行主体分别限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:bullion_marketing",
+      "name": "合质金、标准金与实物金制品销售",
+      "kind": "activity",
+      "description": "披露主体的黄金产品交易和销售业务；不推定任何具体客户或供应关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-sales",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:investment_application",
+      "name": "黄金投资用途",
+      "kind": "application",
+      "description": "黄金的投资用途类别；不在本数据中记录收益、价格、配置比例或风险结论。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:investment",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:reserve_application",
+      "name": "中央银行黄金储备用途",
+      "kind": "application",
+      "description": "黄金作为中央银行储备资产的用途类别，不推定其具体金制品组合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:reserves",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:electronics_application",
+      "name": "电子与相关工业用金",
+      "kind": "application",
+      "description": "黄金在消费电子和汽车等技术领域的材料用途；不假定所有器件使用相同金材料形态。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:electronics",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:leach_residues",
+      "name": "所引浸出路线尾矿残余物",
+      "kind": "product",
+      "description": "在所引流程中进入解毒与尾矿处理支路的残余物流，不给出成分或排放限值。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:detox",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:tailings",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:tailings_handling",
+      "name": "适用尾矿解毒与处理",
+      "kind": "activity",
+      "description": "所引Metso流程的Detox/ASTER与尾矿处理接口；具体方案依矿石和装置，不作为现行法律合规结论。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:detox",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:tailings",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:grinding_equipment",
+      "name": "磨矿设备接口",
+      "kind": "product",
+      "description": "以资料列示的磨机为例；不把全部设备功能或所有供应商兼容性写成已证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:mill",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:equipment_manufacturing",
+      "name": "黄金矿山装备制造",
+      "kind": "activity",
+      "description": "年报披露的矿山装备制造活动；未展开具体型号、客户或订单。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:mining_equipment",
+      "name": "黄金矿山装备",
+      "kind": "product",
+      "description": "黄金矿山专用装备接口，不把选冶磨机或所有非矿山设备混为一类。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:technical_services",
+      "name": "黄金生产技术研发与咨询服务",
+      "kind": "service",
+      "description": "所披露的黄金生产技术研发、咨询服务；不由此推断任意项目或细分工序的已发生服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-technical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:assay_services",
+      "name": "贵金属化验检验服务",
+      "kind": "service",
+      "description": "所引Good Delivery申请流程中的样本化验与金锭测试服务实例。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:assay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:bartest",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "gold:quality_assurance",
+      "name": "申请金属样本及金锭质量验证",
+      "kind": "activity",
+      "description": "所引Good Delivery申请质量验证活动，不是全部黄金或所有精炼厂的共同必经生产步骤。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:assay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:bartest",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "gold",
+      "node_id": "gold:exploration",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:mining",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:rom_ore",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:crushing_milling",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:prepared_ore",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:flotation",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:gold_concentrate",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:pre_treatment",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:pretreated_feed",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:leaching_recovery",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:gold_dore",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:refining_process",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:fine_gold",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:base_metal_processing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:byproduct_gold",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:gold_scrap",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:gold_scrap_recycling",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:jewellery_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:jewellery_products",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:jewellery_marketing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:jewellery_application",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:minting_bars_coins",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:investment_bullion",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:bullion_marketing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:investment_application",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:reserve_application",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:electronics_application",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:leach_residues",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:tailings_handling",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:grinding_equipment",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:equipment_manufacturing",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:mining_equipment",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:technical_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:assay_services",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    },
+    {
+      "industry_id": "gold",
+      "node_id": "gold:quality_assurance",
+      "revision": 1,
+      "context_note": "本链采用的定义和限定范围；成员关系不额外表示技术、交易或因果事实。"
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:gold:research",
+      "industry_id": "gold",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "resources",
+          "name": "资源与开采",
+          "node_ids": [
+            "gold:exploration",
+            "gold:mining",
+            "gold:rom_ore",
+            "gold:base_metal_processing",
+            "gold:byproduct_gold"
+          ]
+        },
+        {
+          "group_id": "processing",
+          "name": "适用选冶支路",
+          "node_ids": [
+            "gold:crushing_milling",
+            "gold:prepared_ore",
+            "gold:flotation",
+            "gold:gold_concentrate",
+            "gold:pre_treatment",
+            "gold:pretreated_feed",
+            "gold:leaching_recovery",
+            "gold:gold_dore"
+          ]
+        },
+        {
+          "group_id": "refining-recycling",
+          "name": "精炼与再生供给",
+          "node_ids": [
+            "gold:refining_process",
+            "gold:fine_gold",
+            "gold:gold_scrap",
+            "gold:gold_scrap_recycling"
+          ]
+        },
+        {
+          "group_id": "products",
+          "name": "制品加工与营销",
+          "node_ids": [
+            "gold:jewellery_manufacturing",
+            "gold:jewellery_products",
+            "gold:jewellery_marketing",
+            "gold:minting_bars_coins",
+            "gold:investment_bullion",
+            "gold:bullion_marketing"
+          ]
+        },
+        {
+          "group_id": "uses",
+          "name": "主要用途",
+          "node_ids": [
+            "gold:jewellery_application",
+            "gold:investment_application",
+            "gold:reserve_application",
+            "gold:electronics_application"
+          ]
+        },
+        {
+          "group_id": "support",
+          "name": "装备技术与质量验证",
+          "node_ids": [
+            "gold:grinding_equipment",
+            "gold:equipment_manufacturing",
+            "gold:mining_equipment",
+            "gold:technical_services",
+            "gold:assay_services",
+            "gold:quality_assurance"
+          ]
+        },
+        {
+          "group_id": "tailings",
+          "name": "尾矿配套接口",
+          "node_ids": [
+            "gold:leach_residues",
+            "gold:tailings_handling"
+          ]
+        }
+      ],
+      "reading_order": [
+        "resources",
+        "processing",
+        "refining-recycling",
+        "products",
+        "uses",
+        "support",
+        "tailings"
+      ],
+      "relation_ids": [
+        "rel:gold:explore-mine",
+        "rel:gold:mine-ore",
+        "rel:gold:ore-prepare",
+        "rel:gold:prepare-material",
+        "rel:gold:prepared-float",
+        "rel:gold:float-concentrate",
+        "rel:gold:concentrate-pretreat",
+        "rel:gold:pretreat-feed",
+        "rel:gold:pretreated-leach",
+        "rel:gold:free-leach",
+        "rel:gold:recover-dore",
+        "rel:gold:dore-refine",
+        "rel:gold:refined-gold",
+        "rel:gold:base-byproduct",
+        "rel:gold:scrap-recycle",
+        "rel:gold:secondary-gold",
+        "rel:gold:gold-jewellery",
+        "rel:gold:jewellery-output",
+        "rel:gold:jewellery-sales",
+        "rel:gold:jewellery-use",
+        "rel:gold:gold-fabrication",
+        "rel:gold:bullion-output",
+        "rel:gold:bullion-sales",
+        "rel:gold:standard-sales",
+        "rel:gold:investment-use",
+        "rel:gold:reserve-use",
+        "rel:gold:electronics-use",
+        "rel:gold:leach-residues",
+        "rel:gold:tailings-input",
+        "rel:gold:mill-use",
+        "rel:gold:equipment-output",
+        "rel:gold:mining-equipment-use",
+        "rel:gold:assay-support",
+        "rel:gold:qa-gold"
+      ],
+      "note": "阅读分组，不等同于事实边或因果路径；不存UI状态。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:gold:explore-mine",
+      "from_node_id": "gold:exploration",
+      "to_node_id": "gold:mining",
+      "kind": "supports",
+      "statement": "黄金资源勘查为适用的矿山开发与开采提供基础。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-explore",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:mine-ore",
+      "from_node_id": "gold:mining",
+      "to_node_id": "gold:rom_ore",
+      "kind": "produces",
+      "statement": "适用硬岩采矿路线交付供后续处理的原矿石。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:rom",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:lode",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅硬岩原矿接口；不覆盖全部砂金或伴生供给。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:ore-prepare",
+      "from_node_id": "gold:rom_ore",
+      "to_node_id": "gold:crushing_milling",
+      "kind": "input_to",
+      "statement": "原矿进入所引破碎磨矿准备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:rom",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:crush",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:prepare-material",
+      "from_node_id": "gold:crushing_milling",
+      "to_node_id": "gold:prepared_ore",
+      "kind": "produces",
+      "statement": "物理准备形成经破碎磨细的含金物料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:crush",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:prepared-float",
+      "from_node_id": "gold:prepared_ore",
+      "to_node_id": "gold:flotation",
+      "kind": "input_to",
+      "statement": "适用难处理矿支路进入浮选富集。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:float",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:float-concentrate",
+      "from_node_id": "gold:flotation",
+      "to_node_id": "gold:gold_concentrate",
+      "kind": "produces",
+      "statement": "适用浮选富集形成含金精矿。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:float",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:concentrate-pretreat",
+      "from_node_id": "gold:gold_concentrate",
+      "to_node_id": "gold:pre_treatment",
+      "kind": "input_to",
+      "statement": "需预处理的含金精矿进入适用预处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:float",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:pretreat-feed",
+      "from_node_id": "gold:pre_treatment",
+      "to_node_id": "gold:pretreated_feed",
+      "kind": "produces",
+      "statement": "预处理形成供后续浸出的适用含金物料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:pretreated-leach",
+      "from_node_id": "gold:pretreated_feed",
+      "to_node_id": "gold:leaching_recovery",
+      "kind": "input_to",
+      "statement": "所引难处理路线的预处理物料衔接浸出回收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:free-leach",
+      "from_node_id": "gold:prepared_ore",
+      "to_node_id": "gold:leaching_recovery",
+      "kind": "input_to",
+      "statement": "所引易处理矿支路经适用浓密等准备衔接浸出回收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:pretreat",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅适用易处理矿路线；不表示矿性由磨矿生产，也不删除实际所需浓密等准备。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:recover-dore",
+      "from_node_id": "gold:leaching_recovery",
+      "to_node_id": "gold:gold_dore",
+      "kind": "produces",
+      "statement": "所引复合回收流程经解吸与金房作业产出粗金。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:goldroom",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:dore",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:dore-refine",
+      "from_node_id": "gold:gold_dore",
+      "to_node_id": "gold:refining_process",
+      "kind": "input_to",
+      "statement": "适用合质金等原料进入精炼加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-refine",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:zhongjin-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "中金黄金披露的原料与生产模式接口，不是所有粗金的同一具体流程。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:refined-gold",
+      "from_node_id": "gold:refining_process",
+      "to_node_id": "gold:fine_gold",
+      "kind": "produces",
+      "statement": "精炼加工产出适用标准金。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-refine",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:refine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:base-byproduct",
+      "from_node_id": "gold:base_metal_processing",
+      "to_node_id": "gold:byproduct_gold",
+      "kind": "produces",
+      "statement": "某些黄金供给来自有色金属矿处理的副产回收。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:byproduct",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "所引USGS美国供给实例；不规定统一中间物相或后续精炼节点。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:scrap-recycle",
+      "from_node_id": "gold:gold_scrap",
+      "to_node_id": "gold:gold_scrap_recycling",
+      "kind": "input_to",
+      "statement": "适用新旧含金废料进入回收加工与二次精炼路径。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:secondary",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "USGS炼厂二次产出接口；不代表任意废电子产品可直接进入同一设备。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:secondary-gold",
+      "from_node_id": "gold:gold_scrap_recycling",
+      "to_node_id": "gold:fine_gold",
+      "kind": "produces",
+      "statement": "适用废金的复合回收与二次精炼形成再生精炼金供给。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:secondary",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "聚合多阶段路径，不表示简单回购或一次破碎即直接产出标准金。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:gold-jewellery",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:jewellery_manufacturing",
+      "kind": "input_to",
+      "statement": "金属金投入适用首饰制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:jewellery-output",
+      "from_node_id": "gold:jewellery_manufacturing",
+      "to_node_id": "gold:jewellery_products",
+      "kind": "produces",
+      "statement": "黄金首饰制造形成相应金饰产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:jewellery-sales",
+      "from_node_id": "gold:jewellery_products",
+      "to_node_id": "gold:jewellery_marketing",
+      "kind": "input_to",
+      "statement": "适用黄金珠宝首饰进入营销销售渠道。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "老凤祥披露的业务接口，未推定具体客户或成交。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:jewellery-use",
+      "from_node_id": "gold:jewellery_products",
+      "to_node_id": "gold:jewellery_application",
+      "kind": "used_for",
+      "statement": "黄金珠宝首饰用于相应饰品消费。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:jewellery",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:gold-fabrication",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:minting_bars_coins",
+      "kind": "input_to",
+      "statement": "金属金用于适用金条金币等实物制品制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "USGS列举的制品接口，不指定具体成型法或任何公司金币发行资格。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:bullion-output",
+      "from_node_id": "gold:minting_bars_coins",
+      "to_node_id": "gold:investment_bullion",
+      "kind": "produces",
+      "statement": "适用实物金制品加工产出金条金币等产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:fabrication",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:bullion-sales",
+      "from_node_id": "gold:investment_bullion",
+      "to_node_id": "gold:bullion_marketing",
+      "kind": "input_to",
+      "statement": "适用金条等产品进入披露的黄金产品销售业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "山东黄金披露的产品和深加工销售业务接口，不推出金币销售或具体交易关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:standard-sales",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:bullion_marketing",
+      "kind": "input_to",
+      "statement": "标准金等黄金产品进入披露的销售安排。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "中金黄金披露的合质金/标准金销售模式；不记录价格或客户。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:investment-use",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:investment_application",
+      "kind": "used_for",
+      "statement": "黄金具有投资用途类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:investment",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅材料与用途映射，不作配置或回报结论。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:reserve-use",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:reserve_application",
+      "kind": "used_for",
+      "statement": "黄金用于中央银行储备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:reserves",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "不推定中央银行持有金币、任何具体产品或本期买卖。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:electronics-use",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:electronics_application",
+      "kind": "used_for",
+      "statement": "适用金材料用于电子和相关技术产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:electronics",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "具体部件、金合金和加工形态依应用限定。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:leach-residues",
+      "from_node_id": "gold:leaching_recovery",
+      "to_node_id": "gold:leach_residues",
+      "kind": "produces",
+      "statement": "所引浸出支路形成进入尾矿处理的残余物流。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:leach",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:detox",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:tailings",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅Metso所引流程侧支路，不将全部复合回收产物当尾矿。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:tailings-input",
+      "from_node_id": "gold:leach_residues",
+      "to_node_id": "gold:tailings_handling",
+      "kind": "input_to",
+      "statement": "所引尾矿残余物进入适用解毒与处理活动。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:detox",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:tailings",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "结构示意，只对所引矿石和工艺条件适用，不证明所有地区或企业均采用此路线。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:mill-use",
+      "from_node_id": "gold:grinding_equipment",
+      "to_node_id": "gold:crushing_milling",
+      "kind": "used_for",
+      "statement": "磨机等适用设备用于磨矿环节。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:mill",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:crush",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只证明设备功能接口，不证明供应商、订单、完整装备组合或兼容性。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:equipment-output",
+      "from_node_id": "gold:equipment_manufacturing",
+      "to_node_id": "gold:mining_equipment",
+      "kind": "produces",
+      "statement": "适用矿山装备制造活动交付矿山专用装备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "山东黄金年报业务层级接口；没有具体设备型号或产能主张。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:mining-equipment-use",
+      "from_node_id": "gold:mining_equipment",
+      "to_node_id": "gold:mining",
+      "kind": "used_for",
+      "statement": "适用黄金矿山专用装备服务采矿等矿山作业。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅适用装备部分，不能推出任意型号支持全部采选工序。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:assay-support",
+      "from_node_id": "gold:assay_services",
+      "to_node_id": "gold:quality_assurance",
+      "kind": "supports",
+      "statement": "样本化验与金锭测试服务支持所引申请质量验证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:assay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:bartest",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "仅Good Delivery申请流程实例，不作为所有精炼业务通用的强制条件。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:gold:qa-gold",
+      "from_node_id": "gold:fine_gold",
+      "to_node_id": "gold:quality_assurance",
+      "kind": "input_to",
+      "statement": "申请流程中的适用金属样本和金锭进入质量测试。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:assay",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:bartest",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "applicability": {
+        "coverage": "schematic",
+        "region": null,
+        "technology": null,
+        "products": null,
+        "note": "只指被送检的样本及金锭，不表示所有精炼金均接受该申请测试。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company:gold:zijin",
+      "name": "紫金矿业集团股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:laofengxiang",
+      "name": "老凤祥股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:zhongjin",
+      "name": "中金黄金股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:shandong",
+      "name": "山东黄金矿业股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:shandong-refining",
+      "name": "山东黄金冶炼有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-refiner-name",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "company_id": "company:gold:zijin",
+      "symbol": "SH:601899",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:laofengxiang",
+      "symbol": "SH:600612",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:zhongjin",
+      "symbol": "SH:600489",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company:gold:shandong",
+      "symbol": "SH:600547",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-security",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:gold:zijin-explore",
+      "company_id": "company:gold:zijin",
+      "node_id": "gold:exploration",
+      "role": "黄金资源勘查与开发",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-explore",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zijin-mining",
+      "company_id": "company:gold:zijin",
+      "node_id": "gold:mining",
+      "role": "矿山黄金生产",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。未采用海域金矿等尚待建成项目作现有加工能力证明。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zijin-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:lf-manufacturing",
+      "company_id": "company:gold:laofengxiang",
+      "node_id": "gold:jewellery_manufacturing",
+      "role": "黄金珠宝首饰设计与生产",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:lf-marketing",
+      "company_id": "company:gold:laofengxiang",
+      "node_id": "gold:jewellery_marketing",
+      "role": "黄金珠宝首饰销售",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:lf-recycling",
+      "company_id": "company:gold:laofengxiang",
+      "node_id": "gold:gold_scrap_recycling",
+      "role": "旧金回收加工业务试点",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。仅2025已披露试点参与，不证明企业内部完成全部二次精炼或全国成熟产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:lf-recycle",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zhongjin-explore",
+      "company_id": "company:gold:zhongjin",
+      "node_id": "gold:exploration",
+      "role": "黄金地质勘查业务投资与管理",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。保留投资管理口径。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-explore",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zhongjin-mining",
+      "company_id": "company:gold:zhongjin",
+      "node_id": "gold:mining",
+      "role": "自营与外包结合的黄金矿山生产",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。采选模式不自动证明各细分设备或具体矿山工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zhongjin-refining",
+      "company_id": "company:gold:zhongjin",
+      "node_id": "gold:refining_process",
+      "role": "自产及外购含金原料精炼加工",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-refine",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zhongjin-tech",
+      "company_id": "company:gold:zhongjin",
+      "node_id": "gold:technical_services",
+      "role": "黄金生产技术研发与咨询服务",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。不推定具体项目客户或所服务的细分工序。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-technical",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:zhongjin-sales",
+      "company_id": "company:gold:zhongjin",
+      "node_id": "gold:bullion_marketing",
+      "role": "合质金与标准金销售",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:zhongjin-sales",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-explore",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:exploration",
+      "role": "黄金资源勘查",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-business",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-mining",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:mining",
+      "role": "黄金矿山分散采选经营",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-mining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-refining",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:refining_process",
+      "role": "合并业务中的黄金冶炼与精炼",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。报告具名经营主体为山东黄金冶炼有限公司；未将其能力写成上市母法人直接经营。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-refiner-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-refining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-fabrication",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:minting_bars_coins",
+      "role": "投资金条等黄金产品深加工",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。本角色只取披露的金条等深加工，不证明金币造币业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-products",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-sales",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:bullion_marketing",
+      "role": "黄金产品深加工与销售",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-equipment",
+      "company_id": "company:gold:shandong",
+      "node_id": "gold:equipment_manufacturing",
+      "role": "黄金矿山装备制造",
+      "scope": "2025年报合并业务口径；只取黄金部分，不代表上市母公司法人独立运营所有设施，不转移母集团或其他关联主体业务。不推定客户、具体设备型号或独立企业间供货。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-fabrication",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:gold:sd-refiner-operation",
+      "company_id": "company:gold:shandong-refining",
+      "node_id": "gold:refining_process",
+      "role": "年报具名主体的标准黄金精炼能力",
+      "scope": "2025山东黄金年报规模优势段具名经营主体；未推定股权比例或独立供应关系，不采用数值产能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "e:gold:sd-refiner-name",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "e:gold:sd-refining",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "title": "Gold solutions",
+      "publisher": "Metso Corporation",
+      "url": "https://www.metso.com/globalassets/commodities/gold-solutions-4907-12-23-en-mng.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:51:18.738453+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "technical_process_brochure",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "title": "Gold — Mineral Commodity Summaries 2026",
+      "publisher": "USGS",
+      "url": "https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-gold.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:51:16.616388+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "mineral_commodity_summary",
+      "reporting_period": "2026 report; selected physical structure only, not statistics",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:lbma",
+      "source_version": "sha256:71241f316a1f879882c143ef4717e6c19ceff0a4f243a39a9dd8e3e90149155b",
+      "title": "Application for Good Delivery Listing",
+      "publisher": "LBMA",
+      "url": "https://cdn.lbma.org.uk/downloads/GDL-Assets/GDL-Application-Procedures-20260326.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:51:19.932188+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "application_procedures",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:wgc",
+      "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7",
+      "title": "Gold Demand by Sectors",
+      "publisher": "World Gold Council",
+      "url": "https://www.gold.org/about-gold/gold-demand/by-sector",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:51:17.985258+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "HTMLParser text excluding script/style",
+      "source_type": "official_sector_explanation",
+      "reporting_period": null,
+      "snapshot_representation": "publisher_html_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "title": "紫金矿业集团股份有限公司2025年年度报告摘要",
+      "publisher": "紫金矿业集团股份有限公司",
+      "url": "https://www.zjky.cn/upload/file/2026/03/20/bb50638f28b449db9b1688af53a7bfd7.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:55:36.298414+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "capture_note": "PDF元数据标题残留2024；本轮实际封面及正文为2025年度报告摘要，按原文而非元数据判年。",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:laofengxiang",
+      "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8",
+      "title": "老凤祥股份有限公司2025年年度报告摘要",
+      "publisher": "老凤祥股份有限公司",
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260423/efa22b234f92463895374507f62eabc0.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:55:35.810476+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report_summary",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "title": "中金黄金股份有限公司2025年年度报告",
+      "publisher": "中金黄金股份有限公司",
+      "url": "https://dataclouds.cninfo.com.cn/shgonggao/hsomarket/2026/20260428/75f6b17f2e914ebfb4e5bc06dd1a372a.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:58:05.536643+00:00",
+      "access": "snapshot",
+      "upstream_provider": null,
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "publisher_pdf_bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "title": "山东黄金矿业股份有限公司2025年年度报告（Sina公开附件镜像）",
+      "publisher": "山东黄金矿业股份有限公司",
+      "url": "http://file.finance.sina.com.cn/211.154.219.97:9494/MRGG/CNSESH_STOCK/2026/2026-3/2026-03-27/12022632.PDF",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T19:58:05.520165+00:00",
+      "access": "snapshot",
+      "upstream_provider": "Sina public attachment mirror; report issuer Shandong Gold",
+      "source_capture_pending": false,
+      "extraction_method": "macOS PDFKit",
+      "source_type": "annual_report",
+      "reporting_period": "2025",
+      "snapshot_representation": "issuer_report_pdf_bytes_via_public_mirror",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "e:gold:rom",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; arrows visually inspected on saved rendered page",
+      "excerpt": "ROM ore"
+    },
+    {
+      "evidence_id": "e:gold:crush",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; adjacent physical preparation labels, no reconstructed sentence",
+      "excerpt": "Crushing Milling"
+    },
+    {
+      "evidence_id": "e:gold:float",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 6; p7 flowsheet; refractory branch",
+      "excerpt": "Flotation"
+    },
+    {
+      "evidence_id": "e:gold:pretreat",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 explanatory paragraph",
+      "excerpt": "refractory ores require pre-treatment"
+    },
+    {
+      "evidence_id": "e:gold:leach",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; alternative/combined processes according to ore and design",
+      "excerpt": "Leaching, CIL, CIP"
+    },
+    {
+      "evidence_id": "e:gold:goldroom",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; recovery sequence",
+      "excerpt": "Elution Gold Room"
+    },
+    {
+      "evidence_id": "e:gold:dore",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; gold-room output",
+      "excerpt": "Au Dore"
+    },
+    {
+      "evidence_id": "e:gold:detox",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet; leach-tailings branch",
+      "excerpt": "Detox/ASTER"
+    },
+    {
+      "evidence_id": "e:gold:tailings",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 7; p7 flowsheet",
+      "excerpt": "Tailings processing"
+    },
+    {
+      "evidence_id": "e:gold:mill",
+      "revision": 1,
+      "source_id": "gold-notebook:metso",
+      "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017",
+      "locator": "PDF page 6; p6 Products & services; equipment example",
+      "excerpt": "Grinding mill"
+    },
+    {
+      "evidence_id": "e:gold:lode",
+      "revision": 1,
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "locator": "PDF page 1; Domestic Production and Use; no mine count adopted",
+      "excerpt": "lode mines"
+    },
+    {
+      "evidence_id": "e:gold:placer",
+      "revision": 1,
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "locator": "PDF page 1; Domestic Production and Use; placer process details not inferred",
+      "excerpt": "placer mines"
+    },
+    {
+      "evidence_id": "e:gold:byproduct",
+      "revision": 1,
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "locator": "PDF page 1; Domestic Production and Use; US example",
+      "excerpt": "byproduct of processing domestic base-metal ores"
+    },
+    {
+      "evidence_id": "e:gold:secondary",
+      "revision": 1,
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "locator": "PDF page 1; Salient Statistics table, Refinery production; no tonnage adopted",
+      "excerpt": "Secondary (new and old scrap)"
+    },
+    {
+      "evidence_id": "e:gold:fabrication",
+      "revision": 1,
+      "source_id": "gold-notebook:usgs",
+      "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627",
+      "locator": "PDF page 2; Footnote 3; product fabrication interface, not a specific casting technology",
+      "excerpt": "production of consumer purchased bars, coins, and jewelry"
+    },
+    {
+      "evidence_id": "e:gold:refine",
+      "revision": 1,
+      "source_id": "gold-notebook:lbma",
+      "source_version": "sha256:71241f316a1f879882c143ef4717e6c19ceff0a4f243a39a9dd8e3e90149155b",
+      "locator": "PDF page 12; Footnote 1; refining examples, not a universal route or purity guarantee",
+      "excerpt": "electrolysis, Miller Process\nor Aqua Regia refining."
+    },
+    {
+      "evidence_id": "e:gold:assay",
+      "revision": 1,
+      "source_id": "gold-notebook:lbma",
+      "source_version": "sha256:71241f316a1f879882c143ef4717e6c19ceff0a4f243a39a9dd8e3e90149155b",
+      "locator": "PDF page 5; Application stages; laboratory services",
+      "excerpt": "assaying of samples"
+    },
+    {
+      "evidence_id": "e:gold:bartest",
+      "revision": 1,
+      "source_id": "gold-notebook:lbma",
+      "source_version": "sha256:71241f316a1f879882c143ef4717e6c19ceff0a4f243a39a9dd8e3e90149155b",
+      "locator": "PDF page 5; Application stages; candidate bars tested, not all gold legally subject to this process",
+      "excerpt": "provision of bars for\ntesting"
+    },
+    {
+      "evidence_id": "e:gold:jewellery",
+      "revision": 1,
+      "source_id": "gold-notebook:wgc",
+      "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7",
+      "locator": "Gold demand / Jewellery section",
+      "excerpt": "Gold jewellery"
+    },
+    {
+      "evidence_id": "e:gold:electronics",
+      "revision": 1,
+      "source_id": "gold-notebook:wgc",
+      "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7",
+      "locator": "Technology section; no market-share claim adopted",
+      "excerpt": "The metal is ubiquitous in most consumer electronics and automotive applications"
+    },
+    {
+      "evidence_id": "e:gold:investment",
+      "revision": 1,
+      "source_id": "gold-notebook:wgc",
+      "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7",
+      "locator": "Investment section; existence of demand category, no return/risk claim adopted",
+      "excerpt": "Investment"
+    },
+    {
+      "evidence_id": "e:gold:reserves",
+      "revision": 1,
+      "source_id": "gold-notebook:wgc",
+      "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7",
+      "locator": "Central Bank Demand; category only",
+      "excerpt": "central bank reserves"
+    },
+    {
+      "evidence_id": "e:gold:zijin-name",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 1; cover",
+      "excerpt": "紫金矿业集团股份有限公司"
+    },
+    {
+      "evidence_id": "e:gold:zijin-security",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 2; 公司简介; A-share column mapping",
+      "excerpt": "股票种类 A股 H股\n股票上市交易所 上交所 联交所\n股票简称 紫金矿业 紫金矿业\n股票代码 601899 2899"
+    },
+    {
+      "evidence_id": "e:gold:zijin-explore",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 2; 报告期公司主要业务简介; take gold scope only",
+      "excerpt": "铜、金、锂、锌、银、钼等金属矿产资源勘查和开发"
+    },
+    {
+      "evidence_id": "e:gold:zijin-mining",
+      "revision": 1,
+      "source_id": "gold-notebook:zijin",
+      "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04",
+      "locator": "PDF page 3; 报告期主要运营产品; no quantity or forecast adopted",
+      "excerpt": "公司矿山产金"
+    },
+    {
+      "evidence_id": "e:gold:lf-name",
+      "revision": 1,
+      "source_id": "gold-notebook:laofengxiang",
+      "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8",
+      "locator": "PDF page 1; cover",
+      "excerpt": "老凤祥股份有限公司"
+    },
+    {
+      "evidence_id": "e:gold:lf-security",
+      "revision": 1,
+      "source_id": "gold-notebook:laofengxiang",
+      "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8",
+      "locator": "PDF page 3; 公司股票简况",
+      "excerpt": "A股 上交所 老凤祥 600612"
+    },
+    {
+      "evidence_id": "e:gold:lf-business",
+      "revision": 1,
+      "source_id": "gold-notebook:laofengxiang",
+      "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8",
+      "locator": "PDF page 3; 报告期公司主要业务简介; consolidated business",
+      "excerpt": "核心黄金珠宝首饰产业从源头采购到设计、生产、销售"
+    },
+    {
+      "evidence_id": "e:gold:lf-recycle",
+      "revision": 1,
+      "source_id": "gold-notebook:laofengxiang",
+      "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8",
+      "locator": "PDF page 8; 2025经营工作; pilot only, not broad mature capacity",
+      "excerpt": "公司启动了旧金\n回收加工业务试点工作，顺利打通全业务流程"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-name",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 1; cover",
+      "excerpt": "中金黄金股份有限公司"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-security",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 6; 公司股票简况",
+      "excerpt": "A股 上海证券交易所 中金黄金 600489"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-explore",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 10; 主要业务; investment/management plus consolidated operations, not parent-entity direct operation",
+      "excerpt": "黄金、有色金属的地质勘查、采选、冶炼的投资与管理"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-mining",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 10; 生产模式",
+      "excerpt": "矿山生产采用“自营+外包”采矿、自主选矿模\n式"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-refine",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 10; 生产模式; gold portion only",
+      "excerpt": "冶炼以自产+外购原料，自主完成精炼加工，主要产出标准金"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-technical",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 10; 主要业务",
+      "excerpt": "黄金生产技术的研究开发、咨询服务"
+    },
+    {
+      "evidence_id": "e:gold:zhongjin-sales",
+      "revision": 1,
+      "source_id": "gold-notebook:zhongjin",
+      "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3",
+      "locator": "PDF page 10; 销售模式; no prices or actual counterparties inferred",
+      "excerpt": "公司黄金产品的对外销售主要包括合质金销售和标准金销售两部分"
+    },
+    {
+      "evidence_id": "e:gold:sd-name",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 1; cover",
+      "excerpt": "山东黄金矿业股份有限公司"
+    },
+    {
+      "evidence_id": "e:gold:sd-security",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 6; 公司股票简况",
+      "excerpt": "A股 上海证券交易所 山东黄金 600547"
+    },
+    {
+      "evidence_id": "e:gold:sd-business",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 10; 主要业务; gold portion only",
+      "excerpt": "黄金及有色金属的勘查、开采、选冶、销售"
+    },
+    {
+      "evidence_id": "e:gold:sd-mining",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 10; 经营模式",
+      "excerpt": "公司矿山采用分散采选、集中冶炼的生产模式"
+    },
+    {
+      "evidence_id": "e:gold:sd-products",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 10; 主要业务; no assumption that every output is gold",
+      "excerpt": "主要产品包括标准金锭、投资金条、合质金和银锭等"
+    },
+    {
+      "evidence_id": "e:gold:sd-fabrication",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 10; 主要业务; gold fabrication and mining-equipment interface",
+      "excerpt": "黄金产品深加工和销售、矿山装备制造于一体"
+    },
+    {
+      "evidence_id": "e:gold:sd-refiner-name",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 14; 规模优势; named operating entity, no ownership percentage inferred",
+      "excerpt": "山东黄金冶炼有限公司"
+    },
+    {
+      "evidence_id": "e:gold:sd-refining",
+      "revision": 1,
+      "source_id": "gold-notebook:shandong",
+      "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a",
+      "locator": "PDF page 14; 规模优势; stated gold refining capability, numerical capacity omitted",
+      "excerpt": "精炼能力标准黄金"
+    }
+  ],
+  "releases": [
+    {
+      "release_id": "gold-notebook-research-20261020-v1",
+      "industry_id": "gold",
+      "schema_version": "curated-chain-proposal-0.2",
+      "status": "proposed",
+      "published_at": null,
+      "parent_release_id": null,
+      "change_summary": "黄金主要模块研究草稿：采选冶炼与分支、再生供给、制品营销、用途及配套均有本轮保存原文；非穷举、非用户最终认可或正式发布。",
+      "record_refs": [
+        {
+          "object_type": "industry",
+          "id": "gold",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:exploration",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:mining",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:rom_ore",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:crushing_milling",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:prepared_ore",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:flotation",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:gold_concentrate",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:pre_treatment",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:pretreated_feed",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:leaching_recovery",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:gold_dore",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:refining_process",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:fine_gold",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:base_metal_processing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:byproduct_gold",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:gold_scrap",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:gold_scrap_recycling",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:jewellery_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:jewellery_products",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:jewellery_marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:jewellery_application",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:minting_bars_coins",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:investment_bullion",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:bullion_marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:investment_application",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:reserve_application",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:electronics_application",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:leach_residues",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:tailings_handling",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:grinding_equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:equipment_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:mining_equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:technical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:assay_services",
+          "revision": 1
+        },
+        {
+          "object_type": "node",
+          "id": "gold:quality_assurance",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:explore-mine",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:mine-ore",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:ore-prepare",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:prepare-material",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:prepared-float",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:float-concentrate",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:concentrate-pretreat",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:pretreat-feed",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:pretreated-leach",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:free-leach",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:recover-dore",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:dore-refine",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:refined-gold",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:base-byproduct",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:scrap-recycle",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:secondary-gold",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:gold-jewellery",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:jewellery-output",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:jewellery-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:jewellery-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:gold-fabrication",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:bullion-output",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:bullion-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:standard-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:investment-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:reserve-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:electronics-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:leach-residues",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:tailings-input",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:mill-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:equipment-output",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:mining-equipment-use",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:assay-support",
+          "revision": 1
+        },
+        {
+          "object_type": "relation",
+          "id": "rel:gold:qa-gold",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zijin-explore",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zijin-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:lf-manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:lf-marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:lf-recycling",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zhongjin-explore",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zhongjin-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zhongjin-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zhongjin-tech",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:zhongjin-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-explore",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-fabrication",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "participation",
+          "id": "role:gold:sd-refiner-operation",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:gold:zijin",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:gold:laofengxiang",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:gold:zhongjin",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:gold:shandong",
+          "revision": 1
+        },
+        {
+          "object_type": "company",
+          "id": "company:gold:shandong-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:601899",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600612",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600489",
+          "revision": 1
+        },
+        {
+          "object_type": "security",
+          "id": "SH:600547",
+          "revision": 1
+        },
+        {
+          "object_type": "view",
+          "id": "view:gold:research",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:rom",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:crush",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:float",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:pretreat",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:leach",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:goldroom",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:dore",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:detox",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:tailings",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:mill",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:lode",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:placer",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:byproduct",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:secondary",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:fabrication",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:refine",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:assay",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:bartest",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:jewellery",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:electronics",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:investment",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:reserves",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zijin-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zijin-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zijin-explore",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zijin-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:lf-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:lf-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:lf-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:lf-recycle",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-explore",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-refine",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-technical",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:zhongjin-sales",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-security",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-business",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-mining",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-products",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-fabrication",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-refiner-name",
+          "revision": 1
+        },
+        {
+          "object_type": "evidence",
+          "id": "e:gold:sd-refining",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:exploration",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:mining",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:rom_ore",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:crushing_milling",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:prepared_ore",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:flotation",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:gold_concentrate",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:pre_treatment",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:pretreated_feed",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:leaching_recovery",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:gold_dore",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:refining_process",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:fine_gold",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:base_metal_processing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:byproduct_gold",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:gold_scrap",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:gold_scrap_recycling",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:jewellery_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:jewellery_products",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:jewellery_marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:jewellery_application",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:minting_bars_coins",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:investment_bullion",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:bullion_marketing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:investment_application",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:reserve_application",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:electronics_application",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:leach_residues",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:tailings_handling",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:grinding_equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:equipment_manufacturing",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:mining_equipment",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:technical_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:assay_services",
+          "revision": 1
+        },
+        {
+          "object_type": "membership",
+          "industry_id": "gold",
+          "node_id": "gold:quality_assurance",
+          "revision": 1
+        }
+      ],
+      "source_refs": [
+        {
+          "source_id": "gold-notebook:metso",
+          "source_version": "sha256:5e53c75498038dd0ab660ff37039cfc9ef1409b73595a95119a2d0fb98a9e017"
+        },
+        {
+          "source_id": "gold-notebook:usgs",
+          "source_version": "sha256:c2fef62f665d3334302b8b9bd32e2da6f40b3f8136d1ae00ffa102e196943627"
+        },
+        {
+          "source_id": "gold-notebook:lbma",
+          "source_version": "sha256:71241f316a1f879882c143ef4717e6c19ceff0a4f243a39a9dd8e3e90149155b"
+        },
+        {
+          "source_id": "gold-notebook:wgc",
+          "source_version": "sha256:3674cb6c63d960a2f6167860dee75fdb63de9293fce5209614d211a613762bb7"
+        },
+        {
+          "source_id": "gold-notebook:zijin",
+          "source_version": "sha256:a2c094d6e828decedb6ca7687fd7fd241ad6829a1a7d9f9102b31407a21bde04"
+        },
+        {
+          "source_id": "gold-notebook:laofengxiang",
+          "source_version": "sha256:0598d05974efeee9bed0882bfccf062c6dbc36ca12f85caef511a84cc9d356c8"
+        },
+        {
+          "source_id": "gold-notebook:zhongjin",
+          "source_version": "sha256:1f1074cd5615001d4e6a8c3adc539bad0e1fc2269a7b96b87f4611df61151ea3"
+        },
+        {
+          "source_id": "gold-notebook:shandong",
+          "source_version": "sha256:04eeb819d5f8798fd8b5a11472af096347a4dd7ede832910fb1688082e2e344a"
+        }
+      ]
+    }
+  ],
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "gold",
+    "revision": 1,
+    "name": "黄金",
+    "need": "提供饰品、工业材料和实物储值/储备用途所需的金属金及金制品",
+    "boundary": "覆盖勘查采矿、适用选冶与精炼、伴生和废金供给接口、金制品制造营销、主要用途与装备/检验/尾矿配套。不同矿性不强行共用单一工艺；不展开全部有色金属、金融衍生品或逐国监管全链。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "公司为代表性样本，不是全市场名录；全球矿企、专业试剂/装备/精炼和电子材料加工企业仍可继续逐项补证。",
+      "砂金与不同硬岩矿的具体采矿、重选、浮选、氧化、浸出和中间固液分离条件未全部展开；当前选冶图仅采用Metso示例，不泛化所有矿山。",
+      "电子废弃物提金、传统旧首饰预拆解、活性炭循环等更细技术路径未形成可保存原文和逐步证据，不采用Royal Mint旧报告原文下载失败后留下的未核事实。",
+      "所引Good Delivery资料为申请程序实例，不代表所有金产品、厂家资格或现行全部行业规则。",
+      "没有具体合同、订单、收入占比、价格、当前统计、冲击系数或投资收益主张；结构不自动证明新闻影响已发生。"
+    ],
+    "coverage_note": "黄金主要模块研究草稿：采选冶炼与分支、再生供给、制品营销、用途及配套均有本轮保存原文；非穷举、非用户最终认可或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "资源与开采",
+        "node_ids": [
+          "gold:exploration",
+          "gold:mining",
+          "gold:rom_ore",
+          "gold:base_metal_processing",
+          "gold:byproduct_gold"
+        ]
+      },
+      {
+        "module": "适用选冶支路",
+        "node_ids": [
+          "gold:crushing_milling",
+          "gold:prepared_ore",
+          "gold:flotation",
+          "gold:gold_concentrate",
+          "gold:pre_treatment",
+          "gold:pretreated_feed",
+          "gold:leaching_recovery",
+          "gold:gold_dore"
+        ]
+      },
+      {
+        "module": "精炼与再生供给",
+        "node_ids": [
+          "gold:refining_process",
+          "gold:fine_gold",
+          "gold:gold_scrap",
+          "gold:gold_scrap_recycling"
+        ]
+      },
+      {
+        "module": "制品加工与营销",
+        "node_ids": [
+          "gold:jewellery_manufacturing",
+          "gold:jewellery_products",
+          "gold:jewellery_marketing",
+          "gold:minting_bars_coins",
+          "gold:investment_bullion",
+          "gold:bullion_marketing"
+        ]
+      },
+      {
+        "module": "主要用途",
+        "node_ids": [
+          "gold:jewellery_application",
+          "gold:investment_application",
+          "gold:reserve_application",
+          "gold:electronics_application"
+        ]
+      },
+      {
+        "module": "装备技术与质量验证",
+        "node_ids": [
+          "gold:grinding_equipment",
+          "gold:equipment_manufacturing",
+          "gold:mining_equipment",
+          "gold:technical_services",
+          "gold:assay_services",
+          "gold:quality_assurance"
+        ]
+      },
+      {
+        "module": "尾矿配套接口",
+        "node_ids": [
+          "gold:leach_residues",
+          "gold:tailings_handling"
+        ]
+      }
+    ]
+  },
+  "extensions": {
+    "observations": [],
+    "news_associations": [],
+    "news_impacts": [],
+    "ai_candidates": []
+  },
+  "generated_at": "2026-10-20T20:08:04.447898+00:00"
+}

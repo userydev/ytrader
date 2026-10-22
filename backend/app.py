@@ -48,6 +48,20 @@ class IndustryTracking(Strict):
     items: list[TrackedIndustry]
 
 
+class CuratedPublish(Strict):
+    package_id: str
+    release_id: str
+
+
+class CuratedActivate(Strict):
+    release_id: str
+
+
+class CuratedCandidate(Strict):
+    question: str
+    package_id: str | None = None
+
+
 class Snapshot(Strict):
     context: dict
     evidence_version: str
@@ -122,8 +136,14 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
     industries = Industries(db, settings, network, remote)
     open_industry = IndustryResearch(db, industries)
     panorama.research = open_industry
+    from .curated_chains import CuratedChains
+    curated = CuratedChains(db)
+    panorama.curated = curated
+    open_industry.curated = curated
+    analyzer.industry_research = open_industry
     jobs = Jobs(db, settings, research, public or ExchangeData(network), remote, analyzer, companies, industries)
     jobs.industry_research = open_industry
+    jobs.curated = curated
 
     @asynccontextmanager
     async def lifespan(app):
@@ -141,6 +161,7 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
     app.state.fundamentals = fundamentals
     app.state.industries = industries
     app.state.panorama = panorama
+    app.state.curated_chains = curated
     from .editorial import Editorial
     editorial = Editorial(db, open_industry)
     app.state.industry_research = open_industry
@@ -175,6 +196,8 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
     @app.exception_handler(ValidationError)
     @app.exception_handler(RequestValidationError)
     async def input_error(request, exc):
+        if request.url.path.startswith('/api/v1/curated-chains'):
+            return JSONResponse({'detail': '维护请求格式错误：导入/检查直接提交完整JSON对象（非字符串、数组或包裹层）；publish须提供package_id与release_id，activate须提供release_id。'}, status_code=422)
         return JSONResponse({'detail': '请求字段或取值不符合 v1 契约'}, status_code=422)
 
     def remote_data(method, path, **kwargs):
@@ -390,12 +413,20 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
                 cached = analyzer.cached(event['id'])
                 event['analysis_status'] = cached['status'] if cached else 'not_analyzed'
             return response
-        return news_meta(research.events(q, limit, source=source, period=period, sort=sort, content_level=content_level, tag=tag))
+        items = research.events(q, limit, source=source, period=period, sort=sort, content_level=content_level, tag=tag)
+        for item in items:
+            cached = analyzer.cached(item['id'])
+            if cached:
+                item['analysis_status'] = cached['status']
+        return news_meta(items)
 
     @app.get('/api/v1/events/{eid}')
     def event_detail(eid: str):
         if local_mode():
             detail = research.detail(eid)
+            context, version = analyzer.context(eid, 'local')
+            detail['analysis'] = analyzer.cached(eid, context, version)
+            detail['event']['analysis_status'] = detail['analysis']['status'] if detail['analysis'] else 'not_analyzed'
             return news_meta(detail)
         response = remote.capability('GET', '/events/' + quote(eid, safe=''), required=('event', 'articles', 'primary_article_id'))
         if not isinstance(response['data']['articles'], list) or any(not isinstance(a, dict) or not {'source_id', 'external_id', 'quality_flags', 'merge_reason'} <= a.keys() for a in response['data']['articles']):
@@ -410,6 +441,8 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
                 validate_result({'sections': original['sections'], 'warnings': original.get('warnings', [])}, context)
                 if original.get('evidence_version') != version:
                     original['status'] = 'stale'
+                elif not original.get('industry_association', {}).get('links') or original.get('industry_association', {}).get('evidence_version') != version:
+                    original['status'] = 'pending_review'
                 response['data']['analysis'] = original
             except (AnalysisError, KeyError):
                 response['data']['analysis'] = None
@@ -440,6 +473,9 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
                         evidence_version=body.evidence_version, sections=result.sections.model_dump(), warnings=result.warnings)
         if context['event'].get('subject') == 'company':
             analysis.update(subject='company', symbol=context['event']['symbol'])
+        else:
+            analysis['status'] = 'pending_review'
+            analysis['warnings'].append('快照仅返回分析内容；调用方须完成同稿件版本产业关联后才能整项完成。')
         return envelope(analysis, 'Cloudflare AI Gateway routing' if os.environ.get('YTRADER_HOSTED') == '1' else 'local/openai-compatible', analysis['created_at'])
 
     @app.get('/api/v1/securities')
@@ -540,12 +576,72 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
 
     @app.get('/api/v1/contracts/core')
     def core_contract():
-        contract = Path(__file__).resolve().parent.parent / 'docs/contracts/core-v1.schema.json'
+        contract = Path(__file__).resolve().parent / 'contracts/core-v1.schema.json'
         try:
             data = json.loads(contract.read_text(encoding='utf-8'))
         except (OSError, ValueError):
             raise UpstreamError('核心契约文件未随服务发布') from None
         return envelope(data, 'local/core-contract')
+
+    def curated_local():
+        if not local_mode():
+            raise UserError('当前 ycore 未声明v0.2维护包能力；未读取或写入本地替代数据', 501)
+
+    def curated_response(action, *args, source='sqlite/curated-v02'):
+        with settings.lock:
+            curated_local()
+            return envelope(action(*args), source)
+
+    @app.get('/api/v1/curated-chains')
+    def curated_catalog():
+        return curated_response(curated.catalog)
+
+    @app.get('/api/v1/curated-chains/{industry_id}')
+    def curated_detail(industry_id: str):
+        return curated_response(curated.detail, industry_id)
+
+    @app.post('/api/v1/curated-chains/{industry_id}/validate')
+    def curated_validate(industry_id: str, body: dict):
+        return curated_response(curated.validate, industry_id, body, source='local/curated-check')
+
+    @app.post('/api/v1/curated-chains/{industry_id}/drafts')
+    def curated_save(industry_id: str, body: dict):
+        return curated_response(curated.save, industry_id, body)
+
+    @app.get('/api/v1/curated-chains/{industry_id}/packages/{package_id}')
+    def curated_package(industry_id: str, package_id: str):
+        return curated_response(curated.package, industry_id, package_id)
+
+    @app.post('/api/v1/curated-chains/{industry_id}/publish')
+    def curated_publish(industry_id: str, body: CuratedPublish):
+        return curated_response(curated.publish, industry_id, body.package_id, body.release_id)
+
+    @app.post('/api/v1/curated-chains/{industry_id}/activate')
+    def curated_activate(industry_id: str, body: CuratedActivate):
+        return curated_response(curated.activate, industry_id, body.release_id)
+
+    @app.post('/api/v1/curated-chains/{industry_id}/candidates', status_code=202)
+    def curated_candidate(industry_id: str, body: CuratedCandidate):
+        curated_local()
+        if settings.get().ai_mode != 'local':
+            raise UserError('ycore未声明v0.2候选能力；未回退本地模型', 501)
+        question = body.question.strip()
+        if not 1 <= len(question) <= 1000:
+            raise UserError('请输入1至1000字的具体补充问题', 422)
+        industries.ready()
+        payload = curated.candidate_payload(industry_id, body.package_id, question)
+        job = jobs.enqueue('curated_candidate', payload)
+        curated.candidate_request(industry_id, job['id'], payload)
+        return envelope(job, 'sqlite/curated-candidates')
+
+    @app.get('/api/v1/chain-monitor')
+    def chain_monitor():
+        from .chain_monitor import snapshot
+        with settings.lock:
+            # Capability is deliberately not inferred from old ycore responses.
+            if not local_mode():
+                raise UserError('ycore未声明chain-monitor能力；未读取本地快照', 501)
+            return snapshot(curated)
 
     # Static routes must precede the dynamic industry ID, separate from /industries.
     @app.get('/api/v1/panorama/catalog')
@@ -557,8 +653,8 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
         return panorama.context(settings.get().data_mode)
 
     @app.get('/api/v1/panorama/{industry_id}')
-    def panorama_industry(industry_id: str, offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=100)):
-        return panorama.industry(industry_id, settings.get().data_mode, offset, result)
+    def panorama_industry(industry_id: str, offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=300), published_release: str = Query('', max_length=300), draft_package: str = Query('', max_length=300)):
+        return panorama.industry(industry_id, settings.get().data_mode, offset, result, published_release, draft_package)
 
     @app.get('/api/v1/industry-research/catalog')
     def open_industry_catalog(q: str = Query('', max_length=100), offset: int = Query(0, ge=0), limit: int = Query(40, ge=1, le=100)):
@@ -581,6 +677,9 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
 
     @app.post('/api/v1/industry-research/generate', status_code=202)
     def open_generate_industry(body: OpenIndustryGenerate):
+        curated_local()
+        if body.automatic:
+            raise UserError('结构补充只能通过明确按钮请求；结果仅为AI候选', 422)
         from .industry_sources import CHAIN_POLICY, version
         reference = research_reference(body.source_id, body.name) if body.source_id else None
         binding = reference['version'] if reference else None
@@ -632,6 +731,9 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
 
     @app.post('/api/v1/news/editorial/events/{eid}/associate', status_code=202)
     def update_industry_associations(eid: str, progress: str = '', automatic: bool = False):
+        curated_local()
+        if automatic:
+            raise UserError('阅读页面不自动请求关联；请使用分析或明确更新按钮', 422)
         detail = editorial.detail(eid)
         item = next((i for i in detail['progresses'] if i['id'] == progress), None) if progress else detail['current']
         if not item:
@@ -655,26 +757,34 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
         db.put(attempt_key, dict(job_id=job['id']))
         return envelope(job, 'sqlite/jobs')
 
-    def impact_context(industry_id, news, progress, offset, result_id=''):
+    def impact_context(industry_id, news, progress, offset, result_id='', published_release=''):
         detail = editorial.detail(news)
         item = next((i for i in detail['progresses'] if i['id'] == progress), None) if progress else detail['current']
         if not item:
             raise UserError('未找到指定新闻进展', 404)
-        graph = panorama.industry(industry_id, settings.get().data_mode, offset, result_id)['data']
+        graph = panorama.industry(industry_id, settings.get().data_mode, offset, result_id, published_release)['data']
+        if graph.get('status') == 'draft' or graph.get('format') == 'curated-chain-draft-v02':
+            raise UserError('默认结构为未发布研究草稿，不读取或生成新闻影响；请精确选择正式发布或原资料', 409)
         if all(n.get('kind') == 'industry' for n in graph['nodes']):
             raise UserError('来源只有行业分类，尚无实际产品结构；请先结合资料开展开放研究', 409)
         return open_industry.impact_payload(item, graph)
 
     @app.get('/api/v1/industry-research/{industry_id}/impact')
-    def industry_impact_cache(industry_id: str, news: str, progress: str = '', offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=100)):
-        payload = impact_context(industry_id, news, progress, offset, result)
+    def industry_impact_cache(industry_id: str, news: str, progress: str = '', offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=300), published_release: str = Query('', max_length=300), draft_package: str = Query('', max_length=300)):
+        curated_local()
+        if draft_package:
+            raise UserError('研究草稿仅供结构体验，不读取或生成新闻影响', 409)
+        payload = impact_context(industry_id, news, progress, offset, result, published_release)
         cached = db.get('industry-impact:' + payload['input_version'])
         return envelope(cached or dict(status='missing', input_version=payload['input_version'], links=[]), 'sqlite/industry-impact')
 
     @app.post('/api/v1/industry-research/{industry_id}/impact', status_code=202)
     def prepare_industry_impact(industry_id: str, news: str, progress: str = '', automatic: bool = False,
-                                offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=100)):
-        payload = impact_context(industry_id, news, progress, offset, result)
+                                offset: int = Query(0, ge=0, le=1000000), result: str = Query('', max_length=300), published_release: str = Query('', max_length=300), draft_package: str = Query('', max_length=300)):
+        curated_local()
+        if draft_package:
+            raise UserError('研究草稿仅供结构体验，不读取或生成新闻影响', 409)
+        payload = impact_context(industry_id, news, progress, offset, result, published_release)
         cache_key = 'industry-impact:' + payload['input_version']
         if db.get(cache_key):
             return envelope(dict(status='cached', message='已有本新闻与资料版本的条件影响'), 'sqlite/cache')
@@ -702,6 +812,7 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
 
     @app.post('/api/v1/industries/generate', status_code=202)
     def generate_industry(body: GenerateIndustry):
+        curated_local()
         industries.ready()
         return envelope(jobs.enqueue('industry_generate', industries.generate_payload(body.name)), 'sqlite/jobs')
 
@@ -722,6 +833,7 @@ def create_app(data_dir=None, *, network=None, start_worker=True, public=None, d
 
     @app.post('/api/v1/industries/{industry_id}/supplement', status_code=202)
     def supplement_industry(industry_id: str, body: SupplementIndustry):
+        curated_local()
         industries.ready()
         return envelope(jobs.enqueue('industry_supplement', industries.supplement_payload(industry_id, body.question)), 'sqlite/jobs')
 

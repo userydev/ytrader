@@ -1,0 +1,1311 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "photovoltaics",
+    "revision": 1,
+    "name": "光伏",
+    "need": "将太阳光转为电能，并将电池组件集成为可供电的光伏系统。",
+    "boundary": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "区分晶硅与薄膜路线；硅片电池工艺、封装辅材及设备尚未逐项展开。",
+      "不采用网页产能、效率纪录、出货排名或寿命承诺作为当期数据；公司为业务样本。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "材料与电池路线",
+        "node_ids": [
+          "photovoltaics:silicon",
+          "photovoltaics:wafer",
+          "photovoltaics:sicell",
+          "photovoltaics:film"
+        ]
+      },
+      {
+        "module": "组件与系统",
+        "node_ids": [
+          "photovoltaics:cell",
+          "photovoltaics:module",
+          "photovoltaics:array",
+          "photovoltaics:mount",
+          "photovoltaics:inverter"
+        ]
+      },
+      {
+        "module": "发电应用",
+        "node_ids": [
+          "photovoltaics:system",
+          "photovoltaics:distributed",
+          "photovoltaics:utility",
+          "photovoltaics:grid"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "photovoltaics:silicon",
+      "name": "高纯晶硅",
+      "kind": "product",
+      "description": "晶硅路线原料接口，不与电子级规格等同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tongwei:6740e64f4404",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:wafer",
+      "name": "单晶硅片",
+      "kind": "product",
+      "description": "晶硅光伏衬底接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:sicell",
+      "name": "晶硅太阳电池",
+      "kind": "product",
+      "description": "晶硅光电转换器件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:d9455b0e815c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:film",
+      "name": "薄膜太阳电池",
+      "kind": "product",
+      "description": "薄膜材料路线，不要求晶硅硅片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:bfb08dc663ff",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:cell",
+      "name": "光伏电池",
+      "kind": "product",
+      "description": "光电转换器件总类。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:40d4c9e42112",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:module",
+      "name": "光伏组件",
+      "kind": "product",
+      "description": "连接并保护电池的组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:51a3706ab522",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:array",
+      "name": "光伏阵列",
+      "kind": "product",
+      "description": "适用组件连接形成的阵列。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:mount",
+      "name": "安装支架",
+      "kind": "product",
+      "description": "组件机械安装结构。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:8f6097abbcc6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:inverter",
+      "name": "光伏逆变器",
+      "kind": "product",
+      "description": "系统直流到交流转换设备接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:system",
+      "name": "光伏发电系统",
+      "kind": "product",
+      "description": "组件、安装与电气设备组成的系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:8f6097abbcc6",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:distributed",
+      "name": "分布式光伏应用",
+      "kind": "application",
+      "description": "隆基公开业务类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:utility",
+      "name": "地面光伏应用",
+      "kind": "application",
+      "description": "隆基公开地面项目业务类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "photovoltaics:grid",
+      "name": "交流供电与电网接口",
+      "kind": "application",
+      "description": "按适用电气设计接入负荷或电网。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:silicon",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:wafer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:sicell",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:film",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:cell",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:module",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:array",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:mount",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:inverter",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:system",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:distributed",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:utility",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "photovoltaics",
+      "node_id": "photovoltaics:grid",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:photovoltaics:2cd56165ddd06acc",
+      "from_node_id": "photovoltaics:silicon",
+      "to_node_id": "photovoltaics:wafer",
+      "kind": "input_to",
+      "statement": "结构推断：高纯晶硅与光伏硅片制造衔接，具体工艺待补。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tongwei:6740e64f4404",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:6291e9b1d436aa58",
+      "from_node_id": "photovoltaics:wafer",
+      "to_node_id": "photovoltaics:sicell",
+      "kind": "input_to",
+      "statement": "结构推断：适用晶硅片用于晶硅电池。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:d9455b0e815c",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:4d1fbf6f6454e107",
+      "from_node_id": "photovoltaics:sicell",
+      "to_node_id": "photovoltaics:cell",
+      "kind": "part_of",
+      "statement": "晶硅电池为电池路线之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:d9455b0e815c",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:40d4c9e42112",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:7354d200fd7ed462",
+      "from_node_id": "photovoltaics:film",
+      "to_node_id": "photovoltaics:cell",
+      "kind": "part_of",
+      "statement": "薄膜电池为另一材料路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:bfb08dc663ff",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-current:40d4c9e42112",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:6b68ae9cc64c24e0",
+      "from_node_id": "photovoltaics:cell",
+      "to_node_id": "photovoltaics:module",
+      "kind": "input_to",
+      "statement": "电池连接组成组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:51a3706ab522",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:dd6456d8da991514",
+      "from_node_id": "photovoltaics:module",
+      "to_node_id": "photovoltaics:array",
+      "kind": "part_of",
+      "statement": "组件连接形成阵列。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:dd3dd896d8cd009a",
+      "from_node_id": "photovoltaics:array",
+      "to_node_id": "photovoltaics:system",
+      "kind": "part_of",
+      "statement": "阵列纳入光伏系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:697d40c85ffc199f",
+      "from_node_id": "photovoltaics:mount",
+      "to_node_id": "photovoltaics:system",
+      "kind": "part_of",
+      "statement": "支架构成系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:8f6097abbcc6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:9c97edcc2597a5fb",
+      "from_node_id": "photovoltaics:inverter",
+      "to_node_id": "photovoltaics:system",
+      "kind": "part_of",
+      "statement": "结构推断：逆变器承担适用直交流转换接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:0776fc6a6e0a7530",
+      "from_node_id": "photovoltaics:system",
+      "to_node_id": "photovoltaics:grid",
+      "kind": "used_for",
+      "statement": "系统向适用电网或负荷供电。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:fd18a37a86a5b904",
+      "from_node_id": "photovoltaics:system",
+      "to_node_id": "photovoltaics:distributed",
+      "kind": "used_for",
+      "statement": "结构推断：系统构成分布式光伏业务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:photovoltaics:94c8278e8974e3c2",
+      "from_node_id": "photovoltaics:system",
+      "to_node_id": "photovoltaics:utility",
+      "kind": "used_for",
+      "statement": "结构推断：系统构成地面光伏业务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅料/硅片/电池/组件、设备辅材、逆变器、系统开发运维与回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_longi",
+      "name": "隆基绿能科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:fd58bc2fe5a6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_tongwei",
+      "name": "通威股份",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tongwei:96939b2e5f76",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_sungrow",
+      "name": "阳光电源股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:601012",
+      "company_id": "company_longi",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:fd58bc2fe5a6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:photovoltaics:aaeb2148b95b7b0a",
+      "company_id": "company_longi",
+      "node_id": "photovoltaics:wafer",
+      "role": "单晶硅片业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:photovoltaics:2b0a303fa5c3d58a",
+      "company_id": "company_longi",
+      "node_id": "photovoltaics:module",
+      "role": "电池组件业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:photovoltaics:fd6fd300037e30b2",
+      "company_id": "company_longi",
+      "node_id": "photovoltaics:distributed",
+      "role": "分布式光伏业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:photovoltaics:1e4b92882ae19df0",
+      "company_id": "company_tongwei",
+      "node_id": "photovoltaics:silicon",
+      "role": "高纯晶硅产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tongwei:6740e64f4404",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:photovoltaics:0497ae358a095d14",
+      "company_id": "company_tongwei",
+      "node_id": "photovoltaics:sicell",
+      "role": "太阳能电池片产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:tongwei:19cd9780c620",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:photovoltaics:e1d071c74e60cda4",
+      "company_id": "company_sungrow",
+      "node_id": "photovoltaics:inverter",
+      "role": "光伏逆变器",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:photovoltaics:codex-research-v1",
+      "industry_id": "photovoltaics",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "材料与电池路线",
+          "node_ids": [
+            "photovoltaics:silicon",
+            "photovoltaics:wafer",
+            "photovoltaics:sicell",
+            "photovoltaics:film"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "组件与系统",
+          "node_ids": [
+            "photovoltaics:cell",
+            "photovoltaics:module",
+            "photovoltaics:array",
+            "photovoltaics:mount",
+            "photovoltaics:inverter"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "发电应用",
+          "node_ids": [
+            "photovoltaics:system",
+            "photovoltaics:distributed",
+            "photovoltaics:utility",
+            "photovoltaics:grid"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2"
+      ],
+      "relation_ids": [
+        "rel:new20261021:photovoltaics:2cd56165ddd06acc",
+        "rel:new20261021:photovoltaics:6291e9b1d436aa58",
+        "rel:new20261021:photovoltaics:4d1fbf6f6454e107",
+        "rel:new20261021:photovoltaics:7354d200fd7ed462",
+        "rel:new20261021:photovoltaics:6b68ae9cc64c24e0",
+        "rel:new20261021:photovoltaics:dd6456d8da991514",
+        "rel:new20261021:photovoltaics:dd3dd896d8cd009a",
+        "rel:new20261021:photovoltaics:697d40c85ffc199f",
+        "rel:new20261021:photovoltaics:9c97edcc2597a5fb",
+        "rel:new20261021:photovoltaics:0776fc6a6e0a7530",
+        "rel:new20261021:photovoltaics:fd18a37a86a5b904",
+        "rel:new20261021:photovoltaics:94c8278e8974e3c2"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:doe-pv-current",
+      "source_version": "sha256:4699108520d2c9d09c90407e639caefaa6270d3ca656ea129e3ecf3c4b626bef",
+      "title": "Solar cell basics",
+      "publisher": "US DOE",
+      "url": "https://www.energy.gov/cmei/systems/solar-photovoltaic-cell-basics",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:36.836946+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "3fd6b3acdd1a3c6c8c99b9d6bc4c8463e5fae0a21f4917d0ea4e0b3a6ed26197",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:doe-pv-system",
+      "source_version": "sha256:067a0f627bacc1a227898468598b88551999698df58168662b5a6da4ba97a1ed",
+      "title": "PV technology basics",
+      "publisher": "US DOE",
+      "url": "https://www.energy.gov/cmei/systems/solar-photovoltaic-technology-basics",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:37.294909+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "37dbcd1791208fd8187271bef1fffd2230a180b1478590016164ec638ff0a6ce",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:longi-profile",
+      "source_version": "sha256:44516d66ef865e387b39badc788fb565f5a724d71f2df3823a7bd8e7e39448a7",
+      "title": "公司业务与身份",
+      "publisher": "隆基绿能",
+      "url": "https://www.longi.com/cn/news/ecolife-taiyang-news/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:36.769524+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "4d857d51b26efa16601403b67bffa96005d5eb750c2683168cde5c7ff3b8ef5b",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:tongwei",
+      "source_version": "sha256:ee1b17f382c2f65e0ad64d304661815dee00060ae3d0e5a47b23ad70526c6262",
+      "title": "公司及产品",
+      "publisher": "通威股份",
+      "url": "https://www.tongwei.com.cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:13.617290+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "c27e31dbdf805ae32de322d5bcea770b9acef6ea6e663f753fd816cd88bb7ed6",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:sungrow",
+      "source_version": "sha256:32924ab0ce8f9e9e55321f26515f67ab92ec0fcb22676b5ff22d0355de5aaaa7",
+      "title": "公司及产品",
+      "publisher": "阳光电源",
+      "url": "https://www.sungrowpower.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:13.755503+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "3e3b5823e356e1b12bc7c24f4854f682a86848a61f8ead3e1ccbc5f22f4d8acb",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:doe-pv-current:40d4c9e42112",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-current",
+      "source_version": "sha256:4699108520d2c9d09c90407e639caefaa6270d3ca656ea129e3ecf3c4b626bef",
+      "excerpt": "contains a semiconductor material",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-current.txt:118"
+      },
+      "summary": "DOE说明光伏电池利用半导体实现光电转换。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-current:d9455b0e815c",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-current",
+      "source_version": "sha256:4699108520d2c9d09c90407e639caefaa6270d3ca656ea129e3ecf3c4b626bef",
+      "excerpt": "Crystalline silicon cells",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-current.txt:131"
+      },
+      "summary": "晶硅路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-current:bfb08dc663ff",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-current",
+      "source_version": "sha256:4699108520d2c9d09c90407e639caefaa6270d3ca656ea129e3ecf3c4b626bef",
+      "excerpt": "thin-film solar cell",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-current.txt:134"
+      },
+      "summary": "薄膜路线与晶硅区分。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-system:51a3706ab522",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-system",
+      "source_version": "sha256:067a0f627bacc1a227898468598b88551999698df58168662b5a6da4ba97a1ed",
+      "excerpt": "modules or panels",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-system.txt:119"
+      },
+      "summary": "电池连接成组件。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-system:a652ce0280ca",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-system",
+      "source_version": "sha256:067a0f627bacc1a227898468598b88551999698df58168662b5a6da4ba97a1ed",
+      "excerpt": "arrays",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-system.txt:119"
+      },
+      "summary": "组件组成阵列并接入系统。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-system:8f6097abbcc6",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-system",
+      "source_version": "sha256:067a0f627bacc1a227898468598b88551999698df58168662b5a6da4ba97a1ed",
+      "excerpt": "mounting structures",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-system.txt:128"
+      },
+      "summary": "支架构成系统。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:doe-pv-system:e0844500fc92",
+      "revision": 1,
+      "source_id": "codex-20261021:doe-pv-system",
+      "source_version": "sha256:067a0f627bacc1a227898468598b88551999698df58168662b5a6da4ba97a1ed",
+      "excerpt": "direct-current (DC)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/doe-pv-system.txt:128"
+      },
+      "summary": "系统把直流转换为适用交流。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:longi-profile:fd58bc2fe5a6",
+      "revision": 1,
+      "source_id": "codex-20261021:longi-profile",
+      "source_version": "sha256:44516d66ef865e387b39badc788fb565f5a724d71f2df3823a7bd8e7e39448a7",
+      "excerpt": "隆基绿能科技股份有限公司（股票代码：601012.SH）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/longi-profile.txt:207"
+      },
+      "summary": "官网主体与代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:longi-profile:733a5a31d9b6",
+      "revision": 1,
+      "source_id": "codex-20261021:longi-profile",
+      "source_version": "sha256:44516d66ef865e387b39badc788fb565f5a724d71f2df3823a7bd8e7e39448a7",
+      "excerpt": "单晶硅片、电池组件、分布式光伏、地面光伏",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/longi-profile.txt:207"
+      },
+      "summary": "隆基公开业务组合。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tongwei:96939b2e5f76",
+      "revision": 1,
+      "source_id": "codex-20261021:tongwei",
+      "source_version": "sha256:ee1b17f382c2f65e0ad64d304661815dee00060ae3d0e5a47b23ad70526c6262",
+      "excerpt": "通威股份",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tongwei.txt:1"
+      },
+      "summary": "官网通威股份品牌主体；本轮代码原文未单列。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tongwei:6740e64f4404",
+      "revision": 1,
+      "source_id": "codex-20261021:tongwei",
+      "source_version": "sha256:ee1b17f382c2f65e0ad64d304661815dee00060ae3d0e5a47b23ad70526c6262",
+      "excerpt": "高纯晶硅产品",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tongwei.txt:6"
+      },
+      "summary": "通威高纯晶硅类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:tongwei:19cd9780c620",
+      "revision": 1,
+      "source_id": "codex-20261021:tongwei",
+      "source_version": "sha256:ee1b17f382c2f65e0ad64d304661815dee00060ae3d0e5a47b23ad70526c6262",
+      "excerpt": "高效电池片产品",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/tongwei.txt:9"
+      },
+      "summary": "通威电池片及组件业务接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sungrow:428443fb2afe",
+      "revision": 1,
+      "source_id": "codex-20261021:sungrow",
+      "source_version": "sha256:32924ab0ce8f9e9e55321f26515f67ab92ec0fcb22676b5ff22d0355de5aaaa7",
+      "excerpt": "PV Inverter",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sungrow.txt:30"
+      },
+      "summary": "阳光电源光伏逆变器产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 3,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

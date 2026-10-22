@@ -114,6 +114,8 @@ def test_security_observation_timestamp_alone_does_not_stale_analysis(app):
     app.state.analyzer.save(eid, result, 'test', version, 'local')
     r.store_securities('SZ', [dict(row, as_of='2026-09-02T00:00:00Z')], True)
     assert r.evidence_context(eid)[1] == version
-    assert r.detail(eid)['analysis']['status'] == 'complete'
+    # This fixture has no verified industry association. An observation-only
+    # refresh preserves pending review; it must not make the result stale.
+    assert r.detail(eid)['analysis']['status'] == 'pending_review'
     r.store_securities('SZ', [dict(row, industry='电子')], True)
     assert r.detail(eid)['analysis']['status'] == 'stale'

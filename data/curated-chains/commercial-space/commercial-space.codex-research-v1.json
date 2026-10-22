@@ -1,0 +1,1237 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "commercial-space",
+    "revision": 1,
+    "name": "商业航天",
+    "need": "组合运载、航天器和地面运营，提供商业航天任务服务。",
+    "boundary": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "以Rocket Lab官方航天器及Electron资料建立运载、整星和地面运营接口；国内公司与上市映射待专门取证。",
+      "已运营与开发中火箭不得混写；本稿不采用Neutron已商业化或任何发射频次、订单金额推断。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "航天器部件",
+        "node_ids": [
+          "commercial-space:power",
+          "commercial-space:attitude",
+          "commercial-space:propulsion",
+          "commercial-space:radio",
+          "commercial-space:software"
+        ]
+      },
+      {
+        "module": "整星与发射",
+        "node_ids": [
+          "commercial-space:platform",
+          "commercial-space:ait",
+          "commercial-space:rocket",
+          "commercial-space:integration",
+          "commercial-space:engine",
+          "commercial-space:prop"
+        ]
+      },
+      {
+        "module": "在轨与地面",
+        "node_ids": [
+          "commercial-space:orbit",
+          "commercial-space:ground",
+          "commercial-space:ops",
+          "commercial-space:data"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "commercial-space:power",
+      "name": "空间太阳能电源",
+      "kind": "product",
+      "description": "太阳电池及阵列类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:attitude",
+      "name": "姿态感知与控制部件",
+      "kind": "product",
+      "description": "星敏感器与反作用轮样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:propulsion",
+      "name": "航天器推进系统",
+      "kind": "product",
+      "description": "航天器推进部件，区别于运载火箭发动机。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:radio",
+      "name": "空间通信与航电",
+      "kind": "product",
+      "description": "无线电及航电接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:dd1cabd722a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:software",
+      "name": "飞行与地面软件",
+      "kind": "product",
+      "description": "平台飞行及地面软件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:dd1cabd722a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:platform",
+      "name": "航天器平台",
+      "kind": "product",
+      "description": "按任务需求配置的航天器。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:670b2b0c9bb7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:ait",
+      "name": "总装集成与环境测试",
+      "kind": "activity",
+      "description": "含热真空、振动、电磁环境的适用测试。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:5fb0054103fc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:rocket",
+      "name": "运载火箭接口",
+      "kind": "product",
+      "description": "可选运载提供商的火箭接口，不认定开发型号已运营。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:integration",
+      "name": "星箭集成与发射服务",
+      "kind": "service",
+      "description": "运输、集成及任务管理接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:orbit",
+      "name": "在轨航天器",
+      "kind": "product",
+      "description": "完成发射部署后的航天器接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:ground",
+      "name": "地面站网络",
+      "kind": "product",
+      "description": "支持航天器数据链路的地面设施。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:ops",
+      "name": "在轨任务运营",
+      "kind": "service",
+      "description": "在轨管理、通信与数据处理服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:data",
+      "name": "数据下传与处理",
+      "kind": "service",
+      "description": "航天器数据下传与处理接口，具体遥感产品另证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:engine",
+      "name": "运载火箭发动机",
+      "kind": "product",
+      "description": "Electron的Rutherford发动机样本。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:4a87278b86cd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "commercial-space:prop",
+      "name": "运载推进剂",
+      "kind": "product",
+      "description": "Electron液氧煤油路线，其他路线另证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:2259d235befc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:power",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:attitude",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:propulsion",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:radio",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:software",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:platform",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:ait",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:rocket",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:integration",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:orbit",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:ground",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:ops",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:data",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:engine",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "commercial-space",
+      "node_id": "commercial-space:prop",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:commercial-space:feec2c54464e5e8b",
+      "from_node_id": "commercial-space:power",
+      "to_node_id": "commercial-space:platform",
+      "kind": "part_of",
+      "statement": "电源部件纳入适用平台。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:4c7a173ad344a36d",
+      "from_node_id": "commercial-space:attitude",
+      "to_node_id": "commercial-space:platform",
+      "kind": "part_of",
+      "statement": "星敏感器及反作用轮纳入平台。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:dc094ca086654438",
+      "from_node_id": "commercial-space:propulsion",
+      "to_node_id": "commercial-space:platform",
+      "kind": "part_of",
+      "statement": "推进部件纳入适用平台。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:914be077e95e080c",
+      "from_node_id": "commercial-space:radio",
+      "to_node_id": "commercial-space:platform",
+      "kind": "part_of",
+      "statement": "无线电及航电纳入平台。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:dd1cabd722a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:ef889a36e0dc851a",
+      "from_node_id": "commercial-space:software",
+      "to_node_id": "commercial-space:platform",
+      "kind": "part_of",
+      "statement": "飞行及地面软件支持平台。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:dd1cabd722a2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:471cdd9067e381f0",
+      "from_node_id": "commercial-space:platform",
+      "to_node_id": "commercial-space:ait",
+      "kind": "input_to",
+      "statement": "航天器制造后进行集成测试。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:5fb0054103fc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:3cd3c138d25538c4",
+      "from_node_id": "commercial-space:ait",
+      "to_node_id": "commercial-space:integration",
+      "kind": "precedes",
+      "statement": "适用测试后运至发射地点集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:37386efd63fba13c",
+      "from_node_id": "commercial-space:rocket",
+      "to_node_id": "commercial-space:integration",
+      "kind": "supports",
+      "statement": "结构推断：火箭提供星箭集成接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:e4570f410887b2b2",
+      "from_node_id": "commercial-space:integration",
+      "to_node_id": "commercial-space:orbit",
+      "kind": "supports",
+      "statement": "结构推断：发射服务与在轨阶段衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:d2f57d91e640cf80",
+      "from_node_id": "commercial-space:ground",
+      "to_node_id": "commercial-space:ops",
+      "kind": "supports",
+      "statement": "地面站网络支持通信和在轨运营。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:b1e8b3966423082e",
+      "from_node_id": "commercial-space:orbit",
+      "to_node_id": "commercial-space:ops",
+      "kind": "supports",
+      "statement": "结构推断：在轨航天器进入任务运营接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:50d6ed400386cc15",
+      "from_node_id": "commercial-space:ops",
+      "to_node_id": "commercial-space:data",
+      "kind": "supports",
+      "statement": "运营包括数据下传和处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:7030e772b725fa62",
+      "from_node_id": "commercial-space:engine",
+      "to_node_id": "commercial-space:rocket",
+      "kind": "part_of",
+      "statement": "发动机构成Electron运载系统。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:4a87278b86cd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:commercial-space:1f5cd58cf5b171ae",
+      "from_node_id": "commercial-space:prop",
+      "to_node_id": "commercial-space:rocket",
+      "kind": "input_to",
+      "statement": "液氧煤油是Electron推进剂路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:2259d235befc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "材料/关键部件、火箭/卫星、发射与测控、地面终端、卫星运营应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_rocket_lab",
+      "name": "Rocket Lab",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:670b2b0c9bb7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:commercial-space:35de4d07c0a4f2b8",
+      "company_id": "company_rocket_lab",
+      "node_id": "commercial-space:platform",
+      "role": "航天器设计及制造",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:670b2b0c9bb7",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:5fb0054103fc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:commercial-space:72bd385ecab84898",
+      "company_id": "company_rocket_lab",
+      "node_id": "commercial-space:ait",
+      "role": "总装集成及测试",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:5fb0054103fc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:commercial-space:0476d42ba0ae73ac",
+      "company_id": "company_rocket_lab",
+      "node_id": "commercial-space:ops",
+      "role": "在轨任务运营",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:commercial-space:0c9db07339308738",
+      "company_id": "company_rocket_lab",
+      "node_id": "commercial-space:rocket",
+      "role": "Electron小卫星运载服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:de1fe690d4e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:commercial-space:99466c2f39fb6e70",
+      "company_id": "company_rocket_lab",
+      "node_id": "commercial-space:engine",
+      "role": "Rutherford发动机",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:rocket-electron:4a87278b86cd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:commercial-space:codex-research-v1",
+      "industry_id": "commercial-space",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "航天器部件",
+          "node_ids": [
+            "commercial-space:power",
+            "commercial-space:attitude",
+            "commercial-space:propulsion",
+            "commercial-space:radio",
+            "commercial-space:software"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "整星与发射",
+          "node_ids": [
+            "commercial-space:platform",
+            "commercial-space:ait",
+            "commercial-space:rocket",
+            "commercial-space:integration",
+            "commercial-space:engine",
+            "commercial-space:prop"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "在轨与地面",
+          "node_ids": [
+            "commercial-space:orbit",
+            "commercial-space:ground",
+            "commercial-space:ops",
+            "commercial-space:data"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2"
+      ],
+      "relation_ids": [
+        "rel:new20261021:commercial-space:feec2c54464e5e8b",
+        "rel:new20261021:commercial-space:4c7a173ad344a36d",
+        "rel:new20261021:commercial-space:dc094ca086654438",
+        "rel:new20261021:commercial-space:914be077e95e080c",
+        "rel:new20261021:commercial-space:ef889a36e0dc851a",
+        "rel:new20261021:commercial-space:471cdd9067e381f0",
+        "rel:new20261021:commercial-space:3cd3c138d25538c4",
+        "rel:new20261021:commercial-space:37386efd63fba13c",
+        "rel:new20261021:commercial-space:e4570f410887b2b2",
+        "rel:new20261021:commercial-space:d2f57d91e640cf80",
+        "rel:new20261021:commercial-space:b1e8b3966423082e",
+        "rel:new20261021:commercial-space:50d6ed400386cc15",
+        "rel:new20261021:commercial-space:7030e772b725fa62",
+        "rel:new20261021:commercial-space:1f5cd58cf5b171ae"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "title": "Spacecraft systems and process",
+      "publisher": "Rocket Lab",
+      "url": "https://rocketlabcorp.com/space-systems/spacecraft/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:07:22.137214+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:rocket-electron",
+      "source_version": "sha256:fa512ebdfa5f4ceb11793d46bb8d57be86d53e1c70ae584f5e31a97e7c1d5078",
+      "title": "Electron launch system",
+      "publisher": "Rocket Lab",
+      "url": "https://rocketlabcorp.com/launch/electron/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:11:14.290399+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:5fb0054103fc",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "Integration & Test",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:68"
+      },
+      "summary": "整星制造、集成及环境测试工序。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:9c6cbebd5a94",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "star trackers, propulsion",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:64"
+      },
+      "summary": "平台所用部件类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:dd1cabd722a2",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "ground software",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:64"
+      },
+      "summary": "平台飞行地面软件、无线电及航电配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:d4e74f0b4d2c",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "launch vehicle",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:69"
+      },
+      "summary": "整星测试后运至发射场集成。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:d06d9c97fde4",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "downlink, and process data",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:78"
+      },
+      "summary": "地面站支持通信、下行及数据处理。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:d2f8d9a6f307",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "Mission Operations",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:76"
+      },
+      "summary": "公司披露在轨任务运营业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocketlab-current:670b2b0c9bb7",
+      "revision": 1,
+      "source_id": "codex-20261021:rocketlab-current",
+      "source_version": "sha256:60d1fc390b59d22ba31c3ac36fad662104f5f6ba6aeb948c1f0463a63a066294",
+      "excerpt": "Rocket Lab Spacecraft",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocketlab-current.txt:81"
+      },
+      "summary": "航天器平台组合。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocket-electron:de1fe690d4e8",
+      "revision": 1,
+      "source_id": "codex-20261021:rocket-electron",
+      "source_version": "sha256:fa512ebdfa5f4ceb11793d46bb8d57be86d53e1c70ae584f5e31a97e7c1d5078",
+      "excerpt": "Dedicated access to space",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocket-electron.txt:31"
+      },
+      "summary": "Electron运载服务定位小卫星，未使用页面动态累计发射量。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocket-electron:4a87278b86cd",
+      "revision": 1,
+      "source_id": "codex-20261021:rocket-electron",
+      "source_version": "sha256:fa512ebdfa5f4ceb11793d46bb8d57be86d53e1c70ae584f5e31a97e7c1d5078",
+      "excerpt": "Rutherford Engine",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocket-electron.txt:77"
+      },
+      "summary": "Electron采用Rutherford发动机；不等同所有商业运载路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:rocket-electron:2259d235befc",
+      "revision": 1,
+      "source_id": "codex-20261021:rocket-electron",
+      "source_version": "sha256:fa512ebdfa5f4ceb11793d46bb8d57be86d53e1c70ae584f5e31a97e7c1d5078",
+      "excerpt": "LOX / Kerosene",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/rocket-electron.txt:65"
+      },
+      "summary": "Electron液氧煤油推进剂及碳复合结构样本。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 2,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

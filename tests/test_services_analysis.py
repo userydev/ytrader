@@ -12,7 +12,7 @@ from conftest import article, sections
 
 @pytest.mark.parametrize('data_mode', ['local', 'ycore'])
 @pytest.mark.parametrize('ai_mode', ['local', 'ycore'])
-def test_four_independent_service_combinations_and_snapshot(tmp_path, data_mode, ai_mode):
+def test_four_independent_service_combinations_and_snapshot_pending_without_association(tmp_path, data_mode, ai_mode):
     reference = create_app(tmp_path / 'reference', start_worker=False)
     eid = reference.state.research.ingest(article())
     remote_detail = reference.state.research.detail(eid)
@@ -57,9 +57,13 @@ def test_four_independent_service_combinations_and_snapshot(tmp_path, data_mode,
         assert response.status_code == 202
         jid = response.json()['data']['id']
         assert app.state.jobs.run_one()
-        assert app.state.db.job(jid)['status'] == 'succeeded', app.state.db.job(jid)
+        # Service routing succeeds, but this fixture provides no reliable
+        # industry association. Keep the saved analysis pending review.
+        assert app.state.db.job(jid)['status'] == 'failed', app.state.db.job(jid)
+        assert '具体产业身份关联' in app.state.db.job(jid)['message']
         detail = c.get('/api/v1/events/' + eid).json()['data']
-        assert detail['analysis']['status'] == 'complete'
+        assert detail['analysis']['status'] == 'pending_review'
+        assert detail['analysis']['industry_association']['links'] == []
         assert detail['analysis']['sections']['facts'][0]['evidence_ids'] == [aid]
     urls = [url for url, _, _ in seen]
     assert any('/analysis/snapshot' in u for u in urls) == (ai_mode == 'ycore')
@@ -116,6 +120,10 @@ def test_new_evidence_during_analysis_marks_result_stale(tmp_path):
     box = {}
 
     def handler(request):
+        # The second model request now checks industry association. This fixture
+        # deliberately supplies no association rather than revising twice.
+        if box.get('revised'):
+            return httpx.Response(503)
         research, eid, aid = box['research'], box['eid'], box['aid']
         # A source GUID identifies this as a revision, not an unrelated reused URL.
         revised_eid = research.ingest(article(external_id='analysis-race-story',
@@ -123,6 +131,7 @@ def test_new_evidence_during_analysis_marks_result_stale(tmp_path):
         assert revised_eid == eid
         assert research.detail(eid)['articles'][0]['supersedes_id'] == aid
         assert research.evidence_context(eid)[1] != box['version']
+        box['revised'] = True
         return httpx.Response(200, json={'choices': [{'message': {'content': json.dumps({'sections': sections(aid), 'warnings': []})}}]})
 
     app = create_app(tmp_path, start_worker=False, network=Network(httpx.MockTransport(handler)))
@@ -132,5 +141,6 @@ def test_new_evidence_during_analysis_marks_result_stale(tmp_path):
     app.state.settings.update(ConfigUpdate(model_name='configured-model', model_api_key='configured-key'))
     job = app.state.jobs.enqueue('analyze', {'event_id': eid})
     assert app.state.jobs.run_one()
-    assert app.state.db.job(job['id'])['status'] == 'succeeded'
+    assert app.state.db.job(job['id'])['status'] == 'failed'
+    assert '具体产业身份关联' in app.state.db.job(job['id'])['message']
     assert app.state.research.detail(eid)['analysis']['status'] == 'stale'

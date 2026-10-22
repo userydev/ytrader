@@ -23,7 +23,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
 MODEL = "gemini-3.8-flash-medium"
-CLI = Path("/Users/Admin/.local/bin/agy")
+CLI = Path.home() / ".local" / "bin" / "agy"
 HOST, PORT = "127.0.0.1", 58732
 MAX_BODY = 1024 * 1024
 MAX_MESSAGE = 128 * 1024

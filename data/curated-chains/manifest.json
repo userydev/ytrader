@@ -1,0 +1,104 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "status": "research_drafts_not_published",
+  "items": [
+    {
+      "industry_id": "crude-oil",
+      "file": "data/curated-chains/crude-oil/crude-oil.notebook-expanded-v2.json",
+      "sha256": "24f25af09a81593b0d3fb3c0d8a825564e0f5afa87238c883ba84ea307d1a7b0",
+      "counts": {
+        "nodes": 37,
+        "relations": 37,
+        "companies": 8,
+        "securities": 7,
+        "participations": 19,
+        "sources": 19,
+        "evidence": 63
+      },
+      "status": "draft",
+      "project_file": "data/curated-chains/crude-oil/crude-oil.notebook-expanded-v2.json",
+      "project_sha256": "24f25af09a81593b0d3fb3c0d8a825564e0f5afa87238c883ba84ea307d1a7b0",
+      "preview_package_id": "5f34981471a61339cb5ec9e903b98f9239885c8f14a8923bd5401962e02f2a01",
+      "preview_url": "http://127.0.0.1:58734/chain?industry=crude-oil&draft_package=5f34981471a61339cb5ec9e903b98f9239885c8f14a8923bd5401962e02f2a01"
+    },
+    {
+      "industry_id": "ai-compute",
+      "file": "data/curated-chains/ai-compute/ai-compute.notebook-expanded-v6.json",
+      "sha256": "83383ddd4ad53c0e75f28beb9641ac62e1585aaf57d49b7d0390b5ead7d7574f",
+      "counts": {
+        "nodes": 43,
+        "memberships": 43,
+        "views": 1,
+        "relations": 34,
+        "companies": 18,
+        "securities": 10,
+        "participations": 30,
+        "sources": 23,
+        "evidence": 71,
+        "releases": 1
+      },
+      "status": "draft",
+      "project_file": "data/curated-chains/ai-compute/ai-compute.project-draft-v1.json",
+      "project_sha256": "11458cbb4c1a790dbacbb7aa7db8d3b1d574db933ff7a5244c6af39db170cff6",
+      "preview_package_id": "3155aaf4282ff64393f5f5b7716e2942c9875da1b4c58c2abba08913b26c51e9",
+      "preview_url": "http://127.0.0.1:58734/chain?industry=ai-compute&draft_package=3155aaf4282ff64393f5f5b7716e2942c9875da1b4c58c2abba08913b26c51e9"
+    },
+    {
+      "industry_id": "gold",
+      "file": "data/curated-chains/gold/gold.notebook-expanded-v1.json",
+      "sha256": "1c0d8e416322fcf21d364d957b7a68473fc6622fe4eee083be4d99a0bf1ce3f5",
+      "counts": {
+        "nodes": 35,
+        "relations": 34,
+        "companies": 5,
+        "securities": 4,
+        "participations": 17,
+        "sources": 8,
+        "evidence": 45
+      },
+      "status": "draft",
+      "project_file": "data/curated-chains/gold/gold.notebook-expanded-v1.json",
+      "project_sha256": "1c0d8e416322fcf21d364d957b7a68473fc6622fe4eee083be4d99a0bf1ce3f5",
+      "preview_package_id": "6448d477bbded7adc105f5012b475dae3b746b533f6368d9ade7a12f8129b464",
+      "preview_url": "http://127.0.0.1:58734/chain?industry=gold&draft_package=6448d477bbded7adc105f5012b475dae3b746b533f6368d9ade7a12f8129b464"
+    },
+    {
+      "industry_id": "grid",
+      "file": "data/curated-chains/grid/grid.notebook-expanded-v1.json",
+      "sha256": "cc9068e54285018c25b341d1b79ed86f5281800e9c14192b2ddc99c78a8087da",
+      "counts": {
+        "nodes": 34,
+        "relations": 37,
+        "companies": 7,
+        "securities": 6,
+        "participations": 27,
+        "sources": 12,
+        "evidence": 47
+      },
+      "status": "draft",
+      "project_file": "data/curated-chains/grid/grid.notebook-expanded-v1.json",
+      "project_sha256": "cc9068e54285018c25b341d1b79ed86f5281800e9c14192b2ddc99c78a8087da",
+      "preview_package_id": "78df72a3b161cb99c564f05bbe4b257085c6f7329f086c3cf094c8b689d83786",
+      "preview_url": "http://127.0.0.1:58734/chain?industry=grid&draft_package=78df72a3b161cb99c564f05bbe4b257085c6f7329f086c3cf094c8b689d83786"
+    },
+    {
+      "industry_id": "innovative-drugs",
+      "file": "data/curated-chains/innovative-drugs/innovative-drugs.notebook-expanded-v1.json",
+      "sha256": "1389951eb016660694e7c73ede00e9b1decca08f2beffb7728d12c3f42b0ea91",
+      "counts": {
+        "nodes": 38,
+        "relations": 43,
+        "companies": 6,
+        "securities": 6,
+        "participations": 28,
+        "sources": 16,
+        "evidence": 63
+      },
+      "status": "draft",
+      "project_file": "data/curated-chains/innovative-drugs/innovative-drugs.notebook-expanded-v1.json",
+      "project_sha256": "1389951eb016660694e7c73ede00e9b1decca08f2beffb7728d12c3f42b0ea91",
+      "preview_package_id": "aad0e320ce742efcb065f61c88056ca78fb799588d8ffa347647e3d28f2ac3bd",
+      "preview_url": "http://127.0.0.1:58734/chain?industry=innovative-drugs&draft_package=aad0e320ce742efcb065f61c88056ca78fb799588d8ffa347647e3d28f2ac3bd"
+    }
+  ]
+}

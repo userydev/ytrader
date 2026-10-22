@@ -1,0 +1,1459 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "steel",
+    "revision": 1,
+    "name": "钢铁",
+    "need": "将含铁原料及再生钢加工为满足不同用途的钢铁材料。",
+    "boundary": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "高炉-转炉与电炉路线并列；电炉也可使用DRI或铁水，不等同于纯废钢路线。",
+      "不采用协会网页统计份额、产量或单位原料消耗作为2026当期数据；低碳新路线与每种钢号未穷举。",
+      "宝钢角色依据2025年报业务范围；不据此推定所有基地的特定工艺、产能或当期订单。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "原料",
+        "node_ids": [
+          "steel:ore",
+          "steel:coking",
+          "steel:coke",
+          "steel:limestone",
+          "steel:scrap",
+          "steel:dri"
+        ]
+      },
+      {
+        "module": "炼铁与炼钢",
+        "node_ids": [
+          "steel:bf",
+          "steel:hot",
+          "steel:bof",
+          "steel:eaf"
+        ]
+      },
+      {
+        "module": "铸轧与产品",
+        "node_ids": [
+          "steel:cast",
+          "steel:roll",
+          "steel:flat",
+          "steel:long",
+          "steel:tube",
+          "steel:electrical"
+        ]
+      },
+      {
+        "module": "应用与服务",
+        "node_ids": [
+          "steel:service",
+          "steel:application"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "steel:ore",
+      "name": "铁矿石",
+      "kind": "product",
+      "description": "高炉路线主要铁源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:3d20f31c578b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:coking",
+      "name": "炼焦煤",
+      "kind": "product",
+      "description": "适用高炉焦炭路线原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:aa4e41a7ba53",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:coke",
+      "name": "焦炭",
+      "kind": "product",
+      "description": "适用高炉燃料与还原剂。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:aa4e41a7ba53",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:limestone",
+      "name": "石灰石",
+      "kind": "product",
+      "description": "协会列示的适用原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:3d20f31c578b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:scrap",
+      "name": "废钢与再生钢原料",
+      "kind": "product",
+      "description": "可用于多种炼钢路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:4d6ec3977a88",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:dri",
+      "name": "直接还原铁DRI",
+      "kind": "product",
+      "description": "适用电炉的其他铁源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:88c5365e8591",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:bf",
+      "name": "高炉炼铁",
+      "kind": "activity",
+      "description": "铁矿还原形成铁水的路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:hot",
+      "name": "铁水",
+      "kind": "product",
+      "description": "高炉与适用炼钢路线中间品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:bof",
+      "name": "转炉炼钢",
+      "kind": "activity",
+      "description": "铁水进一步炼为钢。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:eaf",
+      "name": "电炉炼钢",
+      "kind": "activity",
+      "description": "电能熔化适用铁源并调整成分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:225674807047",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:88c5365e8591",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:cast",
+      "name": "钢铸造",
+      "kind": "activity",
+      "description": "炼钢下游铸造环节。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:roll",
+      "name": "钢材轧制",
+      "kind": "activity",
+      "description": "按产品要求轧制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:flat",
+      "name": "板卷及厚板",
+      "kind": "product",
+      "description": "钢材板卷产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:35a62163e286",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:long",
+      "name": "型钢与棒材",
+      "kind": "product",
+      "description": "钢材长材形态。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:35a62163e286",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:tube",
+      "name": "钢管",
+      "kind": "product",
+      "description": "宝钢列明的钢管产品类别，具体成管工艺另证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:electrical",
+      "name": "电工钢",
+      "kind": "product",
+      "description": "适用电气设备用钢类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:7ec5fa82fdb3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:service",
+      "name": "钢材加工配送",
+      "kind": "service",
+      "description": "公司公开加工配送业务接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:bee2c6af73e7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "steel:application",
+      "name": "汽车与工业应用",
+      "kind": "application",
+      "description": "适用钢材终端接口，不宣称具体客户供货。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "steel",
+      "node_id": "steel:ore",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:coking",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:coke",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:limestone",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:scrap",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:dri",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:bf",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:hot",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:bof",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:eaf",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:cast",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:roll",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:flat",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:long",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:tube",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:electrical",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:service",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "steel",
+      "node_id": "steel:application",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:steel:839c9b965f00d95a",
+      "from_node_id": "steel:coking",
+      "to_node_id": "steel:coke",
+      "kind": "input_to",
+      "statement": "适用焦煤经焦化形成焦炭。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:aa4e41a7ba53",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:fd4d3fc6c700c077",
+      "from_node_id": "steel:ore",
+      "to_node_id": "steel:bf",
+      "kind": "input_to",
+      "statement": "铁矿石进入适用高炉路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:3d20f31c578b",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:142b75dda6c8fdb3",
+      "from_node_id": "steel:coke",
+      "to_node_id": "steel:bf",
+      "kind": "input_to",
+      "statement": "焦炭参与高炉还原。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:aa4e41a7ba53",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:611cbe5e2def5d97",
+      "from_node_id": "steel:limestone",
+      "to_node_id": "steel:bf",
+      "kind": "input_to",
+      "statement": "石灰石为适用长流程原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:3d20f31c578b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:58f54987622b2fc3",
+      "from_node_id": "steel:bf",
+      "to_node_id": "steel:hot",
+      "kind": "produces",
+      "statement": "高炉还原形成铁水。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:f3f54c9b16dd688d",
+      "from_node_id": "steel:hot",
+      "to_node_id": "steel:bof",
+      "kind": "input_to",
+      "statement": "铁水进入转炉炼钢。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:4b00f1c5ac26b868",
+      "from_node_id": "steel:scrap",
+      "to_node_id": "steel:eaf",
+      "kind": "input_to",
+      "statement": "电炉可使用再生钢原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:225674807047",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:worldsteel-raw:4d6ec3977a88",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:60ac087ea5718f82",
+      "from_node_id": "steel:dri",
+      "to_node_id": "steel:eaf",
+      "kind": "input_to",
+      "statement": "适用电炉也可使用DRI。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:88c5365e8591",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:20d8f901faddb2b9",
+      "from_node_id": "steel:bof",
+      "to_node_id": "steel:cast",
+      "kind": "precedes",
+      "statement": "转炉钢进入适用铸造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:065b94800f121676",
+      "from_node_id": "steel:eaf",
+      "to_node_id": "steel:cast",
+      "kind": "precedes",
+      "statement": "电炉钢进入适用铸造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:225674807047",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:3bdf27feb630dc61",
+      "from_node_id": "steel:cast",
+      "to_node_id": "steel:roll",
+      "kind": "precedes",
+      "statement": "铸造与轧制衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:c7cb0f126afea44f",
+      "from_node_id": "steel:roll",
+      "to_node_id": "steel:flat",
+      "kind": "produces",
+      "statement": "适用轧制形成板卷等产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:35a62163e286",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:efc7580a74246bb6",
+      "from_node_id": "steel:roll",
+      "to_node_id": "steel:long",
+      "kind": "produces",
+      "statement": "适用轧制形成型材棒材。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:worldsteel-definition:35a62163e286",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:f33a7d51265a91e9",
+      "from_node_id": "steel:flat",
+      "to_node_id": "steel:service",
+      "kind": "input_to",
+      "statement": "结构推断：适用钢材进入加工配送。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:bee2c6af73e7",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:263e06c02b825048",
+      "from_node_id": "steel:flat",
+      "to_node_id": "steel:application",
+      "kind": "used_for",
+      "statement": "结构推断：匹配钢材进入工业终端。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:steel:610ddb43f5d85736",
+      "from_node_id": "steel:tube",
+      "to_node_id": "steel:application",
+      "kind": "used_for",
+      "statement": "结构推断：适用钢管进入工业终端。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "矿石/焦煤等、烧结焦化、高炉转炉/电炉、轧制、主要钢材应用与废钢回收；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_baosteel",
+      "name": "宝山钢铁股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:0c5780d49e07",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:600019",
+      "company_id": "company_baosteel",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:7039bfdc6823",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:steel:e43b014f88c848aa",
+      "company_id": "company_baosteel",
+      "node_id": "steel:flat",
+      "role": "碳钢板材产品",
+      "scope": "2025年度报告合并业务范围，仅类别；未外推2026订单或全部基地相同工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:steel:aad8856eb485b82e",
+      "company_id": "company_baosteel",
+      "node_id": "steel:tube",
+      "role": "钢管产品",
+      "scope": "2025年度报告合并业务范围，仅类别；未外推2026订单或全部基地相同工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:steel:75f20f21e3518bb4",
+      "company_id": "company_baosteel",
+      "node_id": "steel:electrical",
+      "role": "电工钢产品",
+      "scope": "2025年度报告合并业务范围，仅类别；未外推2026订单或全部基地相同工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:7ec5fa82fdb3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:steel:929799caf871f6ef",
+      "company_id": "company_baosteel",
+      "node_id": "steel:service",
+      "role": "钢材加工配送",
+      "scope": "2025年度报告合并业务范围，仅类别；未外推2026订单或全部基地相同工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:baosteel-report:bee2c6af73e7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:steel:codex-research-v1",
+      "industry_id": "steel",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "原料",
+          "node_ids": [
+            "steel:ore",
+            "steel:coking",
+            "steel:coke",
+            "steel:limestone",
+            "steel:scrap",
+            "steel:dri"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "炼铁与炼钢",
+          "node_ids": [
+            "steel:bf",
+            "steel:hot",
+            "steel:bof",
+            "steel:eaf"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "铸轧与产品",
+          "node_ids": [
+            "steel:cast",
+            "steel:roll",
+            "steel:flat",
+            "steel:long",
+            "steel:tube",
+            "steel:electrical"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用与服务",
+          "node_ids": [
+            "steel:service",
+            "steel:application"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:steel:839c9b965f00d95a",
+        "rel:new20261021:steel:fd4d3fc6c700c077",
+        "rel:new20261021:steel:142b75dda6c8fdb3",
+        "rel:new20261021:steel:611cbe5e2def5d97",
+        "rel:new20261021:steel:58f54987622b2fc3",
+        "rel:new20261021:steel:f3f54c9b16dd688d",
+        "rel:new20261021:steel:4b00f1c5ac26b868",
+        "rel:new20261021:steel:60ac087ea5718f82",
+        "rel:new20261021:steel:20d8f901faddb2b9",
+        "rel:new20261021:steel:065b94800f121676",
+        "rel:new20261021:steel:3bdf27feb630dc61",
+        "rel:new20261021:steel:c7cb0f126afea44f",
+        "rel:new20261021:steel:efc7580a74246bb6",
+        "rel:new20261021:steel:f33a7d51265a91e9",
+        "rel:new20261021:steel:263e06c02b825048",
+        "rel:new20261021:steel:610ddb43f5d85736"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "title": "What is steel",
+      "publisher": "World Steel Association",
+      "url": "https://worldsteel.org/about-steel/what-is-steel/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:11:14.291147+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": "623c39cce445b1c043e2e8a98592e7a136f2512f02334040795841b2db7f98ce",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:worldsteel-raw",
+      "source_version": "sha256:e55506ac7d0317e311eea6eefe371ba12fc031f57f94ab4aa61aa1e3f9f75a5c",
+      "title": "Steelmaking raw materials",
+      "publisher": "World Steel Association",
+      "url": "https://worldsteel.org/steel-topics/raw-materials/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T15:11:14.291921+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": "9ef6d0b105c3ebddec0f1da3a2c13460c550b8256f69c4e66448cfa588f18f7f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "title": "2025年年度报告（业务结构）",
+      "publisher": "宝钢股份",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225257227.PDF",
+      "published_at": "2026-04-30",
+      "retrieved_at": "2026-10-21T15:20:01.121153+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "9d910b7b6a78fe2ccae1345c8651ca2e592d83b04bc2705f51d611ec0e1545a8",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:worldsteel-definition:c111afac906f",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "excerpt": "blast furnace-basic oxygen furnace",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-definition.txt:17"
+      },
+      "summary": "高炉-转炉路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-definition:225674807047",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "excerpt": "electric arc furnace",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-definition.txt:17"
+      },
+      "summary": "电炉路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-definition:88c5365e8591",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "excerpt": "direct-reduced iron",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-definition.txt:18"
+      },
+      "summary": "适用电炉也可使用直接还原铁或铁水。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-definition:eb31517d15cc",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "excerpt": "casting and rolling",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-definition.txt:19"
+      },
+      "summary": "钢经铸造及轧制形成钢材。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-definition:35a62163e286",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-definition",
+      "source_version": "sha256:06ba40eb43bdb95853dcfd9e996b05fdf71f4646866579f0fc205174a973f194",
+      "excerpt": "coil, plate, sections or bars",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-definition.txt:19"
+      },
+      "summary": "钢材产品形态。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-raw:3d20f31c578b",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-raw",
+      "source_version": "sha256:e55506ac7d0317e311eea6eefe371ba12fc031f57f94ab4aa61aa1e3f9f75a5c",
+      "excerpt": "iron ore, coal, limestone and recycled steel",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-raw.txt:7"
+      },
+      "summary": "高炉转炉主要原料类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-raw:aa4e41a7ba53",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-raw",
+      "source_version": "sha256:e55506ac7d0317e311eea6eefe371ba12fc031f57f94ab4aa61aa1e3f9f75a5c",
+      "excerpt": "coking coal is turned into coke",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-raw.txt:14"
+      },
+      "summary": "焦煤经焦化形成高炉用焦炭。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:worldsteel-raw:4d6ec3977a88",
+      "revision": 1,
+      "source_id": "codex-20261021:worldsteel-raw",
+      "source_version": "sha256:e55506ac7d0317e311eea6eefe371ba12fc031f57f94ab4aa61aa1e3f9f75a5c",
+      "excerpt": "Steel scrap",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/worldsteel-raw.txt:72"
+      },
+      "summary": "再生钢作为原料，多路线可使用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:baosteel-report:0c5780d49e07",
+      "revision": 1,
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "excerpt": "宝山钢铁股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/baosteel-report.txt:2"
+      },
+      "summary": "发行人主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:baosteel-report:7039bfdc6823",
+      "revision": 1,
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "excerpt": "公司代码：600019",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/baosteel-report.txt:4"
+      },
+      "summary": "2025年报代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:baosteel-report:e6f3e75d6fa7",
+      "revision": 1,
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "excerpt": "碳钢薄板、厚板与钢管",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/baosteel-report.txt:270"
+      },
+      "summary": "公司钢铁主业产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:baosteel-report:7ec5fa82fdb3",
+      "revision": 1,
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "excerpt": "取向电工钢",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/baosteel-report.txt:273"
+      },
+      "summary": "公司电工钢类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:baosteel-report:bee2c6af73e7",
+      "revision": 1,
+      "source_id": "codex-20261021:baosteel-report",
+      "source_version": "sha256:9ff8fe4b4d204b47422e6156458d360a424f1bb6cc28f09a8a4f233feaf64b33",
+      "excerpt": "加工配送",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/baosteel-report.txt:265"
+      },
+      "summary": "公司相关业务接口。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 5,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

@@ -1,0 +1,1644 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "fertilizers",
+    "revision": 1,
+    "name": "化肥",
+    "need": "将氮、磷、钾等资源加工为适配农业需求的养分产品。",
+    "boundary": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "氮肥、磷肥、钾肥是并列路线，复合与掺混产品不同；天然气制氨不是中国所有氮肥厂的统一原料。",
+      "磷酸及MAP/DAP结构采用Yara2022技术手册，未采用该手册市场预测、项目产能或成本。",
+      "未提供施肥方案、作物用量、价格预测或出口政策结论。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "氮肥路线",
+        "node_ids": [
+          "fertilizers:nitrogen",
+          "fertilizers:hydrogen",
+          "fertilizers:ammonia",
+          "fertilizers:urea",
+          "fertilizers:nitrate",
+          "fertilizers:nitrogenfert"
+        ]
+      },
+      {
+        "module": "磷肥路线",
+        "node_ids": [
+          "fertilizers:rock",
+          "fertilizers:acid",
+          "fertilizers:phosphate",
+          "fertilizers:phosphorus"
+        ]
+      },
+      {
+        "module": "钾肥与复混",
+        "node_ids": [
+          "fertilizers:potash",
+          "fertilizers:potfert",
+          "fertilizers:compound",
+          "fertilizers:blend"
+        ]
+      },
+      {
+        "module": "农业应用",
+        "node_ids": [
+          "fertilizers:distribution",
+          "fertilizers:agri"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "fertilizers:nitrogen",
+      "name": "空气氮",
+      "kind": "product",
+      "description": "氮肥路线氮源。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:e00d2130384a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:hydrogen",
+      "name": "合成氨氢源",
+      "kind": "product",
+      "description": "天然气等原料路线提供氢，不限于天然气。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:e00d2130384a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:ammonia",
+      "name": "合成氨",
+      "kind": "product",
+      "description": "氮与氢合成的基础化工品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:urea",
+      "name": "尿素",
+      "kind": "product",
+      "description": "氨下游的氮肥产品之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:nitrate",
+      "name": "硝酸与硝铵路线",
+      "kind": "product",
+      "description": "不同氮肥的原料及产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:rock",
+      "name": "磷矿资源",
+      "kind": "product",
+      "description": "磷肥路线资源输入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2e56740ab57f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:acid",
+      "name": "磷酸",
+      "kind": "product",
+      "description": "磷矿酸处理形成的适用原料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:acbefcc363af",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:phosphate",
+      "name": "MAP/DAP磷铵",
+      "kind": "product",
+      "description": "氨与磷酸反应形成的适用磷铵。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:435ffda16cc3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:potash",
+      "name": "钾盐资源",
+      "kind": "product",
+      "description": "适用钾肥路线矿盐输入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:7dbfed2efd6b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:potfert",
+      "name": "钾肥",
+      "kind": "product",
+      "description": "钾养分产品接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:saltlake:0e373c35100b",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-production:7dbfed2efd6b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:compound",
+      "name": "复合NPK肥",
+      "kind": "product",
+      "description": "化学复合路线中每粒含多种养分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:blend",
+      "name": "掺混NPK肥",
+      "kind": "product",
+      "description": "成品养分原料干混路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:4f5b8b8ad3a7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:distribution",
+      "name": "肥料分销",
+      "kind": "service",
+      "description": "肥料产品到农业用户的分销接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:agri",
+      "name": "农业养分应用",
+      "kind": "application",
+      "description": "按作物及土壤需求选用产品，具体施用方案不在本稿。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:phosphorus",
+      "name": "磷养分产品",
+      "kind": "product",
+      "description": "磷肥及phosphates总类，不限定MAP/DAP牌号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "fertilizers:nitrogenfert",
+      "name": "氮肥产品",
+      "kind": "product",
+      "description": "氮肥总类，具体产品与原料路线另行核查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:nitrogen",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:hydrogen",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:ammonia",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:urea",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:nitrate",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:rock",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:acid",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:phosphate",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:potash",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:potfert",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:compound",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:blend",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:distribution",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:agri",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:phosphorus",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "fertilizers",
+      "node_id": "fertilizers:nitrogenfert",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:fertilizers:9dc5b3ee272da6c5",
+      "from_node_id": "fertilizers:nitrogen",
+      "to_node_id": "fertilizers:ammonia",
+      "kind": "input_to",
+      "statement": "空气氮与氢合成氨。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:e00d2130384a",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:8c6ad5ca765dcc47",
+      "from_node_id": "fertilizers:hydrogen",
+      "to_node_id": "fertilizers:ammonia",
+      "kind": "input_to",
+      "statement": "适用氢源参与合成氨。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:e00d2130384a",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:ccefd1465ecc277d",
+      "from_node_id": "fertilizers:ammonia",
+      "to_node_id": "fertilizers:urea",
+      "kind": "input_to",
+      "statement": "氨进入尿素路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:88a9cfd6088f47c5",
+      "from_node_id": "fertilizers:ammonia",
+      "to_node_id": "fertilizers:nitrate",
+      "kind": "input_to",
+      "statement": "氨参与适用硝酸及硝铵路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:43e9a785f7d468b6",
+      "from_node_id": "fertilizers:rock",
+      "to_node_id": "fertilizers:acid",
+      "kind": "input_to",
+      "statement": "结构推断：磷矿经适用酸处理形成磷酸接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:acbefcc363af",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:9e8c4b50398a403c",
+      "from_node_id": "fertilizers:acid",
+      "to_node_id": "fertilizers:phosphate",
+      "kind": "input_to",
+      "statement": "磷酸与氨形成磷铵。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:435ffda16cc3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:7be27fff19bee64e",
+      "from_node_id": "fertilizers:ammonia",
+      "to_node_id": "fertilizers:phosphate",
+      "kind": "input_to",
+      "statement": "氨参与磷铵反应。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:435ffda16cc3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:67c4941592e8a9ba",
+      "from_node_id": "fertilizers:potash",
+      "to_node_id": "fertilizers:potfert",
+      "kind": "input_to",
+      "statement": "结构推断：钾盐进入适用钾肥加工路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:saltlake:0e373c35100b",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-production:7dbfed2efd6b",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:040e78d784e77cc3",
+      "from_node_id": "fertilizers:urea",
+      "to_node_id": "fertilizers:compound",
+      "kind": "input_to",
+      "statement": "结构推断：适用氮组分参与复合肥路线，配方按工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:888627c887b91874",
+      "from_node_id": "fertilizers:phosphate",
+      "to_node_id": "fertilizers:compound",
+      "kind": "input_to",
+      "statement": "结构推断：适用磷组分参与复合肥路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:435ffda16cc3",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:c9bf6b486e7f06b1",
+      "from_node_id": "fertilizers:potfert",
+      "to_node_id": "fertilizers:compound",
+      "kind": "input_to",
+      "statement": "结构推断：适用钾组分参与复合肥路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:9cb4f64409cdefcb",
+      "from_node_id": "fertilizers:urea",
+      "to_node_id": "fertilizers:blend",
+      "kind": "input_to",
+      "statement": "结构推断：适用成品原料参与干混。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-handbook:4f5b8b8ad3a7",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:d2b86119b26f39a4",
+      "from_node_id": "fertilizers:compound",
+      "to_node_id": "fertilizers:distribution",
+      "kind": "input_to",
+      "statement": "结构推断：复合肥产品进入适用分销。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:c912711384ca04d5",
+      "from_node_id": "fertilizers:distribution",
+      "to_node_id": "fertilizers:agri",
+      "kind": "supports",
+      "statement": "结构推断：分销向农业提供适用养分产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:6a9341bf32637921",
+      "from_node_id": "fertilizers:phosphate",
+      "to_node_id": "fertilizers:phosphorus",
+      "kind": "part_of",
+      "statement": "结构推断：磷铵作为磷养分产品路线之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:fertilizers:16f7b89220dadea4",
+      "from_node_id": "fertilizers:urea",
+      "to_node_id": "fertilizers:nitrogenfert",
+      "kind": "part_of",
+      "statement": "结构推断：尿素作为氮肥路线之一；不指定公司生产该牌号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "氮磷钾资源/基础原料、肥料合成/加工与设备、复合肥、农资流通与农业应用；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_yara",
+      "name": "Yara International ASA",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_mosaic",
+      "name": "The Mosaic Company",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_yuntianhua",
+      "name": "云南云天化股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:f8785ba8c8cc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_saltlake",
+      "name": "青海盐湖工业股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:saltlake:91fbd1c70291",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:600096",
+      "company_id": "company_yuntianhua",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:7e0ede96f634",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:000792",
+      "company_id": "company_saltlake",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:saltlake:91fbd1c70291",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:fertilizers:7e6b7b6db701dc3a",
+      "company_id": "company_yara",
+      "node_id": "fertilizers:ammonia",
+      "role": "氮肥生产路线",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:207c96114a3f87ed",
+      "company_id": "company_yara",
+      "node_id": "fertilizers:urea",
+      "role": "氮肥产品类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:944299b2325fa37d",
+      "company_id": "company_yara",
+      "node_id": "fertilizers:compound",
+      "role": "复合肥业务类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:10f9609eb2bf06b8",
+      "company_id": "company_mosaic",
+      "node_id": "fertilizers:potfert",
+      "role": "钾产品开采生产分销",
+      "scope": "官网仅说明potash及phosphates产品总类，不据此推定全部MAP/DAP工艺、牌号或生产基地。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:703c04c7d3620dc6",
+      "company_id": "company_yuntianhua",
+      "node_id": "fertilizers:rock",
+      "role": "磷矿采选业务",
+      "scope": "官网主营业务的氮磷肥总类，具体配方、产品牌号、产能及原料路线需单独验证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:fcb326949852425d",
+      "company_id": "company_saltlake",
+      "node_id": "fertilizers:potfert",
+      "role": "钾肥业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:saltlake:0e373c35100b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:32c419b9730b3a82",
+      "company_id": "company_mosaic",
+      "node_id": "fertilizers:phosphorus",
+      "role": "磷养分产品开采生产分销",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:1cd7fbcca4993ce6",
+      "company_id": "company_yuntianhua",
+      "node_id": "fertilizers:phosphorus",
+      "role": "磷肥业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:fertilizers:031fa19536cffe8c",
+      "company_id": "company_yuntianhua",
+      "node_id": "fertilizers:nitrogenfert",
+      "role": "氮肥业务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:fertilizers:codex-research-v1",
+      "industry_id": "fertilizers",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "氮肥路线",
+          "node_ids": [
+            "fertilizers:nitrogen",
+            "fertilizers:hydrogen",
+            "fertilizers:ammonia",
+            "fertilizers:urea",
+            "fertilizers:nitrate",
+            "fertilizers:nitrogenfert"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "磷肥路线",
+          "node_ids": [
+            "fertilizers:rock",
+            "fertilizers:acid",
+            "fertilizers:phosphate",
+            "fertilizers:phosphorus"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "钾肥与复混",
+          "node_ids": [
+            "fertilizers:potash",
+            "fertilizers:potfert",
+            "fertilizers:compound",
+            "fertilizers:blend"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "农业应用",
+          "node_ids": [
+            "fertilizers:distribution",
+            "fertilizers:agri"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:fertilizers:9dc5b3ee272da6c5",
+        "rel:new20261021:fertilizers:8c6ad5ca765dcc47",
+        "rel:new20261021:fertilizers:ccefd1465ecc277d",
+        "rel:new20261021:fertilizers:88a9cfd6088f47c5",
+        "rel:new20261021:fertilizers:43e9a785f7d468b6",
+        "rel:new20261021:fertilizers:9e8c4b50398a403c",
+        "rel:new20261021:fertilizers:7be27fff19bee64e",
+        "rel:new20261021:fertilizers:67c4941592e8a9ba",
+        "rel:new20261021:fertilizers:040e78d784e77cc3",
+        "rel:new20261021:fertilizers:888627c887b91874",
+        "rel:new20261021:fertilizers:c9bf6b486e7f06b1",
+        "rel:new20261021:fertilizers:9cb4f64409cdefcb",
+        "rel:new20261021:fertilizers:d2b86119b26f39a4",
+        "rel:new20261021:fertilizers:c912711384ca04d5",
+        "rel:new20261021:fertilizers:6a9341bf32637921",
+        "rel:new20261021:fertilizers:16f7b89220dadea4"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "title": "How we make fertilizer",
+      "publisher": "Yara",
+      "url": "https://www.yara.com/crop-nutrition/crop-and-agronomy-knowledge/how-we-make-our-fertilizer/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:37.611896+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "37e5fcf193ff776b920e00860776b5411a5b68d27ca06f84b3bc96fd1a71977c",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:yara-handbook",
+      "source_version": "sha256:de7722f461b951ec70edb086b094bee1a77e3b940516cd63f7a2fb415d4a71d7",
+      "title": "Fertilizer industry handbook 2022",
+      "publisher": "Yara",
+      "url": "https://www.yara.com/contentassets/29b0f7802aae4f7face19d5c3495be77/fertilizer-industry-handbook-2022-with-notes.pdf",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:37.738911+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "71b1209bf5ef85effed29642fe3b4fd5499f31f2f08f01a072d0aa730302a21d",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:mosaic",
+      "source_version": "sha256:6305d555ac18c7120fc713355209a1a2d8050926b7912ceb6ef626f6ddfda0eb",
+      "title": "Products and operations",
+      "publisher": "Mosaic",
+      "url": "https://mosaicco.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:21.897220+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "45a36d9b33d31740c8e7ff1742501d4dcccbfaa0f39ea07bb9517ec74bd46557",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:yuntianhua",
+      "source_version": "sha256:9319b13501d22060c1dec1a70ff1b780c5671975132b63d0f1b952246f0a1a2a",
+      "title": "公司及产品",
+      "publisher": "云天化",
+      "url": "https://www.yyth.com.cn/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:23.002267+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "db97a84fd1cce15dd91123f97fd02b0c7e1b3b8e274a2ae8a44913d39c840455",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:saltlake",
+      "source_version": "sha256:9f4b152b8c6f6b8fa3a2549f1c18bcc0df08a8e449cc49a0ac5de53f38cffe34",
+      "title": "公司及产品",
+      "publisher": "盐湖股份",
+      "url": "https://www.qhyhgf.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:23.288900+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "bf6dbe0d943303d88d4d222d1c1b76a33cada83a6e85fec99822463c4f849b96",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:yara-production:e00d2130384a",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "hydrogen (sourced from natural gas)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:223"
+      },
+      "summary": "空气氮与氢合成氨的原料接口，示例氢来自天然气。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-production:cbae313c7c34",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "to form ammonia",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:233"
+      },
+      "summary": "合成氨作为氮肥基础原料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-production:2fd025fe39ec",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "urea, ammonium nitrate, and nitric acid",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:234"
+      },
+      "summary": "氨进一步形成尿素等氮肥原料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-production:2e56740ab57f",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "phosphate rock",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:226"
+      },
+      "summary": "磷来自磷矿。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-production:7dbfed2efd6b",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "potash salts",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:229"
+      },
+      "summary": "钾来自钾盐。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-production:d507989c7727",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-production",
+      "source_version": "sha256:465e6f08be3dc84dca7be362d17d6599f4c5b10db4fbeee06a3ae6d5f521bd9a",
+      "excerpt": "Complex Fertilizers",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-production.txt:240"
+      },
+      "summary": "复合肥每粒含多种养分。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-handbook:acbefcc363af",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-handbook",
+      "source_version": "sha256:de7722f461b951ec70edb086b094bee1a77e3b940516cd63f7a2fb415d4a71d7",
+      "excerpt": "Phosphoric acid plant",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-handbook.txt:332"
+      },
+      "summary": "磷酸制备与磷铵路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-handbook:435ffda16cc3",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-handbook",
+      "source_version": "sha256:de7722f461b951ec70edb086b094bee1a77e3b940516cd63f7a2fb415d4a71d7",
+      "excerpt": "Di-ammonium phosphate (DAP)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-handbook.txt:331"
+      },
+      "summary": "磷酸与氨形成DAP/MAP，2022技术资料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yara-handbook:4f5b8b8ad3a7",
+      "revision": 1,
+      "source_id": "codex-20261021:yara-handbook",
+      "source_version": "sha256:de7722f461b951ec70edb086b094bee1a77e3b940516cd63f7a2fb415d4a71d7",
+      "excerpt": "dry blended NPK",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yara-handbook.txt:335"
+      },
+      "summary": "干混NPK与化学复合路线不同。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:mosaic:c12744b2a265",
+      "revision": 1,
+      "source_id": "codex-20261021:mosaic",
+      "source_version": "sha256:6305d555ac18c7120fc713355209a1a2d8050926b7912ceb6ef626f6ddfda0eb",
+      "excerpt": "Mosaic mines, produces and distributes",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/mosaic.txt:62"
+      },
+      "summary": "Mosaic钾及磷产品开采、生产、分销业务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yuntianhua:f8785ba8c8cc",
+      "revision": 1,
+      "source_id": "codex-20261021:yuntianhua",
+      "source_version": "sha256:9319b13501d22060c1dec1a70ff1b780c5671975132b63d0f1b952246f0a1a2a",
+      "excerpt": "云南云天化股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yuntianhua.txt:1"
+      },
+      "summary": "公司主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yuntianhua:7e0ede96f634",
+      "revision": 1,
+      "source_id": "codex-20261021:yuntianhua",
+      "source_version": "sha256:9319b13501d22060c1dec1a70ff1b780c5671975132b63d0f1b952246f0a1a2a",
+      "excerpt": "证券代码：600096",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yuntianhua.txt:58"
+      },
+      "summary": "官网代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yuntianhua:d18e5389e91a",
+      "revision": 1,
+      "source_id": "codex-20261021:yuntianhua",
+      "source_version": "sha256:9319b13501d22060c1dec1a70ff1b780c5671975132b63d0f1b952246f0a1a2a",
+      "excerpt": "磷肥、氮肥、共聚甲醛制造商",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yuntianhua.txt:57"
+      },
+      "summary": "公司氮磷肥与磷矿业务范围，仅引用相关类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:saltlake:91fbd1c70291",
+      "revision": 1,
+      "source_id": "codex-20261021:saltlake",
+      "source_version": "sha256:9f4b152b8c6f6b8fa3a2549f1c18bcc0df08a8e449cc49a0ac5de53f38cffe34",
+      "excerpt": "证券代码000792",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/saltlake.txt:35"
+      },
+      "summary": "盐湖股份主体及代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:saltlake:0e373c35100b",
+      "revision": 1,
+      "source_id": "codex-20261021:saltlake",
+      "source_version": "sha256:9f4b152b8c6f6b8fa3a2549f1c18bcc0df08a8e449cc49a0ac5de53f38cffe34",
+      "excerpt": "钾肥工业生产基地",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/saltlake.txt:35"
+      },
+      "summary": "盐湖钾肥业务，不采用页面产能和排名。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 5,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

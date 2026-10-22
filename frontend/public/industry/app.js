@@ -1,16 +1,28 @@
 import { createFundamentalsClient, presentFundamentals, supportedSymbol, periodLabel, moneyUnit, TABLE_NAMES, STATE_NAMES } from './fundamentals.js';
 import { coreApi, safeReturn } from '../shared/core.js';
+import { usesChainLayout, createChainLayout, renderChainCompanies, chainCompanyLabel } from './chain-layout.js?v=all-curated-20261021';
 
 let INDUSTRIES = [];
 const app = document.querySelector('#app');
+// One stable React island, outside the native graph/inspector columns.
+const monitorHost = document.createElement('div');
+monitorHost.className = 'industry-monitor-host';
+function disposeIndustryMonitor() { window.dispatchEvent(new Event('industry-monitor:dispose')); }
+function syncIndustryMonitor() {
+  monitorHost.hidden = Boolean(detailCompany);
+  window.dispatchEvent(new CustomEvent('industry-monitor:render', { detail: { host: monitorHost, chainId: industryId, hidden: Boolean(detailCompany) } }));
+}
 const query = new URLSearchParams(location.search);
 let industryId = query.get('industry') || '';
 let datasets, securities, context, observatory, profiles, data, nodes, companies;
-let standaloneSymbol = query.get('symbol') || '', standaloneModel = null, companyRequest = 0;
+let standaloneSymbol = query.get('draft_package') ? '' : query.get('symbol') || '', standaloneModel = null, companyRequest = 0, panoramaRequest = 0;
 const panoramaErrors = new Map(), panoramaMeta = new Map();
 let layers = { status: true, news: true, companies: false };
 let focusedNewsId = null, selection = { type: 'feed' }, search = '', view = 'stages';
 let businessHost, currentHost, status, boardObserver, lastBoardWidth = null;
+// Retain historic action/state keys for existing saved AI navigation. All five
+// maintained curated graphs now use the same engine through chain-layout.js.
+let aiGraph = null, aiExpanded = new Set(), aiLayoutKey = '';
 let inspectorHost, inspectorLibrary, inspectorData, inspectorContext = '';
 let inspectorState = { tab: 'detail', open: null, scrollTop: 0 };
 let panoramaHost, companyHost, detailCompany = null, detailTab = 'overview', panoramaScroll = 0;
@@ -25,9 +37,13 @@ let newsRequest = 0, newsController;
 let liveEditorial = { status: 'idle', items: [], error: '' };
 let dynamicImpact = { key: '', status: 'idle', links: [], message: '', model: '', created_at: '' };
 let structureResearch = { key: '', status: 'idle', message: '' };
-function openGraph() { return !['gold', 'crude-oil', 'ai-compute', 'innovative-drugs', 'grid'].includes(industryId); }
+function openGraph() { return data?.source_kind === 'curated_v02' || !['gold', 'crude-oil', 'ai-compute', 'innovative-drugs', 'grid'].includes(industryId); }
+function isDraft(graph = data) { return graph?.source_kind === 'curated_v02' && graph.status === 'draft'; }
+function versionedLinks(links, graph) {
+  return links.map(link => isDraft(graph) || (graph?.source_kind === 'curated_v02' && (link.graph_release_id || link.source_version) !== graph.version) ? { ...link, node_ids: [], relation: 'association' } : link);
+}
 async function prepareStructure(manual = false) {
-  if (!data?.needs_research || (!manual && new URLSearchParams(location.search).get('result') === 'source')) return;
+  if (!manual || isDraft() || !data?.needs_research) return;
   const key = `${industryId}:${data.version}`;
   if (!manual && structureResearch.key === key) return;
   structureResearch = { key, status: 'loading', message: '正在按主题整理主线、分支与公司角色…' };
@@ -94,7 +110,7 @@ function revealChosenEditorial() {
 function liveNewsItem(item) {
   const graph = datasets?.[industryId];
   const links = (item.industry_links || []).filter(link => link.industry_id === industryId).map(link =>
-    openGraph() && (graph?.needs_research || link.source_version !== graph?.version) ? { ...link, node_ids: [] } : link);
+    isDraft(graph) || (graph?.source_kind === 'curated_v02' && (link.graph_release_id || link.source_version) !== graph.version) || (openGraph() && (graph?.needs_research || link.source_version !== graph?.version)) ? { ...link, node_ids: [] } : link);
   const nodeIds = new Set(datasets[industryId]?.nodes.map(node => node.id) || []);
   return { id: `live:${item.id}`, eventId: item.event_id, progressId: item.id, live: true,
     title: item.title, summary: item.summary, date: item.published_at || '', publisher: (item.publishers || []).join(' / '),
@@ -235,22 +251,23 @@ function safeNewsReturn(value) { return safeReturn(value, NEWS_HOME); }
 function editorialNewsId() { return `editorial:${editorial.id}`; }
 function editorialLinks() {
   const graph = datasets?.[industryId];
-  const original = (editorial.event?.links.filter(link => link.industry_id === industryId) || []).map(link =>
+  const original = versionedLinks(editorial.event?.links.filter(link => link.industry_id === industryId) || [], graph).map(link =>
     openGraph() && (!graph || graph.needs_research || link.source_version !== graph.version) ? { ...link, node_ids: [], relation: 'association' } : link);
-  return dynamicImpact.key === impactKey() && dynamicImpact.links.length ? [...original.filter(link => link.relation !== 'association'), ...dynamicImpact.links] : original;
+  return !isDraft(graph) && dynamicImpact.key === impactKey() && dynamicImpact.links.length ? [...original.filter(link => link.relation !== 'association'), ...dynamicImpact.links] : original;
 }
 function impactKey() { return `${industryId}:${editorial.id}:${editorial.progressId}:${datasets?.[industryId]?.version || ''}`; }
 async function prepareImpact(force = false) {
-  if (!data || data.needs_research || editorial.status !== 'ready' || !editorial.id || standaloneSymbol || new URLSearchParams(location.search).get('result') === 'source') return;
+  if (!data || isDraft() || data.needs_research || editorial.status !== 'ready' || !editorial.id || standaloneSymbol || new URLSearchParams(location.search).get('result') === 'source') return;
   const key = impactKey();
   if (!force && dynamicImpact.key === key) return;
   dynamicImpact = { key, status: 'loading', links: [], message: '正在结合本条新闻研究实际环节的条件影响…', model: '', created_at: '' };
   const selectedParams = new URLSearchParams(location.search);
-  const path = `/industry-research/${encodeURIComponent(industryId)}/impact?${new URLSearchParams({ news: editorial.id, progress: editorial.progressId, offset: selectedParams.get('source_offset') || '0', result: data.research?.selected_result || selectedParams.get('result') || '' })}`;
+  const path = `/industry-research/${encodeURIComponent(industryId)}/impact?${new URLSearchParams({ news: editorial.id, progress: editorial.progressId, offset: selectedParams.get('source_offset') || '0', result: data.research?.selected_result || selectedParams.get('result') || '', published_release: data.source_kind === 'curated_v02' ? data.version : '' })}`;
   const alive = () => key === impactKey() && dynamicImpact.key === key;
   const repaint = () => { if (alive() && currentHost) { updateFocus(); app.querySelector('.news-bridge')?.replaceWith(newsBridgeBar()); } };
   const accept = result => {
     if (!alive()) return;
+    if (result.source_version && result.source_version !== datasets[industryId].version) throw new Error('新闻影响引用的图版本不一致，未套用到当前结构。');
     dynamicImpact = { key, status: 'ready', links: result.links || [], message: result.links?.length ? '条件推断 · 未核实；并列环节不代表确定因果路径。' : '本版本暂无可定位的条件影响；可结合资料继续研究。', model: result.model || '', created_at: result.created_at || '' };
     repaint();
   };
@@ -372,6 +389,7 @@ function editorialSourceList(records) {
     record.publisher || record.date ? el('p', { class: 'news-meta' }, [record.publisher, record.date].filter(Boolean).join(' · ')) : null)));
 }
 function editorialMappingSection() {
+  if (isDraft()) return section('关联新闻阅读', el('p', { class: 'basis-note' }, '研究草稿仅用于结构体验；未将旧节点或新闻影响投射到草稿，不自动开展研究。'));
   const transmission = el('core-transmission');
   transmission.context = { links: editorialLinks(), graphs: datasets, title: editorial.event?.title,
     eventId: editorial.id, progressId: editorial.progressId, reports: editorial.event?.reports || [],
@@ -391,8 +409,9 @@ function renderBridgeState() {
 
 // History keeps the panorama context, not just the expanded company's URL.
 function snapshot() {
-  return { industryId, newsId: editorial.id, progressId: editorial.progressId, layers: { ...layers }, focusedNewsId, selection: { ...selection }, search, view,
-    detailCompany, detailTab, panoramaScroll, trendKeys: { ...trendKeys }, inspector: inspectorSnapshot(), scrollY: window.scrollY };
+  return { industryId, graphVersion: data?.version, newsId: editorial.id, progressId: editorial.progressId, layers: { ...layers }, focusedNewsId, selection: { ...selection }, search, view,
+    detailCompany, detailTab, panoramaScroll, trendKeys: { ...trendKeys }, inspector: inspectorSnapshot(),
+    aiExpanded: usesChainLayout(data) ? [...aiExpanded] : [], scrollY: window.scrollY };
 }
 function routeSnapshot() {
   try {
@@ -418,7 +437,10 @@ function storeRoute(push = false) {
     return;
   }
   next.searchParams.set('industry', industryId);
-  if (data?.research) next.searchParams.set('result', data.research.selected_result);
+  if (isDraft()) {
+    next.searchParams.set('draft_package', data.draft.package_id);
+    next.searchParams.delete('published_release'); next.searchParams.delete('result');
+  } else if (data?.research) next.searchParams.set('result', data.research.selected_result);
   const selectedNode = selection.type === 'node' ? selection.id : selection.type === 'company' ? selection.nodeId : null;
   if (selectedNode) next.searchParams.set('node', selectedNode);
   else next.searchParams.delete('node');
@@ -439,7 +461,7 @@ function restoreRoute(saved) {
   const owner = requested && (INDUSTRIES.find(i => i.id === industryId && datasets[i.id]?.companies.some(c => c.id === requested)) || INDUSTRIES.find(i => datasets[i.id]?.companies.some(c => c.id === requested)));
   if (owner) industryId = owner.id;
   const legacyCompany = owner && datasets[owner.id].companies.find(company => company.id === requested);
-  if (legacyCompany && supportedSymbol(legacyCompany.symbol)) {
+  if (legacyCompany && !isDraft(datasets[industryId]) && supportedSymbol(legacyCompany.symbol)) {
     const back = new URL(location.href); back.searchParams.delete('company'); back.searchParams.delete('tab'); back.searchParams.set('selected_company', requested);
     const companyParams = new URLSearchParams(params);
     companyParams.delete('company'); companyParams.delete('symbol');
@@ -454,7 +476,7 @@ function restoreRoute(saved) {
   detailCompany = owner ? requested : null; detailTab = COMPANY_TABS.some(([key]) => key === params.get('tab')) ? params.get('tab') : 'overview'; panoramaScroll = 0;
   trendKeys = { quick: 'net_profit', detail: 'net_profit' };
   inspectorState = { tab: params.get('panel') === 'explanation' || params.has('source_offset') || params.get('result') === 'source' ? 'explanation' : 'detail', open: null, scrollTop: 0 };
-  const canRestore = saved && saved.industryId === industryId && saved.detailCompany === detailCompany && (saved.newsId || '') === editorial.id && (saved.progressId || '') === editorial.progressId;
+  const canRestore = saved && saved.graphVersion === datasets[industryId].version && saved.industryId === industryId && saved.detailCompany === detailCompany && (saved.newsId || '') === editorial.id && (saved.progressId || '') === editorial.progressId;
   if (canRestore) {
     layers = { ...layers, ...saved.layers }; focusedNewsId = saved.focusedNewsId;
     selection = saved.selection || selection; search = saved.search || ''; view = saved.view === 'companies' ? 'companies' : 'stages';
@@ -465,7 +487,8 @@ function restoreRoute(saved) {
       scrollTop: Number.isFinite(saved.inspector.scrollTop) && saved.inspector.scrollTop >= 0 ? saved.inspector.scrollTop : 0
     };
     for (const scope of ['quick', 'detail']) if (TREND_METRICS.some(([key]) => key === saved.trendKeys?.[scope])) trendKeys[scope] = saved.trendKeys[scope];
-  } else if (detailCompany) selection = { type: 'company', id: detailCompany };
+  } else if (detailCompany) selection = { type: 'company', id: detailCompany,
+    ...(usesChainLayout(datasets[industryId]) ? { nodeId: datasets[industryId].nodes.some(node => node.id === params.get('node')) ? params.get('node') : null } : {}) };
   else if (params.get('selected_company') && datasets[industryId].companies.some(company => company.id === params.get('selected_company'))) selection = { type: 'company', id: params.get('selected_company'), nodeId: datasets[industryId].nodes.some(node => node.id === params.get('node')) ? params.get('node') : null };
   else if (params.get('node')) selection = { type: 'node', id: params.get('node') };
   else if (editorial.id) focusEditorial();
@@ -473,6 +496,8 @@ function restoreRoute(saved) {
   if ((selection.type === 'company' && !dataset.companies.some(c => c.id === selection.id)) ||
       (selection.type === 'node' && !dataset.nodes.some(n => n.id === selection.id)) ||
       (selection.type === 'news' && !newsItems().some(n => n.id === selection.id) && selection.id !== editorialNewsId())) selection = { type: 'feed' };
+  aiExpanded = new Set(canRestore && Array.isArray(saved.aiExpanded) ? saved.aiExpanded.filter(id => typeof id === 'string') : []);
+  aiLayoutKey = `${industryId}:${dataset.version}`;
   inspectorData = null;
   render();
   if (requested && !owner) {
@@ -486,10 +511,11 @@ function restoreRoute(saved) {
 function openCompany(id, tab = 'overview') {
   if (!companies.has(id)) return;
   const symbol = companies.get(id).symbol;
-  if (supportedSymbol(symbol)) {
+  if (supportedSymbol(symbol) && !isDraft()) {
     storeRoute();
     const params = new URLSearchParams({ return: `${location.pathname}${location.search}`, tab, industry: industryId });
     if (data.research) params.set('result', data.research.selected_result);
+    if (data.source_kind === 'curated_v02') params.set('published_release', data.version);
     if (editorial.id) { params.set('news', editorial.id); if (editorial.progressId) params.set('progress', editorial.progressId); }
     if (selection.nodeId) params.set('node', selection.nodeId);
     location.assign(`/securities/${encodeURIComponent(symbol)}?${params}`);
@@ -514,6 +540,7 @@ function closeCompany(nextSelection = null) {
 }
 function setWorkspaceVisibility() {
   panoramaHost.hidden = Boolean(detailCompany); companyHost.hidden = !detailCompany;
+  syncIndustryMonitor();
   document.body.dataset.workspace = detailCompany ? 'company' : 'industry';
   app.querySelector('.title-row').hidden = Boolean(detailCompany);
   app.querySelector('.skip-link').textContent = detailCompany ? '跳到公司工作区' : '跳到产业工作区';
@@ -556,8 +583,8 @@ function externalLink(text, url) {
   } catch { /* Invalid links remain plain text. */ }
   return el('span', {}, text);
 }
-function nameOf(c) { return securities[c.symbol]?.name || c.name; }
-function codeOf(c) { return c.symbol || '证券身份未确认'; }
+function nameOf(c) { return data?.source_kind === 'curated_v02' ? c.name : securities[c.symbol]?.name || c.name; }
+function codeOf(c) { return c.symbol || c.securities?.join(' / ') || '无明确证券映射'; }
 function partsOf(id) { return data.participations.filter(p => p.company_id === id); }
 function partsAt(id) { return data.participations.filter(p => p.node_id === id); }
 function nodeInfo(id) { return observatory.industries[industryId].nodes[id] || {}; }
@@ -604,25 +631,35 @@ function replacePreservingDetails(host, ...children) {
 }
 function productNavigation(active = 'chain') { return el('core-navigation', { active }); }
 function renderPanoramaError(id, message = null) {
+  disposeIndustryMonitor();
+  boardObserver?.disconnect(); aiGraph?.destroy(); aiGraph = null;
   data = null;
   app.replaceChildren(productNavigation(), el('main', { id: 'main-content', class: 'load-error', tabindex: '-1' },
     el('h1', {}, '产业资料暂不可用'), el('p', { role: 'status' }, message || panoramaErrors.get(id) || '尚未收录此产业，未改为其他产业。'),
     button('重新读取', 'retry'), el('p', {}, el('a', { href: sourceHref(id, new URLSearchParams(location.search).get('name') || id, true) }, '按此名称开展开放研究 →')), el('p', {}, el('a', { href: safeReturn(new URLSearchParams(location.search).get('return')) }, '返回阅读流程')),
     el('nav', { class: 'related-links', 'aria-label': '其他产业' }, ...INDUSTRIES.map(industry => el('a', { href: `?${new URLSearchParams({ industry: industry.id })}` }, industry.name)))));
 }
-async function loadDataset(id) {
+async function loadDataset(id, request) {
   const offset = new URLSearchParams(location.search).get('source_offset') || '0';
   const result = new URLSearchParams(location.search).get('result') || '';
-  const envelope = await coreApi(`/panorama/${encodeURIComponent(id)}?${new URLSearchParams({ offset, result })}`), raw = envelope.data;
+  const published_release = new URLSearchParams(location.search).get('published_release') || '';
+  const draft_package = new URLSearchParams(location.search).get('draft_package') || '';
+  const envelope = await coreApi(`/panorama/${encodeURIComponent(id)}?${new URLSearchParams({ offset, result, published_release, draft_package })}`), raw = envelope.data;
+  if (request !== panoramaRequest) return;
+  if (draft_package && (!isDraft(raw) || raw.draft?.package_id !== draft_package)) throw new Error('草稿包身份不符；未替换其他图。');
   if (raw?.industry?.id !== id || !Array.isArray(raw.nodes) || !Array.isArray(raw.companies) || !Array.isArray(raw.participations) || !Array.isArray(raw.relations) || !raw.structure) throw new Error('产业身份或结构不符，未回退本地资料。');
   const ids = new Set(raw.nodes.map(node => node.id)), companyIds = new Set(raw.companies.map(company => company.id));
   if (raw.relations.some(relation => !ids.has(relation.from_id) || !ids.has(relation.to_id)) || raw.participations.some(part => !ids.has(part.node_id) || !companyIds.has(part.company_id))) throw new Error('产业引用不完整，未展示错误映射。');
+  if (raw.source_kind === 'curated_v02') {
+    for (const c of raw.companies) { delete profiles.companies[c.id]; delete context.news[c.id]; }
+  }
   if (raw.view_context) context.industries[id] = raw.view_context;
   if (raw.view_observatory) observatory.industries[id] = raw.view_observatory;
   if (!context.industries?.[id]?.summary || !observatory.industries?.[id]) throw new Error('此产业的上下文资料缺失，请重试。');
   datasets[id] = raw; panoramaErrors.delete(id); panoramaMeta.set(id, envelope.meta);
 }
 async function startCompany() {
+  disposeIndustryMonitor();
   const request = ++companyRequest, symbol = standaloneSymbol;
   data = null;
   document.body.dataset.workspace = 'company';
@@ -667,10 +704,15 @@ async function startCompany() {
   }
 }
 async function start() {
+  disposeIndustryMonitor();
+  const request = ++panoramaRequest;
+  boardObserver?.disconnect(); aiGraph?.destroy(); aiGraph = null;
+  data = null;
   if (standaloneSymbol) { await startCompany(); return; }
   app.replaceChildren(productNavigation(), el('p', { class: 'boot-message', role: 'status' }, '正在读取产业资料…'));
   try {
     const [catalog, shared] = await Promise.all([coreApi('/panorama/catalog'), coreApi('/panorama/context')]);
+    if (request !== panoramaRequest) return;
     if (!Array.isArray(catalog.data?.items) || catalog.data.items.some(item => typeof item.id !== 'string' || typeof item.name !== 'string')) throw new Error('产业目录格式不符。');
     INDUSTRIES = catalog.data.items;
     if (!INDUSTRIES.length) { renderPanoramaError('', '尚无可用产业资料。'); return; }
@@ -680,21 +722,27 @@ async function start() {
     datasets = {};
     const requested = new URLSearchParams(location.search).get('industry');
     if (!requested) { location.replace('/chain'); return; }
-    try { await loadDataset(requested); } catch (error) { panoramaErrors.set(requested, error.message); renderPanoramaError(requested); return; }
+    try { await loadDataset(requested, request); } catch (error) { if (request === panoramaRequest) { panoramaErrors.set(requested, error.message); renderPanoramaError(requested); } return; }
+    if (request !== panoramaRequest) return;
     if (!INDUSTRIES.some(industry => industry.id === requested)) INDUSTRIES.push({ id: requested, name: datasets[requested].industry.name });
     restoreRoute(history.state?.stockWorkspace || routeSnapshot());
     void loadCurrentEditorial();
-  } catch (error) { renderPanoramaError(industryId, error.message); }
+  } catch (error) { if (request === panoramaRequest) renderPanoramaError(industryId, error.message); }
 }
 function render() {
   if (inspectorData === datasets[industryId]) inspectorState = inspectorSnapshot();
   boardObserver?.disconnect();
+  aiGraph?.destroy();
   lastBoardWidth = null;
   data = datasets[industryId];
+  aiGraph = null;
+  const nextAiKey = `${industryId}:${data.version}`;
+  if (aiLayoutKey !== nextAiKey) { aiExpanded = new Set(); aiLayoutKey = nextAiKey; }
   nodes = new Map(data.nodes.map(n => [n.id, n]));
   companies = new Map(data.companies.map(c => [c.id, c]));
   document.title = `${data.industry.name}产业全景`;
   document.body.classList.toggle('open-graph', openGraph());
+  document.body.classList.toggle('chain-curated-layout', usesChainLayout(data));
   const input = el('input', { id: 'company-search', type: 'search', placeholder: '搜索公司 / 证券代码', autocomplete: 'off', 'aria-label': '搜索已收录公司，保留产业全景', 'aria-describedby': 'search-status' });
   input.value = search;
   input.addEventListener('input', () => { search = input.value.trim().toLowerCase(); updateFocus(false); storeRoute(); });
@@ -704,23 +752,25 @@ function render() {
   inspectorHost = industryInspector();
   panoramaHost = el('div', { class: `workspace-columns${editorial.id ? ' has-news-context' : ''}` },
     el('div', { class: 'industry-workspace' },
+      data.maintenance_note ? el('p', { class: 'route-notice' }, data.maintenance_note) : null,
+      isDraft() ? draftNotice() : data.source_kind === 'curated_v02' ? el('p', { class: 'route-notice' }, `v0.2正式发布 · ${data.version} · 结构事实与新闻影响分开`) : null,
       industrySummary(),
-      openGraph() ? (data.needs_research ? structureResearchState() : skeleton()) : (data.structure_gap && data.nodes.length === 1 ? null : skeleton()),
+      openGraph() ? (data.needs_research && !usesChainLayout(data) ? structureResearchState() : skeleton()) : (data.structure_gap && data.nodes.length === 1 ? null : skeleton()),
       el('section', { class: 'industry-module business-section', 'aria-label': '公司业务分工' },
-        moduleHeading('公司业务分工',
+        moduleHeading(usesChainLayout(data) ? '环节 → 对应公司' : '公司业务分工',
           el('div', { class: 'view-switch', role: 'group', 'aria-label': '业务阅读方式' }, button('按环节看', 'view', 'stages', { 'aria-pressed': 'true' }), button('按公司对照', 'view', 'companies', { 'aria-pressed': 'false' })), 2),
         status, businessHost)), inspectorHost);
   companyHost = el('section', { class: 'company-workspace', 'aria-label': '公司基本面工作区' });
   app.replaceChildren(productNavigation(), el('a', { class: 'skip-link', href: '#main-content' }, '跳到产业工作区'),
     el('header', {},
       el('div', { class: 'nav-row' }, el('h2', {}, '产业链'),
-        el('nav', { class: 'industry-switch', 'aria-label': '选择产业' }, el('a', { href: '/chain' }, '搜索全部产业 / 管理跟踪'), ...INDUSTRIES.filter(i => i.id === industryId).map(i => button(i.name, 'industry', i.id, { 'aria-pressed': 'true' })))),
+        el('nav', { class: 'industry-switch', 'aria-label': '选择产业' }, el('a', { href: '/chain' }, '维护清单'), el('a', { href: `/chain?${new URLSearchParams({ industry: industryId, maintain: '1' })}` }, '数据维护'), ...INDUSTRIES.filter(i => i.id === industryId).map(i => button(i.name, 'industry', i.id, { 'aria-pressed': 'true' })))),
       new URLSearchParams(location.search).has('return') && !editorial.id ? el('p', { class: 'route-notice' }, el('a', { href: safeReturn(new URLSearchParams(location.search).get('return')) }, '← 返回阅读流程')) : null,
       newsBridgeBar(),
       el('div', { class: 'title-row' }, el('h1', {}, `${data.industry.name}${data.structure_gap ? '资料与研究' : '产业全景'}`),
         el('div', { class: 'search-actions' }, input, button('重置', 'reset', null, { class: 'reset-button' })))),
     el('main', { id: 'main-content', tabindex: '-1' },
-      panoramaHost, companyHost), footer());
+      monitorHost, panoramaHost, companyHost), footer());
   showInspector(inspectorState.tab);
   renderBusiness(); updateFocus();
   if (detailCompany) renderCompanyWorkspace();
@@ -728,9 +778,24 @@ function render() {
   void prepareImpact();
   void prepareStructure();
   if (typeof ResizeObserver !== 'undefined') {
-    boardObserver = new ResizeObserver(() => layoutSkeleton());
-    const board = app.querySelector('.skeleton-board');
-    if (board) boardObserver.observe(board);
+    if (aiGraph) {
+      // The engine resizes only: observer/focus updates never reset pan, zoom
+      // or dragged positions. Both dimensions change in the large-graph mode.
+      let observedSize = '';
+      const currentGraph = aiGraph;
+      boardObserver = new ResizeObserver(entries => {
+        const rect = entries[0]?.contentRect;
+        const size = rect ? `${rect.width}:${rect.height}` : '';
+        if (!rect?.width || size === observedSize) return;
+        observedSize = size;
+        requestAnimationFrame(() => { if (aiGraph === currentGraph) currentGraph.layout(); });
+      });
+      boardObserver.observe(aiGraph.board);
+    } else {
+      boardObserver = new ResizeObserver(() => layoutSkeleton());
+      const board = app.querySelector('.skeleton-board');
+      if (board) boardObserver.observe(board);
+    }
   }
 }
 function inspectorSnapshot() {
@@ -777,9 +842,33 @@ function industryInspector() {
         button(label, 'inspector-tab', id, { 'aria-controls': `inspector-${id}`, 'aria-pressed': String(inspectorState.tab === id) }))),
     currentHost, inspectorLibrary);
 }
+const NODE_KINDS = { product: '产品', activity: '活动', service: '服务', application: '应用' };
+const RELATION_KINDS = { input_to: '投入于', produces: '产出', part_of: '组成部分→整体', supports: '支撑', used_for: '用于', precedes: '流程先于', recycles: '回收' };
+function draftNotice() {
+  return el('section', { class: 'route-notice', role: 'status' },
+    el('strong', {}, 'v0.2研究草稿 · 未发布 · 待核查'),
+    el('details', {}, el('summary', {}, `覆盖缺口与保存版本 · ${data.explanation.gaps.length}项`),
+      el('p', {}, `精确保存包：${data.draft.package_id} · 保存于 ${data.draft.saved_at}`),
+      el('p', {}, `包内快照提案（不代表发布）：${data.draft.proposed_releases.map(r => `${r.release_id} · ${r.status}`).join('；') || '尚无快照提案'}`),
+      el('ul', {}, ...data.explanation.gaps.map(gap => el('li', {}, gap)))));
+}
+function curatedEvidence(record) {
+  if (data.source_kind !== 'curated_v02') return null;
+  return el('details', {}, el('summary', {}, '记录状态与原文证据'),
+    el('p', {}, `${record.origin || '来源见原包'} · ${record.review_status || '核查状态见原包'}${isDraft() ? ' · 研究草稿 / 未发布 / 待核查' : ''}`),
+    ...(record.evidence_refs || []).map(ref => {
+      const evidence = data.evidence.find(e => e.evidence_id === ref.evidence_id && e.revision === ref.revision);
+      const source = evidence && data.sources.find(s => s.source_id === evidence.source_id && s.source_version === evidence.source_version);
+      return evidence ? el('div', { class: 'source-entry' }, el('p', {}, `${evidence.evidence_id} @${evidence.revision} · ${ref.stance}`),
+        el('blockquote', {}, evidence.excerpt), el('p', {}, typeof evidence.locator === 'string' ? evidence.locator : JSON.stringify(evidence.locator)),
+        source ? externalLink(`${source.publisher} · ${source.title}`, source.url) : null) : null;
+    }), (record.evidence_refs || []).length ? null : el('p', {}, '尚无原文证据引用，保留缺口。'));
+}
 function industrySummary() {
-  return el('section', { class: 'industry-module industry-summary', 'aria-label': '产业摘要' }, moduleHeading('产业摘要', null, 2),
-    ...context.industries[industryId].summary.paragraphs.map(text => el('p', {}, text)));
+  const paragraphs = context.industries[industryId].summary.paragraphs.map(text => el('p', {}, text));
+  if (usesChainLayout(data)) return el('details', { class: 'industry-module industry-summary ai-summary', 'aria-label': '产业摘要与资料说明' },
+    el('summary', {}, '资料说明 / 产业摘要'), ...paragraphs);
+  return el('section', { class: 'industry-module industry-summary', 'aria-label': '产业摘要' }, moduleHeading('产业摘要', null, 2), ...paragraphs);
 }
 function industryExplanation() {
   const explanation = data.explanation;
@@ -790,7 +879,7 @@ function industryExplanation() {
   })) : null;
   const resultLink = (id, label) => { const p = new URLSearchParams(location.search); p.set('result', id); p.set('panel', 'explanation'); p.delete('node'); p.delete('selected_company'); return el('a', { href: `${location.pathname}?${p}`, 'aria-current': data.research?.selected_result === id ? 'page' : null }, label); };
   return el('section', { class: 'industry-module industry-explanation', 'aria-label': '产业解释' },
-    moduleHeading('产业解释', el('span', { class: 'basis-note' }, data.origin === 'ai' ? `AI 知识整理 · ${data.model || '模型见保存记录'}` : '公开参考解释'), 2),
+    moduleHeading('产业解释', el('span', { class: 'basis-note' }, isDraft() ? '研究草稿 · 未发布 · 待核查' : data.origin === 'ai' ? `AI 知识整理 · ${data.model || '模型见保存记录'}` : '公开参考解释'), 2),
     data.research ? el('div', { class: 'research-answer' }, el('h3', {}, data.research.question),
       el('nav', { class: 'research-answer-history', 'aria-label': '已保存回答' }, resultLink('base', '基础解释'),
         ...data.research.results.map(r => resultLink(r.id, r.question)))) : null,
@@ -810,7 +899,7 @@ function industryExplanation() {
 }
 function sourceHref(id, name, research = false) {
   const params = new URLSearchParams(location.search);
-  ['company', 'symbol', 'tab', 'node', 'source_offset', 'selected_company', 'result', 'industry_id', 'records'].forEach(key => params.delete(key));
+  ['company', 'symbol', 'tab', 'node', 'source_offset', 'selected_company', 'result', 'published_release', 'draft_package', 'industry_id', 'records', 'maintain'].forEach(key => params.delete(key));
   params.set('industry', id); params.set('name', name);
   if (research) params.set('research', '1'); else params.delete('research');
   return `/chain?${params}`;
@@ -820,6 +909,11 @@ function sourcePanels() {
   const pageLink = (offset, label) => { const p = new URLSearchParams(location.search); p.set('source_offset', String(offset)); return el('a', { href: `${location.pathname}?${p}` }, label); };
   return el('details', { class: 'industry-module source-research', 'aria-label': '来源资料与开放研究', open: new URLSearchParams(location.search).has('source_offset') || new URLSearchParams(location.search).get('result') === 'source' },
     el('summary', {}, `来源记录与出处${data.pagination ? ` · ${data.pagination.total} 条` : ''}`),
+    data.source_kind === 'curated_v02' ? el('div', { class: 'curated-evidence' },
+      el('p', {}, `${isDraft() ? '精确草稿包：' + data.draft.package_id + ' · 未发布 / 待核查' : '精确发布版本：' + data.version}；链内成员 ${data.memberships.length}；公司与证券独立维护。`),
+      ...data.relations.map(r => el('details', {}, el('summary', {}, `${nodes.get(r.from_id).name} → ${nodes.get(r.to_id).name} · ${RELATION_KINDS[r.kind] || r.kind}`), el('p', {}, r.statement), el('p', {}, `适用：${JSON.stringify(r.applicability)} · ${r.origin} · ${r.review_status}`), el('p', {}, `证据引用：${JSON.stringify(r.evidence_refs)}`))),
+      ...data.participations.map(p => el('details', {}, el('summary', {}, `${companies.get(p.company_id).name} · ${nodes.get(p.node_id).name} · ${p.role}`), el('p', {}, `业务范围：${typeof p.scope === 'string' ? p.scope : JSON.stringify(p.scope)}`), el('p', {}, `${p.origin} · ${p.review_status}`), el('p', {}, `证据引用：${JSON.stringify(p.evidence_refs)}`))),
+      ...data.evidence.map(e => el('details', {}, el('summary', {}, `${e.evidence_id} @${e.revision}`), el('blockquote', {}, e.excerpt), el('p', {}, JSON.stringify(e.locator)), el('p', {}, `${e.source_id} · ${e.source_version}`)))) : null,
     data.source_records?.length ? el('div', { class: 'raw-source-records' }, ...data.source_records.map(item => el('article', {},
       el('strong', {}, item.record.product_name || item.record.industry_name || `${item.record.from_entity || item.record.from_industry || ''} → ${item.record.to_entity || item.record.to_industry || ''}`),
       el('p', {}, `${item.historical_names?.join(' / ') || ''} · ${item.record.company_code || ''} · ${item.record.rel || item.kind}`),
@@ -838,6 +932,7 @@ function sourcePanels() {
     data.neighbor_total > data.nodes.length - 1 ? el('p', { class: 'basis-note' }, '邻居有界展示；点击产品可继续展开对应上下游与公司。') : null);
 }
 function panoramaPositions() {
+  if (data.source_kind === 'curated_v02') return Object.fromEntries(data.structure.groups.flatMap((g, column) => g.node_ids.map((id, row) => [id, [14 + column * 224, 78 + row * 302]])));
   if (data.layout) return data.layout;
   if (!['crude-oil', 'innovative-drugs', 'ai-compute'].includes(industryId)) return Object.fromEntries(data.nodes.map((node, index) => [node.id, [14 + (index % 5) * 182, 78 + Math.floor(index / 5) * 302]]));
   const x = [14, 196, 378, 560, 742];
@@ -862,6 +957,10 @@ function skeletonPath(r, boxes, i) {
   return `M${a.x + a.w / 2},${start} V${mid} H${b.x + b.w / 2} V${end}`;
 }
 function skeleton() {
+  if (usesChainLayout(data)) {
+    aiGraph = createChainLayout({ graph: data, el, button, moduleHeading, relationNames: RELATION_KINDS, expanded: aiExpanded, renderEvidence: curatedEvidence, onViewChange: () => storeRoute() });
+    return aiGraph.root;
+  }
   const board = el('div', { class: 'skeleton-board' });
   if (openGraph()) for (const group of data.structure.groups) board.append(el('h3', { class: 'graph-group-heading', 'data-group': group.id }, group.title));
   const edges = svg('svg', { class: 'edge-layer', preserveAspectRatio: 'none', 'aria-hidden': 'true' },
@@ -872,7 +971,7 @@ function skeleton() {
     const info = nodeInfo(n.id), metric = info.metrics?.[0];
     const ids = [...new Set(partsAt(n.id).map(p => p.company_id))];
     board.append(el('article', { class: 'skeleton-node', 'data-node': n.id, 'aria-label': n.name },
-      button([el('strong', { class: 'node-name' }, n.name), info.flow ? el('span', { class: 'node-flow' }, info.flow) : null], 'node', n.id, { class: 'node-base', 'aria-pressed': 'false' }),
+      button([el('strong', { class: 'node-name' }, n.name), isDraft() ? el('small', { class: 'node-flow' }, NODE_KINDS[n.kind] || n.kind) : null, info.flow ? el('span', { class: 'node-flow' }, info.flow) : null], 'node', n.id, { class: 'node-base', 'aria-pressed': 'false' }),
       el('div', { class: 'node-status', 'data-layer': 'status' }, metric ? [
         el('span', { class: 'metric-label' }, metric.label),
         el('span', { class: 'metric-reading' }, metric.value, metric.change ? ` · ${metric.change}` : ''),
@@ -885,10 +984,10 @@ function skeleton() {
     moduleHeading(data.structure_gap ? '已知主营位置 · 待补充结构' : '产业链',
       el('div', { class: 'layer-controls', role: 'group', 'aria-label': '画布信息图层' }, ...[['status', '状态'], ['news', '新闻'], ['companies', '公司']].map(([id, label]) => button(label, 'layer', id, { 'aria-pressed': String(layers[id]) }))), 2),
     data.structure.note ? el('p', { class: 'structure-note' }, data.structure.note) : null,
-    openGraph() ? el('p', { class: 'structure-note' }, '分组沿用来源或 AI 解释；总览线按组聚合，选择节点显示该节点全部关系。横向滚动浏览。') : null,
+    openGraph() ? el('p', { class: 'structure-note' }, data.source_kind === 'curated_v02' ? `${isDraft() ? '分组与全部关系来自精确保存草稿，未发布 / 待核查。' : '分组与主关系来自当前发布版本。'}选择节点可查看相关结构与出处。` : '分组沿用来源或 AI 解释；总览线按组聚合，选择节点显示该节点全部关系。横向滚动浏览。') : null,
     el('div', { class: openGraph() ? 'grouped-graph-scroll' : 'original-graph' }, board),
     openGraph() ? el('details', { class: 'structure-relations' }, el('summary', {}, `全部关系与出处 · ${data.relations.length} 组${data.source_relations ? ` / ${data.source_relations.length} 条来源公司关系` : ''}`),
-      el('ul', {}, ...data.relations.map(r => el('li', {}, nodeLink(r.from_id), ' → ', nodeLink(r.to_id), `：${r.explanation}`,
+      el('ul', {}, ...data.relations.map(r => el('li', {}, nodeLink(r.from_id), ' → ', nodeLink(r.to_id), `（${RELATION_KINDS[r.kind] || r.kind}）：${r.explanation}`,
         r.source_records?.length ? el('details', {}, el('summary', {}, `${r.source_records.length} 条公司/产品原始关系`), el('pre', {}, JSON.stringify(r.source_records, null, 2))) : null))),
       data.source_relations?.length ? el('details', {}, el('summary', {}, '全部来源公司关系（含无法唯一投影的记录）'), el('pre', {}, JSON.stringify(data.source_relations, null, 2))) : null) : null,
     industryId === 'gold' ? el('details', { class: 'structure-relations' }, el('summary', {}, '供给、用途与回收关系'),
@@ -910,6 +1009,7 @@ function layoutGroupedSkeleton(board) {
     let y = top;
     const ids = [...group.node_ids].sort((a, b) => (Number(nodes.get(a)?.layer) || 0) - (Number(nodes.get(b)?.layer) || 0));
     ids.forEach(id => {
+      if (owners[id]) return;
       owners[id] = group.id;
       const card = [...board.querySelectorAll('.skeleton-node')].find(c => c.dataset.node === id);
       if (!card) return;
@@ -927,7 +1027,7 @@ function layoutGroupedSkeleton(board) {
   const focus = selection.type === 'node' ? selection.id : selection.type === 'company' ? selection.nodeId : null;
   board.querySelectorAll('[data-relation]').forEach((edge, index) => {
     const relation = data.relations.find(r => r.id === edge.dataset.relation);
-    const visible = focus && [relation.from_id, relation.to_id].includes(focus);
+    const visible = focus ? [relation.from_id, relation.to_id].includes(focus) : data.source_kind === 'curated_v02' && (isDraft() || data.structure.primary_relation_ids.includes(relation.id));
     edge.style.display = visible ? '' : 'none';
     if (!visible) return;
     const a = boxes[relation.from_id], b = boxes[relation.to_id];
@@ -937,7 +1037,7 @@ function layoutGroupedSkeleton(board) {
     edge.setAttribute('d', a.x === b.x ? `M${ax},${a.y + a.h / 2} H${gutter} V${b.y + b.h / 2} H${bx}` :
       `M${ax},${a.y + a.h / 2} H${gutter} V${lane} H${endGutter} V${b.y + b.h / 2} H${bx}`);
   });
-  if (!focus) {
+  if (!focus && data.source_kind !== 'curated_v02') {
     const aggregate = new Map();
     for (const relation of data.relations) {
       const a = owners[relation.from_id], b = owners[relation.to_id];
@@ -957,6 +1057,7 @@ function layoutGroupedSkeleton(board) {
   }
 }
 function layoutSkeleton() {
+  if (aiGraph && usesChainLayout(data)) { aiGraph.layout(); return; }
   const board = app.querySelector('.skeleton-board');
   if (!board) return;
   if (openGraph()) { layoutGroupedSkeleton(board); return; }
@@ -1004,6 +1105,12 @@ function participationButton(p) {
   });
 }
 function renderBusiness() {
+  if (usesChainLayout(data)) {
+    businessHost.replaceChildren(renderChainCompanies({ graph: data, el, button, nameOf, codeOf, view }));
+    app.querySelectorAll('[data-action="view"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === view)));
+    document.body.dataset.view = view;
+    return;
+  }
   const ids = activeNodeIds();
   if (view === 'stages') {
     businessHost.replaceChildren(el('div', { class: 'stage-board', style: `--lanes:${ids.length}` }, ...ids.map(id => el('section', { class: 'stage-lane' },
@@ -1024,7 +1131,7 @@ function renderBusiness() {
   app.querySelectorAll('[data-action="view"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === view)));
   document.body.dataset.view = view;
 }
-function matches(c) { return `${nameOf(c)} ${c.name} ${codeOf(c)}`.toLowerCase().includes(search); }
+function matches(c) { return `${nameOf(c)} ${usesChainLayout(data) ? chainCompanyLabel(c, data) : ""} ${c.name} ${codeOf(c)}`.toLowerCase().includes(search); }
 function updateFocus(renderPanel = true) {
   const focused = document.activeElement, wasInPanel = currentHost.contains(focused);
   const focusedNodeId = focused.closest?.('.skeleton-node')?.dataset.node;
@@ -1032,6 +1139,7 @@ function updateFocus(renderPanel = true) {
   const nodeId = selection.type === 'node' ? selection.id : selection.type === 'company' ? selection.nodeId : null;
   const selectedNodes = new Set(selection.type === 'company' ? partsOf(companyId).map(p => p.node_id) : selection.type === 'node' ? [selection.id] : []);
   const news = focusedNews(), affected = new Set([...(news?.node_ids || []), ...(news?.impacts || []).map(i => i.node_id)]);
+  aiGraph?.sync(selection);
   app.querySelectorAll('[data-node]').forEach(element => {
     element.classList.toggle('is-selected-node', selectedNodes.has(element.dataset.node));
     element.classList.toggle('is-node-focus', nodeId === element.dataset.node);
@@ -1065,7 +1173,7 @@ function updateFocus(renderPanel = true) {
   status.textContent = search ? `匹配 ${data.companies.filter(matches).length} 家公司` : '';
   status.hidden = !search;
   if (renderPanel) renderCurrent();
-  app.querySelectorAll('[data-action="company"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === companyId)));
+  app.querySelectorAll('[data-action="company"], [data-action="ai-company"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === companyId)));
   app.querySelectorAll('[data-action="node"]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.id === nodeId)));
   layoutSkeleton();
   if (wasInPanel && !focused.isConnected) {
@@ -1082,7 +1190,10 @@ function companyLink(id, nodeId = null) { return button(nameOf(companies.get(id)
 function panelIdentity(title, code) {
   return el('div', { class: 'current-identity' }, el('h2', { tabindex: '-1' }, title), code ? el('p', { class: 'company-code' }, code) : null);
 }
-function panelBack() { return button(selection.type === 'feed' ? '全部动态' : '动态', 'feed', null, { class: 'feed-back' }); }
+function panelBack() {
+  if (usesChainLayout(data) && selection.type !== 'feed') return button('返回结构图', 'ai-return', null, { class: 'feed-back' });
+  return button(selection.type === 'feed' ? '全部动态' : '动态', 'feed', null, { class: 'feed-back' });
+}
 function editorialPanelBack() {
   const back = panelBack();
   back.classList.add('editorial-feed-return');
@@ -1100,6 +1211,10 @@ function newsCard(n, compact = false, level = 4) {
 }
 function renderFeed() {
   const id = selection.filterNodeId, items = id ? newsAt(id) : newsItems();
+  if (usesChainLayout(data) && !id && !items.length) {
+    replacePreservingDetails(currentHost, panelIdentity('环节详情'), el('p', {}, '选择节点，查看原文、结构关系与对应公司。'));
+    return;
+  }
   replacePreservingDetails(currentHost, id ? panelBack() : null, panelIdentity(id ? `${nodes.get(id).name}动态` : '产业动态'),
     el('div', { class: 'news-list' }, items.length ? items.map(n => newsCard(n, false, 3)) : el('p', { class: 'empty-state' }, '暂无相关动态')));
 }
@@ -1137,6 +1252,13 @@ function renderNode() {
   replacePreservingDetails(currentHost, panelBack(), panelIdentity(n.name),
     editorial.status === 'ready' && editorialLinks().some(link => link.node_ids.includes(n.id)) ? editorialMappingSection() : null,
     el('p', {}, n.description),
+    data.source_kind === 'curated_v02' ? el('p', { class: 'basis-note' }, `${NODE_KINDS[n.kind] || n.kind} · ${n.review_status} · ${n.origin}`) : null,
+    curatedEvidence(n),
+    data.source_kind === 'curated_v02' ? section('结构关系与方向',
+      ...data.relations.filter(r => r.from_id === n.id || r.to_id === n.id).map(r => el('article', {},
+        el('p', {}, nodeLink(r.from_id), ` — ${RELATION_KINDS[r.kind] || r.kind} → `, nodeLink(r.to_id)),
+        el('p', {}, r.explanation), el('p', { class: 'basis-note' }, `适用范围：${JSON.stringify(r.applicability)}`), curatedEvidence(r))),
+      data.relations.some(r => r.from_id === n.id || r.to_id === n.id) ? null : el('p', {}, '此节点尚无结构关系；公司角色独立保留，不补造连接。')) : null,
     n.research_id ? el('a', { href: sourceHref(n.research_id, n.name) }, '展开此产品的真实上下游与公司 →') : null,
     data.source_kind ? el('details', {}, el('summary', {}, '位置与关系出处'), ...data.relations.filter(r => r.from_id === n.id || r.to_id === n.id).map(r => el('p', {}, r.explanation, r.source_record ? el('small', {}, JSON.stringify(r.source_record)) : null)), ...parts.map(p => p.source_record ? el('p', {}, companies.get(p.company_id).name, ' · ', JSON.stringify(p.source_record)) : null)) : null,
     info.metrics?.length ? section('已收录指标', el('div', { class: 'node-metrics' }, ...info.metrics.map(metricDetail))) : null,
@@ -1199,11 +1321,12 @@ function renderCompany() {
   replacePreservingDetails(currentHost, panelBack(), panelIdentity(nameOf(c), codeOf(c)), gapNotice(),
     c.profile?.purpose ? el('p', { class: 'company-purpose' }, c.profile.purpose) : null,
     c.identity_note ? el('p', { class: 'basis-note' }, c.identity_note) : null,
+    curatedEvidence(c),
     button(['展开公司详情', el('span', { 'aria-hidden': 'true' }, ' ↗')], 'expand-company', id, { class: 'expand-company' }),
     el('p', { class: 'quote-status' }, profiles.market.note),
     coreMetrics(id, true), observation(id), trendModule(id, 'quick'), segmentOverview(id, true),
     el('details', { class: 'company-details', 'data-key': `quick-source-${id}` }, el('summary', {}, '产业角色与业务资料'),
-      el('ul', { class: 'sidebar-roles' }, ...partsOf(id).map(part => el('li', { class: part.node_id === nodeId && !gap ? 'is-exact-role' : '' }, nodeLink(part.node_id), el('p', {}, part.role)))), businessFacts(c)),
+      el('ul', { class: 'sidebar-roles' }, ...partsOf(id).map(part => el('li', { class: part.node_id === nodeId && !gap ? 'is-exact-role' : '' }, nodeLink(part.node_id), el('p', {}, part.role), data.source_kind === 'curated_v02' ? el('p', {}, `业务范围：${typeof part.scope === 'string' ? part.scope : JSON.stringify(part.scope)}`) : null, curatedEvidence(part)))), businessFacts(c)),
     impacts.length ? impactSection(impacts, '相关新闻影响', button(focused.title, 'news', focused.id, { class: 'news-title' })) : null,
     section('新闻与公告', news.length ? news.slice(0, 2).map(n => companyNewsArticle(n)) : el('p', {}, '暂未收录新闻与公告'),
       button('查看全部新闻与公告 →', 'expand-company', id, { class: 'text-link', 'data-tab': 'announcements' })));
@@ -1286,7 +1409,7 @@ function companyNewsArticle(n, wide = false, level = 4) {
 function companyRoleHref(role) {
   const params = new URLSearchParams({ industry: role.industryId, return: `${location.pathname}${location.search}` });
   if (role.nodeId) params.set('node', role.nodeId);
-  if (role.resultId) params.set('result', role.resultId);
+  if (role.resultId) params.set(role.source === 'curated_v02' ? 'published_release' : 'result', role.resultId);
   if (role.kind === 'classification') params.set('records', '1');
   if (role.offset) params.set('source_offset', String(role.offset));
   const current = new URLSearchParams(location.search);
@@ -1320,7 +1443,7 @@ function companyRoles(id, wide = false) {
     const businesses = standaloneModel?.profile?.businesses || [], mapping = standaloneModel?.mapping;
     return el('section', { class: 'content-module company-roles' }, moduleHeading('业务与产业位置'),
       mapping?.roles.length ? el('ul', { class: 'role-list' }, ...mapping.roles.map(role => el('li', {},
-        el('a', { href: companyRoleHref(role) }, role.nodeName === role.industryName ? role.industryName : `${role.industryName} / ${role.nodeName}`), el('p', {}, `${role.kind === 'ai' ? 'AI 解释 · ' : role.kind === 'classification' ? '行业分类 · ' : role.kind === 'business' ? '主营记录 · ' : '资料位置 · '}${role.role}`)))) :
+        el('a', { href: companyRoleHref(role) }, role.nodeName === role.industryName ? role.industryName : `${role.industryName} / ${role.nodeName}`), el('p', {}, `${role.source === 'curated_v02' ? 'v0.2已发布角色 · ' : role.kind === 'ai' ? 'AI 解释 · ' : role.kind === 'classification' ? '行业分类 · ' : role.kind === 'business' ? '主营记录 · ' : '资料位置 · '}${role.role}`), role.source === 'curated_v02' ? el('small', {}, `公司主体：${role.sourceRecord?.company_name || '见原包'}；证券简称：${role.sourceRecord?.security_name || '主表未提供'}；发布：${role.resultId}`) : null))) :
         el('p', { class: 'basis-note', role: 'status' }, mapping?.status === 'loading' ? '正在核对产业环节…' : mapping?.status === 'error' || mapping?.warnings.length ? '产业位置暂不可用。' : '暂未收录产业位置。'),
       businesses.length ? el('details', {}, el('summary', {}, '资料源收录的业务'), el('ul', {}, ...businesses.map(business => el('li', {}, business.label)))) : null,
       companyResearchEntries(businesses, mapping),
@@ -1334,7 +1457,7 @@ function companyRoles(id, wide = false) {
   const parts = partsOf(id);
   return el('section', { class: 'content-module company-roles' }, moduleHeading('产业链角色'),
     parts.length ? el('ul', { class: 'role-list' }, ...parts.map(p => el('li', {},
-      button(nodes.get(p.node_id).name, wide ? 'company-role' : 'node', p.node_id, { class: 'text-link' }), el('p', {}, p.role)))) : el('p', { class: 'basis-note' }, '暂未收录产业角色'));
+      button(nodes.get(p.node_id).name, wide ? 'company-role' : 'node', p.node_id, { class: 'text-link' }), el('p', {}, p.role), data.source_kind === 'curated_v02' ? el('p', {}, `业务范围：${typeof p.scope === 'string' ? p.scope : JSON.stringify(p.scope)}`) : null, curatedEvidence(p)))) : el('p', { class: 'basis-note' }, '暂未收录产业角色'));
 }
 function metricGroup(id, group, title, description) {
   const p = liveFinance(id), items = p.metrics.filter(m => m.group === group);
@@ -1374,7 +1497,7 @@ function companyNewsContext() {
   const role = roles.find(role => role.industryId === params.get('industry') && role.nodeId === params.get('node') && (!params.get('result') || role.resultId === params.get('result')));
   const graphParams = role ? new URLSearchParams({ industry: role.industryId, node: role.nodeId, news, return: `${location.pathname}${location.search}` }) : null;
   if (graphParams && params.get('progress')) graphParams.set('progress', params.get('progress'));
-  if (graphParams && role.resultId) graphParams.set('result', role.resultId);
+  if (graphParams && role.resultId) graphParams.set(role.source === 'curated_v02' ? 'published_release' : 'result', role.resultId);
   if (graphParams && role.offset) graphParams.set('source_offset', String(role.offset));
   return el('nav', { class: 'company-news-context', 'aria-label': '本次新闻阅读上下文' },
     el('a', { href: `/events?${newsParams}` }, '阅读本次新闻 →'),
@@ -1415,12 +1538,14 @@ function renderCompanyWorkspace() {
       p ? [externalLink(p.source.title, p.source.url), el('p', { class: 'basis-note' }, `历史资料截至 ${profiles.as_of} · ${p.source.locator}。仅作独立历史 / 业务参考，不是当前报告期财务来源。`)] : null),
     items.length ? el('div', { class: 'company-news-list' }, ...items.map(n => companyNewsArticle(n, true, 3))) : el('p', { class: 'empty-state' }, '暂未收录新闻与公告'));
   replacePreservingDetails(companyHost,
+    isDraft() ? draftNotice() : null,
     el('div', { class: 'company-breadcrumb' }, button(standaloneSymbol ? '返回阅读流程' : '返回产业全景', 'close-company', null, { class: 'back-panorama' }), el('span', {}, `${data.industry.name} / ${nameOf(c)}`)),
     el('div', { class: 'company-heading' }, el('div', {}, el('div', { class: 'company-name-line' }, el('h1', { tabindex: '-1' }, nameOf(c)), el('span', { class: 'company-code' }, codeOf(c)), p ? el('span', { class: 'sector-label' }, p.sector) : null),
       c.profile?.purpose ? el('p', { class: 'company-description' }, c.profile.purpose) : null),
       el('div', { class: 'report-stamp' }, el('strong', {}, latest ? `${latest.period_end.slice(0, 4)} ${latest.period_type}` : '暂无报告'), el('span', {}, latest ? `截至 ${latest.period_end}` : '见读取状态'))),
     standaloneSymbol ? el('p', { class: 'quote-status' }, standaloneModel?.profile ? `${standaloneModel.profile.source || '资料来源未提供'} · ${standaloneModel.profile.as_of || '资料时间未提供'}${standaloneModel.profile.status === 'stale' ? ' · 缓存资料，尚未更新' : standaloneModel.profile.status === 'unavailable' ? ' · 资料不可用' : ''}` : '公司资料暂不可用；财务与新闻独立读取。') : el('p', { class: 'quote-status' }, profiles.market.note),
     companyNewsContext(),
+    curatedEvidence(c),
     el('nav', { class: 'company-navigation', 'aria-label': '公司详情内容' }, ...COMPANY_TABS.map(([key, text]) => button(text, 'company-tab', key, { id: `company-nav-${key}`, 'aria-controls': `company-${key}`, 'aria-pressed': String(key === detailTab) }))),
     overview, financialPanel, businessPanel, announcements);
   updateCompanyTab();
@@ -1507,9 +1632,8 @@ app.addEventListener('click', event => {
   }
   if (action === 'industry' || action === 'bridge-industry') {
     if (!INDUSTRIES.some(i => i.id === id)) return;
-    if (!datasets[id]) {
-      const next = new URL(location.href); next.searchParams.set('industry', id); next.searchParams.delete('company'); next.searchParams.delete('node');
-      location.assign(`${next.pathname}${next.search}`); return;
+    if (id !== industryId || !datasets[id]) {
+      location.assign(sourceHref(id, INDUSTRIES.find(i => i.id === id).name)); return;
     }
     if (industryId === id) {
       if (action === 'bridge-industry') {
@@ -1555,12 +1679,33 @@ app.addEventListener('click', event => {
     [...app.querySelectorAll(`[data-trend-scope="${scope}"]`)].find(host => (host.dataset.trendSlot || '') === slot)?.querySelector(`[data-id="${id}"]`)?.focus({ preventScroll: true });
     storeRoute(); return;
   }
+  if (action === 'ai-group' || action === 'ai-expand') {
+    if (!aiGraph) return;
+    if (action === 'ai-group') aiGraph.toggle(id); else aiGraph.expandAll(id === 'all');
+    layoutSkeleton(); storeRoute(); return;
+  }
+  if (action === 'ai-detail') {
+    showInspector('detail');
+    currentHost.querySelector('h2')?.focus({ preventScroll: true });
+    currentHost.scrollIntoView({ block: 'start' }); storeRoute(); return;
+  }
+  if (action === 'ai-return' || action === 'ai-overview') {
+    if (action === 'ai-overview') { selection = { type: 'feed' }; updateFocus(); aiGraph?.overview(); }
+    const heading = aiGraph?.root.querySelector('h2');
+    heading?.setAttribute('tabindex', '-1'); heading?.focus({ preventScroll: true });
+    aiGraph?.root.scrollIntoView({ block: 'start' }); storeRoute(); return;
+  }
+  if (action === 'ai-company') {
+    if (!companies.has(id)) return;
+    selectCompany(id, target.dataset.nodeId || null); updateFocus(); openCompany(id); return;
+  }
   if (action === 'layer') { layers[id] = !layers[id]; updateFocus(false); storeRoute(); return; }
   if (action === 'view') { if (view !== id) { view = id; renderBusiness(); updateFocus(false); storeRoute(); } return; }
   if (action === 'reset') {
     layers = { status: true, news: true, companies: false }; focusedNewsId = null; selection = { type: 'feed' }; search = ''; view = 'stages';
     if (editorial.id) focusEditorial();
-    showInspector('detail'); app.querySelector('#company-search').value = ''; renderBusiness(); updateFocus(); storeRoute(); return;
+    if (usesChainLayout(data)) aiExpanded.clear();
+    showInspector('detail'); app.querySelector('#company-search').value = ''; renderBusiness(); updateFocus(); aiGraph?.overview(); storeRoute(); return;
   }
   if (action === 'feed') { selection = { type: 'feed' }; focusedNewsId = null; }
   else if (action === 'node-news') selection = { type: 'feed', filterNodeId: id };
@@ -1573,7 +1718,8 @@ app.addEventListener('click', event => {
   const fromLibrary = Boolean(target.closest('.inspector-library'));
   showInspector('detail');
   search = ''; app.querySelector('#company-search').value = ''; updateFocus(); storeRoute();
-  if (fromLibrary) {
+  const aiNodeChoice = usesChainLayout(data) && action === 'node' && window.matchMedia('(max-width: 900px)').matches;
+  if (fromLibrary || aiNodeChoice) {
     currentHost.querySelector('h2')?.focus({ preventScroll: true });
     if (window.matchMedia('(max-width: 900px)').matches) currentHost.scrollIntoView({ block: 'start' });
   }
@@ -1597,7 +1743,7 @@ window.addEventListener('popstate', () => {
     const tab = new URLSearchParams(location.search).get('tab');
     detailTab = COMPANY_TABS.some(([key]) => key === tab) ? tab : 'overview';
     if (companyHost) updateCompanyTab();
-  } else if (datasets) restoreRoute(history.state?.stockWorkspace);
+  } else { void start(); }
 });
 let scrollFrame = false;
 window.addEventListener('scroll', () => {

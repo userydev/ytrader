@@ -1,5 +1,5 @@
 {
-  "version": "editorial-rules-v1.1.2",
+  "version": "editorial-rules-v1.2.0",
   "weights": {
     "importance": 24,
     "change": 5,
@@ -80,6 +80,8 @@
     "\\b(?:shares|stocks|futures|yields|prices)\\b.{0,35}\\b(?:rise|rises|fall|falls|gain|gains|drop|drops|up|down)\\b"
   ],
   "price_fundamental_terms": [
+    "clinical trial", "pivotal trial", "FDA", "NMPA", "drug approval", "production halt", "supply interruption",
+    "药监", "临床", "审批", "取消", "产能", "供给",
     "earnings",
     "guidance",
     "inflation",
@@ -107,6 +109,43 @@
     "封锁"
   ],
   "importance_rules": [
+    {
+      "id": "critical-supply-change",
+      "tier": 3,
+      "label": "关键供给环节中断/恢复，量级未披露则保持未知",
+      "headline_any": ["supply disruption", "supply interruption", "halts production", "halted production", "production halt", "suspends production", "resumes production", "shortage", "停产", "断供", "供应中断", "供给中断", "恢复生产", "短缺"],
+      "groups": [
+        ["bottleneck", "critical component", "critical components", "sole supplier", "single source", "irreplaceable", "essential input", "supply chain", "瓶颈", "关键零部件", "关键材料", "唯一供应商", "不可替代", "供应链"]
+      ]
+    },
+    {
+      "id": "drug-development-decision",
+      "tier": 3,
+      "label": "新药审批/关键临床进展或失败，核对适应症与监管条件",
+      "headline_any": ["rejects", "rejected", "approval", "approves", "fails", "failed", "clinical hold", "withdraws", "withdrawn", "获批", "批准", "拒绝", "失败", "叫停", "撤回"],
+      "groups": [
+        ["drug", "new medicine", "新药", "药品", "药物"],
+        ["FDA", "NMPA", "EMA", "regulator", "clinical trial", "pivotal trial", "phase 3", "phase III", "药监", "临床试验", "关键临床", "三期临床"]
+      ]
+    },
+    {
+      "id": "industrial-implementation",
+      "tier": 2,
+      "label": "产业项目实施/取消或监管条件改变；计划与落实分别记录",
+      "headline_any": ["commissioned", "commissioning", "begins production", "starts production", "enters service", "cancels", "cancelled", "revokes", "投产", "投运", "取消", "撤销"],
+      "groups": [
+        ["factory", "plant", "production capacity", "power grid", "power transmission", "substation", "mine", "semiconductor", "manufacturing", "chemical", "工业", "工厂", "产能", "电网", "输电", "变电站", "矿山", "半导体", "制造", "化工"]
+      ]
+    },
+    {
+      "id": "industrial-correction",
+      "tier": 2,
+      "label": "产业事实更正/撤回，保留反证与原始修订历史",
+      "headline_any": ["correction", "corrects", "corrected", "retraction", "更正", "纠正", "撤回"],
+      "groups": [
+        ["supply", "capacity", "investment", "capex", "orders", "drug", "production", "供应", "产能", "投资", "资本开支", "订单", "药品", "产量"]
+      ]
+    },
     {
       "id": "strategic-route",
       "tier": 4,

@@ -1,6 +1,7 @@
 """Conditional impact on actual graph positions; never copy graph edges as causes."""
 from .registry import VERSIONS
-from .industry_association import binding, version
+from .industry_association import binding
+from ..identities import version
 
 VERSION = VERSIONS['industry_impact']
 

@@ -1,12 +1,15 @@
 """Offline candidates: behavioural boundaries rather than implementation-shaped snapshots."""
 import copy
+import hashlib
+import importlib
 import json
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
 
-from backend.algorithms import algorithm_versions, registry
+from backend.algorithms import algorithm_versions, registry, industry_association
 from backend.algorithms.common import hits
 from backend.algorithms.event_grouping import merge_safe, same_event, signature_progress, story_rule, story_in_window
 from backend.algorithms.industry_transmission import industry_links
@@ -88,9 +91,13 @@ def test_missing_publication_needs_actual_fresh_observation_not_feed_order():
                'importance': {'tier': 0, 'signals': [], 'mode': 'reported'},
                'attribution': {'exclusive': False, 'origin_keys': ['publisher:example']}}
     args = dict(now=NOW, fact_at=None, current_heads=1, rules=RULES, selections=set())
-    a = article(published_at=None)
+    a = article(published_at=None, title='Small supplier halts production of a critical semiconductor component',
+                content='The semiconductor supply chain bottleneck halts production.')
+    cv = 'test-catalog'
+    args['association_snapshot'] = dict(status='complete', links=industry_association.associate([a], []),
+        news_version=industry_association.binding([a], cv), catalog_version=cv, algorithm_version=industry_association.VERSION)
     assert not evaluate([feature], [a], [], **args)['eligible']
-    observation = {'observed_at': '2026-10-20T11:00:00Z', 'position': 1}
+    observation = {'article_id': a['id'], 'observed_at': '2026-10-20T11:00:00Z', 'position': 1}
     result = evaluate([feature], [a], [observation], **args)
     assert result['eligible'] and result['time_basis'] == 'homepage_observation'
     # A new slot cannot revive an old known fact.
@@ -105,8 +112,8 @@ def test_diversity_never_promotes_filler_above_importance_and_does_not_mutate():
     before = copy.deepcopy(candidates)
     params = {'story_penalty': 4, 'publisher_penalty': 1, 'publisher_penalty_cap': 3, 'story_limit': 1}
     selected, deferred = diversify(candidates, 3, params)
-    assert [i['id'] for i in selected] == ['first', 'filler']
-    assert [i['id'] for i in deferred] == ['second']
+    assert [i['id'] for i in selected] == ['first', 'second', 'filler']
+    assert not deferred  # Distinct important updates precede lower-tier fillers even at the topic occupancy target.
     assert candidates == before
     assert (selected, deferred) == diversify(candidates, 3, params)
 
@@ -118,6 +125,24 @@ def test_story_background_is_not_same_fact_and_obeys_bounded_gap():
     candidate = {'earliest': '2026-10-01T00:00:00Z', 'latest': '2026-10-10T00:00:00Z'}
     assert story_in_window('2026-10-12T00:00:00Z', candidate, 2)
     assert not story_in_window('2026-10-12T00:00:01Z', candidate, 2)
+
+
+def test_industry_identity_helpers_preserve_hashes_without_source_dependencies(monkeypatch):
+    for name in ('backend.industry_sources', 'backend.config', 'backend.db', 'backend.adapters'):
+        monkeypatch.setitem(sys.modules, name, None)
+    from backend import identities
+    from backend.algorithms import industry_impact
+
+    importlib.reload(industry_association)
+    importlib.reload(industry_impact)
+    assert industry_association.key is identities.key
+    assert industry_association.version is industry_impact.version is identities.version
+    assert identities.key('company-', 'abc') == 'company-ba7816bf8f01cfea414140de'
+    assert identities.key('open-', '产业') == 'open-' + hashlib.sha256('产业'.encode()).hexdigest()[:24]
+    value = {'z': '产业', 'a': [None, 1.5]}
+    expected = hashlib.sha256('{"a": [null, 1.5], "z": "产业"}'.encode()).hexdigest()
+    assert identities.version(value) == expected
+    assert identities.version({'a': [None, 1.5], 'z': '产业'}) == expected
 
 
 def test_discovery_versions_are_independent_defensive_copies():

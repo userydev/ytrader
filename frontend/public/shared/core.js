@@ -15,7 +15,7 @@ export async function coreApi(path, options = {}) {
     const response = await fetch(`/api/v1${path}`, { ...options, signal: controller.signal, credentials: 'same-origin', mode: 'same-origin', redirect: 'error', headers: { Accept: 'application/json', ...options.headers } });
     if (!response.ok) {
       const body = await response.json().catch(() => null);
-      throw new Error(response.status === 409 ? '研究通道未配置，新闻和公司资料仍可阅读。' : body?.detail || `读取失败（HTTP ${response.status}）`);
+      throw new Error(body?.detail || `读取失败（HTTP ${response.status}）`);
     }
     const envelope = await response.json();
     if (!envelope || !('data' in envelope) || envelope.meta?.version !== '1') throw new Error('数据格式不符，未回退本地资料。');
@@ -79,7 +79,7 @@ class CoreResearch extends HTMLElement {
       output.replaceChildren();
       if (!analysis) { output.append(node('p', '尚无研究结果。')); return; }
       if ((subject === 'company' && analysis.symbol !== identity) || (subject !== 'company' && analysis.event_id !== identity)) throw new Error('研究身份不符，已拒收。');
-      const provenance = node('details'); provenance.append(node('summary', '模型与生成信息'), node('p', `${analysis.model || '模型未提供'} · ${analysis.created_at || '生成时间未提供'}${analysis.status === 'stale' ? ' · 旧证据研究' : ''}`)); output.append(provenance);
+      const provenance = node('details'); provenance.append(node('summary', '模型与生成信息'), node('p', `${analysis.model || '模型未提供'} · ${analysis.created_at || '生成时间未提供'}${analysis.status === 'stale' ? ' · 旧证据研究' : analysis.status === 'pending_review' ? ' · 产业关联待核查，整项未完成' : ''}`)); output.append(provenance);
       for (const warning of analysis.warnings || []) output.append(node('p', warning));
       for (const [key, label] of [['facts', '事实'], ['links', '产业联系'], ['companies', '相关公司'], ['conditions', '成立条件'], ['counter_evidence', '反证'], ['unknowns', '未知项']]) {
         const section = node('section'); section.append(node('h3', label));

@@ -457,11 +457,11 @@ def test_ycore_missing_capability_never_falls_back_and_public_reading_still_work
     app.state.settings.update(ConfigUpdate(ai_mode='ycore', data_mode='ycore', ycore_url='https://core.example'))
     with TestClient(app) as client:
         assert len(client.get('/api/v1/industries').json()['data']['items']) == 3
-        job = client.post('/api/v1/industries/generate', json={'name': '低空经济'}).json()['data']
-        app.state.jobs.run_one()
-        failed = app.state.db.job(job['id'])
-        assert failed['status'] == 'failed' and '未回退本地' in failed['message']
-        assert len(calls) == 1
+        response = client.post('/api/v1/industries/generate', json={'name': '低空经济'})
+        assert response.status_code == 501
+        assert '未读取或写入本地替代数据' in response.json()['detail']
+        assert calls == []
+        assert client.get('/api/v1/jobs').json()['data'] == []
         assert client.get('/api/v1/industries/ai-compute').json()['data']['base']['origin'] == 'public_reference'
 
 

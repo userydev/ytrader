@@ -16,7 +16,7 @@ from backend.panorama import Panorama, CONTEXT_FILES
 from backend.db import Database, dump
 
 ROOT = Path(__file__).resolve().parents[1]
-STATIC = ROOT / 'frontend/public/industry/data'
+STATIC = ROOT / 'backend/data/panorama'
 
 
 def load(name):
@@ -121,7 +121,8 @@ def test_same_read_contract_all_data_ai_combinations(tmp_path, monkeypatch, data
     with TestClient(baseline) as client:
         paths = ['/panorama/catalog', '/panorama/context', '/news/editorial', '/securities']
         responses = {path: client.get('/api/v1' + path).json() for path in paths}
-    responses.update({'/panorama/' + iid: envelope({**graph, 'source_kind': 'panorama'}, 'stub')
+    responses.update({'/panorama/' + iid: envelope({**graph, 'source_kind': 'panorama',
+                                      'maintenance_note': '现有资料 / 待按v0.2新格式维护；不是v0.2正式发布'}, 'stub')
                       for iid, graph in graphs_data().items()})
     network = StubNetwork(responses)
     app = create_app(tmp_path / 'app', start_worker=False, network=network)
@@ -252,7 +253,7 @@ def test_cache_schema_refresh_once_and_null_does_not_trigger_repeated_requests(t
 
 
 def test_schema_and_examples_are_machine_readable():
-    schema = json.loads((ROOT / 'docs/contracts/core-v1.schema.json').read_text())
+    schema = json.loads((ROOT / 'backend/contracts/core-v1.schema.json').read_text())
     assert schema['$schema'].endswith('2020-12/schema')
     assert OPTIONAL_NUMERIC <= schema['$defs']['period']['properties'].keys()
     assert not OPTIONAL_NUMERIC & set(schema['$defs']['period']['required'])
@@ -260,12 +261,12 @@ def test_schema_and_examples_are_machine_readable():
     jsonschema = pytest.importorskip('jsonschema')
     jsonschema.Draft202012Validator.check_schema(schema)
     validator = jsonschema.Draft202012Validator(schema)
-    for response in json.loads((ROOT / 'docs/contracts/core-v1.examples.json').read_text())['responses'].values():
+    for response in json.loads((ROOT / 'tests/fixtures/core-v1.examples.json').read_text())['responses'].values():
         validator.validate(response)
 
 
 def test_remote_transmission_rejects_unknown_node_without_local_mapping(tmp_path):
-    examples = json.loads((ROOT / 'docs/contracts/core-v1.examples.json').read_text())['responses']
+    examples = json.loads((ROOT / 'tests/fixtures/core-v1.examples.json').read_text())['responses']
     response = copy.deepcopy(examples['synthetic_editorial_detail'])
     response['data']['industry_links'] = [{'industry_id': 'gold', 'name': '黄金', 'industry_name': '黄金',
         'variable': '测试变量', 'mechanism': '测试机制', 'condition': '测试条件', 'node_ids': ['unknown'],

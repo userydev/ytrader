@@ -449,3 +449,100 @@ h1 { font-size: 23px; font-weight: 680; letter-spacing: -.5px; }
   .stage-lane { padding: 0 6px; }
   .comparison-table .business-entry { padding: 6px 4px; }
 }
+
+/* Shared five-chain v0.2 graph. Legacy and other curated chains stay unchanged.
+   Historic ai-* engine hooks are retained, not separate chain renderers. */
+/* Keep the existing desktop inspector beside the graph. Narrow-window
+   stacking and bounded reading panes use the shared workspace rules above. */
+.chain-curated-layout .industry-module > .module-heading { flex-wrap: wrap; }
+.chain-curated-layout .industry-module + .industry-module { margin-top: 8px; }
+.chain-curated-layout .matrix-skeleton, .chain-curated-layout .business-host { overflow: visible; }
+.chain-curated-layout .nav-row { min-height: 32px; }
+.chain-curated-layout .title-row { padding: 5px 0; }
+.chain-curated-layout .title-row h1 { font-size: 21px; }
+.chain-curated-layout .route-notice { padding: 2px 0; font-size: 11px; line-height: 1.55; }
+.chain-curated-layout .route-notice > details { display: inline-block; margin-left: 16px; vertical-align: top; }
+.chain-curated-layout .route-notice > details[open] { display: block; margin-left: 0; }
+.chain-curated-layout .ai-summary { padding: 4px 12px; font-size: 12px; }
+.chain-curated-layout .ai-summary > summary { cursor: pointer; color: var(--muted); line-height: 1.65; }
+.chain-curated-layout .ai-summary > p { font-size: 12px; margin: 6px 0; line-height: 1.7; }
+.ai-layout { font-size: 12px; line-height: 1.6; overflow-wrap: anywhere; }
+.ai-layout *, .ai-company-correspondence * { min-width: 0; }
+.ai-layout .module-heading { min-height: 24px; margin-bottom: 4px; padding-bottom: 4px; }
+.ai-layout .ai-node-count { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.ai-graph-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding: 0 0 5px; }
+.ai-graph-toolbar > div { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+.ai-graph-toolbar button, .ai-selection-actions button, .ai-edge-detail-heading button { border: 1px solid var(--line); padding: 4px 9px; min-height: 30px; border-radius: 4px; background: var(--surface); font-size: 12px; white-space: nowrap; }
+.ai-graph-toolbar button:hover { background: var(--blue-soft); border-color: #9bafc4; }
+.ai-graph-toolbar button[aria-pressed=true] { border-color: #92abc3; color: var(--blue); background: var(--blue-soft); }
+.ai-graph-toolbar button:disabled { color: #8e979d; cursor: default; background: #f4f4f0; }
+.ai-graph-toolbar select { max-width: 180px; min-height: 30px; padding: 3px 5px; font: inherit; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 4px; }
+.ai-zoom-reading { width: 37px; text-align: center; font-size: 10px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.ai-graph-stage { position: relative; border: 1px solid #d8e0e5; border-radius: 5px; overflow: hidden; background: #fafbf9; }
+.ai-cy-board { position: relative; height: 700px; width: 100%; min-width: 0; background-image: radial-gradient(#dae0e3 .8px, transparent .8px); background-size: 20px 20px; }
+.ai-cy-board:focus-visible { outline-offset: -3px; }
+.ai-layout:not([data-chain="ai-compute"]):not(.is-large) .ai-cy-board { height: 620px; }
+.ai-structure-key { position: absolute; top: 8px; left: 12px; z-index: 4; display: flex; gap: 14px; font-size: 10px; pointer-events: none; background: #fafbf9e8; padding: 1px 5px; border-radius: 3px; }
+.ai-structure-reference { color: #49698b; }.ai-structure-branch { color: #577d72; }.ai-structure-support { color: #967647; }
+.ai-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px; padding: 6px 2px 2px; color: var(--muted); font-size: 11px; }
+.ai-legend-item { display: inline-flex; align-items: center; gap: 6px; }
+.ai-legend-item i { display: inline-block; position: relative; width: 24px; border-top: 2px solid #49698b; }
+.ai-legend-item i::after { content: ''; position: absolute; top: -4px; right: -2px; border-left: 5px solid currentColor; border-top: 3px solid transparent; border-bottom: 3px solid transparent; }
+.ai-kind-part_of { color: #49698b; }
+.ai-kind-used_for { color: #408477; }.ai-kind-used_for i { border-color: #408477; }
+.ai-kind-supports { color: #aa793b; }.ai-kind-supports i { border-color: #aa793b; border-top-style: dashed; }
+.ai-kind-input_to { color: #8a739f; }.ai-kind-input_to i { border-color: #8a739f; border-top-style: dotted; }
+.ai-kind-produces { color: #77578f; }.ai-kind-produces i { border-color: #77578f; }
+.ai-kind-guide { margin-left: auto; font-size: 10px; }
+.ai-hover-preview { min-height: 24px; padding: 3px 2px; font-size: 11px; color: var(--muted); line-height: 1.6; }
+.ai-graph-help { padding: 5px 0; font-size: 11px; color: var(--muted); }
+.ai-selection-bar { border-top: 1px solid var(--line); background: #f1f5fa; padding: 8px 12px; margin: 5px 0 8px; }
+.ai-selected-identity { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; }
+.ai-selected-identity strong { font-size: 13px; }.ai-selected-identity span { color: var(--muted); font-size: 11px; }
+.ai-selection-actions { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+.ai-selection-actions button { color: var(--blue); min-height: 28px; font-size: 11px; }
+.ai-layout summary { cursor: pointer; }.ai-selection-bar summary { margin-top: 6px; color: var(--blue); }
+.ai-selection-bar ul, .ai-all-relations ul { padding-left: 18px; margin: 6px 0; }
+.ai-selection-bar li { padding: 3px 0; }.ai-selection-bar li button { color: var(--blue); text-align: left; font-size: 12px; }
+.ai-edge-detail { position: absolute; top: 12px; right: 12px; z-index: 6; width: 390px; max-width: calc(100% - 24px); max-height: 360px; overflow-y: auto; padding: 10px 12px; background: #fffefa; border: 1px solid #9aafc1; border-radius: 5px; box-shadow: 0 5px 24px #2435491a; font-size: 12px; line-height: 1.75; }
+.ai-edge-detail-heading { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ai-edge-detail h3 { font-size: 13px; }.ai-edge-detail summary { color: var(--blue); margin-top: 5px; }
+.ai-edge-endpoints { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; margin: 4px 0; }
+.ai-edge-endpoints button { color: var(--blue); text-align: left; padding: 2px 0; font-weight: 600; }
+.ai-edge-statement { margin: 5px 0; }.ai-edge-status { color: var(--muted); font-size: 11px; }
+.ai-edge-detail pre { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 11px; margin: 5px 0; }
+.ai-edge-detail blockquote { margin: 6px 0; padding-left: 12px; border-left: 2px solid #bdc9d2; white-space: pre-wrap; }
+.ai-accessible-indexes { display: flex; flex-direction: column; gap: 4px; }
+.ai-node-index, .ai-all-relations { border-top: 1px solid var(--line); padding: 5px 0; font-size: 12px; }
+.ai-node-index > summary, .ai-all-relations > summary { color: var(--blue); padding: 2px 0; }
+.ai-index-search { display: flex; align-items: center; gap: 12px; margin: 8px 0; }
+.ai-index-search input { width: 300px; padding: 6px 9px; border: 1px solid var(--line); background: var(--surface); font-size: 12px; }
+.ai-index-count { color: var(--muted); font-size: 11px; }
+.ai-node-index ul { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 4px 18px; list-style: none; padding: 0; margin: 6px 0; max-height: 320px; overflow-y: auto; }
+.ai-node-index li { padding: 5px 8px; border: 1px solid var(--line); border-radius: 3px; background: #f8f8f4; }
+.ai-node-index li.is-on-canvas { border-color: #9eb0bf; background: #f0f4f7; }
+.ai-node-index li button { display: block; text-align: left; font-size: 12px; width: 100%; padding: 2px 0; }
+.ai-node-index li small { display: block; color: var(--muted); font-size: 10px; }
+.ai-node-index [aria-pressed=true], .ai-company-correspondence [data-action=node][aria-pressed=true] { color: var(--blue); background: var(--blue-soft); }
+.ai-all-relations ul { max-height: 300px; overflow-y: auto; }.ai-all-relations li { padding: 3px 0; }
+.ai-all-relations li button { font-size: 12px; line-height: 1.65; text-align: left; color: var(--blue); }
+/* Real viewport-sized focus mode, not just a taller card. All reading controls
+   remain reachable by its own scroller; Escape and the pinned button exit. */
+body.ai-graph-focus-open { overflow: hidden; }
+.ai-layout.is-large { position: fixed; inset: 0; z-index: 1000; margin: 0; padding: 12px 20px; background: var(--paper); overflow-y: auto; overscroll-behavior: contain; }
+.ai-layout.is-large .ai-graph-toolbar { position: sticky; top: 0; z-index: 7; padding-top: 5px; background: var(--paper); }
+.ai-layout.is-large .ai-cy-board { height: calc(100vh - 124px); min-height: 420px; }
+/* Company correspondence deliberately remains compact and unchanged in shape. */
+.ai-company-correspondence { font-size: 13px; line-height: 1.6; width: 100%; min-width: 0; overflow-wrap: anywhere; }
+.ai-company-module + .ai-company-module { margin-top: 16px; }
+.ai-company-module > h3 { margin: 0; padding: 4px 0; border-bottom: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.ai-company-line { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); align-items: baseline; gap: 4px 16px; padding: 6px 0; border-bottom: 1px solid #e5e7e8; }
+.ai-company-line > h4 { margin: 0; font-size: 13px; line-height: 1.6; font-weight: 500; }
+.ai-correspondence-node { text-align: left; padding: 4px 0; min-height: 32px; line-height: 1.6; font-size: 13px; overflow-wrap: anywhere; }
+.ai-company-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; }
+.ai-company-link { display: inline-flex; align-items: baseline; flex-wrap: wrap; gap: 0 6px; min-height: 32px; padding: 4px 0; line-height: 1.6; text-align: left; overflow-wrap: anywhere; color: var(--blue); }
+.ai-company-link strong { font-size: 13px; font-weight: 550; }
+.ai-company-code { font-size: 12px; line-height: 1.6; color: var(--muted); overflow-wrap: anywhere; }
+.ai-company-link.is-selected, .ai-company-link.is-exact, .ai-company-line.is-selected-row { background: var(--blue-soft); }
+.ai-company-link.is-search-match, .ai-company-line.is-search-match > .ai-company-link { outline: 1px solid var(--blue); outline-offset: 2px; }
+.ai-company-link.is-deemphasized:not(.is-selected) { color: var(--muted); }

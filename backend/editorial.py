@@ -14,7 +14,7 @@ from .models import utcnow
 from .news import article_public, digest, timestamp
 from .algorithms.common import hits, matches, snippet, norm
 from .algorithms import algorithm_versions
-from .algorithms import recommendation, event_grouping, industry_transmission, features
+from .algorithms import recommendation, event_grouping, industry_transmission, industry_association, features
 
 RULES = json.loads(Path(__file__).with_name('editorial_rules.json').read_text(encoding='utf-8'))
 VERSION = RULES['version']
@@ -243,7 +243,7 @@ class Editorial:
                   (pid, story, article['event_id'], signature, exact, article['fetched_at'], fact_at))
         return pid
 
-    def _item(self, c, progress, now, history=False, enhance=True):
+    def _item(self, c, progress, now, history=False, enhance=True, previous_recommendations=()):
         rows = c.execute('''SELECT a.*,e.data AS feature_data,a.rowid AS article_sequence,
             NOT EXISTS (SELECT 1 FROM articles n WHERE n.source_id=a.source_id
                 AND n.identity_key=a.identity_key AND n.rowid>a.rowid) AS current_head
@@ -266,8 +266,6 @@ class Editorial:
         if earliest and (not fact_at or timestamp(earliest) < timestamp(fact_at)):
             fact_at = earliest
             c.execute('UPDATE editorial_progress SET fact_at=? WHERE id=?', (fact_at, progress['id']))
-        decision = recommendation.evaluate(features, rows, observations, now=now, fact_at=fact_at,
-                                           current_heads=current_heads, rules=RULES, selections=SELECTIONS)
         actions = sorted({key for f in features for key in f['actions']})
         triggers = [dict(t, article_id=r['id']) for r, f in zip(rows, features) for t in f['triggers']]
         links = []
@@ -284,16 +282,69 @@ class Editorial:
             a.pop('feature_data', None)
             a.update(attribution=f['attribution'], language=f['language'], language_basis=f['language_basis'])
             articles.append(a)
-        associations, impacts, nv, cv = links, links, None, None
-        if enhance and self.industry_research:
-            associations, impacts, nv, cv = self.industry_research.projection(articles, links)
+        # History stays readable below, but cannot supply proof for a revision.
+        current_ids = {r['id'] for r in rows if r['current_head']}
+        current_articles = [a for a in articles if a['id'] in current_ids]
+        decision_articles = [article_public(r) for r in rows]
+        decision_args = dict(now=now, fact_at=fact_at, current_heads=current_heads,
+                             rules=RULES, selections=SELECTIONS,
+                             previous_recommendations=previous_recommendations, progress_id=progress['id'])
+        # No directory/projection IO for the cheap quality, time and importance
+        # pass. With no snapshot, every otherwise-admissible important candidate
+        # is pending_review, never eligible. Reuse that exact contract rather
+        # than introducing a faster, weaker eligibility implementation.
+        decision = recommendation.evaluate(features, decision_articles, observations, **decision_args)
+        needs_projection = bool(current_articles) and (enhance or decision['admission_status'] == 'pending_review')
+        associations, impacts, nv, cv = [], links, None, None
+        projection_status = 'skipped_precheck'
+        projection_error = None
+        if needs_projection:
+            projection_status = 'complete'
+            try:
+                if self.industry_research:
+                    associations, impacts, nv, cv = self.industry_research.projection(current_articles, links)
+                else:
+                    # Rules-only installations do not require an AI service or graph.
+                    cv = 'identity-only-v1'
+                    nv = industry_association.binding(current_articles, cv)
+                    associations = industry_association.associate(current_articles, [])
+            except Exception as error:
+                # Failure is an auditable pending candidate, never a silent admission
+                # through legacy feature impacts. Do not expose provider error text.
+                projection_status = 'failed'
+                projection_error = type(error).__name__
+        snapshot = dict(status=projection_status, links=associations, news_version=nv, catalog_version=cv,
+                        algorithm_version=industry_association.VERSION)
+        if needs_projection:
+            decision = recommendation.evaluate(features, decision_articles, observations,
+                                               association_snapshot=snapshot, **decision_args)
+        decision['association_gate']['projection_status'] = projection_status
+        if projection_error:
+            decision['association_gate']['projection_error'] = projection_error
+        # Only current, proof-bound associations are presented as validated.
+        display_gate = recommendation.association_gate(current_articles, snapshot, current_ids)
+        associations = display_gate['links']
         # Compatibility links expose all broad entry names. Exact conditional
         # impacts remain separate and can only be rendered on an industry page.
         entry_links = list(impacts)
         for association in associations:
-            if not any(i['industry_id'] == association['industry_id'] for i in entry_links):
+            if association.get('association_id'):
+                entry_links = [i for i in entry_links if i['industry_id'] != association['industry_id'] or i.get('relation') != 'association']
                 entry_links.append(association)
+            elif not any(i['industry_id'] == association['industry_id'] for i in entry_links):
+                entry_links.append(association)
+        analysis_row = c.execute('SELECT data FROM analyses WHERE event_id=?', (progress['event_id'],)).fetchone()
+        analysis = json.loads(analysis_row[0]) if analysis_row else None
+        association = analysis.get('industry_association', {}) if analysis else {}
+        analysis_status = analysis.get('status', 'not_analyzed') if analysis else 'not_analyzed'
+        analysis_proof = recommendation.association_gate(current_articles,
+            dict(snapshot, links=association.get('links', [])), current_ids)
+        if analysis_status == 'complete' and (association.get('status') != 'complete'
+                or association.get('evidence_version') != analysis.get('evidence_version')
+                or analysis_proof['status'] != 'complete'):
+            analysis_status = 'pending_review'
         return dict(id=progress['id'], event_id=progress['event_id'], event_ids=sorted({r['event_id'] for r in rows}),
+                    analysis_status=analysis_status, association_status=display_gate['status'],
                     title=primary['title'], summary=primary['content'][:650], published_at=fact_at,
                     first_observed_at=progress['first_observed_at'], observations=observations[:30], primary_article_id=primary['id'],
                     story=story, industry_links=entry_links, industry_associations=associations, industry_impacts=impacts,
@@ -308,19 +359,14 @@ class Editorial:
         with self.db.connect() as c:
             progresses = c.execute('''SELECT * FROM editorial_progress ORDER BY
                 coalesce(fact_at,first_observed_at) DESC LIMIT 2000''').fetchall()
-            items = [self._item(c, row, now, enhance=False) for row in progresses]
+            previous_run = c.execute('SELECT data FROM editorial_runs ORDER BY generated_at DESC,rowid DESC LIMIT 1').fetchone()
+            previous = json.loads(previous_run[0]).get('selected', []) if previous_run else []
+            # Defer expensive directory-backed projection until the cheap
+            # admission pass succeeds, but still before any ranking/selection.
+            items = [self._item(c, row, now, enhance=False, previous_recommendations=previous) for row in progresses]
             total = c.execute('SELECT count(*) FROM articles').fetchone()[0]
             active = c.execute("SELECT id,status FROM jobs WHERE kind IN ('news','all') AND status IN ('queued','running') ORDER BY created_at DESC LIMIT 1").fetchone()
         selected, deferred = recommendation.diversify(items, min(36, max(0, limit)), RULES['diversity'])
-        # Ranking/evidence/diversity do not consume broad associations. Only
-        # enhance the displayed selection; detail/history enhance on demand.
-        if self.industry_research:
-            for item in selected:
-                associations, impacts, nv, cv = self.industry_research.projection(item['articles'], item['industry_impacts'])
-                links = list(impacts)
-                links += [a for a in associations if not any(i['industry_id'] == a['industry_id'] for i in links)]
-                item.update(industry_associations=associations, industry_impacts=impacts,
-                            industry_links=links, news_version=nv, catalog_version=cv)
         sync = self.db.get('news_sync', {})
         sources = [s for s in self.db.sources() if s.get('enabled') and not s.get('paid') and 'news' in s.get('capabilities', [])]
         state = 'collecting' if active else 'empty' if not total else 'ready' if selected else 'no_current_selection'
@@ -332,8 +378,14 @@ class Editorial:
                        coverage_note='限于已接入公开来源；版位仅代表具体媒体/版本观察，不是全球热榜。',
                        collection=dict(active_job_id=active['id'] if active else None,
                                        last_checked=sync.get('fetched_at'), warnings=sync.get('warnings', [])))
-        audit = dict(selected=[dict(id=i['id'], algorithm=i['algorithm'], reasons=i['reasons']) for i in selected],
-                     excluded=[dict(id=i['id'], reasons=i['algorithm']['excluded']) for i in items if i and not i['eligible']],
+        audit = dict(selected=[dict(id=i['id'], algorithm=i['algorithm'], reasons=i['reasons'],
+                                    article_versions=i['information_increment']['article_versions'],
+                                    information_increment=i['information_increment']) for i in selected],
+                     pending=[dict(id=i['id'], event_id=i['event_id'], primary_article_id=i['primary_article_id'],
+                                   importance=i['importance'], association_gate=i['association_gate'],
+                                   news_version=i['news_version'], catalog_version=i['catalog_version'],
+                                   reasons=i['algorithm']['excluded']) for i in items if i and i['admission_status'] == 'pending_review'],
+                     excluded=[dict(id=i['id'], reasons=i['algorithm']['excluded']) for i in items if i and i['admission_status'] == 'excluded'],
                      diversity_deferred=deferred, candidate_window=2000, scanned=len(progresses), weights=RULES['weights'],
                      algorithm_versions=algorithm_versions())
         rid = 'editorial-run:' + digest(VERSION, audit)
@@ -392,8 +444,8 @@ class Editorial:
 
     def diagnostics(self):
         with self.db.connect() as c:
-            row = c.execute('SELECT * FROM editorial_runs ORDER BY generated_at DESC LIMIT 1').fetchone()
+            row = c.execute('SELECT * FROM editorial_runs ORDER BY generated_at DESC,rowid DESC LIMIT 1').fetchone()
         return dict(version=VERSION, algorithm_versions=algorithm_versions(), weights=RULES['weights'], latest_run=dict(row, data=json.loads(row['data'])) if row else None,
-                    limitations=['推荐规则不调用模型；产业关联可按需后台补充，不翻译原文', '未知转载可能未识别；出处数不等于独立验证',
+                    limitations=['推荐前校验同稿件版本产业证据；缺失/失败保留待核查，不自动调用模型或补图', '未知转载可能未识别；出处数不等于独立验证',
                                  '新进展归并核对正文数字/动作；历史进展ID不重建，历史误合并不自动拆分',
                                  '仅BBC首页HTML观察版位，其余首页RSS只标精选', '原文全文未另行抓取，不绕付费墙'])

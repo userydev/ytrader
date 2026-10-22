@@ -1,0 +1,1311 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "semiconductor-materials",
+    "revision": 1,
+    "name": "半导体材料",
+    "need": "为晶圆制造与相关封装提供可用的衬底及工艺材料。",
+    "boundary": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "硅片及光刻/CMP/湿化学品为本轮重点；电子气体、溅射靶材和封装树脂的A股主体与用途尚待补证。",
+      "制造商工艺示例不是全部晶圆材料路线，CZ/FZ、外延、SOI各有条件；不推导国产化率。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "衬底材料",
+        "node_ids": [
+          "semiconductor-materials:poly",
+          "semiconductor-materials:growth",
+          "semiconductor-materials:ingot",
+          "semiconductor-materials:forming",
+          "semiconductor-materials:wafer",
+          "semiconductor-materials:epitaxy",
+          "semiconductor-materials:epi"
+        ]
+      },
+      {
+        "module": "工艺材料",
+        "node_ids": [
+          "semiconductor-materials:resist",
+          "semiconductor-materials:cmp",
+          "semiconductor-materials:wet",
+          "semiconductor-materials:plating",
+          "semiconductor-materials:precursor"
+        ]
+      },
+      {
+        "module": "应用工艺",
+        "node_ids": [
+          "semiconductor-materials:litho",
+          "semiconductor-materials:planar",
+          "semiconductor-materials:dep",
+          "semiconductor-materials:fab"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "semiconductor-materials:poly",
+      "name": "电子级多晶硅原料",
+      "kind": "product",
+      "description": "SUMCO所述高纯硅原料，不与光伏硅料规格直接等同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:growth",
+      "name": "单晶硅锭生长",
+      "kind": "activity",
+      "description": "以SUMCO CZ示例界定，FZ为另外路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:ingot",
+      "name": "单晶硅锭",
+      "kind": "product",
+      "description": "用于后续切片的硅锭。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:forming",
+      "name": "硅片成形与表面处理",
+      "kind": "activity",
+      "description": "切片、研磨、蚀刻、抛光及清洗检查的工序集合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:wafer",
+      "name": "抛光硅片",
+      "kind": "product",
+      "description": "完成表面处理的晶圆衬底。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:epitaxy",
+      "name": "硅片外延处理",
+      "kind": "activity",
+      "description": "在抛光硅片上形成外延晶层的附加路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:epi",
+      "name": "外延硅片",
+      "kind": "product",
+      "description": "通过适用外延工艺形成的晶圆分支。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:resist",
+      "name": "光刻胶与多层材料",
+      "kind": "product",
+      "description": "光刻用材料产品类别，不推定全部波长适配。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:cmp",
+      "name": "CMP抛光液",
+      "kind": "product",
+      "description": "化学机械平坦化所用抛光液类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:wet",
+      "name": "湿电子化学品与清洗液",
+      "kind": "product",
+      "description": "湿电子化学品及适用清洗材料，不穷举配方。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:plating",
+      "name": "电镀液与添加剂",
+      "kind": "product",
+      "description": "安集公开产品类别的电镀材料。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:precursor",
+      "name": "ALD/CVD前驱体",
+      "kind": "product",
+      "description": "JSR列出的气相沉积前驱体类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:litho",
+      "name": "光刻工艺接口",
+      "kind": "activity",
+      "description": "材料进入光刻制造环节的阅读接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:planar",
+      "name": "平坦化工艺接口",
+      "kind": "activity",
+      "description": "抛光液进入CMP工艺的阅读接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:dep",
+      "name": "薄膜沉积工艺接口",
+      "kind": "activity",
+      "description": "前驱体进入ALD/CVD的工艺接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-materials:fab",
+      "name": "晶圆器件制造应用",
+      "kind": "application",
+      "description": "材料服务于晶圆制造，设备另包维护。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:poly",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:growth",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:ingot",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:forming",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:wafer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:epitaxy",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:epi",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:resist",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:cmp",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:wet",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:plating",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:precursor",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:litho",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:planar",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:dep",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "node_id": "semiconductor-materials:fab",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:460dcf38f5940f6b",
+      "from_node_id": "semiconductor-materials:poly",
+      "to_node_id": "semiconductor-materials:growth",
+      "kind": "input_to",
+      "statement": "多晶硅原料投入适用的单晶生长。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:3b64bae9fe461a04",
+      "from_node_id": "semiconductor-materials:growth",
+      "to_node_id": "semiconductor-materials:ingot",
+      "kind": "produces",
+      "statement": "生长工艺形成单晶硅锭。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:fab6edc5d8020ec2",
+      "from_node_id": "semiconductor-materials:ingot",
+      "to_node_id": "semiconductor-materials:forming",
+      "kind": "input_to",
+      "statement": "硅锭经过切片等形成晶圆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:a3126d52cddc15c5",
+      "from_node_id": "semiconductor-materials:forming",
+      "to_node_id": "semiconductor-materials:wafer",
+      "kind": "produces",
+      "statement": "经表面处理及检查形成抛光晶圆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:4412173ca21e387b",
+      "from_node_id": "semiconductor-materials:wafer",
+      "to_node_id": "semiconductor-materials:epitaxy",
+      "kind": "input_to",
+      "statement": "适用抛光晶圆可进行附加外延。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:31adfd3ec5f3b9db",
+      "from_node_id": "semiconductor-materials:epitaxy",
+      "to_node_id": "semiconductor-materials:epi",
+      "kind": "produces",
+      "statement": "外延处理形成外延晶圆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:91222b089443e4ae",
+      "from_node_id": "semiconductor-materials:resist",
+      "to_node_id": "semiconductor-materials:litho",
+      "kind": "input_to",
+      "statement": "结构推断：光刻材料用于光刻工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:e6e4a63f3236f2cc",
+      "from_node_id": "semiconductor-materials:cmp",
+      "to_node_id": "semiconductor-materials:planar",
+      "kind": "input_to",
+      "statement": "结构推断：CMP抛光液用于平坦化。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:c866e10607dddcdf",
+      "from_node_id": "semiconductor-materials:wet",
+      "to_node_id": "semiconductor-materials:fab",
+      "kind": "input_to",
+      "statement": "结构推断：湿电子化学品服务于适用芯片制造工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:ae86eaf936e1aa91",
+      "from_node_id": "semiconductor-materials:precursor",
+      "to_node_id": "semiconductor-materials:dep",
+      "kind": "input_to",
+      "statement": "结构推断：前驱体服务于相应气相沉积工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-materials:c94fb78c051e3c80",
+      "from_node_id": "semiconductor-materials:wafer",
+      "to_node_id": "semiconductor-materials:fab",
+      "kind": "input_to",
+      "statement": "结构推断：硅晶圆作为器件制造衬底。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "硅片、光刻胶及配套、电子气体、湿化学品、靶材/抛光/封装材料；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_sumco",
+      "name": "SUMCO CORPORATION",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_jsr",
+      "name": "JSR Corporation",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_anji",
+      "name": "安集微电子科技（上海）股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:cf026dbafe25",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:688019",
+      "company_id": "company_anji",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:cf026dbafe25",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:164cdc709fef4eca",
+      "company_id": "company_sumco",
+      "node_id": "semiconductor-materials:wafer",
+      "role": "硅晶圆制造",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:e6186d572f620d31",
+      "company_id": "company_sumco",
+      "node_id": "semiconductor-materials:epi",
+      "role": "外延硅片产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:d25f61688af10a46",
+      "company_id": "company_jsr",
+      "node_id": "semiconductor-materials:resist",
+      "role": "光刻材料产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:09fa0547719662af",
+      "company_id": "company_jsr",
+      "node_id": "semiconductor-materials:cmp",
+      "role": "CMP材料",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:f17d01f8d83d9a11",
+      "company_id": "company_jsr",
+      "node_id": "semiconductor-materials:precursor",
+      "role": "沉积前驱体产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:0b9ddf4db0c3bfc5",
+      "company_id": "company_anji",
+      "node_id": "semiconductor-materials:cmp",
+      "role": "CMP抛光液",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:fba04a428befb360",
+      "company_id": "company_anji",
+      "node_id": "semiconductor-materials:wet",
+      "role": "功能性湿电子化学品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-materials:a4ad3bd92c17597a",
+      "company_id": "company_anji",
+      "node_id": "semiconductor-materials:plating",
+      "role": "电镀液及添加剂",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:semiconductor-materials:codex-research-v1",
+      "industry_id": "semiconductor-materials",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "衬底材料",
+          "node_ids": [
+            "semiconductor-materials:poly",
+            "semiconductor-materials:growth",
+            "semiconductor-materials:ingot",
+            "semiconductor-materials:forming",
+            "semiconductor-materials:wafer",
+            "semiconductor-materials:epitaxy",
+            "semiconductor-materials:epi"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "工艺材料",
+          "node_ids": [
+            "semiconductor-materials:resist",
+            "semiconductor-materials:cmp",
+            "semiconductor-materials:wet",
+            "semiconductor-materials:plating",
+            "semiconductor-materials:precursor"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "应用工艺",
+          "node_ids": [
+            "semiconductor-materials:litho",
+            "semiconductor-materials:planar",
+            "semiconductor-materials:dep",
+            "semiconductor-materials:fab"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2"
+      ],
+      "relation_ids": [
+        "rel:new20261021:semiconductor-materials:460dcf38f5940f6b",
+        "rel:new20261021:semiconductor-materials:3b64bae9fe461a04",
+        "rel:new20261021:semiconductor-materials:fab6edc5d8020ec2",
+        "rel:new20261021:semiconductor-materials:a3126d52cddc15c5",
+        "rel:new20261021:semiconductor-materials:4412173ca21e387b",
+        "rel:new20261021:semiconductor-materials:31adfd3ec5f3b9db",
+        "rel:new20261021:semiconductor-materials:91222b089443e4ae",
+        "rel:new20261021:semiconductor-materials:e6e4a63f3236f2cc",
+        "rel:new20261021:semiconductor-materials:c866e10607dddcdf",
+        "rel:new20261021:semiconductor-materials:ae86eaf936e1aa91",
+        "rel:new20261021:semiconductor-materials:c94fb78c051e3c80"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:sumco",
+      "source_version": "sha256:9094cb799feeaf6191361d149dc0dba4c0766998a1f83e39cbda440c2aa8881c",
+      "title": "Wafer production processes",
+      "publisher": "SUMCO",
+      "url": "https://www.sumcosi.com/english/products/process/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152980+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "5b1065b45a63361637718a764077317dfdc0560e587ff11d66c6d9070c1561cd",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:jsr-products",
+      "source_version": "sha256:843c6e5d9e717e7d76fce4565a5ce71466d004b615f08fc2ff9d2643a7d0c04b",
+      "title": "Product list",
+      "publisher": "JSR",
+      "url": "https://www.jsr.co.jp/jsr_e/products/all_index.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975297+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "e5d342f48178280db4bd83c63b346d73756ff476f1b3cc25867638c305699343",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:anji-profile",
+      "source_version": "sha256:f2eef68194104785276c986762169865e5ae007d826d54be4f66240b49e22d9d",
+      "title": "2027招聘公司及产品简介",
+      "publisher": "安集科技",
+      "url": "https://www.anjimicro.com/shehuizixun/133.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975396+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "5eadb41892c93d18eb30aca3ac5df5f6dc75c14a46eeb4cccb6269e4ff033bf4",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:sumco:ec4de0006e44",
+      "revision": 1,
+      "source_id": "codex-20261021:sumco",
+      "source_version": "sha256:9094cb799feeaf6191361d149dc0dba4c0766998a1f83e39cbda440c2aa8881c",
+      "excerpt": "high-quality polysilicon as the raw material",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sumco.txt:117"
+      },
+      "summary": "SUMCO单晶硅锭及晶圆制造以高质量多晶硅起始。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sumco:b7fea0ec1d04",
+      "revision": 1,
+      "source_id": "codex-20261021:sumco",
+      "source_version": "sha256:9094cb799feeaf6191361d149dc0dba4c0766998a1f83e39cbda440c2aa8881c",
+      "excerpt": "Slicing",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sumco.txt:129"
+      },
+      "summary": "同页依次说明切片、研磨、蚀刻、抛光、清洗检查与附加外延/SOI路线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:sumco:c4c414a1688a",
+      "revision": 1,
+      "source_id": "codex-20261021:sumco",
+      "source_version": "sha256:9094cb799feeaf6191361d149dc0dba4c0766998a1f83e39cbda440c2aa8881c",
+      "excerpt": "growth of a monocrystalline silicon film",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/sumco.txt:150"
+      },
+      "summary": "SUMCO外延晶圆工艺示例，非所有晶圆必经。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jsr-products:1f976175d6d0",
+      "revision": 1,
+      "source_id": "codex-20261021:jsr-products",
+      "source_version": "sha256:843c6e5d9e717e7d76fce4565a5ce71466d004b615f08fc2ff9d2643a7d0c04b",
+      "excerpt": "Photoresists & Multilayer Materials",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jsr-products.txt:61"
+      },
+      "summary": "JSR产品矩阵列出光刻材料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jsr-products:920d3ee68f4d",
+      "revision": 1,
+      "source_id": "codex-20261021:jsr-products",
+      "source_version": "sha256:843c6e5d9e717e7d76fce4565a5ce71466d004b615f08fc2ff9d2643a7d0c04b",
+      "excerpt": "CMP Materials (Slurries/Cleaning Solutions)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jsr-products.txt:63"
+      },
+      "summary": "JSR列出CMP抛光液与清洗液。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:jsr-products:284a1d1e043c",
+      "revision": 1,
+      "source_id": "codex-20261021:jsr-products",
+      "source_version": "sha256:843c6e5d9e717e7d76fce4565a5ce71466d004b615f08fc2ff9d2643a7d0c04b",
+      "excerpt": "Precursors for ALD/CVD",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/jsr-products.txt:66"
+      },
+      "summary": "JSR列出ALD/CVD前驱体与掺杂材料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:anji-profile:fda79af64a1b",
+      "revision": 1,
+      "source_id": "codex-20261021:anji-profile",
+      "source_version": "sha256:f2eef68194104785276c986762169865e5ae007d826d54be4f66240b49e22d9d",
+      "excerpt": "化学机械抛光液、功能性湿电子化学品、电镀液及其添加剂",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/anji-profile.txt:42"
+      },
+      "summary": "安集公司介绍明确的三类工艺材料。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:anji-profile:cf026dbafe25",
+      "revision": 1,
+      "source_id": "codex-20261021:anji-profile",
+      "source_version": "sha256:f2eef68194104785276c986762169865e5ae007d826d54be4f66240b49e22d9d",
+      "excerpt": "688019",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/anji-profile.txt:42"
+      },
+      "summary": "安集官网主体及证券代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 1,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

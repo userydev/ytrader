@@ -1,0 +1,2818 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "optical-communications",
+    "revision": 1,
+    "name": "光通信",
+    "need": "通过光器件、纤缆与网络系统交付数据传输与连接能力。",
+    "boundary": "覆盖光芯片/器件、收发模块、光纤光缆、传送和接入网络；区分数据中心内部、DCI及电信网络。铜缆交换、电网电缆和全部半导体工艺不在本包展开。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "公司为光器件、纤缆、系统样本；新易盛本轮官网读取出现异常，未以搜索摘要补造新角色，后续用正式公告/年报取证。",
+      "硅光、可插拔、CPO/NPO、IM-DD和相干路线并存；不把某厂商平台推广成行业统一BOM或量产事实。",
+      "预制棒拉丝、成缆及部分网络功能边仍为明确标注的结构推断；海缆、接入PON、测试与专用材料未逐项展开。",
+      "没有速率份额、出货、客户名单、价格与产能推断；800G/1.6T等宣传不代替逐型号规格及交付事实。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "光芯片与器件",
+        "node_ids": [
+          "optical-communications:laser",
+          "optical-communications:detector",
+          "optical-communications:siphotonics",
+          "optical-communications:passive"
+        ]
+      },
+      {
+        "module": "光纤光缆",
+        "node_ids": [
+          "optical-communications:preform",
+          "optical-communications:single",
+          "optical-communications:multi",
+          "optical-communications:special",
+          "optical-communications:cable"
+        ]
+      },
+      {
+        "module": "模块与配套",
+        "node_ids": [
+          "optical-communications:module",
+          "optical-communications:aoc",
+          "optical-communications:instruments",
+          "node_optical_transceiver_module"
+        ]
+      },
+      {
+        "module": "网络光层与系统",
+        "node_ids": [
+          "optical-communications:amplifier",
+          "optical-communications:wdm",
+          "optical-communications:roadm",
+          "optical-communications:dsp",
+          "optical-communications:coherent",
+          "optical-communications:transport",
+          "optical-communications:access"
+        ]
+      },
+      {
+        "module": "传输与应用",
+        "node_ids": [
+          "optical-communications:tx",
+          "optical-communications:fiber_tx",
+          "optical-communications:rx",
+          "optical-communications:dci",
+          "optical-communications:carrier",
+          "optical-communications:ftth",
+          "node_datacenter_networking_activity"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "optical-communications:laser",
+      "name": "通信激光器与光源芯片",
+      "kind": "product",
+      "description": "提供光通信所需光源，InP与VCSEL等路线不能互相等同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:detector",
+      "name": "光电探测器",
+      "kind": "product",
+      "description": "将接收到的光信号转换为电信号的探测器。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:f8ba99f887ce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:siphotonics",
+      "name": "硅光器件与集成平台",
+      "kind": "product",
+      "description": "用于调制和光检测等功能的集成光子器件；平台声明有明确适用边界。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:passive",
+      "name": "无源光器件与微光学",
+      "kind": "product",
+      "description": "无源组件和用于耦合/处理光路的光学元件类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:efbcdf9ea700",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:preform",
+      "name": "光纤预制棒",
+      "kind": "product",
+      "description": "用于光纤制造的预制棒产品接口，制备工艺路线区分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:08ed7c16d809",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:single",
+      "name": "单模光纤",
+      "kind": "product",
+      "description": "单模通信光纤产品分支。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:multi",
+      "name": "多模光纤",
+      "kind": "product",
+      "description": "多模通信光纤产品分支；适用链路与单模不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:5dd5ab3ff5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:special",
+      "name": "特种光纤与精密光组件",
+      "kind": "product",
+      "description": "用于特定光路的光纤及精密组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:cable",
+      "name": "通信光缆",
+      "kind": "product",
+      "description": "承载通信光纤的光缆产品接口，不是输电电缆。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:module",
+      "name": "电信光收发模块",
+      "kind": "product",
+      "description": "用于传送/接入等电信场景的光收发模块；与数据中心模块不默认互换。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2431771d7102",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:aoc",
+      "name": "有源光缆（AOC）",
+      "kind": "product",
+      "description": "含光电端部功能的光连接产品，与普通无源光缆区分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:instruments",
+      "name": "光通信测试与仪器",
+      "kind": "product",
+      "description": "本稿仅核实Coherent数据中心产品组合中的光学仪器类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:amplifier",
+      "name": "光纤放大器",
+      "kind": "product",
+      "description": "对光路提供光放大功能的器件类别；型号范围另查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2aa97fb5a2e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:wdm",
+      "name": "波分复用/解复用器件",
+      "kind": "product",
+      "description": "MUX/DEMUX类别名；本稿不填具体通道数或性能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink-wdm:b5f79fe8c0c1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:roadm",
+      "name": "ROADM产品接口",
+      "kind": "product",
+      "description": "可重构光分插复用器件类别；具体系统配置未展开。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink-wdm:be7f5a06dc45",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:dsp",
+      "name": "相干数字信号处理器",
+      "kind": "product",
+      "description": "用于相干信号恢复及链路补偿的ASIC/DSP接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:6559518fb068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:coherent",
+      "name": "相干光调制解调系统",
+      "kind": "product",
+      "description": "使用相干检测及数字处理的光通信系统接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:6559518fb068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:transport",
+      "name": "光传送网络系统",
+      "kind": "product",
+      "description": "面向传送网络的系统产品接口，方案应用范围由角色限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-transport:d506c70b3502",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:access",
+      "name": "全光接入网络系统",
+      "kind": "product",
+      "description": "面向家庭及行业的光接入系统产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:c62010928a4b",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:1c18834b9afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:tx",
+      "name": "电到光发送活动",
+      "kind": "activity",
+      "description": "将数据调制到光载波并向链路发射。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:dc95fb6d315f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:fiber_tx",
+      "name": "光纤链路传输活动",
+      "kind": "activity",
+      "description": "沿光纤连接传输光信号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:rx",
+      "name": "光到电接收活动",
+      "kind": "activity",
+      "description": "探测接收光信号并恢复电数据。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:f8ba99f887ce",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:dci",
+      "name": "数据中心间互连（DCI）",
+      "kind": "application",
+      "description": "不同数据中心间的光互连场景，距离和路线需独立限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:2d24feddb19d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:carrier",
+      "name": "骨干与城域电信网络",
+      "kind": "application",
+      "description": "骨干及城域网络通信应用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "optical-communications:ftth",
+      "name": "家庭与行业光接入",
+      "kind": "application",
+      "description": "家庭及企业、工业等光接入应用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:c62010928a4b",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:1c18834b9afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node_optical_transceiver_module",
+      "name": "高端光通信收发模块",
+      "kind": "product",
+      "description": "公开报告中披露的产品或服务集合；厂商、产品及期别由业务角色限定。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node_datacenter_networking_activity",
+      "name": "数据中心网络互连活动",
+      "kind": "activity",
+      "description": "光模块及网络设备用于数据中心通信的场景；不同网络标准与厂商配置不自动互换。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:laser",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:detector",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:siphotonics",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:passive",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:preform",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:single",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:multi",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:special",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:cable",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:module",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:aoc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:instruments",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:amplifier",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:wdm",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:roadm",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:dsp",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:coherent",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:transport",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:access",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:tx",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:fiber_tx",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:rx",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:dci",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:carrier",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "optical-communications:ftth",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "node_optical_transceiver_module",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "optical-communications",
+      "node_id": "node_datacenter_networking_activity",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:optical-communications:f91b069c5a08d1af",
+      "from_node_id": "optical-communications:laser",
+      "to_node_id": "optical-communications:module",
+      "kind": "input_to",
+      "statement": "激光二极管芯片可用于构建收发器。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:dc95fb6d315f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:94e8638f4a558227",
+      "from_node_id": "optical-communications:laser",
+      "to_node_id": "optical-communications:tx",
+      "kind": "used_for",
+      "statement": "结构推断：光源支持发送端产生光信号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:dc95fb6d315f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:2a795ae6302ee2ff",
+      "from_node_id": "optical-communications:detector",
+      "to_node_id": "optical-communications:rx",
+      "kind": "used_for",
+      "statement": "光电探测器将光信号转换回电数据。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:f8ba99f887ce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:e36b95a9537df995",
+      "from_node_id": "optical-communications:siphotonics",
+      "to_node_id": "optical-communications:tx",
+      "kind": "supports",
+      "statement": "该集成平台中的硅光承担调制功能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:c4d9b7c31e267303",
+      "from_node_id": "optical-communications:siphotonics",
+      "to_node_id": "optical-communications:rx",
+      "kind": "supports",
+      "statement": "该集成平台中的硅光承担光检测功能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:1fbfc918599cc61e",
+      "from_node_id": "optical-communications:passive",
+      "to_node_id": "optical-communications:fiber_tx",
+      "kind": "supports",
+      "statement": "微光学等组件支持相关光路连接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:6b4e80eb3f5ec37f",
+      "from_node_id": "optical-communications:special",
+      "to_node_id": "optical-communications:fiber_tx",
+      "kind": "supports",
+      "statement": "精密光纤组件为相关集成光路导引光信号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:66c159fa4d1610d8",
+      "from_node_id": "optical-communications:preform",
+      "to_node_id": "optical-communications:single",
+      "kind": "input_to",
+      "statement": "结构推断：预制棒与单模光纤制造形成材料接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:08ed7c16d809",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:c7b607cef96e83a2",
+      "from_node_id": "optical-communications:preform",
+      "to_node_id": "optical-communications:multi",
+      "kind": "input_to",
+      "statement": "结构推断：预制棒与多模光纤制造形成材料接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:08ed7c16d809",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:5dd5ab3ff5e8",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:d4b0564589d68aa2",
+      "from_node_id": "optical-communications:single",
+      "to_node_id": "optical-communications:cable",
+      "kind": "input_to",
+      "statement": "结构推断：单模光纤可成为相应通信光缆的传输介质。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:f7b7c5ce916d4c57",
+      "from_node_id": "optical-communications:multi",
+      "to_node_id": "optical-communications:cable",
+      "kind": "input_to",
+      "statement": "结构推断：多模光纤可成为相应通信光缆的传输介质。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:5dd5ab3ff5e8",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:73b858149f8f35a3",
+      "from_node_id": "optical-communications:cable",
+      "to_node_id": "optical-communications:fiber_tx",
+      "kind": "supports",
+      "statement": "结构推断：通信光缆为光纤链路提供承载。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:095a6be0ebc9f69e",
+      "from_node_id": "optical-communications:aoc",
+      "to_node_id": "node_datacenter_networking_activity",
+      "kind": "used_for",
+      "statement": "相关有源光缆产品用于AI数据中心互连。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:ff52253fdff2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:8cad6f35b8910e0b",
+      "from_node_id": "node_optical_transceiver_module",
+      "to_node_id": "node_datacenter_networking_activity",
+      "kind": "used_for",
+      "statement": "相关高速光模块用于云计算及AI基础设施互连。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:innolight:d5d1f13476a7",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:ff52253fdff2",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:898f1b7481637381",
+      "from_node_id": "optical-communications:module",
+      "to_node_id": "optical-communications:carrier",
+      "kind": "used_for",
+      "statement": "适配的光通信模块用于骨干及城域网络。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2431771d7102",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:c9f683f97f0b279b",
+      "from_node_id": "optical-communications:module",
+      "to_node_id": "optical-communications:ftth",
+      "kind": "used_for",
+      "statement": "适配的光通信模块用于FTTX等接入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2431771d7102",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:b43fe42b8f052071",
+      "from_node_id": "optical-communications:amplifier",
+      "to_node_id": "optical-communications:carrier",
+      "kind": "used_for",
+      "statement": "结构推断：将光纤放大器作为传送网络光层接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2aa97fb5a2e9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:811442a898304fd5",
+      "from_node_id": "optical-communications:wdm",
+      "to_node_id": "optical-communications:transport",
+      "kind": "supports",
+      "statement": "结构推断：将波分器件类别纳入传送系统光层。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink-wdm:b5f79fe8c0c1",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:fiberhome-transport:d506c70b3502",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:5b421137b8ff577e",
+      "from_node_id": "optical-communications:roadm",
+      "to_node_id": "optical-communications:transport",
+      "kind": "supports",
+      "statement": "结构推断：将ROADM类别纳入传送系统光层。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink-wdm:be7f5a06dc45",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:fiberhome-transport:d506c70b3502",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:86b08700ed1e1a1f",
+      "from_node_id": "optical-communications:dsp",
+      "to_node_id": "optical-communications:coherent",
+      "kind": "part_of",
+      "statement": "ASIC/DSP支持相干调制解调及光链路均衡。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:6559518fb068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:6c83e936f092776d",
+      "from_node_id": "optical-communications:coherent",
+      "to_node_id": "optical-communications:rx",
+      "kind": "supports",
+      "statement": "相干接收借助本振激光器获取信号信息。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:568e9e9cb9e17515",
+      "from_node_id": "optical-communications:coherent",
+      "to_node_id": "optical-communications:dci",
+      "kind": "used_for",
+      "statement": "相干技术在合适的DCI链路得到应用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:2d24feddb19d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:optical-communications:9b7dc09e88d46c77",
+      "from_node_id": "optical-communications:access",
+      "to_node_id": "optical-communications:ftth",
+      "kind": "used_for",
+      "statement": "全光接入系统用于家庭及行业接入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:c62010928a4b",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:1c18834b9afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_coherent",
+      "name": "Coherent",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_yofc",
+      "name": "长飞光纤光缆股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_accelink",
+      "name": "武汉光迅科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2431771d7102",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_zhongji_innolight",
+      "name": "中际旭创股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev_zhongji_innolight_identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "Source identifies issuer; consolidated business does not prove parent-only operations.",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_fiberhome",
+      "name": "烽火通信科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome:e23bf913a466",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_ciena",
+      "name": "Ciena",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SH:601869",
+      "company_id": "company_yofc",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:002281",
+      "company_id": "company_accelink",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink-stock:1166cff16594",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:300308",
+      "company_id": "company_zhongji_innolight",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev_zhongji_innolight_identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:600498",
+      "company_id": "company_fiberhome",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome:e23bf913a466",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:optical-communications:946b84a22bb94bc0",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:laser",
+      "role": "InP通信激光器产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:5b991d7fd5bcac94",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:detector",
+      "role": "通信光电二极管产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:86001d8d566f42b9",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:siphotonics",
+      "role": "PhotonLink平台中的硅光器件",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:a279ba93a44bc98d",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:special",
+      "role": "PhotonLink平台中的精密光组件",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:8ca04b23a8866284",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:aoc",
+      "role": "数据中心有源光缆",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:9caeb8d8dcb752cb",
+      "company_id": "company_coherent",
+      "node_id": "optical-communications:instruments",
+      "role": "数据中心光学仪器",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:0d400fa0388804d6",
+      "company_id": "company_yofc",
+      "node_id": "optical-communications:preform",
+      "role": "光纤预制棒及其制备技术",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:08ed7c16d809",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:9106881ecd7ca767",
+      "company_id": "company_yofc",
+      "node_id": "optical-communications:single",
+      "role": "单模光纤产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:acf37796a589",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:410f47d38fad2398",
+      "company_id": "company_yofc",
+      "node_id": "optical-communications:multi",
+      "role": "多模光纤产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:5dd5ab3ff5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:4e8ca4e3c7fcdec5",
+      "company_id": "company_yofc",
+      "node_id": "optical-communications:cable",
+      "role": "通信光缆产品组合",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:762e222dbeaf2e24",
+      "company_id": "company_accelink",
+      "node_id": "optical-communications:module",
+      "role": "光通信收发模块产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2431771d7102",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:d8293c8071c8fbb1",
+      "company_id": "company_accelink",
+      "node_id": "optical-communications:passive",
+      "role": "无源光器件/模块",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:efbcdf9ea700",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:d4265e1acc67693a",
+      "company_id": "company_accelink",
+      "node_id": "optical-communications:amplifier",
+      "role": "光纤放大器产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:accelink:2aa97fb5a2e9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:d47e98a48da3d8a3",
+      "company_id": "company_zhongji_innolight",
+      "node_id": "node_optical_transceiver_module",
+      "role": "高速光互连产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:innolight:d5d1f13476a7",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:1ee0434a680b5bff",
+      "company_id": "company_fiberhome",
+      "node_id": "optical-communications:transport",
+      "role": "OTN/MSTP等光传送方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-transport:d506c70b3502",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:93a21b9b1551e450",
+      "company_id": "company_fiberhome",
+      "node_id": "optical-communications:access",
+      "role": "家庭及行业全光接入方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:fiberhome-access:c62010928a4b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:optical-communications:0da60c5c5a878b3f",
+      "company_id": "company_ciena",
+      "node_id": "optical-communications:coherent",
+      "role": "WaveLogic等相干系统技术",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:ciena-coherent:6559518fb068",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:optical-communications:codex-research-v1",
+      "industry_id": "optical-communications",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "光芯片与器件",
+          "node_ids": [
+            "optical-communications:laser",
+            "optical-communications:detector",
+            "optical-communications:siphotonics",
+            "optical-communications:passive"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "光纤光缆",
+          "node_ids": [
+            "optical-communications:preform",
+            "optical-communications:single",
+            "optical-communications:multi",
+            "optical-communications:special",
+            "optical-communications:cable"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "模块与配套",
+          "node_ids": [
+            "optical-communications:module",
+            "optical-communications:aoc",
+            "optical-communications:instruments",
+            "node_optical_transceiver_module"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "网络光层与系统",
+          "node_ids": [
+            "optical-communications:amplifier",
+            "optical-communications:wdm",
+            "optical-communications:roadm",
+            "optical-communications:dsp",
+            "optical-communications:coherent",
+            "optical-communications:transport",
+            "optical-communications:access"
+          ]
+        },
+        {
+          "group_id": "g4",
+          "name": "传输与应用",
+          "node_ids": [
+            "optical-communications:tx",
+            "optical-communications:fiber_tx",
+            "optical-communications:rx",
+            "optical-communications:dci",
+            "optical-communications:carrier",
+            "optical-communications:ftth",
+            "node_datacenter_networking_activity"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "relation_ids": [
+        "rel:new20261021:optical-communications:f91b069c5a08d1af",
+        "rel:new20261021:optical-communications:94e8638f4a558227",
+        "rel:new20261021:optical-communications:2a795ae6302ee2ff",
+        "rel:new20261021:optical-communications:e36b95a9537df995",
+        "rel:new20261021:optical-communications:c4d9b7c31e267303",
+        "rel:new20261021:optical-communications:1fbfc918599cc61e",
+        "rel:new20261021:optical-communications:6b4e80eb3f5ec37f",
+        "rel:new20261021:optical-communications:66c159fa4d1610d8",
+        "rel:new20261021:optical-communications:c7b607cef96e83a2",
+        "rel:new20261021:optical-communications:d4b0564589d68aa2",
+        "rel:new20261021:optical-communications:f7b7c5ce916d4c57",
+        "rel:new20261021:optical-communications:73b858149f8f35a3",
+        "rel:new20261021:optical-communications:095a6be0ebc9f69e",
+        "rel:new20261021:optical-communications:8cad6f35b8910e0b",
+        "rel:new20261021:optical-communications:898f1b7481637381",
+        "rel:new20261021:optical-communications:c9f683f97f0b279b",
+        "rel:new20261021:optical-communications:b43fe42b8f052071",
+        "rel:new20261021:optical-communications:811442a898304fd5",
+        "rel:new20261021:optical-communications:5b421137b8ff577e",
+        "rel:new20261021:optical-communications:86b08700ed1e1a1f",
+        "rel:new20261021:optical-communications:6c83e936f092776d",
+        "rel:new20261021:optical-communications:568e9e9cb9e17515",
+        "rel:new20261021:optical-communications:9b7dc09e88d46c77"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:coherent-datacenter",
+      "source_version": "sha256:371c3205d6f4c2a5022bf12c8372dbb1e098dd6dac74af5d0d208771c2b8fe1f",
+      "title": "Datacenter",
+      "publisher": "Coherent",
+      "url": "https://www.coherent.com/communications/datacom/datacenter",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:32.125735+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "8f581212583a6d6a5b619dc0518ab7d8990d1b51d2baa215010c1ea4bc448eb6",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:coherent-inp",
+      "source_version": "sha256:7b01dfddc19ecdcd169f179ecf1c2aef4e4cab66e84cc28bc38d9277393fd9f8",
+      "title": "InP Optoelectronics",
+      "publisher": "Coherent",
+      "url": "https://www.coherent.com/networking/optoelectronic-devices/inp-optoelectronics",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:32.476305+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "d3f8a3056afc8aef0efc5350377d6c1658aa62cb7290f3a35b836cddfaf4e2b6",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:coherent-photonlink",
+      "source_version": "sha256:b056134047b81561caac43d8c33ddae6c2389ab2690bf1edfb237114d7975757",
+      "title": "PhotonLink",
+      "publisher": "Coherent",
+      "url": "https://www.coherent.com/networking/photonlink",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:32.849780+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "04a41ad649b6abcac3399305dba21e6a37c01499480a69b7be95b6a53cbcad05",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:yofc",
+      "source_version": "sha256:97234608a5cb57122846e5ea61e0d6a7aad9c97eda357463e5185c5135a6df35",
+      "title": "长飞官网",
+      "publisher": "长飞光纤光缆股份有限公司",
+      "url": "https://www.yofc.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:34.926417+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7b8bc4040c3f041870206ce15dd879b7ec911c3562e83e8018a2352d3002cb04",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:accelink",
+      "source_version": "sha256:34940c14d750449a0969bd63e37e3b905a791c5382dd27bdab1677159436c829",
+      "title": "公司简介",
+      "publisher": "武汉光迅科技股份有限公司",
+      "url": "https://www.accelink.com/lighting_your_dreams/gongsijianjie.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:32.897973+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "c1a3dbd4ddda97033c61d630459b89df491bfb5fccde233c7e511e03a42a5af4",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:accelink-stock",
+      "source_version": "sha256:ef8bec97d156a8abd508c2e79b4180308ca8716c507c227a4687f9ac0afe6bb1",
+      "title": "2026半年度募集资金专项报告",
+      "publisher": "武汉光迅科技股份有限公司",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-20/1225482611.PDF",
+      "published_at": "2026-08-20",
+      "retrieved_at": "2026-10-21T14:12:30.020484+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "e7adf89a2730155390db637fa46b197610c3e7daaeb050646e6b27d0fe1dbd10",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:accelink-wdm",
+      "source_version": "sha256:1aea2def4f065a72ae2b28311b07b1ddd2e6d43ff2fdec9d6d7f3f1d623f0c3b",
+      "title": "波分复用/解复用器件",
+      "publisher": "武汉光迅科技股份有限公司",
+      "url": "https://www.accelink.com/lighting_your_dreams/MUXDEMUX.html?cat_id=1729749416051941378&sub_id=1729749648588349442",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:12:30.020867+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "d08aef8ecfce4ad5b8da4859f99ed577cdb89eabd898d9f09a682967cdcd3e60",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:innolight",
+      "source_version": "sha256:d273a1b38b5130f8c484e1cd58807b50740c12bb537345454cb45cf5c38fe336",
+      "title": "中际旭创官网",
+      "publisher": "中际旭创股份有限公司",
+      "url": "https://www.zj-innolight.com/cn",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:33.728419+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "a4b6139515d011fbea8d04201db64b70ad5b1862acb3d8e24164e351d7dd8bc5",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:innolight-stock",
+      "source_version": "sha256:8e924eea4d7f0999a0489a7a6c3460a6400a672e6d7bc6325e82a12653998981",
+      "title": "投资者关系",
+      "publisher": "中际旭创股份有限公司",
+      "url": "https://www.zj-innolight.com/index/index/investor1.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:34.134858+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "1873f1aad223cd972fed523f06b012b7f9b49419aab857b76dac021f5332eae1",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:fiberhome",
+      "source_version": "sha256:67cc9b181b6ad2019582ff4b6bc833502249fe7595b8d9f945c24a5c64e6c69b",
+      "title": "烽火通信官网",
+      "publisher": "烽火通信科技股份有限公司",
+      "url": "https://www.fiberhome.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:35.374897+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "c61adc3601b449e6a2c4b90ea2dad165e95e51ffbc575f173d302c77fd336019",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:fiberhome-transport",
+      "source_version": "sha256:cbe6af83ef57b2da8bc5a8aa372b4442998abf50368e7744dec16306326e35b9",
+      "title": "光传送网络",
+      "publisher": "烽火通信科技股份有限公司",
+      "url": "https://www.fiberhome.com/cs.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:12:30.020784+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "465f3aa669490ce31ccbaab78d42b9025734b66cd7ee169cba6af19edfba8f98",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:fiberhome-access",
+      "source_version": "sha256:1770224f089c2b0b4e523a84bb6d999c8ca1b80c8b417d06964be5d6d49cb942",
+      "title": "光接入网络",
+      "publisher": "烽火通信科技股份有限公司",
+      "url": "https://www.fiberhome.com/jr22.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:12:30.020904+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "36f7f6db1ec1c3c54c03ffc3eb58e4bf8887aa3451c7b04e3dcb74030a070115",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:ciena-coherent",
+      "source_version": "sha256:649f248f8de8ba7c8a4904ab5bd6922c88e02884ec60811e2f48cb85695d67b5",
+      "title": "What is coherent optics",
+      "publisher": "Ciena",
+      "url": "https://www.ciena.com/insights/what-is/what-is-coherent-optics",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:26.278031+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "key": "innolight-2025-summary",
+      "title": "中际旭创股份有限公司2025年度报告摘要",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-31/1225056458.PDF",
+      "pages": 8,
+      "reused_download": true,
+      "resolved_url": null,
+      "retrieved_at": "2026-10-20T18:23:13.867706+00:00",
+      "mime": null,
+      "bytes": 393979,
+      "source_version": "sha256:9a49aecc753d10c72f2bd0160b58a81fa8fb3762fb028eed89edb70ed43c0c9b",
+      "source_id": "src_innolight_2025_summary",
+      "source_type": "annual_report_summary",
+      "source_capture_pending": false,
+      "publisher": "中际旭创股份有限公司",
+      "published_at": null,
+      "origin": "source_import",
+      "capture_access_note": null,
+      "access": "snapshot",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:coherent-datacenter:3a23bb0cd126",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-datacenter",
+      "source_version": "sha256:371c3205d6f4c2a5022bf12c8372dbb1e098dd6dac74af5d0d208771c2b8fe1f",
+      "excerpt": "High-performance transceivers, active optical cables, and optical instrumentation",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-datacenter.txt:378"
+      },
+      "summary": "Coherent数据中心产品组合含收发模块、有源光缆及仪器。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-datacenter:ff52253fdff2",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-datacenter",
+      "source_version": "sha256:371c3205d6f4c2a5022bf12c8372dbb1e098dd6dac74af5d0d208771c2b8fe1f",
+      "excerpt": "AI datacenter infrastructure",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-datacenter.txt:378"
+      },
+      "summary": "该产品页面向AI数据中心互连基础设施。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-inp:cdd46ac719bb",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-inp",
+      "source_version": "sha256:7b01dfddc19ecdcd169f179ecf1c2aef4e4cab66e84cc28bc38d9277393fd9f8",
+      "excerpt": "InP-based lasers, devices, and photodiode products",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-inp.txt:375"
+      },
+      "summary": "Coherent InP产品类别包括激光器与光电二极管。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-inp:dc95fb6d315f",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-inp",
+      "source_version": "sha256:7b01dfddc19ecdcd169f179ecf1c2aef4e4cab66e84cc28bc38d9277393fd9f8",
+      "excerpt": "laser diode chips to build transceivers",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-inp.txt:386"
+      },
+      "summary": "官方明确激光二极管芯片可用于构建收发器。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-photonlink:5bd9b42fd6de",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-photonlink",
+      "source_version": "sha256:b056134047b81561caac43d8c33ddae6c2389ab2690bf1edfb237114d7975757",
+      "excerpt": "Silicon Photonics",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-photonlink.txt:380"
+      },
+      "summary": "平台说明硅光执行调制与光检测；适用CPO/NPO等集成架构。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-photonlink:f8ba99f887ce",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-photonlink",
+      "source_version": "sha256:b056134047b81561caac43d8c33ddae6c2389ab2690bf1edfb237114d7975757",
+      "excerpt": "convert optical signals back into electrical data",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-photonlink.txt:388"
+      },
+      "summary": "光电探测器与IC将光信号转换回电数据。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:coherent-photonlink:792164123fce",
+      "revision": 1,
+      "source_id": "codex-20261021:coherent-photonlink",
+      "source_version": "sha256:b056134047b81561caac43d8c33ddae6c2389ab2690bf1edfb237114d7975757",
+      "excerpt": "Specialty fiber, micro-optics, and precision assemblies",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/coherent-photonlink.txt:385"
+      },
+      "summary": "平台使用特种光纤、微光学和精密组件进行光路连接。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yofc:d0cf5cbd8346",
+      "revision": 1,
+      "source_id": "codex-20261021:yofc",
+      "source_version": "sha256:97234608a5cb57122846e5ea61e0d6a7aad9c97eda357463e5185c5135a6df35",
+      "excerpt": "长飞光纤光缆股份有限公司股票代码：601869.SH",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yofc.txt:12"
+      },
+      "summary": "长飞官网主体及A股代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yofc:08ed7c16d809",
+      "revision": 1,
+      "source_id": "codex-20261021:yofc",
+      "source_version": "sha256:97234608a5cb57122846e5ea61e0d6a7aad9c97eda357463e5185c5135a6df35",
+      "excerpt": "PCVD、OVD、VAD三种主流光纤预制棒制备技术",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yofc.txt:312"
+      },
+      "summary": "长飞官网声明其预制棒制备技术；不采纳唯一/份额宣传。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yofc:acf37796a589",
+      "revision": 1,
+      "source_id": "codex-20261021:yofc",
+      "source_version": "sha256:97234608a5cb57122846e5ea61e0d6a7aad9c97eda357463e5185c5135a6df35",
+      "excerpt": "单模光纤",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yofc.txt:90"
+      },
+      "summary": "官网产品目录分别列出单模、多模光纤及光缆产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:yofc:5dd5ab3ff5e8",
+      "revision": 1,
+      "source_id": "codex-20261021:yofc",
+      "source_version": "sha256:97234608a5cb57122846e5ea61e0d6a7aad9c97eda357463e5185c5135a6df35",
+      "excerpt": "多模光纤",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/yofc.txt:91"
+      },
+      "summary": "多模产品与单模产品分支分开。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink:2431771d7102",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink",
+      "source_version": "sha256:34940c14d750449a0969bd63e37e3b905a791c5382dd27bdab1677159436c829",
+      "excerpt": "光通信模块（Optical Transceivers）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink.txt:165"
+      },
+      "summary": "光迅公司简介列出收发模块、无源组件、光波导和光纤放大器。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink:2aa97fb5a2e9",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink",
+      "source_version": "sha256:34940c14d750449a0969bd63e37e3b905a791c5382dd27bdab1677159436c829",
+      "excerpt": "光纤放大器（Optical Fiber Amplifier）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink.txt:165"
+      },
+      "summary": "光迅列出的光放大器产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink:efbcdf9ea700",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink",
+      "source_version": "sha256:34940c14d750449a0969bd63e37e3b905a791c5382dd27bdab1677159436c829",
+      "excerpt": "无源光器件/模块（Passive assemblies/modules）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink.txt:165"
+      },
+      "summary": "光迅列出的无源产品组合；不由此判断具体平台BOM。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink:2d49e3dd37f0",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink",
+      "source_version": "sha256:34940c14d750449a0969bd63e37e3b905a791c5382dd27bdab1677159436c829",
+      "excerpt": "骨干网、城域网、宽带接入（FTTX）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink.txt:165"
+      },
+      "summary": "产品应用包括电信骨干、城域及接入。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink-stock:1166cff16594",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink-stock",
+      "source_version": "sha256:ef8bec97d156a8abd508c2e79b4180308ca8716c507c227a4687f9ac0afe6bb1",
+      "excerpt": "证券代码：002281",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink-stock.txt:2"
+      },
+      "summary": "2026年8月20日发行人公告首页确认证券代码与主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink-wdm:b5f79fe8c0c1",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink-wdm",
+      "source_version": "sha256:1aea2def4f065a72ae2b28311b07b1ddd2e6d43ff2fdec9d6d7f3f1d623f0c3b",
+      "excerpt": "MUX/DEMUX",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink-wdm.txt:1"
+      },
+      "summary": "保存页面仅核实产品类别名，不以动态空模板主张具体型号功能或产能。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:accelink-wdm:be7f5a06dc45",
+      "revision": 1,
+      "source_id": "codex-20261021:accelink-wdm",
+      "source_version": "sha256:1aea2def4f065a72ae2b28311b07b1ddd2e6d43ff2fdec9d6d7f3f1d623f0c3b",
+      "excerpt": "ROADM",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/accelink-wdm.txt:13"
+      },
+      "summary": "保存的产品导航包含ROADM类别，详细型号未取得。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:innolight:d5d1f13476a7",
+      "revision": 1,
+      "source_id": "codex-20261021:innolight",
+      "source_version": "sha256:d273a1b38b5130f8c484e1cd58807b50740c12bb537345454cb45cf5c38fe336",
+      "excerpt": "高速光互连产品",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/innolight.txt:14"
+      },
+      "summary": "中际旭创官网自述云计算及AI基础设施高速光互连产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:innolight-stock:ec474ddb55f5",
+      "revision": 1,
+      "source_id": "codex-20261021:innolight-stock",
+      "source_version": "sha256:8e924eea4d7f0999a0489a7a6c3460a6400a672e6d7bc6325e82a12653998981",
+      "excerpt": "300308.SZ",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/innolight-stock.txt:93"
+      },
+      "summary": "当前官网A股栏目确认代码；本包不创建海外证券映射。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fiberhome:e23bf913a466",
+      "revision": 1,
+      "source_id": "codex-20261021:fiberhome",
+      "source_version": "sha256:67cc9b181b6ad2019582ff4b6bc833502249fe7595b8d9f945c24a5c64e6c69b",
+      "excerpt": "SH600498",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fiberhome.txt:754"
+      },
+      "summary": "烽火官网公司简介确认公司名称与A股代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fiberhome-transport:d506c70b3502",
+      "revision": 1,
+      "source_id": "codex-20261021:fiberhome-transport",
+      "source_version": "sha256:cbe6af83ef57b2da8bc5a8aa372b4442998abf50368e7744dec16306326e35b9",
+      "excerpt": "OTN+MSTP电力光传输网络",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fiberhome-transport.txt:689"
+      },
+      "summary": "烽火页面给出电力网络的光传输方案；不外推全部电信系统配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fiberhome-access:c62010928a4b",
+      "revision": 1,
+      "source_id": "codex-20261021:fiberhome-access",
+      "source_version": "sha256:1770224f089c2b0b4e523a84bb6d999c8ca1b80c8b417d06964be5d6d49cb942",
+      "excerpt": "下一代全光接入网",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fiberhome-access.txt:685"
+      },
+      "summary": "烽火描述FTTH至行业全光接入方案。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:fiberhome-access:1c18834b9afd",
+      "revision": 1,
+      "source_id": "codex-20261021:fiberhome-access",
+      "source_version": "sha256:1770224f089c2b0b4e523a84bb6d999c8ca1b80c8b417d06964be5d6d49cb942",
+      "excerpt": "FTTH（光纤到户）",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/fiberhome-access.txt:685"
+      },
+      "summary": "全光接入从家庭延伸至行业应用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ciena-coherent:29dd5aa71f82",
+      "revision": 1,
+      "source_id": "codex-20261021:ciena-coherent",
+      "source_version": "sha256:649f248f8de8ba7c8a4904ab5bd6922c88e02884ec60811e2f48cb85695d67b5",
+      "excerpt": "Coherent detection uses a laser at the receiver",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ciena-coherent.txt:131"
+      },
+      "summary": "Ciena说明相干检测使用本振激光器。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ciena-coherent:6559518fb068",
+      "revision": 1,
+      "source_id": "codex-20261021:ciena-coherent",
+      "source_version": "sha256:649f248f8de8ba7c8a4904ab5bd6922c88e02884ec60811e2f48cb85695d67b5",
+      "excerpt": "ASIC-based DSP",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ciena-coherent.txt:138"
+      },
+      "summary": "相干接收的数字信号处理用于均衡和补偿光纤链路损伤。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ciena-coherent:2d24feddb19d",
+      "revision": 1,
+      "source_id": "codex-20261021:ciena-coherent",
+      "source_version": "sha256:649f248f8de8ba7c8a4904ab5bd6922c88e02884ec60811e2f48cb85695d67b5",
+      "excerpt": "data center interconnect (DCI)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ciena-coherent.txt:157"
+      },
+      "summary": "相干光学应用从长途扩展到DCI；不等同所有DCI必须使用相干。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev_zhongji_innolight_identity",
+      "source_id": "src_innolight_2025_summary",
+      "source_version": "sha256:9a49aecc753d10c72f2bd0160b58a81fa8fb3762fb028eed89edb70ed43c0c9b",
+      "excerpt": "股票简称 中际旭创 股票代码 300308",
+      "locator": "PDF p.2; 二、公司基本情况 > 1、公司简介",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false
+    },
+    "shared_interfaces": [
+      {
+        "node_id": "node_optical_transceiver_module",
+        "with_industry": "ai-compute",
+        "semantics": "复用现有精确节点修订；不扩展原节点限定范围"
+      },
+      {
+        "node_id": "node_datacenter_networking_activity",
+        "with_industry": "ai-compute",
+        "semantics": "复用现有精确节点修订；不扩展原节点限定范围"
+      }
+    ],
+    "unresolved_candidates": [
+      {
+        "company": "成都新易盛通信技术股份有限公司",
+        "reason": "本轮官网406且网页工具读到异常内容；未采纳。以发行人公告/年报补证后再加入新研究角色。"
+      }
+    ]
+  }
+}

@@ -7,6 +7,7 @@ from urllib.parse import urlsplit
 
 from .common import hits, norm, timestamp, snippet
 from .registry import VERSIONS
+from .industry_association import article_version, binding, VERSION as ASSOCIATION_VERSION
 
 VERSION = VERSIONS['recommendation']
 
@@ -105,9 +106,74 @@ def editorial_exclusions(article, meta, rules):
     return reasons
 
 
-def evaluate(features, articles, observations, *, now, fact_at, current_heads, rules, selections):
-    """All eligibility/channels/score decisions; caller supplies evidence and clock."""
-    current_observations = [o for o in observations if 0 <= (now - timestamp(o['observed_at'])).total_seconds() <= 6 * 3600]
+def association_gate(articles, snapshot, important_article_ids):
+    """Consume a caller-owned projection, never infer proof from impact words.
+
+    Both the snapshot and each quotation must bind to exactly these immutable
+    current articles. An association ID, graph, node or completed AI essay is
+    neither required nor sufficient.
+    """
+    pending, accepted = [], []
+    if not isinstance(snapshot, dict) or snapshot.get('status') != 'complete':
+        return dict(status='pending_review', links=[], missing=['产业关联缺失或投影失败'])
+    cv = snapshot.get('catalog_version')
+    if (not isinstance(cv, str) or not cv or snapshot.get('news_version') != binding(articles, cv)
+            or snapshot.get('algorithm_version') != ASSOCIATION_VERSION):
+        return dict(status='pending_review', links=[], missing=['产业关联快照版本与当前稿件不符'])
+    links = snapshot.get('links')
+    if not isinstance(links, list):
+        return dict(status='pending_review', links=[], missing=['产业关联列表格式不合格'])
+    by_id = {a['id']: a for a in articles}
+    generic = {'产业', '行业', '其他', '未知', '经济', '市场', 'industry', 'other', 'unknown', 'economy', 'market'}
+    for link in links:
+        if not isinstance(link, dict):
+            pending.append('产业关联格式不合格')
+            continue
+        name = link.get('industry_name') or link.get('name')
+        reason = link.get('reason') or link.get('mechanism')
+        if (not isinstance(link.get('industry_id'), str) or not link['industry_id'].strip()
+                or not isinstance(name, str) or not name.strip() or name.strip().casefold() in generic
+                or not isinstance(reason, str) or not reason.strip()):
+            pending.append('产业身份或关联理由缺失')
+            continue
+        # Regional/security recall is a thematic hint, not business evidence.
+        # Legacy impact/keyword projections must not qualify as associations.
+        if (link.get('relation') != 'association'
+                or link.get('basis') not in {'source_match', 'ai_association'}
+                or (link.get('association_algorithm_version') or link.get('association_version')) != ASSOCIATION_VERSION):
+            pending.append('只有旧影响词条/间接主题线索，尚缺可靠产业关联')
+            continue
+        proof = []
+        evidence_items = link.get('evidence')
+        if not isinstance(evidence_items, list):
+            pending.append('产业关联原文证据格式不合格')
+            continue
+        for evidence in evidence_items:
+            if not isinstance(evidence, dict):
+                continue
+            article = by_id.get(evidence.get('article_id'))
+            quote = evidence.get('quote')
+            if (article and article['id'] in important_article_ids
+                    and evidence.get('article_version') == article_version(article)
+                    and isinstance(quote, str) and quote.strip()
+                    and quote in article['title'] + '\n' + article.get('content', '')):
+                proof.append(deepcopy(evidence))
+        if proof:
+            accepted.append(dict(deepcopy(link), evidence=proof))
+        else:
+            pending.append('关联引文缺失、错引、旧稿或未绑定当前重要事实稿件')
+    if not accepted and not pending:
+        pending.append('尚无具备原文证据的具体产业关联')
+    return dict(status='complete' if accepted else 'pending_review', links=accepted,
+                missing=[] if accepted else list(dict.fromkeys(pending)))
+
+
+def evaluate(features, articles, observations, *, now, fact_at, current_heads, rules, selections,
+             association_snapshot=None, previous_recommendations=(), progress_id=None):
+    """Quality → substantive importance → current proof → ranking, all explicit."""
+    current_ids = {a['id'] for a in articles}
+    current_observations = [o for o in observations if o.get('article_id') in current_ids
+                            and 0 <= (now - timestamp(o['observed_at'])).total_seconds() <= 6 * 3600]
     age = (now - timestamp(fact_at)).total_seconds() / 3600 if fact_at else None
     blocked = []
     if any(f['exclusion_terms'] for f in features):
@@ -123,7 +189,11 @@ def evaluate(features, articles, observations, *, now, fact_at, current_heads, r
     exclusive = [dict(f['attribution'], article_id=r['id']) for r, f in zip(articles, features) if f['attribution']['exclusive']]
     origins = sorted({key for f in features for key in f['attribution']['origin_keys']})
     channels, reasons, suppression = [], [], []
-    significance = sorted(features, key=lambda f: -f['importance']['tier'])[0]['importance']
+    # Recheck importance on the supplied immutable text, not stale feature or
+    # impact entries. Features still carry explicit quality/attribution facts.
+    importance_by_article = {a['id']: importance(a, rules) for a in articles}
+    significance = max(importance_by_article.values(), key=lambda i: i['tier'],
+                       default=dict(tier=0, signals=[], mode='reported', mode_evidence=None))
     tier = significance['tier']
     catalyst = tier > 0
     if catalyst:
@@ -141,12 +211,30 @@ def evaluate(features, articles, observations, *, now, fact_at, current_heads, r
     if exclusive:
         channels.append('exclusive')
         reasons.append(dict(label='来源明确独家声明' + ('（二手转述）' if exclusive[0]['exclusive_status'] == 'relayed_claim' else '（未独立核实）'), evidence=exclusive[0], basis='source_claim'))
-    if not tier and current_observations:
-        tier = 3 if current_observations[0]['position'] == 1 else 1
-    elif not tier and (selected_feeds or exclusive):
-        tier = 1
+    if not tier:
+        blocked.append('未见实质产业研究重要性；首页/精选/独家不能替代重要事实')
     if not channels:
         blocked.append('未进入重大变化/首页/明确独家任一召回路径')
+    quality_blocked = list(blocked)
+    gate = association_gate(articles, association_snapshot,
+                            {aid for aid, value in importance_by_article.items() if value['tier'] == tier and tier > 0})
+    if tier and gate['status'] != 'complete':
+        blocked.extend(gate['missing'])
+    admission = 'excluded' if quality_blocked else 'pending_review' if gate['status'] != 'complete' else 'selected_candidate'
+    for link in gate['links']:
+        proof = link['evidence'][0]
+        reasons.append(dict(label='产业关联：' + (link.get('industry_name') or link['name']) + '；' +
+                                 (link.get('reason') or link['mechanism']),
+                            evidence=dict(deepcopy(proof), industry_id=link['industry_id'],
+                                          industry_name=link.get('industry_name') or link['name']),
+                            basis='current_article_association'))
+    article_versions = {a['id']: article_version(a) for a in articles}
+    previous = next((record for record in previous_recommendations if progress_id and record.get('id') == progress_id), None)
+    correction = any(re.search(r'\b(?:correction|corrects|corrected|retraction)\b|更正|纠正|撤回', a['title'], re.I) for a in articles)
+    increment = dict(status=('unchanged' if previous and previous.get('article_versions') == article_versions
+                             else 'revised_articles' if previous else 'new_to_selection'),
+                     correction=correction, article_versions=article_versions,
+                     basis='与调用方提供的此前推荐稿件版本比较；新收录/新版本不等于已核实事实新增')
     w = rules['weights']
     parts = dict(importance=tier * w['importance'], change=w['change'] if catalyst and changes and significance['mode'] == 'reported' else 0,
                  freshness=round(w['freshness'] * math.exp(-max(0, age) / 48), 2) if age is not None else 0,
@@ -163,24 +251,37 @@ def evaluate(features, articles, observations, *, now, fact_at, current_heads, r
         suppression.append('纯价格回顾降权')
     return dict(channels=channels, reasons=reasons, exclusive_claims=exclusive, origin_keys=origins,
                 homepage_selections=selected_feeds, importance=significance, eligible=not blocked,
+                admission_status=admission, association_gate=gate, information_increment=increment,
                 time_basis='source_publication' if fact_at else 'homepage_observation' if current_observations else 'unknown',
-                algorithm=dict(version=rules['version'], importance_tier=tier, score=round(sum(parts.values()), 2), parts=parts,
+                algorithm=dict(version=VERSION, rules_version=rules['version'], importance_tier=tier, score=round(sum(parts.values()), 2), parts=parts,
                                excluded=blocked, suppression=suppression, meaning='v1 heuristic; not impact probability'))
 
 
 def diversify(items, limit, diversity):
     candidates = sorted((deepcopy(i) for i in items if i and i['eligible']), key=lambda i: (-i['algorithm']['score'], i['id']))
     selected, story_counts, publisher_counts, deferred = [], Counter(), Counter(), []
+    seen_reports = set()
     while candidates and len(selected) < limit:
         def rerank(item):
             publisher = item['articles'][0]['attribution']['publisher']
             return (item['algorithm']['score'] - diversity['story_penalty'] * min(2, story_counts[item['story']['id']])
                     - min(diversity['publisher_penalty_cap'], diversity['publisher_penalty'] * publisher_counts[publisher]))
-        candidates.sort(key=lambda i: (-i['algorithm']['importance_tier'], -rerank(i), i['id']))
+        # A story occupancy target only reorders within a tier. It must never
+        # replace a significant new update with a lower-tier diversity filler.
+        candidates.sort(key=lambda i: (-i['algorithm']['importance_tier'],
+                                       story_counts[i['story']['id']] >= diversity['story_limit'],
+                                       i.get('information_increment', {}).get('status') == 'unchanged', -rerank(i), i['id']))
         item = candidates.pop(0)
-        if story_counts[item['story']['id']] >= diversity['story_limit']:
-            deferred.append(dict(id=item['id'], reason=f'同一持续议题最多{diversity["story_limit"]}条；其余仍在时间线'))
+        primary = next((a for a in item['articles'] if a.get('id') == item.get('primary_article_id')), item['articles'][0])
+        report = (norm(primary.get('title', item.get('title', ''))),
+                  norm(primary.get('content', item.get('summary', ''))))
+        if any(report) and report in seen_reports:
+            deferred.append(dict(id=item['id'], reason='相同原文的重复转载不重复占位；原稿与修订仍可阅读'))
             continue
+        if story_counts[item['story']['id']] >= diversity['story_limit']:
+            item['algorithm']['suppression'].append('同层议题分散后保留实质进展，不以低重要性稿替换')
+        if any(report):
+            seen_reports.add(report)
         item['algorithm']['rerank_score'] = round(rerank(item), 2)
         if story_counts[item['story']['id']]:
             item['algorithm']['suppression'].append('同议题重复占位重排降权')

@@ -1,0 +1,421 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "status": "new_research_drafts_not_published",
+  "evidence_date": "2026-10-21",
+  "owner": "Codex",
+  "items": [
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "name": "半导体设计与晶圆制造",
+      "project_file": "data/curated-chains/semiconductor-design-fabrication/semiconductor-design-fabrication.codex-research-v2.json",
+      "project_sha256": "ba36f5470daf5c78bced5a22ecb7c91824cd75f8912db7291e14606982d91d5f",
+      "status": "draft",
+      "counts": {
+        "nodes": 31,
+        "relations": 26,
+        "companies": 7,
+        "securities": 4,
+        "participations": 14,
+        "sources": 13,
+        "evidence": 33
+      },
+      "package_id": "b07148ec61bef272bb6ac393208e23d8b75cf357833b15ebaa08c3105f2a3368",
+      "saved_at": "2026-10-21T14:34:05.980925Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=semiconductor-design-fabrication&draft_package=b07148ec61bef272bb6ac393208e23d8b75cf357833b15ebaa08c3105f2a3368",
+      "previous_project_file": "data/curated-chains/semiconductor-design-fabrication/semiconductor-design-fabrication.codex-research-v1.json",
+      "previous_package_id": "c246eddf5a5feb808cfd32c9f18f6e472ac169a222ada76fea169472c592f393"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "name": "半导体设备",
+      "project_file": "data/curated-chains/semiconductor-equipment/semiconductor-equipment.codex-research-v1.json",
+      "project_sha256": "25e663825fded798a2365cc2563b98ecb7e68ebdc045534b543b68af85e1e8b6",
+      "status": "draft",
+      "counts": {
+        "nodes": 26,
+        "relations": 24,
+        "companies": 5,
+        "securities": 3,
+        "participations": 16,
+        "sources": 10,
+        "evidence": 23
+      },
+      "package_id": "c14f8e558734fa0a0d1b4c99797c2ef2923dfc0199941f11a75f576898b5fa14",
+      "saved_at": "2026-10-21T14:25:18.511212Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=semiconductor-equipment&draft_package=c14f8e558734fa0a0d1b4c99797c2ef2923dfc0199941f11a75f576898b5fa14"
+    },
+    {
+      "industry_id": "optical-communications",
+      "name": "光通信",
+      "project_file": "data/curated-chains/optical-communications/optical-communications.codex-research-v2.json",
+      "project_sha256": "78211fd0065b3840d711f71de94d616fafd7d774eb85879ac44fd6404d0e7ab4",
+      "status": "draft",
+      "counts": {
+        "nodes": 27,
+        "relations": 23,
+        "companies": 6,
+        "securities": 4,
+        "participations": 17,
+        "sources": 14,
+        "evidence": 28
+      },
+      "package_id": "e1141ab755024e19682abc2fd80b0153fd4440fd63288011b40e34e4d3d4475a",
+      "saved_at": "2026-10-21T14:34:05.993505Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=optical-communications&draft_package=e1141ab755024e19682abc2fd80b0153fd4440fd63288011b40e34e4d3d4475a",
+      "previous_project_file": "data/curated-chains/optical-communications/optical-communications.codex-research-v1.json",
+      "previous_package_id": "2b5ccf121bbf497907490b0a74aed0a92f47332e51baa1abe76b0c2d5e97c87b"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "name": "锂电池",
+      "project_file": "data/curated-chains/lithium-batteries/lithium-batteries.codex-research-v1.json",
+      "project_sha256": "c3c29e09504dba0093e9930d5029d23454274aba618b6184d1c6764ba9a34fa3",
+      "status": "draft",
+      "research_batch": 1,
+      "counts": {
+        "nodes": 17,
+        "relations": 14,
+        "companies": 4,
+        "securities": 3,
+        "participations": 9,
+        "sources": 5,
+        "evidence": 10
+      },
+      "package_id": "539619ea52cbafbf4a6c30f3122afa0ac92045dd04acd8e534302d23a90fc1bc",
+      "saved_at": "2026-10-21T15:01:05.939771Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=lithium-batteries&draft_package=539619ea52cbafbf4a6c30f3122afa0ac92045dd04acd8e534302d23a90fc1bc"
+    },
+    {
+      "industry_id": "new-energy-vehicles",
+      "name": "新能源汽车",
+      "project_file": "data/curated-chains/new-energy-vehicles/new-energy-vehicles.codex-research-v1.json",
+      "project_sha256": "e1ecc4efe68f13d8124766faa21a23e46006814dff7c49c9b97cddbaadad2806",
+      "status": "draft",
+      "research_batch": 1,
+      "counts": {
+        "nodes": 14,
+        "relations": 12,
+        "companies": 2,
+        "securities": 2,
+        "participations": 5,
+        "sources": 5,
+        "evidence": 6
+      },
+      "package_id": "f06f91ea888ec942395a759f9eb61d51bfa8442176c1f765040cf87e7d0f0940",
+      "saved_at": "2026-10-21T15:01:05.942001Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=new-energy-vehicles&draft_package=f06f91ea888ec942395a759f9eb61d51bfa8442176c1f765040cf87e7d0f0940"
+    },
+    {
+      "industry_id": "semiconductor-materials",
+      "name": "半导体材料",
+      "project_file": "data/curated-chains/semiconductor-materials/semiconductor-materials.codex-research-v1.json",
+      "project_sha256": "cb5d4300557acaf9f31e7e0783548735108ab3f05c744edfb329108cc481b058",
+      "status": "draft",
+      "research_batch": 1,
+      "counts": {
+        "nodes": 16,
+        "relations": 11,
+        "companies": 3,
+        "securities": 1,
+        "participations": 8,
+        "sources": 3,
+        "evidence": 8
+      },
+      "package_id": "748988bf45d180169e2026beaa89c0f812a4ee213de4c6244f43a170a31683cc",
+      "saved_at": "2026-10-21T15:01:05.943822Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=semiconductor-materials&draft_package=748988bf45d180169e2026beaa89c0f812a4ee213de4c6244f43a170a31683cc"
+    },
+    {
+      "industry_id": "industrial-automation",
+      "name": "工业自动化",
+      "project_file": "data/curated-chains/industrial-automation/industrial-automation.codex-research-v1.json",
+      "project_sha256": "5458a03cbca72f4479ce7acb0ea1e2e240483d0dba2a843ba19b0facff3e415a",
+      "status": "draft",
+      "research_batch": 1,
+      "counts": {
+        "nodes": 16,
+        "relations": 13,
+        "companies": 3,
+        "securities": 2,
+        "participations": 8,
+        "sources": 3,
+        "evidence": 8
+      },
+      "package_id": "18fccaa9e6d217e0962b1aab333537eabfb95967a79f68eca2cb79a374c96024",
+      "saved_at": "2026-10-21T15:01:05.945821Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=industrial-automation&draft_package=18fccaa9e6d217e0962b1aab333537eabfb95967a79f68eca2cb79a374c96024"
+    },
+    {
+      "industry_id": "advanced-packaging-testing",
+      "name": "先进封装与测试",
+      "project_file": "data/curated-chains/advanced-packaging-testing/advanced-packaging-testing.codex-research-v1.json",
+      "project_sha256": "d10a8672cd27ee07fb9d21597398b2e47b8283a198bc14972f69b32fb2543e7a",
+      "status": "draft",
+      "research_batch": 2,
+      "counts": {
+        "nodes": 14,
+        "relations": 12,
+        "companies": 3,
+        "securities": 1,
+        "participations": 9,
+        "sources": 3,
+        "evidence": 12
+      },
+      "package_id": "f28bedcc1c969df3d487a31a1cc8c806c3c1c810e7a71d8b79abef8cf6a557a9",
+      "saved_at": "2026-10-21T15:11:14.467343Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=advanced-packaging-testing&draft_package=f28bedcc1c969df3d487a31a1cc8c806c3c1c810e7a71d8b79abef8cf6a557a9"
+    },
+    {
+      "industry_id": "humanoid-robots",
+      "name": "人形机器人",
+      "project_file": "data/curated-chains/humanoid-robots/humanoid-robots.codex-research-v1.json",
+      "project_sha256": "811ea23689959fca647bdc699356c0884bae3e020c377d1684f0893876115753",
+      "status": "draft",
+      "research_batch": 2,
+      "counts": {
+        "nodes": 14,
+        "relations": 12,
+        "companies": 3,
+        "securities": 2,
+        "participations": 4,
+        "sources": 4,
+        "evidence": 12
+      },
+      "package_id": "5e02ddd9d29ae308a2616a16cbb6f8cd8f822b36d95eb8690040d908fc1a1782",
+      "saved_at": "2026-10-21T15:11:14.469477Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=humanoid-robots&draft_package=5e02ddd9d29ae308a2616a16cbb6f8cd8f822b36d95eb8690040d908fc1a1782"
+    },
+    {
+      "industry_id": "pcb",
+      "name": "PCB及配套电子材料",
+      "project_file": "data/curated-chains/pcb/pcb.codex-research-v1.json",
+      "project_sha256": "8c7e093fefcb6905ce1d3985f7bd2d90957e31ebf7eabfe861b160c030ff8f20",
+      "status": "draft",
+      "research_batch": 2,
+      "counts": {
+        "nodes": 14,
+        "relations": 13,
+        "companies": 2,
+        "securities": 0,
+        "participations": 3,
+        "sources": 2,
+        "evidence": 14
+      },
+      "package_id": "7a68bae19f51d51969b78d8df50e5d8074a283335ae693e21caa9285d9441d1a",
+      "saved_at": "2026-10-21T15:11:14.471085Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=pcb&draft_package=7a68bae19f51d51969b78d8df50e5d8074a283335ae693e21caa9285d9441d1a"
+    },
+    {
+      "industry_id": "commercial-space",
+      "name": "商业航天",
+      "project_file": "data/curated-chains/commercial-space/commercial-space.codex-research-v1.json",
+      "project_sha256": "fad1ef88b0651a97916df5811056125ffedf28d43b8b1435232903f5af94e2a2",
+      "status": "draft",
+      "research_batch": 2,
+      "counts": {
+        "nodes": 15,
+        "relations": 14,
+        "companies": 1,
+        "securities": 0,
+        "participations": 5,
+        "sources": 2,
+        "evidence": 10
+      },
+      "package_id": "25bd3cadd1cef321051d03794e8cbf05ff65b5b3a9b933ca28acd94660df170b",
+      "saved_at": "2026-10-21T15:11:14.472762Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=commercial-space&draft_package=25bd3cadd1cef321051d03794e8cbf05ff65b5b3a9b933ca28acd94660df170b"
+    },
+    {
+      "industry_id": "rare-earth-magnets",
+      "name": "稀土与永磁材料",
+      "project_file": "data/curated-chains/rare-earth-magnets/rare-earth-magnets.codex-research-v2.json",
+      "project_sha256": "0c9b19a126ee985508db4d7c18fe12ca69e11f04815f54320f80ec5e66aef67f",
+      "status": "draft",
+      "research_batch": 3,
+      "counts": {
+        "nodes": 16,
+        "relations": 13,
+        "companies": 3,
+        "securities": 1,
+        "participations": 8,
+        "sources": 3,
+        "evidence": 12
+      },
+      "package_id": "a163612d32431512a2fc008891bd107e4ebe9a9095ab8bbf87756e57edfc0a14",
+      "saved_at": "2026-10-21T15:24:13.994326Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=rare-earth-magnets&draft_package=a163612d32431512a2fc008891bd107e4ebe9a9095ab8bbf87756e57edfc0a14",
+      "previous_project_files": [
+        "data/curated-chains/rare-earth-magnets/rare-earth-magnets.codex-research-v1.json"
+      ],
+      "previous_package_ids": [
+        "8ce22b7ff5b6a3f082a160ba9aee0f9a480d797a90091c2f4331a0f370593c2f"
+      ]
+    },
+    {
+      "industry_id": "copper",
+      "name": "铜",
+      "project_file": "data/curated-chains/copper/copper.codex-research-v2.json",
+      "project_sha256": "0e9ed0b4c7c4c1ea3a198ce1921b27cd8dea8dec0372bc409e8940d638659da5",
+      "status": "draft",
+      "research_batch": 3,
+      "counts": {
+        "nodes": 14,
+        "relations": 12,
+        "companies": 3,
+        "securities": 1,
+        "participations": 5,
+        "sources": 4,
+        "evidence": 15
+      },
+      "package_id": "7fc7bb226e461538888e5c79024a66c7a2372ef8db9663e58c19f22e0aa29018",
+      "saved_at": "2026-10-21T15:24:13.991855Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=copper&draft_package=7fc7bb226e461538888e5c79024a66c7a2372ef8db9663e58c19f22e0aa29018",
+      "previous_project_files": [
+        "data/curated-chains/copper/copper.codex-research-v1.json"
+      ],
+      "previous_package_ids": [
+        "aa3bf2d20427a70b73c232a6c3b9f866fb25a13d8f4e52ec6d5dd9ed71e8d5d5"
+      ]
+    },
+    {
+      "industry_id": "photovoltaics",
+      "name": "光伏",
+      "project_file": "data/curated-chains/photovoltaics/photovoltaics.codex-research-v1.json",
+      "project_sha256": "2da079deb05322463de96d27561bb08b2b49d7f46d698156781d198f0ad5805e",
+      "status": "draft",
+      "research_batch": 3,
+      "counts": {
+        "nodes": 13,
+        "relations": 12,
+        "companies": 3,
+        "securities": 1,
+        "participations": 6,
+        "sources": 5,
+        "evidence": 13
+      },
+      "package_id": "6107b328499efe38760339d6fa7872ade8a58fcad7977a869e022dab1b67a794",
+      "saved_at": "2026-10-21T15:14:24.397034Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=photovoltaics&draft_package=6107b328499efe38760339d6fa7872ade8a58fcad7977a869e022dab1b67a794"
+    },
+    {
+      "industry_id": "energy-storage",
+      "name": "储能系统",
+      "project_file": "data/curated-chains/energy-storage/energy-storage.codex-research-v1.json",
+      "project_sha256": "9f3c1c265d6808ea4ac120a0de39703379367c4a74052424757767ef3ed9f208",
+      "status": "draft",
+      "research_batch": 4,
+      "counts": {
+        "nodes": 14,
+        "relations": 13,
+        "companies": 2,
+        "securities": 2,
+        "participations": 4,
+        "sources": 6,
+        "evidence": 14
+      },
+      "package_id": "af5dd7fe9d20c75ca0905d9c261b6998f25431376b048b7eadd4385e91f8f0bd",
+      "saved_at": "2026-10-21T15:17:11.579912Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=energy-storage&draft_package=af5dd7fe9d20c75ca0905d9c261b6998f25431376b048b7eadd4385e91f8f0bd"
+    },
+    {
+      "industry_id": "natural-gas-lng",
+      "name": "天然气与LNG",
+      "project_file": "data/curated-chains/natural-gas-lng/natural-gas-lng.codex-research-v1.json",
+      "project_sha256": "dbd4343bf9290976254538d243f137e2a9121d6ff87cc57fcd37d2a875a5fbe0",
+      "status": "draft",
+      "research_batch": 4,
+      "counts": {
+        "nodes": 15,
+        "relations": 16,
+        "companies": 1,
+        "securities": 1,
+        "participations": 1,
+        "sources": 5,
+        "evidence": 18
+      },
+      "package_id": "4610c99b5fa521f14ad73782dbd6c7997fb6a8d34ed1afb700a53036fe5ce3d5",
+      "saved_at": "2026-10-21T15:17:11.582346Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=natural-gas-lng&draft_package=4610c99b5fa521f14ad73782dbd6c7997fb6a8d34ed1afb700a53036fe5ce3d5"
+    },
+    {
+      "industry_id": "medical-devices",
+      "name": "医疗器械",
+      "project_file": "data/curated-chains/medical-devices/medical-devices.codex-research-v1.json",
+      "project_sha256": "ba2b56ed4072d6099c409eb969a577897d36cff2f1c5dbcbcd415e11f587142c",
+      "status": "draft",
+      "research_batch": 4,
+      "counts": {
+        "nodes": 14,
+        "relations": 13,
+        "companies": 2,
+        "securities": 0,
+        "participations": 5,
+        "sources": 4,
+        "evidence": 13
+      },
+      "package_id": "12c017b0a55fbd020914b131e21773e2bf11ae7e8ed96d981e0ddd1ee4c20b73",
+      "saved_at": "2026-10-21T15:17:11.584251Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=medical-devices&draft_package=12c017b0a55fbd020914b131e21773e2bf11ae7e8ed96d981e0ddd1ee4c20b73"
+    },
+    {
+      "industry_id": "coal",
+      "name": "煤炭",
+      "project_file": "data/curated-chains/coal/coal.codex-research-v1.json",
+      "project_sha256": "10880239b6a5438f10700f4d91df578ab50c5b7a773c2bb4f3f11a1c1fd26584",
+      "status": "draft",
+      "research_batch": 5,
+      "counts": {
+        "nodes": 14,
+        "relations": 15,
+        "companies": 1,
+        "securities": 1,
+        "participations": 3,
+        "sources": 4,
+        "evidence": 12
+      },
+      "package_id": "93b38f12bddc21d195dc1243e790942d9f31cccc4e930993392999182de11ec5",
+      "saved_at": "2026-10-21T15:21:21.111386Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=coal&draft_package=93b38f12bddc21d195dc1243e790942d9f31cccc4e930993392999182de11ec5"
+    },
+    {
+      "industry_id": "fertilizers",
+      "name": "化肥",
+      "project_file": "data/curated-chains/fertilizers/fertilizers.codex-research-v1.json",
+      "project_sha256": "70e13beb8a2dff68608ba83f84a83fe23910a0433630d0a8ea4810516ac9b239",
+      "status": "draft",
+      "research_batch": 5,
+      "counts": {
+        "nodes": 16,
+        "relations": 16,
+        "companies": 4,
+        "securities": 2,
+        "participations": 9,
+        "sources": 5,
+        "evidence": 15
+      },
+      "package_id": "86c70bf23d33777818d6fbd8fc412414c56603072666e64e2e3e15a139c10f5b",
+      "saved_at": "2026-10-21T15:21:21.114150Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=fertilizers&draft_package=86c70bf23d33777818d6fbd8fc412414c56603072666e64e2e3e15a139c10f5b"
+    },
+    {
+      "industry_id": "steel",
+      "name": "钢铁",
+      "project_file": "data/curated-chains/steel/steel.codex-research-v1.json",
+      "project_sha256": "2f3309533d8f7c3bc59f389400f266858330a04a167d42f538e4c4bab5f1dc29",
+      "status": "draft",
+      "research_batch": 5,
+      "counts": {
+        "nodes": 18,
+        "relations": 16,
+        "companies": 1,
+        "securities": 1,
+        "participations": 4,
+        "sources": 3,
+        "evidence": 13
+      },
+      "package_id": "278aa4450c1ccbbb8e43c0c228fac1b9bb71b59f2851446d50b2faa94274cfbf",
+      "saved_at": "2026-10-21T15:21:21.116371Z",
+      "preview_url": "http://127.0.0.1:58730/industry/index.html?industry=steel&draft_package=278aa4450c1ccbbb8e43c0c228fac1b9bb71b59f2851446d50b2faa94274cfbf"
+    }
+  ]
+}

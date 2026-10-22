@@ -1,0 +1,3538 @@
+{
+  "schema": "five-chain-monitor-design-v2",
+  "as_of": "2026-10-20（洛杉矶）；北京时间已至10/21",
+  "title": "产业链监控",
+  "mode": "公开数据核查快照 · 尚未自动更新",
+  "scope": "独立研究与设计，不作为项目正式产业数据或买卖信号。",
+  "state_definition": "卡片状态为有条件的研究判断，不是机器评分；关键指标缺失时不输出全链景气结论。",
+  "sources": [
+    {
+      "id": "eia-oct",
+      "title": "EIA Short-Term Energy Outlook · October 2026",
+      "url": "https://www.eia.gov/outlooks/steo/pdf/steo_text.pdf",
+      "published": "2026-10-06",
+      "period": "2026-09 / 2026Q3；预测另列",
+      "type": "government",
+      "locator": "PDF文件第6—8页 / 印刷第5—7页；模型输入截至2026-10-01"
+    },
+    {
+      "id": "fred-real",
+      "title": "FRED / Federal Reserve · DFII10",
+      "url": "https://fred.stlouisfed.org/series/DFII10",
+      "published": "2026-10-20",
+      "period": "2026-10-19",
+      "type": "government",
+      "locator": "Observations；10/19 2.80，10/16 2.74"
+    },
+    {
+      "id": "wgc-etf",
+      "title": "World Gold Council · September 2026 gold ETF flows",
+      "url": "https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/10",
+      "published": "2026-10-07",
+      "period": "2026-09",
+      "type": "industry",
+      "locator": "Highlights / September and Q3 in review；月度正文，不取动态周度图区"
+    },
+    {
+      "id": "wgc-cb",
+      "title": "World Gold Council · Q2 2026 central banks",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q2-2026/central-banks",
+      "published": "2026-07-30",
+      "period": "2026Q2",
+      "type": "industry_estimate",
+      "locator": "Tonnes table；288.9t；Q1已由244t修订至57t，须保留版本"
+    },
+    {
+      "id": "wgc-jewel",
+      "title": "World Gold Council · Q2 2026 jewellery",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q2-2026/jewellery",
+      "published": "2026-07-30",
+      "period": "2026Q2",
+      "type": "industry_estimate",
+      "locator": "Tonnes table；全球278.2t、同比-17%；消费吨数不是销售额"
+    },
+    {
+      "id": "msft-call",
+      "title": "Microsoft · FY2026 Q4 earnings call",
+      "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q4",
+      "published": "2026-07-29",
+      "period": "2026-04-01 / 2026-06-30",
+      "type": "issuer",
+      "locator": "Amy Hood；capital expenditures 41bn，cash PP&E 35.8bn，Cloud margin 65%；Azure段"
+    },
+    {
+      "id": "msft-release",
+      "title": "Microsoft · FY2026 Q4 results",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "published": "2026-07-29",
+      "period": "2026Q2 / FY26Q4",
+      "type": "issuer",
+      "locator": "Quarter ended June 30, 2026；Cloud revenue 59.3bn，+27%"
+    },
+    {
+      "id": "iea-grid",
+      "title": "IEA · Electricity 2026 executive summary",
+      "url": "https://www.iea.org/reports/electricity-2026/executive-summary",
+      "published": "2026",
+      "period": "报告基期及2026—2030展望",
+      "type": "agency_analysis",
+      "locator": "Grids段；>2500GW并网队列包含新能源、储能和大负荷，非全部数据中心"
+    },
+    {
+      "id": "iea-modern",
+      "title": "IEA · Modernising Grids in the Age of Electricity",
+      "url": "https://www.iea.org/reports/modernising-grids-in-the-age-of-electricity/executive-summary",
+      "published": "2026",
+      "period": "2025队列估计；2035情景另列",
+      "type": "agency_analysis",
+      "locator": "Executive summary；需同时扩建与提升现网利用效率"
+    },
+    {
+      "id": "gev-q2",
+      "title": "GE Vernova · Q2 2026 results / SEC 8-K exhibit",
+      "url": "https://www.sec.gov/Archives/edgar/data/1996810/000199681026000147/gevpressrelease2q26.htm",
+      "published": "2026-07-22",
+      "period": "2026-04-01 / 2026-06-30",
+      "type": "issuer",
+      "locator": "Electrification段；orders +66% organically，revenue +29% organically；Segment EBITDA margin18.4%；含Prolec的GAAP增幅另列"
+    },
+    {
+      "id": "nea-jul",
+      "title": "国家能源局 · 2026年1—7月全国电力统计",
+      "url": "https://www.nea.gov.cn/20260825/1430d07985474c5b8110552785f1c74b/c.html",
+      "published": "2026-08-25",
+      "period": "2026-01 / 2026-07",
+      "type": "government",
+      "locator": "正文与附表原图；该页未列电网投资，不能从装机推算投资"
+    },
+    {
+      "id": "beone-q2",
+      "title": "BeOne Medicines · Q2 2026 results",
+      "url": "https://ir.beonemedicines.com/media/document/06b047db-4795-4815-9a4c-633c486de43e/assets/Q2_2026_Earnings_Release_FINAL.pdf?disposition=inline",
+      "published": "2026-08-05",
+      "period": "2026-04-01 / 2026-06-30",
+      "type": "issuer",
+      "locator": "Highlights：BRUKINSA $1.2bn +31%；cash flow表Q2 CFO462,820千美元；不能替代全行业"
+    },
+    {
+      "id": "fda-novel",
+      "title": "FDA · Novel Drug Approvals for 2026",
+      "url": "https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026",
+      "published": null,
+      "period": "事件截至2026-10-20读取",
+      "type": "regulator",
+      "locator": "Beqalzi / sonrotoclax：2026-05-13；CDER Novel范围，非全部FDA批准"
+    },
+    {
+      "id": "eia-spot",
+      "title": "EIA · Daily petroleum spot prices",
+      "url": "https://www.eia.gov/dnav/pet/pet_pri_spt_s1_d.htm",
+      "published": "2026-10-15",
+      "period": "2026-10-14",
+      "type": "primary",
+      "locator": "原始日表；下一次发布2026-10-21；本轮仅使用已发布日期"
+    },
+    {
+      "id": "lambda",
+      "title": "Lambda · on-demand instances",
+      "url": "https://lambda.ai/instances",
+      "published": null,
+      "period": "2026-10-20读取",
+      "type": "primary",
+      "locator": "8×H100 SXM 80GB，3.99美元/GPU小时；网页未标更新时间"
+    },
+    {
+      "id": "csg",
+      "title": "国资委转载南网 · 上半年固定资产投资",
+      "url": "https://wap.sasac.gov.cn/n2588025/n2588124/c35673203/content.html",
+      "published": "2026-07-27",
+      "period": "2026H1",
+      "type": "primary",
+      "locator": "官方检索正文892.62亿元、+14.79%；本机直连证书失败，未绕过；用上市公司披露交叉核验"
+    },
+    {
+      "id": "csg-cross",
+      "title": "科汇股份2026半年报 · 南网投资交叉核验",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225526385.PDF",
+      "published": "2026-08-29",
+      "period": "2026H1",
+      "type": "primary",
+      "locator": "PDF文件第9页，行业段：南网892.62亿元、同比14.79%；非公司自身投资"
+    },
+    {
+      "id": "cspc-received",
+      "title": "石药集团 · siRNA许可首付已收取公告",
+      "url": "https://doc.irasia.com/listco/hk/cspc/announcement/a260812.pdf",
+      "published": "2026-08-12",
+      "period": "2026-08-12到账事件",
+      "type": "primary",
+      "locator": "PDF第1页：已收取3000万美元；协议日期2026-07-02"
+    },
+    {
+      "id": "cspc-peptide",
+      "title": "石药集团 · 长效多肽许可首付已收取公告",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0529/2026052902358.pdf",
+      "published": "2026-05-29",
+      "period": "2026-05-29到账事件",
+      "type": "primary",
+      "locator": "12亿美元已收取；与8月siRNA是不同交易，不相除计算增速"
+    },
+    {
+      "id": "msft-q2",
+      "title": "Microsoft · FY26Q2 earnings call",
+      "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q2",
+      "published": "2026-01-28",
+      "period": "2025Q4 / FY26Q2",
+      "type": "primary",
+      "locator": "CapEx37.5bn；Azure报告增速39%；Cloud毛利67%"
+    },
+    {
+      "id": "msft-q3",
+      "title": "Microsoft · FY26Q3 earnings call",
+      "url": "https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3",
+      "published": "2026-04-29",
+      "period": "2026Q1 / FY26Q3",
+      "type": "primary",
+      "locator": "CapEx31.9bn；Azure报告增速40%；Cloud毛利66%"
+    },
+    {
+      "id": "gev-q1",
+      "title": "GE Vernova · Q1 2026 earnings call",
+      "url": "https://www.gevernova.com/sites/default/files/gev_webcast_transcript_04222026.pdf",
+      "published": "2026-04-22",
+      "period": "2026Q1",
+      "type": "primary",
+      "locator": "PDF第9页：Electrification EBITDA margin17.8%；订单86%未标有机，未与Q2有机66%混接"
+    },
+    {
+      "id": "eia-wti",
+      "title": "EIA WTI Cushing现货",
+      "url": "https://www.eia.gov/dnav/pet/hist/RWTCD.htm",
+      "published": "2026-10-15",
+      "period": "2026-10-14",
+      "type": "government",
+      "locator": "日度历史表；美元/桶"
+    },
+    {
+      "id": "eia-gasoline",
+      "title": "EIA USGC常规汽油",
+      "url": "https://www.eia.gov/dnav/pet/hist/EER_EPMRU_PF4_RGC_DPGD.htm",
+      "published": "2026-10-15",
+      "period": "2026-10-14",
+      "type": "government",
+      "locator": "日度历史表；美元/加仑"
+    },
+    {
+      "id": "eia-diesel",
+      "title": "EIA USGC超低硫柴油",
+      "url": "https://www.eia.gov/dnav/pet/hist/EER_EPD2DXL0_PF4_RGC_DPGD.htm",
+      "published": "2026-10-15",
+      "period": "2026-10-14",
+      "type": "government",
+      "locator": "日度历史表；美元/加仑"
+    },
+    {
+      "id": "eia-wpsr-20261015-t1",
+      "title": "EIA WPSR 2026-10-15 · Table 1",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_10_15/pdf/table1.pdf",
+      "published": "2026-10-15",
+      "period": "week ending 2026-10-09",
+      "type": "government",
+      "locator": "表1第1页，Petroleum Stocks：Commercial Excluding SPR / Total Motor Gasoline / Distillate Fuel Oil；CSV保留三位精确数值。"
+    },
+    {
+      "id": "eia-wpsr-20261015-t9",
+      "title": "EIA WPSR 2026-10-15 · Table 9",
+      "url": "https://www.eia.gov/petroleum/supply/weekly/archive/2026/2026_10_15/pdf/table9.pdf",
+      "published": "2026-10-15",
+      "period": "week ending 2026-10-09",
+      "type": "government",
+      "locator": "PDF第1页 / 印刷第15页，Refiner Inputs and Utilization：Crude Oil Inputs、Gross Inputs、Operable Capacity、Percent Utilization。"
+    },
+    {
+      "id": "eia-wpsr-20261015-summary",
+      "title": "EIA WPSR Summary · 2026-10-15",
+      "url": "https://ir.eia.gov/wpsr/summary.txt",
+      "published": "2026-10-15",
+      "period": "week ending 2026-10-09",
+      "type": "government",
+      "locator": "第3段：商业原油、汽油、馏分油库存分别低于五年均值约3%、4%、12%。链接滚动更新，本轮正文已归档。"
+    },
+    {
+      "id": "wgc-q2",
+      "title": "WGC · Q2 2026 supply and demand table",
+      "url": "https://www.gold.org/goldhub/research/gold-demand-trends/gold-demand-trends-q2-2026",
+      "published": "2026-07-30",
+      "period": "2026Q2",
+      "type": "industry_estimate",
+      "locator": "Table 1：矿产965.6、回收326.1、金条金币307.1吨；五季历史为同一修订版。"
+    },
+    {
+      "id": "fred-dollar",
+      "title": "FRED / Federal Reserve · DTWEXBGS",
+      "url": "https://fred.stlouisfed.org/series/DTWEXBGS",
+      "published": "2026-10-19",
+      "period": "2026-10-16",
+      "type": "government",
+      "locator": "Observations：121.4048；前日121.5693；2006-01=100。每日观测，H.10目前每周一发布。"
+    },
+    {
+      "id": "newmont-q2",
+      "title": "Newmont · Q2 2026 results",
+      "url": "https://www.newmont.com/investors/news-release/news-details/2026/Newmont-Reports-Robust-Second-Quarter-2026-Results-Remains-on-Track-to-Achieve-Full-Year-Guidance/default.aspx",
+      "published": "2026-07-23",
+      "period": "2026Q2",
+      "type": "issuer",
+      "locator": "Summary of Results / Production and Financial Summary / Free Cash Flow reconciliation。实际归属金产量1293千盎司；副产品法AISC1621美元/盎司；FCF2205百万美元。"
+    },
+    {
+      "id": "nvda-q2",
+      "title": "NVIDIA · Q2 FY2027 results",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx",
+      "published": "2026-08-26",
+      "period": "quarter ended 2026-07-26 / FY27Q2",
+      "type": "issuer",
+      "locator": "Highlights / GAAP summary：Data Center收入89.0bn、同比117%、环比18%；公司GAAP毛利率75.0%。"
+    },
+    {
+      "id": "tsmc-q3",
+      "title": "TSMC · 2026Q3 results and presentation",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+      "published": "2026-10-15",
+      "period": "2026Q3",
+      "type": "issuer",
+      "locator": "业绩页Actual及Presentation第4页：美元收入46.72bn、同比41.2%；电话会全文第3页：HPC占68%、环比增长22%。HPC含非AI。"
+    },
+    {
+      "id": "nea-sep",
+      "title": "国家能源局 · 2026年9月全社会用电量",
+      "url": "https://www.nea.gov.cn/20261021/bab7b2135e424adeaacf169cb40115ae/c.html",
+      "published": "2026-10-21",
+      "period": "2026-09",
+      "type": "government",
+      "locator": "北京时间10/21已可读取正文：全社会8997亿千瓦时、同比1.2%；互联网数据服务98亿千瓦时、同比35.4%。抓取UTC时间见快照，未使用尚未发布的美国10/21财报。"
+    },
+    {
+      "id": "nea-peak",
+      "title": "国家能源局 · 2026年8月用电与最高负荷",
+      "url": "https://www.nea.gov.cn/20260920/bd277235282140f4b43e9e0f5f0af3d9/c.html",
+      "published": "2026-09-20",
+      "period": "2026-08",
+      "type": "government",
+      "locator": "正文：全国最高用电负荷15.6亿千瓦；较上年最大负荷高4969万千瓦。此为夏季已披露峰值，并非9月峰值。"
+    },
+    {
+      "id": "fda-sonro",
+      "title": "FDA · Sonrotoclax accelerated approval / efficacy and safety",
+      "url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-sonrotoclax-relapsed-or-refractory-mantle-cell-lymphoma",
+      "published": "2026-05-13",
+      "period": "BGB-11417-201 / US R/R MCL",
+      "type": "regulator",
+      "locator": "Efficacy and Safety：ORR52%（95%CI42–62），n103；中位DOR15.8月（95%CI7.4–NE），估计中位随访11.9月；安全性集n115严重不良反应37%。"
+    },
+    {
+      "id": "wgc-weekly-1019",
+      "title": "WGC · Weekly Markets Monitor 19 October 2026",
+      "url": "https://www.gold.org/download/file/21288/WMM_19_Oct_2026_Bonds_back_in_the_room.pdf",
+      "published": "2026-10-19",
+      "period": "2026-10-16 Friday close",
+      "type": "industry",
+      "locator": "PDF第3页正文LBMA Gold Price PM；第6页Market Performance table Gold Friday close4189.2，W/W+0.07%。周报快照，非实时行情。"
+    }
+  ],
+  "chains": [
+    {
+      "id": "crude-oil",
+      "name": "原油",
+      "en": "Crude oil",
+      "category": "供需与价差",
+      "status": "供应约束仍在",
+      "status_type": "mixed",
+      "thesis": "供给修复的速度，能否赶上库存消耗？",
+      "summary": "库存去化支持价格；上游、炼化与运输的利润方向仍需分开验证。",
+      "mechanism": "可交付供给与终端需求决定库存边际变化；库存和备用产能共同影响现货紧张程度与期限结构。油价与各环节成本、价差相互作用，才形成利润。",
+      "path": [
+        "可交付供给",
+        "库存 / 月差",
+        "油价与裂解",
+        "分环节利润"
+      ],
+      "path_note": "因果示意；运输是并行约束，非单一路径。",
+      "metrics": [
+        {
+          "id": "oil-price",
+          "label": "Brent现货",
+          "display": "126.55",
+          "unit": "美元/桶",
+          "period": "2026-10-14",
+          "kind": "observed",
+          "scope": "国际原油",
+          "source": "eia-spot",
+          "detail": "EIA Brent现货日价。上一交易日125.78美元/桶。10月15日发布，10月20日仍为该表最新已发布观察；不是10月20日实时价。",
+          "value": 126.55,
+          "change": {
+            "display": "+0.77美元/交易日",
+            "type": "daily_absolute"
+          },
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "Brent现货",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 92.37
+            },
+            {
+              "date": "2026-08-20",
+              "value": 94.0
+            },
+            {
+              "date": "2026-08-21",
+              "value": 96.92
+            },
+            {
+              "date": "2026-08-24",
+              "value": 92.71
+            },
+            {
+              "date": "2026-08-25",
+              "value": 88.24
+            },
+            {
+              "date": "2026-08-26",
+              "value": 87.77
+            },
+            {
+              "date": "2026-08-27",
+              "value": 90.18
+            },
+            {
+              "date": "2026-08-28",
+              "value": 89.75
+            },
+            {
+              "date": "2026-09-01",
+              "value": 96.02
+            },
+            {
+              "date": "2026-09-02",
+              "value": 97.59
+            },
+            {
+              "date": "2026-09-03",
+              "value": 100.52
+            },
+            {
+              "date": "2026-09-04",
+              "value": 102.24
+            },
+            {
+              "date": "2026-09-07",
+              "value": 104.47
+            },
+            {
+              "date": "2026-09-08",
+              "value": 106.12
+            },
+            {
+              "date": "2026-09-09",
+              "value": 109.51
+            },
+            {
+              "date": "2026-09-10",
+              "value": 120.98
+            },
+            {
+              "date": "2026-09-11",
+              "value": 118.06
+            },
+            {
+              "date": "2026-09-14",
+              "value": 121.25
+            },
+            {
+              "date": "2026-09-15",
+              "value": 130.8
+            },
+            {
+              "date": "2026-09-16",
+              "value": 127.84
+            },
+            {
+              "date": "2026-09-17",
+              "value": 121.18
+            },
+            {
+              "date": "2026-09-18",
+              "value": 119.66
+            },
+            {
+              "date": "2026-09-21",
+              "value": 116.15
+            },
+            {
+              "date": "2026-09-22",
+              "value": 114.89
+            },
+            {
+              "date": "2026-09-23",
+              "value": 117.45
+            },
+            {
+              "date": "2026-09-24",
+              "value": 120.92
+            },
+            {
+              "date": "2026-09-25",
+              "value": 116.01
+            },
+            {
+              "date": "2026-09-28",
+              "value": 119.97
+            },
+            {
+              "date": "2026-09-29",
+              "value": 113.96
+            },
+            {
+              "date": "2026-09-30",
+              "value": 115.91
+            },
+            {
+              "date": "2026-10-01",
+              "value": 114.82
+            },
+            {
+              "date": "2026-10-02",
+              "value": 135.51
+            },
+            {
+              "date": "2026-10-05",
+              "value": 125.51
+            },
+            {
+              "date": "2026-10-06",
+              "value": 125.44
+            },
+            {
+              "date": "2026-10-07",
+              "value": 126.0
+            },
+            {
+              "date": "2026-10-08",
+              "value": 130.18
+            },
+            {
+              "date": "2026-10-09",
+              "value": 130.03
+            },
+            {
+              "date": "2026-10-12",
+              "value": 129.95
+            },
+            {
+              "date": "2026-10-13",
+              "value": 125.78
+            },
+            {
+              "date": "2026-10-14",
+              "value": 126.55
+            }
+          ],
+          "series_label": "日度现货 · 40个已发布交易日",
+          "update_method": "工作日检查EIA日表发布日和最大观察日；静态HTML无需密钥，本轮抓取成功。仅追加已发布观察，保留修订；本次下一发布日10月21日。",
+          "delta_display": "+0.77 美元/日",
+          "verified_on": "2026-10-20"
+        },
+        {
+          "id": "oil-stock",
+          "label": "全球隐含库存变化",
+          "display": "−1.9",
+          "unit": "百万桶/日",
+          "period": "2026Q3",
+          "kind": "estimate",
+          "scope": "全球石油液体",
+          "source": "eia-oct",
+          "detail": "EIA模型估计的平均去库速度；不是可直接观测的全球库存总量。",
+          "value": -1.9,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "全球去库估计",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "EIA STEO按月发布后人工核对原表、模型截至日、历史修订。保存报告版本；估计值不能按日更新。原PDF下载成功。",
+          "delta_display": "去库存 · 模型估计",
+          "verified_on": "2026-10-20",
+          "scope_short": "全球 · 模型估计"
+        },
+        {
+          "id": "oil-shutin",
+          "label": "中东原油停产估计",
+          "display": "4.8",
+          "unit": "百万桶/日",
+          "period": "2026-09",
+          "kind": "estimate",
+          "scope": "中东原油",
+          "source": "eia-oct",
+          "detail": "前月5.8；恢复供给与库存紧张可以同时发生。",
+          "value": 4.8,
+          "change": {
+            "display": "前月5.8",
+            "type": "previous"
+          },
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "中东停产估计",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "EIA STEO按月发布后人工核对原表、模型截至日、历史修订。保存报告版本；估计值不能按日更新。原PDF下载成功。",
+          "delta_display": "−1.0 百万桶/日 月比",
+          "verified_on": "2026-10-20",
+          "scope_short": "中东 · 模型估计"
+        },
+        {
+          "id": "oil-crack",
+          "label": "美湾3-2-1价差",
+          "display": "64.61",
+          "unit": "美元/桶",
+          "period": "2026-10-14",
+          "kind": "derived",
+          "scope": "美湾成品油 / WTI基准",
+          "source": "eia-spot",
+          "detail": "公式：(2×汽油美元/加仑×42＋1×超低硫柴油美元/加仑×42−3×WTI美元/桶)÷3，即28G+14D−WTI。10/14：G3.525，D4.844，WTI101.91，得64.606；10/13为62.940。美湾产品与Cushing WTI含地域基差；不含运费、能耗、收率和运营成本，不是炼厂净利润。",
+          "value": 64.606,
+          "change": {
+            "display": "+1.67美元/交易日",
+            "type": "daily_absolute"
+          },
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "美湾3-2-1价差",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 72.74
+            },
+            {
+              "date": "2026-08-20",
+              "value": 72.426
+            },
+            {
+              "date": "2026-08-21",
+              "value": 76.016
+            },
+            {
+              "date": "2026-08-24",
+              "value": 71.86
+            },
+            {
+              "date": "2026-08-25",
+              "value": 71.136
+            },
+            {
+              "date": "2026-08-26",
+              "value": 74.306
+            },
+            {
+              "date": "2026-08-27",
+              "value": 76.722
+            },
+            {
+              "date": "2026-08-28",
+              "value": 81.05
+            },
+            {
+              "date": "2026-08-31",
+              "value": 83.966
+            },
+            {
+              "date": "2026-09-01",
+              "value": 71.2
+            },
+            {
+              "date": "2026-09-02",
+              "value": 65.672
+            },
+            {
+              "date": "2026-09-03",
+              "value": 67.316
+            },
+            {
+              "date": "2026-09-04",
+              "value": 67.932
+            },
+            {
+              "date": "2026-09-08",
+              "value": 69.646
+            },
+            {
+              "date": "2026-09-09",
+              "value": 69.34
+            },
+            {
+              "date": "2026-09-10",
+              "value": 73.264
+            },
+            {
+              "date": "2026-09-11",
+              "value": 71.252
+            },
+            {
+              "date": "2026-09-14",
+              "value": 70.788
+            },
+            {
+              "date": "2026-09-15",
+              "value": 73.216
+            },
+            {
+              "date": "2026-09-16",
+              "value": 77.414
+            },
+            {
+              "date": "2026-09-17",
+              "value": 80.526
+            },
+            {
+              "date": "2026-09-18",
+              "value": 83.612
+            },
+            {
+              "date": "2026-09-21",
+              "value": 82.986
+            },
+            {
+              "date": "2026-09-22",
+              "value": 82.426
+            },
+            {
+              "date": "2026-09-23",
+              "value": 90.846
+            },
+            {
+              "date": "2026-09-24",
+              "value": 82.018
+            },
+            {
+              "date": "2026-09-25",
+              "value": 87.082
+            },
+            {
+              "date": "2026-09-28",
+              "value": 71.822
+            },
+            {
+              "date": "2026-09-29",
+              "value": 73.632
+            },
+            {
+              "date": "2026-09-30",
+              "value": 75.328
+            },
+            {
+              "date": "2026-10-01",
+              "value": 67.628
+            },
+            {
+              "date": "2026-10-02",
+              "value": 66.456
+            },
+            {
+              "date": "2026-10-05",
+              "value": 65.598
+            },
+            {
+              "date": "2026-10-06",
+              "value": 67.462
+            },
+            {
+              "date": "2026-10-07",
+              "value": 67.954
+            },
+            {
+              "date": "2026-10-08",
+              "value": 68.312
+            },
+            {
+              "date": "2026-10-09",
+              "value": 62.942
+            },
+            {
+              "date": "2026-10-12",
+              "value": 62.942
+            },
+            {
+              "date": "2026-10-13",
+              "value": 62.94
+            },
+            {
+              "date": "2026-10-14",
+              "value": 64.606
+            }
+          ],
+          "series_label": "同日3-2-1价差 · 40个交易日",
+          "update_method": "同期读取EIA WTI、USGC常规汽油与USGC ULSD三张历史日表，按日期内连接；任一缺值则不计算、不前填。三个静态HTML已抓取，并存40日同日序列。来源链接见UPDATE-METHODS。",
+          "delta_display": "+1.67 美元/日",
+          "is_proxy": true,
+          "verified_on": "2026-10-20",
+          "source_ids": [
+            "eia-wti",
+            "eia-gasoline",
+            "eia-diesel",
+            "eia-spot"
+          ],
+          "scope_short": "美湾成品油 / WTI"
+        },
+        {
+          "id": "oil-wti",
+          "label": "WTI现货",
+          "label_short": "WTI现货",
+          "value": 101.91,
+          "display": "101.91",
+          "unit": "美元/桶",
+          "period": "2026-10-14",
+          "kind": "observed",
+          "scope": "Cushing WTI现货",
+          "source": "eia-wti",
+          "detail": "EIA日度现货报价；与上一交易日比较。成品油报价是美元/加仑，不能直接与美元/桶相减；用于3-2-1价差时乘42。WTI是Cushing基准，与Brent的地域和品质不同。",
+          "update_method": "工作日核对EIA日表发布日和最新观察日；只追加已发布同口径值，保留修订版本。公共HTML无需密钥，本轮来源正文可读。",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 87.28
+            },
+            {
+              "date": "2026-08-20",
+              "value": 89.75
+            },
+            {
+              "date": "2026-08-21",
+              "value": 87.21
+            },
+            {
+              "date": "2026-08-24",
+              "value": 86.34
+            },
+            {
+              "date": "2026-08-25",
+              "value": 83.9
+            },
+            {
+              "date": "2026-08-26",
+              "value": 83.46
+            },
+            {
+              "date": "2026-08-27",
+              "value": 84.81
+            },
+            {
+              "date": "2026-08-28",
+              "value": 84.57
+            },
+            {
+              "date": "2026-08-31",
+              "value": 87.03
+            },
+            {
+              "date": "2026-09-01",
+              "value": 91.48
+            },
+            {
+              "date": "2026-09-02",
+              "value": 92.15
+            },
+            {
+              "date": "2026-09-03",
+              "value": 92.55
+            },
+            {
+              "date": "2026-09-04",
+              "value": 92.69
+            },
+            {
+              "date": "2026-09-08",
+              "value": 94.21
+            },
+            {
+              "date": "2026-09-09",
+              "value": 97.26
+            },
+            {
+              "date": "2026-09-10",
+              "value": 103.57
+            },
+            {
+              "date": "2026-09-11",
+              "value": 101.27
+            },
+            {
+              "date": "2026-09-14",
+              "value": 102.42
+            },
+            {
+              "date": "2026-09-15",
+              "value": 107.02
+            },
+            {
+              "date": "2026-09-16",
+              "value": 103.62
+            },
+            {
+              "date": "2026-09-17",
+              "value": 103.21
+            },
+            {
+              "date": "2026-09-18",
+              "value": 101.44
+            },
+            {
+              "date": "2026-09-21",
+              "value": 96.97
+            },
+            {
+              "date": "2026-09-22",
+              "value": 96.41
+            },
+            {
+              "date": "2026-09-23",
+              "value": 93.38
+            },
+            {
+              "date": "2026-09-24",
+              "value": 95.88
+            },
+            {
+              "date": "2026-09-25",
+              "value": 85.23
+            },
+            {
+              "date": "2026-09-28",
+              "value": 99.37
+            },
+            {
+              "date": "2026-09-29",
+              "value": 96.16
+            },
+            {
+              "date": "2026-09-30",
+              "value": 97.18
+            },
+            {
+              "date": "2026-10-01",
+              "value": 99.77
+            },
+            {
+              "date": "2026-10-02",
+              "value": 97.89
+            },
+            {
+              "date": "2026-10-05",
+              "value": 96.13
+            },
+            {
+              "date": "2026-10-06",
+              "value": 96.24
+            },
+            {
+              "date": "2026-10-07",
+              "value": 95.02
+            },
+            {
+              "date": "2026-10-08",
+              "value": 98.26
+            },
+            {
+              "date": "2026-10-09",
+              "value": 98.73
+            },
+            {
+              "date": "2026-10-12",
+              "value": 98.73
+            },
+            {
+              "date": "2026-10-13",
+              "value": 100.86
+            },
+            {
+              "date": "2026-10-14",
+              "value": 101.91
+            }
+          ],
+          "change": {
+            "display": "+1.05 美元/桶 日比",
+            "type": "daily_absolute"
+          },
+          "delta_display": "+1.05 美元/桶 日比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release"
+        },
+        {
+          "id": "oil-gasoline",
+          "label": "美湾汽油",
+          "label_short": "美湾汽油",
+          "value": 3.525,
+          "display": "3.525",
+          "unit": "美元/加仑",
+          "period": "2026-10-14",
+          "kind": "observed",
+          "scope": "美湾常规汽油现货FOB",
+          "source": "eia-gasoline",
+          "detail": "EIA日度现货报价；与上一交易日比较。成品油报价是美元/加仑，不能直接与美元/桶相减；用于3-2-1价差时乘42。",
+          "update_method": "工作日核对EIA日表发布日和最新观察日；只追加已发布同口径值，保留修订版本。公共HTML无需密钥，本轮来源正文可读。",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 3.479
+            },
+            {
+              "date": "2026-08-20",
+              "value": 3.533
+            },
+            {
+              "date": "2026-08-21",
+              "value": 3.569
+            },
+            {
+              "date": "2026-08-24",
+              "value": 3.501
+            },
+            {
+              "date": "2026-08-25",
+              "value": 3.429
+            },
+            {
+              "date": "2026-08-26",
+              "value": 3.513
+            },
+            {
+              "date": "2026-08-27",
+              "value": 3.635
+            },
+            {
+              "date": "2026-08-28",
+              "value": 3.742
+            },
+            {
+              "date": "2026-08-31",
+              "value": 3.863
+            },
+            {
+              "date": "2026-09-01",
+              "value": 3.443
+            },
+            {
+              "date": "2026-09-02",
+              "value": 3.295
+            },
+            {
+              "date": "2026-09-03",
+              "value": 3.41
+            },
+            {
+              "date": "2026-09-04",
+              "value": 3.458
+            },
+            {
+              "date": "2026-09-08",
+              "value": 3.531
+            },
+            {
+              "date": "2026-09-09",
+              "value": 3.534
+            },
+            {
+              "date": "2026-09-10",
+              "value": 3.772
+            },
+            {
+              "date": "2026-09-11",
+              "value": 3.679
+            },
+            {
+              "date": "2026-09-14",
+              "value": 3.713
+            },
+            {
+              "date": "2026-09-15",
+              "value": 3.834
+            },
+            {
+              "date": "2026-09-16",
+              "value": 3.869
+            },
+            {
+              "date": "2026-09-17",
+              "value": 3.986
+            },
+            {
+              "date": "2026-09-18",
+              "value": 4.038
+            },
+            {
+              "date": "2026-09-21",
+              "value": 3.946
+            },
+            {
+              "date": "2026-09-22",
+              "value": 3.891
+            },
+            {
+              "date": "2026-09-23",
+              "value": 4.126
+            },
+            {
+              "date": "2026-09-24",
+              "value": 4.002
+            },
+            {
+              "date": "2026-09-25",
+              "value": 3.761
+            },
+            {
+              "date": "2026-09-28",
+              "value": 3.72
+            },
+            {
+              "date": "2026-09-29",
+              "value": 3.631
+            },
+            {
+              "date": "2026-09-30",
+              "value": 3.727
+            },
+            {
+              "date": "2026-10-01",
+              "value": 3.681
+            },
+            {
+              "date": "2026-10-02",
+              "value": 3.6
+            },
+            {
+              "date": "2026-10-05",
+              "value": 3.521
+            },
+            {
+              "date": "2026-10-06",
+              "value": 3.564
+            },
+            {
+              "date": "2026-10-07",
+              "value": 3.503
+            },
+            {
+              "date": "2026-10-08",
+              "value": 3.534
+            },
+            {
+              "date": "2026-10-09",
+              "value": 3.443
+            },
+            {
+              "date": "2026-10-12",
+              "value": 3.443
+            },
+            {
+              "date": "2026-10-13",
+              "value": 3.403
+            },
+            {
+              "date": "2026-10-14",
+              "value": 3.525
+            }
+          ],
+          "change": {
+            "display": "+0.122 美元/加仑 日比",
+            "type": "daily_absolute"
+          },
+          "delta_display": "+0.122 美元/加仑 日比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release"
+        },
+        {
+          "id": "oil-diesel",
+          "label": "美湾ULSD柴油",
+          "label_short": "美湾ULSD柴油",
+          "value": 4.844,
+          "display": "4.844",
+          "unit": "美元/加仑",
+          "period": "2026-10-14",
+          "kind": "observed",
+          "scope": "美湾超低硫2号柴油现货",
+          "source": "eia-diesel",
+          "detail": "EIA日度现货报价；与上一交易日比较。成品油报价是美元/加仑，不能直接与美元/桶相减；用于3-2-1价差时乘42。",
+          "update_method": "工作日核对EIA日表发布日和最新观察日；只追加已发布同口径值，保留修订版本。公共HTML无需密钥，本轮来源正文可读。",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 4.472
+            },
+            {
+              "date": "2026-08-20",
+              "value": 4.518
+            },
+            {
+              "date": "2026-08-21",
+              "value": 4.521
+            },
+            {
+              "date": "2026-08-24",
+              "value": 4.298
+            },
+            {
+              "date": "2026-08-25",
+              "value": 4.216
+            },
+            {
+              "date": "2026-08-26",
+              "value": 4.243
+            },
+            {
+              "date": "2026-08-27",
+              "value": 4.268
+            },
+            {
+              "date": "2026-08-28",
+              "value": 4.346
+            },
+            {
+              "date": "2026-08-31",
+              "value": 4.488
+            },
+            {
+              "date": "2026-09-01",
+              "value": 4.734
+            },
+            {
+              "date": "2026-09-02",
+              "value": 4.683
+            },
+            {
+              "date": "2026-09-03",
+              "value": 4.599
+            },
+            {
+              "date": "2026-09-04",
+              "value": 4.557
+            },
+            {
+              "date": "2026-09-08",
+              "value": 4.642
+            },
+            {
+              "date": "2026-09-09",
+              "value": 4.832
+            },
+            {
+              "date": "2026-09-10",
+              "value": 5.087
+            },
+            {
+              "date": "2026-09-11",
+              "value": 4.965
+            },
+            {
+              "date": "2026-09-14",
+              "value": 4.946
+            },
+            {
+              "date": "2026-09-15",
+              "value": 5.206
+            },
+            {
+              "date": "2026-09-16",
+              "value": 5.193
+            },
+            {
+              "date": "2026-09-17",
+              "value": 5.152
+            },
+            {
+              "date": "2026-09-18",
+              "value": 5.142
+            },
+            {
+              "date": "2026-09-21",
+              "value": 4.962
+            },
+            {
+              "date": "2026-09-22",
+              "value": 4.992
+            },
+            {
+              "date": "2026-09-23",
+              "value": 4.907
+            },
+            {
+              "date": "2026-09-24",
+              "value": 4.703
+            },
+            {
+              "date": "2026-09-25",
+              "value": 4.786
+            },
+            {
+              "date": "2026-09-28",
+              "value": 4.788
+            },
+            {
+              "date": "2026-09-29",
+              "value": 4.866
+            },
+            {
+              "date": "2026-09-30",
+              "value": 4.868
+            },
+            {
+              "date": "2026-10-01",
+              "value": 4.595
+            },
+            {
+              "date": "2026-10-02",
+              "value": 4.539
+            },
+            {
+              "date": "2026-10-05",
+              "value": 4.51
+            },
+            {
+              "date": "2026-10-06",
+              "value": 4.565
+            },
+            {
+              "date": "2026-10-07",
+              "value": 4.635
+            },
+            {
+              "date": "2026-10-08",
+              "value": 4.83
+            },
+            {
+              "date": "2026-10-09",
+              "value": 4.662
+            },
+            {
+              "date": "2026-10-12",
+              "value": 4.662
+            },
+            {
+              "date": "2026-10-13",
+              "value": 4.894
+            },
+            {
+              "date": "2026-10-14",
+              "value": 4.844
+            }
+          ],
+          "change": {
+            "display": "-0.050 美元/加仑 日比",
+            "type": "daily_absolute"
+          },
+          "delta_display": "-0.050 美元/加仑 日比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release"
+        },
+        {
+          "id": "oil-basis",
+          "label": "Brent−WTI",
+          "label_short": "Brent−WTI",
+          "value": 24.64,
+          "display": "24.64",
+          "unit": "美元/桶",
+          "period": "2026-10-14",
+          "kind": "derived",
+          "scope": "Brent现货减Cushing WTI现货",
+          "source": "eia-spot",
+          "detail": "同日现货基准差：Brent减WTI；10月14日126.55−101.91=24.64，上一交易日24.92，日减0.28美元/桶。反映品质/地域与交付差异；不是同市场M1−M6期限月差，也不是套利净收益。",
+          "update_method": "按日期内连接EIA Brent与WTI日价；任一缺值不计算，不前填；保存两条来源和公式。",
+          "series": [
+            {
+              "date": "2026-08-19",
+              "value": 5.09
+            },
+            {
+              "date": "2026-08-20",
+              "value": 4.25
+            },
+            {
+              "date": "2026-08-21",
+              "value": 9.71
+            },
+            {
+              "date": "2026-08-24",
+              "value": 6.37
+            },
+            {
+              "date": "2026-08-25",
+              "value": 4.34
+            },
+            {
+              "date": "2026-08-26",
+              "value": 4.31
+            },
+            {
+              "date": "2026-08-27",
+              "value": 5.37
+            },
+            {
+              "date": "2026-08-28",
+              "value": 5.18
+            },
+            {
+              "date": "2026-09-01",
+              "value": 4.54
+            },
+            {
+              "date": "2026-09-02",
+              "value": 5.44
+            },
+            {
+              "date": "2026-09-03",
+              "value": 7.97
+            },
+            {
+              "date": "2026-09-04",
+              "value": 9.55
+            },
+            {
+              "date": "2026-09-08",
+              "value": 11.91
+            },
+            {
+              "date": "2026-09-09",
+              "value": 12.25
+            },
+            {
+              "date": "2026-09-10",
+              "value": 17.41
+            },
+            {
+              "date": "2026-09-11",
+              "value": 16.79
+            },
+            {
+              "date": "2026-09-14",
+              "value": 18.83
+            },
+            {
+              "date": "2026-09-15",
+              "value": 23.78
+            },
+            {
+              "date": "2026-09-16",
+              "value": 24.22
+            },
+            {
+              "date": "2026-09-17",
+              "value": 17.97
+            },
+            {
+              "date": "2026-09-18",
+              "value": 18.22
+            },
+            {
+              "date": "2026-09-21",
+              "value": 19.18
+            },
+            {
+              "date": "2026-09-22",
+              "value": 18.48
+            },
+            {
+              "date": "2026-09-23",
+              "value": 24.07
+            },
+            {
+              "date": "2026-09-24",
+              "value": 25.04
+            },
+            {
+              "date": "2026-09-25",
+              "value": 30.78
+            },
+            {
+              "date": "2026-09-28",
+              "value": 20.6
+            },
+            {
+              "date": "2026-09-29",
+              "value": 17.8
+            },
+            {
+              "date": "2026-09-30",
+              "value": 18.73
+            },
+            {
+              "date": "2026-10-01",
+              "value": 15.05
+            },
+            {
+              "date": "2026-10-02",
+              "value": 37.62
+            },
+            {
+              "date": "2026-10-05",
+              "value": 29.38
+            },
+            {
+              "date": "2026-10-06",
+              "value": 29.2
+            },
+            {
+              "date": "2026-10-07",
+              "value": 30.98
+            },
+            {
+              "date": "2026-10-08",
+              "value": 31.92
+            },
+            {
+              "date": "2026-10-09",
+              "value": 31.3
+            },
+            {
+              "date": "2026-10-12",
+              "value": 31.22
+            },
+            {
+              "date": "2026-10-13",
+              "value": 24.92
+            },
+            {
+              "date": "2026-10-14",
+              "value": 24.64
+            }
+          ],
+          "change": {
+            "display": "-0.28 美元/桶 日比",
+            "type": "daily_absolute"
+          },
+          "delta_display": "-0.28 美元/桶 日比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "source_ids": [
+            "eia-spot",
+            "eia-wti"
+          ]
+        },
+        {
+          "id": "oil-us-crude-stocks",
+          "label": "美国商业原油",
+          "label_short": "美国商业原油",
+          "value": 415.577,
+          "display": "415.6",
+          "unit": "百万桶",
+          "period": "2026-10-09",
+          "kind": "weekly_estimate",
+          "scope": "美国周末库存；排除战略石油储备SPR",
+          "source": "eia-wpsr-20261015-t1",
+          "detail": "美国周度估计；不是全球库存。原表精确数值415.577百万桶，周变化-8.557百万桶。较五年均值约-3%来自该期报告摘要，是约数，不是同比。库存变化可能包含进口、出口、炼厂开工与统计调整影响。",
+          "update_method": "每周按EIA官方发布日历读取WPSR，核对week ending与报告日期，保存原表/原PDF版本。CSV是Windows-1252编码；原始精确值与官方变化分列保存，不用四舍五入后的数相减。节假日延期按日历执行，本轮10月15日发布截至10月9日数据，10月20日仍为最新报告。",
+          "series": [
+            {
+              "date": "2026-10-02",
+              "value": 424.134
+            },
+            {
+              "date": "2026-10-09",
+              "value": 415.577
+            }
+          ],
+          "change": {
+            "display": "-8.6 百万桶 周比",
+            "type": "weekly_absolute",
+            "value": -8.557
+          },
+          "delta_display": "-8.6 百万桶 周比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "five_year_deviation_pct": -3,
+          "five_year_deviation_approx": true,
+          "source_ids": [
+            "eia-wpsr-20261015-t1",
+            "eia-wpsr-20261015-summary"
+          ]
+        },
+        {
+          "id": "oil-us-gasoline-stocks",
+          "label": "美国汽油",
+          "label_short": "美国汽油",
+          "value": 208.262,
+          "display": "208.3",
+          "unit": "百万桶",
+          "period": "2026-10-09",
+          "kind": "weekly_estimate",
+          "scope": "美国周末库存；Total Motor Gasoline",
+          "source": "eia-wpsr-20261015-t1",
+          "detail": "美国周度估计；不是全球库存。原表精确数值208.262百万桶，周变化3.518百万桶。较五年均值约-4%来自该期报告摘要，是约数，不是同比。库存变化可能包含进口、出口、炼厂开工与统计调整影响。",
+          "update_method": "每周按EIA官方发布日历读取WPSR，核对week ending与报告日期，保存原表/原PDF版本。CSV是Windows-1252编码；原始精确值与官方变化分列保存，不用四舍五入后的数相减。节假日延期按日历执行，本轮10月15日发布截至10月9日数据，10月20日仍为最新报告。",
+          "series": [
+            {
+              "date": "2026-10-02",
+              "value": 204.744
+            },
+            {
+              "date": "2026-10-09",
+              "value": 208.262
+            }
+          ],
+          "change": {
+            "display": "+3.5 百万桶 周比",
+            "type": "weekly_absolute",
+            "value": 3.518
+          },
+          "delta_display": "+3.5 百万桶 周比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "five_year_deviation_pct": -4,
+          "five_year_deviation_approx": true,
+          "source_ids": [
+            "eia-wpsr-20261015-t1",
+            "eia-wpsr-20261015-summary"
+          ]
+        },
+        {
+          "id": "oil-us-distillate-stocks",
+          "label": "美国馏分油",
+          "label_short": "美国馏分油",
+          "value": 102.611,
+          "display": "102.6",
+          "unit": "百万桶",
+          "period": "2026-10-09",
+          "kind": "weekly_estimate",
+          "scope": "美国周末库存；Distillate Fuel Oil",
+          "source": "eia-wpsr-20261015-t1",
+          "detail": "美国周度估计；不是全球库存。原表精确数值102.611百万桶，周变化-2.527百万桶。较五年均值约-12%来自该期报告摘要，是约数，不是同比。库存变化可能包含进口、出口、炼厂开工与统计调整影响。",
+          "update_method": "每周按EIA官方发布日历读取WPSR，核对week ending与报告日期，保存原表/原PDF版本。CSV是Windows-1252编码；原始精确值与官方变化分列保存，不用四舍五入后的数相减。节假日延期按日历执行，本轮10月15日发布截至10月9日数据，10月20日仍为最新报告。",
+          "series": [
+            {
+              "date": "2026-10-02",
+              "value": 105.138
+            },
+            {
+              "date": "2026-10-09",
+              "value": 102.611
+            }
+          ],
+          "change": {
+            "display": "-2.5 百万桶 周比",
+            "type": "weekly_absolute",
+            "value": -2.527
+          },
+          "delta_display": "-2.5 百万桶 周比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "five_year_deviation_pct": -12,
+          "five_year_deviation_approx": true,
+          "source_ids": [
+            "eia-wpsr-20261015-t1",
+            "eia-wpsr-20261015-summary"
+          ]
+        },
+        {
+          "id": "oil-refinery-utilization",
+          "label": "美国炼厂利用率",
+          "label_short": "美国炼厂利用率",
+          "value": 93.5,
+          "display": "93.5",
+          "unit": "%",
+          "period": "2026-10-09",
+          "kind": "weekly_estimate",
+          "scope": "美国炼厂常压蒸馏可运行能力；Gross Inputs / Operable Capacity",
+          "source": "eia-wpsr-20261015-t9",
+          "detail": "EIA周度利用率93.5%，前周92.7%，周增0.8个百分点。分子为Gross Inputs16.871百万桶/日，分母为Operable Capacity18.044百万桶/日；表列四舍五入。不是16.615百万桶/日原油吞吐量除以产能；不是有93.5%的工厂开机，也不能直接代表终端需求。",
+          "update_method": "每周按EIA官方发布日历读取WPSR，核对week ending与报告日期，保存原表/原PDF版本。CSV是Windows-1252编码；原始精确值与官方变化分列保存，不用四舍五入后的数相减。节假日延期按日历执行，本轮10月15日发布截至10月9日数据，10月20日仍为最新报告。",
+          "series": [
+            {
+              "date": "2026-10-02",
+              "value": 92.7
+            },
+            {
+              "date": "2026-10-09",
+              "value": 93.5
+            }
+          ],
+          "change": {
+            "display": "+0.8 个百分点 周比",
+            "type": "weekly_pp",
+            "value": 0.8
+          },
+          "delta_display": "+0.8 pp 周比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "gauge_max": 100,
+          "gross_inputs_mbd": 16.871,
+          "operable_capacity_mbd": 18.044
+        },
+        {
+          "id": "oil-refinery-input",
+          "label": "美国原油吞吐",
+          "label_short": "美国原油吞吐",
+          "value": 16.615,
+          "display": "16.615",
+          "unit": "百万桶/日",
+          "period": "2026-10-09",
+          "kind": "weekly_estimate",
+          "scope": "美国炼厂原油投入；不含其他Gross Inputs",
+          "source": "eia-wpsr-20261015-t9",
+          "detail": "表9原油投入16,615千桶/日，转换为16.615百万桶/日；前周16.480，周增0.135。与利用率分子的Gross Inputs16.871口径不同。",
+          "update_method": "每周按EIA官方发布日历读取WPSR，核对week ending与报告日期，保存原表/原PDF版本。CSV是Windows-1252编码；原始精确值与官方变化分列保存，不用四舍五入后的数相减。节假日延期按日历执行，本轮10月15日发布截至10月9日数据，10月20日仍为最新报告。",
+          "series": [
+            {
+              "date": "2026-10-02",
+              "value": 16.48
+            },
+            {
+              "date": "2026-10-09",
+              "value": 16.615
+            }
+          ],
+          "change": {
+            "display": "+0.135 百万桶/日 周比",
+            "type": "weekly_absolute",
+            "value": 0.135
+          },
+          "delta_display": "+0.135 百万桶/日 周比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release"
+        }
+      ],
+      "supports": [
+        "EIA估计2026Q3全球库存继续下降。",
+        "9月Brent月均上升，同时中东停产估计较8月收窄。"
+      ],
+      "counter": "若库存转为持续累积、近远月溢价收敛，且裂解走弱，供应紧张逻辑需降级；航路恢复只影响供给假设，不自动证明需求转强。",
+      "watch": "继续维护现货、裂解、美国库存/利用率，并补同市场M1−M6期限月差；美国周度库存不能外推全球。",
+      "beneficiaries": "上游看实现油价减单位成本；炼化看产品裂解、运费与开工率；油服看客户资本开支；油运看吨海里、可用船舶、保险与可执行航路。",
+      "scenarios": [
+        [
+          "供应受阻",
+          "库存下降、现货升水扩大",
+          "上游和部分油运可能改善；炼厂未必改善。"
+        ],
+        [
+          "需求收缩",
+          "库存累积、产品裂解走弱",
+          "油价与炼化利润可同时承压。"
+        ],
+        [
+          "通道修复",
+          "停产减少、运费回落",
+          "风险溢价可能下降；炼厂进料约束可缓解。"
+        ]
+      ],
+      "missing": [
+        "同市场M1−M6期限月差、油运TCE/吨海里、具名油服资本开支/工作量仍未取得同口径最新数据；不造值、不用Brent−WTI替代期限月差。",
+        "炼厂实际净利润、统一交付成本和全球可直接观测库存仍不在此卡覆盖范围。"
+      ],
+      "status_short": "去库 / 供给修复",
+      "headline_metric_id": "oil-price"
+    },
+    {
+      "id": "gold",
+      "name": "黄金",
+      "en": "Gold",
+      "category": "资金与机会成本",
+      "status": "资金与利率分歧",
+      "status_type": "mixed",
+      "thesis": "配置需求能否抵消高实际利率与消费减量？",
+      "summary": "ETF与官方部门需求提供支撑；金价、矿业利润和首饰消费不能同向代入。",
+      "mechanism": "黄金存量很大、短期矿产供给弹性小，边际定价更受持有意愿与资金流影响。实际利率和美元改变机会成本；ETF、央行与场外配置可形成相反力量。",
+      "path": [
+        "实际利率 / 配置意愿",
+        "ETF / 官方部门",
+        "金价",
+        "矿业与首饰分化"
+      ],
+      "path_note": "央行、ETF为并行需求；实际利率不是充分定价公式。",
+      "metrics": [
+        {
+          "id": "gold-real",
+          "label": "美国10年实际利率",
+          "display": "2.80",
+          "unit": "%",
+          "period": "2026-10-19",
+          "kind": "observed",
+          "scope": "美国TIPS",
+          "source": "fred-real",
+          "detail": "10月16日2.74%，最近交易日上升6bp；对黄金通常构成机会成本压力。",
+          "value": 2.8,
+          "change": {
+            "display": "+6bp/交易日",
+            "type": "daily_bp"
+          },
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "10年实际利率",
+          "series": [
+            {
+              "date": "2026-10-13",
+              "value": 2.88
+            },
+            {
+              "date": "2026-10-14",
+              "value": 2.84
+            },
+            {
+              "date": "2026-10-15",
+              "value": 2.78
+            },
+            {
+              "date": "2026-10-16",
+              "value": 2.74
+            },
+            {
+              "date": "2026-10-19",
+              "value": 2.8
+            }
+          ],
+          "series_label": "美国TIPS · 最近5个观察日",
+          "update_method": "工作日检查FRED DFII10观察日与更新日；公共HTML无需密钥且本轮抓取成功。以H.15发布日历为准，节假日不补值；API替代方案需要独立免费密钥，未配置。",
+          "delta_display": "+6 bp/日",
+          "verified_on": "2026-10-20"
+        },
+        {
+          "id": "gold-etf",
+          "label": "全球实物黄金ETF增持",
+          "display": "+67",
+          "unit": "吨",
+          "period": "2026-09",
+          "kind": "industry",
+          "scope": "全球实物支持ETF",
+          "source": "wgc-etf",
+          "detail": "持仓增加，不等同美元资金净流入。月末总持仓4256吨。",
+          "value": 67,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "ETF月增持",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "WGC按月更新ETF，按季更新需求趋势；核对表头、吨数、报告期和修订。已读取官网正文，未建立自动抽表；需人工复核。",
+          "delta_display": "总持仓 4,256 吨",
+          "verified_on": "2026-10-20",
+          "scope_short": "全球实物ETF"
+        },
+        {
+          "id": "gold-cb",
+          "label": "央行及官方机构净购金",
+          "display": "288.9",
+          "unit": "吨",
+          "period": "2026Q2",
+          "kind": "estimate",
+          "scope": "全球官方部门",
+          "source": "wgc-cb",
+          "detail": "WGC估计含未报告活动；历史值可大幅修订，不与各央行公告简单相加。",
+          "value": 288.9,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "官方净购金估计",
+          "series": [
+            {
+              "date": "2025-06-30",
+              "value": 177.9
+            },
+            {
+              "date": "2025-09-30",
+              "value": 226.3
+            },
+            {
+              "date": "2025-12-31",
+              "value": 208.2
+            },
+            {
+              "date": "2026-03-31",
+              "value": 56.5
+            },
+            {
+              "date": "2026-06-30",
+              "value": 288.9
+            }
+          ],
+          "series_label": "官方净购金吨数 · WGC 2026Q2修订版",
+          "update_method": "WGC按月更新ETF，按季更新需求趋势；核对表头、吨数、报告期和修订。已读取官网正文，未建立自动抽表；需人工复核。",
+          "delta_display": "+62% 同比",
+          "verified_on": "2026-10-20",
+          "scope_short": "全球官方 · 估计",
+          "source_ids": [
+            "wgc-cb",
+            "wgc-q2"
+          ]
+        },
+        {
+          "id": "gold-jewel",
+          "label": "全球首饰消费量",
+          "display": "−17",
+          "unit": "% 同比",
+          "period": "2026Q2",
+          "kind": "industry",
+          "scope": "全球首饰消费",
+          "source": "wgc-jewel",
+          "detail": "对应278.2吨。按重量减少；按金额销售可能上升。",
+          "value": -17,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "首饰需求同比",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "WGC按月更新ETF，按季更新需求趋势；核对表头、吨数、报告期和修订。已读取官网正文，未建立自动抽表；需人工复核。",
+          "delta_display": "消费量 278.2 吨",
+          "verified_on": "2026-10-20",
+          "scope_short": "全球 · 首饰吨数",
+          "source_ids": [
+            "wgc-jewel",
+            "wgc-q2"
+          ]
+        },
+        {
+          "id": "gold-etf-total",
+          "label": "ETF月末持仓",
+          "label_short": "ETF月末持仓",
+          "value": 4256,
+          "display": "4,256",
+          "unit": "吨",
+          "period": "2026-09",
+          "source": "wgc-etf",
+          "scope": "全球实物支持黄金ETF",
+          "detail": "持仓存量4256吨；与67吨月增持、美元净流入分别计量。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "每月报告发布后核对月末持仓、吨数变化、美元资金流和AUM，四者分别保存；下载同版原文并保留修订。本轮为9月数据，10/7发布。公开正文可读取；批量或再分发权限另行确认。"
+        },
+        {
+          "id": "gold-etf-flow",
+          "label": "ETF月净流入",
+          "label_short": "ETF月净流入",
+          "value": 10,
+          "display": "≈10",
+          "unit": "十亿美元",
+          "period": "2026-09",
+          "source": "wgc-etf",
+          "scope": "全球实物支持黄金ETF",
+          "detail": "WGC报告约100亿美元净流入；不是持仓市值变动。同期AUM因价格影响下降7%。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "每月报告发布后核对月末持仓、吨数变化、美元资金流和AUM，四者分别保存；下载同版原文并保留修订。本轮为9月数据，10/7发布。公开正文可读取；批量或再分发权限另行确认。",
+          "approx": true
+        },
+        {
+          "id": "gold-dollar",
+          "label": "广义美元指数",
+          "label_short": "广义美元指数",
+          "value": 121.4048,
+          "display": "121.40",
+          "unit": "2006-01=100",
+          "period": "2026-10-16",
+          "source": "fred-dollar",
+          "scope": "美联储名义广义贸易加权美元指数",
+          "detail": "前日121.5693；日变动(121.4048/121.5693−1)×100约−0.14%。不是DXY。",
+          "kind": "observed",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-10-13",
+              "value": 121.4433
+            },
+            {
+              "date": "2026-10-14",
+              "value": 122.0037
+            },
+            {
+              "date": "2026-10-15",
+              "value": 121.5693
+            },
+            {
+              "date": "2026-10-16",
+              "value": 121.4048
+            }
+          ],
+          "delta_display": "−0.14% / 日",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "H.10目前每周一更新日度历史；每周发布后检查FRED DTWEXBGS实际观察日，节假日不补值。公共HTML本轮可读取；API需独立密钥，尚未接入。",
+          "series_label": "美联储名义广义贸易加权美元指数 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-mine",
+          "label": "全球矿产金",
+          "label_short": "全球矿产金",
+          "value": 965.6,
+          "display": "965.6",
+          "unit": "吨",
+          "period": "2026Q2",
+          "source": "wgc-q2",
+          "scope": "全球 · WGC估计",
+          "detail": "同版季度供需表数值；增速按表内披露，细分合计可能有舍入差。",
+          "kind": "estimate",
+          "change": null,
+          "series": [
+            {
+              "date": "2025-06-30",
+              "value": 947.7
+            },
+            {
+              "date": "2025-09-30",
+              "value": 1028.1
+            },
+            {
+              "date": "2025-12-31",
+              "value": 986.6
+            },
+            {
+              "date": "2026-03-31",
+              "value": 901.3
+            },
+            {
+              "date": "2026-06-30",
+              "value": 965.6
+            }
+          ],
+          "delta_display": "+2% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "WGC季度GDT发布后读取同版供需表；消费/制造、矿产/回收/套保分开，保留历史修订和表内舍入。不是逐日观测，不插值为实时变化。",
+          "series_label": "全球 · WGC估计 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-recycle",
+          "label": "全球回收金",
+          "label_short": "全球回收金",
+          "value": 326.1,
+          "display": "326.1",
+          "unit": "吨",
+          "period": "2026Q2",
+          "source": "wgc-q2",
+          "scope": "全球 · WGC估计",
+          "detail": "同版季度供需表数值；增速按表内披露，细分合计可能有舍入差。",
+          "kind": "estimate",
+          "change": null,
+          "series": [
+            {
+              "date": "2025-06-30",
+              "value": 346.7
+            },
+            {
+              "date": "2025-09-30",
+              "value": 342.7
+            },
+            {
+              "date": "2025-12-31",
+              "value": 365.8
+            },
+            {
+              "date": "2026-03-31",
+              "value": 373.8
+            },
+            {
+              "date": "2026-06-30",
+              "value": 326.1
+            }
+          ],
+          "delta_display": "−6% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "WGC季度GDT发布后读取同版供需表；消费/制造、矿产/回收/套保分开，保留历史修订和表内舍入。不是逐日观测，不插值为实时变化。",
+          "series_label": "全球 · WGC估计 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-barcoin",
+          "label": "金条金币需求",
+          "label_short": "金条金币需求",
+          "value": 307.1,
+          "display": "307.1",
+          "unit": "吨",
+          "period": "2026Q2",
+          "source": "wgc-q2",
+          "scope": "全球 · WGC估计",
+          "detail": "同版季度供需表数值；增速按表内披露，细分合计可能有舍入差。",
+          "kind": "estimate",
+          "change": null,
+          "series": [
+            {
+              "date": "2025-06-30",
+              "value": 315.6
+            },
+            {
+              "date": "2025-09-30",
+              "value": 328.4
+            },
+            {
+              "date": "2025-12-31",
+              "value": 428.1
+            },
+            {
+              "date": "2026-03-31",
+              "value": 476.8
+            },
+            {
+              "date": "2026-06-30",
+              "value": 307.1
+            }
+          ],
+          "delta_display": "−3% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "WGC季度GDT发布后读取同版供需表；消费/制造、矿产/回收/套保分开，保留历史修订和表内舍入。不是逐日观测，不插值为实时变化。",
+          "series_label": "全球 · WGC估计 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-nem-price",
+          "label": "Newmont实现售价",
+          "label_short": "Newmont实现售价",
+          "value": 4414,
+          "display": "4,414",
+          "unit": "美元/盎司",
+          "period": "2026Q2",
+          "source": "newmont-q2",
+          "scope": "Newmont归属黄金 · 公司样本",
+          "detail": "公司季度实现售价，非当前现货价；含临时定价调整和处理精炼费。前季4900。",
+          "kind": "issuer",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-03-31",
+              "value": 4900
+            },
+            {
+              "date": "2026-06-30",
+              "value": 4414
+            }
+          ],
+          "delta_display": "−486 / 季",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "固定Newmont样本，季度IR财报发布后人工录入Actual与Non-GAAP reconciliation；售价、产量、AISC、FCF按同季与同一副产品法口径。年度指引另存，不代替已实现值。",
+          "series_label": "Newmont归属黄金 · 公司样本 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-nem-aisc",
+          "label": "Newmont AISC",
+          "label_short": "Newmont AISC",
+          "value": 1621,
+          "display": "1,621",
+          "unit": "美元/盎司",
+          "period": "2026Q2",
+          "source": "newmont-q2",
+          "scope": "Newmont · 副产品法AISC",
+          "detail": "Non-GAAP副产品法AISC；前季1029。同产品法1938另有成本分配逻辑，不混接。",
+          "kind": "issuer",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-03-31",
+              "value": 1029
+            },
+            {
+              "date": "2026-06-30",
+              "value": 1621
+            }
+          ],
+          "delta_display": "+592 / 季",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "固定Newmont样本，季度IR财报发布后人工录入Actual与Non-GAAP reconciliation；售价、产量、AISC、FCF按同季与同一副产品法口径。年度指引另存，不代替已实现值。",
+          "series_label": "Newmont · 副产品法AISC · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-nem-spread",
+          "label": "售价−AISC",
+          "label_short": "售价−AISC",
+          "value": 2793,
+          "display": "2,793",
+          "unit": "美元/盎司",
+          "period": "2026Q2",
+          "source": "newmont-q2",
+          "scope": "Newmont · 同季售价减副产品法AISC",
+          "detail": "4414−1621=2793；前季4900−1029=3871。仅作经营空间代理，不是净利润/盎司。",
+          "kind": "derived",
+          "change": null,
+          "series": [],
+          "delta_display": "−1,078 / 季",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "固定Newmont样本，季度IR财报发布后人工录入Actual与Non-GAAP reconciliation；售价、产量、AISC、FCF按同季与同一副产品法口径。年度指引另存，不代替已实现值。",
+          "inputs": [
+            "gold-nem-price",
+            "gold-nem-aisc"
+          ],
+          "formula": "realized_price - byproduct_AISC"
+        },
+        {
+          "id": "gold-nem-output",
+          "label": "Newmont归属产量",
+          "label_short": "Newmont归属产量",
+          "value": 1.293,
+          "display": "1.293",
+          "unit": "百万盎司",
+          "period": "2026Q2",
+          "source": "newmont-q2",
+          "scope": "Newmont归属黄金 · 公司样本",
+          "detail": "原表1293千盎司；上季1301千盎司，减少0.615%（公司正文按整数披露−1%）。包括指定权益法投资，不等于全球供给。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "−1% 季环比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "固定Newmont样本，季度IR财报发布后人工录入Actual与Non-GAAP reconciliation；售价、产量、AISC、FCF按同季与同一副产品法口径。年度指引另存，不代替已实现值。"
+        },
+        {
+          "id": "gold-nem-fcf",
+          "label": "Newmont自由现金流",
+          "label_short": "Newmont自由现金流",
+          "value": 2.205,
+          "display": "2.205",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "newmont-q2",
+          "scope": "Newmont公司整体",
+          "detail": "Non-GAAP FCF：CFO2924−资本开支719=2205百万美元；上一季3144，季环比−29.87%。",
+          "kind": "issuer",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-03-31",
+              "value": 3.144
+            },
+            {
+              "date": "2026-06-30",
+              "value": 2.205
+            }
+          ],
+          "delta_display": "−30% 季环比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "固定Newmont样本，季度IR财报发布后人工录入Actual与Non-GAAP reconciliation；售价、产量、AISC、FCF按同季与同一副产品法口径。年度指引另存，不代替已实现值。",
+          "series_label": "Newmont公司整体 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "gold-price",
+          "label": "LBMA PM金价 · 周报快照",
+          "label_short": "LBMA PM金价",
+          "value": 4189.2,
+          "display": "4,189.2",
+          "unit": "美元/盎司",
+          "period": "2026-10-16",
+          "kind": "observed",
+          "scope": "WGC周报引用的LBMA Gold Price PM",
+          "source": "wgc-weekly-1019",
+          "detail": "10/19发布周报，数据截至10/16周五。正文四舍五入4189，市场表4189.2；周比+0.07%，不是日比。仅本次研究有限摘录并注明WGC/Bloomberg/ICE参考来源；不代表已获得生产日度历史/再分发授权。",
+          "change": null,
+          "delta_display": "+0.07% / 周",
+          "series": [],
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_weekly_snapshot",
+          "update_method": "每周一WGC周报发布后核对金价所在页、基准与前周同比较。只保存周五已披露快照，周内不伪装成实时；生产日度/历史序列或再分发须另核来源服务和许可。本轮仅研究摘录，未接自动采集。"
+        }
+      ],
+      "supports": [
+        "9月ETF持仓增加，尽管同期金价回落。",
+        "Q2官方部门净购买恢复，但不能把季度估计视为每日买盘。"
+      ],
+      "counter": "实际利率与美元持续走高，同时ETF持续流出、官方买盘放缓，才形成较强的共振反证；仅珠宝需求下滑不足以否定配置逻辑。",
+      "watch": "连续对照实际利率、美元与ETF持仓/资金流；季度复核WGC修订及Newmont售价/AISC与现金。",
+      "beneficiaries": "矿企看实现售价−AISC、产量、品位和资本开支；精炼看加工费与周转；首饰零售看销量、工费、同店和库存套保，不以金价上涨直接判受益。",
+      "scenarios": [
+        [
+          "配置增强",
+          "ETF流入、官方买盘维持",
+          "即使首饰吨数下滑，也可能支持金价。"
+        ],
+        [
+          "机会成本压制",
+          "实际利率上升、美元走强且ETF流出",
+          "黄金价格承压风险提高。"
+        ],
+        [
+          "金价上涨但成本上升",
+          "能源、人工、品位恶化推升AISC",
+          "矿业利润弹性可能弱于金价。"
+        ]
+      ],
+      "missing": [
+        "已有10/16 LBMA PM周报价格快照；合法可持续的日度序列与生产再分发尚未接入，不能把周报价或矿企实现售价当实时金价。",
+        "矿业仅Newmont固定公司样本；ETF和WGC供需范围不同，不合成为总分。"
+      ],
+      "status_short": "利率↑ / ETF增持",
+      "headline_metric_id": "gold-real"
+    },
+    {
+      "id": "ai-compute",
+      "name": "AI算力",
+      "en": "AI compute",
+      "category": "资本开支与变现",
+      "status": "投入与回报待对照",
+      "status_type": "watch",
+      "thesis": "新增算力能否形成可持续的收入和现金回报？",
+      "summary": "云厂商仍在扩张；资本开支、交付、使用率和变现是四个不同事实。",
+      "mechanism": "终端可付费需求驱动云端收入与可见订单，资本开支转为芯片、服务器、网络与机房交付；电力和并网约束决定可用算力。只有利用率、单位成本与收入共同改善，扩张才可持续。",
+      "path": [
+        "可付费需求",
+        "CapEx与交付",
+        "可用算力",
+        "收入 / 利润 / 现金"
+      ],
+      "path_note": "电力、HBM、封装和网络是并行瓶颈。",
+      "metrics": [
+        {
+          "id": "ai-capex",
+          "label": "微软资本开支",
+          "display": "41.0",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "kind": "issuer",
+          "scope": "微软公司整体",
+          "source": "msft-call",
+          "detail": "微软整体CapEx，含AI和非AI，含融资租赁；本季现金PP&E35.8bn。37.5→31.9→41.0bn的季环比受融资租赁确认时点影响，不能视作纯AI现金投入增速。",
+          "value": 41,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "微软资本开支",
+          "series": [
+            {
+              "date": "2025-12-31",
+              "value": 37.5
+            },
+            {
+              "date": "2026-03-31",
+              "value": 31.9
+            },
+            {
+              "date": "2026-06-30",
+              "value": 41
+            }
+          ],
+          "series_label": "含融资租赁 · 连续3季",
+          "update_method": "季度财报和电话会后人工录入同口径值；按财季结束日存储。FY27Q1电话会已公告为10月28日，本轮尚无该季结果。复核融资租赁和报告币种，保留原报告。",
+          "delta_display": "+28.5% 季环比",
+          "source_ids": [
+            "msft-q2",
+            "msft-q3",
+            "msft-call"
+          ],
+          "verified_on": "2026-10-20"
+        },
+        {
+          "id": "ai-azure",
+          "label": "Azure及其他云收入增速",
+          "display": "+43",
+          "unit": "% 同比",
+          "period": "2026Q2 / FY26Q4",
+          "kind": "issuer",
+          "scope": "微软Azure及其他云服务",
+          "source": "msft-call",
+          "detail": "报告币种增长率。包含非AI业务；公司样本，不代表全球算力需求。",
+          "value": 43,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "Azure收入同比",
+          "series": [
+            {
+              "date": "2025-12-31",
+              "value": 39
+            },
+            {
+              "date": "2026-03-31",
+              "value": 40
+            },
+            {
+              "date": "2026-06-30",
+              "value": 43
+            }
+          ],
+          "series_label": "收入同比增速 · 连续3季",
+          "update_method": "季度财报和电话会后人工录入同口径值；按财季结束日存储。FY27Q1电话会已公告为10月28日，本轮尚无该季结果。复核融资租赁和报告币种，保留原报告。",
+          "delta_display": "+3 pp 较前季增速",
+          "source_ids": [
+            "msft-q2",
+            "msft-q3",
+            "msft-call"
+          ],
+          "verified_on": "2026-10-20",
+          "scope_short": "微软 · Azure等云服务"
+        },
+        {
+          "id": "ai-margin",
+          "label": "微软Cloud毛利率",
+          "display": "65",
+          "unit": "%",
+          "period": "2026Q2 / FY26Q4",
+          "kind": "issuer",
+          "scope": "Microsoft Cloud整体",
+          "source": "msft-call",
+          "detail": "公司披露同比下降；业务组合、AI基础设施和使用量均有影响。不是Azure单独毛利率。",
+          "value": 65,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "Cloud毛利率",
+          "series": [
+            {
+              "date": "2025-12-31",
+              "value": 67
+            },
+            {
+              "date": "2026-03-31",
+              "value": 66
+            },
+            {
+              "date": "2026-06-30",
+              "value": 65
+            }
+          ],
+          "series_label": "Cloud毛利率 · 连续3季",
+          "update_method": "季度财报和电话会后人工录入同口径值；按财季结束日存储。FY27Q1电话会已公告为10月28日，本轮尚无该季结果。复核融资租赁和报告币种，保留原报告。",
+          "delta_display": "−1 pp 季环比",
+          "source_ids": [
+            "msft-q2",
+            "msft-q3",
+            "msft-call"
+          ],
+          "verified_on": "2026-10-20",
+          "scope_short": "微软Cloud整体"
+        },
+        {
+          "id": "ai-rent",
+          "label": "H100 SXM按需租价",
+          "display": "3.99",
+          "unit": "美元/GPU时",
+          "period": "2026-10-20采样",
+          "kind": "quote",
+          "scope": "Lambda · 8卡实例 · 单GPU",
+          "source": "lambda",
+          "detail": "8×H100 SXM 80GB实例；208vCPU、1800GiB RAM、22TiB SSD。单GPU每小时3.99美元，整机31.92美元/小时，未计适用税。单卡/双卡/四卡与PCIe价不能混接。公开报价只作租价代理，不是成交价、供需指数或GPU利用率。原利用率指标仍无公开可核实全局数据。",
+          "value": 3.99,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "first_snapshot",
+          "label_short": "H100 SXM租价",
+          "series": [],
+          "series_label": "首次固定规格采样",
+          "update_method": "每周对固定8卡H100 SXM规格公共网页取样，保留原HTML、时间戳、规格与币种。已验证无登录可抓取；暂无同规格历史，仅记录首样本，不能生成涨跌。库存/利用率API未验证。",
+          "delta_display": "首次采样",
+          "is_proxy": true,
+          "verified_on": "2026-10-20",
+          "scope_short": "Lambda · 8×H100 SXM"
+        },
+        {
+          "id": "ai-cash-capex",
+          "label": "现金PP&E",
+          "label_short": "现金PP&E",
+          "value": 35.802,
+          "display": "35.80",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-release",
+          "scope": "微软公司整体",
+          "detail": "现金流表35802百万美元；不含融资租赁确认，不能与含租赁CapEx41.0直接相减推租赁（确认和舍入等差异）。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+109.6% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "微软季度财报发布后读取当季列，千/百万美元等值换算；自然季度与财季并存。整体公司、Microsoft Cloud与Azure范围分别记录，不称纯AI数据；保存原表和修订。"
+        },
+        {
+          "id": "ai-cloud-revenue",
+          "label": "Microsoft Cloud收入",
+          "label_short": "Microsoft Cloud收入",
+          "value": 59.3,
+          "display": "59.3",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-call",
+          "scope": "Microsoft Cloud整体",
+          "detail": "报告币种同比27%；不是纯AI收入，也不是Azure单独收入。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+27% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "季度财报及电话会后人工录入商业RPO及未来12月确认比例；保留OpenAI集中度说明。合同存量不是已收现金，也不是全为Azure或AI。"
+        },
+        {
+          "id": "ai-rpo",
+          "label": "商业RPO",
+          "label_short": "商业RPO",
+          "value": 678,
+          "display": "678",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-call",
+          "scope": "微软整体商业合同 · 含OpenAI",
+          "detail": "同比84%；剔除OpenAI同比25%。加权平均期限2.3年。合同不是现金，不等同AI订单。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+84% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "季度财报及电话会后人工录入商业RPO及未来12月确认比例；保留OpenAI集中度说明。合同存量不是已收现金，也不是全为Azure或AI。"
+        },
+        {
+          "id": "ai-rpo-12m",
+          "label": "RPO未来12月确认",
+          "label_short": "RPO未来12月确认",
+          "value": 30,
+          "display": "≈30",
+          "unit": "%",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-call",
+          "scope": "微软商业RPO",
+          "detail": "约30%预计未来12月确认为收入，金额同比37%；其余更长期部分同比112%。比例为披露约数，不画历史曲线。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "季度财报及电话会后人工录入商业RPO及未来12月确认比例；保留OpenAI集中度说明。合同存量不是已收现金，也不是全为Azure或AI。",
+          "approx": true
+        },
+        {
+          "id": "ai-cfo",
+          "label": "微软经营现金流",
+          "label_short": "微软经营现金流",
+          "value": 55.441,
+          "display": "55.44",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-release",
+          "scope": "微软公司整体",
+          "detail": "现金流表55441百万美元，去年42647；同比30.0%。不是AI专项现金。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+30.0% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "微软季度财报发布后读取当季列，千/百万美元等值换算；自然季度与财季并存。整体公司、Microsoft Cloud与Azure范围分别记录，不称纯AI数据；保存原表和修订。"
+        },
+        {
+          "id": "ai-fcf",
+          "label": "微软自由现金流",
+          "label_short": "微软自由现金流",
+          "value": 19.639,
+          "display": "19.64",
+          "unit": "十亿美元",
+          "period": "2026Q2 / FY26Q4",
+          "source": "msft-release",
+          "scope": "微软公司整体",
+          "detail": "CFO55.441−现金PP&E35.802=19.639bn，与电话会四舍五入19.6bn一致；去年42.647−17.079=25.568bn，下降23.19%。不含全部租赁义务。",
+          "kind": "derived",
+          "change": null,
+          "series": [],
+          "delta_display": "−23.2% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "微软季度财报发布后读取当季列，千/百万美元等值换算；自然季度与财季并存。整体公司、Microsoft Cloud与Azure范围分别记录，不称纯AI数据；保存原表和修订。",
+          "formula": "CFO - cash_PP&E",
+          "inputs": [
+            "ai-cfo",
+            "ai-cash-capex"
+          ]
+        },
+        {
+          "id": "ai-nvda-dc",
+          "label": "NVIDIA数据中心收入",
+          "label_short": "NVIDIA数据中心收入",
+          "value": 89,
+          "display": "89.0",
+          "unit": "十亿美元",
+          "period": "截至2026-07-26 / FY27Q2",
+          "source": "nvda-q2",
+          "scope": "NVIDIA Data Center",
+          "detail": "实际收入，环比18%、同比117%；硬件/网络收入不是最终开机或客户回报。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+117% 同比 · +18% 季",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "NVIDIA季度业绩发布后读取当季实际Data Center收入及公司GAAP毛利率，财季结束日固定保存；不采用下一季收入指引，不把出货收入当GPU利用率。"
+        },
+        {
+          "id": "ai-nvda-margin",
+          "label": "NVIDIA GAAP毛利率",
+          "label_short": "NVIDIA GAAP毛利率",
+          "value": 75,
+          "display": "75.0",
+          "unit": "%",
+          "period": "截至2026-07-26 / FY27Q2",
+          "source": "nvda-q2",
+          "scope": "NVIDIA公司整体",
+          "detail": "本季GAAP毛利率75.0%，上季74.9%，同比基期72.4%。不是数据中心分部毛利率。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+0.1 pp 季环比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "NVIDIA季度业绩发布后读取当季实际Data Center收入及公司GAAP毛利率，财季结束日固定保存；不采用下一季收入指引，不把出货收入当GPU利用率。"
+        },
+        {
+          "id": "ai-tsmc-revenue",
+          "label": "台积电收入",
+          "label_short": "台积电收入",
+          "value": 46.72,
+          "display": "46.72",
+          "unit": "十亿美元",
+          "period": "2026Q3",
+          "source": "tsmc-q3",
+          "scope": "台积电公司整体 · 美元口径",
+          "detail": "实际46.72bn；上季40.20bn、去年同期33.10bn；美元同比41.2%，NTD同比50.9%，不混接。",
+          "kind": "issuer",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-06-30",
+              "value": 40.2
+            },
+            {
+              "date": "2026-09-30",
+              "value": 46.72
+            }
+          ],
+          "delta_display": "+41.2% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "台积电季度财报、简报与IR原文发布后读取美元收入及HPC平台占比；NTD/美元增速分开。HPC含CPU等非AI，不由占比推算AI专属收入或可售封装产能。",
+          "series_label": "台积电公司整体 · 美元口径 · 同一发布版本的实际历史"
+        },
+        {
+          "id": "ai-tsmc-hpc",
+          "label": "HPC收入占比",
+          "label_short": "HPC收入占比",
+          "value": 68,
+          "display": "68",
+          "unit": "%",
+          "period": "2026Q3",
+          "source": "tsmc-q3",
+          "scope": "台积电HPC平台 · 含非AI",
+          "detail": "HPC占公司收入68%，该平台收入环比22%；HPC不等于AI，不能推算纯AI营收或GPU出货。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "平台收入 +22% 季环比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "台积电季度财报、简报与IR原文发布后读取美元收入及HPC平台占比；NTD/美元增速分开。HPC含CPU等非AI，不由占比推算AI专属收入或可售封装产能。"
+        }
+      ],
+      "supports": [
+        "微软样本显示资本投入与云收入同时扩张。",
+        "Cloud毛利率同比承压，说明增长与回报不可合并成一个指标。"
+      ],
+      "counter": "若扩张持续而同口径利用率、付费收入或毛利恶化，并出现取消订单及资产闲置，投入逻辑应降级；单次GPU租价下跌也可能来自效率提升或代际切换。",
+      "watch": "后续按固定SKU维护报价并寻找真实GPU小时；将微软经营现金/现金PP&E与商业RPO、上游公司交付连续对照。",
+      "beneficiaries": "芯片、HBM、先进封装、光互连和供配电须核实订单及产品认证。海外云厂商扩张不等于A股公司获得供货。云侧承受折旧与能源成本，上游利润兑现可早于云侧。",
+      "scenarios": [
+        [
+          "健康扩张",
+          "付费使用增长、交付增长、单位成本下降",
+          "收入与现金回报改善，产业投入更可持续。"
+        ],
+        [
+          "过度建设",
+          "CapEx上升、收入转弱、利用率和毛利下降",
+          "订单延期、降价和资产减值风险提高。"
+        ],
+        [
+          "效率跃升",
+          "单位推理成本下降、调用量上升",
+          "租价下降可能是扩需求，需看总收入与毛利。"
+        ]
+      ],
+      "missing": [
+        "GPU实际利用率、HBM可售产能与AI专项回报仍无统一公开同口径值。",
+        "微软、NVIDIA、台积电分属独立样本，报告期和业务范围不同；不拼为行业利润漏斗。"
+      ],
+      "status_short": "投入↑ / 毛利率↓",
+      "headline_metric_id": "ai-capex"
+    },
+    {
+      "id": "grid",
+      "name": "电网",
+      "en": "Power grids",
+      "category": "订单与交付回款",
+      "status": "海外订单样本改善",
+      "status_type": "positive",
+      "thesis": "系统改造需求，能否转成可交付、可回款的订单？",
+      "summary": "需求约束有长期性；规划投资、设备订单、收入确认和经营现金须逐段核实。",
+      "mechanism": "电气化、可再生能源接入、负荷迁移与可靠性约束形成输配网改造需求。监管与电价回收机制决定投资能力；预算经招标、中标、制造与验收形成收入，营运资本决定回款。",
+      "path": [
+        "负荷 / 新能源接入",
+        "投资与招标",
+        "制造 / 交付",
+        "利润 / 回款"
+      ],
+      "path_note": "主网、配网和海外电网需独立观察。",
+      "metrics": [
+        {
+          "id": "grid-csg",
+          "label": "南网完成投资",
+          "display": "892.62",
+          "unit": "亿元",
+          "period": "2026H1",
+          "kind": "issuer_sample",
+          "scope": "南方电网固定资产投资",
+          "source": "csg",
+          "detail": "南方电网2026上半年固定资产投资完成额。此处公司样本替代原全国电网工程完成投资待采集格；口径、地域和资产范围均不相同，不能标为全国总量。2026全国月度数尚未从可访问一手表核实。",
+          "value": 892.62,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "南网完成投资",
+          "series": [],
+          "series_label": "首个已核实半年度样本",
+          "update_method": "按南网/国资委实际完成投资公告事件更新，非固定月度。官方检索正文与科汇半年报第9页交叉核验。本机国资委直连证书失败，未绕过；当前需人工使用可正常验证的官方入口或披露PDF复核，自动抓取尚未打通。",
+          "delta_display": "+14.79% 同比",
+          "source_ids": [
+            "csg",
+            "csg-cross"
+          ],
+          "is_proxy": true,
+          "verified_on": "2026-10-20",
+          "scope_short": "南方电网 · 固定资产"
+        },
+        {
+          "id": "grid-order",
+          "label": "GEV电气化订单增速",
+          "display": "+66",
+          "unit": "% 有机同比",
+          "period": "2026Q2",
+          "kind": "issuer",
+          "scope": "GE Vernova Electrification",
+          "source": "gev-q2",
+          "detail": "单企业海外样本；报告币种同比为+93%，有机口径剔除并购等影响。",
+          "value": 66,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "GEV订单有机同比",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "季度结果公布后人工核对Electrification分部。区分GAAP与有机增速，保留并购影响和比较期。10月20日快照保留Q2，不提前使用10月21日数据。",
+          "delta_display": "订单扩张",
+          "verified_on": "2026-10-20",
+          "scope_short": "GEV · 电气化分部"
+        },
+        {
+          "id": "grid-delivery",
+          "label": "GEV电气化收入增速",
+          "display": "+29",
+          "unit": "% 有机同比",
+          "period": "2026Q2",
+          "kind": "issuer",
+          "scope": "GE Vernova Electrification",
+          "source": "gev-q2",
+          "detail": "实际收入反映交付；不是中标或订单增长。GAAP同比+68%，不混用。",
+          "value": 29,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "GEV收入有机同比",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "季度结果公布后人工核对Electrification分部。区分GAAP与有机增速，保留并购影响和比较期。10月20日快照保留Q2，不提前使用10月21日数据。",
+          "delta_display": "交付增长",
+          "verified_on": "2026-10-20",
+          "scope_short": "GEV · 电气化分部"
+        },
+        {
+          "id": "grid-margin",
+          "label": "GEV电气化EBITDA率",
+          "display": "18.4",
+          "unit": "%",
+          "period": "2026Q2",
+          "kind": "issuer",
+          "scope": "GEV · 电气化分部",
+          "source": "gev-q2",
+          "detail": "Electrification分部EBITDA率，Q1为17.8%，Q2为18.4%，季环比+0.6个百分点、同比+390bp。并购与业务组合影响未剔除；不等于行业净利率。",
+          "value": 18.4,
+          "change": {
+            "display": "+390bp/同比",
+            "type": "yoy_bp"
+          },
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "GEV分部EBITDA率",
+          "series": [
+            {
+              "date": "2026-03-31",
+              "value": 17.8
+            },
+            {
+              "date": "2026-06-30",
+              "value": 18.4
+            }
+          ],
+          "series_label": "分部EBITDA率 · 连续2季",
+          "update_method": "季度结果公布后人工核对Electrification分部。区分GAAP与有机增速，保留并购影响和比较期。10月20日快照保留Q2，不提前使用10月21日数据。",
+          "delta_display": "+0.6 pp 季环比",
+          "source_ids": [
+            "gev-q1",
+            "gev-q2"
+          ],
+          "verified_on": "2026-10-20"
+        },
+        {
+          "id": "grid-order-amount",
+          "label": "GEV电气化订单",
+          "label_short": "GEV电气化订单",
+          "value": 6.347,
+          "display": "6.347",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GEV Electrification电气化分部",
+          "detail": "原表6347百万美元，去年3283；报告同比93%，有机66%。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+93% 报告同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。"
+        },
+        {
+          "id": "grid-revenue-amount",
+          "label": "GEV电气化收入",
+          "label_short": "GEV电气化收入",
+          "value": 3.637,
+          "display": "3.637",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GEV Electrification电气化分部",
+          "detail": "原表3637百万美元，去年2162；GAAP同比68%，有机29%。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+68% GAAP同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。"
+        },
+        {
+          "id": "grid-backlog",
+          "label": "GEV设备在手订单",
+          "label_short": "GEV设备在手订单",
+          "value": 40.6,
+          "display": "40.6",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GEV Electrification电气化分部",
+          "detail": "Electrification设备backlog40.6bn，同比增16.6bn/69%；包含Prolec GE约5bn并购贡献。不是全公司176bn。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+69% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。",
+          "acquisition_contribution_bn": 5
+        },
+        {
+          "id": "grid-ebitda",
+          "label": "GEV电气化EBITDA",
+          "label_short": "GEV电气化EBITDA",
+          "value": 0.671,
+          "display": "0.671",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GEV Electrification电气化分部",
+          "detail": "分部EBITDA671百万美元，去年314；不是净利润，不能归为全部电网行业利润。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+357 百万美元 / 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。"
+        },
+        {
+          "id": "grid-btb",
+          "label": "订单/收入",
+          "label_short": "订单/收入",
+          "value": 1.745119604069288,
+          "display": "1.75",
+          "unit": "倍",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GEV Electrification电气化分部",
+          "detail": "同季同分部报告订单6347/收入3637=1.74512，原文约1.7。不是收入/订单转化率，也不代表利润。",
+          "kind": "derived",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。",
+          "formula": "6347 / 3637",
+          "inputs": [
+            "grid-order-amount",
+            "grid-revenue-amount"
+          ]
+        },
+        {
+          "id": "grid-cfo",
+          "label": "GEV经营现金流",
+          "label_short": "GEV经营现金流",
+          "value": 5.492,
+          "display": "5.492",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GE Vernova全公司 · 含Power/Wind",
+          "detail": "全公司CFO5492百万美元，去年367；受营运资金正向收益影响，不能当作Electrification回款。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "同比 +5.125 十亿美元",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。"
+        },
+        {
+          "id": "grid-fcf",
+          "label": "GEV自由现金流",
+          "label_short": "GEV自由现金流",
+          "value": 5.107,
+          "display": "5.107",
+          "unit": "十亿美元",
+          "period": "2026Q2",
+          "source": "gev-q2",
+          "scope": "GE Vernova全公司 · 含Power/Wind",
+          "detail": "全公司Non-GAAP FCF5107百万美元，去年194。大额预付款/营运资金可暂时增厚现金，不能等同订单盈利。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "同比 +4.913 十亿美元",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "GEV季度财报发布后读取Electrification分部同季订单/收入/设备在手/EBITDA；有机与报告口径分列，保留Prolec并购影响。公司现金流只作独立融资观察，不能分摊为电网分部回款。下一季须等正式发布。"
+        },
+        {
+          "id": "grid-power-use",
+          "label": "全社会用电量",
+          "label_short": "全社会用电量",
+          "value": 8997,
+          "display": "8,997",
+          "unit": "亿千瓦时",
+          "period": "2026-09",
+          "source": "nea-sep",
+          "scope": "中国全国",
+          "detail": "9月全社会用电量；同比1.2%，1—9月累计80734亿千瓦时/+3.9%。不是电网投资。",
+          "kind": "observed",
+          "change": null,
+          "series": [],
+          "delta_display": "+1.2% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "每月检查国家能源局原文发布日期与统计月，保存已发布正文和同比。按来源北京时间记录可用日；用电量kWh不当容量kW，互联网数据服务并不等同全部AI数据中心。"
+        },
+        {
+          "id": "grid-data-power",
+          "label": "互联网数据服务用电",
+          "label_short": "互联网数据服务用电",
+          "value": 98,
+          "display": "98",
+          "unit": "亿千瓦时",
+          "period": "2026-09",
+          "source": "nea-sep",
+          "scope": "中国互联网数据服务业",
+          "detail": "9月98亿千瓦时、同比35.4%；8月102亿千瓦时/+37.9%。只作负荷结构观察，不称全AI用电或装机容量。",
+          "kind": "observed",
+          "change": null,
+          "series": [
+            {
+              "date": "2026-08-31",
+              "value": 102
+            },
+            {
+              "date": "2026-09-30",
+              "value": 98
+            }
+          ],
+          "delta_display": "+35.4% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "每月检查国家能源局原文发布日期与统计月，保存已发布正文和同比。按来源北京时间记录可用日；用电量kWh不当容量kW，互联网数据服务并不等同全部AI数据中心。",
+          "series_label": "中国互联网数据服务业 · 同一发布版本的实际历史",
+          "source_ids": [
+            "nea-peak",
+            "nea-sep"
+          ]
+        },
+        {
+          "id": "grid-peak",
+          "label": "全国最高用电负荷",
+          "label_short": "全国最高用电负荷",
+          "value": 15.6,
+          "display": "15.6",
+          "unit": "亿千瓦",
+          "period": "2026-08",
+          "source": "nea-peak",
+          "scope": "中国全国 · 已披露夏季峰值",
+          "detail": "较上年最大负荷高4969万千瓦；此为8月公告峰值，不能当9月数据或当月环比。",
+          "kind": "observed",
+          "change": null,
+          "series": [],
+          "delta_display": "较上年峰值 +0.4969 亿千瓦",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "按国家能源局实际负荷公告事件更新，保留峰值所属月和上年最大值比较；不是常规固定月表，不用年度峰值冒充当月负荷或利用小时。"
+        }
+      ],
+      "supports": [
+        "GEV电气化订单和收入均实现有机增长。",
+        "IEA强调扩建与现网效率提升并重，设备需求不能只按线路长度推算。"
+      ],
+      "counter": "若招标转弱、订单推迟或取消、应收和库存显著快于收入增长，即使投资计划上调也需下调兑现判断。",
+      "watch": "下一步：补国内完成投资与可比招标量，联查设备样本应收、存货和经营现金。",
+      "beneficiaries": "主网看特高压与变电；配网看可靠性、自动化与接入；海外看认证、交期、贸易及本地化。铜和设备涨价可抬高名义投资，并不等于实物工作量同幅增加。",
+      "scenarios": [
+        [
+          "投资兑现",
+          "招标量增、中标转交付、现金改善",
+          "设备与工程收入质量提高。"
+        ],
+        [
+          "规划落空",
+          "预算上调但招标延后、交付受阻",
+          "不能按计划额直接推算企业增长。"
+        ],
+        [
+          "现网提效",
+          "动态增容、灵活接入和数字化释放容量",
+          "增长可能转向控制与软件，新增线路需求未必同比增长。"
+        ]
+      ],
+      "missing": [
+        "全国电网工程完成投资仍未取得本轮可核一手同口径表；南网892.62亿元是公司固定资产投资样本。",
+        "招标台数/MVA、交货周期、分部应收与现金回款未取得可持续同口径序列；GEV全公司现金不能代替电气化分部。"
+      ],
+      "status_short": "订单扩张 / 利润率↑",
+      "headline_metric_id": "grid-margin"
+    },
+    {
+      "id": "innovative-drugs",
+      "name": "创新药",
+      "en": "Innovative medicines",
+      "category": "临床证据与商业化",
+      "status": "单品兑现，分化显著",
+      "status_type": "mixed",
+      "thesis": "临床优势能否成为可支付、可持续的产品收入？",
+      "summary": "临床成功、许可交易、获批与现金回款不能互相替代；以药物资产为最小观察单元。",
+      "mechanism": "有临床意义的有效性与安全性降低研发不确定性；权益归属、监管与支付准入决定可商业化市场。许可和自主销售是两条价值实现路径，实际到账、销售成本与持续研发支出决定资金可持续性。",
+      "path": [
+        "临床有效 / 安全",
+        "批准与权益",
+        "支付 / 商业化",
+        "产品收入 / 现金"
+      ],
+      "path_note": "BD是平行授权路径；CRO/CDMO按订单与产能另看。",
+      "metrics": [
+        {
+          "id": "drug-event",
+          "label": "示例资产：sonrotoclax",
+          "display": "加速批准",
+          "unit": "",
+          "period": "2026-05-13",
+          "kind": "regulator",
+          "scope": "美国复发/难治MCL；≥2线既往治疗含BTKi",
+          "source": "fda-novel",
+          "detail": "FDA列入CDER Novel；BeOne Q2财报披露为加速批准。适用于至少接受过两线治疗（含BTK抑制剂）的成人复发/难治套细胞淋巴瘤；后续条件须按标签跟踪，不等于其他适应症或地区获批。 FDA原文补充单臂试验ORR/DOR/严重不良反应；本轮不推算总体生存获益。",
+          "value": null,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "Sonrotoclax获批",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "FDA Novel清单与标签发生事件时复核；清单不覆盖所有补充适应症批准，不能当全FDA事件流。需要按资产固定适应症和地区。",
+          "delta_display": "复发/难治MCL",
+          "verified_on": "2026-10-20",
+          "scope_short": "BeOne · 美国MCL",
+          "source_ids": [
+            "fda-novel",
+            "fda-sonro"
+          ]
+        },
+        {
+          "id": "drug-bd",
+          "label": "石药许可首付到账",
+          "display": "30",
+          "unit": "百万美元",
+          "period": "2026-08-12",
+          "kind": "cash_event",
+          "scope": "石药×AZ · siRNA单笔",
+          "source": "cspc-received",
+          "detail": "石药2026年8月12日公告确认已收取3000万美元，协议签署日7月2日。5月29日12亿美元到账属于另一笔长效多肽交易。两笔不作可比增速，不把潜在里程碑额、签约首付或确认收入当实际现金。已检索石药公告列表至10月20日，此为该发行人范围内最新已查到账事件，不声称行业最新。",
+          "value": 30,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "石药许可首付到账",
+          "series": [],
+          "series_label": "单笔到账事件",
+          "update_method": "工作日查石药官方公告列表，对含received/已收取的公告保留PDF、项目、对手方、签约日、到账日、币种及金额。以发行人+交易+事件日去重，季度现金流再交叉核对。官网和公告PDF本轮可访问；未启用自动任务。",
+          "delta_display": "已收取 · siRNA",
+          "verified_on": "2026-10-20"
+        },
+        {
+          "id": "drug-sales",
+          "label": "BRUKINSA全球销售增速",
+          "display": "+31",
+          "unit": "% 同比",
+          "period": "2026Q2",
+          "kind": "issuer",
+          "scope": "百济神州 / BeOne单品",
+          "source": "beone-q2",
+          "detail": "对应约12亿美元；单品样本，非创新药全行业增速。",
+          "value": 31,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "泽布替尼销售同比",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "BeOne季度财报公布后录入；销售、增长率、经营现金流分别取原表。保留百万/千美元换算和公司/单品边界；本轮PDF已下载提取。",
+          "delta_display": "季度销售约12亿美元",
+          "verified_on": "2026-10-20",
+          "scope_short": "BeOne · 单品"
+        },
+        {
+          "id": "drug-cash",
+          "label": "BeOne经营现金净流入",
+          "display": "462.8",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "kind": "issuer",
+          "scope": "BeOne公司整体",
+          "source": "beone-q2",
+          "detail": "现金流表462,820千美元换算；不是BRUKINSA单品现金，不能外推同行现金跑道。",
+          "value": 462.82,
+          "change": null,
+          "observed_at": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "label_short": "BeOne经营现金流",
+          "series": [],
+          "series_label": "尚无可比历史",
+          "update_method": "BeOne季度财报公布后录入；销售、增长率、经营现金流分别取原表。保留百万/千美元换算和公司/单品边界；本轮PDF已下载提取。",
+          "delta_display": "公司整体 · 季度",
+          "verified_on": "2026-10-20",
+          "scope_short": "BeOne公司整体"
+        },
+        {
+          "id": "drug-revenue",
+          "label": "BeOne总收入",
+          "label_short": "BeOne总收入",
+          "value": 1705.071,
+          "display": "1,705.1",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体",
+          "detail": "总收入1705071千美元；其中净产品收入1679794千美元，其他收入25277千美元。许可及其他收入不可冒充产品销售。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+30% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-rd",
+          "label": "GAAP研发费用",
+          "label_short": "GAAP研发费用",
+          "value": 612.28,
+          "display": "612.3",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体",
+          "detail": "本季612280千美元，去年524896；含已披露研发相关首付/里程碑，不等于全为自研现金投入。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+17% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-sga",
+          "label": "GAAP销售及管理",
+          "label_short": "GAAP销售及管理",
+          "value": 593.214,
+          "display": "593.2",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体",
+          "detail": "SG&A593214千美元，去年537913；占净产品收入约35%，去年41%。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+10% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-gm",
+          "label": "产品GAAP毛利率",
+          "label_short": "产品GAAP毛利率",
+          "value": 90,
+          "display": "90",
+          "unit": "%",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne全球产品收入",
+          "detail": "产品销售毛利率90%，去年87%；不是BRUKINSA单品毛利率。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+3 pp 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-fcf",
+          "label": "BeOne自由现金流",
+          "label_short": "BeOne自由现金流",
+          "value": 435.344,
+          "display": "435.3",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体",
+          "detail": "Non-GAAP FCF435344千美元，去年219772；披露同比98%。CFO462820−资本支出27476=435344千美元。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+98% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-op",
+          "label": "GAAP经营利润",
+          "label_short": "GAAP经营利润",
+          "value": 325.047,
+          "display": "325.0",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体",
+          "detail": "325047千美元，去年87885；不是调整后503029，也不是净利润237007。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+270% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-cash-balance",
+          "label": "现金及等价物/受限现金",
+          "label_short": "现金及等价物/受限现金",
+          "value": 5280.674,
+          "display": "5,280.7",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne公司整体 · 2026-06-30时点",
+          "detail": "5280674千美元，含受限现金；不是全部可动用资金，不计算现金跑道。年末2025余额4609647千美元。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "较2025年末 +671.0 百万美元",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-tevimbra",
+          "label": "替雷利珠单抗销售",
+          "label_short": "替雷利珠单抗销售",
+          "value": 229,
+          "display": "229",
+          "unit": "百万美元",
+          "period": "2026Q2",
+          "source": "beone-q2",
+          "scope": "BeOne TEVIMBRA全球单品",
+          "detail": "TEVIMBRA季度全球销售，非BRUKINSA；约数按业绩新闻稿披露。",
+          "kind": "issuer",
+          "change": null,
+          "series": [],
+          "delta_display": "+18% 同比",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "BeOne季度财报后读取当季Actual列与GAAP/非GAAP调节表；原始千美元除1000转百万美元。单品与公司、净收入与现金、现金余额与流量分开，不能外推全行业。"
+        },
+        {
+          "id": "drug-orr",
+          "label": "客观缓解率 ORR",
+          "label_short": "客观缓解率 ORR",
+          "value": 52,
+          "display": "52",
+          "unit": "%",
+          "period": "FDA 2026-05-13披露",
+          "source": "fda-sonro",
+          "scope": "BGB-11417-201 · 有效性集n=103",
+          "detail": "FDA IRC评估ORR52%，95%CI42%–62%。单臂试验、既往抗CD20及BTKi治疗的成人R/R MCL；不是随机对照生存获益。",
+          "kind": "regulator",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "按资产×适应症×试验×地区跟踪FDA标签/审评/确认性要求；事件更新时保留样本量、置信区间、随访与数据截止。ORR不是生存获益；DOR不是OS，不跨试验直接比疗效。",
+          "sample_n": 103,
+          "confidence_interval": [
+            42,
+            62
+          ]
+        },
+        {
+          "id": "drug-dor",
+          "label": "中位缓解持续时间",
+          "label_short": "中位缓解持续时间",
+          "value": 15.8,
+          "display": "15.8",
+          "unit": "月",
+          "period": "FDA 2026-05-13披露",
+          "source": "fda-sonro",
+          "scope": "BGB-11417-201 · R/R MCL",
+          "detail": "中位DOR15.8月，95%CI7.4月–不可估；估计中位随访11.9月。DOR不是PFS或OS，不表示每位患者生存期。",
+          "kind": "regulator",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "按资产×适应症×试验×地区跟踪FDA标签/审评/确认性要求；事件更新时保留样本量、置信区间、随访与数据截止。ORR不是生存获益；DOR不是OS，不跨试验直接比疗效。",
+          "follow_up_months": 11.9,
+          "confidence_interval": [
+            "7.4",
+            "NE"
+          ]
+        },
+        {
+          "id": "drug-serious",
+          "label": "严重不良反应",
+          "label_short": "严重不良反应",
+          "value": 37,
+          "display": "37",
+          "unit": "%",
+          "period": "FDA 2026-05-13披露",
+          "source": "fda-sonro",
+          "scope": "BGB-11417-201 · 安全性集n=115",
+          "detail": "FDA正文严重不良反应发生37%，常见肺炎10%；与ORR有效性集分母不同，不把比例相减。",
+          "kind": "regulator",
+          "change": null,
+          "series": [],
+          "delta_display": "",
+          "observed_at": "2026-10-20",
+          "verified_on": "2026-10-20",
+          "freshness": "latest_verified_release",
+          "update_method": "按资产×适应症×试验×地区跟踪FDA标签/审评/确认性要求；事件更新时保留样本量、置信区间、随访与数据截止。ORR不是生存获益；DOR不是OS，不跨试验直接比疗效。",
+          "sample_n": 115
+        }
+      ],
+      "supports": [
+        "BeOne示例显示单品销售与公司经营现金正向兑现。",
+        "审批是资产及适应症层面的事件，不能用批准数推断企业收益。"
+      ],
+      "counter": "若关键试验未达到有临床意义的终点、出现安全信号、支付后净价及销量不足，或许可终止和资金缺口扩大，应按相关资产下调逻辑。",
+      "watch": "下一步：逐资产跟踪标签、支付与真实销售，按发行人公告维护许可到账事件，不把预期首付当现金。",
+      "beneficiaries": "创新药企看产品权益和区域；CRO看客户融资与试验启动；CDMO看技术转移、订单及产能；药企临床利好不自动转化为服务商订单。高研发支出不必然对应高商业价值。",
+      "scenarios": [
+        [
+          "临床到销售兑现",
+          "重要终点成功、支付准入、净销售增长",
+          "按权益比例及商业成本验证价值。"
+        ],
+        [
+          "BD大单但现金少",
+          "潜在里程碑大、首付少或未到账",
+          "融资改善不可按交易总额计算。"
+        ],
+        [
+          "获批但放量弱",
+          "净价、患者覆盖或竞争不利",
+          "获批事件与商业回报方向可分离。"
+        ]
+      ],
+      "missing": [
+        "资产临床证据限Sonrotoclax在美国R/R MCL的固定试验；不是所有管线有效性。确认性研究完成、标签变更与商业放量需持续跟踪。",
+        "BD到账限石药两笔不同交易；BeOne现金余额包含受限部分，不据此算全行业现金跑道。"
+      ],
+      "status_short": "销售↑ / 到账已确认",
+      "headline_metric_id": "drug-bd",
+      "events": [
+        {
+          "date": "2026-05-29",
+          "label": "长效多肽",
+          "display": "1,200",
+          "value": 1200,
+          "unit": "百万美元",
+          "source": "cspc-peptide"
+        },
+        {
+          "date": "2026-08-12",
+          "label": "siRNA",
+          "display": "30",
+          "value": 30,
+          "unit": "百万美元",
+          "source": "cspc-received"
+        }
+      ]
+    }
+  ],
+  "revision": "four-chain-density-v3",
+  "verified_on": "2026-10-20",
+  "presentation": {
+    "gold": {
+      "etf_total": {
+        "value": 4256,
+        "display": "4,256",
+        "unit": "吨",
+        "period": "2026-09",
+        "source": "wgc-etf",
+        "origin_metric": "gold-etf"
+      },
+      "jewel_tonnage": {
+        "value": 278.2,
+        "display": "278.2",
+        "unit": "吨",
+        "period": "2026Q2",
+        "source": "wgc-jewel",
+        "origin_metric": "gold-jewel"
+      }
+    },
+    "ai-compute": {
+      "cash_capex": {
+        "value": 35.802,
+        "display": "35.80",
+        "unit": "十亿美元",
+        "period": "2026Q2 / FY26Q4",
+        "source": "msft-release",
+        "origin_metric": "ai-cash-capex"
+      },
+      "whole_instance_quote": {
+        "value": 31.92,
+        "display": "31.92",
+        "unit": "美元/整机时",
+        "period": "2026-10-20采样",
+        "source": "lambda",
+        "origin_metric": "ai-rent"
+      }
+    },
+    "grid": {
+      "reported_order_yoy": {
+        "value": 93,
+        "display": "+93",
+        "unit": "% 报告同比",
+        "period": "2026Q2",
+        "source": "gev-q2",
+        "origin_metric": "grid-order"
+      },
+      "reported_revenue_yoy": {
+        "value": 68,
+        "display": "+68",
+        "unit": "% GAAP同比",
+        "period": "2026Q2",
+        "source": "gev-q2",
+        "origin_metric": "grid-delivery"
+      }
+    },
+    "innovative-drugs": {
+      "sales_amount": {
+        "value": 1.2,
+        "display": "≈1.2",
+        "unit": "十亿美元",
+        "period": "2026Q2",
+        "source": "beone-q2",
+        "origin_metric": "drug-sales",
+        "approx": true
+      }
+    }
+  },
+  "retrieved_at_utc": "2026-10-21T06:51:18.366561+00:00"
+}

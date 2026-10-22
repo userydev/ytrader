@@ -6,14 +6,13 @@ JSONL directory. Classification and business association are never supply edges.
 from __future__ import annotations
 
 import copy
-import hashlib
 import json
 import os
 import re
 import threading
 from pathlib import Path
 
-from .config import UserError
+from .identities import key, version
 
 ATLAS_URL = 'https://github.com/JiMoxiao/industry-chain-atlas'
 ATLAS_COMMIT = '06661655379f918564a78ac905c045b3e824a76e'
@@ -58,14 +57,6 @@ def ckg_product_name(value):
     if re.fullmatch(r'(?:销售商品(?:及|和|、)?(?:提供劳务)?|提供劳务)(?:收入|成本|收到的现金)?', name):
         return False
     return True
-
-
-def key(prefix, name):
-    return prefix + hashlib.sha256(name.encode()).hexdigest()[:24]
-
-
-def version(value):
-    return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
 
 
 def security_symbol(code):

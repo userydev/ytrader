@@ -2,12 +2,10 @@ import { Component, createElement, useEffect } from 'react';
 import type { ErrorInfo, ReactNode } from 'react';
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import EditorialPage from './Editorial';
-import { NewsUpdateProvider } from './NewsSources';
+import { NewsUpdateProvider } from './news-runtime';
 import './news.css';
 import SecuritiesPage from './Securities';
 import PanoramaEntry from './PanoramaEntry';
-import { EvidenceProvider } from './evidence';
-import { WatchProvider } from './watchlist';
 import { Empty } from './components';
 
 function LegacyEvent() {
@@ -35,4 +33,4 @@ class ErrorBoundary extends Component<{ children: ReactNode }, { failed: boolean
   componentDidCatch(_error: Error, _info: ErrorInfo) { /* Do not log response payloads or configuration. */ }
   render() { return this.state.failed ? <div className="fatal-error" role="alert"><h1>页面暂时无法显示</h1><p>请重新载入，或稍后重试。</p><button type="button" onClick={() => window.location.reload()}>重新载入</button></div> : this.props.children; }
 }
-export default function App() { return <ErrorBoundary><BrowserRouter><WatchProvider><EvidenceProvider><NewsUpdateProvider><Shell /></NewsUpdateProvider></EvidenceProvider></WatchProvider></BrowserRouter></ErrorBoundary>; }
+export default function App() { return <ErrorBoundary><BrowserRouter><NewsUpdateProvider><Shell /></NewsUpdateProvider></BrowserRouter></ErrorBoundary>; }

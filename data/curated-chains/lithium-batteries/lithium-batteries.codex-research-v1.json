@@ -1,0 +1,1575 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "lithium-batteries",
+    "revision": 1,
+    "name": "锂电池",
+    "need": "以可充电锂离子电芯及系统交付移动与固定储能能力。",
+    "boundary": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "以液态锂离子为主，LFP与三元是分支，不把钠离子、固态宣传当作统一商业状态。",
+      "电极涂布、辊压、分切、注液及化成工序未逐项取证；资源和回收按所引企业范围限定。",
+      "首批为可读结构与公司样本，未穷举市场；来源时间未知用null，历史报告业务按原报告期限定。",
+      "没有当期价格、订单、客户供货、市场份额、产能或投资结论；关系不自动证明新闻影响。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "资源与材料",
+        "node_ids": [
+          "lithium-batteries:resource",
+          "lithium-batteries:extract",
+          "lithium-batteries:salts"
+        ]
+      },
+      {
+        "module": "电芯组件",
+        "node_ids": [
+          "lithium-batteries:cathode",
+          "lithium-batteries:anode",
+          "lithium-batteries:separator",
+          "lithium-batteries:electrolyte",
+          "lithium-batteries:binder"
+        ]
+      },
+      {
+        "module": "电芯与系统",
+        "node_ids": [
+          "lithium-batteries:cell",
+          "lithium-batteries:lfp",
+          "lithium-batteries:module",
+          "lithium-batteries:bms"
+        ]
+      },
+      {
+        "module": "应用与回收",
+        "node_ids": [
+          "lithium-batteries:pack",
+          "lithium-batteries:ess",
+          "lithium-batteries:ev",
+          "lithium-batteries:stationary",
+          "lithium-batteries:recycling"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "lithium-batteries:resource",
+      "name": "锂矿与卤水资源",
+      "kind": "product",
+      "description": "锂资源供给接口，矿石与卤水路线分别存在。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:extract",
+      "name": "锂资源开发与提取",
+      "kind": "activity",
+      "description": "按赣锋所述资源和提取业务限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:salts",
+      "name": "锂盐与金属锂",
+      "kind": "product",
+      "description": "锂盐深加工和金属锂产品集合，不表示均进入同种电池。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:cathode",
+      "name": "正极材料",
+      "kind": "product",
+      "description": "锂离子电芯正极材料接口，配方不在本稿穷举。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:anode",
+      "name": "负极材料",
+      "kind": "product",
+      "description": "锂离子电芯负极材料接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:separator",
+      "name": "隔膜",
+      "kind": "product",
+      "description": "锂离子电芯组件之一，不填厚度及材料份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:electrolyte",
+      "name": "电解液",
+      "kind": "product",
+      "description": "电芯电解质接口；不等同于固态电解质。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:binder",
+      "name": "电极粘结剂",
+      "kind": "product",
+      "description": "本稿取Arkema所述PVDF正极粘结用途。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:dd8f21a7aa1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:cell",
+      "name": "锂离子电芯",
+      "kind": "product",
+      "description": "可用于动力和固定储能的电芯；不混入锂原电池。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:lfp",
+      "name": "磷酸铁锂储能分支",
+      "kind": "product",
+      "description": "所引宁德时代储能方案的化学体系分支。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:a75d6250e782",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:module",
+      "name": "模组与电池系统",
+      "kind": "product",
+      "description": "多电芯组合及系统产品接口，CTP等具体架构另行核对。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:bms",
+      "name": "电池管理系统BMS",
+      "kind": "product",
+      "description": "亿纬产品菜单明确列出的BMS类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:pack",
+      "name": "动力电池系统",
+      "kind": "product",
+      "description": "面向车辆的电池系统，不据此声称全部模组结构相同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:ess",
+      "name": "储能电池系统",
+      "kind": "product",
+      "description": "面向固定储能的电池系统，不等于含PCS的完整电站。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:a75d6250e782",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:ev",
+      "name": "电动汽车应用",
+      "kind": "application",
+      "description": "适配动力电池的车辆应用接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:stationary",
+      "name": "固定储能应用",
+      "kind": "application",
+      "description": "本稿锂电储能方案的应用接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:a75d6250e782",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "lithium-batteries:recycling",
+      "name": "废旧电池回收利用",
+      "kind": "activity",
+      "description": "收集与资源回收业务接口；不直接给出回收率。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:edf71a59caf9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:resource",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:extract",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:salts",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:cathode",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:anode",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:separator",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:electrolyte",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:binder",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:cell",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:lfp",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:module",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:bms",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:pack",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:ess",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:ev",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:stationary",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "lithium-batteries",
+      "node_id": "lithium-batteries:recycling",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:f2c74576ba8187f5",
+      "from_node_id": "lithium-batteries:resource",
+      "to_node_id": "lithium-batteries:extract",
+      "kind": "input_to",
+      "statement": "结构推断：资源投入适用的提取路线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:2697279a2700774d",
+      "from_node_id": "lithium-batteries:extract",
+      "to_node_id": "lithium-batteries:salts",
+      "kind": "produces",
+      "statement": "结构推断：提取与深加工衔接锂盐产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:0b993c5868ef64b3",
+      "from_node_id": "lithium-batteries:salts",
+      "to_node_id": "lithium-batteries:cathode",
+      "kind": "input_to",
+      "statement": "结构推断：部分锂盐可作为正极材料原料，按化学路线限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:fb3823669815251f",
+      "from_node_id": "lithium-batteries:binder",
+      "to_node_id": "lithium-batteries:cathode",
+      "kind": "input_to",
+      "statement": "所引PVDF材料用于正极粘结。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:dd8f21a7aa1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:c076069507c149af",
+      "from_node_id": "lithium-batteries:cathode",
+      "to_node_id": "lithium-batteries:cell",
+      "kind": "input_to",
+      "statement": "正极材料作为电芯组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:3d8bfd17dc2fd327",
+      "from_node_id": "lithium-batteries:anode",
+      "to_node_id": "lithium-batteries:cell",
+      "kind": "input_to",
+      "statement": "负极材料作为电芯组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:64aaf7de9b158fdb",
+      "from_node_id": "lithium-batteries:separator",
+      "to_node_id": "lithium-batteries:cell",
+      "kind": "input_to",
+      "statement": "隔膜作为电芯组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:a0ed881d2f0d793f",
+      "from_node_id": "lithium-batteries:electrolyte",
+      "to_node_id": "lithium-batteries:cell",
+      "kind": "input_to",
+      "statement": "电解液作为电芯组件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:472609713ba2f2cd",
+      "from_node_id": "lithium-batteries:cell",
+      "to_node_id": "lithium-batteries:module",
+      "kind": "input_to",
+      "statement": "结构推断：电芯与模组/系统形成集成接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:387e44e69f8e93ad",
+      "from_node_id": "lithium-batteries:bms",
+      "to_node_id": "lithium-batteries:module",
+      "kind": "supports",
+      "statement": "结构推断：BMS与电池系统形成管理接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:be127327d6d7599d",
+      "from_node_id": "lithium-batteries:module",
+      "to_node_id": "lithium-batteries:pack",
+      "kind": "input_to",
+      "statement": "结构推断：电池系统衔接动力应用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:55e5469fa21b00be",
+      "from_node_id": "lithium-batteries:pack",
+      "to_node_id": "lithium-batteries:ev",
+      "kind": "used_for",
+      "statement": "动力电池用于电动汽车。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:d7029721969e8cbd",
+      "from_node_id": "lithium-batteries:ess",
+      "to_node_id": "lithium-batteries:stationary",
+      "kind": "used_for",
+      "statement": "该锂电系统面向固定储能。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:a75d6250e782",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:lithium-batteries:72094c244a3b6c59",
+      "from_node_id": "lithium-batteries:pack",
+      "to_node_id": "lithium-batteries:recycling",
+      "kind": "input_to",
+      "statement": "结构推断：退役电池进入适用的回收链路。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:edf71a59caf9",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "锂镍钴等资源、正负极/电解液/隔膜、设备、电芯、PACK、回收；车用/储能分支；仅为限定路线的结构关系，不代表必经步骤、指定客户或供货事实。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_ganfeng",
+      "name": "江西赣锋锂业集团股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:ganfeng:edf71a59caf9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_catl",
+      "name": "宁德时代新能源科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_eve",
+      "name": "惠州亿纬锂能股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:ead957479cfe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_arkema",
+      "name": "Arkema",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:dd8f21a7aa1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:002460",
+      "company_id": "company_ganfeng",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:40da1ed3ec9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:300750",
+      "company_id": "company_catl",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SZ:300014",
+      "company_id": "company_eve",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:ead957479cfe",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:lithium-batteries:66eb8620434b0dc3",
+      "company_id": "company_ganfeng",
+      "node_id": "lithium-batteries:extract",
+      "role": "锂资源开发与提取",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:c9742219ad056479",
+      "company_id": "company_ganfeng",
+      "node_id": "lithium-batteries:salts",
+      "role": "锂盐深加工及金属锂",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:468781bdf38b32ce",
+      "company_id": "company_ganfeng",
+      "node_id": "lithium-batteries:recycling",
+      "role": "废旧电池综合回收利用",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:ganfeng:edf71a59caf9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:5c4a4a411711f03a",
+      "company_id": "company_catl",
+      "node_id": "lithium-batteries:pack",
+      "role": "动力电池方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:f298d4344437d3c3",
+      "company_id": "company_catl",
+      "node_id": "lithium-batteries:ess",
+      "role": "锂电储能方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:catl:a75d6250e782",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:5bdeb0f46e7595e0",
+      "company_id": "company_eve",
+      "node_id": "lithium-batteries:cell",
+      "role": "锂离子电池产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:cd6c20c91668502a",
+      "company_id": "company_eve",
+      "node_id": "lithium-batteries:module",
+      "role": "模组与电池系统",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:08616a126ea5ac86",
+      "company_id": "company_eve",
+      "node_id": "lithium-batteries:bms",
+      "role": "BMS产品类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:lithium-batteries:b1a1cc26fcc218e8",
+      "company_id": "company_arkema",
+      "node_id": "lithium-batteries:binder",
+      "role": "Kynar PVDF材料用途",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:arkema-battery:dd8f21a7aa1b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:lithium-batteries:codex-research-v1",
+      "industry_id": "lithium-batteries",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "资源与材料",
+          "node_ids": [
+            "lithium-batteries:resource",
+            "lithium-batteries:extract",
+            "lithium-batteries:salts"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "电芯组件",
+          "node_ids": [
+            "lithium-batteries:cathode",
+            "lithium-batteries:anode",
+            "lithium-batteries:separator",
+            "lithium-batteries:electrolyte",
+            "lithium-batteries:binder"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "电芯与系统",
+          "node_ids": [
+            "lithium-batteries:cell",
+            "lithium-batteries:lfp",
+            "lithium-batteries:module",
+            "lithium-batteries:bms"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "应用与回收",
+          "node_ids": [
+            "lithium-batteries:pack",
+            "lithium-batteries:ess",
+            "lithium-batteries:ev",
+            "lithium-batteries:stationary",
+            "lithium-batteries:recycling"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3"
+      ],
+      "relation_ids": [
+        "rel:new20261021:lithium-batteries:f2c74576ba8187f5",
+        "rel:new20261021:lithium-batteries:2697279a2700774d",
+        "rel:new20261021:lithium-batteries:0b993c5868ef64b3",
+        "rel:new20261021:lithium-batteries:fb3823669815251f",
+        "rel:new20261021:lithium-batteries:c076069507c149af",
+        "rel:new20261021:lithium-batteries:3d8bfd17dc2fd327",
+        "rel:new20261021:lithium-batteries:64aaf7de9b158fdb",
+        "rel:new20261021:lithium-batteries:a0ed881d2f0d793f",
+        "rel:new20261021:lithium-batteries:472609713ba2f2cd",
+        "rel:new20261021:lithium-batteries:387e44e69f8e93ad",
+        "rel:new20261021:lithium-batteries:be127327d6d7599d",
+        "rel:new20261021:lithium-batteries:55e5469fa21b00be",
+        "rel:new20261021:lithium-batteries:d7029721969e8cbd",
+        "rel:new20261021:lithium-batteries:72094c244a3b6c59"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:arkema-battery",
+      "source_version": "sha256:d9397e874630f30cad74e40c664447c40440f46bd3d83b0e71f7f6ea32052a6b",
+      "title": "Lithium-ion battery components",
+      "publisher": "Arkema",
+      "url": "https://www.arkema.com/global/en/media/newslist/news/global/products/2025/20251210-how-does-lithium-ion-battery-work/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.974518+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "689e007b83c7238447c550e1aafc6fbdba6e4fb4e433953347c4af267ceb35b4",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:ganfeng",
+      "source_version": "sha256:2f84012057a864ebd460df69b9a47bbb46a38ce8f744d3d3170f58e03cf25da5",
+      "title": "公司及产品",
+      "publisher": "赣锋锂业",
+      "url": "https://www.ganfenglithium.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152664+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "8ad0aa2569e1aaa7e41a546ca302d5fdc2e8d7aed4194c741c631568102ddfc1",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "title": "公司及产品",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:50:08.152543+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "7a07573cce53711c49db120ca38a48750c94134ab482735b827b123f4e03e17e",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "title": "企业简介",
+      "publisher": "宁德时代",
+      "url": "https://www.catl.com/about/profile/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.974795+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "6577a7db469d518f0aa15e9b00ab7cf5b917b15a9976b47a84b954f338625389",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:eve-about",
+      "source_version": "sha256:c9e4ba428213281b66b03cb8a47148cab3feb38f6023e7b088e6eff8cceb02c3",
+      "title": "关于亿纬",
+      "publisher": "亿纬锂能",
+      "url": "https://www.evebattery.com/about",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:52:35.975032+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "8a71a425cd9b3b04b0c01163df5509da8a2fbbdfaf98ef46798ae6954e879456",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:arkema-battery:d7638dfcf3a1",
+      "revision": 1,
+      "source_id": "codex-20261021:arkema-battery",
+      "source_version": "sha256:d9397e874630f30cad74e40c664447c40440f46bd3d83b0e71f7f6ea32052a6b",
+      "excerpt": "always combines a cathode, an anode, a separator, and an electrolyte",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/arkema-battery.txt:197"
+      },
+      "summary": "锂离子电芯的基本组件，来源科普不证明任何厂商统一BOM。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:arkema-battery:dd8f21a7aa1b",
+      "revision": 1,
+      "source_id": "codex-20261021:arkema-battery",
+      "source_version": "sha256:d9397e874630f30cad74e40c664447c40440f46bd3d83b0e71f7f6ea32052a6b",
+      "excerpt": "used as a binder for active materials on cathodes",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/arkema-battery.txt:199"
+      },
+      "summary": "PVDF可作正极活性材料粘结剂，范围限定原文所述材料用途。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ganfeng:6e1e03510b3f",
+      "revision": 1,
+      "source_id": "codex-20261021:ganfeng",
+      "source_version": "sha256:2f84012057a864ebd460df69b9a47bbb46a38ce8f744d3d3170f58e03cf25da5",
+      "excerpt": "上游锂资源开发、中游锂盐深加工及金属锂冶炼",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ganfeng.txt:95"
+      },
+      "summary": "赣锋公开业务上游资源及中游材料范围。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ganfeng:edf71a59caf9",
+      "revision": 1,
+      "source_id": "codex-20261021:ganfeng",
+      "source_version": "sha256:2f84012057a864ebd460df69b9a47bbb46a38ce8f744d3d3170f58e03cf25da5",
+      "excerpt": "下游锂电池制造及废旧电池综合回收利用",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ganfeng.txt:95"
+      },
+      "summary": "赣锋公开电池制造与回收业务，不推断特定电池原料合同。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:ganfeng:40da1ed3ec9c",
+      "revision": 1,
+      "source_id": "codex-20261021:ganfeng",
+      "source_version": "sha256:2f84012057a864ebd460df69b9a47bbb46a38ce8f744d3d3170f58e03cf25da5",
+      "excerpt": "002460",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/ganfeng.txt:3"
+      },
+      "summary": "赣锋官网A股身份。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl:4d5328ca616a",
+      "revision": 1,
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "excerpt": "为电动汽车提供可靠动力",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl.txt:124"
+      },
+      "summary": "宁德时代官网动力电池应用。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl:a75d6250e782",
+      "revision": 1,
+      "source_id": "codex-20261021:catl",
+      "source_version": "sha256:26d61f2cb9d6d56be1d1d61afa02bdb4b568c431bd5e858abdbbbf1730424dff",
+      "excerpt": "基于磷酸铁锂化学体系",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl.txt:130"
+      },
+      "summary": "宁德时代本页锂电储能方案使用的化学体系，不外推所有储能技术。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:catl-profile:8cc80fe8cb69",
+      "revision": 1,
+      "source_id": "codex-20261021:catl-profile",
+      "source_version": "sha256:1cdee59b3e5ffb371ac9fe2a9aa89de97d5e8972219a2df8dc9d59d5364e3996",
+      "excerpt": "300750",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/catl-profile.txt:149"
+      },
+      "summary": "宁德时代官网上市记录与发行人简介。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eve-about:fd7628ddf888",
+      "revision": 1,
+      "source_id": "codex-20261021:eve-about",
+      "source_version": "sha256:c9e4ba428213281b66b03cb8a47148cab3feb38f6023e7b088e6eff8cceb02c3",
+      "excerpt": "动力&储能系统",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eve-about.txt:165"
+      },
+      "summary": "亿纬官网展示动力/储能系统业务与模组/BMS等产品类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:eve-about:ead957479cfe",
+      "revision": 1,
+      "source_id": "codex-20261021:eve-about",
+      "source_version": "sha256:c9e4ba428213281b66b03cb8a47148cab3feb38f6023e7b088e6eff8cceb02c3",
+      "excerpt": "300014",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/eve-about.txt:135"
+      },
+      "summary": "亿纬官网公司简介代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "batch": 1,
+      "scope": "first_research_draft_major_modules_not_exhaustive"
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

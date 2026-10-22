@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation, useParams, useSearchParams } from 'react-router-dom';
 import { query, dateTime } from './api';
-import { safeNewsReturn } from './PanoramaEntry';
+import { safeNewsReturn } from './navigation';
 import { useApi } from './hooks';
 import { Empty, ErrorBox, Loading, MetaLine, PageHeader, SearchForm, SyncButton } from './components';
 import type { Coverage, Security } from './types';

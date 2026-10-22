@@ -1,0 +1,3063 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "semiconductor-design-fabrication",
+    "revision": 1,
+    "name": "半导体设计与晶圆制造",
+    "need": "把系统功能设计为芯片，并通过晶圆工艺形成可封装的器件。",
+    "boundary": "覆盖EDA/IP、设计验证、晶圆制造、存储与通用芯片类别；设备/材料为接口，封装与测试仅留边界，不替代单独产业包。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "首批公司样本涵盖EDA、IP、无晶圆厂、代工与存储，尚未穷举逻辑、模拟、射频、功率及存储IDM企业。",
+      "设计流程采用典型数字与定制电路接口；模拟/射频设计不强行套用RTL综合流程。工艺多次循环，不是单向流水线。",
+      "未形成工艺节点、产能、良率、价格和客户采购的当期数据库。HBM仅复用既有AI链精确限定。",
+      "封测、设备和材料仅给接口；先进封装、半导体材料另包研究。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "设计基础",
+        "node_ids": [
+          "semiconductor-design-fabrication:design_service",
+          "semiconductor-design-fabrication:eda",
+          "semiconductor-design-fabrication:ip",
+          "semiconductor-design-fabrication:pdk"
+        ]
+      },
+      {
+        "module": "产品分支",
+        "node_ids": [
+          "semiconductor-design-fabrication:soc",
+          "semiconductor-design-fabrication:nor",
+          "semiconductor-design-fabrication:nand",
+          "semiconductor-design-fabrication:dram",
+          "semiconductor-design-fabrication:mcu",
+          "semiconductor-design-fabrication:analog",
+          "node_hbm_memory"
+        ]
+      },
+      {
+        "module": "封装与测试接口",
+        "node_ids": [
+          "semiconductor-design-fabrication:packaged",
+          "semiconductor-design-fabrication:die",
+          "semiconductor-design-fabrication:package"
+        ]
+      },
+      {
+        "module": "设计与验证",
+        "node_ids": [
+          "semiconductor-design-fabrication:spec",
+          "semiconductor-design-fabrication:sim",
+          "semiconductor-design-fabrication:synth",
+          "semiconductor-design-fabrication:place",
+          "semiconductor-design-fabrication:signoff",
+          "semiconductor-design-fabrication:dfm"
+        ]
+      },
+      {
+        "module": "晶圆制造",
+        "node_ids": [
+          "semiconductor-design-fabrication:wafer",
+          "semiconductor-design-fabrication:mask",
+          "semiconductor-design-fabrication:fab",
+          "semiconductor-design-fabrication:foundry",
+          "semiconductor-design-fabrication:dep",
+          "semiconductor-design-fabrication:litho",
+          "semiconductor-design-fabrication:etch",
+          "semiconductor-design-fabrication:implant"
+        ]
+      },
+      {
+        "module": "应用接口",
+        "node_ids": [
+          "semiconductor-design-fabrication:auto",
+          "semiconductor-design-fabrication:industry",
+          "semiconductor-design-fabrication:dc"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "semiconductor-design-fabrication:design_service",
+      "name": "定制芯片设计服务",
+      "kind": "service",
+      "description": "为客户交付定制芯片设计解决方案，区别于单独IP授权与晶圆制造。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:65514248bdd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:soc",
+      "name": "逻辑与系统级芯片（SoC）",
+      "kind": "product",
+      "description": "以处理器、存储、I/O等功能形成的系统级芯片方案类别，本稿不展开全部逻辑产品。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:fdf1d1504e34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:packaged",
+      "name": "封装芯片",
+      "kind": "product",
+      "description": "裸片经过适合的封装形成可在电子系统使用的芯片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:a9aee700ae26",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:eda",
+      "name": "EDA软件与验证工具",
+      "kind": "product",
+      "description": "用于设计、仿真、验证和制造准备的软件及硬件工具。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:4e679ecdbd30",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:ip",
+      "name": "可复用半导体IP",
+      "kind": "product",
+      "description": "可授权集成进芯片的设计功能块，不等于已制造芯片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:9a7a941486af",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:pdk",
+      "name": "PDK与工艺设计支持服务",
+      "kind": "service",
+      "description": "将工艺模型和设计规则交付设计团队的工程服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-about:0478b6253815",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:spec",
+      "name": "规格与架构设计",
+      "kind": "activity",
+      "description": "定义芯片功能和系统约束；数字设计可使用HDL。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:a46e191e3303",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:sim",
+      "name": "设计仿真与功能验证",
+      "kind": "activity",
+      "description": "在制造前检查设计行为，验证会与其他步骤反复迭代。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:b372e180b290",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:synth",
+      "name": "数字逻辑综合",
+      "kind": "activity",
+      "description": "把数字高层逻辑转为门级表示；不用于概括全部模拟电路流程。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:f0c18c9e0d52",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:place",
+      "name": "物理布局布线",
+      "kind": "activity",
+      "description": "放置逻辑门并连接互连，受时序、功耗、面积等约束。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:signoff",
+      "name": "签核与实现验证",
+      "kind": "activity",
+      "description": "对功能、时序及物理实现作检查；不代表某产品通过认证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:1e2e54f78046",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:dfm",
+      "name": "面向制造的设计优化",
+      "kind": "activity",
+      "description": "结合制造约束优化设计；不是制造产能或良率指标。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7a7052c59773",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:wafer",
+      "name": "硅晶圆",
+      "kind": "product",
+      "description": "形成器件图形的晶圆衬底接口；晶体生长及硅片制备留给材料链。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:2ae03e6a0ccd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:mask",
+      "name": "光刻掩模",
+      "kind": "product",
+      "description": "承载光刻图形的掩模接口；不展开掩模材料与制版产业。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:de36fc12e892",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:fab",
+      "name": "晶圆器件制造",
+      "kind": "activity",
+      "description": "在晶圆上重复形成薄膜、图形及器件结构。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:2ae03e6a0ccd",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:foundry",
+      "name": "晶圆代工与技术服务",
+      "kind": "service",
+      "description": "为其他芯片设计方承接晶圆制造；与自有品牌芯片区分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:1ccd7324ab34",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-about:e6f8a2b5b552",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:dep",
+      "name": "薄膜沉积",
+      "kind": "activity",
+      "description": "在晶圆形成所需薄膜，具体方法由工艺限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:litho",
+      "name": "光刻图形转移",
+      "kind": "activity",
+      "description": "通过光刻将掩模图形转移到晶圆光刻胶层。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:de36fc12e892",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:etch",
+      "name": "刻蚀加工",
+      "kind": "activity",
+      "description": "以干法或湿法等去除材料形成目标结构。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:implant",
+      "name": "离子注入",
+      "kind": "activity",
+      "description": "通过离子注入调整器件区域的电学特性。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:die",
+      "name": "裸片",
+      "kind": "product",
+      "description": "晶圆切割后取得的单颗芯片裸片，尚需适合的封装/集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:package",
+      "name": "芯片封装接口",
+      "kind": "activity",
+      "description": "为裸片提供连接与保护；仅作接口，不宣称所有封装使用同一流程。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:a9aee700ae26",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:nor",
+      "name": "NOR Flash",
+      "kind": "product",
+      "description": "非易失性存储分支；不与NAND或DRAM合并。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:nand",
+      "name": "NAND Flash",
+      "kind": "product",
+      "description": "与NOR区分的闪存分支，具体接口和容量由产品限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:micron-products:ca08cefeb148",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:dram",
+      "name": "DRAM产品",
+      "kind": "product",
+      "description": "动态随机存储器产品分支；HBM是其中需要单独辨认的产品形态。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:micron-products:724a216ab365",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:mcu",
+      "name": "微控制器（MCU）",
+      "kind": "product",
+      "description": "集成控制功能的芯片分支，不等于高性能CPU或GPU。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:analog",
+      "name": "模拟与传感芯片",
+      "kind": "product",
+      "description": "处理模拟信号或感知需求的芯片分支，本稿未逐项细分。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:auto",
+      "name": "汽车电子应用",
+      "kind": "application",
+      "description": "公开产品页列举的汽车电子终端，不暗示特定车厂或供货关系。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:industry",
+      "name": "工业控制应用",
+      "kind": "application",
+      "description": "工业控制中采用适配的芯片产品；型号与认证需逐项取证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-design-fabrication:dc",
+      "name": "数据中心与边缘AI应用",
+      "kind": "application",
+      "description": "存储和其他适配芯片的计算应用接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:micron-products:7516f5bc0fa5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "node_hbm_memory",
+      "revision": 1,
+      "name": "高带宽内存 (HBM)",
+      "kind": "product",
+      "description": "集成于加速计算节点的高带宽堆叠内存（如HBM3），为GPU提供海量数据并行计算所需的内存带宽支撑。",
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:design_service",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:soc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:packaged",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:eda",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:ip",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:pdk",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:spec",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:sim",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:synth",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:place",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:signoff",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:dfm",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:wafer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:mask",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:fab",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:foundry",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:dep",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:litho",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:etch",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:implant",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:die",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:package",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:nor",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:nand",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:dram",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:mcu",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:analog",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:auto",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:industry",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "semiconductor-design-fabrication:dc",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-design-fabrication",
+      "node_id": "node_hbm_memory",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:37d757160ee954a9",
+      "from_node_id": "semiconductor-design-fabrication:eda",
+      "to_node_id": "semiconductor-design-fabrication:spec",
+      "kind": "supports",
+      "statement": "EDA工具支持规格与设计输入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:4e679ecdbd30",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:a46e191e3303",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:5dad6e2c2dae3f21",
+      "from_node_id": "semiconductor-design-fabrication:eda",
+      "to_node_id": "semiconductor-design-fabrication:sim",
+      "kind": "supports",
+      "statement": "EDA仿真工具支持制造前功能验证。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:b372e180b290",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:9f1dcf80e547bd15",
+      "from_node_id": "semiconductor-design-fabrication:eda",
+      "to_node_id": "semiconductor-design-fabrication:synth",
+      "kind": "supports",
+      "statement": "综合工具实现数字逻辑综合。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:f0c18c9e0d52",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:a83bbec57ec84e53",
+      "from_node_id": "semiconductor-design-fabrication:eda",
+      "to_node_id": "semiconductor-design-fabrication:place",
+      "kind": "supports",
+      "statement": "布局布线工具支持物理实现。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:fed24b98b196fe89",
+      "from_node_id": "semiconductor-design-fabrication:pdk",
+      "to_node_id": "semiconductor-design-fabrication:place",
+      "kind": "supports",
+      "statement": "结构推断：工艺设计支持与物理设计规则衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-about:0478b6253815",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:507dd40a51502379",
+      "from_node_id": "semiconductor-design-fabrication:ip",
+      "to_node_id": "semiconductor-design-fabrication:spec",
+      "kind": "input_to",
+      "statement": "结构推断：可复用IP进入定制芯片方案设计。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:9a7a941486af",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:3a4f9d9d9800e192",
+      "from_node_id": "semiconductor-design-fabrication:spec",
+      "to_node_id": "semiconductor-design-fabrication:sim",
+      "kind": "precedes",
+      "statement": "典型数字流程在规格输入后开展仿真，并允许反馈迭代。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:a46e191e3303",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:b372e180b290",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:754847bf8ed1a652",
+      "from_node_id": "semiconductor-design-fabrication:synth",
+      "to_node_id": "semiconductor-design-fabrication:place",
+      "kind": "precedes",
+      "statement": "典型数字流程将综合表示用于布局布线。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:f0c18c9e0d52",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:48475b22d7b0739e",
+      "from_node_id": "semiconductor-design-fabrication:place",
+      "to_node_id": "semiconductor-design-fabrication:signoff",
+      "kind": "precedes",
+      "statement": "布局布线后的实现需要验证与签核。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:1e2e54f78046",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:fad81af728414e07",
+      "from_node_id": "semiconductor-design-fabrication:dfm",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "supports",
+      "statement": "结构推断：可制造性设计与后续晶圆工艺衔接。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:7a7052c59773",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:baace15db6b4cd69",
+      "from_node_id": "semiconductor-design-fabrication:wafer",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "input_to",
+      "statement": "硅晶圆作为器件制造的衬底。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:2ae03e6a0ccd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:0754c4491310df93",
+      "from_node_id": "semiconductor-design-fabrication:mask",
+      "to_node_id": "semiconductor-design-fabrication:litho",
+      "kind": "input_to",
+      "statement": "掩模提供光刻需要转移的图形。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:de36fc12e892",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:8a18d43e17260dae",
+      "from_node_id": "semiconductor-design-fabrication:dep",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "part_of",
+      "statement": "薄膜沉积是晶圆制造的重要工艺之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:42a619f9d4d3a501",
+      "from_node_id": "semiconductor-design-fabrication:litho",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "part_of",
+      "statement": "光刻是器件图形制造的重要工艺之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:de36fc12e892",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:42395792d8d22139",
+      "from_node_id": "semiconductor-design-fabrication:etch",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "part_of",
+      "statement": "刻蚀是晶圆制造的重要工艺之一。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:bfaeaf2b66a98ca2",
+      "from_node_id": "semiconductor-design-fabrication:implant",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "part_of",
+      "statement": "离子注入用于相关器件工艺，不意味着每层必经。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:5966f0db53cfab40",
+      "from_node_id": "semiconductor-design-fabrication:foundry",
+      "to_node_id": "semiconductor-design-fabrication:fab",
+      "kind": "supports",
+      "statement": "晶圆代工向设计方交付制造与技术服务。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:1ccd7324ab34",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:b78d3bb4b43b00c8",
+      "from_node_id": "semiconductor-design-fabrication:fab",
+      "to_node_id": "semiconductor-design-fabrication:die",
+      "kind": "produces",
+      "statement": "加工晶圆经切割取得裸片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:227ece50d1fd549d",
+      "from_node_id": "semiconductor-design-fabrication:die",
+      "to_node_id": "semiconductor-design-fabrication:package",
+      "kind": "input_to",
+      "statement": "裸片进入封装流程。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:a9aee700ae26",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:e875bc54eaceb841",
+      "from_node_id": "semiconductor-design-fabrication:nor",
+      "to_node_id": "semiconductor-design-fabrication:auto",
+      "kind": "used_for",
+      "statement": "相关NOR产品用于汽车电子。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:d8704bf2b35d7e43",
+      "from_node_id": "semiconductor-design-fabrication:nor",
+      "to_node_id": "semiconductor-design-fabrication:industry",
+      "kind": "used_for",
+      "statement": "相关NOR产品用于工业控制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:2f91bb7e901af872",
+      "from_node_id": "semiconductor-design-fabrication:nand",
+      "to_node_id": "semiconductor-design-fabrication:dc",
+      "kind": "used_for",
+      "statement": "适配的闪存产品用于数据中心与边缘AI。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:b93c8d3173a36a98",
+      "from_node_id": "node_hbm_memory",
+      "to_node_id": "semiconductor-design-fabrication:dc",
+      "kind": "used_for",
+      "statement": "HBM用于AI与高性能计算。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:micron-products:7516f5bc0fa5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:97f5f3b9021fe2f3",
+      "from_node_id": "semiconductor-design-fabrication:design_service",
+      "to_node_id": "semiconductor-design-fabrication:spec",
+      "kind": "supports",
+      "statement": "定制芯片解决方案支持客户方案设计。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:65514248bdd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:7dc7a992f621f8c6",
+      "from_node_id": "semiconductor-design-fabrication:spec",
+      "to_node_id": "semiconductor-design-fabrication:soc",
+      "kind": "supports",
+      "statement": "架构设计定义SoC的高层功能与取舍。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:fdf1d1504e34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-design-fabrication:c76ae2d09a7aa3ea",
+      "from_node_id": "semiconductor-design-fabrication:package",
+      "to_node_id": "semiconductor-design-fabrication:packaged",
+      "kind": "produces",
+      "statement": "裸片封装后形成用于电子系统的芯片。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:a9aee700ae26",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_synopsys",
+      "name": "Synopsys, Inc.",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:4e679ecdbd30",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_empyrean",
+      "name": "北京华大九天科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-about:1c056d4276cf",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_verisilicon",
+      "name": "芯原微电子（上海）股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:9a7a941486af",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_gigadevice",
+      "name": "GigaDevice Semiconductor Inc.",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_smic",
+      "name": "中芯国际集成电路制造有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-2024:a3309280ab9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_tsmc",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev_tsmc_identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "Legal name read in saved source body; no overseas security mapping added.",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_micron",
+      "name": "Micron Technology, Inc.",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev_micron_identity",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "Legal name read in saved source body; no overseas security mapping added.",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:301269",
+      "company_id": "company_empyrean",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-code:820cc25a561d",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:688521",
+      "company_id": "company_verisilicon",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:6682b44f0ac4",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:603986",
+      "company_id": "company_gigadevice",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:ef82fc7fc3d5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:688981",
+      "company_id": "company_smic",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-2024:a3309280ab9c",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:aa3a61500b4b7033",
+      "company_id": "company_synopsys",
+      "node_id": "semiconductor-design-fabrication:eda",
+      "role": "EDA工具与设计验证支持",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:synopsys-eda:4e679ecdbd30",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:763a51e436edc9c5",
+      "company_id": "company_empyrean",
+      "node_id": "semiconductor-design-fabrication:eda",
+      "role": "EDA软件开发、销售与技术服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-about:1c056d4276cf",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:b19b988f832c27ed",
+      "company_id": "company_empyrean",
+      "node_id": "semiconductor-design-fabrication:pdk",
+      "role": "PDK与晶圆制造工程服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:empyrean-about:0478b6253815",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:8da76c6a244310f5",
+      "company_id": "company_verisilicon",
+      "node_id": "semiconductor-design-fabrication:ip",
+      "role": "半导体IP产品组合",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:9a7a941486af",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:22a7c4c05d10fa0e",
+      "company_id": "company_verisilicon",
+      "node_id": "semiconductor-design-fabrication:design_service",
+      "role": "定制芯片设计解决方案",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:verisilicon:65514248bdd3",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:620e61ea12417e22",
+      "company_id": "company_gigadevice",
+      "node_id": "semiconductor-design-fabrication:nor",
+      "role": "Fabless闪存产品供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:4828590c0344ea7c",
+      "company_id": "company_gigadevice",
+      "node_id": "semiconductor-design-fabrication:nand",
+      "role": "Fabless闪存产品供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:fa41e3273f0d25fb",
+      "company_id": "company_gigadevice",
+      "node_id": "semiconductor-design-fabrication:mcu",
+      "role": "MCU产品设计与供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:788a1e8d8bd34334",
+      "company_id": "company_gigadevice",
+      "node_id": "semiconductor-design-fabrication:analog",
+      "role": "模拟与传感产品设计及供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:a5d2a4bae1aa2703",
+      "company_id": "company_smic",
+      "node_id": "semiconductor-design-fabrication:foundry",
+      "role": "8英寸/12英寸晶圆代工与技术服务",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:smic-about:e6f8a2b5b552",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 2,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:7b7d2bfd2f8ef23b",
+      "company_id": "company_tsmc",
+      "node_id": "semiconductor-design-fabrication:foundry",
+      "role": "专业晶圆代工角色",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:1ccd7324ab34",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:ceae29132fb337bb",
+      "company_id": "company_micron",
+      "node_id": "semiconductor-design-fabrication:dram",
+      "role": "DRAM产品供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:micron-products:724a216ab365",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:e2664897e9bf9f86",
+      "company_id": "company_micron",
+      "node_id": "node_hbm_memory",
+      "role": "高带宽内存产品供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:micron-products:7516f5bc0fa5",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-design-fabrication:f3a4e416b9b89fd6",
+      "company_id": "company_micron",
+      "node_id": "semiconductor-design-fabrication:nand",
+      "role": "NAND产品供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:micron-products:ca08cefeb148",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:semiconductor-design-fabrication:codex-research-v1",
+      "industry_id": "semiconductor-design-fabrication",
+      "revision": 2,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "设计基础",
+          "node_ids": [
+            "semiconductor-design-fabrication:design_service",
+            "semiconductor-design-fabrication:eda",
+            "semiconductor-design-fabrication:ip",
+            "semiconductor-design-fabrication:pdk"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "设计与验证",
+          "node_ids": [
+            "semiconductor-design-fabrication:spec",
+            "semiconductor-design-fabrication:sim",
+            "semiconductor-design-fabrication:synth",
+            "semiconductor-design-fabrication:place",
+            "semiconductor-design-fabrication:signoff",
+            "semiconductor-design-fabrication:dfm"
+          ]
+        },
+        {
+          "group_id": "g4",
+          "name": "晶圆制造",
+          "node_ids": [
+            "semiconductor-design-fabrication:wafer",
+            "semiconductor-design-fabrication:mask",
+            "semiconductor-design-fabrication:fab",
+            "semiconductor-design-fabrication:foundry",
+            "semiconductor-design-fabrication:dep",
+            "semiconductor-design-fabrication:litho",
+            "semiconductor-design-fabrication:etch",
+            "semiconductor-design-fabrication:implant"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "封装与测试接口",
+          "node_ids": [
+            "semiconductor-design-fabrication:packaged",
+            "semiconductor-design-fabrication:die",
+            "semiconductor-design-fabrication:package"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "产品分支",
+          "node_ids": [
+            "semiconductor-design-fabrication:soc",
+            "semiconductor-design-fabrication:nor",
+            "semiconductor-design-fabrication:nand",
+            "semiconductor-design-fabrication:dram",
+            "semiconductor-design-fabrication:mcu",
+            "semiconductor-design-fabrication:analog",
+            "node_hbm_memory"
+          ]
+        },
+        {
+          "group_id": "g5",
+          "name": "应用接口",
+          "node_ids": [
+            "semiconductor-design-fabrication:auto",
+            "semiconductor-design-fabrication:industry",
+            "semiconductor-design-fabrication:dc"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g3",
+        "g4",
+        "g2",
+        "g1",
+        "g5"
+      ],
+      "relation_ids": [
+        "rel:new20261021:semiconductor-design-fabrication:37d757160ee954a9",
+        "rel:new20261021:semiconductor-design-fabrication:5dad6e2c2dae3f21",
+        "rel:new20261021:semiconductor-design-fabrication:9f1dcf80e547bd15",
+        "rel:new20261021:semiconductor-design-fabrication:a83bbec57ec84e53",
+        "rel:new20261021:semiconductor-design-fabrication:fed24b98b196fe89",
+        "rel:new20261021:semiconductor-design-fabrication:507dd40a51502379",
+        "rel:new20261021:semiconductor-design-fabrication:3a4f9d9d9800e192",
+        "rel:new20261021:semiconductor-design-fabrication:754847bf8ed1a652",
+        "rel:new20261021:semiconductor-design-fabrication:48475b22d7b0739e",
+        "rel:new20261021:semiconductor-design-fabrication:fad81af728414e07",
+        "rel:new20261021:semiconductor-design-fabrication:baace15db6b4cd69",
+        "rel:new20261021:semiconductor-design-fabrication:0754c4491310df93",
+        "rel:new20261021:semiconductor-design-fabrication:8a18d43e17260dae",
+        "rel:new20261021:semiconductor-design-fabrication:42a619f9d4d3a501",
+        "rel:new20261021:semiconductor-design-fabrication:42395792d8d22139",
+        "rel:new20261021:semiconductor-design-fabrication:bfaeaf2b66a98ca2",
+        "rel:new20261021:semiconductor-design-fabrication:5966f0db53cfab40",
+        "rel:new20261021:semiconductor-design-fabrication:b78d3bb4b43b00c8",
+        "rel:new20261021:semiconductor-design-fabrication:227ece50d1fd549d",
+        "rel:new20261021:semiconductor-design-fabrication:e875bc54eaceb841",
+        "rel:new20261021:semiconductor-design-fabrication:d8704bf2b35d7e43",
+        "rel:new20261021:semiconductor-design-fabrication:2f91bb7e901af872",
+        "rel:new20261021:semiconductor-design-fabrication:b93c8d3173a36a98",
+        "rel:new20261021:semiconductor-design-fabrication:97f5f3b9021fe2f3",
+        "rel:new20261021:semiconductor-design-fabrication:7dc7a992f621f8c6",
+        "rel:new20261021:semiconductor-design-fabrication:c76ae2d09a7aa3ea"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "title": "What is Electronic Design Automation",
+      "publisher": "Synopsys",
+      "url": "https://www.synopsys.com/glossary/what-is-electronic-design-automation.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787556+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "60bea1c9589602d4cdce90ac42371d68f5d20ede22423dae4c99859ad1d67d46",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "title": "How microchips are made",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/technology/all-about-microchips/how-microchips-are-made",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787249+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "b8f202b5c5da86f9fefffee7190de6d08afdf0c8885f96906f5186a9e6acd07f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "title": "Six crucial steps in semiconductor manufacturing",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/company/stories/2021/semiconductor-manufacturing-process-steps",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:00.343478+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "86d50aa0c1ffc29d3f5e55cf54cf77becf1fdab1dd0545f49df482175881f120",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:empyrean-about",
+      "source_version": "sha256:089951791b5c6e52305446d8ec33d1793832215101f62c68860989b094820857",
+      "title": "公司简介",
+      "publisher": "北京华大九天科技股份有限公司",
+      "url": "https://www.empyrean.com.cn/company/information.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:00.343107+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "f257700b7d6e4fe0e34252900d7abca699dcfadb0704ce0d762c7bea7cc5ad05",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:empyrean-code",
+      "source_version": "sha256:6ef883ce908d93484e608c4ede7466ed8ef760904d88a83f5109f0087fec06f9",
+      "title": "2026-049公告",
+      "publisher": "北京华大九天科技股份有限公司/巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-10-13/1225604130.PDF",
+      "published_at": "2026-10-13",
+      "retrieved_at": "2026-10-21T14:11:09.969904+00:00",
+      "access": "snapshot",
+      "capture_method": "pdf_text_extraction",
+      "raw_sha256": "162e2e8633c54fb3a6cee4c5bd95a1211ad71bfe67ee2d31098878aac45d0752",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:verisilicon",
+      "source_version": "sha256:ce8552cc19f47ad283947b3a324ff28606143232f6ffb3d25aae7266e3073161",
+      "title": "About VeriSilicon",
+      "publisher": "VeriSilicon",
+      "url": "https://www.verisilicon.com/en/AboutVeriSilicon",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787763+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "51cf93ac1ad6df22795901928cac18629a2ad67cbbb573fd92379460b798bafa",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:gigadevice",
+      "source_version": "sha256:7b28dc4bcf038fa2b10fc02433e90c32d8fd2c3559a88cc7b53447000f0d1260",
+      "title": "Company profile",
+      "publisher": "GigaDevice",
+      "url": "https://www.gigadevice.com/about/company-profile",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787795+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "234fc93b3f415e61482a8e2384de567e80ae2eb4cda4f6c14cacc5f579a7b8b3",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:giga-flash",
+      "source_version": "sha256:39cdf5cf5946d215181eae870a3acd3fd6e1b6895cffbc6728dd023238397237",
+      "title": "闪存产品",
+      "publisher": "兆易创新",
+      "url": "https://www.gigadevice.com.cn/product/flash",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:11:09.969851+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "cbb47274196d4c4a87567c281d49be4c3a627afff8a7a7e5973c34e03f2986f7",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:smic-2024",
+      "source_version": "sha256:67873c5dea938d254abec36c40c8f57af6055d4b88f8f87236e3dd45f4e7e66b",
+      "title": "2024Q2业绩及公司简介",
+      "publisher": "中芯国际集成电路制造有限公司",
+      "url": "https://www.smics.com/site/news_read/3648",
+      "published_at": "2024-08-08",
+      "retrieved_at": "2026-10-21T14:09:00.532242+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "eff512030e8adaf7a7c0320c13ef85acc7fc5c0800ad22253ae18f4dcb395b4e",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:smic-about",
+      "source_version": "sha256:df1b96197780cb9412380606d26e10f06328aa342d4a1f59d240356f3079e3d9",
+      "title": "公司简介",
+      "publisher": "中芯国际集成电路制造有限公司",
+      "url": "https://www.smics.com/site/about_summary",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:11:09.969691+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "a8e509c11e6394f2cc212d3acc2da73fd67875da1c558fb51e24a073bfb579e3",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:micron-products",
+      "source_version": "sha256:175005a11d632640aeb62f865d9534bfaeaa336c0d64346c2c54c90d6e89ce80",
+      "title": "Products",
+      "publisher": "Micron Technology, Inc.",
+      "url": "https://www.micron.com/products",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:11:09.969449+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "573aaaa9a648d317faec067a0550c5059d919722b1fec92510345237f21bd023",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "src_notebook_tsmc_cowos",
+      "title": "CoWoS® - Taiwan Semiconductor Manufacturing Company Limited",
+      "publisher": "Taiwan Semiconductor Manufacturing Company Limited",
+      "url": "https://3dfabric.tsmc.com/english/dedicatedFoundry/technology/cowos.htm",
+      "local_document_id": "local-document-sha256:c733081241afe95edc605e89a4efc47d7ba7fd73972af9a7a212d189162fc48a",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T18:37:06.188802+00:00",
+      "source_version": "sha256:cb1d83b34a470ee8da57cd0bf23dd042a23601b58a25d559968fbfb2977371b8",
+      "origin": "source_import",
+      "source_capture_pending": false,
+      "snapshot_representation": "notebook_imported_original_text",
+      "upstream_provider": "Gemini Notebook source import",
+      "excluded_sections": [
+        "AI source guide",
+        "Notebook chat",
+        "Studio artifacts"
+      ],
+      "original_publisher_binary_obtained": false,
+      "original_publisher_verification": "not independently captured; use the explicit imported rendition identity",
+      "access": "local_document",
+      "capture_access_note": "source body read in Notebook; frozen UTF-8 text snapshot; not publisher HTML/PDF bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "src_notebook_micron",
+      "title": "High-bandwidth memory (HBM) | Micron Technology Inc.",
+      "publisher": "Micron Technology, Inc.",
+      "url": null,
+      "local_document_id": "local-document-sha256:a8d36eeb373f015e048b44b9a12112324e466cffff43eb24eb91ac9ff63243d7",
+      "published_at": null,
+      "retrieved_at": "2026-10-20T18:35:55.803991+00:00",
+      "source_version": "sha256:319635508c4cbda330b9f977afdf5f1bce45621c182c0ee657f41c07e0b2299a",
+      "origin": "source_import",
+      "source_capture_pending": false,
+      "snapshot_representation": "notebook_imported_original_text",
+      "upstream_provider": "Gemini Notebook source import",
+      "excluded_sections": [
+        "AI source guide",
+        "Notebook chat",
+        "Studio artifacts"
+      ],
+      "original_publisher_binary_obtained": false,
+      "original_publisher_verification": "not independently captured; use the explicit imported rendition identity",
+      "access": "local_document",
+      "capture_access_note": "source body read in Notebook; frozen UTF-8 text snapshot; not publisher HTML/PDF bytes",
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:4e679ecdbd30",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "EDA",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:1"
+      },
+      "summary": "EDA通过相互关联的设计、验证和制造准备步骤辅助芯片开发。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:fdf1d1504e34",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "System-on-a-chip (SoC)",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:192"
+      },
+      "summary": "SoC架构通过处理器、存储、I/O等高层结构表达方案，不等于具体晶圆工艺。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:a46e191e3303",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Specification and Design Entry",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:193"
+      },
+      "summary": "本节说明以HDL等表达设计规格。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:b372e180b290",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Design Simulation",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:195"
+      },
+      "summary": "制造前验证功能与设计行为。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:f0c18c9e0d52",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Logic Synthesis",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:197"
+      },
+      "summary": "将高层描述转换为门级表示。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:7814dc2b495f",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Digital Place and Route",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:199"
+      },
+      "summary": "实现逻辑门的放置及金属互连布线。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:1e2e54f78046",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Verification and Validation",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:203"
+      },
+      "summary": "验证功能及物理实现，包含时序、功耗与LVS等检查。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:synopsys-eda:7a7052c59773",
+      "revision": 1,
+      "source_id": "codex-20261021:synopsys-eda",
+      "source_version": "sha256:6f3c8fdcabae46bf8446b72f23eaa725e5a45cf674b1a9f6026205bd64be850d",
+      "excerpt": "Design for Manufacturing",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/synopsys-eda.txt:207"
+      },
+      "summary": "制造约束与设计可制造性协同；不据此声称某设计已流片。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-process:fce7dc32ef26",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "excerpt": "fabless semiconductor company",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-process.txt:116"
+      },
+      "summary": "正文区分无晶圆厂设计、代工和IDM；不将它们建成物理产品节点。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-process:2ae03e6a0ccd",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "excerpt": "silicon wafer",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-process.txt:103"
+      },
+      "summary": "芯片在硅晶圆上形成多层互连图形。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-process:1ccd7324ab34",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "excerpt": "TSMC, GLOBALFOUNDRIES and UMC",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-process.txt:116"
+      },
+      "summary": "正文将这些企业列为承接他方芯片制造的foundry示例。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-six:1f8825e38afd",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "excerpt": "deposition, photoresist, lithography, etch, ionization and packaging",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-six.txt:106"
+      },
+      "summary": "原文六个重要步骤是工艺解释，不是全流程完整列表。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-six:de36fc12e892",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "excerpt": "reticle",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-six.txt:117"
+      },
+      "summary": "光刻掩模承载图形蓝图。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-six:4512efbecf73",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "excerpt": "sliced and diced",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-six.txt:128"
+      },
+      "summary": "晶圆切割取得裸片，后续置于基板进行封装。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:empyrean-about:1c056d4276cf",
+      "revision": 1,
+      "source_id": "codex-20261021:empyrean-about",
+      "source_version": "sha256:089951791b5c6e52305446d8ec33d1793832215101f62c68860989b094820857",
+      "excerpt": "一直聚焦于EDA工具的开发、销售及相关服务业务",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/empyrean-about.txt:60"
+      },
+      "summary": "华大九天提供EDA软件与相关技术服务。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:empyrean-about:0478b6253815",
+      "revision": 1,
+      "source_id": "codex-20261021:empyrean-about",
+      "source_version": "sha256:089951791b5c6e52305446d8ec33d1793832215101f62c68860989b094820857",
+      "excerpt": "PDK开发",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/empyrean-about.txt:30"
+      },
+      "summary": "官网列出晶圆制造工程服务，含PDK开发；不等于晶圆制造代工。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:empyrean-code:820cc25a561d",
+      "revision": 1,
+      "source_id": "codex-20261021:empyrean-code",
+      "source_version": "sha256:6ef883ce908d93484e608c4ede7466ed8ef760904d88a83f5109f0087fec06f9",
+      "excerpt": "证券代码：301269",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/empyrean-code.txt:2"
+      },
+      "summary": "2026年10月13日公司公告首页确认证券代码与发行人。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:verisilicon:9a7a941486af",
+      "revision": 1,
+      "source_id": "codex-20261021:verisilicon",
+      "source_version": "sha256:ce8552cc19f47ad283947b3a324ff28606143232f6ffb3d25aae7266e3073161",
+      "excerpt": "provides custom silicon solutions, leveraging its comprehensive and proprietary portfolio of semiconductor IPs.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/verisilicon.txt:31"
+      },
+      "summary": "芯原官网介绍定制芯片解决方案及专有半导体IP组合。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:verisilicon:65514248bdd3",
+      "revision": 1,
+      "source_id": "codex-20261021:verisilicon",
+      "source_version": "sha256:ce8552cc19f47ad283947b3a324ff28606143232f6ffb3d25aae7266e3073161",
+      "excerpt": "custom silicon solutions",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/verisilicon.txt:31"
+      },
+      "summary": "芯原官网提供定制芯片解决方案，使用其IP组合。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:verisilicon:6682b44f0ac4",
+      "revision": 1,
+      "source_id": "codex-20261021:verisilicon",
+      "source_version": "sha256:ce8552cc19f47ad283947b3a324ff28606143232f6ffb3d25aae7266e3073161",
+      "excerpt": "688521.SH",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/verisilicon.txt:10"
+      },
+      "summary": "芯原官网主体简介明确A股代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:gigadevice:21f516732f91",
+      "revision": 1,
+      "source_id": "codex-20261021:gigadevice",
+      "source_version": "sha256:7b28dc4bcf038fa2b10fc02433e90c32d8fd2c3559a88cc7b53447000f0d1260",
+      "excerpt": "leading global fabless supplier dedicated to developing advanced memory technologies, microcontrollers (MCUs), sensor, analog products and solutions.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/gigadevice.txt:223"
+      },
+      "summary": "兆易创新为无晶圆厂供应商，产品含存储、MCU、传感与模拟。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:gigadevice:ef82fc7fc3d5",
+      "revision": 1,
+      "source_id": "codex-20261021:gigadevice",
+      "source_version": "sha256:7b28dc4bcf038fa2b10fc02433e90c32d8fd2c3559a88cc7b53447000f0d1260",
+      "excerpt": "SSE Stock Code 603986",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/gigadevice.txt:223"
+      },
+      "summary": "官网公司简介对应发行人证券代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:giga-flash:627bc0f7c081",
+      "revision": 1,
+      "source_id": "codex-20261021:giga-flash",
+      "source_version": "sha256:39cdf5cf5946d215181eae870a3acd3fd6e1b6895cffbc6728dd023238397237",
+      "excerpt": "SPI NOR Flash、SPI NAND Flash和Parallel NAND Flash",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/giga-flash.txt:230"
+      },
+      "summary": "官方Flash产品页说明NOR与NAND是不同产品分支。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:giga-flash:41235f3aa694",
+      "revision": 1,
+      "source_id": "codex-20261021:giga-flash",
+      "source_version": "sha256:39cdf5cf5946d215181eae870a3acd3fd6e1b6895cffbc6728dd023238397237",
+      "excerpt": "消费电子、工业控制、汽车电子、边缘AI、数据中心",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/giga-flash.txt:230"
+      },
+      "summary": "官方列明应用范围；不是全部芯片或所有型号的通用配置。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:smic-2024:a3309280ab9c",
+      "revision": 1,
+      "source_id": "codex-20261021:smic-2024",
+      "source_version": "sha256:67873c5dea938d254abec36c40c8f57af6055d4b88f8f87236e3dd45f4e7e66b",
+      "excerpt": "中芯国际集成电路制造有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/smic-2024.txt:228"
+      },
+      "summary": "2024年8月8日发行人公告中的完整公司名称，仅用于主体身份；本轮不采用旧期财务数据。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:smic-about:abc13e098ebc",
+      "revision": 1,
+      "source_id": "codex-20261021:smic-about",
+      "source_version": "sha256:df1b96197780cb9412380606d26e10f06328aa342d4a1f59d240356f3079e3d9",
+      "excerpt": "00981.HK/688981.SH",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/smic-about.txt:229"
+      },
+      "summary": "中芯国际官网说明A/H身份及8、12英寸晶圆代工与技术服务；不外推最新制程。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:micron-products:724a216ab365",
+      "revision": 1,
+      "source_id": "codex-20261021:micron-products",
+      "source_version": "sha256:175005a11d632640aeb62f865d9534bfaeaa336c0d64346c2c54c90d6e89ce80",
+      "excerpt": "DRAM components",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/micron-products.txt:52"
+      },
+      "summary": "美光官网分别列示DRAM、HBM与NAND等产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:micron-products:ca08cefeb148",
+      "revision": 1,
+      "source_id": "codex-20261021:micron-products",
+      "source_version": "sha256:175005a11d632640aeb62f865d9534bfaeaa336c0d64346c2c54c90d6e89ce80",
+      "excerpt": "NAND flash",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/micron-products.txt:64"
+      },
+      "summary": "NAND与DRAM为不同内存/存储产品分支。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:micron-products:7516f5bc0fa5",
+      "revision": 1,
+      "source_id": "codex-20261021:micron-products",
+      "source_version": "sha256:175005a11d632640aeb62f865d9534bfaeaa336c0d64346c2c54c90d6e89ce80",
+      "excerpt": "high-bandwidth memory products",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/micron-products.txt:247"
+      },
+      "summary": "美光HBM面向AI与高性能计算。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev_tsmc_identity",
+      "source_id": "src_notebook_tsmc_cowos",
+      "source_version": "sha256:cb1d83b34a470ee8da57cd0bf23dd042a23601b58a25d559968fbfb2977371b8",
+      "excerpt": "Taiwan Semiconductor Manufacturing Company Limited",
+      "locator": "Imported original text; line 1; Copyright footer",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "evidence_id": "ev_micron_identity",
+      "source_id": "src_notebook_micron",
+      "source_version": "sha256:319635508c4cbda330b9f977afdf5f1bce45621c182c0ee657f41c07e0b2299a",
+      "excerpt": "Micron Technology, Inc.",
+      "locator": "Imported original text; line 120; Copyright footer",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-six:a9aee700ae26",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "excerpt": "The chip die is then placed onto a 'substrate'.",
+      "summary": "原文在晶圆切割后说明将裸片置于基板的封装接口；不泛化全部封装路线。",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-six.txt:129"
+      },
+      "context_note": "短摘录定位原文段落；summary为Codex释义。"
+    },
+    {
+      "evidence_id": "ev:new20261021:smic-about:e6f8a2b5b552",
+      "revision": 1,
+      "source_id": "codex-20261021:smic-about",
+      "source_version": "sha256:df1b96197780cb9412380606d26e10f06328aa342d4a1f59d240356f3079e3d9",
+      "excerpt": "向全球客户提供8英寸和12英寸晶圆代工与技术服务。",
+      "summary": "公司当前官网明确服务对象和晶圆尺寸，证券代码仍由单独摘录支持。",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/smic-about.txt:229"
+      },
+      "context_note": "短摘录定位原文段落；summary为Codex释义。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false,
+      "refinement": "补充可读的完整功能摘录；保留v1不可变包，仅增加必要对象修订。"
+    },
+    "shared_interfaces": [
+      {
+        "node_id": "node_hbm_memory",
+        "with_industry": "ai-compute",
+        "semantics": "复用现有精确节点修订；不扩展原节点限定范围"
+      }
+    ],
+    "unresolved_candidates": []
+  }
+}

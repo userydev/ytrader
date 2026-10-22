@@ -1,0 +1,2644 @@
+{
+  "schema_version": "curated-chain-proposal-0.2",
+  "industry": {
+    "industry_id": "semiconductor-equipment",
+    "revision": 1,
+    "name": "半导体设备",
+    "need": "为晶圆器件加工、工艺控制及相关封装提供精密设备与服务。",
+    "boundary": "重点覆盖前道工艺设备、量测检测与服务；先进封装设备只作连接接口，电子材料和工厂公辅系统不在本包展开。",
+    "aliases": [],
+    "graph_status": "draft",
+    "current_release": null,
+    "gaps": [
+      "尚未覆盖涂胶显影、清洗、离子注入、量测检测等全部A股主体及关键零部件公司；不以产品菜单推断细分型号能力。",
+      "设备类别不代表能覆盖全部工艺节点、材料与尺寸；国产化率、验证进展、装机量与客户采购另需当期证据。",
+      "射频电源、真空阀泵、反应腔、流量控制及耗材未逐层补足，不制造特定供应商边。",
+      "混合键合、MOCVD与硅基逻辑前道的适用范围分别限定；不把泛半导体设备等同于先进逻辑设备。"
+    ],
+    "coverage_note": "Codex直接核对原文的首批新增研究稿。覆盖主要功能模块与公司样本；不是全市场穷举、投资建议或正式发布。",
+    "coverage_matrix": [
+      {
+        "module": "加工对象",
+        "node_ids": [
+          "semiconductor-equipment:wafer"
+        ]
+      },
+      {
+        "module": "图形与工艺设备",
+        "node_ids": [
+          "semiconductor-equipment:duv",
+          "semiconductor-equipment:euv",
+          "semiconductor-equipment:pvd",
+          "semiconductor-equipment:cvd",
+          "semiconductor-equipment:ald",
+          "semiconductor-equipment:epi",
+          "semiconductor-equipment:mocvd",
+          "semiconductor-equipment:etch",
+          "semiconductor-equipment:cmp",
+          "semiconductor-equipment:ion",
+          "semiconductor-equipment:thermal"
+        ]
+      },
+      {
+        "module": "工艺控制与服务",
+        "node_ids": [
+          "semiconductor-equipment:metrology",
+          "semiconductor-equipment:inspection",
+          "semiconductor-equipment:computational",
+          "semiconductor-equipment:support"
+        ]
+      },
+      {
+        "module": "设备作用的工艺",
+        "node_ids": [
+          "semiconductor-equipment:dep_act",
+          "semiconductor-equipment:litho_act",
+          "semiconductor-equipment:etch_act",
+          "semiconductor-equipment:cmp_act",
+          "semiconductor-equipment:ion_act",
+          "semiconductor-equipment:thermal_act",
+          "semiconductor-equipment:control_act"
+        ]
+      },
+      {
+        "module": "跨链接口",
+        "node_ids": [
+          "semiconductor-equipment:fab",
+          "semiconductor-equipment:hybrid",
+          "semiconductor-equipment:pack"
+        ]
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "node_id": "semiconductor-equipment:wafer",
+      "name": "晶圆与衬底接口",
+      "kind": "product",
+      "description": "被工艺设备处理的晶圆/衬底，材料制作单独研究。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:e34c70432f28",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:duv",
+      "name": "DUV光刻系统",
+      "kind": "product",
+      "description": "深紫外光刻系统类别，干式和浸没式的适用范围不同。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:euv",
+      "name": "EUV光刻系统",
+      "kind": "product",
+      "description": "极紫外光刻系统类别；不从设备类别推断某工厂可取得设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:6a5b5cbe5b86",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:pvd",
+      "name": "PVD沉积设备",
+      "kind": "product",
+      "description": "物理气相沉积设备，包含溅射成膜方式。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-pvd:c510612d5c49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:cvd",
+      "name": "CVD沉积设备",
+      "kind": "product",
+      "description": "化学气相沉积设备类别，工艺变体需分别核查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:65e0e5ce7334",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:ald",
+      "name": "ALD沉积设备",
+      "kind": "product",
+      "description": "原子层沉积设备类别，材料/反应体系由型号限定。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:86ffe14ce429",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:epi",
+      "name": "外延设备",
+      "kind": "product",
+      "description": "用于外延生长的工艺设备类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:mocvd",
+      "name": "MOCVD设备",
+      "kind": "product",
+      "description": "金属有机化学气相沉积设备；化合物半导体适用范围不直接外推硅逻辑。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:f8eeb88dab49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:etch",
+      "name": "等离子体刻蚀设备",
+      "kind": "product",
+      "description": "利用等离子体等方式去除材料的刻蚀设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:41e0e6b9e2bc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:cmp",
+      "name": "CMP设备",
+      "kind": "product",
+      "description": "化学机械平坦化设备接口，本稿不细分耗材。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:ion",
+      "name": "离子注入设备",
+      "kind": "product",
+      "description": "进行离子注入以改变材料电学性质的设备。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:thermal",
+      "name": "热处理设备",
+      "kind": "product",
+      "description": "工艺热处理设备；温度、气氛和材料范围按型号。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:metrology",
+      "name": "量测设备",
+      "kind": "product",
+      "description": "用于图形与工艺参数量测；不是所有设备测量同一参数。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:inspection",
+      "name": "缺陷检测设备",
+      "kind": "product",
+      "description": "用于器件或图形缺陷检查的设备类别。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:c3e2a2dcb202",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:computational",
+      "name": "计算光刻软件",
+      "kind": "product",
+      "description": "为图形实现与光刻控制提供计算方法的软件。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:988d786632e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:support",
+      "name": "装机使用与客户支持服务",
+      "kind": "service",
+      "description": "设备生命周期的客户支持接口，不据此量化服务收入。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:15e16479075e",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:dep_act",
+      "name": "薄膜沉积工艺",
+      "kind": "activity",
+      "description": "将材料沉积到衬底形成目标薄膜。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-pvd:c510612d5c49",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:litho_act",
+      "name": "光刻工艺",
+      "kind": "activity",
+      "description": "在晶圆上转移图形。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:etch_act",
+      "name": "刻蚀工艺",
+      "kind": "activity",
+      "description": "选择性移除材料并形成器件图形。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:41e0e6b9e2bc",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:cmp_act",
+      "name": "平坦化工艺",
+      "kind": "activity",
+      "description": "对器件制造层的表面进行平坦化处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:ion_act",
+      "name": "离子注入工艺",
+      "kind": "activity",
+      "description": "对适用器件区域进行掺杂。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:thermal_act",
+      "name": "工艺热处理",
+      "kind": "activity",
+      "description": "以受控热处理改变材料或工艺状态。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:control_act",
+      "name": "量测检测与工艺控制",
+      "kind": "activity",
+      "description": "通过量测或缺陷检查支持工艺控制，不从检测推出良率。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:c3e2a2dcb202",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:fab",
+      "name": "集成电路晶圆制造接口",
+      "kind": "activity",
+      "description": "前道设备所服务的制造接口，非整座晶圆厂能力宣称。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "supports"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-process:e34c70432f28",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:hybrid",
+      "name": "三维集成混合键合设备",
+      "kind": "product",
+      "description": "W2W/D2W混合键合设备，适用路线须独立核查。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:3c51a9acb5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "node_id": "semiconductor-equipment:pack",
+      "name": "三维集成与先进封装接口",
+      "kind": "activity",
+      "description": "本稿仅覆盖拓荆官网所述三维集成接口，不等同于全部封装。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:3c51a9acb5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "memberships": [
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:wafer",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:duv",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:euv",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:pvd",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:cvd",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:ald",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:epi",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:mocvd",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:etch",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:cmp",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:ion",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:thermal",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:metrology",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:inspection",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:computational",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:support",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:dep_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:litho_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:etch_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:cmp_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:ion_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:thermal_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:control_act",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:fab",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:hybrid",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    },
+    {
+      "industry_id": "semiconductor-equipment",
+      "node_id": "semiconductor-equipment:pack",
+      "revision": 1,
+      "context_note": "在本链视图中采用此精确节点；应用、技术和主体范围由节点与角色分别限定。"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:cf466ca3b302ebd3",
+      "from_node_id": "semiconductor-equipment:duv",
+      "to_node_id": "semiconductor-equipment:litho_act",
+      "kind": "used_for",
+      "statement": "DUV设备用于光刻。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:a45b4411550f766a",
+      "from_node_id": "semiconductor-equipment:euv",
+      "to_node_id": "semiconductor-equipment:litho_act",
+      "kind": "used_for",
+      "statement": "EUV设备用于适用层的光刻。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:6a5b5cbe5b86",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:3a9eb68a53cf99b2",
+      "from_node_id": "semiconductor-equipment:pvd",
+      "to_node_id": "semiconductor-equipment:dep_act",
+      "kind": "used_for",
+      "statement": "PVD设备进行薄膜沉积。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-pvd:c510612d5c49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:1a6ef8740532aa4d",
+      "from_node_id": "semiconductor-equipment:cvd",
+      "to_node_id": "semiconductor-equipment:dep_act",
+      "kind": "used_for",
+      "statement": "CVD设备用于薄膜沉积。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:65e0e5ce7334",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:94c5fc3c7ade8dee",
+      "from_node_id": "semiconductor-equipment:ald",
+      "to_node_id": "semiconductor-equipment:dep_act",
+      "kind": "used_for",
+      "statement": "ALD设备用于原子层沉积。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:86ffe14ce429",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:6b6ff6524dd0400b",
+      "from_node_id": "semiconductor-equipment:mocvd",
+      "to_node_id": "semiconductor-equipment:dep_act",
+      "kind": "used_for",
+      "statement": "MOCVD在适用基板上生长半导体薄膜。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:f8eeb88dab49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:8036dead7a9b4ed0",
+      "from_node_id": "semiconductor-equipment:epi",
+      "to_node_id": "semiconductor-equipment:dep_act",
+      "kind": "used_for",
+      "statement": "结构推断：外延类别在材料生长中纳入沉积接口。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:22b62102ec4559fd",
+      "from_node_id": "semiconductor-equipment:etch",
+      "to_node_id": "semiconductor-equipment:etch_act",
+      "kind": "used_for",
+      "statement": "中微刻蚀设备用于晶圆微观结构加工。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:41e0e6b9e2bc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:4ab82702b1aef511",
+      "from_node_id": "semiconductor-equipment:cmp",
+      "to_node_id": "semiconductor-equipment:cmp_act",
+      "kind": "used_for",
+      "statement": "CMP设备对应平坦化工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:6d6c77a3fdfa2ab3",
+      "from_node_id": "semiconductor-equipment:ion",
+      "to_node_id": "semiconductor-equipment:ion_act",
+      "kind": "used_for",
+      "statement": "离子注入设备对应注入工艺。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:ef9499794f749375",
+      "from_node_id": "semiconductor-equipment:thermal",
+      "to_node_id": "semiconductor-equipment:thermal_act",
+      "kind": "used_for",
+      "statement": "热处理设备对应工艺热处理。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:0e04e2e2c3ba8805",
+      "from_node_id": "semiconductor-equipment:metrology",
+      "to_node_id": "semiconductor-equipment:control_act",
+      "kind": "used_for",
+      "statement": "量测设备用于工艺参数控制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:e53c8c09f47a56de",
+      "from_node_id": "semiconductor-equipment:inspection",
+      "to_node_id": "semiconductor-equipment:control_act",
+      "kind": "used_for",
+      "statement": "缺陷检测用于工艺控制。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:c3e2a2dcb202",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:81903096b0861561",
+      "from_node_id": "semiconductor-equipment:computational",
+      "to_node_id": "semiconductor-equipment:litho_act",
+      "kind": "supports",
+      "statement": "计算光刻支持图形实现。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:988d786632e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:d41f4870a6178fed",
+      "from_node_id": "semiconductor-equipment:support",
+      "to_node_id": "semiconductor-equipment:duv",
+      "kind": "supports",
+      "statement": "结构推断：客户支持服务覆盖相关设备使用。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:15e16479075e",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:c061113be52ebad3",
+      "from_node_id": "semiconductor-equipment:hybrid",
+      "to_node_id": "semiconductor-equipment:pack",
+      "kind": "used_for",
+      "statement": "W2W/D2W混合键合用于相关三维集成。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:3c51a9acb5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:4af206fcb81dabac",
+      "from_node_id": "semiconductor-equipment:wafer",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "input_to",
+      "statement": "晶圆作为器件制造加工对象。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-process:e34c70432f28",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "claim_basis": "source_assertion",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "典型功能/工艺接口。技术路线、工艺代际与厂商配置存在差异；不是特定公司供货、订单、兼容性或必然因果关系。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:94214e608d70af97",
+      "from_node_id": "semiconductor-equipment:dep_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将薄膜沉积工艺纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:862ab9ddf748d670",
+      "from_node_id": "semiconductor-equipment:litho_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将光刻工艺纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:51063f3da0f79172",
+      "from_node_id": "semiconductor-equipment:etch_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将刻蚀工艺纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:efbe90eb5b03644c",
+      "from_node_id": "semiconductor-equipment:cmp_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将平坦化工艺纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:35cf01f859d6a2db",
+      "from_node_id": "semiconductor-equipment:ion_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将离子注入工艺纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:c06f5f2365a09e3b",
+      "from_node_id": "semiconductor-equipment:thermal_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将工艺热处理纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "relation_id": "rel:new20261021:semiconductor-equipment:76409624358c8709",
+      "from_node_id": "semiconductor-equipment:control_act",
+      "to_node_id": "semiconductor-equipment:fab",
+      "kind": "part_of",
+      "statement": "结构推断：将量测检测与工艺控制纳入晶圆制造工艺视图。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "context"
+        },
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "context"
+        }
+      ],
+      "claim_basis": "editorial_model",
+      "applicability": {
+        "coverage": "bounded",
+        "note": "编辑建模的工艺集合；工艺按器件/材料/制程多次循环，不表示每种芯片都执行同样步骤。"
+      },
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "companies": [
+    {
+      "company_id": "company_asml",
+      "name": "ASML",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_applied_materials",
+      "name": "Applied Materials, Inc.",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:f51ebaf65997",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_naura",
+      "name": "北方华创科技集团股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-about:66f47f8ff0f9",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_amec",
+      "name": "中微半导体设备（上海）股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:c3eec3411a55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "company_id": "company_piotech",
+      "name": "拓荆科技股份有限公司",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:d0418f80fc65",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "identity_note": "主体与证券单独核对。官网集团/合并产品口径不等于上市母法人直接生产全部产品。",
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "securities": [
+    {
+      "symbol": "SZ:002371",
+      "company_id": "company_naura",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-stock:4433ae11876b",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:688012",
+      "company_id": "company_amec",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:c3eec3411a55",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "symbol": "SH:688072",
+      "company_id": "company_piotech",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-stock:6b4fe0c25372",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "participations": [
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:0d1c9ff4da73f2c3",
+      "company_id": "company_asml",
+      "node_id": "semiconductor-equipment:duv",
+      "role": "DUV光刻系统供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:aa4d326e73f9ef1e",
+      "company_id": "company_asml",
+      "node_id": "semiconductor-equipment:euv",
+      "role": "EUV光刻系统供应",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:6a5b5cbe5b86",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:2911ff198cb83c0c",
+      "company_id": "company_asml",
+      "node_id": "semiconductor-equipment:metrology",
+      "role": "量测检测产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:de362bd852651c56",
+      "company_id": "company_asml",
+      "node_id": "semiconductor-equipment:computational",
+      "role": "计算光刻产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:988d786632e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:2f00c70098fca270",
+      "company_id": "company_asml",
+      "node_id": "semiconductor-equipment:support",
+      "role": "设备客户支持",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:asml-products:15e16479075e",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:b2f2df6814570ee1",
+      "company_id": "company_applied_materials",
+      "node_id": "semiconductor-equipment:ald",
+      "role": "ALD设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:4e9cfe88779db77e",
+      "company_id": "company_applied_materials",
+      "node_id": "semiconductor-equipment:epi",
+      "role": "外延设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:e3855be10d6858ac",
+      "company_id": "company_applied_materials",
+      "node_id": "semiconductor-equipment:cmp",
+      "role": "CMP设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:0d4a98a61c567972",
+      "company_id": "company_applied_materials",
+      "node_id": "semiconductor-equipment:ion",
+      "role": "离子注入设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:1f5d5b755319130b",
+      "company_id": "company_applied_materials",
+      "node_id": "semiconductor-equipment:thermal",
+      "role": "热处理设备类别",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:applied-products:974082c45244",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:bd85c1596f68dbd3",
+      "company_id": "company_naura",
+      "node_id": "semiconductor-equipment:pvd",
+      "role": "PVD设备产品",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:naura-pvd:c510612d5c49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:19cb2c5f576d6b90",
+      "company_id": "company_amec",
+      "node_id": "semiconductor-equipment:etch",
+      "role": "干法/等离子体刻蚀设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:41e0e6b9e2bc",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:38f8581c10aacd87",
+      "company_id": "company_amec",
+      "node_id": "semiconductor-equipment:mocvd",
+      "role": "MOCVD设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:amec:f8eeb88dab49",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:2435100f0a950adf",
+      "company_id": "company_piotech",
+      "node_id": "semiconductor-equipment:cvd",
+      "role": "PECVD等CVD设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:65e0e5ce7334",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:2ff76d22ab7e7bbe",
+      "company_id": "company_piotech",
+      "node_id": "semiconductor-equipment:ald",
+      "role": "ALD设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:86ffe14ce429",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    },
+    {
+      "participation_id": "role:new20261021:semiconductor-equipment:9d647498ed52a277",
+      "company_id": "company_piotech",
+      "node_id": "semiconductor-equipment:hybrid",
+      "role": "混合键合与三维集成设备",
+      "scope": "本次保存的官网产品/合并业务范围；不是上市母法人独占能力、某型号客户关系、订单、收入占比或市场份额。",
+      "evidence_refs": [
+        {
+          "evidence_id": "ev:new20261021:piotech-about:3c51a9acb5e8",
+          "revision": 1,
+          "stance": "supports"
+        }
+      ],
+      "revision": 1,
+      "origin": "ai",
+      "review_status": "draft",
+      "reviewed_at": null,
+      "reviewed_by": null,
+      "lifecycle": "active",
+      "valid_from": null,
+      "valid_to": null
+    }
+  ],
+  "views": [
+    {
+      "view_id": "view:semiconductor-equipment:codex-research-v1",
+      "industry_id": "semiconductor-equipment",
+      "revision": 1,
+      "groups": [
+        {
+          "group_id": "g0",
+          "name": "加工对象",
+          "node_ids": [
+            "semiconductor-equipment:wafer"
+          ]
+        },
+        {
+          "group_id": "g1",
+          "name": "图形与工艺设备",
+          "node_ids": [
+            "semiconductor-equipment:duv",
+            "semiconductor-equipment:euv",
+            "semiconductor-equipment:pvd",
+            "semiconductor-equipment:cvd",
+            "semiconductor-equipment:ald",
+            "semiconductor-equipment:epi",
+            "semiconductor-equipment:mocvd",
+            "semiconductor-equipment:etch",
+            "semiconductor-equipment:cmp",
+            "semiconductor-equipment:ion",
+            "semiconductor-equipment:thermal"
+          ]
+        },
+        {
+          "group_id": "g2",
+          "name": "工艺控制与服务",
+          "node_ids": [
+            "semiconductor-equipment:metrology",
+            "semiconductor-equipment:inspection",
+            "semiconductor-equipment:computational",
+            "semiconductor-equipment:support"
+          ]
+        },
+        {
+          "group_id": "g3",
+          "name": "设备作用的工艺",
+          "node_ids": [
+            "semiconductor-equipment:dep_act",
+            "semiconductor-equipment:litho_act",
+            "semiconductor-equipment:etch_act",
+            "semiconductor-equipment:cmp_act",
+            "semiconductor-equipment:ion_act",
+            "semiconductor-equipment:thermal_act",
+            "semiconductor-equipment:control_act"
+          ]
+        },
+        {
+          "group_id": "g4",
+          "name": "跨链接口",
+          "node_ids": [
+            "semiconductor-equipment:fab",
+            "semiconductor-equipment:hybrid",
+            "semiconductor-equipment:pack"
+          ]
+        }
+      ],
+      "reading_order": [
+        "g0",
+        "g1",
+        "g2",
+        "g3",
+        "g4"
+      ],
+      "relation_ids": [
+        "rel:new20261021:semiconductor-equipment:cf466ca3b302ebd3",
+        "rel:new20261021:semiconductor-equipment:a45b4411550f766a",
+        "rel:new20261021:semiconductor-equipment:3a9eb68a53cf99b2",
+        "rel:new20261021:semiconductor-equipment:1a6ef8740532aa4d",
+        "rel:new20261021:semiconductor-equipment:94c5fc3c7ade8dee",
+        "rel:new20261021:semiconductor-equipment:6b6ff6524dd0400b",
+        "rel:new20261021:semiconductor-equipment:8036dead7a9b4ed0",
+        "rel:new20261021:semiconductor-equipment:22b62102ec4559fd",
+        "rel:new20261021:semiconductor-equipment:4ab82702b1aef511",
+        "rel:new20261021:semiconductor-equipment:6d6c77a3fdfa2ab3",
+        "rel:new20261021:semiconductor-equipment:ef9499794f749375",
+        "rel:new20261021:semiconductor-equipment:0e04e2e2c3ba8805",
+        "rel:new20261021:semiconductor-equipment:e53c8c09f47a56de",
+        "rel:new20261021:semiconductor-equipment:81903096b0861561",
+        "rel:new20261021:semiconductor-equipment:d41f4870a6178fed",
+        "rel:new20261021:semiconductor-equipment:c061113be52ebad3",
+        "rel:new20261021:semiconductor-equipment:4af206fcb81dabac",
+        "rel:new20261021:semiconductor-equipment:94214e608d70af97",
+        "rel:new20261021:semiconductor-equipment:862ab9ddf748d670",
+        "rel:new20261021:semiconductor-equipment:51063f3da0f79172",
+        "rel:new20261021:semiconductor-equipment:efbe90eb5b03644c",
+        "rel:new20261021:semiconductor-equipment:35cf01f859d6a2db",
+        "rel:new20261021:semiconductor-equipment:c06f5f2365a09e3b",
+        "rel:new20261021:semiconductor-equipment:76409624358c8709"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "title": "Semiconductor Products",
+      "publisher": "Applied Materials",
+      "url": "https://www.appliedmaterials.com/us/en/semiconductor/products.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:26.276972+00:00",
+      "access": "snapshot",
+      "capture_method": "web_tool_extraction",
+      "raw_sha256": null,
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "title": "Products",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/products",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787512+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "b558482ee2211dba2cb3cdd103117eea6a75fc0f41e8d847fba7973abd4d0fb7",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "title": "Six crucial steps in semiconductor manufacturing",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/company/stories/2021/semiconductor-manufacturing-process-steps",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:00.343478+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "86d50aa0c1ffc29d3f5e55cf54cf77becf1fdab1dd0545f49df482175881f120",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "title": "How microchips are made",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/technology/all-about-microchips/how-microchips-are-made",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:28.787249+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "b8f202b5c5da86f9fefffee7190de6d08afdf0c8885f96906f5186a9e6acd07f",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:naura-about",
+      "source_version": "sha256:e1298995f03c0e4056621b538eb50bef91d0e28a98085b3d77fab9b917be5d88",
+      "title": "了解华创",
+      "publisher": "北方华创",
+      "url": "https://www-a.naura.com/about/index.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:29.365114+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "35647139f8a8153ec707f98854353d36c62f2588e3a4f8845d5eb7190185113e",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:naura-stock",
+      "source_version": "sha256:414994de993bafb13eefed42f0bf1fb25f5f19572bc38e690f6f5e77846e19b3",
+      "title": "股票信息",
+      "publisher": "北方华创",
+      "url": "https://www.naura.com/investor/shares.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:30.288628+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "68217db6e905d19cf56e30762b0dbe4ec0a98ce405e343bc2098d3104191e3f7",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:naura-pvd",
+      "source_version": "sha256:1bd088f100b7f0699c842e1724c2d67fa6b76935d278540cb1c0cf9d3ee4d230",
+      "title": "物理气相沉积设备",
+      "publisher": "北方华创",
+      "url": "https://www.naura.com/product/details_82_1587.html",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:30.618759+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "ab947eac470da7bf399797e407aa5fc232153c190382cf1e682fe1f9159ddfe0",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:amec",
+      "source_version": "sha256:be623d2ba862eb84d4bd30ed403f092c1cd69033556ba19315fb42e603191e18",
+      "title": "中微公司官网",
+      "publisher": "中微半导体设备（上海）股份有限公司",
+      "url": "https://www.amec-inc.com/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:07:31.525613+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "4a69fd907fd7e88fb7da479cf3d757523d29f998ca14d8b1fad62d4795970c4b",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:piotech-about",
+      "source_version": "sha256:fdf68184ca0755d49e73c24c3b44db7845d3a50b4d3eb5028bf243f18c76fd30",
+      "title": "企业简介",
+      "publisher": "拓荆科技股份有限公司",
+      "url": "https://piotech.cn/index.php/About/about",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:00.343562+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "fe0880974cceb592720fb9ec574f7d038187f82ca43caf7e09c2a62247b7d712",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    },
+    {
+      "source_id": "codex-20261021:piotech-stock",
+      "source_version": "sha256:f4a95ab327ac6c1aec7a3d8ab23bef3566327207afd4fb1e88ee4a19bfa97a2e",
+      "title": "发展历程",
+      "publisher": "拓荆科技股份有限公司",
+      "url": "https://piotech.cn/index.php/About/about3",
+      "published_at": null,
+      "retrieved_at": "2026-10-21T14:09:00.343764+00:00",
+      "access": "snapshot",
+      "capture_method": "http_html_text_extraction",
+      "raw_sha256": "3112e07a67ca4d70f6738bbc25c7be991693518134a0c841c1c549c12f727198",
+      "source_capture_pending": false,
+      "distribution_note": "Full original snapshots and private research identifiers are not bundled. Evidence excerpts, public original source URLs (where recorded), and the recorded source versions remain; no source was recaptured for this copy."
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev:new20261021:applied-products:f51ebaf65997",
+      "revision": 1,
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "excerpt": "Applied Materials, Inc.",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/applied-products.txt:94"
+      },
+      "summary": "官方产品页面的版权主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:applied-products:d1d96b9eea49",
+      "revision": 1,
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "excerpt": "ALD Dielectrics Deposition Epitaxy Metal Deposition",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/applied-products.txt:72"
+      },
+      "summary": "产品矩阵列出沉积与外延类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:applied-products:65b569cad108",
+      "revision": 1,
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "excerpt": "CMP Etch Pattern Shaping Photomask Selective Etch",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/applied-products.txt:77"
+      },
+      "summary": "产品矩阵区分平坦化、刻蚀与图形相关类别。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:applied-products:974082c45244",
+      "revision": 1,
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "excerpt": "Ion Implant Thermal Processing & Treatments",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/applied-products.txt:82"
+      },
+      "summary": "产品矩阵列出离子注入、热处理。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:applied-products:c3e2a2dcb202",
+      "revision": 1,
+      "source_id": "codex-20261021:applied-products",
+      "source_version": "sha256:fbc7d39a1ceb1e375526b97a86c76a92248bc2e06cda1141dc6c5146338cdb1b",
+      "excerpt": "Defect Control",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/applied-products.txt:87"
+      },
+      "summary": "设备产品矩阵含缺陷控制及图形控制。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-products:85dc1a9af804",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "excerpt": "DUV lithography systems",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-products.txt:110"
+      },
+      "summary": "ASML列出干式及浸没式DUV系统。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-products:6a5b5cbe5b86",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "excerpt": "EUV lithography systems",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-products.txt:107"
+      },
+      "summary": "ASML列出EUV光刻系统；不意味着全部芯片需要EUV。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-products:253382bcb294",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "excerpt": "Metrology & inspection systems",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-products.txt:116"
+      },
+      "summary": "ASML提供量测检测系统。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-products:988d786632e8",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "excerpt": "Computational lithography",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-products.txt:89"
+      },
+      "summary": "ASML提供计算光刻产品。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-products:15e16479075e",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-products",
+      "source_version": "sha256:8a1cf9c66ee48ad8d924ec6fcb06438eb2f7a1c3f9c24f86ef2c5839177c8e0d",
+      "excerpt": "Customer support",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-products.txt:90"
+      },
+      "summary": "ASML提供设备使用期间的客户支持。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-six:96b6af1e8ca9",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-six",
+      "source_version": "sha256:f150dea4c79b8a84c1a6ee1d1120ed24bd6a2f203795bdb37715df6bce6a2870",
+      "excerpt": "deposition, photoresist, lithography, etch, ionization and packaging",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-six.txt:106"
+      },
+      "summary": "设备作用映射到相应工艺，不把工艺步骤等同于设备厂商。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:asml-process:e34c70432f28",
+      "revision": 1,
+      "source_id": "codex-20261021:asml-process",
+      "source_version": "sha256:670d264c897ff1f12fbb529d5eb30df75c7105d5570a3258be6c720d66b78b2f",
+      "excerpt": "silicon wafer",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/asml-process.txt:103"
+      },
+      "summary": "设备加工对象为晶圆；示意不代表所有设备处理相同衬底。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:naura-about:66f47f8ff0f9",
+      "revision": 1,
+      "source_id": "codex-20261021:naura-about",
+      "source_version": "sha256:e1298995f03c0e4056621b538eb50bef91d0e28a98085b3d77fab9b917be5d88",
+      "excerpt": "北方华创科技集团股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/naura-about.txt:128"
+      },
+      "summary": "北方华创集团官网发行人名称。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:naura-stock:4433ae11876b",
+      "revision": 1,
+      "source_id": "codex-20261021:naura-stock",
+      "source_version": "sha256:414994de993bafb13eefed42f0bf1fb25f5f19572bc38e690f6f5e77846e19b3",
+      "excerpt": "002371",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/naura-stock.txt:139"
+      },
+      "summary": "北方华创官网股票信息。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:naura-pvd:c510612d5c49",
+      "revision": 1,
+      "source_id": "codex-20261021:naura-pvd",
+      "source_version": "sha256:1bd088f100b7f0699c842e1724c2d67fa6b76935d278540cb1c0cf9d3ee4d230",
+      "excerpt": "在衬底上沉积成膜",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/naura-pvd.txt:140"
+      },
+      "summary": "PVD产品页解释溅射沉积及北方华创相关设备。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:amec:c3eec3411a55",
+      "revision": 1,
+      "source_id": "codex-20261021:amec",
+      "source_version": "sha256:be623d2ba862eb84d4bd30ed403f092c1cd69033556ba19315fb42e603191e18",
+      "excerpt": "证券代码“688012”",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/amec.txt:351"
+      },
+      "summary": "中微公司官网对应证券代码与主体。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:amec:41e0e6b9e2bc",
+      "revision": 1,
+      "source_id": "codex-20261021:amec",
+      "source_version": "sha256:be623d2ba862eb84d4bd30ed403f092c1cd69033556ba19315fb42e603191e18",
+      "excerpt": "干法刻蚀（等离子体刻蚀）设备",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/amec.txt:342"
+      },
+      "summary": "中微官网说明其刻蚀产品用于晶圆微观结构加工。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:amec:f8eeb88dab49",
+      "revision": 1,
+      "source_id": "codex-20261021:amec",
+      "source_version": "sha256:be623d2ba862eb84d4bd30ed403f092c1cd69033556ba19315fb42e603191e18",
+      "excerpt": "MOCVD全称是Metal-Organic Chemical Vapour Deposition",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/amec.txt:344"
+      },
+      "summary": "中微官网列出MOCVD，说明在基板上生长半导体薄膜。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:piotech-about:d0418f80fc65",
+      "revision": 1,
+      "source_id": "codex-20261021:piotech-about",
+      "source_version": "sha256:fdf68184ca0755d49e73c24c3b44db7845d3a50b4d3eb5028bf243f18c76fd30",
+      "excerpt": "拓荆科技股份有限公司",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/piotech-about.txt:1"
+      },
+      "summary": "拓荆官网发行人名称。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:piotech-about:65e0e5ce7334",
+      "revision": 1,
+      "source_id": "codex-20261021:piotech-about",
+      "source_version": "sha256:fdf68184ca0755d49e73c24c3b44db7845d3a50b4d3eb5028bf243f18c76fd30",
+      "excerpt": "等离子体增强化学气相沉积(PECVD)设备",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/piotech-about.txt:114"
+      },
+      "summary": "拓荆产品页列举CVD类沉积设备。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:piotech-about:86ffe14ce429",
+      "revision": 1,
+      "source_id": "codex-20261021:piotech-about",
+      "source_version": "sha256:fdf68184ca0755d49e73c24c3b44db7845d3a50b4d3eb5028bf243f18c76fd30",
+      "excerpt": "原子层沉积(ALD)设备",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/piotech-about.txt:114"
+      },
+      "summary": "拓荆提供ALD设备；不等同于全部工艺适用性。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:piotech-about:3c51a9acb5e8",
+      "revision": 1,
+      "source_id": "codex-20261021:piotech-about",
+      "source_version": "sha256:fdf68184ca0755d49e73c24c3b44db7845d3a50b4d3eb5028bf243f18c76fd30",
+      "excerpt": "W2W / D2W Hybrid Bonding",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/piotech-about.txt:114"
+      },
+      "summary": "拓荆列示三维集成混合键合设备，需区分晶圆对晶圆及裸片对晶圆。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    },
+    {
+      "evidence_id": "ev:new20261021:piotech-stock:6b4fe0c25372",
+      "revision": 1,
+      "source_id": "codex-20261021:piotech-stock",
+      "source_version": "sha256:f4a95ab327ac6c1aec7a3d8ab23bef3566327207afd4fb1e88ee4a19bfa97a2e",
+      "excerpt": "688072.SH",
+      "locator": {
+        "kind": "line",
+        "value": "data/curated-chains/source-snapshots/2026-10-21/piotech-stock.txt:156"
+      },
+      "summary": "拓荆发展历程记录科创板上市代码。",
+      "context_note": "短摘录定位原文段落；summary为Codex释义。以本次保存正文为核对基线，不以页面抓取时间代替发表时间。"
+    }
+  ],
+  "releases": [],
+  "extensions": {
+    "research": {
+      "owner": "Codex",
+      "method": "direct_primary_source_research",
+      "evidence_date": "2026-10-21",
+      "web_ai_deep_research": false,
+      "notebook_used": false,
+      "user_accepted": false,
+      "formally_published": false
+    },
+    "shared_interfaces": [],
+    "unresolved_candidates": []
+  }
+}

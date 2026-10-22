@@ -2,10 +2,11 @@ import { createElement, useEffect, useLayoutEffect, useRef, useState } from 'rea
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { useApi } from './hooks';
 import { Empty, ErrorBox, ExternalLink, Loading } from './components';
-import { NewsUpdate, newsContentLabel, newsTime, useNewsUpdates } from './NewsSources';
+import { NewsUpdate, newsContentLabel, newsTime, useNewsUpdates } from './news-runtime';
 import type { Article, Job } from './types';
-import { safeNewsReturn } from './PanoramaEntry';
+import { safeNewsReturn } from './navigation';
 import { errorMessage, post } from './api';
+import ChainMonitor from './ChainMonitor';
 import './editorial.css';
 
 type Evidence = { article_id?: string; quote?: string; trigger?: string; observed_at?: string; position?: number; page_url?: string; edition?: string; url?: string; exclusive_evidence?: string };
@@ -15,7 +16,7 @@ type Report = Article & { attribution?: Attribution; language?: string; language
 type Reason = { label: string; evidence?: Evidence; basis: string };
 type Progress = { id: string; event_id: string; title: string; summary: string; published_at: string | null; first_observed_at: string; publishers: string[]; reasons: Reason[] };
 type Story = { id: string; name: string; basis: string; first_observed_at: string; latest_fact_at?: string; phase?: string; stage?: { label: string; quote: string } | null; history_note?: string; progresses?: Progress[] };
-type Item = Progress & { news_version?: string; primary_article_id: string; story: Story; channels: string[]; industry_links: IndustryLink[]; articles: Report[]; time_basis: string; observations: Evidence[]; unique_publisher_count: number; origin_count: number; exclusive_claims: Attribution[]; algorithm: { version: string; parts: Record<string, number>; suppression: string[]; excluded: string[] } };
+type Item = Progress & { analysis_status?: string; association_status?: string; news_version?: string; primary_article_id: string; story: Story; channels: string[]; industry_links: IndustryLink[]; articles: Report[]; time_basis: string; observations: Evidence[]; unique_publisher_count: number; origin_count: number; exclusive_claims: Attribution[]; algorithm: { version: string; parts: Record<string, number>; suppression: string[]; excluded: string[] } };
 type Feed = { items: Item[]; generated_at: string; state: string; exclusive_available: boolean; collection: { active_job_id: string | null; last_checked: string | null; warnings: string[] }; coverage_note: string };
 export type EditorialDetail = { event: { id: string; title: string }; title: string; summary: string; current: Item; progresses: Item[]; articles: Report[]; industry_links: IndustryLink[]; story: Story };
 type View = 'read' | 'story' | 'reports';
@@ -85,14 +86,6 @@ export default function EditorialPage() {
     setAssociationJob('');
     if (associationState.status === 'succeeded') { feed.reload(); detail.reload(); }
   }, [associationState, feed.reload, detail.reload]);
-  const associationSeen = useRef(new Set<string>());
-  useEffect(() => {
-    if (!requestedEvent || !current || associationBusy) return;
-    const key = `${eventId}:${current.id}:${current.news_version || ''}`;
-    if (associationSeen.current.has(key)) return;
-    associationSeen.current.add(key);
-    void updateAssociations(true);
-  }, [requestedEvent, eventId, current?.id, current?.news_version, associationBusy]);
   async function updateAssociations(automatic = false) {
     if (!current || associationBusy) return;
     setAssociationBusy(true); setAssociationMessage('');
@@ -121,6 +114,7 @@ export default function EditorialPage() {
   // detail. Explicit URLs (including chain return links) do open detail.
   const detailOpen = params.get('panel') !== 'list' && Boolean(requestedEvent || requestedStory);
   const hasFeed = Boolean(feed.data);
+  const [monitorReady, setMonitorReady] = useState(false);
   const previousPresentation = useRef<{ narrow: boolean; detail: boolean; key: string } | null>(null);
   function scrollTop() { return window.scrollY; }
   function scrollTo(top: number) { window.scrollTo({ top, behavior: 'auto' }); }
@@ -166,7 +160,7 @@ export default function EditorialPage() {
   useLayoutEffect(() => {
     // URL/history or responsive pane transitions only: data loading and canvas
     // completion must not reset a reader's scroll or focus on every render.
-    if (narrow && !detailOpen && !hasFeed) return;
+    if (!detailOpen && (!monitorReady || (narrow && !hasFeed))) return;
     const previous = previousPresentation.current;
     previousPresentation.current = { narrow, detail: detailOpen, key: location.key };
     const navigated = !previous || previous.key !== location.key;
@@ -175,11 +169,11 @@ export default function EditorialPage() {
       reveal(rail.current);
     } else if (!detailOpen && (previous?.detail || (!previous && savedNewsList))) {
       const target = savedNewsList?.focusId ? document.getElementById(savedNewsList.focusId) : null;
-      (target && list.current?.contains(target) ? target : listHeading.current)?.focus({ preventScroll: true });
+      (target && page.current?.contains(target) ? target : listHeading.current)?.focus({ preventScroll: true });
       if (savedNewsList) scrollTo(savedNewsList.top);
       else reveal(list.current);
     }
-  }, [narrow, detailOpen, location.key, hasFeed]);
+  }, [narrow, detailOpen, location.key, hasFeed, monitorReady]);
   // A running job (including one initiated elsewhere) only raises a prompt;
   // feed results and the selected reading position are never silently replaced.
   const job = useApi<Job[]>(feed.data?.collection.active_job_id ? '/jobs' : null, 2500);
@@ -189,6 +183,7 @@ export default function EditorialPage() {
   const awaiting = feed.data?.state === 'collecting' || updates.busy;
   return <div ref={page} className={`news-page editorial-page${detailOpen ? ' editorial-detail-open' : ''}`}>
     <header className="editorial-heading"><div><h1>新闻</h1>{params.get('return') && <a href={safeNewsReturn(params.get('return'))}>← 返回阅读流程</a>}</div><NewsUpdate /></header>
+    <ChainMonitor hidden={detailOpen} onReady={setMonitorReady} onNavigate={focusId => { savedNewsList = { top: scrollTop(), focusId }; persistNewsList(); }} />
     <ErrorBox message={feed.error} retry={feed.reload} />
     {(updates.revision !== loadedRevision || finishedJob) && <div className="editorial-update" role="status"><span>采集已结束，当前阅读保持不变。</span><button type="button" onClick={reload} disabled={feed.loading}>载入更新</button></div>}
     {feed.loading && !feed.data && <Loading label="正在整理推荐与来源证据…" />}
@@ -218,6 +213,7 @@ export default function EditorialPage() {
         {requestedProgress && detail.data && !current && <p role="status">未找到指定进展，未以其他进展代替。请选择列表中的新闻。</p>}
         {current && <>{current.story.name !== current.title && <p className="editorial-context-label">{current.story.name}</p>}<h2 className="editorial-context-title">{current.title}</h2>
           <nav className="editorial-item-links" aria-label="相关产业">{relatedIndustries(current).map(link => <a key={link.industry_id} href={industryHref(current, link)}>{link.name}</a>)}</nav>
+          {current.analysis_status === 'pending_review' && <p className="editorial-muted" role="status">分析内容保留，具体产业身份关联待核查；整项分析尚未完成。</p>}
           <button type="button" className="text-button" disabled={associationBusy} onClick={() => void updateAssociations()}>{associationBusy ? '补充中…' : '更新相关产业'}</button>
           {associationMessage && <p className="editorial-muted" role="status">{associationMessage}</p>}
           <div className="editorial-tabs" role="tablist" aria-label="报道与进展">{views.map(([key, label]) => <button type="button" role="tab" id={`editorial-tab-${key}`} aria-selected={view === key} key={key} onClick={() => select({ view: key })}>{label}</button>)}</div>
@@ -243,11 +239,4 @@ export default function EditorialPage() {
       </div>
     </aside></div>
   </div>;
-}
-
-type Diagnostics = { version: string; weights: Record<string, number>; limitations: string[]; latest_run: { id: string; generated_at: string; data: { excluded: { id: string; reasons: string[] }[]; diversity_deferred: { id: string; reason: string }[] } } | null };
-export function EditorialDiagnostics() {
-  const [open, setOpen] = useState(false);
-  const result = useApi<Diagnostics>(open ? '/news/editorial/diagnostics' : null);
-  return <section className="news-page editorial-diagnostics"><h2>推荐规则与审计</h2><p>新闻推荐使用规则；产业关联可按需后台补充。不翻译原文、不输出市场影响概率。没有明确来源声明时，独家可以空缺。</p><button type="button" onClick={() => setOpen(value => !value)} aria-expanded={open}>{open ? '收起选题说明' : '查看规则、限制与最近排除记录'}</button>{open && <><ErrorBox message={result.error} retry={result.reload} />{result.loading && <Loading />}{result.data && <><p>算法：{result.data.version}</p><ul>{result.data.limitations.map((item, i) => <li key={i}>{item}</li>)}</ul><details><summary>启发式权重（非概率）</summary><pre>{JSON.stringify(result.data.weights, null, 2)}</pre></details>{result.data.latest_run && <details><summary>最近推荐快照与排除依据 · {newsTime(result.data.latest_run.generated_at)}</summary><p>{result.data.latest_run.id}</p><ul>{result.data.latest_run.data.excluded.slice(0, 100).map(item => <li key={item.id}>{item.id}：{item.reasons.join('；')}</li>)}</ul><p>此处最多显示100条；完整有界快照可通过 diagnostics API 核对。</p></details>}</>}</>}</section>;
 }

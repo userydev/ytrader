@@ -68,7 +68,7 @@ class Jobs:
             payload['kind'] = kind
             target = fingerprint({key: payload[key] for key in ('industry_id', 'question', 'input_version',
                                                                'model_base_url', 'model_name', 'ycore_url')})
-        if kind in ('industry_associate', 'industry_impact'):
+        if kind in ('industry_associate', 'industry_impact', 'curated_candidate'):
             target = payload['input_version']
         active = kind + ':' + payload['data_mode'] + ':' + payload['ai_mode'] + ':' + target
         now, jid = utcnow(), str(uuid.uuid4())
@@ -140,7 +140,7 @@ class Jobs:
         try:
             config = self.settings.get()
             # Data and AI selection are independent, but an in-flight task must not silently switch hosts.
-            analysis_job = kind in ('analyze', 'company_analyze', 'industry_generate', 'industry_supplement', 'industry_associate', 'industry_impact')
+            analysis_job = kind in ('analyze', 'company_analyze', 'industry_generate', 'industry_supplement', 'industry_associate', 'industry_impact', 'curated_candidate')
             if payload['data_mode'] != config.data_mode or (analysis_job and payload['ai_mode'] != config.ai_mode):
                 raise JobFailure('服务模式已更改，请重新提交任务')
             needs_remote = payload['data_mode'] == 'ycore' or (analysis_job and payload['ai_mode'] == 'ycore')
@@ -148,7 +148,9 @@ class Jobs:
                 raise JobFailure('ycore 地址已更改，请重新提交任务')
             if analysis_job and payload['ai_mode'] == 'local' and (payload['model_base_url'] != config.model_base_url or payload['model_name'] != config.model_name):
                 raise JobFailure('模型配置已更改，请重新提交任务')
-            if kind == 'industry_impact':
+            if kind == 'curated_candidate':
+                message = self.curated.run_candidate(jid, payload, self.industries, self.update)
+            elif kind == 'industry_impact':
                 message = self.industry_research.run_impact(jid, payload, self.update)
             elif kind == 'industry_associate':
                 message = self.industry_research.run_association(jid, payload, self.update)
@@ -319,5 +321,16 @@ class Jobs:
                 raise AnalysisError('ycore 分析事件或证据版本不一致')
             result = validate_result({'sections': remote_analysis['sections'], 'warnings': remote_analysis.get('warnings', [])}, context)
             model = remote_analysis.get('model', 'ycore (model not disclosed)')
-        self.analyzer.save(eid, result, model, version, data_mode)
-        return '分析已保存；引用已验证，证据变化时结果标记陈旧'
+        association = None
+        try:
+            if not self.industry_research:
+                raise UserError('产业关联服务不可用，保留待核查', 501)
+            self.update(jid, progress=75, message='正在核对同新闻版本的具体产业身份与原文证据')
+            association = self.industry_research.completion_association(eid, context['articles'], version, payload, jid, self.update)
+        except (UserError, UpstreamError):
+            self.analyzer.save(eid, result, model, version, data_mode)
+            raise JobFailure('分析内容已保存，但具体产业身份关联失败或无可靠关联，待核查；未标记整项完成') from None
+        saved = self.analyzer.save(eid, result, model, version, data_mode, association)
+        if saved['status'] != 'complete':
+            raise JobFailure('分析期间新闻证据已变化；保留陈旧内容，请按新版本重新分析')
+        return '分析与具体产业关联已共同保存；同稿件/证据版本已核对'

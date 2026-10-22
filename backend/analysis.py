@@ -154,13 +154,32 @@ class Analyzer:
         result.warnings.extend(sorted(set(warnings)))
         return result, config.model_name
 
-    def save(self, eid, result, model, version, data_mode):
+    def save(self, eid, result, model, version, data_mode, association=None):
         # Re-read just before commit: evidence arriving during analysis invalidates the result.
-        _, current_version = self.context(eid, data_mode)
+        current_context, current_version = self.context(eid, data_mode)
         analysis = dict(id='analysis:' + identity(eid, version, utcnow()), event_id=eid,
                         status='complete' if current_version == version else 'stale', model=model,
                         created_at=utcnow(), evidence_version=version,
                         sections=result.sections.model_dump(), warnings=result.warnings)
+        valid_association = bool(association and association.get('status') == 'complete' and association.get('event_id') == eid and association.get('evidence_version') == version and association.get('links'))
+        if valid_association:
+            from .industry_sources import version as article_version
+            by_id = {a['id']: a for a in current_context['articles']}
+            for link in association['links']:
+                proof = link.get('evidence', [])
+                if not isinstance(link.get('industry_id'), str) or not link['industry_id'].strip() or not link.get('reason') or not proof:
+                    valid_association = False
+                    break
+                for item in proof:
+                    article = by_id.get(item.get('article_id'))
+                    quote = item.get('quote')
+                    if not article or not isinstance(quote, str) or not quote.strip() or quote not in article['title'] + '\n' + article.get('content', '') or item.get('article_version') != article_version({k: article.get(k) for k in ('id', 'title', 'content', 'published_at')}):
+                        valid_association = False
+                        break
+        if not valid_association:
+            analysis['status'] = 'pending_review' if current_version == version else 'stale'
+            analysis['warnings'] = list(analysis['warnings']) + ['产业身份关联尚未完成；保留分析内容待核查。']
+        analysis['industry_association'] = association if valid_association else dict(status='pending_review', evidence_version=version, links=[])
         with self.db.transaction() as c:
             if data_mode == 'local':
                 # Local ingestion uses the same transaction lock; close the compare/commit race.
@@ -177,8 +196,15 @@ class Analyzer:
         if not row:
             return None
         analysis = json.loads(row[0])
+        previous = analysis['status']
+        association = analysis.get('industry_association', {})
         if version and analysis['evidence_version'] != version:
             analysis['status'] = 'stale'
+        elif analysis['status'] == 'complete' and (association.get('status') != 'complete' or association.get('evidence_version') != analysis['evidence_version'] or not association.get('links')):
+            analysis['status'] = 'pending_review'
+            analysis['warnings'] = list(analysis.get('warnings', [])) + ['旧分析未绑定同证据版本的具体产业关联，保留内容待核查。']
+        if previous != analysis['status']:
             with self.db.transaction() as c:
                 c.execute('UPDATE analyses SET data=? WHERE event_id=?', (dump(analysis), eid))
+                c.execute('UPDATE events SET analysis_status=? WHERE id=?', (analysis['status'], eid))
         return analysis
